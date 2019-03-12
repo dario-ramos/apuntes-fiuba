@@ -1,0 +1,95 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[spanish]{babel}
+\usepackage[margin=1.5in]{geometry}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+
+\renewcommand{\Bbb}{\mathbb}
+
+\begin{document} 
+
+\section{EDO 1}
+
+Una función escalar es diferenciable si y sólo si se puede escribir lo siguiente:
+
+\begin{equation}
+f(x+h) - f(x) = f'(x) h + \mu(h) h
+\end{equation}
+
+En el lado derecho de esta igualdad, el primer sumando es el \textbf{diferencial total de la función}, y el segundo es un infinitésimo que tiende a cero cuando h tiende a cero.
+
+Propiedades:
+
+\begin{subequations}
+\begin{align}
+d k & = 0 \\
+d(k f) & = k df \\
+d(f \pm g) & = df \pm dg \\
+d(f g), d( f / g ) & = \textbf{igual que derivada} \\
+dy & = f'(x) h \wedge h = dx \Longrightarrow y' = \frac{dy}{dx} = f'(x)
+\end{align}
+\end{subequations}
+
+Esta última se conoce como la notación de Leibnitz.
+
+Una ecuación diferencial, o ED, es una ecuación donde las incógnitas son funciones; toda ED relaciona una función a determinar, su(s) variable(s) independiente(s), y las derivadas de la función. Las EDs pueden ser:
+
+//TODO Usar bullet list
+* Ordinarias: La función incógnita tiene una sola variable independiente.
+
+* En derivadas parciales: La función incógnita tiene más de una variable independiente.
+
+
+\subsection{Orden de una ED}
+
+El orden de una ED está dado por la derivada de mayor orden de la función incógnita.
+
+\subsection{Expresión general}
+
+Expresión general orden 1:
+
+\begin{equation}
+F(x, y, y') = 0
+\end{equation}
+
+Normalizada orden 1:
+
+\begin{equation}
+y' = g(x, y)
+\end{equation}
+
+Expresión general para orden N:
+
+\begin{equation}
+F(x, y, y', y'', ..., y^(n)) = 0
+\end{equation}
+
+Se dice que $x, y, y', ..., y^(n)$ son las variables de la ED $F$.
+
+\subsection{Grado de una ED}
+
+Aquellas ED que pueden expresarse como polinomios respecto al orden de las derivadas, y donde además los coeficientes que multiplican a las derivadas son constantes o funciones de $x$, tienen \textbf{grado}. El mismo corresponde al exponente al que está elevada la derivada de mayor orden.
+
+Si algún coeficiente depende de $y$, la ED no tiene grado.
+
+\subsection{Soluciones de una ED}
+
+Sea $y = g(x)$ una función definida en un intervalo $I$, con $n$ derivadas continuas en dicho intervalo. Si al reemplazar $y$ en una ED, la misma se reduce a una identidad, se dice que $y = g(x)$ es solución de la ED en $I$. En tal caso, $I$ es denominado intervalo de solidez, intervalo de existencia, o dominio de la solución.
+
+\subsubsection{Solución general (SG)}
+
+La SG de una ED de orden $n$ es una relación funcional entre sus variables 
+que contiene $n$ constantes arbitrarias linealmente independientes.
+
+\subsubsection{Solución particular (SP)}
+
+Se obtiene a partir de la SG al darle valores concretos a sus constantes; usualmente, ello requiere $n$ valores iniciales o condiciones de contorno de la función incógnita y sus derivadas.
+
+\subsubsection{Solución singular (SS)}
+
+Una función es SS de una ED cuando la reduce a una identidad, pero no puede obtenerse a partir de una SG. No toda ED tiene SS.
+
+\end{document} 
