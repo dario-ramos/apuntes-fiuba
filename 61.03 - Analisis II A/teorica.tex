@@ -387,6 +387,8 @@ Dado que dos límites sucesivos dan valores diferentes, resulta que el límite o
 
 Cabe destacar que en cada uno de estos pasos, se está calculando el límite para una sola variable, por lo que vale la regla de L'Hopital y demás recursos de una variable.
 
+\section{Teórica 4 - Límite 2}
+
 \subsubsection{Límites radiales}
 
 Dado un punto $P_0 = (x_0, y_0)$, la idea es aproximarse infinitesimalmente al mismo a través de las infinitas rectas que lo atraviesan, exceptuando la vertical. Por ejemplo, en $\Bbb R^2$:
@@ -424,5 +426,54 @@ Este ejemplo da la pauta de que suele ser conveniente elegir curvas de una famil
 Sea $\overline{f}:I \rightarrow \Bbb R^n$, con $I \subset \Bbb R$, una curva o función vectorial. La imagen de $\overline{f}$ suele llamarse trayectoria. Si $\overline{f}$ es continua en $I$, es una curva continua. Puede probarse fácilmente que la derivada de una función vectorial es el vector cuyas componentes sean las derivadas de cada función escalar de una variable que componen a $\overline{f}$. Por lo tanto, esto se reduce a derivar una variable (Análisis I).
 
 Una curva se dice de orden $C^p$, o bien que $\overline{f} \in C^p \Longleftrightarrow$ sus derivadas hasta el orden $p$ inclusive son todas continuas. Por ejemplo, si la primera derivada ya es discontinua, $\overline{f} \in C^0$
+
+\section{Teórica 5 - Derivadas parciales}
+
+\subsection{Plano normal y recta tangente}
+
+Para una curva $\overline{f}$, el plano normal en un punto $P_0 = \overline{f}(t_0)$ está dado por:
+
+\begin{equation}
+\Pi_N : (Q - P_0) \cdot \overline{f}'(t_0) = 0
+\end{equation}
+
+Y la recta tangente está dada por:
+
+\begin{equation}
+R_T: P_0 + \lambda \overline{f}'(t_0)
+\end{equation}
+
+\subsection{Derivadas de campos escalares}
+
+El campo escalar cuyo conjunto de salida es $\Bbb R^2$ es aquel que se denomina impropiamente "de dos variables". Primero, se presentará la definición de derivadas parciales para dicho caso, y luego se generalizará para "n variables". Sean:
+
+\begin{subequations}
+\begin{align}
+\text{Sea } f: A \rightarrow \Bbb R, \text{ con } A \subseteq \Bbb R^2 / z = f(x,y) \\
+\text{Sea } P_0 = (x_0, y_0) \text{ un punto interior de A} \\
+\text{Sea } H \text{ un vector de } \Bbb R^2 / (P_0 + H) \in E(P_0, r) \subset A
+\end{align}
+\end{subequations}
+
+La última definición exige que el vector $P_0 + H$ pertenezca a $A$. Dado todo esto, se definen las derivadas parciales del campo escalar $f$ como los siguientes límites, en tanto existan:
+
+\begin{subequations}
+\begin{align}
+f_x(x_0, y_0) = \lim_{h \rightarrow 0} \frac{f(x_0 + h, y_0) - f(x_0, y_0)}{h} \\
+f_y(x_0, y_0) = \lim_{h \rightarrow 0} \frac{f(x_0, y_0 + h) - f(x_0, y_0)}{h}
+\end{align}
+\end{subequations}
+
+Notaciones alternativas: $f_x(x_0, y_0) = f'_x(P_0) = D_1 f(P_0) = \frac{\partial f}{\partial x} (P_0)$
+
+Nótese que $f_x$, la derivada parcial respecto a $x$, se calcula incrementado infinitesimalmente sólo $x$, y manteniendo $y$ constante. Lo inverso ocurre para $f_y$.
+
+Generalizando para un campo escalar de $n$ variables:
+
+\begin{equation}
+f_{x_i}(P_0) = \frac{\partial f}{\partial x_i} = \lim_{h \rightarrow 0} \frac{f(P_0 + h e_i) - f(P_0)}{h}
+\end{equation}
+
+En esta expresión, $e_i$ es un vector de $n$ componentes que valen todas cero, excepto en la i-ésima posición, donde vale 1.
 
 \end{document} 
