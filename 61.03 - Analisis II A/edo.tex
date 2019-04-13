@@ -11,7 +11,7 @@
 
 \begin{document} 
 
-\section{EDO 1}
+\section{EDO - clase 1}
 
 Una función escalar es diferenciable si y sólo si se puede escribir lo siguiente:
 
@@ -91,5 +91,67 @@ Se obtiene a partir de la SG al darle valores concretos a sus constantes; usualm
 \subsubsection{Solución singular (SS)}
 
 Una función es SS de una ED cuando la reduce a una identidad, pero no puede obtenerse a partir de una SG. No toda ED tiene SS.
+
+\section{EDO - clase 2}
+
+\subsection{Teorema Fundamental del Cálculo}
+
+El TFC plantea que dos funciones $f$ y $g$, definidas en un mismo dominio, difieren en una constante $\Leftrightarrow$ sus derivadas son iguales. Esto implica que al resolver una integral, se obtiene siempre una familia de primitivas:
+
+\begin{equation}
+\int f(x) dx = F(x) + C \Leftrightarrow F'(x) = f(x)
+\end{equation}
+
+\subsection{Isoclinas y conjuntos de nivel}
+
+Dada una familia de curvas, las isoclinas de nivel $k$ son las rectas (o curvas) que unen los segmentos tangentes de pendiente $k$. Simbólicamente:
+
+\begin{equation}
+y' = F(x,y) \Rightarrow I_k = {(x,y) \in Dom(F) / F(x,y) = k}
+\end{equation}
+
+Las isoclinas son las curvas de nivel de la función derivada.
+
+\begin{figure}[t]
+\caption{Isoclinas}
+\includegraphics[scale=0.75]{img/edo_fig001_isoclinas.png} 
+\centering
+\label{fig:isoclinas}
+\end{figure}
+
+Por ejemplo, dada una familia de curvas parabólicas, obsérvese la figura ~\ref{fig:isoclinas} en los puntos donde la tangente (azul) es igual, se unen los puntos obteniendo una recta (rojo). Esa es la isoclina para ese valor en particular. Nótese que hay tantas curvas isoclinas como valores tome la derivada; en el gráfico se muestra una sola.
+
+\subsection{Formando EDOs a partir de una familia de curvas}
+
+Sea $F(x, y, C_1, C_2, ..., C_n)$ una familia de curvas. Habiendo $n$ constantes independientes entre sí, al derivar $F$ $n$ veces consecutivas surge un sistema de $n$ ecuaciones a partir del cual se podrá obtener una ecuación diferencial. Por ejemplo:
+
+\begin{equation}
+y = C_1 \cos(x) + C_2 \sin(x)
+\end{equation}
+
+Hay dos constantes independientes; por lo tanto, derivo dos veces respecto a $x$ miembro, planteando además que $y' = f'(x)$:
+
+\begin{subequations}
+\begin{align}
+y' = -C_1 \sin(x) + C_2 \cos(x) \\
+y'' = -C_1 \cos(x) - C_2 \sin(x)
+\end{align}
+\end{subequations}
+
+Sumando las expresiones para $y$ e $y''$ miembro a miembro, se obtiene la ED $y + y'' = 0$
+
+A veces, las constantes no son independientes entre sí, aunque lo parezcan. Por ejemplo:
+
+\begin{equation}
+y = A + \ln \left( \frac{B}{x} \right) \Rightarrow y = \ln C + \ln \left( \frac{B}{x} \right) = \ln \left( \frac{C B}{x} \right) = \ln \left( \frac{K}{x} \right)
+\end{equation}
+
+Así, lo que parecía de segundo orden, era de primer orden. Derivar una vez alcanza para obtener la ED:
+
+\begin{equation}
+y' = \frac{1}{\frac{K}{x}} -\frac{K}{x^2} \Rightarrow y' = \frac{-1}{x}
+\end{equation}
+
+Si una familia de curvas es solución pero está expresada implícitamente, puede que haya que determinar su dominio de validez.
 
 \end{document} 
