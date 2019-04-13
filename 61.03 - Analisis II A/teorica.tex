@@ -277,4 +277,152 @@ A \subset \Bbb R^n \text{ es arco-conexo } \Longleftrightarrow \exists \overline
 
 $A \subset \Bbb R^n$ es acotado $\Longleftrightarrow \forall x \in A, \exists M > 0 / \|x\| < M$. Vale decir, todo $A$ puede ser contenido en una bola de radio $M$.
 
+\section{Teórica 3 - Límite y continuidad}
+
+Un plano puede verse como la imagen de un campo vectorial. Si $\pi: P_0 + \alpha \overrightarrow{u} + \beta \overrightarrow{v}$ (el plano que pasa por $P_0$ y es generado por $\overrightarrow{u}$ y $\overrightarrow{v}$, entonces puede definirse el siguiente campo vectorial:
+
+\begin{equation}
+\overline{f}: \Bbb R^2 \rightarrow \Bbb R^3 / \overline{f}(\alpha, \beta) = (x, y, z) = P_0 + \alpha \overrightarrow{u} + \beta \overrightarrow{v}
+\end{equation}
+
+Algo análogo puede hacerse con la recta:
+
+\begin{equation}
+L = P_0 + t \overrightarrow{u} \longrightarrow \overline{f}: \Bbb R \rightarrow \Bbb R^3 / \overline{f}(t) = P_0 + t \overrightarrow{u}
+\end{equation}
+
+Viendo esto físicamente, $t$ puede ser el tiempo, y $\overline{f}$ la trayectoria de un Movimiento Rectilíneo Uniforme.
+
+\subsection{Límite y continuidad}
+
+Generalizando, sea $f: A \rightarrow B$, con $A, B \in \Bbb R^n$
+
+Sea $P_0$ un punto de acumulación de $A$. Se dice que $L \in B$ es el límite de $f$ cuando $P$ tiende a $P_0$ si:
+
+\begin{equation}
+\lim_{P \rightarrow P_0}f(P) = L \longleftrightarrow \forall E(L, \epsilon) \exists E^*(P_0, \delta) / [f(E^*(P_0, \delta) \cap A)] \subset E(L, \epsilon)
+\end{equation}
+
+\begin{figure}[t]
+\caption{Límite}
+\includegraphics[scale=0.75]{img/teo_fig002_limite.png} 
+\centering
+\label{fig:limite}
+\end{figure}
+
+Como se observa en la figura ~\ref{fig:limite}, el concepto es que, si existe el límite, no importa cuánto se acerque a cero el infinitésimo $\delta$ en el dominio $A$; siempre habrá un entorno centrado en $L$, de radio infinitésimo $\epsilon$, que contenga las imágenes del entorno dominio.
+
+\subsubsection{Aproximación con curva}
+
+\begin{figure}[t]
+\caption{Límite}
+\includegraphics[scale=0.75]{img/teo_fig003_limite_curva.png} 
+\centering
+\label{fig:limite_curva}
+\end{figure}
+
+Lo que pretende mostrar la figura ~\ref{fig:limite_curva} es que, siempre asumiendo que existe el límite, si la aproximación en el dominio se hace con una curva $\gamma$ en lugar de un entorno, la imagen de dicha curva, $f(\gamma)$, convergerá hacia $L$ a medida que $\gamma$ se aproxime a $P_0$. El camino que siga dependerá de cómo transforme f los puntos de $\gamma$.
+
+\subsubsection{Continuidad}
+
+$f$ es continua en $P_0 \longleftrightarrow \displaystyle{\lim_{P \rightarrow P_0}} f(P) = f(P_0)$. En todo otro caso, $f$ es discontinua en $P_0$ de forma \textbf{esencial} si L no existe o es infinito, y de forma \textbf{evitable} si el límite existe, pero $L \neq f(P_0)$ o $\nexists f(P_0)$.
+
+\subsubsection{Unicidad del límite}
+
+Si $L$ existe, es único. Como en Análisis I, esto indica que uno forma de demostrar que un límite no existe, es mostrar que da diferentes valores al calcularlo de diferentes maneras.
+
+\subsubsection{Inexistencia y unicidad}
+
+En funciones de $\Bbb R$ en $\Bbb R$, la existencia e igualdad de los límites laterales garantizaba la existencia del límite, porque sólo había dos direcciones, Sin embargo, en $\Bbb R^n$ hay infinitas formas de aproximarse a un punto; ergo, la igualdad de límites (iterados, radiales, etc) no asegura nada. Sin embargo, si dos difieren, el límite definitivamente no existe.
+
+\subsubsection{Límite de funciones vectoriales}
+
+Para toda función vectorial, el vector límite existe si y sólo si existe el límite para cada uno de los componentes del vector. Por ejemplo:
+
+\begin{equation}
+\lim_{t \rightarrow 0} \left( \frac{\sin t}{t}, (1 + t)^\frac{1}{t}, \frac{1-\cos t}{t} \right) = \left( \lim_{t \rightarrow 0} \frac{\sin t}{t}, \lim_{t \rightarrow 0} (1 + t)^\frac{1}{t}, \lim_{t \rightarrow 0} \frac{1-\cos t}{t} \right) = (1, e, 0)
+\end{equation}
+
+En este caso, los tres límites existen, y por ende el límite existe. Pero si al menos uno no existiera, dejaría de existir el de la función vectorial.
+
+\subsubsection{Límite de campos escalares}
+
+Ejemplo 1: Sea
+
+\begin{equation}
+f(x,y) = x^2 + y
+\end{equation}
+
+Es bastante evidente que esta función es continua en todo su dominio; no hay singularidades de ningún tipo. Eso nos permite afirmar, por ejemplo:
+
+\begin{equation}
+\lim_{(x,y) \rightarrow (2,1)} f(x,y) = f(2,1) = 5
+\end{equation}
+
+Ejemplo 2: Sea
+
+\begin{equation}
+f(x,y) = \frac{x^2 - y^2}{x^2 + y^2} \Rightarrow \lim_{(x,y) \rightarrow (0,0)} f(x,y) = ?
+\end{equation}
+
+Dado que hay dos variables, no se puede salvar esta indeterminación con elementos de Análisis I como el factoreo y la regla de L'Hopital. En este caso en particular, es posible usar límites sucesivos (no son límites realmente, sino "parientes bastardos"). La idea es variar una sola variable a la vez, dejando el resto constante. Luego, cambiar de variable. Por ejemplo, en $\Bbb R^2$:
+
+\begin{subequations}
+\begin{align}
+l_{12} = \lim_{y \rightarrow y_0} \left( \lim_{x \rightarrow x_0} f(x,y) \right) \\
+l_{21} = \lim_{x \rightarrow x_0} \left( \lim_{y \rightarrow y_0} f(x,y) \right)
+\end{align}
+\end{subequations}
+
+Nótese que el orden de los subíndices en el nombre indica el orden en que se mueven las variables. Este concepto es fácilmente extendible a n variables. Para el ejemplo anterior, resulta:
+
+\begin{subequations}
+\begin{align}
+l_{12} = \lim_{y \rightarrow 0} \left( \lim_{x \rightarrow 0} \frac{x^2-y^2}{x^2 + y^2} \right) = \lim_{y \rightarrow 0} \frac{-y^2}{y^2} = -1 \\
+l_{21} = \lim_{x \rightarrow 0} \left( \lim_{y \rightarrow 0} \frac{x^2-y^2}{x^2 + y^2} \right) = \lim_{x \rightarrow 0} \frac{x^2}{x^2} = 1
+\end{align}
+\end{subequations}
+
+Dado que dos límites sucesivos dan valores diferentes, resulta que el límite origen en dos variables no existe.
+
+Cabe destacar que en cada uno de estos pasos, se está calculando el límite para una sola variable, por lo que vale la regla de L'Hopital y demás recursos de una variable.
+
+\subsubsection{Límites radiales}
+
+Dado un punto $P_0 = (x_0, y_0)$, la idea es aproximarse infinitesimalmente al mismo a través de las infinitas rectas que lo atraviesan, exceptuando la vertical. Por ejemplo, en $\Bbb R^2$:
+
+\begin{equation}
+y = m (x-x_0) + y_0 \Rightarrow l_m = \lim_{x \rightarrow x_0} f(x, m (x-x_0) + y_0)
+\end{equation}
+
+Con esta definición, $l_m$ resulta un límite de una variable. Por lo tanto, da como resultado un número, o una expresión que depende de $m$. Como en el segundo caso tendríamos valores diferentes, el límite no existiría. En el primer caso, tendríamos un valor candidato para el límite, pero sin certeza de que exista.
+
+Generalizando para $\Bbb R^n$:
+
+\begin{equation}
+P = P_0 + t \overrightarrow{v} \Rightarrow l_{\overrightarrow{v}} = \lim_{t \rightarrow 0} f(P_0 + t \overrightarrow{v})
+\end{equation}
+
+\subsubsection{Límites parabólicos}
+
+La misma idea que las rectas, pero usando parábolas. En general, se puede usar cualquier curva que pase por $P_0$. En particular, los límites parabólicos se prestan a funciones cuadráticas o bicuadráticas. Por ejemplo:
+
+\begin{equation}
+f(x,y) = \frac{x^2 + y^4}{xy^2} ^ P_0 = (0,0)
+\end{equation}
+
+Las curvas a usar serán de la forma $x = a y^2$. Nótese que en este caso particular, por la forma particular de $f$, se eligió $y$ como variable independiente. Con ello resulta:
+
+\begin{equation}
+l_p = \lim_{y \rightarrow 0} f(ay^2, y) = \lim_{y \rightarrow 0} \frac{a^2 y^4 + y^4}{ay^2y^2} = \frac{a^2 + 1}{a} \Rightarrow \nexists L
+\end{equation}
+
+Este ejemplo da la pauta de que suele ser conveniente elegir curvas de una familia relacionada a las expresiones que aparezcan en $f$; en este caso, cuadrados. Si $f$ contuviera funciones trigonométricas, probablemente ayude aproximarse con senos, cosenos o combinaciones lineales de ellos.
+
+\subsection{Derivada de funciones vectoriales (curvas)}
+
+Sea $\overline{f}:I \rightarrow \Bbb R^n$, con $I \subset \Bbb R$, una curva o función vectorial. La imagen de $\overline{f}$ suele llamarse trayectoria. Si $\overline{f}$ es continua en $I$, es una curva continua. Puede probarse fácilmente que la derivada de una función vectorial es el vector cuyas componentes sean las derivadas de cada función escalar de una variable que componen a $\overline{f}$. Por lo tanto, esto se reduce a derivar una variable (Análisis I).
+
+Una curva se dice de orden $C^p$, o bien que $\overline{f} \in C^p \Longleftrightarrow$ sus derivadas hasta el orden $p$ inclusive son todas continuas. Por ejemplo, si la primera derivada ya es discontinua, $\overline{f} \in C^0$
+
 \end{document} 
