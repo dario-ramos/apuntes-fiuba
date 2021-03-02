@@ -1,0 +1,29 @@
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+
+\section{Ejercicio 1}
+
+Para la señal $x(t) = \frac{1}{\sqrt{2 \pi} \sigma} e^{\frac{-1}{2} \frac{(t-\mu)^2}{\sigma^2}}$ (gaussiana),
+
+(a) Calcular aproximadamente la frecuencia de Nyquist de muestreo observando con la FFT el
+espectro de la señal obtenida. Contrastar el resultado obtenido teóricamente. (Para el cálculo
+teórico considere que una gaussiana se hace cero a más o menos $3 \sigma$ de la media).
+
+(b) Repetir el punto anterior pero para la señal x(t) multiplicada por y(t) = cos(2 f 0 t).
+
+Para tener una mejor idea del problema, primero se resolverá de forma teórica/analítica.
+
+%\begin{equation}
+%X(\omega) = \int_{-\infty}^{+\infty} x(t) e^{-j \omega t}
+%\end{equation}
+
+\[
+X(\omega) = \int_{-\infty}^{+\infty} x(t) e^{-j \omega t}
+= \int_{-\infty}^{+\infty} frac 1{sqrt(2 \pi) \sigma} e
+\]
+
+\end{document}
