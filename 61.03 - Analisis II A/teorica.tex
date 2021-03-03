@@ -492,21 +492,16 @@ Para un campo escalar de clase $C^p$ en un punto $P_0$, las derivadas con hasta 
 
 \subsection{Derivada respecto de un vector y derivada direccional}
 
-Sea $f$ un campo escalar y $P_0$ un punto interior del dominio de $f$. Sean $\overrightarrow{v}$ un vector cualquiera en $\Bbb R^n$, y $h$ un escalar tal que $P_0 + h \overrightarrow{v}$ pertenezca a un entorno de $P_0$ incluido en el dominio. Gráficamente:
+Sea $f$ un campo escalar y $P_0$ un punto interior del dominio de $f$. Sean $\overrightarrow{v}$ un vector cualquiera en $\Bbb R^n$, y $h$ un escalar tal que $P_0 + h \overrightarrow{v}$ pertenezca a un entorno de $P_0$ incluido en el dominio. Esto puede visualizarse en la figura ~\ref{fig:deriv_direcc} en la página ~\pageref{fig:deriv_direcc}.
 
-% TODO Make this a figure
-\begin{center}
-\includegraphics[scale=0.5]{img/teo_fig004_deriv_direcc.png} 
-\end{center}
+\begin{figure}[t]
+\centering
+\caption{Derivada direccional}
+\includegraphics[scale=0.5]{img/teo_fig004_deriv_direcc.png}
+\label{fig:deriv_direcc}
+\end{figure}
 
-%\begin{figure}[t]
-%\caption{Derivada direccional}
-%\includegraphics[scale=1.0]{img/teo_fig004_deriv_direcc.png} 
-%\centering
-%\label{fig:deriv_direcc}
-%\end{figure}
-
-Entonces, se define la derivada del campo escalar $f$ en el punto $P_0$ respecto del vector $\overrightarrow{v}$ como el siguiente límite, en tanto exista:
+>Entonces, se define la derivada del campo escalar $f$ en el punto $P_0$ respecto del vector $\overrightarrow{v}$ como el siguiente límite, en tanto exista:
 
 \begin{equation}
 \tcboxmath[colback=orange!25!white,colframe=orange, title=Derivada respecto de un vector]
@@ -518,14 +513,45 @@ Esto es una generalización que incluye a las derivadas parciales como un caso p
 Otra forma de calcular $f'(P_0, \overrightarrow{v})$ involucra una composición de funciones:
 
 % TODO Make this work
-%\includegraphics[scale=1]{img/teo_fig005_deriv_direcc.png} 
+% \includegraphics[scale=1]{img/teo_fig005_dd.png} 
 
 Sea $g:\Bbb R \rightarrow \Bbb R / g(t) = f(P_0 + t \overrightarrow{v})$
 
 Derivando:
 
 \begin{equation}
-g'(t) = \frac{g(t+h)-g(t)}{h}
+g'(t) = \lim_{h \rightarrow 0} \frac{g(t+h)-g(t)}{h}
 \end{equation}
+
+Reemplazando la definición de $g(t)$:
+
+\begin{equation}
+g'(t) = \lim_{h \rightarrow 0} \frac{f(P_0 + t \overrightarrow{v} + h \overrightarrow{v}) - f(P_0 + t \overrightarrow{v})}{h}
+\end{equation}
+
+Por definición de derivada direccional:
+
+\begin{equation}
+f'(P_0 + t \overrightarrow{v}, \overrightarrow{v}) = g'(t) 
+\end{equation}
+
+Evaluando en $t = 0$:
+
+\begin{equation}
+g'(0) = f'(P_0, \overrightarrow{v})
+\end{equation}
+
+\subsection{Diferenciabilidad I}
+
+Sean $f$ un campo escalar, $P_0 \in \mathring{A}$, y $\overrightarrow{H} \in \Bbb R^n / (P_0 + \overrightarrow{H}) \in E(P_0, r) \subset A$. Se dice que $f$ es diferenciable en $P_0$ si y sólo si existen una transformación lineal $T_{P_0}: \Bbb R^n \rightarrow \Bbb R$ y una función $\phi_{P_0}: \Bbb R^n \rightarrow \Bbb R / \lim_{\overrightarrow{H} \rightarrow 0} \frac{\phi_{P_0}(\overrightarrow{H})}{||\overrightarrow{H}||} = 0$, que satisfagan:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=Diferenciabilidad para campo escalar]
+{ f(P_0 + \overrightarrow{H}) = f(P_0) + T_{P_0}(\overrightarrow{H}) + \phi_{P_0}(\overrightarrow{H}) }
+\end{equation}
+
+\section{T7: Gradiente y diferenciabilidad}
+
+% TODO
 
 \end{document}
