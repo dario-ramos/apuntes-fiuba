@@ -541,7 +541,7 @@ Evaluando en $t = 0$:
 g'(0) = f'(P_0, \overrightarrow{v})
 \end{equation}
 
-\subsection{Diferenciabilidad I}
+\subsection{Diferenciabilidad para campos escalares}
 
 Sean $f$ un campo escalar, $P_0 \in \mathring{A}$, y $\overrightarrow{H} \in \Bbb R^n / (P_0 + \overrightarrow{H}) \in E(P_0, r) \subset A$. Se dice que $f$ es diferenciable en $P_0$ si y sólo si existen una transformación lineal $T_{P_0}: \Bbb R^n \rightarrow \Bbb R$ y una función $\phi_{P_0}: \Bbb R^n \rightarrow \Bbb R / \lim_{\overrightarrow{H} \rightarrow 0} \frac{\phi_{P_0}(\overrightarrow{H})}{||\overrightarrow{H}||} = 0$, que satisfagan:
 
@@ -552,6 +552,96 @@ Sean $f$ un campo escalar, $P_0 \in \mathring{A}$, y $\overrightarrow{H} \in \Bb
 
 \section{T7: Gradiente y diferenciabilidad}
 
-% TODO
+Proposición: Sean $f$ un campo escalar diferenciable en $P_0$, $\overrightarrow{H} = h \overrightarrow{v}$ y $\frac{\phi(\overrightarrow{H})}{||\overrightarrow{H}||} = \psi(\overrightarrow{H})$.
+
+Reemplazando en la definición de diferenciabilidad:
+
+\begin{equation}
+f(P_0 + h \overrightarrow{v}) = f(P_0) + \underbrace{ T_{P_0}(h \overrightarrow{v}) }_{\text{Por ser t.l., } h T_{P_0}(\overrightarrow{v})} + \underbrace{ \left|\left|\overrightarrow{H}\right|\right| }_{|h| ||\overrightarrow{v}||} \psi(\overrightarrow{H})
+\end{equation}
+
+Restando $f(P_0)$ y dividiendo por $h$ miembro a miembro:
+
+\begin{equation}
+\frac{f(P_0 + h\overrightarrow{v})-f(P_0)}{h} = T_{P_0}(\overrightarrow{v}) \pm ||\overrightarrow{v}|| \psi(h \overrightarrow{v})
+\end{equation}
+
+Tomando el límite para $h$ tendiendo a cero miembro a miembro:
+
+\begin{equation}
+\lim_{h \rightarrow 0} \frac{f(P_0 + h\overrightarrow{v})-f(P_0)}{h} = \lim_{h \rightarrow 0} T_{P_0}(\overrightarrow{v}) \pm \lim_{h \rightarrow 0} ||\overrightarrow{v}|| \psi(h \overrightarrow{v}) 
+\end{equation}
+
+Dado que por definición $\psi(\overrightarrow{H}) = \frac{\phi(\overrightarrow{H})}{||\overrightarrow{H}||}$, el segundo sumando del lado derecho tiende a cero. Y el lado izquierdo es la definición de la derivada direccional. Por lo tanto, resulta:
+
+\begin{equation}
+f'(P_0, \overrightarrow{v}) = T_{P_0}(\overrightarrow{v})
+\end{equation}
+
+Ergo, la transformación lineal de la definición de diferenciabilidad es la derivada direccional. Y además, si un campo escalar es diferenciable, existen todas las derivadas direccionales, lo cual incluye a las derivadas parciales (cuando $\overrightarrow{v}$ es un versor).
+
+\subsection{Vector gradiente y derivada direccional}
+
+Sea un vector genérico $\overrightarrow{H} \in \Bbb R^n$, expresado como matriz de $1xn$ o vector fila $H$:
+
+\begin{equation}
+H = \sum_{i=1}^{n} {h_i \overrightarrow{e_i}} \Rightarrow T_{P_0}(H) = \sum_{i=1}^{n}{ h_i \underbrace{T_{P_0}(\overrightarrow{e_i})}_{\text{deriv. parcial } f_{x_i}} } = \sum_{i=1}^{n}{ h_i f_{x_i}(P_0) }
+\end{equation}
+
+(Recuérdese de la sección anterior que la transformación lineal $T_{P_0}$ corresponde a la derivada direccional, y para los versores $\overrightarrow{e_i}$ eso corresponde a su vez a las derivadas parciales). La sumatoria final puede ser expresada como un producto escalar entre dos vectores de $\Bbb R^n$:
+
+\begin{align}
+    \sum_{i=1}^{n}{ f_{x_i}(P_0) h_i } &= \underbrace{ (f_{x_1}(P_0), f_{x_2}(P_0), \cdots, f_{x_n}(P_0)) }_{ \nabla{f(P_0)} = (\overrightarrow{\nabla{f}}(P_0))^T }
+    \begin{pmatrix}
+           h_1 \\
+           h_2 \\
+           \vdots \\
+           h_n
+    \end{pmatrix}
+\end{align}
+
+Entonces, designando a $\overrightarrow{\nabla{f}}(P_0)$ como el vector gradiente evaluado en el punto $P_0$, resulta:
+
+\begin{equation}
+T_{P_0}(H) = \underbrace{ \nabla{f}(P_0) H }_{\text{PROD. MATRICIAL}} = \underbrace{ \overrightarrow{\nabla{f}}(P_0) \overrightarrow{H} }_{PROD. ESCALAR}
+\end{equation}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=Gradiente y diferenciabilidad]
+{ \text{f es diferenciable} \Leftrightarrow f(P_0 + h) = f(P_0) + \nabla{f}(P_0) H + \phi_{P_0}(H) }
+\end{equation}
+
+Despejando $\phi_{P_0}(H)$, dividiendo por $||H||$, tomando norma y exigiendo que el límite del cociente sea cero, resulta:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=Gradiente y diferenciabilidad]
+{ \text{f es diferenciable} \Leftrightarrow \lim_{H \rightarrow \overrightarrow{0}}\frac{ |f(P_0 + h) - f(P_0) - \nabla{f}(P_0) H| }{||H||} = 0 }
+\end{equation}
+
+Nótese que la derivada direccional es la proyección del vector gradiente sobre $\overrightarrow{v}$:
+
+\begin{equation}
+f'(P_0, \overrightarrow{v}) = \overrightarrow{ \nabla{f} }(P_0) \overrightarrow{v}
+\end{equation}
+
+Expresando este producto escalar en función de las normas y el ángulo entre ambos vectores $alpha$:
+
+\begin{equation}
+\overrightarrow{ \nabla{f} }(P_0) \overrightarrow{v} = ||\overrightarrow{ \nabla{f} }(P_0)|| cos \alpha
+\end{equation}
+
+De este modo, la derivada direccional máxima se obtiene cuando $\overrightarrow{v}$ coincide en dirección y sentido con el vector gradiente. Y en ese caso, dicho valor máximo será la norma del vector gradiente. En cuanto al valor mínimo, corresponderá a $\alpha=pi$, y será el opuesto al máximo. Por otro lado, si la derivada direccional es nula, siempre lo será en una dirección perpendicular al gradiente. Ergo, el gradiente en $P_0$ es perpendicular al conjunto de nivel 1 que pasa por $P_0$.
+
+\begin{equation}
+f \in C^1 \Rightarrow \text{f es diferenciable} \Rightarrow \left\{
+\begin{array}{ll}
+\exists \text{ todas las derivadas direccionales} \\
+\text{f es continua} \\
+\text{Todas las derivadas primeras de f son continuas}
+\end{array}
+\right.
+\end{equation}
+
+Ninguno de los recíprocos es verdadero. Sin embargo, este resultado es útil para aplicar modus tollens. Por ejemplo, si $f$ no es continua, no es diferenciable.
 
 \end{document}
