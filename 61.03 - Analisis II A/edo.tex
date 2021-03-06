@@ -154,4 +154,64 @@ y' = \frac{1}{\frac{K}{x}} -\frac{K}{x^2} \Rightarrow y' = \frac{-1}{x}
 
 Si una familia de curvas es solución pero está expresada implícitamente, puede que haya que determinar su dominio de validez.
 
+\section{EDO - clase 3 - Resolución analítica}
+
+\subsection{Variables separables}
+
+Una ED es de VP si y sólo si puede expresarse como el producto entre una función de $x$ y una función de $y$. Formalmente:
+
+\begin{equation}
+\text{Una E.D. es de VP} \Leftrightarrow y' = h(x) g(y)
+\end{equation}
+
+Resolución: Se asocia $g(y)$ con $dy$, $h(x)$ con $d(x)$ y se integra m. a m. Ejemplo:
+
+\begin{equation}
+(1+x) dy - y dx = 0 \Leftrightarrow (1+x) dy = y dx \Leftrightarrow \int \frac{dy}{y} = \int \frac{dx}{1+x}
+\end{equation}
+
+Antes de integrar m. a m., tener en cuenta que los ceros de los denominadores pueden ser soluciones singulares (SS), en tanto no se puedan obtener de la solución general obtenida al integrar:
+
+\begin{equation}
+\ln |y| = \ln |x + 1| + C \Leftrightarrow |y| = e^{\ln |x+1| + C } \Leftrightarrow |y| = \underbrace{e^C}_{k} e^{ln |x+1|} \Leftrightarrow \underbrace{y = A |x+1|}_{SG}
+\end{equation}
+
+En el último paso, se elimina el módulo de $y$ reemplazando la constante positiva $k$ (siempre es positiva por ser una potencia) por una constante $A$ que puede tomar cualquier signo.
+
+Considerando los ceros de los denominadores, $y = 0$ es una SP asociada a $A = 0$. Por otro lado, $x = -1$ es efectivamente una SS.
+
+\subsection{Lineales}
+
+Las ED lineales son aquellas de la forma $y' + s(x) y = T(x)$, con $y$ definida sobre un intervalo donde $s$ y $T$ sean continuas. Hay varios métodos de resolución, entre ellos:
+
+\subsubsection{Variación de parámetros}
+
+Se considera la ecuación homogénea asociada, $y' + s(x) y = T(x)$. Puede demostrarse que la $SG(x) = y_H + y_P$, donde $y_H$ es la solución de la ecuación homogénea, e $y_P$ es una solución particular de la ED original.
+
+Dado que la ecuación homogénea es de variables separables, puede calcularse $y_H$ con el método ya visto.
+
+Para obtener, $y_P$, si se obtuvo $y_H = C_1 y_1(x)$, puede demostrarse que $y_P(x) = L(x) y_1(x)$ es una SP de la ED original. Reemplazando esa expresión de $y_P$ en la ED, queda una ecuación de variables separables, a partir de la cual puede obtenerse la incógnita $L(x)$ y así obtener la solución final sumando $y_H$ e $y_P$.
+
+Este método (aplicando ciertas generalizaciones) puede usarse para ecuaciones de mayor orden; en todo caso, como suele ser el caso, no sirve para todos los casos, y por eso se ven otros métodos.
+
+\subsubsection{Lagrange}
+
+Dada la ED lineal $y' + s(x) y = T(x)$, se propone como solución el producto $y = u(x) v(x)$. Reemplazando esto en la ED, resulta:
+
+\begin{equation}
+\underbrace{u'v + uv'}_{y'} + s(x) \underbrace{uv}_{y} = T(x)
+\end{equation}
+
+Sacando factor común $v$ (también se puede hacer con $u$):
+
+\begin{equation}
+v (u' + u s(x)) + uv' = T(x)
+\end{equation}
+
+Exigiendo que el paréntesis sea nulo, resulta una ecuación en variables separables a partir de la cual se puede obtener $u(x)$.
+
+Tomando una SP de u, se reemplaza y queda $uv' = s(x)$, que de nuevo es de variables separables, y determina a $v(x)$.
+
+Conocidos $u(x)$ e $y(x)$, se conoce la SG $y = u(x) v(x)$.S
+
 \end{document} 
