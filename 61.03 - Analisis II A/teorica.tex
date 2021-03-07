@@ -15,7 +15,7 @@
 
 \begin{document} 
 
-\section{Teórica 1}
+\section{T1}
 
 \subsection{El espacio vectorial $\Bbb R^n$}
 
@@ -212,7 +212,7 @@ O sea, hay al menos un entorno reducido centrado en $P_0$ que no contiene otro e
 $P_0$ es p. de ac. $\Longleftrightarrow \forall B^*(P_0, r), B^*(P_0, r) \cap A \neq \varnothing$.
 Vale decir, en todo entorno reducido de $P_0$ hay elementos de $A$. El conjunto derivado de $A$, denotado $A'$, se define como el conjunto de todos los puntos de acumulación de $A: A' = \{ x \in \Bbb R^n / x \text{ x es p. de ac. de A} \}$
 
-\section{Teórica 2 - Funciones}
+\section{T2 - Funciones}
 
 \begin{subequations}
 \begin{align}
@@ -277,7 +277,7 @@ A \subset \Bbb R^n \text{ es arco-conexo } \Longleftrightarrow \exists \overline
 
 $A \subset \Bbb R^n$ es acotado $\Longleftrightarrow \forall x \in A, \exists M > 0 / \|x\| < M$. Vale decir, todo $A$ puede ser contenido en una bola de radio $M$.
 
-\section{Teórica 3 - Límite y continuidad}
+\section{T3 - Límite y continuidad}
 
 Un plano puede verse como la imagen de un campo vectorial. Si $\pi: P_0 + \alpha \overrightarrow{u} + \beta \overrightarrow{v}$ (el plano que pasa por $P_0$ y es generado por $\overrightarrow{u}$ y $\overrightarrow{v}$, entonces puede definirse el siguiente campo vectorial:
 
@@ -387,7 +387,7 @@ Dado que dos límites sucesivos dan valores diferentes, resulta que el límite o
 
 Cabe destacar que en cada uno de estos pasos, se está calculando el límite para una sola variable, por lo que vale la regla de L'Hopital y demás recursos de una variable.
 
-\section{Teórica 4 - Límite 2}
+\section{T4 - Límite 2}
 
 \subsubsection{Límites radiales}
 
@@ -427,7 +427,7 @@ Sea $\overline{f}:I \rightarrow \Bbb R^n$, con $I \subset \Bbb R$, una curva o f
 
 Una curva se dice de orden $C^p$, o bien que $\overline{f} \in C^p \Longleftrightarrow$ sus derivadas hasta el orden $p$ inclusive son todas continuas. Por ejemplo, si la primera derivada ya es discontinua, $\overline{f} \in C^0$
 
-\section{Teórica 5 - Derivadas parciales}
+\section{T5 - Derivadas parciales}
 
 \subsection{Plano normal y recta tangente}
 
@@ -476,7 +476,7 @@ f_{x_i}(P_0) = \frac{\partial f}{\partial x_i} = \lim_{h \rightarrow 0} \frac{f(
 
 En esta expresión, $e_i$ es un vector de $n$ componentes que valen todas cero, excepto en la i-ésima posición, donde vale 1.
 
-\section{Teórica 6 - Derivadas (continuación)}
+\section{T6 - Derivadas (continuación)}
 
 Para un campo escalar de $n$ variables, las derivadas parciales de orden $k$ son, en total, $n^k$.
 
@@ -702,5 +702,56 @@ J_f(P_0) \in \Bbb R^{n x m} / J_{ij} = \frac{\partial f_i}{\partial x_j}
 \end{gather}
 
 La matriz jacobiana $J_f$ puede pensarse como la forma más general de representar una derivada. Cubre el caso de los campos escalares (m = 1) y el caso de 1 variable (n = 1, m = 1).
+
+\section{T9: Derivada de la composición (regla de la cadena)}
+
+Sean $f:\Bbb R^q \rightarrow R^m$ y $g:\Bbb R^n \rightarrow \Bbb R^q$ diferenciables, y en particular sea $f$ diferenciable en el punto $g(x)$. Considérese la función compuesta $h = f \circ g = f(g(x))$. Visualmente:
+
+\begin{figure}[h]
+\caption{Composición de funciones}
+\centering
+\includegraphics[scale=0.6]{img/teo_fig007_rc.png} 
+\label{fig:composic_func}
+\end{figure}
+
+La regla de la cadena generalizada establece entonces que:
+
+\begin{gather}
+    \tcbhighmath[colframe=orange]{\begin{gathered}\label{equationAB}
+      f:\Bbb R^q \rightarrow \Bbb R^m \wedge g:\Bbb R^n \rightarrow \Bbb R^q \text{ son diferenciables }\\
+      \Downarrow \\
+      h:\Bbb R^n \rightarrow \Bbb R^m / h(x) = f(g(x)) \text{ es diferenciable, y } J_{f \circ g}(x) = J_f(g(x)) J_g (x)
+    \end{gathered}}
+\end{gather}
+
+Tanto en la composición como en el producto matricial, el orden es relevante.
+
+\subsection{Derivada respecto a una recta}
+
+Esto puede pensarse como una extensión del concepto de derivada direccional, y también como un caso particular de composición de funciones. Sea $f:\Bbb R^n \rightarrow \Bbb R$ diferenciable en el punto $P_0$, y sea la recta parametrizada $\overline{g}(t) = P_0 + t \overrightarrow{v}$, con $\overrightarrow{v} \in \Bbb R^n$. Dicha recta pasa por el punto $P_0$ y tiene su dirección determinada por $\overrightarrow{v}$.
+
+Considérese $h = f \circ g$. Dado que $g:\Bbb R \rightarrow \Bbb R^n$ y $f:\Bbb R^n \rightarrow \Bbb R$, $h:\Bbb R \rightarrow \Bbb R$. Aplicando la regla de la cadena y evaluando en $t=0$, se obtiene un resultado conocido:
+
+\begin{gather}
+h'(t) = \overrightarrow{\nabla{f}}(g(t))  \\
+h'(0) = \underbrace{ \overrightarrow{\nabla{f}}(P_0) }_{f'(g(0)) = f'(P_0)} \cdot \underbrace{ \overrightarrow{v} }_{ \overrightarrow{g}' }
+\end{gather}
+
+En palabras, $h'(0)$ es la derivada direccional de $f$ en el punto $P_0$ y la dirección de $\overrightarrow{v}$.
+
+\subsection{Derivada respecto a una función}
+
+Ya que se puede derivar respecto a una recta, derivar respecto a cualquier otro tipo de función no es otra cosa que derivar una composición de funciones. Por ejemplo, sea $f(x,y) = x^2 y$, que se desea derivar respecto a $y = x^2$. Pensando en términos de una composición:
+
+Pasada a forma paramétrica, la curva $y = x^2$ resulta $\overline{g}(t) = (t, t^2)$. Esto es necesario para que las dimensiones de los dominios e imágenes concuerden y la composición tenga sentido:
+
+\begin{equation}
+\left.
+\begin{array}{ll}
+f:\Bbb R^2 \rightarrow \Bbb R / f(x,y) = x^2 y \\
+\overline{g}: \Bbb R \rightarrow \Bbb R^2 / g(t) = (t, t^2)
+\end{array}
+\right\} \Rightarrow h = f \circ \overline{g} \Rightarrow h'(t) = \underbrace{ \left( \begin{matrix}2t^3 & t^2\end{matrix} \right) }_{J_f(\overline{g}(t))} \underbrace{ \left( \begin{matrix}1 & 2t\end{matrix} \right)^T }_{J_{\overline{g}}(t)} = 4t^3
+\end{equation}
 
 \end{document}
