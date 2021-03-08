@@ -214,4 +214,110 @@ Tomando una SP de u, se reemplaza y queda $uv' = s(x)$, que de nuevo es de varia
 
 Conocidos $u(x)$ e $y(x)$, se conoce la SG $y = u(x) v(x)$.S
 
+\section{Clase C4: Reducción de orden}
+
+De forma general, la reducción de orden es un método que consiste en plantear una sustitución que reduzca el orden de la EDO, idealmente a orden 1. Por ejemplo, dada la EDO:
+
+\begin{equation}
+xy''' - y'' = 3x
+\end{equation}
+
+Una sustitución conveniente es $\rho = y''$, que conduce a una ecuación lineal:
+
+\begin{equation}
+x \rho' - \rho = 3x \Rightarrow \rho' - \frac{1}{x} \rho = 3
+\end{equation}
+
+Resolviendo con el método de Lagrange, se plantea: $\rho = u v$:
+
+\begin{equation}
+\rho = u v \Rightarrow uv' + uv' - \frac{1}{x} uv = 0 \Rightarrow v \underbrace{ \left(u' - \frac{1}{x} u \right) }_{0} + uv' = 3
+\end{equation}
+
+Resolviendo el paréntesis para hallar $u$, es de variables separables:
+
+\begin{equation}
+u' - \frac{1}{x} u = 0 \Rightarrow \frac{du}{dx} = \frac{1}{x} u \Rightarrow \int \frac{1}{u} du = \int \frac{1}{x} dx \Rightarrow \ln |u| = \ln |x| + C_1 \Rightarrow u = k x
+\end{equation}
+
+En la ecuación de $u$, tomando como solución particular $u = x$ (obtenida con $k=1$), se calcula $v$ usando el segundo sumando en la ecuación de Lagrange:
+
+\begin{equation}
+u v' = 3 \wedge u = x \Rightarrow x v' = 3 \Rightarrow x \frac{dv}{dx} = 3 \Rightarrow \int dv = \int \frac{3}{x} dx \Rightarrow v = 3 \ln |x| + C_2
+\end{equation}
+
+Conocidos $u$ y $v$, queda determinado $\rho$:
+
+\begin{equation}
+\rho = u v \Rightarrow \rho = x (3 \ln |x| + C_2)
+\end{equation}
+
+Para obtener $y$, hay que integrar $\rho$ dos veces:
+
+\begin{equation}
+y'' = \rho \Rightarrow \frac{d^2y}{dx^2} = x (3 \ln |x| + C_2) \Rightarrow \int \frac{d^2y}{dx} = \int x (3 \ln |x| + C_2) dx
+\end{equation}
+
+Distribuyendo:
+
+\begin{equation}
+\frac{dy}{dx} = 3 \int x \ln |x| dx + C_2 \int x dx
+\end{equation}
+
+Para resolver la primera integral, dado que hay un módulo, hay que considerar dos casos: $x>0$ y $x <0$ ($x=0$ queda fuera porque es una singularidad de la función $\ln$).
+
+\subsection{$x > 0$}
+
+Si $x > 0$, simplemente se va el módulo del logaritmo:
+
+\begin{equation}
+z_1 = 3 \int x \ln(x) dx
+\end{equation}
+
+Por tabla, $\int x \ln(x) dx = -\frac{1}{4} x^2 + \frac{1}{2} x^2 \ln(x) + C$. Aplicando:
+
+\begin{equation}
+z_1 = 3  \left( -\frac{1}{4} x^2 + \frac{1}{2} x^2 \ln (x) + K_1 \right)
+\end{equation}
+
+\subsection{$x < 0$}
+
+Si $x < 0$, hay que negar x en el módulo:
+
+\begin{equation}
+z_2 = 3 \int x ln(-x) dx 
+\end{equation}
+
+Se propone el cambio de variable $\alpha = -x \Rightarrow d\alpha = -dx$:
+
+\begin{equation}
+z_2 = 3 \int (-\alpha) \ln(\alpha) (-d\alpha) \Rightarrow z_2 = 3 \int \alpha \ln(\alpha) d\alpha
+\end{equation}
+
+Es la misma integral, pero evaluada en $-x$:
+
+\begin{equation}
+z_2 = 3 \left( -\frac{1}{4} x^2 + \frac{1}{2} x^2 \ln(-x) + K_2 \right)
+\end{equation}
+
+Volviendo a la EDO, es evidente que tiene al menos dos soluciones generales diferentes. Considérese sólo el caso $x>0$ por brevedad:
+
+\begin{gather}
+y' = 3 \left( -\frac{1}{4} x^2 + \frac{1}{2} x^2 \ln (x) + K_1 \right) + C_2 \underbrace{\int x dx}_{\frac{1}{2} x^2 + C_3} \\
+y' = -\frac{3}{4} x^2 + \frac{3}{2} x^2 \ln(x) + \underbrace{3 K_1}_{\text{cte}} + C_2 \frac{1}{2} x^2 + \underbrace{C_2 C_3}_{\text{cte}} \\
+y' = \frac{3}{2} x^2 \ln(x) - \frac{3}{4} x^2 + C_4 x^2 + C_5 \\
+y = \frac{3}{2} \int x^2 \ln(x) dx -\frac{3}{4} \int x^2 dx + C_4 \int x^2 dx + C_5 \int dx 
+\end{gather}
+
+Por tabla: $\int x^2 \ln(x) dx = \frac{1}{3} x^3 \ln(x) - \frac{1}{9} x^3 + C$
+
+\begin{gather}
+y = \frac{3}{2} \left( \frac{1}{3} x^3 \ln(x) - \frac{1}{9} x^3 + C_6 \right) -\frac{3}{4} \frac{1}{3} (x^3 + C_7) + C_4 \frac{1}{3} (x^3 + C_8) + C_5 (x + C_9) \\
+y = \frac{1}{2} x^3 \ln(x) - \frac{1}{6} x^3 + C_{10} - \frac{1}{4} x^3 + C_{11} + C_{12} x^3 + C_{13} + C_5 x + C_{14} \\
+y = \frac{1}{2} x^3 \ln(x) - \frac{5}{12} x^3 + C_{12} x^3 + C_5 x + C_{15} \\
+y = \frac{1}{2} x^3 \ln(x) + K_1 x^3 + K_2 x + K_3
+\end{gather}
+
+Para completar el ejercicio, faltaría calcular $y$ para el caso $x<0$. Nótese que quedaron 3 constantes a determinar en la SG para $x >0$, lo cual es consistente con el hecho de que la EDO original era de grado 3.
+
 \end{document} 
