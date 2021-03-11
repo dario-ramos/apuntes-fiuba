@@ -15,6 +15,9 @@
 
 \begin{document} 
 
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+
 \section{T1}
 
 \subsection{El espacio vectorial $\Bbb R^n$}
@@ -850,6 +853,91 @@ f:\Bbb R^n \rightarrow \Bbb R \text{ diferenciable en } \Bbb R^n \text{ y homog�
 
 Supóngase $f:\Bbb R^3 \rightarrow \Bbb R$, definida como $f(x,y,z) = x^2 y^3 - z$. Considérese el conjunto de puntos $(x,y,z) \in \Bbb R^3 /f(x,y,z) = 0$, o en otras palabras el conjunto de nivel cero $C_0$. Una forma alternativa de pensar en este conjunto es como el gráfico de una función $z = \phi(x,y)$, con $Graf \phi = C_0$.
 
-Para este ejemplo, por simple despeje, $z = x^2 y^3$. Pero en la mayoría de los casos tal despeje no es posible; sin embargo, eso no implica que $\phi(x,y)$ no exista. Existe un teorema que permite calcular las derivadas parciales de la función implícita sin conocer su expresión, dadas ciertas condiciones.
+Para este ejemplo, por simple despeje, $z = x^2 y^3$. Pero en la mayoría de los casos tal despeje no es posible; sin embargo, eso no implica que $\phi(x,y)$ no exista. Existe un teorema que permite calcular las derivadas parciales de la función implícita sin conocer su expresión, dadas ciertas condiciones. A saber:
+
+\subsubsection{Teorema de Cauchy-Dini}
+
+Sea $f:\Bbb R^{n+1} \rightarrow \Bbb R$ un campo escalar de clase $C_1$ en el punto $(\overrightarrow{x}, z)$, con $x \in \Bbb R^n$ y $z \in \Bbb R$. Esta notación divide a un punto entre las $n$ coordenadas de $x$, y una coordenada dada por $z$. Si además $f(\overrightarrow{x}, z) = 0$ y $\frac{\partial f}{\partial z} \neq 0$, en un cierto entorno de $\overrightarrow{x}$ existe $z:E(x) \rightarrow \Bbb R / z = \phi(\overrightarrow{x})$. Dicha función implícita $\phi$ satisface $f(\overrightarrow{x}, \phi(\overrightarrow{x})) = 0$. Y por último, las derivadas parciales de $z$ son:
+
+\begin{equation}
+z_{x_1} = -\frac{\partial f / \partial x_1}{\partial f / \partial z}, z_{x_2} = -\frac{\partial f / \partial x_2}{\partial f / \partial z}, \ldots
+\end{equation}
+
+\subsubsection{Funciones definidas implícitamente por un sistema de ecuaciones}
+
+Por ejemplo, sea el sistema de ecuaciones:
+
+\begin{equation}
+\left\{
+\begin{array}{ll}
+f_1(x, y, z) = 0 \\
+f_2(x, y, z) = 0
+\end{array}
+\right.
+\end{equation}
+
+Éste es un sistema de 2 ecuaciones con 3 incógnitas. Por ende, puede decirse que hay un grado de libertad, ya que hay una variable libre, y las otras dos quedan determinadas por ella. Si se toma $x$ como la variable libre, se obtiene:
+
+\begin{equation}
+\begin{array}{ll}
+y = y(x) \\
+z = z(x)
+\end{array} \Rightarrow
+\left\{
+\begin{array}{ll}
+f_1(x, y(x), z(x)) = 0 \\
+f_2(x, y(x), z(x)) = 0
+\end{array}
+\right.
+\end{equation}
+
+Derivando con la regla de la cadena, miembro a miembro, resulta:
+
+\begin{figure}[h]
+\caption{Derivando un sistema de ecuaciones}
+\includegraphics[scale=1]{img/teo_fig009_tcd.png} 
+\centering
+\label{fig:tcd}
+\end{figure}
+
+\begin{equation}
+\left\{
+\begin{array}{ll}
+\frac{\partial f_1}{\partial x} + \frac{\partial f_1}{\partial y} \frac{dy}{dx} + \frac{\partial f_1}{\partial z} \frac{dz}{dx} = 0 \\
+\frac{\partial f_2}{\partial x} + \frac{\partial f_2}{\partial y} \frac{dy}{dx} + \frac{\partial f_2}{\partial z} \frac{dz}{dx} = 0
+\end{array}
+\right.
+\end{equation}
+
+Ahora quedan dos ecuaciones con dos incógnitas: $\frac{dy}{dx}$ y $\frac{dz}{dx}$. Pasando $\frac{\partial f_1}{\partial x}$ y $\frac{\partial f_2}{\partial x}$ como términos independientes y expresando matricialmente:
+
+\begin{equation}
+\left\{
+\begin{array}{ll}
+\frac{\partial f_1}{\partial y} \frac{dy}{dx} + \frac{\partial f_1}{\partial z} \frac{dz}{dx} = -\frac{\partial f_1}{\partial x} \\
+\frac{\partial f_2}{\partial y} \frac{dy}{dx} + \frac{\partial f_2}{\partial z} \frac{dz}{dx} = -\frac{\partial f_1}{\partial x}
+\end{array}
+\right. \approx 
+\underbrace{
+\begin{bmatrix}
+\frac{\partial f_1}{\partial y} & \frac{\partial f_1}{\partial z} \\
+\frac{\partial f_2}{\partial y} & \frac{\partial f_2}{\partial z}
+\end{bmatrix}
+}_{A`}
+\begin{bmatrix}
+dy/dx \\
+dz/dx
+\end{bmatrix} = 
+\begin{bmatrix}
+-\partial f_1/ \partial x \\
+-\partial f_2/ \partial x
+\end{bmatrix}
+\end{equation}
+
+Para que este sistema sea determinado, o en otras palabras, para que existan $\frac{dy}{dx}$ y $\frac{dz}{dx}$, el determinante de la matriz $A$ debe ser no nulo.
+
+\subsubsection{Teorema de Cauchy-Dini generalizado}
+
+Sea $\overline{f}:\Bbb R^{n+m} \rightarrow \Bbb R^m$, $\overline{f} = (f_1, f_2, \ldots, f_m)$. Vale decir, un campo vectorial compuesto por $m$ campos escalares de $n$ variables. Sea $f_i(\overrightarrow{x}, \overrightarrow{z}) = 0$, donde $\overrightarrow{x} \in \Bbb R^n$ corresponde a las variables libres, y $\overrightarrow{z} \in \Bbb R^m$ corresponde a las variables dependientes. De la condición de igualdad a cero surge un sistema de ecuaciones al aplicar el teorema de Cauchy-Dini a cada campo escalar. En dicho sistema, las incógnitas son $\frac{\partial z_k}{\partial x_h}$, donde $k = 1, 2, \ldots, m$ y $h = 1, 2, \ldots, n$.
 
 \end{document}
