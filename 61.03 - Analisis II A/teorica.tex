@@ -1016,4 +1016,114 @@ Si $\forall E(P_0) \in P / f(P) \geq f(P_0)$, existen puntos $P' / f(P') \leq f(
 
 Nótese que la condición es necesaria, pero no suficiente. La anulación total del gradiente en un punto no garantiza que el mismo sea un extremo local, pero en todo extremo local se anula el gradiente.
 
+\section{T12 - Extremos, 2da parte}
+
+Otra forma más general de expresar la condición de diferenciabilidad es:
+
+\begin{equation}
+f(P_0 + H) = f(P_0) + J_f(P_0) H + \frac{1}{2} H^T H_f(P_0) H + \sigma( ||H||^2 )
+\label{eq:hessiandiff}
+\end{equation}
+
+En la ecuación~\ref{eq:hessiandiff}, $H_f$ es la matriz de Hesse, o Hessiano: $H_{f_{ij}} = \frac{\partial^2 f}{\partial x_j \partial x_i}$. Así como el jacobiano está asociado a las derivadas parciales de primer orden, el hessiano agrupa las derivadas de segundo orden mixtas. Por ello se entiende las que no se hacen derivando dos veces la misma variable.
+
+El último término es una forma abreviada del infinitésimo que aparecía en la definición inicial de diferenciabilidad:
+
+\begin{equation}
+\sigma(||H||^2) = \frac{\phi(H)}{||H||^2}, \lim_{H \rightarrow 0}  \sigma(||H||^2) = 0
+\end{equation}
+
+Si $P_0$ es un extremo local y $f \in C^3$, el término del jacobiano se anula, y resulta:
+
+\begin{equation}
+f(P_0 + H) = f(P_0) + \frac{1}{2} H^T H_f(P_0) H + \sigma(||H||^2)
+\end{equation}
+
+Sea:
+
+\begin{equation}
+g:\Bbb R^n \rightarrow \Bbb R / g(H) = \frac{1}{2} H^T H_f(P_0) H
+\end{equation}
+
+Por las dimensiones de los dos vectores y la matriz, el producto da siempre un escalar. La función $g$ es una \textbf{forma cuadrática} en $\Bbb R^n$ que se dice \textbf{definida positiva (o negativa)} según sea $g(H) > 0$ (o $g(H) < 0$) para todo $H \neq 0$.  
+
+Si se considera el subconjunto de $\Bbb R^n / ||H|| = 1$ y se restringe $g$ a ese conjunto, debe alcanzarse un mínimo $m$. Ergo, en $P_0$ se alcanza un mínimo local si $g$ es definida positiva, un máximo si $g$ es definida negativa, y un punto silla si es indefinida. En el caso de que sea nula, se requiere otro análisis. Recuérdese que en todo este análisis, $P_0$ es un candidato a extremo local por anularse el jacobiano en él.
+
+g es definida positiva $\Leftrightarrow$ todos los determinantes diagonales de $H(P_0)$ son positivos
+
+g es definida negativa $\Leftrightarrow$ todos los determinantes diagonales de orden impar de $H(P_0)$ son negativos, y los de orden par son positivos
+
+g es indefinida $\Leftrightarrow$ no es definida positiva ni negativa
+
+\subsection{Determinantes diagonales}
+
+Para explicar a través de un ejemplo, considérese una matriz de 4x4 con elementos $a, b, c, \ldots , $ñ dispuestos por filas:
+
+\begin{figure}[h]
+\caption{Determinantes diagonales}
+\includegraphics[scale=0.8]{img/teo_fig011_detdiag.png} 
+\centering
+\label{fig:detdiag}
+\end{figure}
+
+\begin{gather}
+\det_1 = \det [a] = a \\
+\det_2 = \det \begin{bmatrix} a & b \\ e & f \end{bmatrix} = a f - b e \\
+\det_3 = \det \begin{bmatrix} a & b & c \\ e & f & g \\ i & j & k \end{bmatrix} \\
+\det_4 = \det \begin{bmatrix} a & b & c & d \\ e & f & g & h \\ i & j & k & l \\ ll & m & n & \tilde{n} \end{bmatrix}
+\end{gather}
+
+Generalizando, $\det_i$ se obtiene tomando una submatriz cuadrada de tamaño $i$ cuyo primer elemento siempre coincide con el primer elemento de la matriz original. El subíndice $i$ va de $1$ a $n$, siendo $\det_n$ equivalente al determinante de la matriz completa.
+
+Volviendo al tema de si $g$ es definida positiva o negativa, si la matriz del ejemplo fuera $H(P_0)$:
+
+$g$ es definida positiva y hay un mínimo local en $P_0$ si $\det_i > 0 \forall i \in (1 \ldots 4)$
+
+$g$ es definida negativa y hay un máximo local en $P_0$ si $\det_1 < 0, \det_2 > 0, \det_3 < 0, \det_4 > 0$. Vale decir, todos los impares negativos, y todos los pares positivos.
+
+En cualquier otro caso, $g$ es indefinida. Si no ocurre que todos los determinantes diagonales son nulos, entonces $P_0$ es un punto silla.
+
+\subsection{Extremos condicionados}
+
+Sea un campo escalar de $n$ variables $z = F(x_1, x_2, \ldots, x_n)$ con $m$ condiciones de vínculo de la forma $G(x_1, x_2, \ldots, x_n) = 0$. Se define una función auxiliar $H$, cuyos extremos son los de $F$ restringida por las condiciones $G$. De forma general:
+
+\begin{equation}
+H(x_1, x_2, \ldots, x_n; \lambda_1, \lambda_2, \ldots, \lambda_m) = F(x_1, x_2, \ldots, x_n) + \sum_{i=1}^m \lambda_i G_i(x_1, x_2, \ldots, x_n) 
+\end{equation}
+
+Los escalares $\lambda_i$ se denominan \textbf{multiplicadores de Lagrange}, y son los valores a determinar para resolver un problema de extremos condicionados.
+
+Por ejemplo, sea $F(x,y) = 3 x^2 + y^2 - x + 1$, y se desea hallar sus extremos sobre la curva $x^2 + \frac{y^2}{4} = 1$. La curva determina la única condición de vínculo $G(x,y) = x^2 + \frac{y^2}{4} - 1$. La función auxiliar $H$ resulta:
+
+\begin{equation}
+H(x, y, \lambda) = 3 x^2 + y^2 - x + 1 + \lambda \left( x^2 + \frac{y^2}{4} - 1 \right)
+\end{equation}
+
+El próximo paso es hallar los puntos críticos de $H$. Para ello, se buscan los ceros del gradiente, o lo que es lo mismo, de las derivadas parciales en cada componente:
+
+\begin{equation}
+\left\{
+\begin{array}{ll}
+H_x = 6 x - 1 + 2 \lambda x \\
+H_y = 2 y + \frac{1}{2} \lambda y \\
+H_{\lambda} = x^2 + \frac{y^2}{4} - 1
+\end{array}
+\right.
+\end{equation}
+
+En las ecuaciones que tienen $\lambda$, conviene despejarlo primero, porque es el que primero interesa restringir:
+
+\begin{equation}
+\begin{array}{ll}
+H_x = 0 \Leftrightarrow \lambda = \frac{1-6x}{2x} \\
+H_y = 0 \Leftrightarrow \lambda = -4, \text{ con } y \neq 0
+\end{array}
+\end{equation}
+
+Fijado $\lambda = -4$, reemplazando en la primera ecuación, se obtiene $x = -\frac{1}{2}$. Ingresando $x$ en la tercera ecuación, resulta $y = \pm \sqrt{3}$. Esto da dos posibles puntos críticos: $(-\frac{1}{2}, \sqrt{3})$ y $(-\frac{1}{2}, -\sqrt{3})$
+
+Considerando el caso $y = 0$, que había sido apartado al calcular $\lambda$, se verifica que $x^2 = 1$ anula todas las derivadas. Por lo tanto, hay dos puntos críticos posibles más: $(1, 0)$ y $(-1, 0)$.
+
+Para categorizar los posibles puntos críticos, queda como ejercicio analizar el hessiano de la función auxiliar $H$ en dichos puntos.
+
 \end{document}
