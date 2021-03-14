@@ -324,4 +324,52 @@ Para completar el ejercicio, faltaría calcular $y$ para el caso $x<0$. Nótese 
 
 Las EDOs homogéneas de primer orden tienen la forma general $y' = f(x,y)$, donde $f(x,y)$ es homogénea de grado 0. Todas las ecuaciones de esta familia pueden ser resueltas con el cambio de variable $z = \frac{y}{x}$. De esto se sigue que $x = 0$ jamás será SS, aunque obviamente pueden existar otras SS.
 
+\section{Clase C7}
+
+\subsection{Ecuaciones de Bernoulli}
+
+Se caracterizan por la forma:
+
+\begin{equation}
+y' + p(x) y = q(x) y^n
+\end{equation}
+
+En dicha expresión, las funciones $p(x)$ y $q(x)$ deben ser continuas en el intervalo de interés, y $n$ es un número real, no necesariamente entero.
+
+Con la sustitución $z = y^(1-n) \Rightarrow z' = (1-n) y^{-n} y'$, la ecuación de Bernoulli se convierte en una ecuación lineal en la variable $z$, y se pueden aplicar los métodos ya vistos para ecuaciones de ese tipo.
+
+\subsection{Trayectorias ortogonales}
+
+Sea una familia de curvas dadas por $y' = f(x,y)$. Las T.O. son las curvas de la familia solución de $\frac{-1}{y'} = f(x,y)$. Para que esto tenga sentido, ambas familias de curvas deben ser uniparamétricas. En otras palabras, una curva cualquiera debe poder ser parametrizada con un único parámetro $t$.
+
+Por ejemplo, se desea hallar las T.O. de la familia dada por $y = c x^2$. Esta familia es uniparamétrica, ya que puede expresarse como $(x, y) = (t, c t^2)$.
+
+\begin{equation}
+y = c x^2 \Rightarrow y' = 2 c x
+\end{equation}
+
+Para eliminar la constante $c$, se divide $y$ por $y'$ miembro a miembro:
+
+\begin{equation}
+\frac{y}{y'} = \frac{x}{2} \Rightarrow y' = \frac{2y}{x}
+\end{equation}
+
+Obtenida la expresión $y' = f(x,y)$, se resuelve $\frac{-1}{y'} = f(x,y)$, que resulta de variables separables:
+
+\begin{equation}
+\frac{-1}{y'} = \frac{2y}{x} \Rightarrow y' = \frac{-x}{2y} \Rightarrow \frac{dy}{dx} = \frac{-x}{2y} \Rightarrow 2 \int y dy = -\int x dx \Rightarrow y^2 = -\frac{1}{2} x^2 + k
+\end{equation}
+
+Expresado como curva:
+
+\begin{equation}
+\frac{x^2}{2} + y^2 = k
+\end{equation}
+
+O sea que las curvas ortogonales a las parábolas son elipses, lo cual geométricamente tiene sentido. Más específicamente, en cada punto que una curva corta a su trayectoria ortogonal, las rectas tangentes son perpendiculares. Equivalentemente, las derivadas son recíprocas y opuestas (porque la recta ortogonal a una recta de pendiente $m$ tiene pendiente $\frac{-1}{m}$).
+
+\subsection{Teorema de existencia y unicidad para EDOs de 1er orden}
+
+Dada $y' = f(x,y)$, con $f \in C^1 \Rightarrow$ por cada punto $(x_0, y_0)$ pasa 1 y sólo 1 curva solución o curva integral. En un entorno de $x_0$, existe una única solución $y = y(x)$ que verifica $y(x_0) = y_0$, o sea la condición inicial de la EDO.
+
 \end{document} 
