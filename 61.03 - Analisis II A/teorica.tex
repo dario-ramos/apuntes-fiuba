@@ -4,6 +4,7 @@
 \usepackage{amssymb}
 \usepackage[spanish]{babel}
 \usepackage{cancel}
+\usepackage{caption}
 \usepackage[margin=1.5in]{geometry}
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
@@ -939,5 +940,80 @@ Para que este sistema sea determinado, o en otras palabras, para que existan $\f
 \subsubsection{Teorema de Cauchy-Dini generalizado}
 
 Sea $\overline{f}:\Bbb R^{n+m} \rightarrow \Bbb R^m$, $\overline{f} = (f_1, f_2, \ldots, f_m)$. Vale decir, un campo vectorial compuesto por $m$ campos escalares de $n$ variables. Sea $f_i(\overrightarrow{x}, \overrightarrow{z}) = 0$, donde $\overrightarrow{x} \in \Bbb R^n$ corresponde a las variables libres, y $\overrightarrow{z} \in \Bbb R^m$ corresponde a las variables dependientes. De la condición de igualdad a cero surge un sistema de ecuaciones al aplicar el teorema de Cauchy-Dini a cada campo escalar. En dicho sistema, las incógnitas son $\frac{\partial z_k}{\partial x_h}$, donde $k = 1, 2, \ldots, m$ y $h = 1, 2, \ldots, n$.
+
+\section{T11 - Taylor}
+
+Para una variable:
+
+\begin{equation}
+g(x_0 + h) = \underbrace{ g(x_0) + g'(x_0) h + \frac{1}{2!} g''(x_0) h^2 + \ldots + \frac{1}{n!} g^{(n)}(x_0) h^n }_{P_n(x_0)} +  \underbrace{ \frac{1}{(n+1)!} g^{(n+1)}(c) h^{n+1} }_{T_n(x_0, c)}
+\end{equation}
+
+$P_n(x_0)$ es el polinomio de Taylor de grado $n$ desarrollado en el punto $x_0$. Dicho punto suele denominarse como centro del desarrollo. El término $T_n(x_0, c)$ es el resto o término complementario; es importante recordar que se evalúa en $c \in (x_0, x_0 + h)$ y no en $x_0$.
+
+Una importante consecuencia del teorema de Taylor es que si $g$ es infinitamente derivable, y se conocen todas sus derivadas en un punto, se puede extrapolar la función completa sólo con un punto. También es posible tomar más de un punto de desarrollo, para disminuir el error.
+
+El teorema de Taylor de 1 variable puede reescribirse en términos del diferencial en lugar de la derivada. Puede demostrarse que esa definición es válida para $n$ variables.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=Taylor generalizado]
+{ g(x_0 + h) = g(x_0) + dg(x_0) h + \ldots + \frac{1}{n!} d^{(n)}g(x_0) +  \frac{1}{(n+1)!} d^{(n+1)}g(c) }
+\end{equation}
+
+Nótese que las potencias de $h$ se fueron. En dicha expresión, $d^ng$ es el n-ésimo diferencial de $g$. Para campos escalares:
+
+\begin{equation}
+d^{n}f(P_0, \overrightarrow{H}) = \left. (\overrightarrow{H} \cdot \overrightarrow{\nabla f})^n \right|_{P_0}
+\end{equation}
+
+El producto entre $\overrightarrow{H}$ y el gradiente es escalar, y se evalúa en $P_0$. De esa manera, el teorema de Taylor para campos escalares de $n$ variables resulta:
+
+Para un campo escalar $f \in C^{n+1}$ en un entorno de $P_0$, y para $H \in \Bbb R^n/ (P_0+ H)$ pertenece a un entorno de $P_0$ incluido en $Dom f$:
+
+\begin{equation}
+f(P_0+H) = f(P_0) + df(Po, H) + \ldots + \frac{1}{n!} d^nf(Po,H) + \frac{1}{(n+1)!} d^{n+1}f(c)
+\end{equation}
+
+\subsection{Extremos de campos escalares}
+
+\noindent
+\begin{minipage}{\textwidth}
+\centering
+\captionof{figure}{Extremo de campo escalar tipo 1}
+\includegraphics[scale=0.6]{img/teo_fig010_exce01.png} 
+\label{fig:exce01}
+\end{minipage}
+
+%\begin{figure}[h]
+%\caption{Extremo de campo escalar tipo 3}
+%\includegraphics[scale=0.5]{img/teo_fig010_exce03.png} 
+%\centering
+%\label{fig:exce03}
+%\end{figure}
+
+Sea $P_0$ un punto interior del dominio de $f$, y sea:
+
+\begin{equation}
+E(P_0) \subset Dom f / f(P) \leq f(P_0) \forall P \in E(P_0)
+\end{equation}
+
+Entonces, $P_0$ es un máximo local. Es un escalar, y se alcanza en $P_0$. Este es el caso tipo 1, correspondiente a la figura~\ref{fig:exce01}. 
+
+\begin{figure}[h]
+\caption{Extremo de campo escalar tipo 2}
+\includegraphics[scale=0.6]{img/teo_fig010_exce02.png} 
+\centering
+\label{fig:exce02}
+\end{figure}
+
+El caso 2, ejemplificado en la figura~\ref{fig:exce02}, se define igual que el 1, cambiando el $\leq$ por $\geq$, y ``máximo local'' por ``mínimo local''
+
+El caso 3 se denomina \textbf{punto silla}, y se define de la siguiente manera:
+
+Si $\forall E(P_0) \in P / f(P) \geq f(P_0)$, existen puntos $P' / f(P') \leq f(P_0)$, y además $f$ es diferenciable en $P_0$ con diferencial nulo en dicho punto $\Rightarrow$ el punto $(P_0, f(P_0))$ es un punto silla.
+
+\textbf{Teorema}: Sea $f$ diferenciable en $P_0$, y $(P_0, f(P_0))$ un extremo local $\Rightarrow$ todas las derivadas parciales son nulas en $P_0$ $\Rightarrow \overrightarrow{\nabla f}(P_0) = 0$.
+
+Nótese que la condición es necesaria, pero no suficiente. La anulación total del gradiente en un punto no garantiza que el mismo sea un extremo local, pero en todo extremo local se anula el gradiente.
 
 \end{document}
