@@ -45,13 +45,13 @@ Con estas definiciones, puede probarse que $\Bbb R^n$ es cerrado para la suma ve
 Adicionalmente, $\Bbb R^n$ pasa a ser un \textbf{espacio vectorial euclídeo} si se le agrega un \textbf{producto escalar}:
 
 \begin{equation}
-\forall x, y \in \Bbb R^n, \alpha = x \cdot y \Longleftrightarrow \alpha = \sum_{i=1}^{n} x_i y_i = x_1 y_1 + x_2 y_2 + ... + x_n y_n
+\forall x, y \in \Bbb R^n, \alpha = x \cdot y \Longleftrightarrow \alpha = \sum\limits_{i=1}^{n} x_i y_i = x_1 y_1 + x_2 y_2 + ... + x_n y_n
 \end{equation}
 
 Definiendo una \textbf{norma} sobre el producto escalar, $\Bbb R^n$ pasa a ser un espacio vectorial euclídeo y normado. La norma canónica en $\Bbb R^n$ es la raíz cuadrada del producto escalar del vector consigo mismo:
 
 \begin{equation}
-\forall x \in \Bbb R^n, \|x\| = \sqrt{x \cdot x} = \sqrt{ \sum_{i=1}^{n} x_i^2 }
+\forall x \in \Bbb R^n, \|x\| = \sqrt{x \cdot x} = \sqrt{ \sum\limits_{i=1}^{n} x_i^2 }
 \end{equation}
 
 Un \textbf{versor} es un vector de norma 1. Para "normalizar" cualquier vector, se lo divide por su norma:
@@ -589,13 +589,13 @@ Ergo, la transformación lineal de la definición de diferenciabilidad es la der
 Sea un vector genérico $\overrightarrow{H} \in \Bbb R^n$, expresado como matriz de $1xn$ o vector fila $H$:
 
 \begin{equation}
-H = \sum_{i=1}^{n} {h_i \overrightarrow{e_i}} \Rightarrow T_{P_0}(H) = \sum_{i=1}^{n}{ h_i \underbrace{T_{P_0}(\overrightarrow{e_i})}_{\text{deriv. parcial } f_{x_i}} } = \sum_{i=1}^{n}{ h_i f_{x_i}(P_0) }
+H = \sum\limits_{i=1}^{n} {h_i \overrightarrow{e_i}} \Rightarrow T_{P_0}(H) = \sum\limits_{i=1}^{n}{ h_i \underbrace{T_{P_0}(\overrightarrow{e_i})}_{\text{deriv. parcial } f_{x_i}} } = \sum\limits_{i=1}^{n}{ h_i f_{x_i}(P_0) }
 \end{equation}
 
 (Recuérdese de la sección anterior que la transformación lineal $T_{P_0}$ corresponde a la derivada direccional, y para los versores $\overrightarrow{e_i}$ eso corresponde a su vez a las derivadas parciales). La sumatoria final puede ser expresada como un producto escalar entre dos vectores de $\Bbb R^n$:
 
 \begin{align}
-    \sum_{i=1}^{n}{ f_{x_i}(P_0) h_i } &= \underbrace{ (f_{x_1}(P_0), f_{x_2}(P_0), \cdots, f_{x_n}(P_0)) }_{ \nabla{f(P_0)} = (\overrightarrow{\nabla{f}}(P_0))^T }
+    \sum\limits_{i=1}^{n}{ f_{x_i}(P_0) h_i } &= \underbrace{ (f_{x_1}(P_0), f_{x_2}(P_0), \cdots, f_{x_n}(P_0)) }_{ \nabla{f(P_0)} = (\overrightarrow{\nabla{f}}(P_0))^T }
     \begin{pmatrix}
            h_1 \\
            h_2 \\
@@ -1088,7 +1088,7 @@ En cualquier otro caso, $g$ es indefinida. Si no ocurre que todos los determinan
 Sea un campo escalar de $n$ variables $z = F(x_1, x_2, \ldots, x_n)$ con $m$ condiciones de vínculo de la forma $G(x_1, x_2, \ldots, x_n) = 0$. Se define una función auxiliar $H$, cuyos extremos son los de $F$ restringida por las condiciones $G$. De forma general:
 
 \begin{equation}
-H(x_1, x_2, \ldots, x_n; \lambda_1, \lambda_2, \ldots, \lambda_m) = F(x_1, x_2, \ldots, x_n) + \sum_{i=1}^m \lambda_i G_i(x_1, x_2, \ldots, x_n) 
+H(x_1, x_2, \ldots, x_n; \lambda_1, \lambda_2, \ldots, \lambda_m) = F(x_1, x_2, \ldots, x_n) + \sum\limits_{i=1}^m \lambda_i G_i(x_1, x_2, \ldots, x_n) 
 \end{equation}
 
 Los escalares $\lambda_i$ se denominan \textbf{multiplicadores de Lagrange}, y son los valores a determinar para resolver un problema de extremos condicionados.
@@ -1125,5 +1125,125 @@ Fijado $\lambda = -4$, reemplazando en la primera ecuación, se obtiene $x = -\f
 Considerando el caso $y = 0$, que había sido apartado al calcular $\lambda$, se verifica que $x^2 = 1$ anula todas las derivadas. Por lo tanto, hay dos puntos críticos posibles más: $(1, 0)$ y $(-1, 0)$.
 
 Para categorizar los posibles puntos críticos, queda como ejercicio analizar el hessiano de la función auxiliar $H$ en dichos puntos.
+
+\section{T13 - Integrales}
+
+\subsection{Integral de línea o circulación}
+
+Sean $\overrightarrow{f}$ un campo vectorial $\in C^0$, y $\overrightarrow{\beta}$ una curva uniparamétrica $\in C^1$ cuyos puntos sean de igual dimensión que los del dominio de $f$. La integral de línea de $\overrightarrow{f}$ sobre $\overrightarrow{\beta}$ se define entonces como:
+
+\begin{equation}
+\int_{\overrightarrow{\beta}} \overrightarrow{f} d\overrightarrow{\beta} = \int_{a}^{b} \overrightarrow{f}(\overrightarrow{\beta}(t)) \underbrace{\cdot}_{prod. escalar} \underbrace{ \beta '(t) dt }_{d\overrightarrow{\beta}}
+\end{equation}
+
+Los valores $a$ y $b$ corresponde a los puntos inicial y final de la curva $\overrightarrow{\beta}$. No es trivial ver el sentido geométrico de la integral en este caso, pero tiene muchas aplicaciones, como por ejemplo calcular flujo magnético.
+
+\subsection{Integral de trayectoria}
+
+Sean ahora $f$ un campo escalar $\in C^0$, y $\overrightarrow{r}$ una curva uniparamétrica $\in C^1$ cuyos puntos sean de igual dimensión que los del dominio de $f$. Se define entonces la integral de trayectoria como:
+
+\begin{equation}
+\int_{\overrightarrow{r}} f(\overrightarrow{r}) d\overrightarrow{r} = \int_{a}^{b} f(\overrightarrow{r(t)}) ||r'(t)|| dt
+\end{equation}
+
+Nuevamente, $a$ y $b$ son los valores del parámetro $t$ asociados al punto inicial y final de $r$, respectivamente. Nótese que el integrando es directamente un número real en este caso (en el otro también, pero hay que realizar un producto escalar primero).
+
+En este caso, sí hay una interpretación geométrica directa de la integral, al menos para $\Bbb R^3$. Si el dominio de $f$ es $\Bbb R^2$, y su gráfico $z = f(x,y)$ una superficie en $\Bbb R^3$, y $r$ es una curva en $\Bbb R^3$, la integral de línea de $f$ sobre $r$ es el área bajo la curva $r$ a lo largo del gráfico de $f$.
+
+\begin{figure}[ht]
+\caption{Integral de línea en $\Bbb R^3$}
+\centering
+\includegraphics[scale=0.6]{img/teo_fig012_li.png} 
+\end{figure}
+
+Por lo tanto, una aplicación inmediata de esta integral es el cálculo del área de superficies curvas.
+
+\subsection{Invirtiendo el sentido de circulación}
+
+Para hacerlo manteniendo fijos $a$ y $b$:
+
+\begin{align}
+\overrightarrow{\beta} &: [a, b] \rightarrow \Bbb R^n \\
+\overrightarrow{\sigma} &: [a, b] \rightarrow \Bbb R^n / \overrightarrow{\sigma}(t) = \overrightarrow{\beta}(a + b - t) 
+\end{align}
+
+\subsection{Observaciones}
+
+\textbf{1)} Si el campo escalar de la integral de trayectoria es la constante 1, el resultado de la integral es la longitud de la curva. Por ejemplo, se sabe que la longitud de la circunferencia es $2 \pi r$. Integrando una curva que represente un círculo de radio $r$:
+
+\begin{align}
+\overrightarrow{r(t)} &= (r \cos t, r \sin t) \Rightarrow \int_{\overrightarrow{r}} 1 d\overrightarrow{r} = \int_{0}^{2 \pi} ||r'(t)|| dt = \int_{0}^{2 \pi} ||(-r \sin t, r \cos t)|| dt \\
+&= \int_{0}^{2 \pi} \sqrt{r^2 \sin^2 (t) + r^2 \cos^2 (t)} dt = r \int_{0}^{2 \pi} \underbrace{ \sqrt{\sin^2(t) + \cos^2(t)} }_{1} dt = r \int_{0}^{2 \pi} dt \\
+&= r (2 \pi - 0) = 2 \pi r
+\end{align}
+
+\textbf{2)} Ambos tipos de integral (de línea y de trayectoria) están igualmente bien definidas para curvas $C^1$ a trozos, o seccionalmente $C^1$. La integral simplemente se calcula para cada sección de curva, y se suman los resultados.
+
+\begin{equation}
+\left.
+\begin{array}{ll}
+\beta = \bigcup\limits_{i=1}^p \beta_i, \text{ con } \beta_i \in C^1 \\
+\beta_i: [a_i, b_i] \rightarrow \Bbb R^n \\
+\beta_{i}(b_i) = \beta_{i+1}(a_{i+1})
+\end{array}
+\right\} \Rightarrow
+\left\{
+\begin{array}{ll}
+\int_{\overrightarrow{\beta}} \overrightarrow{f} d\overrightarrow{\beta} = \sum\limits_{i=1}^p \int_{\overrightarrow{\beta_i}} \overrightarrow{f} d\overrightarrow{\beta_i} \\
+\int_{\overrightarrow{\beta}} f d\overrightarrow{\beta} = \sum\limits_{i=1}^p \int_{\overrightarrow{\beta_i}} f d\overrightarrow{\beta_i}
+\end{array}
+\right.
+\end{equation}
+
+\textbf{3)} Para curvas cerradas, el sentido de circulación se define:
+
+\begin{itemize}
+\item Positivo si a la izquierda está el interior: $\oint_{\beta^+}$
+\item Negativo si a la derecha está el interior: $\oint_{\beta^-}$
+\end{itemize}
+
+\textbf{4)} Curva simple = curva inyectiva. La inyectividad se considera mirando la curva parametrizada: cada valor de $t$ debe corresponder a un punto distinto. Por lo tanto, si la curva pasa más de una vez por el mismo punto, ya no es simple/inyectiva. Otra forma de llamar a las curvas no simples es \textbf{lazo} o \textbf{rulo}. Un lazo es \textbf{simple} si tiene un solo punto no inyectivo.
+
+\textbf{5)} Un lazo simple también se denomina \textbf{lazo de Jordan}. El \textbf{Teorema de Jordan} establece que todo lazo divide el plano en dos regiones: una acotada (el interior) y otra no acotada (el exterior). El símbolo de infinito es un lazo no simple; aunque sea el mismo punto, se pasa dos veces por él, ergo no es simple.
+
+\textbf{6)} Nomenclatura para campos vectoriales de 3 componentes:
+
+Sean:
+
+\begin{align}
+\overrightarrow{f}(x, y, z) &= (P(x,y,z), Q(x,y,z), R(x, y, z)) \\
+\overrightarrow{\beta}(t) &= (x(t), y(t), z(t))
+\end{align}
+
+Entonces, la integral de línea resulta:
+
+\begin{align}
+\int_{\overrightarrow{\beta}} \overrightarrow{f} d\overrightarrow{\beta} &= \int_{a}^{b} \overrightarrow{f}(\overrightarrow{\beta}(t)) \cdot \beta'(t) dt \\
+&= \int_{a}^{b} \begin{bmatrix}P(\overrightarrow{\beta(t)}) & Q(\overrightarrow{\beta(t)}) & R(\overrightarrow{\beta(t)})\end{bmatrix} \cdot \begin{bmatrix}x'(t) \\ y'(t) \\ z'(t)\end{bmatrix} dt \\
+&= \int_{a}^{b} P(\overrightarrow{\beta(t)}) \underbrace{x'(t) dt}_{dx} + Q(\overrightarrow{\beta(t)}) \underbrace{y'(t) dt}_{dy} + R(\overrightarrow{\beta(t)}) \underbrace{z'(t) dt}_{dz}
+\end{align}
+
+Realizando un potencial abuso de notación:
+
+\begin{equation}
+\int_{\overrightarrow{\beta}} \overrightarrow{f} d\overrightarrow{\beta} = \int_{\overrightarrow{\beta}} P dx + Q dy + R dz
+\end{equation}
+
+\textbf{7)} Una integral de línea puede ser interpretada como una de trayectoria. Verbigracia:
+
+Sea:
+
+\begin{equation}
+\overrightarrow{T}(t) = \frac{ \overrightarrow{\beta}'(t) }{||\overrightarrow{\beta}'(t)||}
+\end{equation}
+
+Entonces, considérese la integral de línea de un campo vectorial $\overrightarrow{F}$ sobre la curva $\overrightarrow{\beta}$:
+
+\begin{align}
+\int_{\overrightarrow{\overrightarrow{\beta}}} \overrightarrow{F} \cdot d\overrightarrow{\beta} &= \int_{a}^b \overrightarrow{F}(\overrightarrow{\beta}(t)) \cdot \overrightarrow{\beta'(t)} dt = \int_{a}^b \left[ \overrightarrow{F}(\overrightarrow{\beta}(t)) \cdot \frac{ \overrightarrow{\beta'(t)} }{||\overrightarrow{\beta'(t)}||} \right] ||\overrightarrow{\beta'(t)}|| dt \\
+&= \int_{a}^b \left[ \overrightarrow{F}(\overrightarrow{\beta}(t)) \cdot \overrightarrow{T}(t) \right] ||\overrightarrow{\beta}'(t)|| dt
+\end{align}
+
+Si se define el campo escalar $H = \overrightarrow{F}(\overrightarrow{\beta}) \cdot \overrightarrow{T}$, la integral de trayectoria de $H$ es igual a la integral de línea de $F$, ambas sobre la misma curva $\overrightarrow{\beta}$, claro.
 
 \end{document}
