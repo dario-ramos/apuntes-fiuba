@@ -1246,4 +1246,79 @@ Entonces, considérese la integral de línea de un campo vectorial $\overrightar
 
 Si se define el campo escalar $H = \overrightarrow{F}(\overrightarrow{\beta}) \cdot \overrightarrow{T}$, la integral de trayectoria de $H$ es igual a la integral de línea de $F$, ambas sobre la misma curva $\overrightarrow{\beta}$, claro.
 
+\section{T14 - Integrales II}
+
+\subsection{Reparametrización}
+
+Reparametrizar una curva es simplemente expresarla de otra manera equivalente. Los valores iniciales del parámetro y las expresiones de los componentes pueden ser diferentes, pero deben generar exactamente los mismo puntos que componen la curva.
+
+Es de interés hallar las condiciones que debe cumplir una reparametrización para no cambiar el valor de la integral de línea. Se presentarán dichas condiciones como resultados.
+
+Sea una función $\phi:\Bbb R \rightarrow \Bbb R$ que satisface:
+
+\begin{align}
+&\phi:[a, b] \rightarrow [a^*, b^*] \\
+&\phi \text{ es biyectiva en el intervalo } [a,b] \\
+&\phi \in C^1[a,b] \\
+&\phi(a) = a^* \wedge \phi(b) = b^* \\
+&\phi'(t) > 0 \text{ } \forall \text{ } t \in [a,b]
+\end{align}
+
+Con estas condiciones, $\phi$ es un \textbf{diffeormorfismo} en $\Bbb R^2$. Una función es un diffeomorfismo si es biyectiva y diferenciable, y su inversa también es diferenciable. Las condiciones cumplidas por $\phi$ garantizan esto, siendo suficientes pero no necesarias. 
+
+Por otro lado, sea $\overrightarrow{\sigma}$ una función que satisface:
+
+\begin{align}
+&\sigma: [a^*, b^*] \rightarrow \Bbb R^n \\
+&\sigma\in C^1[a^*, b^*] \\
+&\sigma(a^*) = A \wedge \sigma(b^*) = B
+\end{align}
+
+Finalmente, sea $\overrightarrow{H} = \overrightarrow{\sigma} \circ \phi$. La función $\overrightarrow{H}$ es una reparametrización; $\phi$ es la función que mapea el intervalo parámetrico original $[a,b]$ en el nuevo intervalo $[a^*, b^*]$, y $\sigma$ es la nueva expresión de la curva original $\beta$. Para visualizar las relaciones entre estas funciones, obsérvese la figura~\ref{fig:reparam}.
+
+\begin{figure}[ht]
+\centering
+\caption{Reparametrización}
+\includegraphics[scale=0.7]{img/teo_fig013_re.png}
+\label{fig:reparam}
+\end{figure}
+
+Si $\phi$ y $\overrightarrow{\sigma}$ cumplen las condiciones detalladas, entonces puede demostrarse que $\overrightarrow{H}$ es una parametrización equivalente de la curva, y el valor de la integral de línea sobre cualquier campo vectorial se conservará.
+
+\subsection{Preservación del signo}
+
+La integral de línea es invariante frente a diffeomorfismos que preserven el sentido del recorrido. En cambio, la integral de trayectoria se preserva para cualquier diffeomorfismo.
+
+Si $\sigma_1$ es equivalente a $\sigma$ pero invierte el sentido de recorrido:
+
+\begin{gather}
+\int_{\overrightarrow{\sigma_1}} \overrightarrow{f} d\overrightarrow{\sigma_1} = - \int_{\overrightarrow{\sigma}} \overrightarrow{f} d\overrightarrow{\sigma} \\
+\int_{\overrightarrow{\sigma_1}} f d\sigma_1 = \int_{\overrightarrow{\sigma}} f d\sigma
+\end{gather}
+
+Ergo, para integrales de línea, cambiar el sentido de recorrido de la curva cambia el signo de la integral, de forma análoga a cuando en integrales de 1 variable se cambiaba el orden de los límites de la integral. Esto tiene sentido porque para los vectores el sentido es importante, pero no para los escalares.
+
+\subsection{Integral de línea y campos conservativos}
+
+\textbf{Lema}: Sean $\Phi$ un campo escalar diferenciable en un dominio $D_{\Phi}$, y sea $\sigma$ una curva $C^1$ contenida en dicho dominio. 
+
+\begin{figure}[ht]
+\centering
+\caption{Lema}
+\includegraphics[scale=0.75]{img/teo_fig014_cc.png}
+\label{fig:reparam}
+\end{figure}
+
+El diferencial del campo escalar es entonces, en el punto $P_0$:
+
+\begin{equation}
+d\Phi(P_0) = \nabla\Phi(P_0) \cdot H = \Phi_{x_1}(P_0) dx_1 + \ldots + I_{x_n}(P_0) dx_n 
+\end{equation}
+
+Por otro lado, considérese la integral de línea del gradiente de $\Phi$ sobre la curva $\overrightarrow{\sigma}$:
+
+\begin{equation}
+\int_{\overrightarrow{\sigma}} \overrightarrow{\nabla}\Phi \cdot d\overrightarrow{\sigma} = \int_a^b \underbrace{ \overrightarrow{\nabla}\Phi( \overrightarrow{\sigma}(t) ) \overrightarrow{\sigma}'(t) }_{d\Phi(\overrightarrow{\sigma}(t))} dt = \Phi(B) - \Phi(A)
+\end{equation}
+
 \end{document}
