@@ -1306,7 +1306,6 @@ Ergo, para integrales de línea, cambiar el sentido de recorrido de la curva cam
 \centering
 \caption{Lema}
 \includegraphics[scale=0.75]{img/teo_fig014_cc.png}
-\label{fig:reparam}
 \end{figure}
 
 El diferencial del campo escalar es entonces, en el punto $P_0$:
@@ -1318,7 +1317,82 @@ d\Phi(P_0) = \nabla\Phi(P_0) \cdot H = \Phi_{x_1}(P_0) dx_1 + \ldots + I_{x_n}(P
 Por otro lado, considérese la integral de línea del gradiente de $\Phi$ sobre la curva $\overrightarrow{\sigma}$:
 
 \begin{equation}
-\int_{\overrightarrow{\sigma}} \overrightarrow{\nabla}\Phi \cdot d\overrightarrow{\sigma} = \int_a^b \underbrace{ \overrightarrow{\nabla}\Phi( \overrightarrow{\sigma}(t) ) \overrightarrow{\sigma}'(t) }_{d\Phi(\overrightarrow{\sigma}(t))} dt = \Phi(B) - \Phi(A)
+\int_{\overrightarrow{\sigma}} \overrightarrow{\nabla}\Phi \cdot d\overrightarrow{\sigma} = \int_a^b \underbrace{ \overrightarrow{\nabla}\Phi( \overrightarrow{\sigma}(t) ) \overrightarrow{\sigma}'(t) }_{d\Phi(\overrightarrow{\sigma}(t))} dt = \Phi(\overrightarrow{\sigma}(b)) - \Phi(\overrightarrow{\sigma}(b)) = \Phi(B) - \Phi(A)
 \end{equation}
+
+Ejemplo: Sea la curva $C$ de la figura~\ref{fig:ccej}, con punto inicial $A$ y punto final $B$. Sea el campo vectorial $\overrightarrow{f}(x,y) = (y, x)$. Planteando en términos del lema:
+
+\begin{figure}[ht]
+\centering
+\caption{Ejemplo}
+\includegraphics[scale=1]{img/teo_fig015_ccej.png}
+\label{fig:ccej}
+\end{figure}
+
+\begin{equation}
+\int_{\overrightarrow{\sigma}} \overrightarrow{f} d\overrightarrow{\sigma} = \int_C y dx + x dy
+\end{equation}
+
+La expresión de $\overrightarrow{\sigma}$ no interesa. Si el campo vectorial $\overrightarrow{f}$ puede expresarse como el gradiente de un campo escalar $\Phi$ a determinar, la integral puede calcularse con el resultado del lema. En este caso, por inspección:
+
+\begin{equation}
+\overrightarrow{f}(x, y) = \overrightarrow{\nabla}\Phi(x, y) = (y, x) = (\Phi_x, \Phi_y) \Rightarrow \Phi(x, y) = xy
+\end{equation}
+
+Conocido $\Phi$, la integral de línea puede calcularse evaluándolo en $A$ y $B$:
+
+\begin{equation}
+\int_C y dx + x dy = \Phi(B) - \Phi(A) = 1 \cdot 0 - (-1 \cdot 0) = 0
+\end{equation}
+
+\textbf{Definición}: Un campo vectorial es un \textbf{campo de gradientes (CG)} si y sólo si es el gradiente de un campo escalar. Simbólicamente:
+
+\begin{equation}
+\overrightarrow{f} \text{ es CG } \Leftrightarrow \exists \Phi / \overrightarrow{f} = \nabla \Phi
+\end{equation}
+
+Entonces, dada la integral de línea $\int_{\overrightarrow{\sigma}} P dx + Q dy$, resulta $\overrightarrow{f} = (P, Q)$. Para que $\overrightarrow{f}$ sea CG, necesariamente:
+
+\begin{equation}
+\nabla\Phi = \overrightarrow{f} \Rightarrow (\Phi_x, \Phi_y) = (P, Q)
+\end{equation}
+
+Derivando la última igualdad miembro a miembro en el primer componente respecto a $y$ y en el segundo componente respecto a $x$, resulta:
+
+\begin{equation}
+(\Phi_{xy}, \Phi_{yx}) = (P_y, Q_x)
+\end{equation}
+
+Nótese que esto exige que $\Phi \in C^2$ y $\overrightarrow{f} \in C^1$. Ahora bien, por el Teorema de Schwartz, siendo $\Phi \in C^2 \Rightarrow \Phi_{xy} = \Phi_{yx} \Rightarrow P_y = Q_x$. Esto establece la llamada \textbf{condición de simetría} sobre el campo $\overrightarrow{f}$: para que $f$ sea CG, sus derivadas parciales deben cumplirla. Dicha condición es necesaria: campos vectoriales que no la cumplan no son CG. Por otro lado, puede probarse que dicha condición es suficiente si $Dom f$ es un conjunto \textbf{simplemente conexo}. Vale decir, el interior de todo lazo pertenece al conjunto.
+
+\subsection{Encontrando $\Phi$}
+
+En el ejemplo, se pudo obtener $\Phi$ por inspección. En el caso más general, hay que resolver un sistema de ecuaciones diferenciales en derivadas parciales:
+
+\begin{equation}
+\left\{
+\begin{array}{ll}
+\Phi_x = P \\
+\Phi_y = Q
+\end{array}
+\right.
+\end{equation}
+
+Un algoritmo posible:
+
+\begin{enumerate}
+\item Tomar la primera o segunda ecuación e integrarla miembro a miembro respecto a la variable del subíndice de $\Phi$. Por ejemplo, tomando la primera:
+
+\begin{equation}
+\Phi(x,y) = \text{integral de P resp. a x} + \mu(y)
+\end{equation}
+
+La función $\mu(y)$ se introduce para permitir ajuste.
+
+\item En la otra ecuación, reemplazar para obtener $\mu(y)$, y con ello finalmente obtener $\Phi(x,y)$
+
+\end{enumerate}
+
+Nótese que si $\overrightarrow{f}$ es CG, la integral de línea sobre cualquier lazo contenido en su dominio es cero, y aún más importante: \textbf{la integral entre dos puntos no depende de la trayectoria}. A los campos de este tipo se los denomina \textbf{campos conservativos}.
 
 \end{document}
