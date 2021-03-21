@@ -2,6 +2,7 @@
 
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{enumerate}
 \usepackage[spanish]{babel}
 \usepackage{cancel}
 \usepackage{caption}
@@ -1394,5 +1395,228 @@ La función $\mu(y)$ se introduce para permitir ajuste.
 \end{enumerate}
 
 Nótese que si $\overrightarrow{f}$ es CG, la integral de línea sobre cualquier lazo contenido en su dominio es cero, y aún más importante: \textbf{la integral entre dos puntos no depende de la trayectoria}. A los campos de este tipo se los denomina \textbf{campos conservativos}.
+
+\section{Clase T15: Integración múltiple}
+
+\subsection{Integral doble}
+
+Sea $R = [a, b] \times [c, d]$, un rectángulo en $\Bbb R^2$.
+
+Sean los puntos $(x_i, y_i)$:
+
+\begin{equation}
+\left.
+\begin{array}{ll}
+& \Pi_x: a = x_0 < x_1 < \ldots < x_{n-1} < x_n = b \\
+& \Pi_y: c = y_0 < y_1 < \ldots < y_{m-1} < y_m = d
+\end{array}
+\right\} \Pi = \Pi_x \times \Pi_y
+\end{equation}
+
+Sea $||\Pi|| = \max\{ \Delta x_i \Delta y_j \}$ el subrectángulo de mayor área.
+
+Sea $P_{ij} = (\xi_i, \eta_j)$ con $x_i \leq \xi_i \leq x_{i+1}$ e $y_j \leq \eta_j \leq y_{j+1}$
+
+Para visualizar estos objetos juntos, ver la figura~\ref{fig:intmul}.
+
+\begin{figure}[ht]
+\centering
+\caption{Integración múltiple}
+\includegraphics[scale=0.8]{img/teo_fig016_im.png}
+\label{fig:intmul}
+\end{figure}
+
+A continuación, sea $f$ un campo escalar acotado en $R$, y:
+
+\begin{align}
+m_{ij} &= \inf \{ f(x,y) \text{ con } (x,y) \in R_{ij} \} \\
+m &= \inf \{ f(x,y) \text{ con } (x,y) \in R \} \\
+M_{ij} &= \sup \{ f(x,y) \text{ con } (x,y) \in R_{ij} \} \\
+M &= \sup\{ f(x,y) \text{ con } (x,y) \in R \} \\
+\end{align}
+
+En este contexto, $\inf$ es el ínfimo, y $\sup$ el supremo; son los mínimos y máximos valores en el subrectángulo $R_{ij}$ y el rectángulo $R$, respectivamente. Con estas definiciones en mente, vale la siguiente desigualdad:
+
+\begin{equation}
+m \leq m_{ij} \leq f(P_{ij}) \leq M_{ij} \leq M
+\end{equation}
+
+Multiplicando miembro a miembro por el área del subrectángulo $R_{ij}$, o sea $\Delta x_i \Delta y_j$:
+
+\begin{equation}
+m \Delta x_i \Delta y_j \leq m_{ij} \Delta x_i \Delta y_j \leq f(P_{ij}) \Delta x_i \Delta y_j \leq M_{ij} \Delta x_i \Delta y_j \leq M \Delta x_i \Delta y_j
+\label{eq:desim}
+\end{equation}
+
+Considerando todos los subrectángulos $R_{ij}$, hay $n m$ desigualdades como la de la ecuación~\ref{eq:desim}. Si se las suma a todas miembro a miembro, se obtiene:
+
+\begin{equation}
+m \underbrace{(b-a) (c-d)}_{\text{area de } R} \leq \underbrace{ s(\Pi) }_{\sum_{ij} m_{ij}} \leq \underbrace{ \sigma(\Pi) }_{\text{SUMA DE RIEMANN}} \leq \underbrace{ S(\Pi) }_{\sum_{ij} M_{ij}} \leq M \underbrace{(b-a) (d-c)}_{\text{area de } R}
+\end{equation}
+
+Cuando $n \rightarrow \infty, m \rightarrow \infty$, las sumas de ínfimos y supremos se acercan a la suma de Riemann; asumiendo que la misma es finita, $\sigma = \lim\limits_{\substack{n \rightarrow \infty \\ m \rightarrow \infty}} \sigma(\Pi)$. 
+
+Sean:
+
+\begin{align}
+s &= \sup\{ s(\Pi) \text{ } \forall \Pi \} \\
+S &= \inf\{ S(\Pi) \text{ } \forall \Pi \}
+\end{align}
+
+Si $f$ es tal que $s = \sigma = S$, $f$ es integrable en $R$, y $\sigma$ es la \textbf{integral doble} de $f$ sobre $R$:
+
+\begin{equation}
+\iint_R f(x,y) dx dy = s = S = \sigma
+\end{equation}
+
+A partir de este análisis, puede demostrarse que:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ \text{Si } f \text{ es continua en } R \text{, es integrable en } R }
+\end{equation}
+
+Observaciones:
+
+\begin{enumerate}[(A)]
+\item Si $f(x,y) = 1 \Rightarrow \iint_R dx dy = $ área del rectángulo $R$. 
+\item Si $f(x,y) \geq 0$ en $R$, la integral doble da como resultado el volumen del sólido limitado por $R$ y la superficie $z= f(x,y)$. Por ejemplo, considerando la figura~\ref{fig:volbajosup}, dada la superficie $z=f(x,y)$ (color rosa), el volumen delimitado entre $R$ en el plano $(x,y)$ y dicha superficie corresponde al sólido delimitado con colores verdes.
+
+\begin{figure}[ht]
+\centering
+\caption{Volumen bajo superficie}
+\includegraphics[scale=0.75]{img/teo_fig017_vbs.png}
+\label{fig:volbajosup}
+\end{figure}
+
+Denominando $K$ a dicho sólido,
+
+\begin{align}
+K &= \{ (x,y,z) \in \Bbb R^3 / (x,y) \in R \wedge 0 \leq z \leq f(x,y) \} \\
+vol(K) &= \iint_{R} f(x,y) dx dy
+\end{align}
+
+\item \textbf{Teorema de Fubbini}: Si $f$ es continua en $R$ exceptuando al conjunto de medida/contenido nulo,
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=Teorema de Fubbini]
+{
+\begin{array}{ll}
+\iint_R f(x,y) dx dy = \int_a^b \left( \int_c^d f(x,y) dy \right) dx \\
+\iint_R f(x,y) dx dy = \int_c^d \left( \int_a^b f(x,y) dx \right) dy
+\end{array}
+}
+\end{equation}
+
+Lo que este teorema dice es que dadas sus condiciones, la integral doble puede resolverse integrando primero respecto a $x$ y luego $y$, o viceversa. El resultado debería ser el mismo.
+
+¿Qué se entiende por \textbf{conjunto de contenido nulo}? En $\Bbb R^2$, es un recinto de área nula. En $\Bbb R$, un segmento de longitud nula. En $\Bbb R^3$, volumen nulo. Para mayores dimensiones, será un concepto extendido de tamaño de un recinto.
+
+\item Para recintos no rectangulares, la integral doble puede calcularse según el tipo de recinto.
+
+\begin{enumerate}
+\item Dos lados verticales paralelos. Véase la figura~\ref{fig:d1}.
+
+\begin{figure}[ht]
+\centering
+\caption{Recinto con dos lados verticales paralelos}
+\includegraphics[scale=0.75]{img/teo_fig018_d1.png}
+\label{fig:d1}
+\end{figure}
+
+\begin{align}
+\iint_R f(x,y) dx dy &= \int_a^b \left( \int_{\phi_1(x)}^{\phi_2(x)} f(x,y) dy \right) dx \\
+area(R) &= \int_a^b \left( \int_{\phi_1(x)}^{\phi_2(x)} dy \right) dx
+\end{align}
+
+\item Dos lados horizontales paralelos. Véase la figura~\ref{fig:d2}.
+
+\begin{figure}[ht]
+\centering
+\caption{Recinto con dos lados horizontales paralelos}
+\includegraphics[scale=0.75]{img/teo_fig019_d2.png}
+\label{fig:d2}
+\end{figure}
+
+\begin{align}
+\iint_R f(x,y) dx dy &= \int_c^d \left( \int_{\phi_1(y)}^{\phi_2(y)} f(x,y) dx \right) dy \\
+area(R) &= \int_c^d \left( \int_{\phi_1(y)}^{\phi_2(y)} dx \right) dy
+\end{align}
+
+\item 1 lado horizontal y 1 lado vertical: Puede tratarse como el caso a, o el caso b.
+\end{enumerate}
+
+\item Cambio de orden de integración
+
+Por ejemplo, considérese la siguiente integral doble:
+
+\begin{equation}
+\int_{-5}^0 \left( \int_{-1-y^2}^{y^2} f(x,y) dx \right) dy
+\end{equation}
+
+Analizando los bordes del recinto:
+
+\begin{align}
+x = -1-y^2 &\Rightarrow y = -5 \Rightarrow x = -26 \wedge y = 0 \Rightarrow x = -1 \\
+x = y^2 &\Rightarrow y = -5 \Rightarrow x =25 \wedge y = 0 \Rightarrow x = 0
+\end{align}
+
+Para invertir el orden de integración, hay que expresar las curvas que lo limitan como funciones de $x$ (ya que originalmente fueron definidas como funciones de $y$).
+
+\begin{align}
+x &= -1-y^2 \Rightarrow -x - 1 = y^2 \Rightarrow \sqrt{-x-1} = \pm y \\
+x &= y^2 \Rightarrow \sqrt{x} = \pm y
+\end{align}
+
+Para saber si tomar la rama positiva o negativa de las funciones raíz cuadrada, considérese que $y$ toma los valores $-5$ y $0$. Por lo tanto, se toma la rama negativa en ambos casos. Graficar el recinto ayuda; ver la figura~\ref{fig:coi}.
+
+\begin{figure}[ht]
+\centering
+\caption{Cambio de orden de integración}
+\includegraphics[scale=0.75]{img/teo_fig020_coi.png}
+\label{fig:coi}
+\end{figure}
+
+Para integrar primero respecto a $y$, conviene dividir el recinto en 3 recintos $R_1, R_2$ y $R_3$ (marcados en la figura~\ref{fig:coi}), y aplicar la propiedad de linealidad de la integral, que es trivial demostrar que sigue valiendo para la integral doble. Resulta entonces:
+
+\begin{align}
+\int_{-5}^0 \left( f(x,y) dx \right) dy &= \iint_{R_1} (f(x,y) dy) dx + \iint_{R_2} (f(x,y) dy) dx + \iint_{R_3} (f(x,y) dy) dx \\
+\iint_{R_1} (f(x,y) dy) dx &= \int_{-26}^{-1} \left( \int_{-5}^{-\sqrt{-1-x}} f(x,y) dy  \right) dx \\
+\iint_{R_2} (f(x,y) dy) dx &= \int_{-1}^{0} \left( \int_{-5}^0 f(x,y) dy \right) dx \\
+\iint_{R_3} (f(x,y) dy) dx &= \int_{0}^{25} \left( \int_{-5}^{-\sqrt{x}} f(x,y) dy \right) dx
+\end{align}
+
+\end{enumerate}
+
+\subsection{Integral triple}
+
+Es posible generalizar los conceptos de la integral doble partiendo de un recinto $R = [a,b] \times [c,d] \times [e,f]$, que consiste en un paralelepípedo en $\Bbb R^3$. Definiendo la integral triple sobre $R$ como $\iiint_R f(x,y,z) dx dy dz$, puede probarse que todos los resultados de la integral doble siguen valiendo: Fubbini, linealidad, etc.
+
+Si $f(x,y,z) = 1$, $vol(R) = \iiint_R \mathop{dx} \mathop{dy} \mathop{dz}$
+
+Tal como ocurría en el caso de dos dimensiones, la integral triple puede extenderse a recintos tridimensionales que no sean paralelepípedos. Por ende, la integral triple es una gran herramienta para calcular volúmenes.
+
+Por ejemplo, sea el recinto $R$ en $\Bbb R^3$ delimitado por:
+
+\begin{equation}
+R = \{ (x,y,z) \in \Bbb R^3 / 0 \leq x \leq 1 \wedge 0 \leq y \leq 1 \wedge z = x^2 \}
+\end{equation}
+
+Gráficamente, R sería el volumen entre la superficie $z = x^2$ y el plano $(x, y)$. En la figura~\ref{fig:itv} se puede visualizar la superficie en el plano $\Bbb R^3$.
+
+\begin{figure}[ht]
+\centering
+\caption{Integral triple}
+\includegraphics[scale=0.6]{img/teo_fig021_itv.png}
+\label{fig:itv}
+\end{figure}
+
+Sea, arbitrariamente, $f(x,y,z) = xyz^2$:
+
+\begin{equation}
+\iiint_R f(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz} = \int_0^1 \left( \int_0^1 \left( \int_0^{x^2} xyz^2 dz \right)  \right) dy) dx
+\end{equation}
+
+¿Qué representaría la integral triple de la función $f$ sobre el sólido $R$? Por ejemplo, si $f$ describiera la densidad punto a punto del sólido, la integral triple daría la masa.
 
 \end{document}
