@@ -5,7 +5,10 @@
 \usepackage[spanish]{babel}
 \usepackage[margin=1.5in]{geometry}
 \usepackage{graphicx}
+\usepackage{tcolorbox}
 \usepackage[utf8]{inputenc}
+
+\tcbuselibrary{theorems}
 
 \renewcommand{\Bbb}{\mathbb}
 
@@ -320,11 +323,11 @@ y = \frac{1}{2} x^3 \ln(x) + K_1 x^3 + K_2 x + K_3
 
 Para completar el ejercicio, faltaría calcular $y$ para el caso $x<0$. Nótese que quedaron 3 constantes a determinar en la SG para $x >0$, lo cual es consistente con el hecho de que la EDO original era de grado 3.
 
-\section{Clase C6 - EDOs homogéneas}
+\section{Clase C5 - EDOs homogéneas}
 
 Las EDOs homogéneas de primer orden tienen la forma general $y' = f(x,y)$, donde $f(x,y)$ es homogénea de grado 0. Todas las ecuaciones de esta familia pueden ser resueltas con el cambio de variable $z = \frac{y}{x}$. De esto se sigue que $x = 0$ jamás será SS, aunque obviamente pueden existar otras SS.
 
-\section{Clase C7}
+\section{Clase C6}
 
 \subsection{Ecuaciones de Bernoulli}
 
@@ -371,5 +374,166 @@ O sea que las curvas ortogonales a las parábolas son elipses, lo cual geométri
 \subsection{Teorema de existencia y unicidad para EDOs de 1er orden}
 
 Dada $y' = f(x,y)$, con $f \in C^1 \Rightarrow$ por cada punto $(x_0, y_0)$ pasa 1 y sólo 1 curva solución o curva integral. En un entorno de $x_0$, existe una única solución $y = y(x)$ que verifica $y(x_0) = y_0$, o sea la condición inicial de la EDO.
+
+\section{Clase C7}
+
+\subsection{Dependencia e independencia lineal entre funciones}
+
+Se dice que un conjunto de funciones $\{y_1(x), y_2(x), \ldots, y_n(x) \}$ es linealmente independiente (l.i.) en un intervalo $I \Leftrightarrow$ existen $n$ constantes $c_i$, no todas nulas, tales que $c_1 y_1(x) + \ldots + c_n y_n(x) = 0, \forall x \in I$. Si por otro lado, la única forma de satisfacer la igualdad es que todas las $c_i$ sean nulas, el conjunto es linealmente dependiente (l.d.) en el intervalo $I$.
+
+De forma más intuitiva: si una de las funciones es múltiplo, suma, resta, o más generalmente una combinación lineal de las otras, es l.d.
+
+\subsection{Determinante wronskiano}
+
+Sean $y_1, y_2, \ldots, y_n \in C^{n-1}$. Se define el wronskiano del conjunto de funciones como:
+
+\begin{equation}
+W(\{y_1, \ldots, y_n\}) = \det
+\begin{bmatrix}
+y_1 & y_2 & \ldots & y_n \\
+y_1' & y_2' & \ldots & y_n' \\
+\vdots & \vdots & \ldots & \vdots \\
+y_1^{(n-1)} & y_2^{(n-1)} & \ldots & y_n^{(n-1)}
+\end{bmatrix}
+\end{equation}
+
+Propiedad:
+
+\begin{equation}
+\{y_1, \ldots, y_n\} \text{ es L.D. en I } \Rightarrow W(\{y_1, \ldots, y_n\}) = 0 \text{ en } I 
+\end{equation}
+
+El recíproco es falso. Otra propiedad más útil:
+
+\begin{equation}
+W(\{y_1, \ldots, y_n\}) \neq 0 \text{ en } I \Rightarrow \{y_1, \ldots, y_n\} \text{ es l.i. en } I
+\end{equation}
+
+\subsection{Ecuación diferencial lineal homogénea (EDLH)}
+
+Estas ecuaciones tienen la forma general:
+
+\begin{equation}
+a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \ldots + a_0(x) y = 0
+\end{equation}
+
+Se considerará el caso en que $a_n(x) = \text{cte}$. Nótese que $y = 0$ siempre es solución. Y, no tan evidentemente, si $y_1(x)$ es solución, entonces $y = c_1 y_1(x)$ también.
+
+\vspace{10 pt}
+
+\textbf{Teorema 1}: Si $\{y_1, \ldots, y_n\}$ es un conjunto de soluciones de la EDLH de orden $n$ en $I  \Rightarrow \left[ \{y_1, \ldots, y_n\} \right.$ es l.i. $\Leftrightarrow W(\{y_1, \ldots, y_n\}) \neq 0$ en $I \left] \right.$
+
+\vspace{10 pt}
+
+\textbf{Teorema 2}: Si además de ser soluciones, son l.i. $\Rightarrow y = c_1 y_1 + \ldots + c_n y_n $ es la SG
+
+\subsection{Resolución de EDLH}
+
+Orden 1: es de variables separables. Para órdenes mayores, se propone la solución:
+
+\begin{equation}
+y = e^{r x}
+\end{equation}
+
+En esta expresión, $r$ es una constante a determinar. Para el caso de orden 2:
+
+\begin{equation}
+a_2 y'' + a_1 y' + a_0 y = 0 \wedge y = e^{r x} \Rightarrow y' = r e^{r x} \wedge y'' = r^2 e^{r x}
+\end{equation}
+
+Reemplazando $y$ y sus derivadas en la EDLH:
+
+\begin{align}
+& a_2 r^2 e^{r x} + a_1 r e^{r x} + a_0 e^{r x} = 0 \\
+& \underbrace{e^{rx}}_{\neq 0} \underbrace{(a_2 r^2 + a_1 r + a_0)}_{\text{polinomio característico}} = 0
+\end{align}
+
+Siendo el polinomio característico una ecuación cuadrática, hay 3 posibilidades:
+
+\begin{enumerate}
+\item Raíces reales y distintas: $y_1 = e^{r_1 x} \wedge y_2 = e^{r_2 x} \Rightarrow y = c_1 e^{r_1 x} + c_2 e^{r_2 x}$ es la SG
+\item Raíces reales e iguales: Se propone $y_1 = e^{r x} \wedge y_2 = x e^{rx} \Rightarrow y = c_1 e^{r x} + c_2 x e^{r x}$ es la SG
+\item Raíces complejas conjugadas: $r_1 = \alpha + i \beta \wedge r_2 = \overline{r_1} = \alpha - i \beta$
+
+\begin{equation}
+y = c_1 e^{(\alpha + i \beta) x} + c_2 e^{\alpha + i \beta) x} \text{ es la SG }
+\end{equation}
+
+Aplicando las fórmulas de Euler:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=Fórmulas de Euler]
+{ 
+\begin{array}{ll}
+e^{i \theta} = \cos \theta + i \sin \theta \\
+e^{-i \theta} = \cos \theta - i \sin \theta
+\end{array}
+}
+\end{equation}
+
+\begin{equation}
+y = e^{\alpha x} \left( \underbrace{A}_{A = c_1 + c_2} \cos (\beta x) + \underbrace{B}_{B = i (c_1 - c_2)} \sin(\beta x) \right)
+\end{equation}
+
+\end{enumerate}
+
+En los tres casos, hay dos constantes $c_1$ y $c_2$ a determinar a partir de las condiciones iniciales. Se verá que para una EDLH de orden $n$, se requieren $n$ condiciones iniciales.
+
+Continuando con la idea de resolver el caso general de orden $n$, puede demostrarse que el mismo involucrará hallar las raíces de un polinomio de orden $n$. El mismo puede tener raíces complejas conjugadas, repetidas con multiplicidad mayor a 2, y de multiplicidad 1. Cada par de complejas conjugadas tendrá asociado un término senoidal amortiguado como se vio en orden 2; las de multiplicidad 1 tendrán un término exponencial simple, y las de multiplicidad $p$ tendrán asociado un término de la forma $c_{q}e^{r x} + c_{q+1} x e^{r x} + \ldots + c_{q+p} x^{p-1} e^{r x}$
+
+\subsection{EDL completa de orden n}
+
+Forma general:
+
+\begin{equation}
+a_n y^{(n)} + a_{n-1} y^{(n-1)} + \ldots + a_0 y = f(x), \text{ con } f \text{ continua en } I
+\end{equation}
+
+Este caso puede resolverse con uno de dos métodos
+
+\begin{itemize}
+\item Variación de parámetros: Es el método que ya se vio; sirve para cualquier $f(x)$, pero requiere hacer más cuentas.
+\item Coeficientes indeterminados: Es más directo, pero hay casos en que no sirve.
+\end{itemize}
+
+Sin importar cuál método se use, se plantea $y = y_H + y_P$, en donde $y_H$ es la solución de la ecuación homogénea asociada, e $y_P$ es una solución particular. $y_H$ se calcula resolviendo el polinomio característico, en tanto $y_P$ se obtiene utilizando alguno de los dos métodos.
+
+Para el método de coeficientes indeterminados, hay que considerar que sólo sirve para $f(x)$ de la forma $e^{a x}$, senoidal, cosenoidal, polinómica, o combinaciones lineales de dicho tipo de funciones. Hecha esta salvedad, el método consiste en hallar la "parte variable", que es un conjunto de funciones obtenidas derivando sucesivamente $f(x)$, y plantear que $y_P$ es una combinación lineal de dichas funciones. Los coeficientes de dicha CL son los coeficientes indeterminados a calcular.
+
+Ejemplo 1: $f(x) = 2 x e^x$
+
+\begin{equation}
+\begin{array}{ll}
+f(x) = 2 x e^x &\Rightarrow PV: \{x e^x\} \\
+f'(x) = 2 e^x + 2 x e^x &\Rightarrow PV: \{e^x, x e^x\} \\
+f''(x) = 2 e^x + 2 e^x + 2 x e^x &\Rightarrow PV: \{e^x, x e^x\}
+\end{array}
+\end{equation}
+
+Queda claro que por más que se siga derivando, la PV es el conjunto $\{e^x, x e^x\}$. Por lo tanto, en este caso resulta $y_P = k_1 e^x + k_2 x e^x$. Reemplazando en la EDO, pueden determinarse los valores de los $k$. Luego, planteando $y = y_H + y_P$, se utilizan las condiciones iniciales para determinar las constantes desconocidas que quedan en $y_H$.
+
+Ejemplo 2: $f(x) = 6 x^2 + \cos (2x)$
+
+\begin{equation}
+\begin{array}{ll}
+f(x) = 6 x^2 + \cos(2 x) &\Rightarrow PV: \{x^2, \cos(2 x)\} \\
+f'(x) = 12 x - 2 \sin(2 x) &\Rightarrow PV: \{x, \sin(2 x)\} \\
+f''(x) = 12 - 4 \cos(2 x) &\Rightarrow PV: \{1, \cos(2 x)\} \\
+f'''(x) = 8 \sin(2 x) &\Rightarrow PV: \{1, \sin(2 x)\} \\
+\end{array}
+\end{equation}
+
+Nótese que $1$ es la parte variable asociada a las constantes, y es fácil de pasar por alto. La parte variable entonces resulta de la unión de las partes variables:
+
+\begin{equation}
+PV: \{x^2, \cos(2 x), x, \sin(2 x), 1\}
+\end{equation}
+
+Ergo, se planteará:
+
+\begin{equation}
+y_P = k_1 x^2 + k_2 \cos(2x) + k_3 x + k_4 \sin(2 x) + k_5
+\end{equation}
+
 
 \end{document} 
