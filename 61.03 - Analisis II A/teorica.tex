@@ -221,10 +221,10 @@ Vale decir, en todo entorno reducido de $P_0$ hay elementos de $A$. El conjunto 
 
 \begin{subequations}
 \begin{align}
-f: A \rightarrow B \\
-A = \text{dominio de f} \\
-B = \text{codominio/imagen de f} = Im(f) \\
-\text{Gráfico de f } = G(f) = \{ (x, f(x)) \text{ con x } \in A \}
+&f: A \rightarrow B \\
+&A = \text{dominio de f} \\
+&B = \text{codominio/imagen de f} = Im(f) \\
+&\text{Gráfico de f } = G(f) = \{ (x, f(x)) \text{ con x } \in A \}
 \end{align}
 \end{subequations}
 
@@ -629,10 +629,10 @@ Nótese que la derivada direccional es la proyección del vector gradiente sobre
 f'(P_0, \overrightarrow{v}) = \overrightarrow{ \nabla{f} }(P_0) \overrightarrow{v}
 \end{equation}
 
-Expresando este producto escalar en función de las normas y el ángulo entre ambos vectores $alpha$:
+Expresando este producto escalar en función de las normas y el ángulo entre ambos vectores $\alpha$:
 
 \begin{equation}
-\overrightarrow{ \nabla{f} }(P_0) \overrightarrow{v} = ||\overrightarrow{ \nabla{f} }(P_0)|| cos \alpha
+\overrightarrow{ \nabla{f} }(P_0) \overrightarrow{v} = ||\overrightarrow{ \nabla{f} }(P_0)|| \cos \alpha
 \end{equation}
 
 De este modo, la derivada direccional máxima se obtiene cuando $\overrightarrow{v}$ coincide en dirección y sentido con el vector gradiente. Y en ese caso, dicho valor máximo será la norma del vector gradiente. En cuanto al valor mínimo, corresponderá a $\alpha=pi$, y será el opuesto al máximo. Por otro lado, si la derivada direccional es nula, siempre lo será en una dirección perpendicular al gradiente. Ergo, el gradiente en $P_0$ es perpendicular al conjunto de nivel 1 que pasa por $P_0$.
@@ -905,19 +905,19 @@ Derivando con la regla de la cadena, miembro a miembro, resulta:
 \begin{equation}
 \left\{
 \begin{array}{ll}
-\frac{\partial f_1}{\partial x} + \frac{\partial f_1}{\partial y} \frac{dy}{dx} + \frac{\partial f_1}{\partial z} \frac{dz}{dx} = 0 \\
-\frac{\partial f_2}{\partial x} + \frac{\partial f_2}{\partial y} \frac{dy}{dx} + \frac{\partial f_2}{\partial z} \frac{dz}{dx} = 0
+\frac{\partial f_1}{\partial x} + \frac{\partial f_1}{\partial y} \frac{\mathop{dy}}{\mathop{dx}} + \frac{\partial f_1}{\partial z} \frac{\mathop{dz}}{\mathop{dx}} = 0 \\
+\frac{\partial f_2}{\partial x} + \frac{\partial f_2}{\partial y} \frac{\mathop{dy}}{\mathop{dx}} + \frac{\partial f_2}{\partial z} \frac{\mathop{dz}}{\mathop{dx}} = 0
 \end{array}
 \right.
 \end{equation}
 
-Ahora quedan dos ecuaciones con dos incógnitas: $\frac{dy}{dx}$ y $\frac{dz}{dx}$. Pasando $\frac{\partial f_1}{\partial x}$ y $\frac{\partial f_2}{\partial x}$ como términos independientes y expresando matricialmente:
+Ahora quedan dos ecuaciones con dos incógnitas: $\frac{\mathop{dy}}{\mathop{dx}}$ y $\frac{\mathop{dz}}{\mathop{dx}}$. Pasando $\frac{\partial f_1}{\partial x}$ y $\frac{\partial f_2}{\partial x}$ como términos independientes y expresando matricialmente:
 
 \begin{equation}
 \left\{
 \begin{array}{ll}
-\frac{\partial f_1}{\partial y} \frac{dy}{dx} + \frac{\partial f_1}{\partial z} \frac{dz}{dx} = -\frac{\partial f_1}{\partial x} \\
-\frac{\partial f_2}{\partial y} \frac{dy}{dx} + \frac{\partial f_2}{\partial z} \frac{dz}{dx} = -\frac{\partial f_1}{\partial x}
+\frac{\partial f_1}{\partial y} \frac{\mathop{dy}}{\mathop{dx}} + \frac{\partial f_1}{\partial z} \frac{\mathop{dz}}{\mathop{dx}} = -\frac{\partial f_1}{\partial x} \\
+\frac{\partial f_2}{\partial y} \frac{\mathop{dy}}{\mathop{dx}} + \frac{\partial f_2}{\partial z} \frac{\mathop{dz}}{\mathop{dx}} = -\frac{\partial f_1}{\partial x}
 \end{array}
 \right. \approx 
 \underbrace{
@@ -927,8 +927,8 @@ Ahora quedan dos ecuaciones con dos incógnitas: $\frac{dy}{dx}$ y $\frac{dz}{dx
 \end{bmatrix}
 }_{A`}
 \begin{bmatrix}
-dy/dx \\
-dz/dx
+\mathop{dy}/\mathop{dx} \\
+\mathop{dz}/\mathop{dx}
 \end{bmatrix} = 
 \begin{bmatrix}
 -\partial f_1/ \partial x \\
@@ -936,7 +936,7 @@ dz/dx
 \end{bmatrix}
 \end{equation}
 
-Para que este sistema sea determinado, o en otras palabras, para que existan $\frac{dy}{dx}$ y $\frac{dz}{dx}$, el determinante de la matriz $A$ debe ser no nulo.
+Para que este sistema sea determinado, o en otras palabras, para que existan $\frac{\mathop{dy}}{\mathop{dx}}$ y $\frac{\mathop{dz}}{\mathop{dx}}$, el determinante de la matriz $A$ debe ser no nulo.
 
 \subsubsection{Teorema de Cauchy-Dini generalizado}
 
@@ -1134,7 +1134,7 @@ Para categorizar los posibles puntos críticos, queda como ejercicio analizar el
 Sean $\overrightarrow{f}$ un campo vectorial $\in C^0$, y $\overrightarrow{\beta}$ una curva uniparamétrica $\in C^1$ cuyos puntos sean de igual dimensión que los del dominio de $f$. La integral de línea de $\overrightarrow{f}$ sobre $\overrightarrow{\beta}$ se define entonces como:
 
 \begin{equation}
-\int_{\overrightarrow{\beta}} \overrightarrow{f} d\overrightarrow{\beta} = \int_{a}^{b} \overrightarrow{f}(\overrightarrow{\beta}(t)) \underbrace{\cdot}_{prod. escalar} \underbrace{ \beta '(t) dt }_{d\overrightarrow{\beta}}
+\int_{\overrightarrow{\beta}} \overrightarrow{f} d\overrightarrow{\beta} = \int_{a}^{b} \overrightarrow{f}(\overrightarrow{\beta}(t)) \underbrace{\cdot}_{prod. escalar} \underbrace{ \beta '(t) \mathop{dt} }_{d\overrightarrow{\beta}}
 \end{equation}
 
 Los valores $a$ y $b$ corresponde a los puntos inicial y final de la curva $\overrightarrow{\beta}$. No es trivial ver el sentido geométrico de la integral en este caso, pero tiene muchas aplicaciones, como por ejemplo calcular flujo magnético.
@@ -1144,7 +1144,7 @@ Los valores $a$ y $b$ corresponde a los puntos inicial y final de la curva $\ove
 Sean ahora $f$ un campo escalar $\in C^0$, y $\overrightarrow{r}$ una curva uniparamétrica $\in C^1$ cuyos puntos sean de igual dimensión que los del dominio de $f$. Se define entonces la integral de trayectoria como:
 
 \begin{equation}
-\int_{\overrightarrow{r}} f(\overrightarrow{r}) d\overrightarrow{r} = \int_{a}^{b} f(\overrightarrow{r(t)}) ||r'(t)|| dt
+\int_{\overrightarrow{r}} f(\overrightarrow{r}) d\overrightarrow{r} = \int_{a}^{b} f(\overrightarrow{r(t)}) ||r'(t)|| \mathop{dt}
 \end{equation}
 
 Nuevamente, $a$ y $b$ son los valores del parámetro $t$ asociados al punto inicial y final de $r$, respectivamente. Nótese que el integrando es directamente un número real en este caso (en el otro también, pero hay que realizar un producto escalar primero).
@@ -1173,8 +1173,8 @@ Para hacerlo manteniendo fijos $a$ y $b$:
 \textbf{1)} Si el campo escalar de la integral de trayectoria es la constante 1, el resultado de la integral es la longitud de la curva. Por ejemplo, se sabe que la longitud de la circunferencia es $2 \pi r$. Integrando una curva que represente un círculo de radio $r$:
 
 \begin{align}
-\overrightarrow{r(t)} &= (r \cos t, r \sin t) \Rightarrow \int_{\overrightarrow{r}} 1 d\overrightarrow{r} = \int_{0}^{2 \pi} ||r'(t)|| dt = \int_{0}^{2 \pi} ||(-r \sin t, r \cos t)|| dt \\
-&= \int_{0}^{2 \pi} \sqrt{r^2 \sin^2 (t) + r^2 \cos^2 (t)} dt = r \int_{0}^{2 \pi} \underbrace{ \sqrt{\sin^2(t) + \cos^2(t)} }_{1} dt = r \int_{0}^{2 \pi} dt \\
+\overrightarrow{r(t)} &= (r \cos t, r \sin t) \Rightarrow \int_{\overrightarrow{r}} 1 \mathop{d\overrightarrow{r}} = \int_{0}^{2 \pi} ||r'(t)|| \mathop{dt} = \int_{0}^{2 \pi} ||(-r \sin t, r \cos t)|| \mathop{dt} \\
+&= \int_{0}^{2 \pi} \sqrt{r^2 \sin^2 (t) + r^2 \cos^2 (t)} \mathop{dt} = r \int_{0}^{2 \pi} \underbrace{ \sqrt{\sin^2(t) + \cos^2(t)} }_{1} \mathop{dt} = r \int_{0}^{2 \pi} \mathop{dt} \\
 &= r (2 \pi - 0) = 2 \pi r
 \end{align}
 
@@ -1219,15 +1219,15 @@ Sean:
 Entonces, la integral de línea resulta:
 
 \begin{align}
-\int_{\overrightarrow{\beta}} \overrightarrow{f} d\overrightarrow{\beta} &= \int_{a}^{b} \overrightarrow{f}(\overrightarrow{\beta}(t)) \cdot \beta'(t) dt \\
-&= \int_{a}^{b} \begin{bmatrix}P(\overrightarrow{\beta(t)}) & Q(\overrightarrow{\beta(t)}) & R(\overrightarrow{\beta(t)})\end{bmatrix} \cdot \begin{bmatrix}x'(t) \\ y'(t) \\ z'(t)\end{bmatrix} dt \\
-&= \int_{a}^{b} P(\overrightarrow{\beta(t)}) \underbrace{x'(t) dt}_{dx} + Q(\overrightarrow{\beta(t)}) \underbrace{y'(t) dt}_{dy} + R(\overrightarrow{\beta(t)}) \underbrace{z'(t) dt}_{dz}
+\int_{\overrightarrow{\beta}} \overrightarrow{f} d\overrightarrow{\beta} &= \int_{a}^{b} \overrightarrow{f}(\overrightarrow{\beta}(t)) \cdot \beta'(t) \mathop{dt} \\
+&= \int_{a}^{b} \begin{bmatrix}P(\overrightarrow{\beta(t)}) & Q(\overrightarrow{\beta(t)}) & R(\overrightarrow{\beta(t)})\end{bmatrix} \cdot \begin{bmatrix}x'(t) \\ y'(t) \\ z'(t)\end{bmatrix} \mathop{dt} \\
+&= \int_{a}^{b} P(\overrightarrow{\beta(t)}) \underbrace{x'(t) \mathop{dt}}_{\mathop{dx}} + Q(\overrightarrow{\beta(t)}) \underbrace{y'(t) \mathop{dt}}_{\mathop{dy}} + R(\overrightarrow{\beta(t)}) \underbrace{z'(t) \mathop{dt}}_{\mathop{dz}}
 \end{align}
 
 Realizando un potencial abuso de notación:
 
 \begin{equation}
-\int_{\overrightarrow{\beta}} \overrightarrow{f} d\overrightarrow{\beta} = \int_{\overrightarrow{\beta}} P dx + Q dy + R dz
+\int_{\overrightarrow{\beta}} \overrightarrow{f} d\overrightarrow{\beta} = \int_{\overrightarrow{\beta}} P \mathop{dx} + Q \mathop{dy} + R \mathop{dz}
 \end{equation}
 
 \textbf{7)} Una integral de línea puede ser interpretada como una de trayectoria. Verbigracia:
@@ -1241,8 +1241,8 @@ Sea:
 Entonces, considérese la integral de línea de un campo vectorial $\overrightarrow{F}$ sobre la curva $\overrightarrow{\beta}$:
 
 \begin{align}
-\int_{\overrightarrow{\overrightarrow{\beta}}} \overrightarrow{F} \cdot d\overrightarrow{\beta} &= \int_{a}^b \overrightarrow{F}(\overrightarrow{\beta}(t)) \cdot \overrightarrow{\beta'(t)} dt = \int_{a}^b \left[ \overrightarrow{F}(\overrightarrow{\beta}(t)) \cdot \frac{ \overrightarrow{\beta'(t)} }{||\overrightarrow{\beta'(t)}||} \right] ||\overrightarrow{\beta'(t)}|| dt \\
-&= \int_{a}^b \left[ \overrightarrow{F}(\overrightarrow{\beta}(t)) \cdot \overrightarrow{T}(t) \right] ||\overrightarrow{\beta}'(t)|| dt
+\int_{\overrightarrow{\overrightarrow{\beta}}} \overrightarrow{F} \cdot d\overrightarrow{\beta} &= \int_{a}^b \overrightarrow{F}(\overrightarrow{\beta}(t)) \cdot \overrightarrow{\beta'(t)} \mathop{dt} = \int_{a}^b \left[ \overrightarrow{F}(\overrightarrow{\beta}(t)) \cdot \frac{ \overrightarrow{\beta'(t)} }{||\overrightarrow{\beta'(t)}||} \right] ||\overrightarrow{\beta'(t)}|| \mathop{dt} \\
+&= \int_{a}^b \left[ \overrightarrow{F}(\overrightarrow{\beta}(t)) \cdot \overrightarrow{T}(t) \right] ||\overrightarrow{\beta}'(t)|| \mathop{dt}
 \end{align}
 
 Si se define el campo escalar $H = \overrightarrow{F}(\overrightarrow{\beta}) \cdot \overrightarrow{T}$, la integral de trayectoria de $H$ es igual a la integral de línea de $F$, ambas sobre la misma curva $\overrightarrow{\beta}$, claro.
@@ -1312,13 +1312,13 @@ Ergo, para integrales de línea, cambiar el sentido de recorrido de la curva cam
 El diferencial del campo escalar es entonces, en el punto $P_0$:
 
 \begin{equation}
-d\Phi(P_0) = \nabla\Phi(P_0) \cdot H = \Phi_{x_1}(P_0) dx_1 + \ldots + I_{x_n}(P_0) dx_n 
+d\Phi(P_0) = \nabla\Phi(P_0) \cdot H = \Phi_{x_1}(P_0) \mathop{dx_1} + \ldots + I_{x_n}(P_0) \mathop{dx_n} 
 \end{equation}
 
 Por otro lado, considérese la integral de línea del gradiente de $\Phi$ sobre la curva $\overrightarrow{\sigma}$:
 
 \begin{equation}
-\int_{\overrightarrow{\sigma}} \overrightarrow{\nabla}\Phi \cdot d\overrightarrow{\sigma} = \int_a^b \underbrace{ \overrightarrow{\nabla}\Phi( \overrightarrow{\sigma}(t) ) \overrightarrow{\sigma}'(t) }_{d\Phi(\overrightarrow{\sigma}(t))} dt = \Phi(\overrightarrow{\sigma}(b)) - \Phi(\overrightarrow{\sigma}(b)) = \Phi(B) - \Phi(A)
+\int_{\overrightarrow{\sigma}} \overrightarrow{\nabla}\Phi \cdot d\overrightarrow{\sigma} = \int_a^b \underbrace{ \overrightarrow{\nabla}\Phi( \overrightarrow{\sigma}(t) ) \overrightarrow{\sigma}'(t) }_{d\Phi(\overrightarrow{\sigma}(t))} \mathop{dt} = \Phi(\overrightarrow{\sigma}(b)) - \Phi(\overrightarrow{\sigma}(b)) = \Phi(B) - \Phi(A)
 \end{equation}
 
 Ejemplo: Sea la curva $C$ de la figura~\ref{fig:ccej}, con punto inicial $A$ y punto final $B$. Sea el campo vectorial $\overrightarrow{f}(x,y) = (y, x)$. Planteando en términos del lema:
@@ -1331,7 +1331,7 @@ Ejemplo: Sea la curva $C$ de la figura~\ref{fig:ccej}, con punto inicial $A$ y p
 \end{figure}
 
 \begin{equation}
-\int_{\overrightarrow{\sigma}} \overrightarrow{f} d\overrightarrow{\sigma} = \int_C y dx + x dy
+\int_{\overrightarrow{\sigma}} \overrightarrow{f} d\overrightarrow{\sigma} = \int_C y \mathop{dx} + x \mathop{dy}
 \end{equation}
 
 La expresión de $\overrightarrow{\sigma}$ no interesa. Si el campo vectorial $\overrightarrow{f}$ puede expresarse como el gradiente de un campo escalar $\Phi$ a determinar, la integral puede calcularse con el resultado del lema. En este caso, por inspección:
@@ -1343,7 +1343,7 @@ La expresión de $\overrightarrow{\sigma}$ no interesa. Si el campo vectorial $\
 Conocido $\Phi$, la integral de línea puede calcularse evaluándolo en $A$ y $B$:
 
 \begin{equation}
-\int_C y dx + x dy = \Phi(B) - \Phi(A) = 1 \cdot 0 - (-1 \cdot 0) = 0
+\int_C y \mathop{dx} + x \mathop{dy} = \Phi(B) - \Phi(A) = 1 \cdot 0 - (-1 \cdot 0) = 0
 \end{equation}
 
 \textbf{Definición}: Un campo vectorial es un \textbf{campo de gradientes (CG)} si y sólo si es el gradiente de un campo escalar. Simbólicamente:
@@ -1352,7 +1352,7 @@ Conocido $\Phi$, la integral de línea puede calcularse evaluándolo en $A$ y $B
 \overrightarrow{f} \text{ es CG } \Leftrightarrow \exists \Phi / \overrightarrow{f} = \nabla \Phi
 \end{equation}
 
-Entonces, dada la integral de línea $\int_{\overrightarrow{\sigma}} P dx + Q dy$, resulta $\overrightarrow{f} = (P, Q)$. Para que $\overrightarrow{f}$ sea CG, necesariamente:
+Entonces, dada la integral de línea $\int_{\overrightarrow{\sigma}} P \mathop{dx} + Q \mathop{dy}$, resulta $\overrightarrow{f} = (P, Q)$. Para que $\overrightarrow{f}$ sea CG, necesariamente:
 
 \begin{equation}
 \nabla\Phi = \overrightarrow{f} \Rightarrow (\Phi_x, \Phi_y) = (P, Q)
@@ -1466,7 +1466,7 @@ S &= \inf\{ S(\Pi) \text{ } \forall \Pi \}
 Si $f$ es tal que $s = \sigma = S$, $f$ es integrable en $R$, y $\sigma$ es la \textbf{integral doble} de $f$ sobre $R$:
 
 \begin{equation}
-\iint_R f(x,y) dx dy = s = S = \sigma
+\iint_R f(x,y) \mathop{dx} \mathop{dy} = s = S = \sigma
 \end{equation}
 
 A partir de este análisis, puede demostrarse que:
@@ -1479,7 +1479,7 @@ A partir de este análisis, puede demostrarse que:
 Observaciones:
 
 \begin{enumerate}[(A)]
-\item Si $f(x,y) = 1 \Rightarrow \iint_R dx dy = $ área del rectángulo $R$. 
+\item Si $f(x,y) = 1 \Rightarrow \iint_R \mathop{dx} \mathop{dy} = $ área del rectángulo $R$. 
 \item Si $f(x,y) \geq 0$ en $R$, la integral doble da como resultado el volumen del sólido limitado por $R$ y la superficie $z= f(x,y)$. Por ejemplo, considerando la figura~\ref{fig:volbajosup}, dada la superficie $z=f(x,y)$ (color rosa), el volumen delimitado entre $R$ en el plano $(x,y)$ y dicha superficie corresponde al sólido delimitado con colores verdes.
 
 \begin{figure}[ht]
@@ -1493,7 +1493,7 @@ Denominando $K$ a dicho sólido,
 
 \begin{align}
 K &= \{ (x,y,z) \in \Bbb R^3 / (x,y) \in R \wedge 0 \leq z \leq f(x,y) \} \\
-vol(K) &= \iint_{R} f(x,y) dx dy
+vol(K) &= \iint_{R} f(x,y) \mathop{dx} \mathop{dy}
 \end{align}
 
 \item \textbf{Teorema de Fubbini}: Si $f$ es continua en $R$ exceptuando al conjunto de medida/contenido nulo,
@@ -1502,8 +1502,8 @@ vol(K) &= \iint_{R} f(x,y) dx dy
 \tcboxmath[colback=orange!25!white,colframe=orange, title=Teorema de Fubbini]
 {
 \begin{array}{ll}
-\iint_R f(x,y) dx dy = \int_a^b \left( \int_c^d f(x,y) dy \right) dx \\
-\iint_R f(x,y) dx dy = \int_c^d \left( \int_a^b f(x,y) dx \right) dy
+\iint_R f(x,y) \mathop{dx} \mathop{dy} = \int_a^b \left( \int_c^d f(x,y) \mathop{dy} \right) \mathop{dx} \\
+\iint_R f(x,y) \mathop{dx} \mathop{dy} = \int_c^d \left( \int_a^b f(x,y) \mathop{dx} \right) \mathop{dy}
 \end{array}
 }
 \end{equation}
@@ -1525,8 +1525,8 @@ Lo que este teorema dice es que dadas sus condiciones, la integral doble puede r
 \end{figure}
 
 \begin{align}
-\iint_R f(x,y) dx dy &= \int_a^b \left( \int_{\phi_1(x)}^{\phi_2(x)} f(x,y) dy \right) dx \\
-area(R) &= \int_a^b \left( \int_{\phi_1(x)}^{\phi_2(x)} dy \right) dx
+\iint_R f(x,y) \mathop{dx} \mathop{dy} &= \int_a^b \left( \int_{\phi_1(x)}^{\phi_2(x)} f(x,y) \mathop{dy} \right) \mathop{dx} \\
+area(R) &= \int_a^b \left( \int_{\phi_1(x)}^{\phi_2(x)} \mathop{dy} \right) \mathop{dx}
 \end{align}
 
 \item Dos lados horizontales paralelos. Véase la figura~\ref{fig:d2}.
@@ -1539,8 +1539,8 @@ area(R) &= \int_a^b \left( \int_{\phi_1(x)}^{\phi_2(x)} dy \right) dx
 \end{figure}
 
 \begin{align}
-\iint_R f(x,y) dx dy &= \int_c^d \left( \int_{\phi_1(y)}^{\phi_2(y)} f(x,y) dx \right) dy \\
-area(R) &= \int_c^d \left( \int_{\phi_1(y)}^{\phi_2(y)} dx \right) dy
+\iint_R f(x,y) \mathop{dx} \mathop{dy} &= \int_c^d \left( \int_{\phi_1(y)}^{\phi_2(y)} f(x,y) \mathop{dx} \right) \mathop{dy} \\
+area(R) &= \int_c^d \left( \int_{\phi_1(y)}^{\phi_2(y)} \mathop{dx} \right) \mathop{dy}
 \end{align}
 
 \item 1 lado horizontal y 1 lado vertical: Puede tratarse como el caso a, o el caso b.
@@ -1551,7 +1551,7 @@ area(R) &= \int_c^d \left( \int_{\phi_1(y)}^{\phi_2(y)} dx \right) dy
 Por ejemplo, considérese la siguiente integral doble:
 
 \begin{equation}
-\int_{-5}^0 \left( \int_{-1-y^2}^{y^2} f(x,y) dx \right) dy
+\int_{-5}^0 \left( \int_{-1-y^2}^{y^2} f(x,y) \mathop{dx} \right) \mathop{dy}
 \end{equation}
 
 Analizando los bordes del recinto:
@@ -1580,17 +1580,17 @@ Para saber si tomar la rama positiva o negativa de las funciones raíz cuadrada,
 Para integrar primero respecto a $y$, conviene dividir el recinto en 3 recintos $R_1, R_2$ y $R_3$ (marcados en la figura~\ref{fig:coi}), y aplicar la propiedad de linealidad de la integral, que es trivial demostrar que sigue valiendo para la integral doble. Resulta entonces:
 
 \begin{align}
-\int_{-5}^0 \left( f(x,y) dx \right) dy &= \iint_{R_1} (f(x,y) dy) dx + \iint_{R_2} (f(x,y) dy) dx + \iint_{R_3} (f(x,y) dy) dx \\
-\iint_{R_1} (f(x,y) dy) dx &= \int_{-26}^{-1} \left( \int_{-5}^{-\sqrt{-1-x}} f(x,y) dy  \right) dx \\
-\iint_{R_2} (f(x,y) dy) dx &= \int_{-1}^{0} \left( \int_{-5}^0 f(x,y) dy \right) dx \\
-\iint_{R_3} (f(x,y) dy) dx &= \int_{0}^{25} \left( \int_{-5}^{-\sqrt{x}} f(x,y) dy \right) dx
+\int_{-5}^0 \left( f(x,y) \mathop{dx} \right) \mathop{dy} &= \iint_{R_1} (f(x,y) \mathop{dy}) \mathop{dx} + \iint_{R_2} (f(x,y) \mathop{dy}) \mathop{dx} + \iint_{R_3} (f(x,y) \mathop{dy}) \mathop{dx} \\
+\iint_{R_1} (f(x,y) \mathop{dy}) \mathop{dx} &= \int_{-26}^{-1} \left( \int_{-5}^{-\sqrt{-1-x}} f(x,y) \mathop{dy}  \right) \mathop{dx} \\
+\iint_{R_2} (f(x,y) \mathop{dy}) \mathop{dx} &= \int_{-1}^{0} \left( \int_{-5}^0 f(x,y) \mathop{dy} \right) \mathop{dx} \\
+\iint_{R_3} (f(x,y) \mathop{dy}) \mathop{dx} &= \int_{0}^{25} \left( \int_{-5}^{-\sqrt{x}} f(x,y) \mathop{dy} \right) \mathop{dx}
 \end{align}
 
 \end{enumerate}
 
 \subsection{Integral triple}
 
-Es posible generalizar los conceptos de la integral doble partiendo de un recinto $R = [a,b] \times [c,d] \times [e,f]$, que consiste en un paralelepípedo en $\Bbb R^3$. Definiendo la integral triple sobre $R$ como $\iiint_R f(x,y,z) dx dy dz$, puede probarse que todos los resultados de la integral doble siguen valiendo: Fubbini, linealidad, etc.
+Es posible generalizar los conceptos de la integral doble partiendo de un recinto $R = [a,b] \times [c,d] \times [e,f]$, que consiste en un paralelepípedo en $\Bbb R^3$. Definiendo la integral triple sobre $R$ como $\iiint_R f(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz}$, puede probarse que todos los resultados de la integral doble siguen valiendo: Fubbini, linealidad, etc.
 
 Si $f(x,y,z) = 1$, $vol(R) = \iiint_R \mathop{dx} \mathop{dy} \mathop{dz}$
 
@@ -1614,9 +1614,127 @@ Gráficamente, R sería el volumen entre la superficie $z = x^2$ y el plano $(x,
 Sea, arbitrariamente, $f(x,y,z) = xyz^2$:
 
 \begin{equation}
-\iiint_R f(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz} = \int_0^1 \left( \int_0^1 \left( \int_0^{x^2} xyz^2 dz \right)  \right) dy) dx
+\iiint_R f(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz} = \int_0^1 \left( \int_0^1 \left( \int_0^{x^2} xyz^2 \mathop{dz} \right)  \right) \mathop{dy}) dx
 \end{equation}
 
 ¿Qué representaría la integral triple de la función $f$ sobre el sólido $R$? Por ejemplo, si $f$ describiera la densidad punto a punto del sólido, la integral triple daría la masa.
+
+\section{Clase T16}
+
+\subsection{Coordenadas polares}
+
+Un vector en el plano $\Bbb R^2$ puede expresarse en términos de las dos distancias $(x,y)$ a los respectivos ejes. Esta representación se conoce como coordenadas rectangulares o cartesianas y es la más usual. Alternativamente, el mismo vector puede representarse en términos del ángulo $\theta$ respecto al eje $x$, y la distancia $r$ desde el origen. El par $(r, \theta)$ son las coordenadas polares del vector.
+
+\begin{figure}[ht]
+\centering
+\caption{Coordenas cartesianas y polares}
+\includegraphics[scale=0.8]{img/teo_fig022_cp.png}
+\label{fig:cp}
+\end{figure}
+
+La conversión de cartesianas a polares es:
+
+\begin{equation}
+(r, \theta) = \left( \sqrt{x^2 + y^2}, \arctan \left( \frac{y}{x} \right) \right)
+\label{eq:cartapol}
+\end{equation}
+
+Dado el plano $(x,y)$ en coordenadas rectangulares/cartesianas, el mismo puede ser mapeado al plano $(r, \theta)$ a través de un campo vectorial $T:\Bbb R^2 \rightarrow \Bbb R^2$ como el de la ecuación~\ref{eq:cartapol}.
+
+\begin{figure}[ht]
+\centering
+\caption{De polares a cartesianas}
+\includegraphics[scale=0.8]{img/teo_fig023_ccp.png}
+\label{fig:polacart}
+\end{figure}
+
+La transformación inversa, del plano $(r, \theta)$ al plano $(x,y)$, sería como en la figura~\ref{fig:polacart}. Nótese cómo un rectángulo en coordenadas polares es transformado a un sector concéntrico de círculo. Analizando las áreas de ambas figuras (recordando que el área de un sector circular-una porción de pizza completa- es $ \frac{ \mathop{radio}^2 \mathop{longarco} }{2} $):
+
+\begin{align}
+\mathop{area}(R) &= \Delta r \Delta \theta \\
+\mathop{area}(T(R)) &= \frac{r_2^2 \Delta \theta}{2} - \frac{r_1^2 \Delta \theta}{2} = \frac{(r_2^2 - r_1^2) \Delta \theta}{2} = \underbrace{ \frac{r_2 + r_1}{2} }_{\overline{r}, \text{ promedio}} \underbrace{ (r_2 - r_1) }_{\Delta r} \Delta \theta \\
+\mathop{area}(T(R)) &= \overline{r} \Delta r \Delta \theta
+\end{align}
+
+Sea $T$ la transformación de coordenadas polares a cartesianas de la figura~\ref{fig:polacart}, y sea $R$ un compacto (conjunto cerrado y acotado) en el plano $(r,\theta)$. Sea $f$ un campo escalar continuo y acotado sobre el interior de R. Entonces, pensando en el cambio de coordenadas como una composición de funciones, aplicar la regla de la cadena genera la siguiente igualdad:
+
+\begin{equation}
+\iint_{T(R)} f(x,y) \mathop{dx} \mathop{dy} = \iint_R r f(r \cos(\theta), r \sin(\theta)) \mathop{d\theta} \mathop{dr}
+\end{equation}
+
+El factor $r$ en el integrando del lado derecho está asociado al jacobiano de la transformación $T$:
+
+\begin{equation}
+|J_T| = \det \begin{bmatrix}
+\cos(\theta) & -r \sin(\theta) \\
+\sin(\theta) & r \cos(\theta)
+\end{bmatrix} = r
+\end{equation}
+
+Generalizando este resultado a la integral triple, y a una transformación $T$ genérica: si $T$ es un campo vectorial biyectivo en el interior de un compacto en la región $(u,v,w)$ cuya imagen por $T$ es $T(K)$ en el plano $(x,y,z)$, para $f$ continuo y acotado en $T(K)$, será:
+
+\begin{equation}
+\iiint_{T(K)} f(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz} = \iiint_K f[x(u,v,w), y(u,v,w), z(u,v,w)] \left| \frac{\partial(x,y,z)}{\partial(u,v,w)} \right| \mathop{du} \mathop{dv} \mathop{dw}
+\end{equation}
+
+\subsection{Coordenadas cilíndricas: $(r, \theta, z)$}
+
+Son una extensión posible de la idea de las coordenadas polares a $\Bbb R^3$. Además de $r$ y $\theta$, se agrega la coordenada $z$ para indicar la altura del punto. Ver figura~\ref{fig:ccil}.
+
+\begin{figure}[ht]
+\centering
+\caption{Coordenadas cilíndricas}
+\includegraphics[scale=0.8]{img/teo_fig024_ccil.png}
+\label{fig:ccil}
+\end{figure}
+
+La transformación de cilíndricas a cartesianas es $T(r, \theta, z) = (r \cos(\theta), r \sin(\theta), z)$, y su factor jacobiano es $r$.
+
+\subsection{Coordenadas esféricas: $(\rho, \theta, \phi)$}
+
+Estas coordenadas son un poco menos intuitivas, pero tienen su utilidad. Para visualizarlas, considérese una esfera de radio $\rho$. Para ubicar un punto en su superficie, hacen falta el ángulo respecto al eje $x$ ($\theta$) y el ángulo respecto al eje $z$ ($\phi$).
+
+\begin{figure}[ht]
+\centering
+\caption{Coordenadas esféricas}
+\includegraphics[scale=0.8]{img/teo_fig025_cesf.png}
+\label{fig:cesf}
+\end{figure}
+
+Observando la figura~\ref{fig:cesf}, una forma práctica de conceptualizar las coordenadas esféricas de un punto $P$ en $\Bbb R^3$ es mediante los siguientes pasos:
+
+\begin{enumerate}
+\item Dibujar una esfera de radio $\rho$ igual a la norma del vector del origen al punto $P$. El punto estará sobre la superficie de la esfera.
+\item Observando a $P$ desde el origen, medir el ángulo $\theta$ respecto al eje x alineado con $P$.
+\item Observando a $P$ desde el origen, medir el ángulo $\phi$ respecto al eje z alineado con $P$.
+\end{enumerate}
+
+La transformación de esféricas a cartesianas es $T(\rho, \theta, \phi) = (\rho \sin(\phi) \cos(\theta), \rho \sin(\phi) \sin(\theta), \rho \cos(\phi))$, y su factor jacobiano es $\rho^2 \sin(\phi)$. Se verifica además:
+
+\begin{align}
+r = \rho \sin(\phi) \\
+x^2 + y^2 + z^2 = \rho^2 \\
+\rho^2 = r^2 + z^2
+\end{align}
+
+\subsection{Masa, centro de masa y momentos de inercia}
+
+Dado un sólido $K$ en $\Bbb R^3$, si $\rho(x,y,z)$ es un campo escalar que describe la densidad punto a punto, resulta:
+
+\begin{itemize}
+\item $M$: masa del sólido.
+\item $(\overline{x}, \overline{y}, \overline{z})$: Coordenadas del centro de masa.
+\item $I_x, I_y, I_z$: Momentos de inercia.
+\end{itemize}
+
+\begin{align}
+M = \iiint_K \rho(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz} \\
+\overline{x} = \frac{ \iiint_K x \rho(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz} }{M} \\
+\overline{y} = \frac{ \iiint_K y \rho(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz} }{M} \\
+\overline{z} = \frac{ \iiint_K z \rho(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz} }{M} \\
+I_x = \iiint_K (y^2 + z^2) \rho(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz} \\
+I_y = \iiint_K (x^2 + z^2) \rho(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz} \\
+I_z = \iiint_K (x^2 + y^2) \rho(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz}
+\end{align}
 
 \end{document}
