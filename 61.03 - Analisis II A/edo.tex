@@ -535,5 +535,55 @@ Ergo, se planteará:
 y_P = k_1 x^2 + k_2 \cos(2x) + k_3 x + k_4 \sin(2 x) + k_5
 \end{equation}
 
+\section{Clase C8}
+
+\subsection{Método de coeficientes indeterminados (continuación)}
+
+\begin{enumerate}
+\item Plantear $y = y_H + y_P$ como SG.
+\item Calcular $y_H$ hallando las raíces del polinomio característico.
+\item Buscar las partes variables del término independiente $f(x)$ y sus derivadas. Si alguna PV de $f(x)$ es también PV de $y_H$, multiplicar todas las PV de $f(x)$ por la menor potencia de $x$ que rompa esa igualdad.
+\item Proponer como $y_P$ una combinación lineal de las PV determinadas previamente.
+\end{enumerate}
+
+\subsection{Método de variación de parámetros (continuación)}
+
+\begin{enumerate}
+\item Plantear $y = y_H + y_P$ como SG.
+\item Calcular $y_H$ hallando las raíces del polinomio característico.
+\item Plantear la siguiente $y_P$ para el caso de orden 2:
+
+\begin{equation}
+y_P = L_1(x) y_1(x) + L_2(x) y_2(x)
+\end{equation}
+
+Las funciones $y_1(x)$ e $y_2(x)$ surgen de resolver la ecuación homogénea, que por ser de orden 2 tendrá la forma $y_H = c_1 y_1(x) + c_2 y_2(x)$. 
+
+\item Para calcular $L_1$ y $L_2$, plantear el sistema de ecuaciones:
+
+\begin{equation}
+\left\{
+\begin{array}{ll}
+L_1' y_1 + L_2' y_2 = 0 \\
+L_1' y_1' + L_2' y_2' = f(x)
+\end{array}
+\right.
+\end{equation}
+
+Para orden 3, sería:
+
+\begin{equation}
+\left\{
+\begin{array}{ll}
+L_1' y_1 + L_2' y_2 + L_3 y_3 = 0 \\
+L_1' y_1' + L_2' y_2' + L_3' y_3 = 0 \\
+L_1' y_1'' + L_2' y_2'' + L_3' y_3'' = f(x)
+\end{array}
+\right.
+\end{equation}
+
+Estos sistemas de $nxn$ pueden resolverse con la regla de Cramer. Los mismos surgen de exigir que las soluciones de la ED sean linealmente independientes.
+
+\end{enumerate}
 
 \end{document} 
