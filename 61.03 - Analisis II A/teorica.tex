@@ -1709,7 +1709,13 @@ Observando la figura~\ref{fig:cesf}, una forma práctica de conceptualizar las c
 \item Observando a $P$ desde el origen, medir el ángulo $\phi$ respecto al eje z alineado con $P$.
 \end{enumerate}
 
-La transformación de esféricas a cartesianas es $T(\rho, \theta, \phi) = (\rho \sin(\phi) \cos(\theta), \rho \sin(\phi) \sin(\theta), \rho \cos(\phi))$, y su factor jacobiano es $\rho^2 \sin(\phi)$. Se verifica además:
+La transformación de esféricas a cartesianas es:
+
+\begin{equation}
+T(\rho, \theta, \phi) = (\rho \sin(\phi) \cos(\theta), \rho \sin(\phi) \sin(\theta), \rho \cos(\phi))
+\end{equation}
+
+El factor jacobiano es $\rho^2 \sin(\phi)$. Se verifica además:
 
 \begin{align}
 r = \rho \sin(\phi) \\
@@ -1736,5 +1742,39 @@ I_x = \iiint_K (y^2 + z^2) \rho(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz} \\
 I_y = \iiint_K (x^2 + z^2) \rho(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz} \\
 I_z = \iiint_K (x^2 + y^2) \rho(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz}
 \end{align}
+
+\section{Clase T17}
+
+\subsection{Área de una superficie en $\Bbb R^3$}
+
+Así como una curva puede parametrizarse con una variable, una superficie requiere dos variables. Ejemplos:
+
+\begin{align}
+& x^2 + y^2 = z \Rightarrow \overline{T}(u,v) = (u, v, u^2 + v^2) \\
+& x^2 + y^2 + z^2 = R^2 \Rightarrow \overline{T}(\theta, \phi) = (R \sin(\phi) \cos(\theta), R \sin(\phi) \sin(\theta), R \cos(\phi)) \label{eq:supesf} \\
+& \frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = 0 \Rightarrow \overline{T}(\theta, \phi) = (a \phi \cos(\theta), b \phi \sin(\theta), c \phi) \label{eq:supcon}
+\end{align}
+
+Nótese que las ecuaciones~\ref{eq:supesf} y~\ref{eq:supcon} están expresadas en coordenadas polares (de hecho, es bastante incómodo usar las cartesianas para dichos casos).
+
+Sea $\overline{T}$ un campo vectorial en un conjunto abierto que contiene a $D$. $\overline{T}$ debe ser biyectivo en todo $D$, con la posible excepción de su frontera. Sean los vectores $\overline{T_u} = \frac{\partial \overline{T}}{\partial u}$ y $\overline{T_v} = \frac{\partial \overline{T}}{\partial v}$. Supóngase que dichos vectores son l.i. Si se cumplen todas estas condiciones, la superfice $S = Img(\overline{T})$ es \textbf{suave}. Puede ocurrir que la independencia lineal de $\overline{T_u}$ y $\overline{T_v}$ no se cumpla en subconjuntos de contenido nulo, y el resultado sigue valiendo.
+
+Una forma práctica de exigir que dos vectores sean l.i. es plantear que su producto vectorial sea no nulo: $\overline{T_u} \times \overline{T_v} \neq \overline{0}$.
+
+Entonces, para $S$ suave como en la figura~\ref{fig:asuf}, se define:
+
+\begin{figure}[ht]
+\centering
+\caption{Área de una superficie}
+\includegraphics[scale=0.8]{img/teo_fig026_asuf.png}
+\label{fig:asuf}
+\end{figure}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=Área de una superficie]
+{ \mathop{area}(S) = \iint_S dS, \text{ con } dS = \underbrace{ \left|\left| \overline{T_u} \times \overline{T_v} \right|\right| }_{J_{\overline{T}}} \mathop{du} \mathop{dv} }
+\end{equation}
+
+
 
 \end{document}
