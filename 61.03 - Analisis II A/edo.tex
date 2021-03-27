@@ -586,4 +586,53 @@ Estos sistemas de $nxn$ pueden resolverse con la regla de Cramer. Los mismos sur
 
 \end{enumerate}
 
+\section{Clase C9}
+
+\subsection{ED total exacta}
+
+Sea $G(x,y) = k$. Si $G \in C^1 \wedge y = y(x)$, derivando la definición de $G$ miembro a miembro y aplicando la regla de la cadena resulta:
+
+\begin{equation}
+G_x + G_y y_x = 0
+\end{equation}
+
+Si se definen:
+
+\begin{align}
+& G_x = M(x,y) \\
+& G_y = N(x,y) \\
+& dU = M(x,y) \mathop{dx} + N(x,y) \mathop{dy}
+\end{align}
+
+Cuando $dU = 0$, se tiene un diferencial total exacto que da lugar a una EDTE cuya solución es $U(x,y)$, denominada \textbf{función potencial}.
+
+Condición de simetría: $M_y = N_x$
+
+\subsection{Soluciones paramétricas}
+
+$M(x,y) \mathop{dx} + N(x,y) \mathop{dy} = 0$ es EDTE. Parametrizando $x$ e $y$ como curvas, resulta:
+
+\begin{equation}
+\left\{
+\begin{array}{ll}
+x = g(t) \\
+y = h(t)
+\end{array}
+\right. \Rightarrow \int_C M(g(t), h(t)) g'(t) dt + N(g(t), h(t)) h'(t) = 0
+\end{equation}
+
+$x \mathop{dx} + y \mathop{dy} = 0$ es EDTE también.
+
+Dada $U(x,y) / \overline{f}(x,y) = (x,y) \Rightarrow$ en todo punto de las curvas $U(x,y) = c$ será $\overline{f}(x,y) = (x,y)$ ortogonal a ellas.
+
+\subsection{Líneas de campo}
+
+Dado un campo vectorial $\overline{f}$, sus líneas de campo $\overline{\lambda}(t)$ son otro CV que cumple:
+
+\begin{equation}
+\overline{f}(\overline{\lambda}(t)) = k \overline{\lambda}'(t)
+\end{equation}
+
+Dada esta definición, el gradiente siempre es tangente a las líneas de campo.
+
 \end{document} 
