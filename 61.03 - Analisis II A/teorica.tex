@@ -846,7 +846,7 @@ f(P_0 + H) = f(P_0) + \overrightarrow{\nabla{f}}(P_0) H + \theta(H)
 
 Una posible interpretación gráfica de la derivada sería:
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \caption{Interpretación gráfica de la derivada}
 \centering
 \includegraphics[scale=0.6]{img/teo_fig006_dg.png} 
@@ -897,7 +897,7 @@ La matriz jacobiana $J_f$ puede pensarse como la forma más general de represent
 
 Sean $f:\Bbb R^q \rightarrow R^m$ y $g:\Bbb R^n \rightarrow \Bbb R^q$ diferenciables, y en particular sea $f$ diferenciable en el punto $g(x)$. Considérese la función compuesta $h = f \circ g = f(g(x))$. Visualmente:
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \caption{Composición de funciones}
 \centering
 \includegraphics[scale=0.6]{img/teo_fig007_rc.png} 
@@ -975,7 +975,7 @@ h_v = f_x x_v + f_y y_v + f_z z_v = \frac{\partial f}{\partial x} \frac{\partial
 
 Los ``caminitos'' que esto representa, visualmente, son:
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \caption{Regla de la cadena visualmente}
 \includegraphics[scale=.5]{img/teo_fig008_rc2.png} 
 \centering
@@ -1080,7 +1080,7 @@ f_2(x, y(x), z(x)) = 0
 
 Derivando con la regla de la cadena, miembro a miembro, resulta:
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \caption{Derivando un sistema de ecuaciones}
 \includegraphics[scale=1]{img/teo_fig009_tcd.png} 
 \centering
@@ -1178,7 +1178,7 @@ E(P_0) \subset Dom f / f(P) \leq f(P_0) \forall P \in E(P_0)
 
 Entonces, $P_0$ es un máximo local. Es un escalar, y se alcanza en $P_0$. Este es el caso tipo 1, correspondiente a la figura~\ref{fig:exce01}. 
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \caption{Extremo de campo escalar tipo 2}
 \includegraphics[scale=0.6]{img/teo_fig010_exce02.png} 
 \centering
@@ -1187,7 +1187,7 @@ Entonces, $P_0$ es un máximo local. Es un escalar, y se alcanza en $P_0$. Este 
 
 El caso 2, ejemplificado en la figura~\ref{fig:exce02}, se define igual que el 1, cambiando el $\leq$ por $\geq$, y ``máximo local'' por ``mínimo local''
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \caption{Extremo de campo escalar tipo 3}
 \includegraphics[scale=0.6]{img/teo_fig010_exce03.png} 
 \centering
@@ -1245,7 +1245,7 @@ g es indefinida $\Leftrightarrow$ no es definida positiva ni negativa
 
 Para explicar a través de un ejemplo, considérese una matriz de 4x4 con elementos $a, b, c, \ldots , $ñ dispuestos por filas:
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \caption{Determinantes diagonales}
 \includegraphics[scale=0.8]{img/teo_fig011_detdiag.png} 
 \centering
@@ -2113,5 +2113,61 @@ Si el CV $\overline{f}$ es $C^1$ en un conjunto abierto $H \subset \Bbb R^2$ que
 \tcboxmath[colback=orange!25!white,colframe=orange, title=Teorema de Green]
 { \ointctrclockwise_{\partial^+ R} \overline{f} \cdot \mathop{d(\partial^+R)} = \iint_R [Q_x(x,y) - P_y(x,y)] \mathop{dx} \mathop{dy} }
 \end{equation}
+
+\section{Clase T18}
+
+\subsection{Observaciones sobre el teorema de Green}
+
+\begin{enumerate}
+\item El teorema es igualmente válido cuando el lazo $R$ es construido mediante la unión de varias curvas suaves.
+
+\item Dadas las condiciones del teorema, con $H$ simplemente conexo, las siguientes afirmaciones son equivalentes entre sí:
+\begin{enumerate}
+\item $\exists \Phi / \overline{f} = \nabla \Phi$, o sea que $\overline{f}$ es un CG.
+\item $\forall P \in H, P_y(P) = Q_x(P)$
+\item La integral curvilínea de $\overline{f}$ entre dos puntos dentro de $H$ no depende de la trayectoria, y la integral curvilínea sobre el lazo $R$ es nula. Esto se demuestra justamente con el teorema de Green.
+\end{enumerate}
+
+\item Sea $\overline{f} = (P(x,y), Q(x,y))$ con $P_y = Q_x$ en el conjunto $H$, y sean las curvas $C_1, C_2 y C_3$ como se ven en la figura~\ref{fig:green31}.
+
+\begin{figure}[ht]
+\centering
+\caption{Green en región conexa}
+\includegraphics[scale=0.85]{img/teo_fig031_green.png}
+\label{fig:green31}
+\end{figure}
+
+Dado que $C_1$ y $C_2$ están en la frontera de $H$, no se puede asegurar que la integral sobre ellas sea cero. Sin embargo, el teorema de Green garantiza la siguiente igualdad:
+
+\begin{equation}
+\int_{C_1^+} \overline{f} \cdot \mathop{\overline{dC_1}} = \int_{C_2^+} \overline{f} \cdot \mathop{\overline{dC_2}} = \int_{C_3^+} \overline{f} \cdot \mathop{\overline{dC_3}}
+\end{equation}
+
+Esbozo de demostración: considérese la curva $\gamma_1$, que conecta $C_1$ y $C_2$ en la figura~\ref{fig:green32}.
+
+\begin{figure}[ht]
+\centering
+\caption{Green en región conexa}
+\includegraphics[scale=1]{img/teo_fig032_green.png}
+\label{fig:green32}
+\end{figure}
+
+Sea entonces $\sigma = C_1^+ \cup \gamma_1^+ \cup C_2^- \cup \gamma_1^-$, donde los sentidos positivos de $C_1$ y $C_2$ son los de la figura ~\ref{fig:green32}, y los sentidos de $\gamma_1$ son los de la figura ~\ref{fig:green32}. Por lo tanto:
+
+\begin{equation}
+\ointctrclockwise_{\sigma} \overline{f} \cdot \mathop{\overline{d\sigma}} = \int_{C_1^+} \overline{f} \cdot \mathop{\overline{dC_1}} + \bcancel{ \int_{\gamma_1^+} \overline{f} \cdot \mathop{\overline{d\gamma_1}} } + \int_{C_2^-} \overline{f} \cdot \mathop{\overline{dC_2}} + \bcancel{ \int_{\gamma_1^-} \overline{f} \cdot \mathop{\overline{d\gamma_1}} }
+\end{equation}
+
+Las integrales sobre $\gamma_1$ se cancelan por ser el mismo recorrido con sentido opuesto, con $f \in C^1$ y $\gamma_1$ suave. Por Green, $\sigma$ es un lazo donde vale la simetría de las derivadas y el interior de $\sigma$ está contenido en $H$, por lo tanto:
+
+\begin{equation}
+\ointctrclockwise_{\sigma} \overline{f} \cdot \mathop{\overline{d\sigma}} = 0 \Rightarrow 0 = \int_{C_1^+} \overline{f} \cdot \mathop{\overline{dC_1}} + \int_{C_2^-} \overline{f} \cdot \mathop{\overline{dC_2}} \Rightarrow \int_{C_1^+} \overline{f} \cdot \mathop{\overline{dC_1}} = \int_{C_2^+} \overline{f} \cdot \mathop{\overline{dC_2}}
+\end{equation}
+
+La igualdad con $C_3$ puede probarse de forma similar.
+
+\item Cualquier CV que satisfaga $-P_y + Q_x = k$ sirve para calcular áreas de regiones planas. En particular, son de utilidad los CVs $\overline{f} = (0, x)$, $\overline{f} = (-y, 0)$ y $\overline{f} = (-y, x)$.
+
+\end{enumerate}
 
 \end{document}
