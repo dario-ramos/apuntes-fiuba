@@ -12,6 +12,8 @@ dist: bionic
 # - fc-cache -f -v
 
 install:
+  - echo $PWD
+  - ls
   - source ./texlive/texlive_install.sh
 
 cache:
