@@ -10,6 +10,7 @@
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage{tcolorbox}
+\usepackage{esint}
 
 \renewcommand{\Bbb}{\mathbb}
 
@@ -1893,5 +1894,40 @@ f_1 & f_2 & f_3
 \end{equation}
 
 El rotor del gradiente de un CE $C^2$, por Schwartz, es nulo.
+
+Los CV de rotor nulo se llaman \textbf{irrotacionales}. Un campo de gradientes, para el cual existe $\Phi$, es siempre irrotacional.
+
+\subsection{Laplaciano}
+
+Sea $f$ un CE $C^2$. Se define entonces el laplaciano de $f$ como la suma de las derivadas parciales segundas repetidas:
+
+\begin{equation}
+\nabla^2 f = f_{x_1 x_1} + f_{x_2 x_2} + \ldots + f_{x_n x_n}
+\end{equation}
+
+Los CE con laplaciano nulo se denominan \textbf{armónicos}.
+
+\subsection{Teorema de Green}
+
+\begin{figure}[ht]
+\centering
+\caption{Teorema de Green}
+\includegraphics[scale=0.85]{img/teo_fig030_green.png}
+\label{fig:green}
+\end{figure}
+
+Obsérvese la figura~\ref{fig:green}. En el contexto de la misma, sean:
+
+\begin{align}
+& \overline{f}:H \subset \Bbb R^2 \rightarrow \Bbb R^2 / f(x,y) = (P(x,y), Q(x,y)) \\
+& \partial^+ R = C \text{ (la frontera de } R \text{ es una curva)}
+\end{align}
+
+Si el CV $\overline{f}$ es $C^1$ en un conjunto abierto $H \subset \Bbb R^2$ que contiene a un lazo simple $\partial^+ R$ $C^1$ y con derivadas primeras no nulas, entonces:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=Teorema de Green]
+{ \ointctrclockwise_{\partial^+ R} \overline{f} \cdot \mathop{d(\partial^+R)} = \iint_R [Q_x(x,y) - P_y(x,y)] \mathop{dx} \mathop{dy} }
+\end{equation}
 
 \end{document}
