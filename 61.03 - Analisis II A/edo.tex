@@ -799,4 +799,55 @@ y'(t) = \frac{\mathop{dy}}{\mathop{dt}} = \dot{y} \\
 y''(t) = \frac{\mathop{d^2y}}{\mathop{dt^2}} = \ddot{y} \\
 \end{align}
 
+\section{Clase C11}
+
+\subsection{EDOs reducibles a homogéneas}
+
+Forma general:
+
+\begin{equation}
+\frac{\mathop{dy}}{\mathop{dx}} = frac{a_1 x + b_1 y + c_1}{a_2 x + b_2 y + c_2 }
+\end{equation}
+
+Pasos para resolución:
+
+\begin{enumerate}
+\item Se plantea:
+
+\begin{equation}
+\begin{array}{ll}
+x = u + h \Rightarrow \mathop{dx} = \mathop{du} \\
+y = v + k \Rightarrow \mathop{dy} = \mathop{dv}
+\end{array}
+\end{equation}
+
+($h$ y $k$ son constantes).
+
+\item Se reemplazan $x$ e $y$ en la ED:
+
+\begin{equation}
+\frac{\mathop{dv}}{\mathop{du}} = \frac{a_1 u + b_1 v + a_1 h + b_1 k + c_1}{a_2 u + b_2 v + a_2 h + b_2 k + c_2}
+\end{equation}
+
+\item Se exige arbitrariamente, para convertir la ecuación en homogénea:
+
+\begin{equation}
+\begin{array}{ll}
+a_1 h + b_1 k + c_1 = 0 \\
+a_2 h + b_2 k + c_2 = 0
+\end{array}
+\end{equation}
+
+De este sistema de $2 \times 2$ se obtienen las constantes $h$ y $k$.
+
+\item Dado que las sumas del ítem anterior son nulas, resulta:
+
+\begin{equation}
+\frac{\mathop{dv}}{\mathop{du}} = \frac{a_1 u + b_1 v}{a_2 u + b_2 v}
+\end{equation}
+
+Con la sustitución $z = \frac{u}{v}$, la ED pasa a ser homogénea y puede resolverse con los métodos ya vistos para ecuaciones de ese tipo.
+
+\end{enumerate}
+
 \end{document} 
