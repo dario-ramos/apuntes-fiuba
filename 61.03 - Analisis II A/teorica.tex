@@ -2279,4 +2279,61 @@ Cabía esperar este resultado por la simetría de $S$ y del campo $F$.
 
 \end{enumerate}
 
+\section{Clase T20}
+
+\subsection{Teorema de Gauss}
+
+\begin{figure}[ht]
+\centering
+\caption{Teorema de Gauss}
+\includegraphics[scale=0.7]{img/teo_fig037_gauss.png}
+\label{fig:gauss}
+\end{figure}
+
+Partiendo de la figura~\ref{fig:gauss}, sea la superficie $S$ de un sólido en $\Bbb R^3$. Dicha superficie puede expresarse paramétricamente en dos variables $u$ y $v$ mediante la transformación $\overline{T}:D_{uv} \subset \Bbb R^2 \rightarrow S \subset \Bbb R^3$. A su vez, el sólido está contenido en un conjunto $A$ en $\Bbb R^3$. Si se cumplen los siguientes requisitos:
+
+\begin{itemize}
+\item $\overline{T} \in C^1(D_{uv})$
+\item El CV $\overline{f} \in C^1(A)$, con $\overline{f}: A \rightarrow \Bbb R^3$.
+\item La superficie $S$ es cerrada, con campo normal unitario saliente $\hat{n} = \frac{\overline{T}_u \times \overline{T}_v}{||\overline{T}_u \times \overline{T}_v||}$, con el producto vectorial $\overline{T}_u \times \overline{T}_v \neq \overline{0}$ en $D_{uv}$.
+\item La superficie $S$ encierra un sólido $V$, tal que $S = \partial V$, y $A \supset (S U V)$.
+\end{itemize}
+
+Entonces se cumple que:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=Teorema de Gauss]
+{ \iint_S ( \overline{f} \cdot \hat{n} ) \mathop{dS} = \iiint_V \mathop{div} \overline{f} dV }
+\end{equation}
+
+En esta ocasión, el lado izquierdo de la igualdad representa el flujo del campo $\overline{f}$ sobre la superficie $S$. En tanto el lado derecho es la integral de la divergencia del campo sobre el volumen $V$ encerrado por la superficie $S$. Una aplicación física de estos conceptos: si $\overline{f}$ es la velocidad punto a punto de un fluido, el flujo es el caudal volumétrico.
+
+La versión paramétrica del teorema sería:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=Teorema de Gauss parametrizado]
+{ \iint_{D_{uv}} \overline{f}(\overline{T}(u,v)) \cdot \overline{n} \mathop{du} \mathop{dv} = \iiint_V \mathop{div} \overline{f} \mathop{dx} \mathop{dy} \mathop{dz} }
+\end{equation}
+
+Nótese que en este caso se usa $\overline{n} = \overline{T}_u \times \overline{T}_v$, que es el campo normal no unitario (o sea, no dividido por su norma).
+
+\subsubsection{Observaciones}
+
+\begin{itemize}
+\item Que el flujo del rotor sobre una superficie cerrada es cero, cosa que ya se sabía por Stokes, también puede probarse con Gauss, ya que la divergencia del rotor es cero.
+
+\item El flujo sobre una superficie cerrada de un \textbf{campo solenoidal (divergencia nula)} es cero, al igual que el caso en que $\overline{f}$ es CG de un \textbf{CE armónico (laplaciano nulo)}. 
+
+\item Si $\overline{f}$ es CG, y $\Phi$ es su función potencial:
+
+\begin{equation}
+\iint_S \overline{\nabla \Phi} dS = \iiint_V \mathop{div}( \overline{\nabla \Phi} ) \mathop{dV}
+\end{equation}
+
+Dado que $\mathop{div}( \overline{\nabla \Phi} ) = \Phi_{xx} + \Phi_{yy} + \Phi_{zz} = \nabla^2 \Phi$, si $\Phi$ es armónica, entonces su flujo sobre una superficie cerrada será nulo.
+
+\item Que el flujo sea nulo no implica que la divergencia lo sea, aunque el recíproco sea cierto.
+
+\end{itemize}
+
 \end{document}
