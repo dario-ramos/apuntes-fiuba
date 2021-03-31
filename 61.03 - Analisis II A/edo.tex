@@ -115,7 +115,7 @@ y' = F(x,y) \Rightarrow I_k = {(x,y) \in Dom(F) / F(x,y) = k}
 
 Las isoclinas son las curvas de nivel de la función derivada.
 
-\begin{figure}[t]
+\begin{figure}[ht]
 \caption{Isoclinas}
 \includegraphics[scale=0.75]{img/edo_fig001_isoclinas.png} 
 \centering
@@ -634,5 +634,169 @@ Dado un campo vectorial $\overline{f}$, sus líneas de campo $\overline{\lambda}
 \end{equation}
 
 Dada esta definición, el gradiente siempre es tangente a las líneas de campo.
+
+\section{Clase C10}
+
+\subsection{Factor integrante}
+
+El factor integrante es una expresión que depende sólo de $x$ (o sólo de $y$) tal que al multiplica una ED miembro a miembro, la convierte en una EDTE.
+
+Por ejemplo, sea la ED:
+
+\begin{align}
+& \underbrace{ (xy + y \cos(x)) }_{M} \mathop{dx} + \underbrace{ (x^2 + 2 \sin(x)) }_N \mathop{dy} = 0 \\
+& M_y = x + \cos(x) \\
+& N_x = 2x + 2 \cos(x)
+\end{align}
+
+Esta ecuación tiene la forma de una EDTE, pero no satisface la condición de simetría $M_y = N_x$. Se plantea entonces un factor integrante $u(x)$:
+
+\begin{align}
+& \underbrace{ u(x) M(x,y) }_{\hat{M}} dx + \underbrace{ u(x) N(x,y) }_{\hat{N}} dy = 0 \\ 
+& \hat{M}_y = u(x) M_y = u(x) (x + \cos(x)) \\
+& \hat{N}_x = u'(x) N + u(x) N_x = u'(x) (x^2 + 2 \sin(x)) + u(x) (2x + 2 \cos(x))  
+\end{align}
+
+Para que esto sea una EDTE, se necesita que $\hat{M}_y = \hat{N}_x$:
+
+\begin{align}
+& u (x + \cos(x)) = u' (x^2 + 2 \sin(x)) + u (2x + 2 \cos(x)) \\
+& u x + u \cos(x) - 2 u x -2 u \cos(x) = \frac{du}{dx} \left( x^2 + 2 \sin(x) \right) \\
+& -u (x + \cos(x)) = \frac{du}{dx} \left( x^2 + 2 \sin(x) \right) \\
+& \int \frac{du}{u} = -\int \frac{x^2 + \cos(x)}{x^2 + 2 \sin(x)} \mathop{dx}
+\end{align}
+
+Para resolver la integral del lado derecho, se plantea un cambio de variable:
+
+\begin{align}
+& \alpha = x^2 + 2 \sin(x) \\
+& \mathop{d\alpha} = 2 x + 2 \cos(x) = 2 (x + \cos(x)) \mathop{dx} \\
+& \frac{\mathop{d\alpha}}{2} = (x + \cos(x)) \mathop{dx}
+\end{align}
+
+Reemplazando:
+
+\begin{align}
+& \ln u = -\int \frac{\mathop{d\alpha}}{2 t} \Leftrightarrow \ln u = -\frac{1}{2} \ln \alpha \\
+& \ln u = \ln (\alpha^{-\frac{1}{2}}) \Leftrightarrow u = \alpha^{-\frac{1}{2}} \\
+& u(x) = (x^2 + 2 \sin(x))^{-\frac{1}{2}}
+\end{align}
+
+Nótese que al integrar para hallar $u$, no se consideró la constante $C$ del TFC, porque eso luego se ajusta en la solución general. Introducir eso en $u$ complicaría innecesariamente los cálculos.
+
+El próximo paso, una vez obtenido el factor integrante $u$, es multiplicar la ED por él y resolverla como EDTE:
+
+\begin{align}
+& \Phi_x = (x^2 + 2 \sin(x))^{-\frac{1}{2}} (x y + y \cos(x) ) \\
+& \Phi_y = (x^2 + 2 \sin(x))^{-\frac{1}{2}} (x^2 + 2 \sin(x)) = (x^2 + 2 \sin(x))^{\frac{1}{2}}
+\end{align}
+
+Integrando $\Phi_y$ respecto a $y$; recordar que al resolver una EDTE, eso introduce una función $v(x)$ a determinar:
+
+\begin{align}
+\Phi = (x^2 + 2 \sin(x))^{\frac{1}{2}} y + v(x)
+\end{align}
+
+Derivando respecto a x, e igualando a $\Phi_x$ para determinar $v(x)$:
+
+\begin{align}
+& \Phi_x = y \frac{1}{2} (x^2 + 2 \sin(x))^{-\frac{1}{2}} (2 x + 2 \cos(x)) + v'(x) \\
+& (x^2 + 2 \sin(x))^{-\frac{1}{2}} (x y + y \cos(x)) + v'(x) = (x^2 + 2 \sin(x))^{-\frac{1}{2}} (x y + y \cos(x)) \\
+& v'(x) = 0 \Rightarrow v(x) = k
+\end{align}
+
+Finalmente, resulta $\Phi = (x^2 + 2 \sin(x))^{\frac{1}{2}} + k$, por lo que la SG estará dada por la familia de curvas asociada a $(x^2 + 2 \sin(x))^{\frac{1}{2}} y = C$
+
+\subsection{Líneas de campo}
+
+También llamadas líneas de flujo o líneas de corriente. Son las curvas incluidas en el dominio de un campo vectorial tales que los vectores del mismo son tangentes a ellas en todo punto. Para que esta última oración tenga sentido, claramente el CV tiene que tener dominio e imagen en el mismo espacio vectorial, o sea $\overline{F}: \Bbb R^2 \rightarrow \Bbb R^2, \overline{F}: \Bbb R^3 \rightarrow \Bbb R^3$, etc. Analíticamente:
+
+\begin{equation}
+\overline{F}(\overline{g}(t)) = k g'(t)
+\end{equation}
+
+Por ejemplo, dado el campo $F(x,y) = (-y,x)$, si se grafica $\overline{F}(x,y)$, se ve que las líneas de campo son círculos. Ver figura~\ref{fig:lincamp}.
+
+\begin{figure}[ht]
+\centering
+\caption{Líneas de campo para $\overline{F}(x,y) = (-y,x)$}
+\includegraphics[scale=0.7]{img/teo_fig036_lincamp.png}
+\label{fig:lincamp}
+\end{figure}
+
+Si las líneas de campo son curvas cerradas, como en este ejemplo, \textbf{el campo no es conservativo}.
+
+Existen dos métodos para calcular las líneas de campo.
+
+\subsubsection{Resolución vectorial}
+
+Dados el CV (dato) y las líneas de campo (incógnitas):
+
+\begin{align}
+& \overline{F}(x,y) = (P(x,y), Q(x,y)) \\
+& \overline{g}(t) = (x(t), y(t)
+\end{align}
+
+Se plantea la igualdad de la definición para $k = 1$:
+
+\begin{equation}
+(P(x(t), y(t), Q(x(t), y(t)) = (x'(t), y'(t))
+\end{equation}
+
+De esta igualdad surge un sistema de EDs de 2x2, a partir del cual es posible obtener las ecuaciones paramétricas de $g(t)$.
+
+\subsubsection{Resolución analítica}
+
+Lo primero que se plantea es que, a partir de la definición, los vectores $\overline{F}$ y $\mathop{\overline{dg}}$ son paralelos:
+
+\begin{equation}
+\overline{F} \parallel \mathop{\overline{dg}}
+\end{equation}
+
+Por otro lado:
+
+\begin{equation}
+\mathop{\overline{dg}} = (x'(t), y'(t)) dt = \left( \frac{\mathop{dx}}{\mathop{dt}}, \frac{\mathop{dy}}{\mathop{dt}} \right) \mathop{dt} = (\mathop{dx}, \mathop{dy})
+\end{equation}
+
+Ergo:
+
+\begin{align}
+(P, Q) \parallel (\mathop{dx}, \mathop{dy}) \Rightarrow \frac{\mathop{dx}}{P} = \frac{\mathop{dy}}{Q} \Rightarrow Q dx = P dy \Rightarrow y' = \frac{Q}{P}
+\end{align}
+
+Extensión a $\Bbb R^3$:
+
+\begin{equation}
+\frac{\mathop{dx}}{P} = \frac{\mathop{dy}}{Q} = \frac{\mathop{dz}}{R}
+\end{equation}
+
+Nótese que en este caso surgen dos igualdades, y por ende un sistema de 2x2.
+
+Otro resultado interesante: si $\overline{F}$ es un CG, las líneas de campo y las equipotenciales son trayectorias ortogonales.
+
+\subsection{Ecuaciones de Euler-Cauchy}
+
+Estas ecuaciones tienen la forma general:
+
+\begin{equation}
+a x^2 y'' + b x y' + c y = 0
+\end{equation}
+
+Las siguientes sustituciones las reducen a una ED lineal con coeficientes constantes:
+
+\begin{align}
+x = e^t, t \in (0, +\infty) \\
+x = -e^t, t \in (-\infty, 0) \\
+\end{align}
+
+Cuidado: Dado que se plantea $x = f(t)$ con la sustitución, al ser $y=f(x)$, pasa a ser $y = f(t)$.
+
+Notación alternativa: 
+
+\begin{align}
+y'(t) = \frac{\mathop{dy}}{\mathop{dt}} = \dot{y} \\
+y''(t) = \frac{\mathop{d^2y}}{\mathop{dt^2}} = \ddot{y} \\
+\end{align}
 
 \end{document} 
