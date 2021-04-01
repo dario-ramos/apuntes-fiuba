@@ -11,24 +11,38 @@
 \usepackage[utf8]{inputenc}
 \usepackage{tcolorbox}
 \usepackage{esint}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black,
+}
 
 \renewcommand{\Bbb}{\mathbb}
 
 \tcbuselibrary{theorems}
 
-\begin{document} 
+\title{Apuntes teórico-prácticos de Análisis Matemático II A (63.01) \\ Cátedra Acero \\ 1° C 2004}
+\author{Darío Eduardo Ramos}
+
+\begin{document}
+\maketitle
+
+\tableofcontents{}
 
 \definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
 \definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
 
-\section{T1}
+\section{El espacio vectorial \texorpdfstring{$\Bbb R^n$}{Rn}}
 
-\subsection{El espacio vectorial $\Bbb R^n$}
+\subsection{Definiendo \texorpdfstring{$\Bbb R^n$}{Rn}}
 
-El objetivo de la materia es adaptar los conceptos de Análisis I (derivadas, integrales, Taylor ...) al espacio n-dimensional, $\mathbb{R}^n$.
+El objetivo de la materia es adaptar los conceptos de Análisis I (derivadas, integrales, Taylor, etc.) al espacio n-dimensional, $\mathbb{R}^n$.
 
 \begin{equation}
-x \in \Bbb R^n \Longleftrightarrow x = (x_1, x_2, x_3, ..., x_n)
+x \in \Bbb R^n \overset{\text{def}}{\Longleftrightarrow} x = (x_1, x_2, x_3, \ldots, x_n)
 \end{equation}
 
 Se dice que $x$ es un vector o punto de $\Bbb R^n$, compuesto por $n$ números reales. No se distingue entre vector y punto, salvo que sea necesario.
@@ -37,17 +51,17 @@ $\Bbb R^n$ se estructura en espacio vectorial definiendo las siguientes operacio
 
 \begin{subequations}
 \begin{align}
-\forall x, y \in \Bbb R^n, & z = x + y \Longleftrightarrow z_i = x_i + y_i, \forall i \in [1, n] & \text{SUMA VECTORIAL}\\
-\forall \alpha \in \Bbb R, & x \in \Bbb R^n, z = \alpha x \Longleftrightarrow z_i = \alpha x_i \forall i \in [1, n] & \text{PRODUCTO POR ESCALAR}
+& \textbf{SUMA VECTORIAL: } \forall x, y \in \Bbb R^n, z = x + y \Longleftrightarrow z_i = x_i + y_i, \forall i \in [1, n] \\
+& \textbf{PRODUCTO POR ESCALAR: } \forall \alpha \in \Bbb R, x \in \Bbb R^n, z = \alpha x \Longleftrightarrow z_i = \alpha x_i \forall i \in [1, n]
 \end{align}
 \end{subequations}
 
-Con estas definiciones, puede probarse que $\Bbb R^n$ es cerrado para la suma vectorial y producto por un escalar, considerando el vector nulo (todos ceros), $\overline{0}$, como el neutro para la suma, y el número real 1 como el neutro del producto por escalar.
+Con estas definiciones, puede probarse que $\Bbb R^n$ es cerrado para la suma vectorial y producto por un escalar, considerando el vector nulo (todos ceros), $\overline{0}$, como el neutro para la suma, y el número real 1 como el neutro del producto por escalar. Hay otros 8 axiomas en torno a estas dos operaciones fundementales que definen formalmente $\Bbb R^n$ como espacio vectorial (esto se verá más en detalle en Álgebra II A; en Análisis, este tema no es tan importante).
 
 Adicionalmente, $\Bbb R^n$ pasa a ser un \textbf{espacio vectorial euclídeo} si se le agrega un \textbf{producto escalar}:
 
 \begin{equation}
-\forall x, y \in \Bbb R^n, \alpha = x \cdot y \Longleftrightarrow \alpha = \sum\limits_{i=1}^{n} x_i y_i = x_1 y_1 + x_2 y_2 + ... + x_n y_n
+\forall x, y \in \Bbb R^n, \alpha = x \cdot y \overset{\text{def}}{\Longleftrightarrow} \alpha = \sum\limits_{i=1}^{n} x_i y_i = x_1 y_1 + x_2 y_2 + \ldots + x_n y_n
 \end{equation}
 
 Definiendo una \textbf{norma} sobre el producto escalar, $\Bbb R^n$ pasa a ser un espacio vectorial euclídeo y normado. La norma canónica en $\Bbb R^n$ es la raíz cuadrada del producto escalar del vector consigo mismo:
@@ -56,7 +70,7 @@ Definiendo una \textbf{norma} sobre el producto escalar, $\Bbb R^n$ pasa a ser u
 \forall x \in \Bbb R^n, \|x\| = \sqrt{x \cdot x} = \sqrt{ \sum\limits_{i=1}^{n} x_i^2 }
 \end{equation}
 
-Un \textbf{versor} es un vector de norma 1. Para "normalizar" cualquier vector, se lo divide por su norma:
+Un \textbf{versor} es un vector de norma 1. Para ``normalizar'' cualquier vector, se lo divide por su norma:
 
 \begin{equation}
 \forall x \in \Bbb R^n, \left\| \frac{x}{\|x\|} \right\| = 1
@@ -70,20 +84,20 @@ Si $x, y \neq \overline{0}$, el ángulo entre x e y, $\alpha(x,y)$, satisface la
 \cos (\alpha(x, y)) = \frac{x \cdot y}{ \|x\| \|y\| }
 \end{equation}
 
-\begin{figure}[t]
-\caption{Proyección del vector x sobre el vector y}
-\includegraphics[scale=1]{img/teo_fig001_proyeccion.png} 
-\centering
-\label{fig:proyeccion}
-\end{figure}
-
 Aplicando la igualdad del ángulo entre vectores, y considerando el versor $\breve{y} = \frac{y}{\|y\|}$, resulta:
 
 \begin{equation}
 x \cdot y = \|x\| \|y\| \cos(\alpha) \Longrightarrow x \cdot \breve{y} = \|x\| \underbrace{ \cancel{ \| \breve{y} \| } }_{\text{Norma 1}} \cos(\alpha) = \|x\| \cos(\alpha)
 \end{equation}
 
-Geométricamente, como se observa en la figura ~\ref{fig:proyeccion}, la proyección de x sobre y se obtiene como el siguiente vector:
+Geométricamente, como se observa en la figura \ref{fig:proyeccion}, la proyección de x sobre y se obtiene como el siguiente vector:
+
+\begin{figure}[ht]
+\caption{Proyección del vector x sobre el vector y}
+\includegraphics[scale=1]{img/teo_fig001_proyeccion.png} 
+\centering
+\label{fig:proyeccion}
+\end{figure}
 
 \begin{equation}
 \overline{P}_{y}(x) =  \underbrace{ \|x\| \cos(\alpha) }_{\text{Escalar}}  \underbrace{ \breve{y} }_{\text{Versor}}
@@ -106,7 +120,7 @@ Geométricamente, como se observa en la figura ~\ref{fig:proyeccion}, la proyecc
 $\forall x, y \in \Bbb R^n$, se define la distancia entre x e y como:
 
 \begin{equation}
-d(x,y) = \| x - y \| = \| y - x \|
+d(x,y) \overset{\text{def}}{=} \| x - y \| = \| y - x \|
 \end{equation}
 
 \subsection{Producto vectorial}
@@ -138,12 +152,12 @@ x \otimes y & = \overline{0} \Longleftrightarrow \{x, y\} \text{ es linealmente 
 \end{align}
 \end{subequations}
 
-\subsection{Clasificación de puntos en un subconjunto de $\Bbb R^n$}
+\subsection{Clasificación de puntos en un subconjunto de \texorpdfstring{$\Bbb R^n$}{Rn}}
 
 Sea un punto $P_0 \in \Bbb R^n$; se define como \textbf{bola o entorno} de centro $P_0$ y radio $r$ al conjunto de puntos cuya distancia a $P_0$ es menor que $r$. Simbólicamente:
 
 \begin{equation}
-B(P_0, r) = \{ x \in \Bbb R^n / \| x - P_0 \| < r \}
+B(P_0, r) \overset{\text{def}}{=} \{ x \in \Bbb R^n / \| x - P_0 \| < r \}
 \end{equation}
 
 En $\Bbb R$, esto es un intervalo abierto; en $\Bbb R^2$, el interior de un círculo; en $\Bbb R^3$, el interior de una esfera. Para dimensiones mayores, no hay tal representación geométrica, pero la definición se mantiene.
@@ -151,35 +165,35 @@ En $\Bbb R$, esto es un intervalo abierto; en $\Bbb R^2$, el interior de un cír
 Si se excluye al centro $P_0$, se habla de una bola o entorno \textbf{reducido}:
 
 \begin{equation}
-B^*(P_0, r) = B(P_0, r) - \{ P_0 \}
+B^*(P_0, r) \overset{\text{def}}{=} B(P_0, r) - \{ P_0 \}
 \end{equation}
 
 Considérese a continuación un subconjunto $A \subseteq \Bbb R^n$
 
 \subsubsection{Punto interior}
 
-$P_0$ es punto interior de $A \Longleftrightarrow \exists B(P_0, r) \subset A$. Es decir, si existe al menos un entorno centrado en $P_0$ que esté incluido en $A$. En otras palabras, $P_0$ está "rodeado por todas partes" de puntos de $A$.
+$P_0$ es punto interior de $A \Longleftrightarrow \exists B(P_0, r) \subset A$. Es decir, si existe al menos un entorno centrado en $P_0$ que esté incluido en $A$. En otras palabras, $P_0$ está ``rodeado por todas partes'' de puntos de $A$.
 
 Por otro lado, se define al \textbf{conjunto interior de} $A$, notado $\mathring{A}$, de la siguiente manera:
 
 \begin{equation}
-\mathring{A} = \{ x \in \Bbb R^n / x \text{ es punto interior de } A \}
+\mathring{A} \overset{\text{def}}{=} \{ x \in \Bbb R^n / x \text{ es punto interior de } A \}
 \end{equation}
 
 \subsubsection{Punto exterior}
 
-$P_0$ es punto exterior de $A \Longleftrightarrow \exists B(P_0, r) \subset A^c$. Es decir, un punto es exterior de $A$ si es interior del complemento de $A$ ($A^c$).
+$P_0$ es punto exterior de $A \overset{\text{def}}{ \Longleftrightarrow } \exists B(P_0, r) \subset A^c$. Es decir, un punto es exterior de $A$ si es interior del complemento de $A$ ($A^c$).
 
 \begin{equation}
-Ext(A) = \{ x \in \Bbb R^n / x \text{ es p.e. de A } \}
+\mathop{Ext}(A) \overset{\text{def}}{=} \{ x \in \Bbb R^n / x \text{ es p.e. de A } \}
 \end{equation}
 
 \subsubsection{Punto frontera}
 
-$P_0$ es punto frontera de $A \Longleftrightarrow$ toda bola centrada en $P_0$ contiene elementos de $A$ y $A^c$. Simbólicamente:
+$P_0$ es punto frontera de $A \overset{\text{def}}{\Longleftrightarrow}$ toda bola centrada en $P_0$ contiene elementos de $A$ y $A^c$. Simbólicamente:
 
 \begin{equation}
-P_0 \text{ es p.f. de } A \Longleftrightarrow \forall B(P_0, r), \left\{
+P_0 \text{ es p.f. de } A \overset{\text{def}}{\Longleftrightarrow} \forall B(P_0, r), \left\{
 \begin{array}{ll}
 B(P_0, r) \cap A \neq \varnothing \\
 B(P_0, r) \cap A^c \neq \varnothing
@@ -190,32 +204,39 @@ B(P_0, r) \cap A^c \neq \varnothing
 La \textbf{frontera} de $A$, $\partial A$, se define como:
 
 \begin{equation}
-\partial A = \{ x \in \Bbb R^n / x \text{ es p.f. de A } \}
+\partial A \overset{\text{def}}{=} \{ x \in \Bbb R^n / x \text{ es p.f. de A } \}
 \end{equation}
 
 Propiedades:
 
 \begin{subequations}
 \begin{align}
-\mathring{A} \cap \partial A & = \varnothing \\
-Ext(A) \cap \partial A & = \varnothing \\
-\mathring{A} \cap Ext(A) & = \varnothing \\
-\mathring{A} \cup \partial A \cup Ext(A) & = \Bbb R^n \\
-\text{Clausura/adherencia de A } = \overline{A} & = A \cup \partial A \\
-\text{A es abierto } \Longleftrightarrow A & = \mathring{A} \\
-\text{A es cerrado } \Longleftrightarrow A & = \overline{A} \Longleftrightarrow A^c \text{ es abierto } \\
+& \mathring{A} \cap \partial A = \varnothing \\
+& \mathop{Ext}(A) \cap \partial A = \varnothing \\
+& \mathring{A} \cap Ext(A) = \varnothing \\
+& \mathring{A} \cup \partial A \cup Ext(A) = \Bbb R^n \\
+& \text{Clausura/adherencia de A } = \overline{A} = A \cup \partial A \\
+& \text{A es abierto } \Longleftrightarrow A = \mathring{A} \\
+& \text{A es cerrado } \Longleftrightarrow A = \overline{A} \Longleftrightarrow A^c \text{ es abierto }
 \end{align}
 \end{subequations}
 
 \subsubsection{Punto aislado}
 
-$P_0$ es p.a. $\Longleftrightarrow \exists B^*(P_0, r) / B^*(P_0, r) \cap A = \varnothing$.
+\begin{equation}
+P_0 \text{ es p.a. } \overset{\text{def}}{\Longleftrightarrow} \exists B^*(P_0, r) / B^*(P_0, r) \cap A = \varnothing
+\end{equation}
 
-O sea, hay al menos un entorno reducido centrado en $P_0$ que no contiene otro elemento de $A$ aparte de $P_0$.
+
+En otras palabras, hay al menos un entorno reducido centrado en $P_0$ que no contiene otro elemento de $A$ aparte de $P_0$.
 
 \subsubsection{Punto de acumulación}
 
-$P_0$ es p. de ac. $\Longleftrightarrow \forall B^*(P_0, r), B^*(P_0, r) \cap A \neq \varnothing$.
+\begin{equation}
+P_0 \text{ es p. de ac. } \overset{\text{def}}{\Longleftrightarrow} \forall B^*(P_0, r), B^*(P_0, r) \cap A \neq \varnothing
+\end{equation}
+
+
 Vale decir, en todo entorno reducido de $P_0$ hay elementos de $A$. El conjunto derivado de $A$, denotado $A'$, se define como el conjunto de todos los puntos de acumulación de $A: A' = \{ x \in \Bbb R^n / x \text{ x es p. de ac. de A} \}$
 
 \subsection{Cónicas}
@@ -254,17 +275,17 @@ x = a (y-c)^2 + b
 \frac{(x-x_0)^2}{a^2} - \frac{(y-y_0)^2}{b^2} = 1
 \end{equation}
 
-\begin{figure}[t]
+\begin{figure}[ht]
 \caption{Hipérbolas}
-\includegraphics[scale=0.8]{img/pra_fig001_hiperbolas.png} 
+\includegraphics[scale=0.8]{img/teo_fig002_hiperbolas.png} 
 \centering
 \label{fig:hiperbolas}
 \end{figure}
 
-En la hipérbola de la figura ~\ref{fig:hiperbolas}, $a$ es el semilado $x$ del rectángulo, y $b$ corresponde al semilado $y$. El centro del rectángulo es el punto $(x_0, y_0)$, que en el dibujo corresponde al origen. 
+En la hipérbola de la figura \ref{fig:hiperbolas}, $a$ es el semilado $x$ del rectángulo, y $b$ corresponde al semilado $y$. El centro del rectángulo es el punto $(x_0, y_0)$, que en el gráfico de la figura \ref{fig:hiperbolas} corresponde al origen. 
 Nótese además que las diagonales del rectángulo definido por $a$ y $b$ son asíntotas oblicuas de la cónica. Por otro lado, el eje que la curva no corta es el asociado al término negativo ($y$ en este ejemplo).
 
-\subsection{Planos}
+\subsection{Planos en \texorpdfstring{$\Bbb R^3$}{R3}}
 
 La \textbf{forma implícita} de definir un plano en $\Bbb R^3$ es:
 
@@ -579,7 +600,7 @@ Cabe destacar que en cada uno de estos pasos, se está calculando el límite par
 
 \section{T4 - Límite 2}
 
-\subsubsection{Límites radiales}
+\subsection{Límites radiales}
 
 Dado un punto $P_0 = (x_0, y_0)$, la idea es aproximarse infinitesimalmente al mismo a través de las infinitas rectas que lo atraviesan, exceptuando la vertical. Por ejemplo, en $\Bbb R^2$:
 
@@ -1165,6 +1186,7 @@ f(P_0+H) = f(P_0) + df(Po, H) + \ldots + \frac{1}{n!} d^nf(Po,H) + \frac{1}{(n+1
 \noindent
 \begin{minipage}{\textwidth}
 \centering
+\captionsetup{type=figure}
 \captionof{figure}{Extremo de campo escalar tipo 1}
 \includegraphics[scale=0.6]{img/teo_fig010_exce01.png} 
 \label{fig:exce01}
@@ -1551,7 +1573,7 @@ Derivando la última igualdad miembro a miembro en el primer componente respecto
 
 Nótese que esto exige que $\Phi \in C^2$ y $\overrightarrow{f} \in C^1$. Ahora bien, por el Teorema de Schwartz, siendo $\Phi \in C^2 \Rightarrow \Phi_{xy} = \Phi_{yx} \Rightarrow P_y = Q_x$. Esto establece la llamada \textbf{condición de simetría} sobre el campo $\overrightarrow{f}$: para que $f$ sea CG, sus derivadas parciales deben cumplirla. Dicha condición es necesaria: campos vectoriales que no la cumplan no son CG. Por otro lado, puede probarse que dicha condición es suficiente si $Dom f$ es un conjunto \textbf{simplemente conexo}. Vale decir, el interior de todo lazo pertenece al conjunto.
 
-\subsection{Encontrando $\Phi$}
+\subsection{Encontrando \texorpdfstring{$\Phi$}{phi}}
 
 En el ejemplo, se pudo obtener $\Phi$ por inspección. En el caso más general, hay que resolver un sistema de ecuaciones diferenciales en derivadas parciales:
 
@@ -1862,7 +1884,7 @@ Generalizando este resultado a la integral triple, y a una transformación $T$ g
 \iiint_{T(K)} f(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz} = \iiint_K f[x(u,v,w), y(u,v,w), z(u,v,w)] \left| \frac{\partial(x,y,z)}{\partial(u,v,w)} \right| \mathop{du} \mathop{dv} \mathop{dw}
 \end{equation}
 
-\subsection{Coordenadas cilíndricas: $(r, \theta, z)$}
+\subsection{Coordenadas cilíndricas: \texorpdfstring{$(r, \theta, z)$}{(r, theta, z)}}
 
 Son una extensión posible de la idea de las coordenadas polares a $\Bbb R^3$. Además de $r$ y $\theta$, se agrega la coordenada $z$ para indicar la altura del punto. Ver figura~\ref{fig:ccil}.
 
@@ -1875,7 +1897,7 @@ Son una extensión posible de la idea de las coordenadas polares a $\Bbb R^3$. A
 
 La transformación de cilíndricas a cartesianas es $T(r, \theta, z) = (r \cos(\theta), r \sin(\theta), z)$, y su factor jacobiano es $r$.
 
-\subsection{Coordenadas esféricas: $(\rho, \theta, \phi)$}
+\subsection{Coordenadas esféricas: \texorpdfstring{$(\rho, \theta, \phi)$}{rho, theta, phi}}
 
 Estas coordenadas son un poco menos intuitivas, pero tienen su utilidad. Para visualizarlas, considérese una esfera de radio $\rho$. Para ubicar un punto en su superficie, hacen falta el ángulo respecto al eje $x$ ($\theta$) y el ángulo respecto al eje $z$ ($\phi$).
 
@@ -1930,7 +1952,7 @@ I_z = \iiint_K (x^2 + y^2) \rho(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz}
 
 \section{Clase T17}
 
-\subsection{Área de una superficie en $\Bbb R^3$}
+\subsection{Área de una superficie en \texorpdfstring{$\Bbb R^3$}{R3}}
 
 Así como una curva puede parametrizarse con una variable, una superficie requiere dos variables. Ejemplos:
 
