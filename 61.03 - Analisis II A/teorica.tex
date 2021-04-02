@@ -303,18 +303,18 @@ Por otro lado, se tiene la \textbf{forma vectorial}:
 
 En esta forma, $P = (p_1, p_2, p_3)$ y $Q = (q_1, q_2, q_3)$ son dos vectores, no puntos; es importante la distinción en este caso; pensar a los vectores como segmentos orientados para distinguirlos de los puntos. De ese modo, $P$ y $Q$ son vectores contenidos en el plano, en tanto $R$ es un punto contenido en el mismo. Los parámetros $\alpha$ y $\beta$ son reales, y sus combinaciones de valores cubren todo el plano definido. 
 
-\section{T2 - Funciones}
+\section{Funciones}
 
 \begin{subequations}
 \begin{align}
 &f: A \rightarrow B \\
 &A = \text{dominio de f} \\
-&B = \text{codominio/imagen de f} = Im(f) \\
+&B = \text{codominio/imagen de f} = \mathop{Im}(f) \\
 &\text{Gráfico de f } = G(f) = \{ (x, f(x)) \text{ con x } \in A \}
 \end{align}
 \end{subequations}
 
-Si $A \subset \Bbb R^n$ y $B \subset \Bbb R^m$, entonces $G(f) \subset \Bbb R^(n+m)$.
+Si $A \subset \Bbb R^n$ y $B \subset \Bbb R^m$, entonces $G(f) \subset \Bbb R^{n+m}$.
 
 $x$ es el argumento de $f$, y $f(x)$ es la imagen de $x$ a través de $f$.
 
@@ -329,18 +329,20 @@ $f^{-1}(H)$ NO es la inversa de $f$; esto es notación.
 En palabras, la preimagen del conjunto $H$ consiste de los elementos del dominio cuya imagen a través de $f$ pertenece a $H$.
 
 \begin{equation}
-H \cap Im(f) = \varnothing \Longrightarrow f^{-1}(H) = \varnothing
+H \cap \mathop{Im}(f) = \varnothing \Longrightarrow f^{-1}(H) = \varnothing
 \end{equation}
 
 \subsection{Tipos de funciones}
 
-i) Funciones escalares: $A \subset \Bbb R$, $B \subset \Bbb R \Longrightarrow f: \Bbb R \rightarrow \Bbb R$
+\begin{enumerate}[i)]
+\item \textbf{Funciones escalares}: $A \subset \Bbb R$, $B \subset \Bbb R \Longrightarrow f: \Bbb R \rightarrow \Bbb R$
 
-ii) Campos escalares: $A \subset \Bbb R^n, B \subset \Bbb R \Longrightarrow \overline{f}: \Bbb R^n \rightarrow \Bbb R$
+\item \textbf{Campos escalares}: $A \subset \Bbb R^n, B \subset \Bbb R \Longrightarrow \overline{f}: \Bbb R^n \rightarrow \Bbb R$
 
-iii) Funciones vectoriales (curvas): $A \subset \Bbb R, B \subset \Bbb R^n \Longrightarrow \overline{f}: \Bbb R \rightarrow \Bbb R^n$
+\item \textbf{Funciones vectoriales (curvas)}: $A \subset \Bbb R, B \subset \Bbb R^n \Longrightarrow \overline{f}: \Bbb R \rightarrow \Bbb R^n$
 
-iv) Campos vectoriales: $A \subset \Bbb R^n, B \subset \Bbb R^m \Longrightarrow \overline{f}: \Bbb R^n \rightarrow \Bbb R^m$
+\item \textbf{Campos vectoriales}: $A \subset \Bbb R^n, B \subset \Bbb R^m \Longrightarrow \overline{f}: \Bbb R^n \rightarrow \Bbb R^m$
+\end{enumerate}
 
 \subsection{Conjuntos de nivel}
 
@@ -352,16 +354,16 @@ C_u(f) = \{ x \in A / f(x) = u, u \in B \}
 
 $u$ puede ser un vector o escalar.
 
-\subsection{Conjunto conexo}
+\subsection{Conjunto conexo y conjunto arco-conexo}
 
-$A \subset \Bbb R^n$ es conexo $\Longleftrightarrow \nexists \text{ dos conjuntos } A_1 y A_2 / A = A_1 \cup A_2$, con $\overline{A_1} \cap A_2 = \varnothing \wedge A_1 \cap \overline{A_2} = \varnothing$.
+$A \subset \Bbb R^n$ es conexo $\Longleftrightarrow \nexists \text{ dos conjuntos } A_1$ y $A_2 / A = A_1 \cup A_2$, con $\overline{A_1} \cap A_2 = \varnothing \wedge A_1 \cap \overline{A_2} = \varnothing$.
 
-O sea, no se puede "partir en dos" a $A$.
+O sea, no se puede ``partir en dos'' a $A$.
 
 Construyendo sobre esta definición, $A \subset \Bbb R^n$ es \underline{arco-conexo} si cualquier par de puntos de $A$ puede ser unido a través de una curva continua. Simbólicamente:
 
 \begin{equation}
-A \subset \Bbb R^n \text{ es arco-conexo } \Longleftrightarrow \exists \overline{f}: [a,b] \rightarrow A / \overline{f}(a) = x \wedge \overline{f}(b) = y \forall x,y \in A
+A \subset \Bbb R^n \text{ es arco-conexo } \Longleftrightarrow \exists \overline{f}: [a,b] \rightarrow A / \overline{f}(a) = x \wedge \overline{f}(b) = y \forall x,y \in A, f \in C^0[a,b]
 \end{equation}
 
 \subsection{Conjunto acotado}
