@@ -497,9 +497,9 @@ El paraboloide hiperbólico es más difícil de visualizar. En la figura \ref{fi
 \label{fig:paraboloide_h}
 \end{figure}
 
-\section{T3 - Límite y continuidad}
+\section{Límites y continuidad}
 
-Un plano puede verse como la imagen de un campo vectorial. Si $\pi: P_0 + \alpha \overrightarrow{u} + \beta \overrightarrow{v}$ (el plano que pasa por $P_0$ y es generado por $\overrightarrow{u}$ y $\overrightarrow{v}$, entonces puede definirse el siguiente campo vectorial:
+Un plano puede verse como la imagen de un campo vectorial. Si $\pi: P_0 + \alpha \overrightarrow{u} + \beta \overrightarrow{v}$ es el plano que pasa por $P_0$ y es generado por $\overrightarrow{u}$ y $\overrightarrow{v}$, entonces puede definirse el siguiente campo vectorial:
 
 \begin{equation}
 \overline{f}: \Bbb R^2 \rightarrow \Bbb R^3 / \overline{f}(\alpha, \beta) = (x, y, z) = P_0 + \alpha \overrightarrow{u} + \beta \overrightarrow{v}
@@ -513,7 +513,7 @@ L = P_0 + t \overrightarrow{u} \longrightarrow \overline{f}: \Bbb R \rightarrow 
 
 Viendo esto físicamente, $t$ puede ser el tiempo, y $\overline{f}$ la trayectoria de un Movimiento Rectilíneo Uniforme.
 
-\subsection{Límite y continuidad}
+\subsection{Límite y continuidad; derivada de curvas}
 
 Generalizando, sea $f: A \rightarrow B$, con $A, B \in \Bbb R^n$
 
@@ -523,9 +523,9 @@ Sea $P_0$ un punto de acumulación de $A$. Se dice que $L \in B$ es el límite d
 \lim_{P \rightarrow P_0}f(P) = L \longleftrightarrow \forall E(L, \epsilon) \exists E^*(P_0, \delta) / [f(E^*(P_0, \delta) \cap A)] \subset E(L, \epsilon)
 \end{equation}
 
-\begin{figure}[t]
+\begin{figure}[ht]
 \caption{Límite}
-\includegraphics[scale=0.75]{img/teo_fig002_limite.png} 
+\includegraphics[scale=0.75]{img/teo_fig007_limite.png} 
 \centering
 \label{fig:limite}
 \end{figure}
@@ -534,22 +534,22 @@ Como se observa en la figura ~\ref{fig:limite}, el concepto es que, si existe el
 
 \subsubsection{Aproximación con curva}
 
-\begin{figure}[t]
-\caption{Límite}
-\includegraphics[scale=0.75]{img/teo_fig003_limite_curva.png} 
+\begin{figure}[ht]
+\caption{Límite aproximando con curva}
+\includegraphics[scale=0.75]{img/teo_fig008_limite_curva.png} 
 \centering
 \label{fig:limite_curva}
 \end{figure}
 
-Lo que pretende mostrar la figura ~\ref{fig:limite_curva} es que, siempre asumiendo que existe el límite, si la aproximación en el dominio se hace con una curva $\gamma$ en lugar de un entorno, la imagen de dicha curva, $f(\gamma)$, convergerá hacia $L$ a medida que $\gamma$ se aproxime a $P_0$. El camino que siga dependerá de cómo transforme f los puntos de $\gamma$.
+Lo que pretende mostrar la figura ~\ref{fig:limite_curva} es que, siempre asumiendo que existe el límite, si la aproximación en el dominio se hace con una curva $\beta$ en lugar de un entorno, la imagen de dicha curva, $f(\beta)$, convergerá hacia $L$ a medida que $\beta$ se aproxime a $P_0$. El camino que siga dependerá de cómo transforme f los puntos de $\beta$.
 
 \subsubsection{Continuidad}
 
-$f$ es continua en $P_0 \longleftrightarrow \displaystyle{\lim_{P \rightarrow P_0}} f(P) = f(P_0)$. En todo otro caso, $f$ es discontinua en $P_0$ de forma \textbf{esencial} si L no existe o es infinito, y de forma \textbf{evitable} si el límite existe, pero $L \neq f(P_0)$ o $\nexists f(P_0)$.
+$f$ es continua en $P_0 \Longleftrightarrow \displaystyle{\lim_{P \rightarrow P_0}} f(P) = f(P_0)$. En todo otro caso, $f$ es discontinua en $P_0$ de forma \textbf{esencial} si L no existe o es infinito, y de forma \textbf{evitable} si el límite existe, pero $L \neq f(P_0)$ o $\nexists f(P_0)$.
 
 \subsubsection{Unicidad del límite}
 
-Si $L$ existe, es único. Como en Análisis I, esto indica que uno forma de demostrar que un límite no existe, es mostrar que da diferentes valores al calcularlo de diferentes maneras.
+Si $L$ existe, es único. Como en Análisis I, esto indica que una forma de demostrar que un límite no existe, es mostrar que da diferentes valores al calcularlo de diferentes maneras.
 
 \subsubsection{Inexistencia y unicidad}
 
@@ -585,7 +585,7 @@ Ejemplo 2: Sea
 f(x,y) = \frac{x^2 - y^2}{x^2 + y^2} \Rightarrow \lim_{(x,y) \rightarrow (0,0)} f(x,y) = ?
 \end{equation}
 
-Dado que hay dos variables, no se puede salvar esta indeterminación con elementos de Análisis I como el factoreo y la regla de L'Hopital. En este caso en particular, es posible usar límites sucesivos (no son límites realmente, sino "parientes bastardos"). La idea es variar una sola variable a la vez, dejando el resto constante. Luego, cambiar de variable. Por ejemplo, en $\Bbb R^2$:
+Dado que hay dos variables, no se puede salvar esta indeterminación con elementos de Análisis I como el factoreo y la regla de L'Hopital. En este caso en particular, es posible usar límites sucesivos (no son límites realmente, sino ``parientes bastardos''`). La idea es variar una sola variable a la vez, dejando el resto constante. Luego, cambiar de variable. Por ejemplo, en $\Bbb R^2$:
 
 \begin{subequations}
 \begin{align}
@@ -605,11 +605,9 @@ l_{21} = \lim_{x \rightarrow 0} \left( \lim_{y \rightarrow 0} \frac{x^2-y^2}{x^2
 
 Dado que dos límites sucesivos dan valores diferentes, resulta que el límite origen en dos variables no existe.
 
-Cabe destacar que en cada uno de estos pasos, se está calculando el límite para una sola variable, por lo que vale la regla de L'Hopital y demás recursos de una variable.
+Cabe destacar que en cada uno de estos pasos, se está calculando el límite para una sola variable, por lo que valen la regla de L'Hopital y demás recursos de una variable.
 
-\section{T4 - Límite 2}
-
-\subsection{Límites radiales}
+\subsubsection{Límites radiales}
 
 Dado un punto $P_0 = (x_0, y_0)$, la idea es aproximarse infinitesimalmente al mismo a través de las infinitas rectas que lo atraviesan, exceptuando la vertical. Por ejemplo, en $\Bbb R^2$:
 
@@ -630,7 +628,7 @@ P = P_0 + t \overrightarrow{v} \Rightarrow l_{\overrightarrow{v}} = \lim_{t \rig
 La misma idea que las rectas, pero usando parábolas. En general, se puede usar cualquier curva que pase por $P_0$. En particular, los límites parabólicos se prestan a funciones cuadráticas o bicuadráticas. Por ejemplo:
 
 \begin{equation}
-f(x,y) = \frac{x^2 + y^4}{xy^2} ^ P_0 = (0,0)
+f(x,y) = \frac{x^2 + y^4}{xy^2} \wedge P_0 = (0,0)
 \end{equation}
 
 Las curvas a usar serán de la forma $x = a y^2$. Nótese que en este caso particular, por la forma particular de $f$, se eligió $y$ como variable independiente. Con ello resulta:
