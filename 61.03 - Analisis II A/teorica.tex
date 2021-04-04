@@ -31,11 +31,12 @@
 \maketitle
 
 \tableofcontents{}
+\newpage
 
 \definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
 \definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
 
-\section{El espacio vectorial \texorpdfstring{$\Bbb R^n$}{Rn}}
+\section{El espacio vectorial \texorpdfstring{$\Bbb R^n$}{Rn}; cónicas}
 
 \subsection{Definiendo \texorpdfstring{$\Bbb R^n$}{Rn}}
 
@@ -303,7 +304,7 @@ Por otro lado, se tiene la \textbf{forma vectorial}:
 
 En esta forma, $P = (p_1, p_2, p_3)$ y $Q = (q_1, q_2, q_3)$ son dos vectores, no puntos; es importante la distinción en este caso; pensar a los vectores como segmentos orientados para distinguirlos de los puntos. De ese modo, $P$ y $Q$ son vectores contenidos en el plano, en tanto $R$ es un punto contenido en el mismo. Los parámetros $\alpha$ y $\beta$ son reales, y sus combinaciones de valores cubren todo el plano definido. 
 
-\section{Funciones}
+\section{Funciones; coordenadas polares; cuádricas}
 
 \begin{subequations}
 \begin{align}
@@ -372,11 +373,11 @@ $A \subset \Bbb R^n$ es acotado $\Longleftrightarrow \forall x \in A, \exists M 
 
 \subsection{Coordenadas polares}
 
-En el sistema de coordenadas cartesianas en $\Bbb R^2$, se miden las proyecciones del vector posición sobre el eje $x$ y el eje $y$. En cambio, en el sistema de coordenadas polares, se miden el ángulo respecto al eje $x$ (coordenada $\phi$), y la distancia desde el origen al punto sobre la recta asociada a dicho ángulo (coordenada $\rho$).
+En el sistema de coordenadas cartesianas en $\Bbb R^2$, se miden las proyecciones del vector posición sobre el eje $x$ y el eje $y$ (en azul en la figura \ref{fig:polares}). En cambio, en el sistema de coordenadas polares, se miden el ángulo respecto al eje $x$ (coordenada $\phi$), y la distancia desde el origen al punto sobre la recta asociada a dicho ángulo (coordenada $\rho$). Dichas coordenadas están marcadas en rojo en la figura \ref{fig:polares}.
 
-\begin{figure}[t]
+\begin{figure}[ht]
 \caption{Coordenadas polares}
-\includegraphics[scale=1.0]{img/pra_fig002_polares.png} 
+\includegraphics[scale=1.0]{img/teo_fig003_polares.png} 
 \centering
 \label{fig:polares}
 \end{figure}
@@ -401,7 +402,7 @@ Conversión de C.P. a C.C.:
 
 \subsection{Cuádricas}
 
-Las cuádricas son superficies en $\Bbb R^3$ que encierran un volumen.
+Las cuádricas son superficies en $\Bbb R^3$ que encierran un volumen. Los corrimientos del centro $(x_0, y_0, z_0)$ son análogos a los de $\Bbb R^2$.
 
 \subsubsection{Esfera}
 
@@ -457,9 +458,11 @@ Elíptico:
 \frac{(x-x_0)^2}{a^2} + \frac{(y-y_0)^2}{b^2} - \frac{(z-z_0)^2}{c^2} = 1
 \end{equation}
 
-\begin{figure}[t]
+Un ejemplo de gráfico de hiperboloide de 1 hoja, centrado en el origen y con $a=1, b=1, c=1$, puede apreciarse en la figura \ref{fig:hiperboloide1}. Es como un cilindro infinito cuyo radio se expande al crecer $|z|$ (cuando está centrado en el eje $z$).
+
+\begin{figure}[ht]
 \caption{Hiperboloide (1 hoja)}
-\includegraphics[scale=0.75]{img/pra_fig003_hiperboloide1.png} 
+\includegraphics[scale=0.5]{img/teo_fig004_hiperboloide1.png} 
 \centering
 \label{fig:hiperboloide1}
 \end{figure}
@@ -470,9 +473,11 @@ Elíptico:
 -\frac{(x-x_0)^2}{a^2} - \frac{(y-y_0)^2}{b^2} + \frac{(z-z_0)^2}{c^2} = 1
 \end{equation}
 
-\begin{figure}[t]
+Un gráfico del hiperboloide de 2 hojas con $a = b = c =1$, y centrado en el origen, sería como el de la figura \ref{fig:hiperboloide2}. Nótese que, así como las hipérbolas tenían un rectángulo cuyas diagonales eran asíntotas de la curva, en este caso hay un paralelepípedo de lados $a, b$ y $c$ cuyas diagonales cumplen la misma función. Así como la hipérbola tiene dos curvas, el hiperboloide de 2 hojas tiene dos superficies separadas.
+
+\begin{figure}[ht]
 \caption{Hiperboloide (2 hojas)}
-\includegraphics[scale=0.75]{img/pra_fig004_hiperboloide2.png} 
+\includegraphics[scale=0.5]{img/teo_fig005_hiperboloide2.png} 
 \centering
 \label{fig:hiperboloide2}
 \end{figure}
@@ -483,9 +488,11 @@ Elíptico:
 -\frac{(x-x_0)^2}{a^2} + \frac{(y-y_0)^2}{b^2} = \frac{z-z_0}{c}
 \end{equation}
 
-\begin{figure}[t]
+El paraboloide hiperbólico es más difícil de visualizar. En la figura \ref{fig:paraboloide_h} puede apreciarse un gráfico del paraboloide hiperbólico centrado en el origen con $a = b = c =1$. Su forma se asemeja a una silla de montar, con su extremo en el centro. Decae de forma continua en la dirección del eje $x$, y crece en la dirección de los eje $y$ y $z$.
+
+\begin{figure}[ht]
 \caption{Paraboloide hiperbólico}
-\includegraphics[scale=0.75]{img/pra_fig005_paraboloide_h.png} 
+\includegraphics[scale=0.3]{img/teo_fig006_paraboloideh.png} 
 \centering
 \label{fig:paraboloide_h}
 \end{figure}
