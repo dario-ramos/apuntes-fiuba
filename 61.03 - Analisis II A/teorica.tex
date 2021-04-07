@@ -694,8 +694,6 @@ f_{x_i}(P_0) = \frac{\partial f}{\partial x_i} = \lim_{h \rightarrow 0} \frac{f(
 
 En esta expresión, $e_i$ es un vector de $n$ componentes que valen todas cero, excepto en la i-ésima posición, donde vale 1.
 
-\section{T6 - Derivadas (continuación)}
-
 Para un campo escalar de $n$ variables, las derivadas parciales de orden $k$ son, en total, $n^k$.
 
 \begin{equation}
@@ -710,16 +708,16 @@ Para un campo escalar de clase $C^p$ en un punto $P_0$, las derivadas con hasta 
 
 \subsection{Derivada respecto de un vector y derivada direccional}
 
-Sea $f$ un campo escalar y $P_0$ un punto interior del dominio de $f$. Sean $\overrightarrow{v}$ un vector cualquiera en $\Bbb R^n$, y $h$ un escalar tal que $P_0 + h \overrightarrow{v}$ pertenezca a un entorno de $P_0$ incluido en el dominio. Esto puede visualizarse en la figura ~\ref{fig:deriv_direcc} en la página ~\pageref{fig:deriv_direcc}.
+Sean $f$ un campo escalar de $n$ variables y $P_0$ un punto interior del dominio de $f$. Sean $\overrightarrow{v}$ un vector cualquiera en $\Bbb R^n$, y $h$ un escalar tal que $P_0 + h \overrightarrow{v}$ pertenezca a un entorno de $P_0$ incluido en el dominio. Esto puede visualizarse en la figura \ref{fig:deriv_direcc}.
 
-\begin{figure}[t]
+\begin{figure}[ht]
 \centering
 \caption{Derivada direccional}
-\includegraphics[scale=0.5]{img/teo_fig004_deriv_direcc.png}
+\includegraphics[scale=0.75]{img/teo_fig008_deriv_direcc.png}
 \label{fig:deriv_direcc}
 \end{figure}
 
->Entonces, se define la derivada del campo escalar $f$ en el punto $P_0$ respecto del vector $\overrightarrow{v}$ como el siguiente límite, en tanto exista:
+Entonces, se define la derivada del campo escalar $f$ en el punto $P_0$ respecto del vector $\overrightarrow{v}$ como el siguiente límite, en tanto exista:
 
 \begin{equation}
 \tcboxmath[colback=orange!25!white,colframe=orange, title=Derivada respecto de un vector]
@@ -728,10 +726,14 @@ Sea $f$ un campo escalar y $P_0$ un punto interior del dominio de $f$. Sean $\ov
 
 Esto es una generalización que incluye a las derivadas parciales como un caso particular. Si $\overrightarrow{v}$ es un versor, la derivada es \textbf{direccional}.
 
-Otra forma de calcular $f'(P_0, \overrightarrow{v})$ involucra una composición de funciones:
+Otra forma de calcular $f'(P_0, \overrightarrow{v})$ involucra una composición de funciones diagramada en la figura \ref{fig:deriv_direcc_comp}.
 
-% TODO Make this work
-% \includegraphics[scale=1]{img/teo_fig005_dd.png} 
+\begin{figure}[ht]
+\centering
+\caption{Derivada direccional por composición}
+\includegraphics[scale=0.75]{img/teo_fig009_deriv_direcc.png}
+\label{fig:deriv_direcc_comp}
+\end{figure} 
 
 Sea $g:\Bbb R \rightarrow \Bbb R / g(t) = f(P_0 + t \overrightarrow{v})$
 
