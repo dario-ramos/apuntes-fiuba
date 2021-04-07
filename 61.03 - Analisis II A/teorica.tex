@@ -702,11 +702,11 @@ Para un campo escalar de $n$ variables, las derivadas parciales de orden $k$ son
 
 Primero, se deriva respecto de x. Luego, de y. El orden es importante.
 
-\subsection{Teorema de Schwartz}
+\subsubsection{Teorema de Schwartz}
 
 Para un campo escalar de clase $C^p$ en un punto $P_0$, las derivadas con hasta $p$ subíndices permutados son iguales.
 
-\subsection{Derivada respecto de un vector y derivada direccional}
+\subsubsection{Derivada respecto de un vector y derivada direccional}
 
 Sean $f$ un campo escalar de $n$ variables y $P_0$ un punto interior del dominio de $f$. Sean $\overrightarrow{v}$ un vector cualquiera en $\Bbb R^n$, y $h$ un escalar tal que $P_0 + h \overrightarrow{v}$ pertenezca a un entorno de $P_0$ incluido en el dominio. Esto puede visualizarse en la figura \ref{fig:deriv_direcc}.
 
@@ -761,7 +761,7 @@ Evaluando en $t = 0$:
 g'(0) = f'(P_0, \overrightarrow{v})
 \end{equation}
 
-\subsection{Diferenciabilidad para campos escalares}
+\subsubsection{Diferenciabilidad para campos escalares}
 
 Sean $f$ un campo escalar, $P_0 \in \mathring{A}$, y $\overrightarrow{H} \in \Bbb R^n / (P_0 + \overrightarrow{H}) \in E(P_0, r) \subset A$. Se dice que $f$ es diferenciable en $P_0$ si y sólo si existen una transformación lineal $T_{P_0}: \Bbb R^n \rightarrow \Bbb R$ y una función $\phi_{P_0}: \Bbb R^n \rightarrow \Bbb R / \lim_{\overrightarrow{H} \rightarrow 0} \frac{\phi_{P_0}(\overrightarrow{H})}{||\overrightarrow{H}||} = 0$, que satisfagan:
 
@@ -770,7 +770,7 @@ Sean $f$ un campo escalar, $P_0 \in \mathring{A}$, y $\overrightarrow{H} \in \Bb
 { f(P_0 + \overrightarrow{H}) = f(P_0) + T_{P_0}(\overrightarrow{H}) + \phi_{P_0}(\overrightarrow{H}) }
 \end{equation}
 
-\section{T7: Gradiente y diferenciabilidad}
+\subsection{Gradiente y diferenciabilidad}
 
 Proposición: Sean $f$ un campo escalar diferenciable en $P_0$, $\overrightarrow{H} = h \overrightarrow{v}$ y $\frac{\phi(\overrightarrow{H})}{||\overrightarrow{H}||} = \psi(\overrightarrow{H})$.
 
@@ -798,14 +798,14 @@ Dado que por definición $\psi(\overrightarrow{H}) = \frac{\phi(\overrightarrow{
 f'(P_0, \overrightarrow{v}) = T_{P_0}(\overrightarrow{v})
 \end{equation}
 
-Ergo, la transformación lineal de la definición de diferenciabilidad es la derivada direccional. Y además, si un campo escalar es diferenciable, existen todas las derivadas direccionales, lo cual incluye a las derivadas parciales (cuando $\overrightarrow{v}$ es un versor).
+Ergo, la transformación lineal de la definición de diferenciabilidad es la derivada direccional. Y además, si un campo escalar es diferenciable, existen todas las derivadas direccionales, lo cual incluye a las derivadas parciales (cuando $\overrightarrow{v}$ es un versor asociado a un eje).
 
 \subsection{Vector gradiente y derivada direccional}
 
 Sea un vector genérico $\overrightarrow{H} \in \Bbb R^n$, expresado como matriz de $1xn$ o vector fila $H$:
 
 \begin{equation}
-H = \sum\limits_{i=1}^{n} {h_i \overrightarrow{e_i}} \Rightarrow T_{P_0}(H) = \sum\limits_{i=1}^{n}{ h_i \underbrace{T_{P_0}(\overrightarrow{e_i})}_{\text{deriv. parcial } f_{x_i}} } = \sum\limits_{i=1}^{n}{ h_i f_{x_i}(P_0) }
+H = \sum\limits_{i=1}^{n} {h_i \overrightarrow{e_i}} \Rightarrow T_{P_0}(H) = \sum\limits_{i=1}^{n}{ h_i \underbrace{T_{P_0}(\overrightarrow{e_i})}_{\text{deriv. parcial } f_{x_i}(P_0)} } = \sum\limits_{i=1}^{n}{ h_i f_{x_i}(P_0) }
 \end{equation}
 
 (Recuérdese de la sección anterior que la transformación lineal $T_{P_0}$ corresponde a la derivada direccional, y para los versores $\overrightarrow{e_i}$ eso corresponde a su vez a las derivadas parciales). La sumatoria final puede ser expresada como un producto escalar entre dos vectores de $\Bbb R^n$:
@@ -823,7 +823,7 @@ H = \sum\limits_{i=1}^{n} {h_i \overrightarrow{e_i}} \Rightarrow T_{P_0}(H) = \s
 Entonces, designando a $\overrightarrow{\nabla{f}}(P_0)$ como el vector gradiente evaluado en el punto $P_0$, resulta:
 
 \begin{equation}
-T_{P_0}(H) = \underbrace{ \nabla{f}(P_0) H }_{\text{PROD. MATRICIAL}} = \underbrace{ \overrightarrow{\nabla{f}}(P_0) \overrightarrow{H} }_{PROD. ESCALAR}
+T_{P_0}(H) = \underbrace{ \nabla{f}(P_0) H }_{\text{PROD. MATRICIAL}} = \underbrace{ \overrightarrow{\nabla{f}}(P_0) \cdot \overrightarrow{H} }_{PROD. ESCALAR}
 \end{equation}
 
 \begin{equation}
@@ -841,7 +841,7 @@ Despejando $\phi_{P_0}(H)$, dividiendo por $||H||$, tomando norma y exigiendo qu
 Nótese que la derivada direccional es la proyección del vector gradiente sobre $\overrightarrow{v}$:
 
 \begin{equation}
-f'(P_0, \overrightarrow{v}) = \overrightarrow{ \nabla{f} }(P_0) \overrightarrow{v}
+f'(P_0, \overrightarrow{v}) = \overrightarrow{ \nabla{f} }(P_0) \cdot \overrightarrow{v}
 \end{equation}
 
 Expresando este producto escalar en función de las normas y el ángulo entre ambos vectores $\alpha$:
