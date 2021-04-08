@@ -169,14 +169,14 @@ y' = \frac{1}{\frac{K}{x}} -\frac{K}{x^2} \Rightarrow y' = \frac{-1}{x}
 
 Si una familia de curvas es solución pero está expresada implícitamente (por ejemplo, círculos), puede que haya que determinar su dominio de validez.
 
-\section{EDO - clase 3 - Resolución analítica}
+\section{Clases de ED con resolución analítica}
 
 \subsection{Variables separables}
 
-Una ED es de VP si y sólo si puede expresarse como el producto entre una función de $x$ y una función de $y$. Formalmente:
+Una ED es de VS si y sólo si puede expresarse como el producto entre una función de $x$ y una función de $y$. Formalmente:
 
 \begin{equation}
-\text{Una E.D. es de VP} \Leftrightarrow y' = h(x) g(y)
+\text{Una E.D. es de VS} \Leftrightarrow y' = h(x) g(y)
 \end{equation}
 
 Resolución: Se asocia $g(y)$ con $dy$, $h(x)$ con $d(x)$ y se integra m. a m. Ejemplo:
@@ -201,11 +201,11 @@ Las ED lineales son aquellas de la forma $y' + s(x) y = T(x)$, con $y$ definida 
 
 \subsubsection{Variación de parámetros}
 
-Se considera la ecuación homogénea asociada, $y' + s(x) y = T(x)$. Puede demostrarse que la $SG(x) = y_H + y_P$, donde $y_H$ es la solución de la ecuación homogénea, e $y_P$ es una solución particular de la ED original.
+Se considera la ecuación homogénea asociada, $y' + s(x) y = T(x)$. Puede demostrarse que $SG(x) = y_H + y_P$, donde $y_H$ es la solución de la ecuación homogénea, e $y_P$ es una solución particular de la ED original.
 
 Dado que la ecuación homogénea es de variables separables, puede calcularse $y_H$ con el método ya visto.
 
-Para obtener, $y_P$, si se obtuvo $y_H = C_1 y_1(x)$, puede demostrarse que $y_P(x) = L(x) y_1(x)$ es una SP de la ED original. Reemplazando esa expresión de $y_P$ en la ED, queda una ecuación de variables separables, a partir de la cual puede obtenerse la incógnita $L(x)$ y así obtener la solución final sumando $y_H$ e $y_P$.
+Para obtener $y_P$, si se obtuvo $y_H = C_1 y_1(x)$, puede demostrarse que $y_P(x) = L(x) y_1(x)$ es una SP de la ED original. Reemplazando esa expresión de $y_P$ en la ED, queda una ecuación de variables separables, a partir de la cual puede obtenerse la incógnita $L(x)$ y así obtener la solución final sumando $y_H$ e $y_P$.
 
 Este método (aplicando ciertas generalizaciones) puede usarse para ecuaciones de mayor orden; en todo caso, como suele ser el caso, no sirve para todos los casos, y por eso se ven otros métodos.
 
@@ -227,7 +227,7 @@ Exigiendo que el paréntesis sea nulo, resulta una ecuación en variables separa
 
 Tomando una SP de u, se reemplaza y queda $uv' = s(x)$, que de nuevo es de variables separables, y determina a $v(x)$.
 
-Conocidos $u(x)$ e $y(x)$, se conoce la SG $y = u(x) v(x)$.S
+Conocidos $u(x)$ e $y(x)$, se conoce la SG $y = u(x) v(x)$.
 
 \section{Clase C4: Reducción de orden}
 
