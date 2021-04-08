@@ -250,10 +250,34 @@ Las cónicas son curvas planas (bidimensionales) que se obtienen al seccionar un
 (x-x_0)^2 + (y-y_0)^2 = r^2, \text{ siendo r el radio y } (x_0, y_0) \text{ el centro}
 \end{equation}
 
+Versión paramétrica:
+
+\begin{equation}
+x^2 + y^2 = r^2 \Rightarrow
+\left\{
+\begin{array}{ll}
+x &= r \cos(t) \\
+y &= r \sin(t)
+\end{array}
+\right., t \in [0, 2\pi)
+\end{equation}
+
 \subsubsection{Elipse}
 
 \begin{equation}
 \frac{(x-x_0)^2}{a^2} + \frac{(y-y_0)^2}{b^2} = 1, \text{ siendo a el semieje x, b el semieje y, y } (x_0, y_0) \text{ el centro}
+\end{equation}
+
+Versión paramétrica:
+
+\begin{equation}
+\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 \Rightarrow
+\left\{
+\begin{array}{ll}
+x &= a \cos(t) \\
+y &= b \sin(t)
+\end{array}
+\right., t \in [0, 2\pi)
 \end{equation}
 
 \subsubsection{Parábolas}
@@ -645,7 +669,7 @@ Sea $\overline{f}:I \rightarrow \Bbb R^n$, con $I \subset \Bbb R$, una curva o f
 
 Una curva se dice de orden $C^p$, o bien que $\overline{f} \in C^p \Longleftrightarrow$ sus derivadas hasta el orden $p$ inclusive son todas continuas. Por ejemplo, si la primera derivada ya es discontinua, $\overline{f} \in C^0$
 
-\section{Derivadas parciales}
+\section{Derivadas}
 
 \subsection{Plano normal y recta tangente a curva}
 
@@ -864,9 +888,7 @@ f \in C^1 \Rightarrow \text{f es diferenciable} \Rightarrow \left\{
 
 Ninguno de los recíprocos es verdadero. Sin embargo, este resultado es útil para aplicar modus tollens. Por ejemplo, si $f$ no es continua, no es diferenciable.
 
-\section{T8 - Derivadas}
-
-\subsection{Interpretación gráfica}
+\subsection{Interpretación gráfica de la derivada}
 
 Sea $f$ un campo escalar en $\Bbb R^3$, diferenciable en el punto $P_0$. Por los resultados ya vistos en cuanto a diferenciabilidad, debe cumplirse que:
 
@@ -874,18 +896,18 @@ Sea $f$ un campo escalar en $\Bbb R^3$, diferenciable en el punto $P_0$. Por los
 f(P_0 + H) = f(P_0) + \overrightarrow{\nabla{f}}(P_0) H + \theta(H)
 \end{equation}
 
-Una posible interpretación gráfica de la derivada sería:
-
+Una posible interpretación gráfica de la derivada sería la mostrada en la figura \ref{fig:deriv_graf} para el campo escalar $z = x^2 + y^2$ en el punto $P_0 = (1,1)$.
+ 
 \begin{figure}[ht]
 \caption{Interpretación gráfica de la derivada}
 \centering
-\includegraphics[scale=0.6]{img/teo_fig006_dg.png} 
+\includegraphics[scale=0.6]{img/teo_fig010_dg.png} 
 \label{fig:deriv_graf}
 \end{figure}
 
-En lugar de una recta tangente, hay un plano tangente $\Pi_T$ (marcado con color cian en la figura~\ref{fig:deriv_graf}). Dicho plano es geométricamente tangente a la superficie del campo escalar en el punto $P_0$. Una forma directa de determinar el plano tangente es hallar una recta normal $R_N$, que sea ortogonal a la superficie del campo escalar en $P_0$. Dicha recta será la normal que defina el plano tangente en dicho punto.
+En lugar de una recta tangente, hay un plano tangente $\Pi_T$ (marcado con color verde en la figura \ref{fig:deriv_graf}). Dicho plano es geométricamente tangente a la superficie del campo escalar (azul) en el punto $P_0$. Una forma directa de determinar el plano tangente es hallar una recta normal $R_N$ (fucsia oscuro), que sea ortogonal a la superficie del campo escalar en $P_0$. Dicha recta será la normal que defina el plano tangente en dicho punto.
 
-Observando los segmentos de color fucsia, se observa que $df$ es la distancia entre $f(P_0)$ y el plano tangente. Esto se corresponde al caso de 1 variable, donde $df$ era la distancia entre $f(x_0)$ y la recta tangente. Esto permite hacer una simple extrapolación/aproximación del campo escalar $f$: $f(P_0 + H) \approx f(P_0) + df$. 
+Puede demostrarse que $df_{P_0}$ es la distancia entre $f(P_0)$ y el plano tangente. Esto se corresponde al caso de 1 variable, donde $df$ era la distancia entre $f(x_0)$ y la recta tangente. Esto permite hacer una simple extrapolación/aproximación del campo escalar $f$: $f(P_0 + H) \approx f(P_0) + df_{P_0}(H)$. 
 
 Para calcular la expresión del campo tangente, considérese:
 
@@ -918,7 +940,7 @@ Siendo el gradiente perpendicular al conjunto de nivel cero, o sea $\nabla{f} \p
 
 \begin{gather}
 \overline{f}(P_0 + H) = \overline{f}(P_0) + J_f(P_0) H + \theta(H) \\
-J_f(P_0) \in \Bbb R^{n x m} / J_{ij} = \frac{\partial f_i}{\partial x_j} 
+J_f(P_0) \in \Bbb R^{m x n} / J_{ij} = \frac{\partial f_i}{\partial x_j} 
 \end{gather}
 
 La matriz jacobiana $J_f$ puede pensarse como la forma más general de representar una derivada. Cubre el caso de los campos escalares (m = 1) y el caso de 1 variable (n = 1, m = 1).
