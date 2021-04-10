@@ -917,10 +917,12 @@ Para calcular la expresión del campo tangente, considérese:
 
 De forma equivalente:
 
+\begin{subequations}
 \begin{gather}
 \Pi_T: z-z_0 - f_x(P_0) (x-x_0) - f_y (y-y_0) = 0 \\
 R_N = N t + (x_0, y_0, z_0), \text{ siendo } N = (-f_x(P_0), -f_y(P_0), 1)
 \end{gather}
+\end{subequations}
 
 Una forma más sencilla:
 
@@ -938,10 +940,12 @@ Siendo el gradiente perpendicular al conjunto de nivel cero, o sea $\nabla{f} \p
 
 \textbf{Matriz jacobiana de f}: Un campo vectorial $\overline{f}: \Bbb R^n \rightarrow \Bbb R^m$ es diferenciable si:
 
+\begin{subequations}
 \begin{gather}
 \overline{f}(P_0 + H) = \overline{f}(P_0) + J_f(P_0) H + \theta(H) \\
 J_f(P_0) \in \Bbb R^{m x n} / J_{ij} = \frac{\partial f_i}{\partial x_j} 
 \end{gather}
+\end{subequations}
 
 La matriz jacobiana $J_f$ puede pensarse como la forma más general de representar una derivada. Cubre el caso de los campos escalares (m = 1) y el caso de 1 variable (n = 1, m = 1).
 
@@ -974,10 +978,12 @@ Esto puede pensarse como una extensión del concepto de derivada direccional, y 
 
 Considérese $h = f \circ g$. Dado que $g:\Bbb R \rightarrow \Bbb R^n$ y $f:\Bbb R^n \rightarrow \Bbb R$, $h:\Bbb R \rightarrow \Bbb R$. Aplicando la regla de la cadena y evaluando en $t=0$, se obtiene un resultado conocido:
 
+\begin{subequations}
 \begin{gather}
 h'(t) = \overrightarrow{\nabla{f}}(g(t))  \\
 h'(0) = \underbrace{ \overrightarrow{\nabla{f}}(P_0) }_{f'(g(0)) = f'(P_0)} \cdot \underbrace{ \overrightarrow{v} }_{ \overrightarrow{g}' }
 \end{gather}
+\end{subequations}
 
 En palabras, $h'(0)$ es la derivada direccional de $f$ en el punto $P_0$ y la dirección de $\overrightarrow{v}$.
 
@@ -1020,23 +1026,23 @@ z_u & z_v \\
 
 Es en este punto donde se realiza el abuso de notación; se utilizan subíndices y el producto matricial para expresar el orden de derivación a aplicar:
 
+\begin{subequations}
 \begin{gather}
 h_u = f_x x_u + f_y y_u + f_z z_u = \frac{\partial f}{\partial x} \frac{\partial x}{\partial u} + \frac{\partial f}{\partial y} \frac{\partial y}{\partial u} + \frac{\partial f}{\partial z} \frac{\partial z}{\partial u} \\
 h_v = f_x x_v + f_y y_v + f_z z_v = \frac{\partial f}{\partial x} \frac{\partial x}{\partial v} + \frac{\partial f}{\partial y} \frac{\partial y}{\partial v} + \frac{\partial f}{\partial z} \frac{\partial z}{\partial v}
 \end{gather}
+\end{subequations}
 
-Los ``caminitos'' que esto representa, visualmente, son:
+Los ``caminitos'' que esto representa, visualmente, son los de la figura \ref{fig:rc2}.
 
 \begin{figure}[ht]
 \caption{Regla de la cadena visualmente}
-\includegraphics[scale=.5]{img/teo_fig008_rc2.png} 
+\includegraphics[scale=0.7]{img/teo_fig013_rc2.png} 
 \centering
 \label{fig:rc2}
 \end{figure}
 
-\section{T10 - Composición II \& TFI}
-
-\subsection{Composición}
+\subsection{Composición y jacobiano}
 
 Considérese el siguiente ejemplo de una variable:
 
@@ -1063,46 +1069,65 @@ h'(x) = 8x
 La derivada puede conceptualizarse como el coeficiente de dilatación aplicado a los elementos del dominio (tomando módulo).
 Por ejemplo, para $f(x) = 2x$, un intervalo de ancho $a$ en el eje x es mapeado a un intervalo de ancho $2a$ en el eje y; siendo la derivada $f'(x)=2$, esto es trivial. Para el caso más general de las jacobianas, el factor de dilatación está dado por los \textbf{determinantes jacobianos}. Por ejemplo:
 
+\begin{subequations}
 \begin{gather}
 \overline{f}:\Bbb R^2 \rightarrow \Bbb R^2 / \overline{f}(u,v) = (x(u,v), y(u,v)) \Rightarrow J_f(u,v) =
 \begin{bmatrix}
 \dfrac{\strut \partial x}{\strut \partial u} & \dfrac{\strut \partial x}{\strut \partial v} \\
 \dfrac{\strut \partial y}{\strut \partial u} & \dfrac{\strut \partial y}{\strut \partial v}
 \end{bmatrix} = \frac{\partial(x,y)}{\partial(u,v)} \\
-|J_f(u,v)| = \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial x} \frac{\partial y}{\partial u}
+|J_f(u,v)| = \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u}
 \end{gather}
+\end{subequations}
 
-\subsection{TFI: Teoremas de las funciones implícitas}
+\section{TFI: Teoremas de las funciones implícitas}
 
-\subsubsection{Teorema de Euler}
+\subsection{Teorema de Euler sobre funciones homogéneas}
 
-Definición previa: función homogénea de grado $n$.
+\textbf{Definición previa}: función homogénea de grado $n$.
 
 \begin{equation}
-f:\Bbb R^n \rightarrow \Bbb R^m \text{ es homogénea de grado } k \Leftrightarrow f(\alpha x) = \alpha^k f(x) \text{ } \forall x \in \Bbb R^n
+f:\Bbb R^n \rightarrow \Bbb R^m \text{ es homogénea de grado } k \overset{\text{def}}{\Leftrightarrow} f(\alpha x) = \alpha^k f(x) \text{ } \forall x \in \Bbb R^n
 \end{equation}
 
 Con esta definición, el teorema de Euler sobre funciones homogéneas establece que:
 
 \begin{equation}
-f:\Bbb R^n \rightarrow \Bbb R \text{ diferenciable en } \Bbb R^n \text{ y homogénea de grado n } \Rightarrow \overrightarrow{x} \cdot \overrightarrow{\nabla f} (\overrightarrow{x}) = n f(\overrightarrow{x})
+\tcboxmath[colback=orange!25!white,colframe=orange, title=Teorema de Euler sobre funciones homogéneas]
+{ f:\Bbb R^n \rightarrow \Bbb R \text{ diferenciable en } \Bbb R^n \text{ y homogénea de grado n } \Rightarrow \overrightarrow{x} \cdot \overrightarrow{\nabla f} (\overrightarrow{x}) = n f(\overrightarrow{x}) }
 \end{equation}
 
-\subsubsection{Función implícita}
+\subsection{Funciónes implícitas}
 
 Supóngase $f:\Bbb R^3 \rightarrow \Bbb R$, definida como $f(x,y,z) = x^2 y^3 - z$. Considérese el conjunto de puntos $(x,y,z) \in \Bbb R^3 /f(x,y,z) = 0$, o en otras palabras el conjunto de nivel cero $C_0$. Una forma alternativa de pensar en este conjunto es como el gráfico de una función $z = \phi(x,y)$, con $Graf \phi = C_0$.
 
-Para este ejemplo, por simple despeje, $z = x^2 y^3$. Pero en la mayoría de los casos tal despeje no es posible; sin embargo, eso no implica que $\phi(x,y)$ no exista. Existe un teorema que permite calcular las derivadas parciales de la función implícita sin conocer su expresión, dadas ciertas condiciones. A saber:
+Para este ejemplo, por simple despeje, $z = x^2 y^3$. Pero en la mayoría de los casos tal despeje no es posible; sin embargo, eso no implica que $\phi(x,y)$ no exista. Cuando existe, se denomina función implícita. Existe un teorema que permite calcular las derivadas parciales de una función implícita sin conocer su expresión, dadas ciertas condiciones. A saber:
 
-\subsubsection{Teorema de Cauchy-Dini}
+\subsection{Teorema de Cauchy-Dini}
 
-Sea $f:\Bbb R^{n+1} \rightarrow \Bbb R$ un campo escalar de clase $C_1$ en el punto $(\overrightarrow{x}, z)$, con $x \in \Bbb R^n$ y $z \in \Bbb R$. Esta notación divide a un punto entre las $n$ coordenadas de $x$, y una coordenada dada por $z$. Si además $f(\overrightarrow{x}, z) = 0$ y $\frac{\partial f}{\partial z} \neq 0$, en un cierto entorno de $\overrightarrow{x}$ existe $z:E(x) \rightarrow \Bbb R / z = \phi(\overrightarrow{x})$. Dicha función implícita $\phi$ satisface $f(\overrightarrow{x}, \phi(\overrightarrow{x})) = 0$. Y por último, las derivadas parciales de $z$ son:
+Condiciones:
+
+\begin{itemize}
+\item $f:\Bbb R^{n+1} \rightarrow \Bbb R \in C_1(\overrightarrow{x}, z), \text{ con } x \in \Bbb R^n \text{ y } z \in \Bbb R$. Nótese que esta notación divide a un punto del dominio, de $n+1$ coordenadas, entre las $n$ coordenadas de $x$, y una coordenada dada por $z$
+\item $f(\overrightarrow{x}, z) = 0$
+\item $\frac{\partial f}{\partial z} \neq 0$
+\end{itemize}
+
+Resultados (dadas las condiciones; esto es un $\Rightarrow$):
+
+\begin{itemize}
+\item En un entorno de $\overrightarrow{x}$ existe la función implícita $z:E(x) \rightarrow \Bbb R / z = \phi(\overrightarrow{x})$
+\item $f(\overrightarrow{x}, \phi(\overrightarrow{x})) = 0$
+\item Las derivadas parciales de $z$ están dadas por:
 
 \begin{equation}
 z_{x_1} = -\frac{\partial f / \partial x_1}{\partial f / \partial z}, z_{x_2} = -\frac{\partial f / \partial x_2}{\partial f / \partial z}, \ldots
 \end{equation}
+\end{itemize}
 
-\subsubsection{Funciones definidas implícitamente por un sistema de ecuaciones}
+
+
+\subsection{Funciones definidas implícitamente por un sistema de ecuaciones}
 
 Por ejemplo, sea el sistema de ecuaciones:
 
@@ -1134,7 +1159,7 @@ Derivando con la regla de la cadena, miembro a miembro, resulta:
 
 \begin{figure}[ht]
 \caption{Derivando un sistema de ecuaciones}
-\includegraphics[scale=1]{img/teo_fig009_tcd.png} 
+\includegraphics[scale=1]{img/teo_fig014_tcd.png} 
 \centering
 \label{fig:tcd}
 \end{figure}
@@ -1156,7 +1181,7 @@ Ahora quedan dos ecuaciones con dos incógnitas: $\frac{\mathop{dy}}{\mathop{dx}
 \frac{\partial f_1}{\partial y} \frac{\mathop{dy}}{\mathop{dx}} + \frac{\partial f_1}{\partial z} \frac{\mathop{dz}}{\mathop{dx}} = -\frac{\partial f_1}{\partial x} \\
 \frac{\partial f_2}{\partial y} \frac{\mathop{dy}}{\mathop{dx}} + \frac{\partial f_2}{\partial z} \frac{\mathop{dz}}{\mathop{dx}} = -\frac{\partial f_1}{\partial x}
 \end{array}
-\right. \approx 
+\right. \equiv 
 \underbrace{
 \begin{bmatrix}
 \frac{\partial f_1}{\partial y} & \frac{\partial f_1}{\partial z} \\
@@ -1175,9 +1200,9 @@ Ahora quedan dos ecuaciones con dos incógnitas: $\frac{\mathop{dy}}{\mathop{dx}
 
 Para que este sistema sea determinado, o en otras palabras, para que existan $\frac{\mathop{dy}}{\mathop{dx}}$ y $\frac{\mathop{dz}}{\mathop{dx}}$, el determinante de la matriz $A$ debe ser no nulo.
 
-\subsubsection{Teorema de Cauchy-Dini generalizado}
+\subsection{Teorema de Cauchy-Dini generalizado}
 
-Sea $\overline{f}:\Bbb R^{n+m} \rightarrow \Bbb R^m$, $\overline{f} = (f_1, f_2, \ldots, f_m)$. Vale decir, un campo vectorial compuesto por $m$ campos escalares de $n$ variables. Sea $f_i(\overrightarrow{x}, \overrightarrow{z}) = 0$, donde $\overrightarrow{x} \in \Bbb R^n$ corresponde a las variables libres, y $\overrightarrow{z} \in \Bbb R^m$ corresponde a las variables dependientes. De la condición de igualdad a cero surge un sistema de ecuaciones al aplicar el teorema de Cauchy-Dini a cada campo escalar. En dicho sistema, las incógnitas son $\frac{\partial z_k}{\partial x_h}$, donde $k = 1, 2, \ldots, m$ y $h = 1, 2, \ldots, n$.
+Sea $\overline{f}:\Bbb R^{n+m} \rightarrow \Bbb R^m$, $\overline{f} = (f_1, f_2, \ldots, f_m)$. Vale decir, un campo vectorial compuesto por $m$ campos escalares de $n$ variables. Sea $f_i(\overrightarrow{x}, \overrightarrow{z}) = 0$, donde $\overrightarrow{x} \in \Bbb R^n$ corresponde a las variables libres, y $\overrightarrow{z} \in \Bbb R^m$ corresponde a las variables dependientes. De la condición de igualdad a cero surge un sistema de ecuaciones al aplicar el teorema de Cauchy-Dini a cada campo escalar. Nótese que eso requiere que cada uno de dichos campos escalares satisfaga las condiciones ya vistas del Teorema de Cauchy-Dini. En dicho sistema, las incógnitas son $\frac{\partial z_k}{\partial x_h}$, donde $k = 1, 2, \ldots, m$ y $h = 1, 2, \ldots, n$.
 
 \section{T11 - Taylor}
 
