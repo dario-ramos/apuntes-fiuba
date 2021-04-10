@@ -1204,7 +1204,7 @@ Para que este sistema sea determinado, o en otras palabras, para que existan $\f
 
 Sea $\overline{f}:\Bbb R^{n+m} \rightarrow \Bbb R^m$, $\overline{f} = (f_1, f_2, \ldots, f_m)$. Vale decir, un campo vectorial compuesto por $m$ campos escalares de $n$ variables. Sea $f_i(\overrightarrow{x}, \overrightarrow{z}) = 0$, donde $\overrightarrow{x} \in \Bbb R^n$ corresponde a las variables libres, y $\overrightarrow{z} \in \Bbb R^m$ corresponde a las variables dependientes. De la condición de igualdad a cero surge un sistema de ecuaciones al aplicar el teorema de Cauchy-Dini a cada campo escalar. Nótese que eso requiere que cada uno de dichos campos escalares satisfaga las condiciones ya vistas del Teorema de Cauchy-Dini. En dicho sistema, las incógnitas son $\frac{\partial z_k}{\partial x_h}$, donde $k = 1, 2, \ldots, m$ y $h = 1, 2, \ldots, n$.
 
-\section{T11 - Taylor}
+\section{Teorema de Taylor generalizado - extremos}
 
 Para una variable:
 
@@ -1212,7 +1212,7 @@ Para una variable:
 g(x_0 + h) = \underbrace{ g(x_0) + g'(x_0) h + \frac{1}{2!} g''(x_0) h^2 + \ldots + \frac{1}{n!} g^{(n)}(x_0) h^n }_{P_n(x_0)} +  \underbrace{ \frac{1}{(n+1)!} g^{(n+1)}(c) h^{n+1} }_{T_n(x_0, c)}
 \end{equation}
 
-$P_n(x_0)$ es el polinomio de Taylor de grado $n$ desarrollado en el punto $x_0$. Dicho punto suele denominarse como centro del desarrollo. El término $T_n(x_0, c)$ es el resto o término complementario; es importante recordar que se evalúa en $c \in (x_0, x_0 + h)$ y no en $x_0$.
+$P_n(x_0)$ es el polinomio de Taylor de grado $n$ desarrollado en el punto $x_0$. Dicho punto suele denominarse como centro del desarrollo. El término $T_n(x_0, c)$ es el resto o término complementario; es importante recordar que se evalúa en $c \in (x_0, x_0 + h)$ y no en $x_0$. Dado que $x_0$ determina el rango donde se halla $c$, $T_n$ depende de $x_0$ también.
 
 Una importante consecuencia del teorema de Taylor es que si $g$ es infinitamente derivable, y se conocen todas sus derivadas en un punto, se puede extrapolar la función completa sólo con un punto. También es posible tomar más de un punto de desarrollo, para disminuir el error.
 
@@ -1244,7 +1244,7 @@ f(P_0+H) = f(P_0) + df(Po, H) + \ldots + \frac{1}{n!} d^nf(Po,H) + \frac{1}{(n+1
 \centering
 \captionsetup{type=figure}
 \captionof{figure}{Extremo de campo escalar tipo 1}
-\includegraphics[scale=0.6]{img/teo_fig010_exce01.png} 
+\includegraphics[scale=0.6]{img/teo_fig015_exce01.png} 
 \label{fig:exce01}
 \end{minipage}
 
@@ -1254,11 +1254,11 @@ Sea $P_0$ un punto interior del dominio de $f$, y sea:
 E(P_0) \subset Dom f / f(P) \leq f(P_0) \forall P \in E(P_0)
 \end{equation}
 
-Entonces, $P_0$ es un máximo local. Es un escalar, y se alcanza en $P_0$. Este es el caso tipo 1, correspondiente a la figura~\ref{fig:exce01}. 
+Entonces, $f(P_0)$ es un máximo local. Es un escalar, y se alcanza en $P_0$. Este es el caso tipo 1, correspondiente a la figura~\ref{fig:exce01}. 
 
 \begin{figure}[ht]
 \caption{Extremo de campo escalar tipo 2}
-\includegraphics[scale=0.6]{img/teo_fig010_exce02.png} 
+\includegraphics[scale=0.6]{img/teo_fig016_exce02.png} 
 \centering
 \label{fig:exce02}
 \end{figure}
@@ -1267,7 +1267,7 @@ El caso 2, ejemplificado en la figura~\ref{fig:exce02}, se define igual que el 1
 
 \begin{figure}[ht]
 \caption{Extremo de campo escalar tipo 3}
-\includegraphics[scale=0.6]{img/teo_fig010_exce03.png} 
+\includegraphics[scale=0.6]{img/teo_fig017_exce03.png} 
 \centering
 \label{fig:exce03}
 \end{figure}
