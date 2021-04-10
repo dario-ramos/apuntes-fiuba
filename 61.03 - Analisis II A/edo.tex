@@ -229,9 +229,9 @@ Tomando una SP de u, se reemplaza y queda $uv' = s(x)$, que de nuevo es de varia
 
 Conocidos $u(x)$ e $y(x)$, se conoce la SG $y = u(x) v(x)$.
 
-\section{Clase C4: Reducción de orden}
+\subsection{Reducción de orden}
 
-De forma general, la reducción de orden es un método que consiste en plantear una sustitución que reduzca el orden de la EDO, idealmente a orden 1. Por ejemplo, dada la EDO:
+De forma general, la reducción de orden es un método que consiste en plantear una sustitución que reduzca el orden de la ED, idealmente a orden 1. Por ejemplo, dada la EDO:
 
 \begin{equation}
 xy''' - y'' = 3x
@@ -246,7 +246,7 @@ x \rho' - \rho = 3x \Rightarrow \rho' - \frac{1}{x} \rho = 3
 Resolviendo con el método de Lagrange, se plantea: $\rho = u v$:
 
 \begin{equation}
-\rho = u v \Rightarrow uv' + uv' - \frac{1}{x} uv = 0 \Rightarrow v \underbrace{ \left(u' - \frac{1}{x} u \right) }_{0} + uv' = 3
+\rho = u v \Rightarrow uv' + uv' - \frac{1}{x} uv = 3 \Rightarrow v \underbrace{ \left(u' - \frac{1}{x} u \right) }_{0} + uv' = 3
 \end{equation}
 
 Resolviendo el paréntesis para hallar $u$, es de variables separables:
@@ -281,7 +281,7 @@ Distribuyendo:
 
 Para resolver la primera integral, dado que hay un módulo, hay que considerar dos casos: $x>0$ y $x <0$ ($x=0$ queda fuera porque es una singularidad de la función $\ln$).
 
-\subsection{\texorpdfstring{$x > 0$}{x > 0}}
+\subsubsection{\texorpdfstring{$x > 0$}{x > 0}}
 
 Si $x > 0$, simplemente se va el módulo del logaritmo:
 
@@ -295,7 +295,7 @@ Por tabla, $\int x \ln(x) dx = -\frac{1}{4} x^2 + \frac{1}{2} x^2 \ln(x) + C$. A
 z_1 = 3  \left( -\frac{1}{4} x^2 + \frac{1}{2} x^2 \ln (x) + K_1 \right)
 \end{equation}
 
-\subsection{\texorpdfstring{$x < 0$}{x < 0}}
+\subsubsection{\texorpdfstring{$x < 0$}{x < 0}}
 
 Si $x < 0$, hay que negar x en el módulo:
 
