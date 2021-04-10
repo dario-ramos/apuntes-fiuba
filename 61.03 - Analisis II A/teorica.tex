@@ -1390,24 +1390,24 @@ Considerando el caso $y = 0$, que había sido apartado al calcular $\lambda$, se
 
 Para categorizar los posibles puntos críticos, queda como ejercicio analizar el hessiano de la función auxiliar $H$ en dichos puntos.
 
-\section{T13 - Integrales}
+\section{Integrales}
 
 \subsection{Integral de línea o circulación}
 
 Sean $\overrightarrow{f}$ un campo vectorial $\in C^0$, y $\overrightarrow{\beta}$ una curva uniparamétrica $\in C^1$ cuyos puntos sean de igual dimensión que los del dominio de $f$. La integral de línea de $\overrightarrow{f}$ sobre $\overrightarrow{\beta}$ se define entonces como:
 
 \begin{equation}
-\int_{\overrightarrow{\beta}} \overrightarrow{f} d\overrightarrow{\beta} = \int_{a}^{b} \overrightarrow{f}(\overrightarrow{\beta}(t)) \underbrace{\cdot}_{prod. escalar} \underbrace{ \beta '(t) \mathop{dt} }_{d\overrightarrow{\beta}}
+\int_{\overrightarrow{\beta}} \overrightarrow{f} \mathop{\overrightarrow{d\beta}} = \int_{a}^{b} \overrightarrow{f}(\overrightarrow{\beta}(t)) \underbrace{\cdot}_{prod. escalar} \underbrace{ \beta '(t) \mathop{dt} }_{\mathop{\overrightarrow{d\beta}}}
 \end{equation}
 
-Los valores $a$ y $b$ corresponde a los puntos inicial y final de la curva $\overrightarrow{\beta}$. No es trivial ver el sentido geométrico de la integral en este caso, pero tiene muchas aplicaciones, como por ejemplo calcular flujo magnético.
+Los valores $a$ y $b$ corresponden a los puntos inicial y final de la curva $\overrightarrow{\beta}$. No es trivial ver el sentido geométrico de la integral en este caso, pero tiene muchas aplicaciones, como por ejemplo calcular flujo magnético.
 
 \subsection{Integral de trayectoria}
 
 Sean ahora $f$ un campo escalar $\in C^0$, y $\overrightarrow{r}$ una curva uniparamétrica $\in C^1$ cuyos puntos sean de igual dimensión que los del dominio de $f$. Se define entonces la integral de trayectoria como:
 
 \begin{equation}
-\int_{\overrightarrow{r}} f(\overrightarrow{r}) d\overrightarrow{r} = \int_{a}^{b} f(\overrightarrow{r(t)}) ||r'(t)|| \mathop{dt}
+\int_{\overrightarrow{r}} f(\overrightarrow{r}) \mathop{\overrightarrow{dr}} = \int_{a}^{b} f(\overrightarrow{r(t)}) ||r'(t)|| \mathop{dt}
 \end{equation}
 
 Nuevamente, $a$ y $b$ son los valores del parámetro $t$ asociados al punto inicial y final de $r$, respectivamente. Nótese que el integrando es directamente un número real en este caso (en el otro también, pero hay que realizar un producto escalar primero).
@@ -1417,7 +1417,7 @@ En este caso, sí hay una interpretación geométrica directa de la integral, al
 \begin{figure}[ht]
 \caption{Integral de línea en $\Bbb R^3$}
 \centering
-\includegraphics[scale=0.6]{img/teo_fig012_li.png} 
+\includegraphics[scale=0.6]{img/teo_fig019_li.png} 
 \end{figure}
 
 Por lo tanto, una aplicación inmediata de esta integral es el cálculo del área de superficies curvas.
@@ -1436,7 +1436,7 @@ Para hacerlo manteniendo fijos $a$ y $b$:
 \textbf{1)} Si el campo escalar de la integral de trayectoria es la constante 1, el resultado de la integral es la longitud de la curva. Por ejemplo, se sabe que la longitud de la circunferencia es $2 \pi r$. Integrando una curva que represente un círculo de radio $r$:
 
 \begin{align}
-\overrightarrow{r(t)} &= (r \cos t, r \sin t) \Rightarrow \int_{\overrightarrow{r}} 1 \mathop{d\overrightarrow{r}} = \int_{0}^{2 \pi} ||r'(t)|| \mathop{dt} = \int_{0}^{2 \pi} ||(-r \sin t, r \cos t)|| \mathop{dt} \\
+\overrightarrow{r(t)} &= (r \cos t, r \sin t) \Rightarrow \int_{\overrightarrow{r}} 1 \mathop{\overrightarrow{dr}} = \int_{0}^{2 \pi} ||r'(t)|| \mathop{dt} = \int_{0}^{2 \pi} ||(-r \sin t, r \cos t)|| \mathop{dt} \\
 &= \int_{0}^{2 \pi} \sqrt{r^2 \sin^2 (t) + r^2 \cos^2 (t)} \mathop{dt} = r \int_{0}^{2 \pi} \underbrace{ \sqrt{\sin^2(t) + \cos^2(t)} }_{1} \mathop{dt} = r \int_{0}^{2 \pi} \mathop{dt} \\
 &= r (2 \pi - 0) = 2 \pi r
 \end{align}
@@ -1453,8 +1453,8 @@ Para hacerlo manteniendo fijos $a$ y $b$:
 \right\} \Rightarrow
 \left\{
 \begin{array}{ll}
-\int_{\overrightarrow{\beta}} \overrightarrow{f} d\overrightarrow{\beta} = \sum\limits_{i=1}^p \int_{\overrightarrow{\beta_i}} \overrightarrow{f} d\overrightarrow{\beta_i} \\
-\int_{\overrightarrow{\beta}} f d\overrightarrow{\beta} = \sum\limits_{i=1}^p \int_{\overrightarrow{\beta_i}} f d\overrightarrow{\beta_i}
+\int_{\overrightarrow{\beta}} \overrightarrow{f} \mathop{\overrightarrow{d\beta}} = \sum\limits_{i=1}^p \int_{\overrightarrow{\beta_i}} \overrightarrow{f} \mathop{\overrightarrow{d\beta_i}} \\
+\int_{\overrightarrow{\beta}} f \mathop{\overrightarrow{d\beta}} = \sum\limits_{i=1}^p \int_{\overrightarrow{\beta_i}} f \mathop{\overrightarrow{d\beta_i}}
 \end{array}
 \right.
 \end{equation}
@@ -1462,8 +1462,8 @@ Para hacerlo manteniendo fijos $a$ y $b$:
 \textbf{3)} Para curvas cerradas, el sentido de circulación se define:
 
 \begin{itemize}
-\item Positivo si a la izquierda está el interior: $\oint_{\beta^+}$
-\item Negativo si a la derecha está el interior: $\oint_{\beta^-}$
+\item Positivo si a la izquierda está el interior del área encerrada por la curva: $\oint_{\beta^+}$
+\item Negativo si a la derecha está el interior del área encerrada por la curva: $\oint_{\beta^-}$
 \end{itemize}
 
 \textbf{4)} Curva simple = curva inyectiva. La inyectividad se considera mirando la curva parametrizada: cada valor de $t$ debe corresponder a un punto distinto. Por lo tanto, si la curva pasa más de una vez por el mismo punto, ya no es simple/inyectiva. Otra forma de llamar a las curvas no simples es \textbf{lazo} o \textbf{rulo}. Un lazo es \textbf{simple} si tiene un solo punto no inyectivo.
@@ -1482,7 +1482,7 @@ Sean:
 Entonces, la integral de línea resulta:
 
 \begin{align}
-\int_{\overrightarrow{\beta}} \overrightarrow{f} d\overrightarrow{\beta} &= \int_{a}^{b} \overrightarrow{f}(\overrightarrow{\beta}(t)) \cdot \beta'(t) \mathop{dt} \\
+\int_{\overrightarrow{\beta}} \overrightarrow{f} \mathop{\overrightarrow{d\beta}} &= \int_{a}^{b} \overrightarrow{f}(\overrightarrow{\beta}(t)) \cdot \beta'(t) \mathop{dt} \\
 &= \int_{a}^{b} \begin{bmatrix}P(\overrightarrow{\beta(t)}) & Q(\overrightarrow{\beta(t)}) & R(\overrightarrow{\beta(t)})\end{bmatrix} \cdot \begin{bmatrix}x'(t) \\ y'(t) \\ z'(t)\end{bmatrix} \mathop{dt} \\
 &= \int_{a}^{b} P(\overrightarrow{\beta(t)}) \underbrace{x'(t) \mathop{dt}}_{\mathop{dx}} + Q(\overrightarrow{\beta(t)}) \underbrace{y'(t) \mathop{dt}}_{\mathop{dy}} + R(\overrightarrow{\beta(t)}) \underbrace{z'(t) \mathop{dt}}_{\mathop{dz}}
 \end{align}
@@ -1493,7 +1493,7 @@ Realizando un potencial abuso de notación:
 \int_{\overrightarrow{\beta}} \overrightarrow{f} d\overrightarrow{\beta} = \int_{\overrightarrow{\beta}} P \mathop{dx} + Q \mathop{dy} + R \mathop{dz}
 \end{equation}
 
-\textbf{7)} Una integral de línea puede ser interpretada como una de trayectoria. Verbigracia:
+\textbf{7)} Una integral de línea puede ser interpretada como una de trayectoria.
 
 Sea:
 
@@ -1504,7 +1504,7 @@ Sea:
 Entonces, considérese la integral de línea de un campo vectorial $\overrightarrow{F}$ sobre la curva $\overrightarrow{\beta}$:
 
 \begin{align}
-\int_{\overrightarrow{\overrightarrow{\beta}}} \overrightarrow{F} \cdot d\overrightarrow{\beta} &= \int_{a}^b \overrightarrow{F}(\overrightarrow{\beta}(t)) \cdot \overrightarrow{\beta'(t)} \mathop{dt} = \int_{a}^b \left[ \overrightarrow{F}(\overrightarrow{\beta}(t)) \cdot \frac{ \overrightarrow{\beta'(t)} }{||\overrightarrow{\beta'(t)}||} \right] ||\overrightarrow{\beta'(t)}|| \mathop{dt} \\
+\int_{\overrightarrow{\beta}} \overrightarrow{F} \cdot \mathop{\overrightarrow{d\beta}} &= \int_{a}^b \overrightarrow{F}(\overrightarrow{\beta}(t)) \cdot \overrightarrow{\beta'(t)} \mathop{dt} = \int_{a}^b \left[ \overrightarrow{F}(\overrightarrow{\beta}(t)) \cdot \frac{ \overrightarrow{\beta'(t)} }{||\overrightarrow{\beta'(t)}||} \right] ||\overrightarrow{\beta'(t)}|| \mathop{dt} \\
 &= \int_{a}^b \left[ \overrightarrow{F}(\overrightarrow{\beta}(t)) \cdot \overrightarrow{T}(t) \right] ||\overrightarrow{\beta}'(t)|| \mathop{dt}
 \end{align}
 
