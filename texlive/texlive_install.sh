@@ -16,7 +16,13 @@ cd install-tl-20*
 ./install-tl --profile=../texlive/texlive.profile
 
 cd ..
-sudo apt-get install texlive-base
+PATH=/usr/local/texlive/2020/bin/x86_64-linux:$PATH
+PATH=/tmp/texlive/bin/x86_64-linux:$PATH
+export PATH
+INFOPATH=/tmp/texlive/texmf-dist/doc/info:$INFOPATH
+export INFOPATH
+MANPATH=/tmp/texlive/texmf-dist/doc/man:$MANPATH
+export MANPATH
 # fi
 
 # Sometimes tlmgr needs to be updated before we can install packages
