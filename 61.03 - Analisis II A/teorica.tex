@@ -1392,7 +1392,9 @@ Para categorizar los posibles puntos críticos, queda como ejercicio analizar el
 
 \section{Integrales}
 
-\subsection{Integral de línea o circulación}
+\subsection{Integrales sobre una curva}
+
+\subsubsection{Integral de línea o circulación}
 
 Sean $\overrightarrow{f}$ un campo vectorial $\in C^0$, y $\overrightarrow{\beta}$ una curva uniparamétrica $\in C^1$ cuyos puntos sean de igual dimensión que los del dominio de $f$. La integral de línea de $\overrightarrow{f}$ sobre $\overrightarrow{\beta}$ se define entonces como:
 
@@ -1402,7 +1404,7 @@ Sean $\overrightarrow{f}$ un campo vectorial $\in C^0$, y $\overrightarrow{\beta
 
 Los valores $a$ y $b$ corresponden a los puntos inicial y final de la curva $\overrightarrow{\beta}$. No es trivial ver el sentido geométrico de la integral en este caso, pero tiene muchas aplicaciones, como por ejemplo calcular flujo magnético.
 
-\subsection{Integral de trayectoria}
+\subsubsection{Integral de trayectoria}
 
 Sean ahora $f$ un campo escalar $\in C^0$, y $\overrightarrow{r}$ una curva uniparamétrica $\in C^1$ cuyos puntos sean de igual dimensión que los del dominio de $f$. Se define entonces la integral de trayectoria como:
 
@@ -1422,7 +1424,7 @@ En este caso, sí hay una interpretación geométrica directa de la integral, al
 
 Por lo tanto, una aplicación inmediata de esta integral es el cálculo del área de superficies curvas.
 
-\subsection{Invirtiendo el sentido de circulación}
+\subsubsection{Invirtiendo el sentido de circulación}
 
 Para hacerlo manteniendo fijos $a$ y $b$:
 
@@ -1431,7 +1433,7 @@ Para hacerlo manteniendo fijos $a$ y $b$:
 \overrightarrow{\sigma} &: [a, b] \rightarrow \Bbb R^n / \overrightarrow{\sigma}(t) = \overrightarrow{\beta}(a + b - t) 
 \end{align}
 
-\subsection{Observaciones}
+\subsubsection{Observaciones}
 
 \textbf{1)} Si el campo escalar de la integral de trayectoria es la constante 1, el resultado de la integral es la longitud de la curva. Por ejemplo, se sabe que la longitud de la circunferencia es $2 \pi r$. Integrando una curva que represente un círculo de radio $r$:
 
@@ -1503,14 +1505,14 @@ Sea:
 
 Entonces, considérese la integral de línea de un campo vectorial $\overrightarrow{F}$ sobre la curva $\overrightarrow{\beta}$:
 
+\begin{subequations}
 \begin{align}
 \int_{\overrightarrow{\beta}} \overrightarrow{F} \cdot \mathop{\overrightarrow{d\beta}} &= \int_{a}^b \overrightarrow{F}(\overrightarrow{\beta}(t)) \cdot \overrightarrow{\beta'(t)} \mathop{dt} = \int_{a}^b \left[ \overrightarrow{F}(\overrightarrow{\beta}(t)) \cdot \frac{ \overrightarrow{\beta'(t)} }{||\overrightarrow{\beta'(t)}||} \right] ||\overrightarrow{\beta'(t)}|| \mathop{dt} \\
 &= \int_{a}^b \left[ \overrightarrow{F}(\overrightarrow{\beta}(t)) \cdot \overrightarrow{T}(t) \right] ||\overrightarrow{\beta}'(t)|| \mathop{dt}
 \end{align}
+\end{subequations}
 
 Si se define el campo escalar $H = \overrightarrow{F}(\overrightarrow{\beta}) \cdot \overrightarrow{T}$, la integral de trayectoria de $H$ es igual a la integral de línea de $F$, ambas sobre la misma curva $\overrightarrow{\beta}$, claro.
-
-\section{T14 - Integrales II}
 
 \subsection{Reparametrización}
 
@@ -1520,30 +1522,35 @@ Es de interés hallar las condiciones que debe cumplir una reparametrización pa
 
 Sea una función $\phi:\Bbb R \rightarrow \Bbb R$ que satisface:
 
-\begin{align}
-&\phi:[a, b] \rightarrow [a^*, b^*] \\
-&\phi \text{ es biyectiva en el intervalo } [a,b] \\
-&\phi \in C^1[a,b] \\
-&\phi(a) = a^* \wedge \phi(b) = b^* \\
-&\phi'(t) > 0 \text{ } \forall \text{ } t \in [a,b]
-\end{align}
+\begin{itemize}
+\item $\phi:[a, b] \rightarrow [a^*, b^*]$
+
+\item $\phi \text{ es biyectiva en el intervalo } [a,b]$
+
+\item $\phi \in C^1[a,b]$
+
+\item $\phi(a) = a^* \wedge \phi(b) = b^*$
+
+\item $\phi'(t) > 0 \text{ } \forall \text{ } t \in [a,b]$
+
+\end{itemize}
 
 Con estas condiciones, $\phi$ es un \textbf{diffeormorfismo} en $\Bbb R^2$. Una función es un diffeomorfismo si es biyectiva y diferenciable, y su inversa también es diferenciable. Las condiciones cumplidas por $\phi$ garantizan esto, siendo suficientes pero no necesarias. 
 
 Por otro lado, sea $\overrightarrow{\sigma}$ una función que satisface:
 
-\begin{align}
-&\sigma: [a^*, b^*] \rightarrow \Bbb R^n \\
-&\sigma\in C^1[a^*, b^*] \\
-&\sigma(a^*) = A \wedge \sigma(b^*) = B
-\end{align}
+\begin{itemize}
+\item $\sigma: [a^*, b^*] \rightarrow \Bbb R^n $
+\item $\sigma\in C^1[a^*, b^*] $
+\item $\sigma(a^*) = A \wedge \sigma(b^*) = B $
+\end{itemize}
 
 Finalmente, sea $\overrightarrow{H} = \overrightarrow{\sigma} \circ \phi$. La función $\overrightarrow{H}$ es una reparametrización; $\phi$ es la función que mapea el intervalo parámetrico original $[a,b]$ en el nuevo intervalo $[a^*, b^*]$, y $\sigma$ es la nueva expresión de la curva original $\beta$. Para visualizar las relaciones entre estas funciones, obsérvese la figura~\ref{fig:reparam}.
 
 \begin{figure}[ht]
 \centering
 \caption{Reparametrización}
-\includegraphics[scale=0.7]{img/teo_fig013_re.png}
+\includegraphics[scale=0.7]{img/teo_fig020_re.png}
 \label{fig:reparam}
 \end{figure}
 
@@ -1569,7 +1576,7 @@ Ergo, para integrales de línea, cambiar el sentido de recorrido de la curva cam
 \begin{figure}[ht]
 \centering
 \caption{Lema}
-\includegraphics[scale=0.75]{img/teo_fig014_cc.png}
+\includegraphics[scale=0.75]{img/teo_fig021_cc.png}
 \end{figure}
 
 El diferencial del campo escalar es entonces, en el punto $P_0$:
@@ -1589,7 +1596,7 @@ Ejemplo: Sea la curva $C$ de la figura~\ref{fig:ccej}, con punto inicial $A$ y p
 \begin{figure}[ht]
 \centering
 \caption{Ejemplo}
-\includegraphics[scale=1]{img/teo_fig015_ccej.png}
+\includegraphics[scale=1]{img/teo_fig022_ccej.png}
 \label{fig:ccej}
 \end{figure}
 
@@ -1612,7 +1619,7 @@ Conocido $\Phi$, la integral de línea puede calcularse evaluándolo en $A$ y $B
 \textbf{Definición}: Un campo vectorial es un \textbf{campo de gradientes (CG)} si y sólo si es el gradiente de un campo escalar. Simbólicamente:
 
 \begin{equation}
-\overrightarrow{f} \text{ es CG } \Leftrightarrow \exists \Phi / \overrightarrow{f} = \nabla \Phi
+\overrightarrow{f} \text{ es CG } \overset{\text{def}}{\Leftrightarrow} \exists \Phi / \overrightarrow{f} = \nabla \Phi
 \end{equation}
 
 Entonces, dada la integral de línea $\int_{\overrightarrow{\sigma}} P \mathop{dx} + Q \mathop{dy}$, resulta $\overrightarrow{f} = (P, Q)$. Para que $\overrightarrow{f}$ sea CG, necesariamente:
@@ -1628,6 +1635,14 @@ Derivando la última igualdad miembro a miembro en el primer componente respecto
 \end{equation}
 
 Nótese que esto exige que $\Phi \in C^2$ y $\overrightarrow{f} \in C^1$. Ahora bien, por el Teorema de Schwartz, siendo $\Phi \in C^2 \Rightarrow \Phi_{xy} = \Phi_{yx} \Rightarrow P_y = Q_x$. Esto establece la llamada \textbf{condición de simetría} sobre el campo $\overrightarrow{f}$: para que $f$ sea CG, sus derivadas parciales deben cumplirla. Dicha condición es necesaria: campos vectoriales que no la cumplan no son CG. Por otro lado, puede probarse que dicha condición es suficiente si $Dom f$ es un conjunto \textbf{simplemente conexo}. Vale decir, el interior de todo lazo pertenece al conjunto.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Condición de simetría]
+{\begin{array}{ll}
+& \overrightarrow{f} \text{ es CG} \Leftrightarrow P_y = Q_x \wedge \mathop{Dom}\left(\overrightarrow{f}\right) \text{ es simplemente conexo} \\
+& P_y \neq Q_x \Rightarrow \overrightarrow{f} \text{ no es CG}
+\end{array} }
+\end{equation}
 
 \subsection{Encontrando \texorpdfstring{$\Phi$}{phi}}
 
