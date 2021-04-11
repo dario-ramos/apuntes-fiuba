@@ -16,6 +16,7 @@ cd install-tl-20*
 ./install-tl --profile=../texlive/texlive.profile
 
 cd ..
+sudo apt-get install texlive-base
 # fi
 
 # Sometimes tlmgr needs to be updated before we can install packages
