@@ -389,13 +389,15 @@ O sea que las curvas ortogonales a las parábolas son elipses, lo cual geométri
 
 Dada $y' = f(x,y)$, con $f \in C^1 \Rightarrow$ por cada punto $(x_0, y_0)$ pasa 1 y sólo 1 curva solución o curva integral. En un entorno de $x_0$, existe una única solución $y = y(x)$ que verifica $y(x_0) = y_0$, o sea la condición inicial de la EDO.
 
-\section{Clase C7}
+\section{Ecuaciones diferenciales lineales}
+
+Antes de definir EDLH, es necesario entender los conceptos de dependencia e independencia lineal entre funciones, y el uso del determinante wronskiano como herramienta para determinar si un conjunto de funciones es l.i.
 
 \subsection{Dependencia e independencia lineal entre funciones}
 
-Se dice que un conjunto de funciones $\{y_1(x), y_2(x), \ldots, y_n(x) \}$ es linealmente independiente (l.i.) en un intervalo $I \Leftrightarrow$ existen $n$ constantes $c_i$, no todas nulas, tales que $c_1 y_1(x) + \ldots + c_n y_n(x) = 0, \forall x \in I$. Si por otro lado, la única forma de satisfacer la igualdad es que todas las $c_i$ sean nulas, el conjunto es linealmente dependiente (l.d.) en el intervalo $I$.
+Se dice que un conjunto de funciones $\{y_1(x), y_2(x), \ldots, y_n(x) \}$ es linealmente dependiente (l.d.) en un intervalo $I \Leftrightarrow$ existen $n$ constantes $c_i$, no todas nulas, tales que $c_1 y_1(x) + \ldots + c_n y_n(x) = 0, \forall x \in I$. Si por otro lado, la única forma de satisfacer la igualdad es que todas las $c_i$ sean nulas, el conjunto es linealmente independiente (l.i.) en el intervalo $I$.
 
-De forma más intuitiva: si una de las funciones es múltiplo, suma, resta, o más generalmente una combinación lineal de las otras, es l.d.
+De forma más intuitiva: si una de las funciones es múltiplo, suma, resta, o más generalmente una combinación lineal de las otras, el conjunto es l.d.
 
 \subsection{Determinante wronskiano}
 
