@@ -1330,12 +1330,14 @@ Para explicar a través de un ejemplo, considérese una matriz de 4x4 con elemen
 \label{fig:detdiag}
 \end{figure}
 
+\begin{subequations}
 \begin{gather}
 \det_1 = \det [a] = a \\
 \det_2 = \det \begin{bmatrix} a & b \\ e & f \end{bmatrix} = a f - b e \\
 \det_3 = \det \begin{bmatrix} a & b & c \\ e & f & g \\ i & j & k \end{bmatrix} \\
 \det_4 = \det \begin{bmatrix} a & b & c & d \\ e & f & g & h \\ i & j & k & l \\ ll & m & n & \tilde{n} \end{bmatrix}
 \end{gather}
+\end{subequations}
 
 Generalizando, $\det_i$ se obtiene tomando una submatriz cuadrada de tamaño $i$ cuyo primer elemento siempre coincide con el primer elemento de la matriz original. El subíndice $i$ va de $1$ a $n$, siendo $\det_n$ equivalente al determinante de la matriz completa.
 
@@ -1428,20 +1430,24 @@ Por lo tanto, una aplicación inmediata de esta integral es el cálculo del áre
 
 Para hacerlo manteniendo fijos $a$ y $b$:
 
+\begin{subequations}
 \begin{align}
 \overrightarrow{\beta} &: [a, b] \rightarrow \Bbb R^n \\
 \overrightarrow{\sigma} &: [a, b] \rightarrow \Bbb R^n / \overrightarrow{\sigma}(t) = \overrightarrow{\beta}(a + b - t) 
 \end{align}
+\end{subequations}
 
 \subsubsection{Observaciones}
 
 \textbf{1)} Si el campo escalar de la integral de trayectoria es la constante 1, el resultado de la integral es la longitud de la curva. Por ejemplo, se sabe que la longitud de la circunferencia es $2 \pi r$. Integrando una curva que represente un círculo de radio $r$:
 
+\begin{subequations}
 \begin{align}
 \overrightarrow{r(t)} &= (r \cos t, r \sin t) \Rightarrow \int_{\overrightarrow{r}} 1 \mathop{\overrightarrow{dr}} = \int_{0}^{2 \pi} ||r'(t)|| \mathop{dt} = \int_{0}^{2 \pi} ||(-r \sin t, r \cos t)|| \mathop{dt} \\
 &= \int_{0}^{2 \pi} \sqrt{r^2 \sin^2 (t) + r^2 \cos^2 (t)} \mathop{dt} = r \int_{0}^{2 \pi} \underbrace{ \sqrt{\sin^2(t) + \cos^2(t)} }_{1} \mathop{dt} = r \int_{0}^{2 \pi} \mathop{dt} \\
 &= r (2 \pi - 0) = 2 \pi r
 \end{align}
+\end{subequations}
 
 \textbf{2)} Ambos tipos de integral (de línea y de trayectoria) están igualmente bien definidas para curvas $C^1$ a trozos, o seccionalmente $C^1$. La integral simplemente se calcula para cada sección de curva, y se suman los resultados.
 
@@ -1476,18 +1482,22 @@ Para hacerlo manteniendo fijos $a$ y $b$:
 
 Sean:
 
+\begin{subequations}
 \begin{align}
 \overrightarrow{f}(x, y, z) &= (P(x,y,z), Q(x,y,z), R(x, y, z)) \\
 \overrightarrow{\beta}(t) &= (x(t), y(t), z(t))
 \end{align}
+\end{subequations}
 
 Entonces, la integral de línea resulta:
 
+\begin{subequations}
 \begin{align}
 \int_{\overrightarrow{\beta}} \overrightarrow{f} \mathop{\overrightarrow{d\beta}} &= \int_{a}^{b} \overrightarrow{f}(\overrightarrow{\beta}(t)) \cdot \beta'(t) \mathop{dt} \\
 &= \int_{a}^{b} \begin{bmatrix}P(\overrightarrow{\beta(t)}) & Q(\overrightarrow{\beta(t)}) & R(\overrightarrow{\beta(t)})\end{bmatrix} \cdot \begin{bmatrix}x'(t) \\ y'(t) \\ z'(t)\end{bmatrix} \mathop{dt} \\
 &= \int_{a}^{b} P(\overrightarrow{\beta(t)}) \underbrace{x'(t) \mathop{dt}}_{\mathop{dx}} + Q(\overrightarrow{\beta(t)}) \underbrace{y'(t) \mathop{dt}}_{\mathop{dy}} + R(\overrightarrow{\beta(t)}) \underbrace{z'(t) \mathop{dt}}_{\mathop{dz}}
 \end{align}
+\end{subequations}
 
 Realizando un potencial abuso de notación:
 
@@ -1522,7 +1532,7 @@ Es de interés hallar las condiciones que debe cumplir una reparametrización pa
 
 Sea una función $\phi:\Bbb R \rightarrow \Bbb R$ que satisface:
 
-\begin{itemize}
+\begin{enumerate}
 \item $\phi:[a, b] \rightarrow [a^*, b^*]$
 
 \item $\phi \text{ es biyectiva en el intervalo } [a,b]$
@@ -1532,18 +1542,17 @@ Sea una función $\phi:\Bbb R \rightarrow \Bbb R$ que satisface:
 \item $\phi(a) = a^* \wedge \phi(b) = b^*$
 
 \item $\phi'(t) > 0 \text{ } \forall \text{ } t \in [a,b]$
-
-\end{itemize}
+\end{enumerate}
 
 Con estas condiciones, $\phi$ es un \textbf{diffeormorfismo} en $\Bbb R^2$. Una función es un diffeomorfismo si es biyectiva y diferenciable, y su inversa también es diferenciable. Las condiciones cumplidas por $\phi$ garantizan esto, siendo suficientes pero no necesarias. 
 
 Por otro lado, sea $\overrightarrow{\sigma}$ una función que satisface:
 
-\begin{itemize}
+\begin{enumerate}
 \item $\sigma: [a^*, b^*] \rightarrow \Bbb R^n $
 \item $\sigma\in C^1[a^*, b^*] $
 \item $\sigma(a^*) = A \wedge \sigma(b^*) = B $
-\end{itemize}
+\end{enumerate}
 
 Finalmente, sea $\overrightarrow{H} = \overrightarrow{\sigma} \circ \phi$. La función $\overrightarrow{H}$ es una reparametrización; $\phi$ es la función que mapea el intervalo parámetrico original $[a,b]$ en el nuevo intervalo $[a^*, b^*]$, y $\sigma$ es la nueva expresión de la curva original $\beta$. Para visualizar las relaciones entre estas funciones, obsérvese la figura~\ref{fig:reparam}.
 
@@ -1674,13 +1683,13 @@ La función $\mu(y)$ se introduce para permitir ajuste.
 
 Nótese que si $\overrightarrow{f}$ es CG, la integral de línea sobre cualquier lazo contenido en su dominio es cero, y aún más importante: \textbf{la integral entre dos puntos no depende de la trayectoria}. A los campos de este tipo se los denomina \textbf{campos conservativos}.
 
-\section{Clase T15: Integración múltiple}
+\subsection{Integración múltiple}
 
-\subsection{Integral doble}
+\subsubsection{Integral doble}
 
 Sea $R = [a, b] \times [c, d]$, un rectángulo en $\Bbb R^2$.
 
-Sean los puntos $(x_i, y_i)$:
+Sean los puntos $(x_i, y_j)$:
 
 \begin{equation}
 \left.
@@ -1700,18 +1709,20 @@ Para visualizar estos objetos juntos, ver la figura~\ref{fig:intmul}.
 \begin{figure}[ht]
 \centering
 \caption{Integración múltiple}
-\includegraphics[scale=0.8]{img/teo_fig016_im.png}
+\includegraphics[scale=0.8]{img/teo_fig023_im.png}
 \label{fig:intmul}
 \end{figure}
 
 A continuación, sea $f$ un campo escalar acotado en $R$, y:
 
+\begin{subequations}
 \begin{align}
 m_{ij} &= \inf \{ f(x,y) \text{ con } (x,y) \in R_{ij} \} \\
 m &= \inf \{ f(x,y) \text{ con } (x,y) \in R \} \\
 M_{ij} &= \sup \{ f(x,y) \text{ con } (x,y) \in R_{ij} \} \\
 M &= \sup\{ f(x,y) \text{ con } (x,y) \in R \} \\
 \end{align}
+\end{subequations}
 
 En este contexto, $\inf$ es el ínfimo, y $\sup$ el supremo; son los mínimos y máximos valores en el subrectángulo $R_{ij}$ y el rectángulo $R$, respectivamente. Con estas definiciones en mente, vale la siguiente desigualdad:
 
@@ -1763,7 +1774,7 @@ Observaciones:
 \begin{figure}[ht]
 \centering
 \caption{Volumen bajo superficie}
-\includegraphics[scale=0.75]{img/teo_fig017_vbs.png}
+\includegraphics[scale=0.75]{img/teo_fig024_vbs.png}
 \label{fig:volbajosup}
 \end{figure}
 
@@ -1798,28 +1809,32 @@ Lo que este teorema dice es que dadas sus condiciones, la integral doble puede r
 \begin{figure}[ht]
 \centering
 \caption{Recinto con dos lados verticales paralelos}
-\includegraphics[scale=0.75]{img/teo_fig018_d1.png}
+\includegraphics[scale=0.75]{img/teo_fig025_d1.png}
 \label{fig:d1}
 \end{figure}
 
+\begin{subequations}
 \begin{align}
 \iint_R f(x,y) \mathop{dx} \mathop{dy} &= \int_a^b \left( \int_{\phi_1(x)}^{\phi_2(x)} f(x,y) \mathop{dy} \right) \mathop{dx} \\
 area(R) &= \int_a^b \left( \int_{\phi_1(x)}^{\phi_2(x)} \mathop{dy} \right) \mathop{dx}
 \end{align}
+\end{subequations}
 
 \item Dos lados horizontales paralelos. Véase la figura~\ref{fig:d2}.
 
 \begin{figure}[ht]
 \centering
 \caption{Recinto con dos lados horizontales paralelos}
-\includegraphics[scale=0.75]{img/teo_fig019_d2.png}
+\includegraphics[scale=0.75]{img/teo_fig026_d2.png}
 \label{fig:d2}
 \end{figure}
 
+\begin{subequations}
 \begin{align}
 \iint_R f(x,y) \mathop{dx} \mathop{dy} &= \int_c^d \left( \int_{\phi_1(y)}^{\phi_2(y)} f(x,y) \mathop{dx} \right) \mathop{dy} \\
 area(R) &= \int_c^d \left( \int_{\phi_1(y)}^{\phi_2(y)} \mathop{dx} \right) \mathop{dy}
 \end{align}
+\end{subequations}
 
 \item 1 lado horizontal y 1 lado vertical: Puede tratarse como el caso a, o el caso b.
 \end{enumerate}
@@ -1851,22 +1866,24 @@ Para saber si tomar la rama positiva o negativa de las funciones raíz cuadrada,
 \begin{figure}[ht]
 \centering
 \caption{Cambio de orden de integración}
-\includegraphics[scale=0.75]{img/teo_fig020_coi.png}
+\includegraphics[scale=0.75]{img/teo_fig027_coi.png}
 \label{fig:coi}
 \end{figure}
 
 Para integrar primero respecto a $y$, conviene dividir el recinto en 3 recintos $R_1, R_2$ y $R_3$ (marcados en la figura~\ref{fig:coi}), y aplicar la propiedad de linealidad de la integral, que es trivial demostrar que sigue valiendo para la integral doble. Resulta entonces:
 
+\begin{subequations}
 \begin{align}
 \int_{-5}^0 \left( f(x,y) \mathop{dx} \right) \mathop{dy} &= \iint_{R_1} (f(x,y) \mathop{dy}) \mathop{dx} + \iint_{R_2} (f(x,y) \mathop{dy}) \mathop{dx} + \iint_{R_3} (f(x,y) \mathop{dy}) \mathop{dx} \\
 \iint_{R_1} (f(x,y) \mathop{dy}) \mathop{dx} &= \int_{-26}^{-1} \left( \int_{-5}^{-\sqrt{-1-x}} f(x,y) \mathop{dy}  \right) \mathop{dx} \\
 \iint_{R_2} (f(x,y) \mathop{dy}) \mathop{dx} &= \int_{-1}^{0} \left( \int_{-5}^0 f(x,y) \mathop{dy} \right) \mathop{dx} \\
 \iint_{R_3} (f(x,y) \mathop{dy}) \mathop{dx} &= \int_{0}^{25} \left( \int_{-5}^{-\sqrt{x}} f(x,y) \mathop{dy} \right) \mathop{dx}
 \end{align}
+\end{subequations}
 
 \end{enumerate}
 
-\subsection{Integral triple}
+\subsubsection{Integral triple}
 
 Es posible generalizar los conceptos de la integral doble partiendo de un recinto $R = [a,b] \times [c,d] \times [e,f]$, que consiste en un paralelepípedo en $\Bbb R^3$. Definiendo la integral triple sobre $R$ como $\iiint_R f(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz}$, puede probarse que todos los resultados de la integral doble siguen valiendo: Fubbini, linealidad, etc.
 
@@ -1885,7 +1902,7 @@ Gráficamente, R sería el volumen entre la superficie $z = x^2$ y el plano $(x,
 \begin{figure}[ht]
 \centering
 \caption{Integral triple}
-\includegraphics[scale=0.6]{img/teo_fig021_itv.png}
+\includegraphics[scale=0.6]{img/teo_fig028_itv.png}
 \label{fig:itv}
 \end{figure}
 
