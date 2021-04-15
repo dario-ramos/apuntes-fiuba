@@ -169,7 +169,7 @@ y' = \frac{1}{\frac{K}{x}} -\frac{K}{x^2} \Rightarrow y' = \frac{-1}{x}
 
 Si una familia de curvas es solución pero está expresada implícitamente (por ejemplo, círculos), puede que haya que determinar su dominio de validez.
 
-\section{Clases de ED con resolución analítica}
+\section{Clases de ED con resolución analítica directa}
 
 \subsection{Variables separables}
 
@@ -514,6 +514,8 @@ Este caso puede resolverse con uno de dos métodos
 
 Sin importar cuál método se use, se plantea $y = y_H + y_P$, en donde $y_H$ es la solución de la ecuación homogénea asociada, e $y_P$ es una solución particular. $y_H$ se calcula resolviendo el polinomio característico, en tanto $y_P$ se obtiene utilizando alguno de los dos métodos.
 
+\subsubsection{Método de coeficientes indeterminados}
+
 Para el método de coeficientes indeterminados, hay que considerar que sólo sirve para $f(x)$ de la forma $e^{a x}$, senoidal, cosenoidal, polinómica, o combinaciones lineales de dicho tipo de funciones. Hecha esta salvedad, el método consiste en hallar la "parte variable", que es un conjunto de funciones obtenidas derivando sucesivamente $f(x)$, y plantear que $y_P$ es una combinación lineal de dichas funciones. Los coeficientes de dicha CL son los coeficientes indeterminados a calcular.
 
 Ejemplo 1: $f(x) = 2 x e^x$
@@ -551,9 +553,7 @@ Ergo, se planteará:
 y_P = k_1 x^2 + k_2 \cos(2x) + k_3 x + k_4 \sin(2 x) + k_5
 \end{equation}
 
-\section{Clase C8}
-
-\subsection{Método de coeficientes indeterminados (continuación)}
+Recapitulando, el método de coeficientes indeterminados consiste en:
 
 \begin{enumerate}
 \item Plantear $y = y_H + y_P$ como SG.
@@ -562,7 +562,7 @@ y_P = k_1 x^2 + k_2 \cos(2x) + k_3 x + k_4 \sin(2 x) + k_5
 \item Proponer como $y_P$ una combinación lineal de las PV determinadas previamente.
 \end{enumerate}
 
-\subsection{Método de variación de parámetros (continuación)}
+\subsubsection{Método de variación de parámetros}
 
 \begin{enumerate}
 \item Plantear $y = y_H + y_P$ como SG.
@@ -598,7 +598,7 @@ L_1' y_1'' + L_2' y_2'' + L_3' y_3'' = f(x)
 \right.
 \end{equation}
 
-Estos sistemas de $nxn$ pueden resolverse con la regla de Cramer. Los mismos surgen de exigir que las soluciones de la ED sean linealmente independientes.
+Estos sistemas de $n \times n$ pueden resolverse con la regla de Cramer. Los mismos surgen de exigir que las soluciones de la ED sean linealmente independientes.
 
 \end{enumerate}
 
