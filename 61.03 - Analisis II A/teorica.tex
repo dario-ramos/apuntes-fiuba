@@ -2040,21 +2040,21 @@ I_z = \iiint_K (x^2 + y^2) \rho(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz}
 \end{align}
 \end{subequations}
 
-\section{Clase T17}
-
-\subsection{Área de una superficie en \texorpdfstring{$\Bbb R^3$}{R3}}
+\subsubsection{Área de una superficie en \texorpdfstring{$\Bbb R^3$}{R3}}
 
 Así como una curva puede parametrizarse con una variable, una superficie requiere dos variables. Ejemplos:
 
+\begin{subequations}
 \begin{align}
 & x^2 + y^2 = z \Rightarrow \overline{T}(u,v) = (u, v, u^2 + v^2) \\
 & x^2 + y^2 + z^2 = R^2 \Rightarrow \overline{T}(\theta, \phi) = (R \sin(\phi) \cos(\theta), R \sin(\phi) \sin(\theta), R \cos(\phi)) \label{eq:supesf} \\
 & \frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = 0 \Rightarrow \overline{T}(\theta, \phi) = (a \phi \cos(\theta), b \phi \sin(\theta), c \phi) \label{eq:supcon}
 \end{align}
+\end{subequations}
 
 Nótese que las ecuaciones~\ref{eq:supesf} y~\ref{eq:supcon} están expresadas en coordenadas polares (de hecho, es bastante incómodo usar las cartesianas para dichos casos).
 
-Sea $\overline{T}$ un campo vectorial en un conjunto abierto que contiene a $D$. $\overline{T}$ debe ser biyectivo en todo $D$, con la posible excepción de su frontera. Sean los vectores $\overline{T_u} = \frac{\partial \overline{T}}{\partial u}$ y $\overline{T_v} = \frac{\partial \overline{T}}{\partial v}$. Supóngase que dichos vectores son l.i. Si se cumplen todas estas condiciones, la superfice $S = Img(\overline{T})$ es \textbf{suave}. Puede ocurrir que la independencia lineal de $\overline{T_u}$ y $\overline{T_v}$ no se cumpla en subconjuntos de contenido nulo, y el resultado sigue valiendo.
+Sea $\overline{T}$ un campo vectorial en un conjunto abierto que contiene a $D$. $\overline{T}$ debe ser biyectivo en todo $D$, con la posible excepción de su frontera. Sean los vectores $\overline{T_u} = \frac{\partial \overline{T}}{\partial u}$ y $\overline{T_v} = \frac{\partial \overline{T}}{\partial v}$. Supóngase que dichos vectores son l.i. Si se cumplen todas estas condiciones, la superficie $S = \mathop{Img}(\overline{T})$ es \textbf{suave}. Puede ocurrir que la independencia lineal de $\overline{T_u}$ y $\overline{T_v}$ no se cumpla en subconjuntos de contenido nulo, y el resultado sigue valiendo.
 
 Una forma práctica de exigir que dos vectores sean l.i. es plantear que su producto vectorial sea no nulo: $\overline{T_u} \times \overline{T_v} \neq \overline{0}$.
 
@@ -2063,7 +2063,7 @@ Entonces, para $S$ suave como en la figura~\ref{fig:asuf}, se define:
 \begin{figure}[ht]
 \centering
 \caption{Área de una superficie}
-\includegraphics[scale=0.8]{img/teo_fig026_asuf.png}
+\includegraphics[scale=0.8]{img/integrales/area_de_superficie.png}
 \label{fig:asuf}
 \end{figure}
 
@@ -2083,9 +2083,9 @@ Dadas una superficie $S$ suave en $\Bbb R^3$, y un campo escalar $f:\Bbb R^3 \ri
 
 En esta notación, $D_{uv}$ se refiere a los límites superiores e inferiores de los parámetros $u$ y $v$ que definen la superficie $S$ en su versión parametrizada $T(u,v)$.
 
-\subsection{Integral de un CV sobre una superficie}
+\subsection{Integral de un CV sobre una superficie (flujo)}
 
-Con las mismas condiciones que para un CE, dado $\overrightarrow{f}:\Bbb R^3 \rightarrow \Bbb R$ continuo en un abierto que contiene a $S$, se define:
+Con las mismas condiciones que para un CE, dado $\overrightarrow{f}:\Bbb R^3 \rightarrow \Bbb R^3$ continuo en un abierto que contiene a $S$, se define:
 
 \begin{equation}
 \tcboxmath[colback=orange!25!white,colframe=orange, title=Integral de un CV sobre una superficie: flujo]
@@ -2096,7 +2096,7 @@ Este tipo de integral suele denominarse el \textbf{flujo} del campo vectorial $f
 
 \subsection{Expresión del área para una superficie definida en forma implícita}
 
-Sea $F(x,y,z) = 0$. Dadas las condiciones del TFI, existe $z = f(x,y)$, y además $z_x = -\frac{F_x}{F_z} \wedge z_y = -\frac{F_y}{F_z}$. Si $S$ es la superficie asociada a $z = f(x,y)$, puede probarse que, dadas las condiciones:
+Sea $F(x,y,z) = 0$. Dadas las condiciones del TFI, existe $z = f(x,y)$, y además $z_x = -\frac{F_x}{F_z} \wedge z_y = -\frac{F_y}{F_z}$. Si $S$ es la superficie asociada a $z = f(x,y)$, puede probarse que, dadas las condiciones, se verifica:
 
 \begin{equation}
 \mathop{area}(S) = \iint_{R} \frac{ || \overrightarrow{\nabla F}|| }{ | \overrightarrow{ \nabla F } \cdot \overrightarrow{n} | } \mathop{dA}
@@ -2107,26 +2107,28 @@ En esta expresión, $R$ es la proyección de la superficie $S$ sobre un plano el
 \begin{figure}[ht]
 \centering
 \caption{La superficie S y su proyección R}
-\includegraphics[scale=0.8]{img/teo_fig027_isi.png}
+\includegraphics[scale=0.8]{img/integrales/proyeccion_superficie.png}
 \label{fig:isi}
 \end{figure}
 
-Por ejemplo, dada la esfera de radio 2, con ecuación implícita $x^2 + y^2 + z^2 = 2$, se desea calcular el área de la superficie superior delimitada al cortarla con el plano $z = 1$. Un gráfico de dicha superficie puede apreciarse en la figura~\ref{fig:isiej}
+Por ejemplo, dada la esfera de radio $\sqrt{2}$, con ecuación implícita $x^2 + y^2 + z^2 = 2$, se desea calcular el área de la superficie superior delimitada al cortarla con el plano $z = 1$. Un gráfico de dicha superficie puede apreciarse en la figura~\ref{fig:isiej}.
 
 \begin{figure}[ht]
 \centering
 \caption{Superficie S}
-\includegraphics[scale=0.8]{img/teo_fig028_isi.png}
+\includegraphics[scale=0.8]{img/integrales/area_superficie_implicita.png}
 \label{fig:isiej}
 \end{figure}
 
 En este caso:
 
+\begin{subequations}
 \begin{align}
 F(x,y,z) &= x^2 + y^2 + z^2 - 2 \\
 \overrightarrow{\nabla F}(x,y,z) &= (2x, 2y, 2z) \\
-||\overrightarrow{\nabla F}(x,y,z)|| &= \sqrt{4x^2 + 4y^2 + 4z^2} = \sqrt{4 \underbrace{(x^2 + y^2 + z^2)}_{2}} = 2 \sqrt{2}
+\left|\left|\overrightarrow{\nabla F}(x,y,z)\right|\right| &= \sqrt{4x^2 + 4y^2 + 4z^2} = \sqrt{4 \underbrace{(x^2 + y^2 + z^2)}_{2}} = 2 \sqrt{2}
 \end{align}
+\end{subequations}
 
 Para calcular la proyección $R$, considérese que es la intersección entre $x^2 + y^2 + z^2 = 2$ y $z = 1$. Reemplazando $z = 1$ en la ecuación de la esfera, resulta $x^2 + y^2 = 1$, que es un círculo en el plano $xy$. Esto ya establece que $\overrightarrow{n} = \hat{k} \Rightarrow | \overrightarrow{ \nabla F } \cdot \hat{k}| = |2z| = 2z$. El módulo se elimina porque en el intervalo de interés, $z$ es siempre positivo. Entonces:
 
@@ -2157,9 +2159,11 @@ En el caso particular de superficies cerradas (como una esfera), se define la or
 \begin{figure}[ht]
 \centering
 \caption{Orientación positiva y negativa}
-\includegraphics[scale=0.6]{img/teo_fig029_son.png}
+\includegraphics[scale=0.6]{img/integrales/superficie_orientable.png}
 \label{fig:son}
 \end{figure}
+
+\section{Divergencia y rotor - Teoremas de Green, Stokes y Gauss}
 
 \subsection{Divergencia y rotor}
 
@@ -2208,7 +2212,7 @@ Los CE con laplaciano nulo se denominan \textbf{armónicos}.
 \begin{figure}[ht]
 \centering
 \caption{Teorema de Green}
-\includegraphics[scale=0.85]{img/teo_fig030_green.png}
+\includegraphics[scale=0.85]{img/teoremas/green.png}
 \label{fig:green}
 \end{figure}
 
@@ -2216,7 +2220,7 @@ Obsérvese la figura~\ref{fig:green}. En el contexto de la misma, sean:
 
 \begin{align}
 & \overline{f}:H \subset \Bbb R^2 \rightarrow \Bbb R^2 / f(x,y) = (P(x,y), Q(x,y)) \\
-& \partial^+ R = C \text{ (la frontera de } R \text{ es una curva)}
+& \partial^+ R = C \text{ (la frontera de } R \text{ es una curva cerrada)}
 \end{align}
 
 Si el CV $\overline{f}$ es $C^1$ en un conjunto abierto $H \subset \Bbb R^2$ que contiene a un lazo simple $\partial^+ R$ $C^1$ y con derivadas primeras no nulas, entonces:
