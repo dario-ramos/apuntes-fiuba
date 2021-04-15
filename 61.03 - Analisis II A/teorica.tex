@@ -1914,16 +1914,16 @@ Sea, arbitrariamente, $f(x,y,z) = xyz^2$:
 
 ¿Qué representaría la integral triple de la función $f$ sobre el sólido $R$? Por ejemplo, si $f$ describiera la densidad punto a punto del sólido, la integral triple daría la masa.
 
-\section{Clase T16}
+\subsection{Aplicaciones de la integral múltiple}
 
-\subsection{Coordenadas polares}
+\subsubsection{Coordenadas polares y factor de escala en integral}
 
-Un vector en el plano $\Bbb R^2$ puede expresarse en términos de las dos distancias $(x,y)$ a los respectivos ejes. Esta representación se conoce como coordenadas rectangulares o cartesianas y es la más usual. Alternativamente, el mismo vector puede representarse en términos del ángulo $\theta$ respecto al eje $x$, y la distancia $r$ desde el origen. El par $(r, \theta)$ son las coordenadas polares del vector.
+Un vector en el plano $\Bbb R^2$ puede expresarse en términos de las dos distancias $(x,y)$ a los respectivos ejes. Esta representación se conoce como coordenadas rectangulares o cartesianas y es la más usual. Alternativamente, el mismo vector puede representarse en términos del ángulo $\theta$ respecto al eje $x$, y la distancia $r$ desde el origen. El par $(r, \theta)$ son las coordenadas polares del vector. Esta relación puede apreciarse en la figura \ref{fig:cp}.
 
 \begin{figure}[ht]
 \centering
 \caption{Coordenas cartesianas y polares}
-\includegraphics[scale=0.8]{img/teo_fig022_cp.png}
+\includegraphics[scale=0.8]{img/teo_fig029_cp.png}
 \label{fig:cp}
 \end{figure}
 
@@ -1939,7 +1939,7 @@ Dado el plano $(x,y)$ en coordenadas rectangulares/cartesianas, el mismo puede s
 \begin{figure}[ht]
 \centering
 \caption{De polares a cartesianas}
-\includegraphics[scale=0.8]{img/teo_fig023_ccp.png}
+\includegraphics[scale=0.8]{img/teo_fig030_ccp.png}
 \label{fig:polacart}
 \end{figure}
 
@@ -1951,7 +1951,7 @@ La transformación inversa, del plano $(r, \theta)$ al plano $(x,y)$, sería com
 \mathop{area}(T(R)) &= \overline{r} \Delta r \Delta \theta
 \end{align}
 
-Sea $T$ la transformación de coordenadas polares a cartesianas de la figura~\ref{fig:polacart}, y sea $R$ un compacto (conjunto cerrado y acotado) en el plano $(r,\theta)$. Sea $f$ un campo escalar continuo y acotado sobre el interior de R. Entonces, pensando en el cambio de coordenadas como una composición de funciones, aplicar la regla de la cadena genera la siguiente igualdad:
+Sea $T$ la transformación de coordenadas polares a cartesianas de la figura~\ref{fig:polacart}, y sea $R$ un compacto (conjunto cerrado y acotado) en el plano $(r,\theta)$. Sea $f$ un campo escalar continuo y acotado sobre el interior de $T(R)$. Entonces, pensando en el cambio de coordenadas como una composición de funciones, aplicar la regla de la cadena genera la siguiente igualdad:
 
 \begin{equation}
 \iint_{T(R)} f(x,y) \mathop{dx} \mathop{dy} = \iint_R r f(r \cos(\theta), r \sin(\theta)) \mathop{d\theta} \mathop{dr}
@@ -1972,27 +1972,27 @@ Generalizando este resultado a la integral triple, y a una transformación $T$ g
 \iiint_{T(K)} f(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz} = \iiint_K f[x(u,v,w), y(u,v,w), z(u,v,w)] \left| \frac{\partial(x,y,z)}{\partial(u,v,w)} \right| \mathop{du} \mathop{dv} \mathop{dw}
 \end{equation}
 
-\subsection{Coordenadas cilíndricas: \texorpdfstring{$(r, \theta, z)$}{(r, theta, z)}}
+\subsubsection{Coordenadas cilíndricas: \texorpdfstring{$(r, \theta, z)$}{(r, theta, z)} y factor de escala}
 
 Son una extensión posible de la idea de las coordenadas polares a $\Bbb R^3$. Además de $r$ y $\theta$, se agrega la coordenada $z$ para indicar la altura del punto. Ver figura~\ref{fig:ccil}.
 
 \begin{figure}[ht]
 \centering
 \caption{Coordenadas cilíndricas}
-\includegraphics[scale=0.8]{img/teo_fig024_ccil.png}
+\includegraphics[scale=0.8]{img/teo_fig031_ccil.png}
 \label{fig:ccil}
 \end{figure}
 
 La transformación de cilíndricas a cartesianas es $T(r, \theta, z) = (r \cos(\theta), r \sin(\theta), z)$, y su factor jacobiano es $r$.
 
-\subsection{Coordenadas esféricas: \texorpdfstring{$(\rho, \theta, \phi)$}{rho, theta, phi}}
+\subsubsection{Coordenadas esféricas: \texorpdfstring{$(\rho, \theta, \phi)$}{rho, theta, phi} y factor de escala}
 
 Estas coordenadas son un poco menos intuitivas, pero tienen su utilidad. Para visualizarlas, considérese una esfera de radio $\rho$. Para ubicar un punto en su superficie, hacen falta el ángulo respecto al eje $x$ ($\theta$) y el ángulo respecto al eje $z$ ($\phi$).
 
 \begin{figure}[ht]
 \centering
 \caption{Coordenadas esféricas}
-\includegraphics[scale=0.8]{img/teo_fig025_cesf.png}
+\includegraphics[scale=0.8]{img/teo_fig032_cesf.png}
 \label{fig:cesf}
 \end{figure}
 
@@ -2018,7 +2018,7 @@ x^2 + y^2 + z^2 = \rho^2 \\
 \rho^2 = r^2 + z^2
 \end{align}
 
-\subsection{Masa, centro de masa y momentos de inercia}
+\subsubsection{Masa, centro de masa y momentos de inercia}
 
 Dado un sólido $K$ en $\Bbb R^3$, si $\rho(x,y,z)$ es un campo escalar que describe la densidad punto a punto, resulta:
 
@@ -2028,6 +2028,7 @@ Dado un sólido $K$ en $\Bbb R^3$, si $\rho(x,y,z)$ es un campo escalar que desc
 \item $I_x, I_y, I_z$: Momentos de inercia.
 \end{itemize}
 
+\begin{subequations}
 \begin{align}
 M = \iiint_K \rho(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz} \\
 \overline{x} = \frac{ \iiint_K x \rho(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz} }{M} \\
@@ -2037,6 +2038,7 @@ I_x = \iiint_K (y^2 + z^2) \rho(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz} \\
 I_y = \iiint_K (x^2 + z^2) \rho(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz} \\
 I_z = \iiint_K (x^2 + y^2) \rho(x,y,z) \mathop{dx} \mathop{dy} \mathop{dz}
 \end{align}
+\end{subequations}
 
 \section{Clase T17}
 
