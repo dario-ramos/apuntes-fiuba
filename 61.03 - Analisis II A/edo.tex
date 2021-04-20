@@ -602,9 +602,7 @@ Estos sistemas de $n \times n$ pueden resolverse con la regla de Cramer. Los mis
 
 \end{enumerate}
 
-\section{Clase C9}
-
-\subsection{ED total exacta}
+\section{ED total exacta (EDTE)}
 
 Sea $G(x,y) = k$. Si $G \in C^1 \wedge y = y(x)$, derivando la definición de $G$ miembro a miembro y aplicando la regla de la cadena resulta:
 
@@ -614,11 +612,13 @@ G_x + G_y y_x = 0
 
 Si se definen:
 
+\begin{subequations}
 \begin{align}
 & G_x = M(x,y) \\
 & G_y = N(x,y) \\
 & dU = M(x,y) \mathop{dx} + N(x,y) \mathop{dy}
 \end{align}
+\end{subequations}
 
 Cuando $dU = 0$, se tiene un diferencial total exacto que da lugar a una EDTE cuya solución es $U(x,y)$, denominada \textbf{función potencial}.
 
@@ -639,7 +639,7 @@ y = h(t)
 
 $x \mathop{dx} + y \mathop{dy} = 0$ es EDTE también.
 
-Dada $U(x,y) / \overline{f}(x,y) = (x,y) \Rightarrow$ en todo punto de las curvas $U(x,y) = c$ será $\overline{f}(x,y) = (x,y)$ ortogonal a ellas.
+Dada $U(x,y) / \overline{f}(x,y) = \overline{\nabla U}(x,y) \Rightarrow$ en todo punto de las curvas $U(x,y) = c$ será $\overline{f}(x,y)$ ortogonal a ellas.
 
 \subsection{Líneas de campo}
 
