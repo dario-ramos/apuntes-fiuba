@@ -129,7 +129,7 @@ Las isoclinas son las curvas de nivel de la función derivada.
 
 \begin{figure}[ht]
 \caption{Isoclinas}
-\includegraphics[scale=1]{img/edo_fig001_isoclinas.png} 
+\includegraphics[scale=1]{img/edo/isoclinas.png} 
 \centering
 \label{fig:isoclinas}
 \end{figure}
@@ -341,6 +341,55 @@ Para completar el ejercicio, faltaría calcular $y$ para el caso $x<0$. Nótese 
 
 Las EDOs de tipo homogéneo de primer orden tienen la forma general $y' = f(x,y)$, donde $f(x,y)$ es homogénea de grado 0. Todas las ecuaciones de esta familia pueden ser resueltas con el cambio de variable $z = \frac{y}{x}$. De esto se sigue que $x = 0$ jamás será SS, aunque obviamente pueden existar otras SS.
 
+\subsubsection{EDOs reducibles a homogéneas}
+
+Forma general:
+
+\begin{equation}
+\frac{\mathop{dy}}{\mathop{dx}} = \frac{a_1 x + b_1 y + c_1}{a_2 x + b_2 y + c_2 }
+\end{equation}
+
+Pasos para resolución:
+
+\begin{enumerate}
+\item Se plantea:
+
+\begin{equation}
+\begin{array}{ll}
+x = u + h \Rightarrow \mathop{dx} = \mathop{du} \\
+y = v + k \Rightarrow \mathop{dy} = \mathop{dv}
+\end{array}
+\end{equation}
+
+($h$ y $k$ son constantes a determinar).
+
+\item Se reemplazan $x$ e $y$ en la ED:
+
+\begin{equation}
+\frac{\mathop{dv}}{\mathop{du}} = \frac{a_1 u + b_1 v + a_1 h + b_1 k + c_1}{a_2 u + b_2 v + a_2 h + b_2 k + c_2}
+\end{equation}
+
+\item Se exige arbitrariamente, para convertir la ecuación en homogénea:
+
+\begin{equation}
+\begin{array}{ll}
+a_1 h + b_1 k + c_1 = 0 \\
+a_2 h + b_2 k + c_2 = 0
+\end{array}
+\end{equation}
+
+De este sistema de $2 \times 2$ se obtienen las constantes $h$ y $k$.
+
+\item Dado que las sumas del ítem anterior son nulas, resulta:
+
+\begin{equation}
+\frac{\mathop{dv}}{\mathop{du}} = \frac{a_1 u + b_1 v}{a_2 u + b_2 v}
+\end{equation}
+
+Con la sustitución $z = \frac{u}{v}$, la ED pasa a ser homogénea y puede resolverse con los métodos ya vistos para ecuaciones de ese tipo.
+
+\end{enumerate}
+
 \subsection{Ecuaciones de Bernoulli}
 
 Se caracterizan por la forma:
@@ -352,6 +401,34 @@ y' + p(x) y = q(x) y^n
 En dicha expresión, las funciones $p(x)$ y $q(x)$ deben ser continuas en el intervalo de interés, y $n$ es un número real, no necesariamente entero.
 
 Con la sustitución $z = y^{(1-n)} \Rightarrow z' = (1-n) y^{-n} y'$, la ecuación de Bernoulli se convierte en una ecuación lineal en la variable $z$, y se pueden aplicar los métodos ya vistos para ecuaciones de ese tipo.
+
+\subsection{Ecuaciones de Euler-Cauchy}
+
+Estas ecuaciones tienen la forma general:
+
+\begin{equation}
+a x^2 y'' + b x y' + c y = 0
+\end{equation}
+
+Las siguientes sustituciones las reducen a una ED lineal con coeficientes constantes:
+
+\begin{subequations}
+\begin{align}
+x = e^t, t \in (0, +\infty) \\
+x = -e^t, t \in (-\infty, 0) \\
+\end{align}
+\end{subequations}
+
+Cuidado: Dado que se plantea $x = f(t)$ con la sustitución, al ser $y=f(x)$, pasa a ser $y = f(t)$.
+
+Notación alternativa: 
+
+\begin{subequations}
+\begin{align}
+y'(t) = \frac{\mathop{dy}}{\mathop{dt}} = \dot{y} \\
+y''(t) = \frac{\mathop{d^2y}}{\mathop{dt^2}} = \ddot{y} \\
+\end{align}
+\end{subequations}
 
 \section{Trayectorias ortogonales; teorema de unicidad}
 
@@ -641,71 +718,71 @@ $x \mathop{dx} + y \mathop{dy} = 0$ es EDTE también.
 
 Dada $U(x,y) / \overline{f}(x,y) = \overline{\nabla U}(x,y) \Rightarrow$ en todo punto de las curvas $U(x,y) = c$ será $\overline{f}(x,y)$ ortogonal a ellas.
 
-\subsection{Líneas de campo}
-
-Dado un campo vectorial $\overline{f}$, sus líneas de campo $\overline{\lambda}(t)$ son otro CV que cumple:
-
-\begin{equation}
-\overline{f}(\overline{\lambda}(t)) = k \overline{\lambda}'(t)
-\end{equation}
-
-Dada esta definición, el gradiente siempre es tangente a las líneas de campo.
-
-\section{Clase C10}
-
 \subsection{Factor integrante}
 
 El factor integrante es una expresión que depende sólo de $x$ (o sólo de $y$) tal que al multiplica una ED miembro a miembro, la convierte en una EDTE.
 
 Por ejemplo, sea la ED:
 
+\begin{subequations}
 \begin{align}
 & \underbrace{ (xy + y \cos(x)) }_{M} \mathop{dx} + \underbrace{ (x^2 + 2 \sin(x)) }_N \mathop{dy} = 0 \\
 & M_y = x + \cos(x) \\
 & N_x = 2x + 2 \cos(x)
 \end{align}
+\end{subequations}
 
 Esta ecuación tiene la forma de una EDTE, pero no satisface la condición de simetría $M_y = N_x$. Se plantea entonces un factor integrante $u(x)$:
 
+\begin{subequations}
 \begin{align}
 & \underbrace{ u(x) M(x,y) }_{\hat{M}} dx + \underbrace{ u(x) N(x,y) }_{\hat{N}} dy = 0 \\ 
 & \hat{M}_y = u(x) M_y = u(x) (x + \cos(x)) \\
 & \hat{N}_x = u'(x) N + u(x) N_x = u'(x) (x^2 + 2 \sin(x)) + u(x) (2x + 2 \cos(x))  
 \end{align}
+\end{subequations}
 
 Para que esto sea una EDTE, se necesita que $\hat{M}_y = \hat{N}_x$:
 
+\begin{subequations}
 \begin{align}
 & u (x + \cos(x)) = u' (x^2 + 2 \sin(x)) + u (2x + 2 \cos(x)) \\
 & u x + u \cos(x) - 2 u x -2 u \cos(x) = \frac{du}{dx} \left( x^2 + 2 \sin(x) \right) \\
 & -u (x + \cos(x)) = \frac{du}{dx} \left( x^2 + 2 \sin(x) \right) \\
 & \int \frac{du}{u} = -\int \frac{x^2 + \cos(x)}{x^2 + 2 \sin(x)} \mathop{dx}
 \end{align}
+\end{subequations}
 
 Para resolver la integral del lado derecho, se plantea un cambio de variable:
 
+\begin{subequations}
 \begin{align}
 & \alpha = x^2 + 2 \sin(x) \\
 & \mathop{d\alpha} = 2 x + 2 \cos(x) = 2 (x + \cos(x)) \mathop{dx} \\
 & \frac{\mathop{d\alpha}}{2} = (x + \cos(x)) \mathop{dx}
 \end{align}
+\end{subequations}
 
 Reemplazando:
 
+\begin{subequations}
 \begin{align}
 & \ln u = -\int \frac{\mathop{d\alpha}}{2 t} \Leftrightarrow \ln u = -\frac{1}{2} \ln \alpha \\
 & \ln u = \ln (\alpha^{-\frac{1}{2}}) \Leftrightarrow u = \alpha^{-\frac{1}{2}} \\
 & u(x) = (x^2 + 2 \sin(x))^{-\frac{1}{2}}
 \end{align}
+\end{subequations}
 
 Nótese que al integrar para hallar $u$, no se consideró la constante $C$ del TFC, porque eso luego se ajusta en la solución general. Introducir eso en $u$ complicaría innecesariamente los cálculos.
 
 El próximo paso, una vez obtenido el factor integrante $u$, es multiplicar la ED por él y resolverla como EDTE:
 
+\begin{subequations}
 \begin{align}
 & \Phi_x = (x^2 + 2 \sin(x))^{-\frac{1}{2}} (x y + y \cos(x) ) \\
 & \Phi_y = (x^2 + 2 \sin(x))^{-\frac{1}{2}} (x^2 + 2 \sin(x)) = (x^2 + 2 \sin(x))^{\frac{1}{2}}
 \end{align}
+\end{subequations}
 
 Integrando $\Phi_y$ respecto a $y$; recordar que al resolver una EDTE, eso introduce una función $v(x)$ a determinar:
 
@@ -715,15 +792,17 @@ Integrando $\Phi_y$ respecto a $y$; recordar que al resolver una EDTE, eso intro
 
 Derivando respecto a x, e igualando a $\Phi_x$ para determinar $v(x)$:
 
+\begin{subequations}
 \begin{align}
 & \Phi_x = y \frac{1}{2} (x^2 + 2 \sin(x))^{-\frac{1}{2}} (2 x + 2 \cos(x)) + v'(x) \\
 & (x^2 + 2 \sin(x))^{-\frac{1}{2}} (x y + y \cos(x)) + v'(x) = (x^2 + 2 \sin(x))^{-\frac{1}{2}} (x y + y \cos(x)) \\
 & v'(x) = 0 \Rightarrow v(x) = k
 \end{align}
+\end{subequations}
 
 Finalmente, resulta $\Phi = (x^2 + 2 \sin(x))^{\frac{1}{2}} + k$, por lo que la SG estará dada por la familia de curvas asociada a $(x^2 + 2 \sin(x))^{\frac{1}{2}} y = C$
 
-\subsection{Líneas de campo}
+\section{Líneas de campo}
 
 También llamadas líneas de flujo o líneas de corriente. Son las curvas incluidas en el dominio de un campo vectorial tales que los vectores del mismo son tangentes a ellas en todo punto. Para que esta última oración tenga sentido, claramente el CV tiene que tener dominio e imagen en el mismo espacio vectorial, o sea $\overline{F}: \Bbb R^2 \rightarrow \Bbb R^2, \overline{F}: \Bbb R^3 \rightarrow \Bbb R^3$, etc. Analíticamente:
 
@@ -731,12 +810,12 @@ También llamadas líneas de flujo o líneas de corriente. Son las curvas inclui
 \overline{F}(\overline{g}(t)) = k g'(t)
 \end{equation}
 
-Por ejemplo, dado el campo $F(x,y) = (-y,x)$, si se grafica $\overline{F}(x,y)$, se ve que las líneas de campo son círculos. Ver figura~\ref{fig:lincamp}.
+Por ejemplo, dado el campo $F(x,y) = (-y,x)$, si se grafica $\overline{F}(x,y)$, se ve que las líneas de campo son círculos. Ver figura \ref{fig:lincamp}.
 
 \begin{figure}[ht]
 \centering
 \caption{Líneas de campo para $\overline{F}(x,y) = (-y,x)$}
-\includegraphics[scale=0.7]{img/teo_fig036_lincamp.png}
+\includegraphics[scale=0.7]{img/edo/lineas_campo.png}
 \label{fig:lincamp}
 \end{figure}
 
@@ -750,7 +829,7 @@ Dados el CV (dato) y las líneas de campo (incógnitas):
 
 \begin{align}
 & \overline{F}(x,y) = (P(x,y), Q(x,y)) \\
-& \overline{g}(t) = (x(t), y(t)
+& \overline{g}(t) = (x(t), y(t))
 \end{align}
 
 Se plantea la igualdad de la definición para $k = 1$:
@@ -778,7 +857,7 @@ Por otro lado:
 Ergo:
 
 \begin{align}
-(P, Q) \parallel (\mathop{dx}, \mathop{dy}) \Rightarrow \frac{\mathop{dx}}{P} = \frac{\mathop{dy}}{Q} \Rightarrow Q dx = P dy \Rightarrow y' = \frac{Q}{P}
+(P, Q) \parallel (\mathop{dx}, \mathop{dy}) \Rightarrow \frac{\mathop{dx}}{P} = \frac{\mathop{dy}}{Q} \Rightarrow Q \mathop{dx} = P \mathop{dy} \Rightarrow y' = \frac{Q}{P}
 \end{align}
 
 Extensión a $\Bbb R^3$:
@@ -790,80 +869,5 @@ Extensión a $\Bbb R^3$:
 Nótese que en este caso surgen dos igualdades, y por ende un sistema de 2x2.
 
 Otro resultado interesante: si $\overline{F}$ es un CG, las líneas de campo y las equipotenciales son trayectorias ortogonales.
-
-\subsection{Ecuaciones de Euler-Cauchy}
-
-Estas ecuaciones tienen la forma general:
-
-\begin{equation}
-a x^2 y'' + b x y' + c y = 0
-\end{equation}
-
-Las siguientes sustituciones las reducen a una ED lineal con coeficientes constantes:
-
-\begin{align}
-x = e^t, t \in (0, +\infty) \\
-x = -e^t, t \in (-\infty, 0) \\
-\end{align}
-
-Cuidado: Dado que se plantea $x = f(t)$ con la sustitución, al ser $y=f(x)$, pasa a ser $y = f(t)$.
-
-Notación alternativa: 
-
-\begin{align}
-y'(t) = \frac{\mathop{dy}}{\mathop{dt}} = \dot{y} \\
-y''(t) = \frac{\mathop{d^2y}}{\mathop{dt^2}} = \ddot{y} \\
-\end{align}
-
-\section{Clase C11}
-
-\subsection{EDOs reducibles a homogéneas}
-
-Forma general:
-
-\begin{equation}
-\frac{\mathop{dy}}{\mathop{dx}} = frac{a_1 x + b_1 y + c_1}{a_2 x + b_2 y + c_2 }
-\end{equation}
-
-Pasos para resolución:
-
-\begin{enumerate}
-\item Se plantea:
-
-\begin{equation}
-\begin{array}{ll}
-x = u + h \Rightarrow \mathop{dx} = \mathop{du} \\
-y = v + k \Rightarrow \mathop{dy} = \mathop{dv}
-\end{array}
-\end{equation}
-
-($h$ y $k$ son constantes).
-
-\item Se reemplazan $x$ e $y$ en la ED:
-
-\begin{equation}
-\frac{\mathop{dv}}{\mathop{du}} = \frac{a_1 u + b_1 v + a_1 h + b_1 k + c_1}{a_2 u + b_2 v + a_2 h + b_2 k + c_2}
-\end{equation}
-
-\item Se exige arbitrariamente, para convertir la ecuación en homogénea:
-
-\begin{equation}
-\begin{array}{ll}
-a_1 h + b_1 k + c_1 = 0 \\
-a_2 h + b_2 k + c_2 = 0
-\end{array}
-\end{equation}
-
-De este sistema de $2 \times 2$ se obtienen las constantes $h$ y $k$.
-
-\item Dado que las sumas del ítem anterior son nulas, resulta:
-
-\begin{equation}
-\frac{\mathop{dv}}{\mathop{du}} = \frac{a_1 u + b_1 v}{a_2 u + b_2 v}
-\end{equation}
-
-Con la sustitución $z = \frac{u}{v}$, la ED pasa a ser homogénea y puede resolverse con los métodos ya vistos para ecuaciones de ese tipo.
-
-\end{enumerate}
 
 \end{document} 
