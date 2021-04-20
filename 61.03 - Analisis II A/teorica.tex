@@ -2319,8 +2319,6 @@ La idea es manipular el lado derecho para que exprese el área deseada. Si la cu
 
 \end{enumerate}
 
-\section{Clase T19}
-
 \subsection{Teorema de Stokes}
 
 Este teorema es una extensión del teorema de Green, pasando de 2 a 3 dimensiones.
@@ -2328,11 +2326,11 @@ Este teorema es una extensión del teorema de Green, pasando de 2 a 3 dimensione
 \begin{figure}[ht]
 \centering
 \caption{Teorema de Stokes}
-\includegraphics[scale=0.5]{img/teo_fig033_stokes.png}
+\includegraphics[scale=0.5]{img/teoremas/stokes.png}
 \label{fig:stokes}
 \end{figure}
 
-Como se observa en la figura~\ref{fig:stokes}, se tiene una curva cerrada tridimensional $C \in C^1$ en la región de interés. Dicha curva es, geométricamente la base de una superficie $S$, cuya parametrización en dos variables, $T(u,v) \in C^1$ en la región de interés. Además, el sentido de circulación de la curva  es positivo: si se imagina una persona caminando sobre la curva, su cabeza apuntará en el sentido en que la superficie "emerge" de la curva, como se observa en la figura ~\ref{fig:stokes}.
+Como se observa en la figura \ref{fig:stokes}, se tiene una curva cerrada tridimensional $C \in C^1$ en la región de interés. Dicha curva es, geométricamente la base de una superficie $S$, cuya parametrización en dos variables, $T(u,v) \in C^1$ en la región de interés. Además, el sentido de circulación de la curva  es positivo: si se imagina una persona caminando sobre la curva, su cabeza apuntará en el sentido en que la superficie ``emerge'' de la curva, como se observa en la figura \ref{fig:stokes}.
 
 Dadas todas estas condiciones, el teorema de Stokes garantiza que, para un campo vectorial $\overline{f}: A \subset \Bbb R^3 \rightarrow \Bbb R^3 \in C^1(A)$:
 
@@ -2343,9 +2341,9 @@ Dadas todas estas condiciones, el teorema de Stokes garantiza que, para un campo
 \label{eq:stokes}
 \end{equation}
 
-En esta expresión, $\mathop{\overline{dS}} = \hat{n} \mathop{dS}$, siendo $\hat{n}$ un vector de norma 1 en la dirección normal a la superfice $S$, punto a punto.
+En esta expresión, $\mathop{\overline{dS}} = \hat{n} \mathop{dS}$, siendo $\hat{n}$ un vector de norma 1 en la dirección normal a la superficie $S$, punto a punto.
 
-El lado izquierdo de la igualdad en la ecuación~\ref{eq:stokes} es la circulación del campo $\overline{f}$ sobre la curva $C$. El lado derecho es el flujo del rotor de dicho campo sobre la superficie orientada $S$. Claramente, la elección de $S$ es irrelevante: esto se cumple para cualquier $S$ cuya parametrización sea $C^1$ en la región de interés. Por lo tanto, elegir $S$ inteligemente puede simplificar mucho los cálculos.
+El lado izquierdo de la igualdad en la ecuación~\ref{eq:stokes} es la circulación del campo $\overline{f}$ sobre la curva $C$. El lado derecho es el flujo del rotor de dicho campo sobre la superficie orientada $S$. Claramente, la elección de $S$ es irrelevante: esto se cumple para cualquier $S$ cuya parametrización sea $C^1$ en la región de interés. Por lo tanto, elegir $S$ inteligentemente puede simplificar mucho los cálculos.
 
 \subsubsection{Observaciones}
 
@@ -2355,12 +2353,13 @@ El lado izquierdo de la igualdad en la ecuación~\ref{eq:stokes} es la circulaci
 \begin{figure}[ht]
 \centering
 \caption{Stokes sobre superficie cerrada}
-\includegraphics[scale=0.7]{img/teo_fig034_stokes.png}
+\includegraphics[scale=0.7]{img/teoremas/stokes_sup_cerrada.png}
 \label{fig:stokes2}
 \end{figure}
 
 \item El teorema de Green es un caso particular del teorema de Stokes. Si $C$ es plana y se ubica en el plano $xy$, se elige $S$ como la superficie también plana delimitada por $C$, y se anula la componente $z$ del CV tal que $\overline{f} = (P, Q, 0)$, aplicando el teorema de Stokes se obtiene:
 
+\begin{subequations}
 \begin{align}
 & \ointctrclockwise_C \overline{f} \cdot \mathop{\overline{dC}} = \iint_S \mathop{rot} \overline{f} \cdot (0,0,1) \mathop{dx} \mathop{dy} = \iint_S \begin{vmatrix}
 \hat{i} & \hat{j} & \hat{k} \\
@@ -2369,6 +2368,7 @@ P & Q & 0
 \end{vmatrix} \cdot (0,0,1) \mathop{dx} \mathop{dy} = \\
 & \iint_S (0, 0, Q_x - P_y) \cdot (0,0,1) \mathop{dx} \mathop{dy} = \iint_S (Q_x - P_y) \mathop{dx} \mathop{dy} 
 \end{align}
+\end{subequations}
 
 \item Ejemplo: se desea calcular el flujo del rotor del campo $\overline{F} = (xz, yz, xy)$ sobre la superficie $S$ definida por la parte de la esfera $x^2 + y^2 + z^2 = 4$ contenida en el cilindro $x^2 + y^2 = 1$.
 
@@ -2421,21 +2421,19 @@ Finalmente:
 
 \begin{align}
 & \iint_S \mathop{rot}\overline{F} \cdot \mathop{\overline{dS}} = \int_0^{2\pi} \left( \cos(t) \sqrt(3), \sin(t) \sqrt(3), \cos(t) \sin(t) \right) \cdot \left( -\sin (t), \cos (t), 0 \right) dt = \\
-& \int_0^{2pi} \left( -\sqrt{3} \cos(t) \sin(t) + \sqrt{3} \cos(t) \sin(t) \right) dt = \sqrt{3} \int_0^{2\pi} 0 dt = 0
+& \int_0^{2pi} \left( -\sqrt{3} \cos(t) \sin(t) + \sqrt{3} \cos(t) \sin(t) \right) \mathop{dt} = \sqrt{3} \int_0^{2\pi} 0 \mathop{dt} = 0
 \end{align}
 
 Cabía esperar este resultado por la simetría de $S$ y del campo $F$.
 
 \end{enumerate}
 
-\section{Clase T20}
-
 \subsection{Teorema de Gauss}
 
 \begin{figure}[ht]
 \centering
 \caption{Teorema de Gauss}
-\includegraphics[scale=0.7]{img/teo_fig037_gauss.png}
+\includegraphics[scale=0.7]{img/teoremas/gauss.png}
 \label{fig:gauss}
 \end{figure}
 
@@ -2445,7 +2443,7 @@ Partiendo de la figura~\ref{fig:gauss}, sea la superficie $S$ de un sólido en $
 \item $\overline{T} \in C^1(D_{uv})$
 \item El CV $\overline{f} \in C^1(A)$, con $\overline{f}: A \rightarrow \Bbb R^3$.
 \item La superficie $S$ es cerrada, con campo normal unitario saliente $\hat{n} = \frac{\overline{T}_u \times \overline{T}_v}{||\overline{T}_u \times \overline{T}_v||}$, con el producto vectorial $\overline{T}_u \times \overline{T}_v \neq \overline{0}$ en $D_{uv}$.
-\item La superficie $S$ encierra un sólido $V$, tal que $S = \partial V$, y $A \supset (S U V)$.
+\item La superficie $S$ encierra un sólido $V$, tal que $S = \partial V$, y $A \supset (S \cup V)$.
 \end{itemize}
 
 Entonces se cumple que:
