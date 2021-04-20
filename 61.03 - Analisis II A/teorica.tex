@@ -2230,9 +2230,7 @@ Si el CV $\overline{f}$ es $C^1$ en un conjunto abierto $H \subset \Bbb R^2$ que
 { \ointctrclockwise_{\partial^+ R} \overline{f} \cdot \mathop{d(\partial^+R)} = \iint_R [Q_x(x,y) - P_y(x,y)] \mathop{dx} \mathop{dy} }
 \end{equation}
 
-\section{Clase T18}
-
-\subsection{Observaciones sobre el teorema de Green}
+\subsubsection{Observaciones}
 
 \begin{enumerate}
 \item El teorema es igualmente válido cuando el lazo $R$ es construido mediante la unión de varias curvas suaves.
@@ -2240,17 +2238,17 @@ Si el CV $\overline{f}$ es $C^1$ en un conjunto abierto $H \subset \Bbb R^2$ que
 \item Dadas las condiciones del teorema, con $H$ simplemente conexo, las siguientes afirmaciones son equivalentes entre sí:
 \begin{enumerate}
 \item $\exists \Phi / \overline{f} = \nabla \Phi$, o sea que $\overline{f}$ es un CG.
-\item $\forall P \in H, P_y(P) = Q_x(P)$
-\item La integral curvilínea de $\overline{f}$ entre dos puntos dentro de $H$ no depende de la trayectoria, y la integral curvilínea sobre el lazo $R$ es nula. Esto se demuestra justamente con el teorema de Green.
+\item $\forall P_0 \in H, P_y(P_0) = Q_x(P_0)$
+\item La integral curvilínea de $\overline{f}$ entre dos puntos dentro de $H$ no depende de la trayectoria, y la integral curvilínea sobre cualquier lazo $R$ es nula. Esto se demuestra justamente con el teorema de Green.
 \end{enumerate}
 
-\item Sea $\overline{f} = (P(x,y), Q(x,y))$ con $P_y = Q_x$ en el conjunto $H$, y sean las curvas $C_1, C_2 y C_3$ como se ven en la figura~\ref{fig:green31}.
+\item Sea $\overline{f} = (P(x,y), Q(x,y))$ con $P_y = Q_x$ en el conjunto $H$, y sean las curvas $C_1, C_2$ y $C_3$ como se ven en la figura~\ref{fig:greenrc}.
 
 \begin{figure}[ht]
 \centering
 \caption{Green en región conexa}
-\includegraphics[scale=0.85]{img/teo_fig031_green.png}
-\label{fig:green31}
+\includegraphics[scale=0.85]{img/teoremas/green_region_conexa.png}
+\label{fig:greenrc}
 \end{figure}
 
 Dado que $C_1$ y $C_2$ están en la frontera de $H$, no se puede asegurar que la integral sobre ellas sea cero. Sin embargo, el teorema de Green garantiza la siguiente igualdad:
@@ -2264,11 +2262,11 @@ Esbozo de demostración: considérese la curva $\gamma_1$, que conecta $C_1$ y $
 \begin{figure}[ht]
 \centering
 \caption{Green en región conexa}
-\includegraphics[scale=1]{img/teo_fig032_green.png}
-\label{fig:green32}
+\includegraphics[scale=1]{img/teoremas/green_rc_demo.png}
+\label{fig:greendemo}
 \end{figure}
 
-Sea entonces $\sigma = C_1^+ \cup \gamma_1^+ \cup C_2^- \cup \gamma_1^-$, donde los sentidos positivos de $C_1$ y $C_2$ son los de la figura ~\ref{fig:green32}, y los sentidos de $\gamma_1$ son los de la figura ~\ref{fig:green32}. Por lo tanto:
+Sea entonces $\sigma = C_1^+ \cup \gamma_1^+ \cup C_2^- \cup \gamma_1^-$, donde los sentidos positivos de $C_1$ y $C_2$ son los de la figura \ref{fig:greenrc}, y los sentidos de $\gamma_1$ son los de la figura \ref{fig:greendemo}. Por lo tanto:
 
 \begin{equation}
 \ointctrclockwise_{\sigma} \overline{f} \cdot \mathop{\overline{d\sigma}} = \int_{C_1^+} \overline{f} \cdot \mathop{\overline{dC_1}} + \bcancel{ \int_{\gamma_1^+} \overline{f} \cdot \mathop{\overline{d\gamma_1}} } + \int_{C_2^-} \overline{f} \cdot \mathop{\overline{dC_2}} + \bcancel{ \int_{\gamma_1^-} \overline{f} \cdot \mathop{\overline{d\gamma_1}} }
@@ -2282,7 +2280,42 @@ Las integrales sobre $\gamma_1$ se cancelan por ser el mismo recorrido con senti
 
 La igualdad con $C_3$ puede probarse de forma similar.
 
-\item Cualquier CV que satisfaga $-P_y + Q_x = k$ sirve para calcular áreas de regiones planas. En particular, son de utilidad los CVs $\overline{f} = (0, x)$, $\overline{f} = (-y, 0)$ y $\overline{f} = (-y, x)$.
+\item Sea una región conexa pero con huecos, como $A$ en la figura \ref{fig:greenhuecos}.
+
+\begin{figure}[ht]
+\centering
+\caption{Green en región con huecos}
+\includegraphics[scale=1]{img/teoremas/green_huecos.png}
+\label{fig:greenhuecos}
+\end{figure}
+
+Si dentro de $A$ se cumple $P_y = Q_x$, por Green:
+
+\begin{equation}
+\ointctrclockwise_{C} \overline{f} \cdot \mathop{\overline{dC}} = \sum_{i=1}^3 \ointctrclockwise_{C_i} \overline{f} \cdot \mathop{\overline{dC_i}}
+\end{equation}
+
+\item Cualquier CV que satisfaga $-P_y + Q_x = k$ sirve para calcular áreas de regiones planas.
+
+En particular, son de utilidad los CVs $\overline{f} = (0, x)$, $\overline{f} = (-y, 0)$ y $\overline{f} = (-y, x)$.
+ 
+El razonamiento es el siguiente. Dada una región bidimensional D, su área puede calcularse a través de una integral doble: 
+
+\begin{equation}
+\mathop{area(D)} = \iint_D \mathop{dA} = \iint 1 \mathop{dA} = \frac{1}{k} \iint k \mathop{dA}
+\end{equation}
+
+Recuérdese cómo el teorema de Green relaciona una integral doble con una integral curvilínea:
+
+\begin{equation}
+\ointctrclockwise_{C} \overline{f} \cdot \mathop{\overline{dC}} = \iint_D [Q_x(x,y) - P_y(x,y)] \mathop{dx} \mathop{dy}
+\end{equation}
+
+La idea es manipular el lado derecho para que exprese el área deseada. Si la curva $C$ que encierra la región $D$ es simple, y se cumplen las condiciones del teorema de Green, con encontrar un CV $\overline{f} = (P,Q)$ que satisfaga $Q_x - P_y = k$, resulta:
+
+\begin{equation}
+\ointctrclockwise_{C} \overline{f} \cdot \mathop{\overline{dC}} = \iint_D k \mathop{dx} \mathop{dy} \Rightarrow \frac{1}{k} \ointctrclockwise_{C} \overline{f} \cdot \mathop{\overline{dC}} = \mathop{area}(D)
+\end{equation}
 
 \end{enumerate}
 
