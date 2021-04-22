@@ -320,13 +320,83 @@ La \textbf{forma implícita} de definir un plano en $\Bbb R^3$ es:
 
 En este esquema, $P$ y $Q$ son dos puntos pertenecientes al plano, y $N$ es la \textbf{normal}, un vector ortogonal al plano.
 
+Una forma más cómoda de expresar esto es con la \textbf{ecuación implícita del plano}:
+
+\begin{equation}
+A x + B y + C z + D = 0
+\end{equation}
+
+Es bastante directo demostrar que $\overline{N} = (A, B, C)$.
+
 Por otro lado, se tiene la \textbf{forma vectorial}:
 
 \begin{equation}
 (x,y,z) = \alpha (p_1, p_2, p_3) + \beta (q_1, q_2, q_3) + R
 \end{equation}
 
-En esta forma, $P = (p_1, p_2, p_3)$ y $Q = (q_1, q_2, q_3)$ son dos vectores, no puntos; es importante la distinción en este caso; pensar a los vectores como segmentos orientados para distinguirlos de los puntos. De ese modo, $P$ y $Q$ son vectores contenidos en el plano, en tanto $R$ es un punto contenido en el mismo. Los parámetros $\alpha$ y $\beta$ son reales, y sus combinaciones de valores cubren todo el plano definido. 
+En esta forma, $P = (p_1, p_2, p_3)$ y $Q = (q_1, q_2, q_3)$ son dos vectores, no puntos; es importante la distinción en este caso; pensar a los vectores como segmentos orientados para distinguirlos de los puntos. De ese modo, $P$ y $Q$ son vectores contenidos en el plano, en tanto $R$ es un punto contenido en el mismo. Los parámetros $\alpha$ y $\beta$ son reales, y sus combinaciones de valores cubren todo el plano definido.
+
+\subsubsection{Ecuación del plano a partir de 3 puntos}
+
+\begin{enumerate}
+\item Sean tres puntos conocidos $P, Q, R$ y no \textbf{colineales}. Un conjunto de puntos es colineal si pertenecen a la misma recta; una forma de comprobarlo es haciendo las restas entre los puntos: si los vectores resultantes son paralelos, los puntos son colineales.
+\item Calcular $\overline{PQ} = Q - P$.
+\item Calcular $\overline{QR} = R - Q$.
+\item Obtener la normal del plano haciendo el producto vectorial de dos vectores contenidos en él: $\overline{N} = (A,B,C) = \overline{PQ} \times \overline{QR}$
+\item Dado cualquier punto del plano $(x_0, y_0, z_0)$, $D = -(A x_0 + B y_0 + C z_0)$.
+\end{enumerate}
+
+\subsubsection{Ecuaciones implícitas de una recta}
+
+Otra forma de expresar una recta en $\Bbb R^3$ es como un sistema de dos ecuaciones de tres incógnitas, donde cada ecuación representa un plano. En otras palabras, la recta puede representarse como la intersección de dos planos.
+
+Para pasar de la forma paramétrica a la forma implícita:
+
+\begin{enumerate}
+\item Sea $R: (v_x, v_y, v_z) t + (x_0, y_0, z_0)$ la representación paramétrica de la recta $R$.
+
+\item Sean $(x,y,z)$ los puntos de la recta. Entonces:
+\begin{equation}
+(x, y, z) = (v_x, v_y, v_z) t + (x_0, y_0, z_0)
+\end{equation}
+
+\item Componente a componente:
+
+\begin{subequations}
+\begin{align}
+x &= v_x t + x_0 \\
+y &= v_y t + y_0 \\
+z &= v_z t + z_0
+\end{align}
+\end{subequations}
+
+\item Despejando $t$ en las tres ecuaciones, resulta la triple igualdad:
+
+\begin{equation}
+\frac{x-x_0}{v_x} = \frac{y-y_0}{v_y} = \frac{z-z_0}{v_z}
+\end{equation}
+
+Si $v_x$ vale cero, $x = x_0$, y lo mismo para las demás.
+
+\item La triple igualdad implica dos igualdades (la tercera es l.d.):
+
+\begin{subequations}
+\begin{align}
+\frac{x-x_0}{v_x} = \frac{y-y_0}{v_y} \\
+\frac{y-y_0}{v_y} = \frac{z-z_0}{v_z}
+\end{align}
+\end{subequations}
+
+\item Acomodando las dos igualdades, se obtienen las dos ecuaciones buscadas:
+
+\begin{subequations}
+\begin{align}
+(x-x_0) v_y = (y-y_0) v_x \\
+(y-y_0) v_z = (z-z_0) v_y \\
+\end{align}
+\end{subequations}
+
+\end{enumerate}
 
 \section{Funciones; coordenadas polares; cuádricas}
 
