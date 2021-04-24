@@ -347,4 +347,76 @@ x &+ y + z -4 &= 0
 \end{enumerate}
 \hrule
 
+\begin{enumerate}[(a)]
+
+\item Para que 3 puntos determinen más de un plano, deben ser colineales: sus vectores diferencia deben ser paralelos.
+
+\begin{subequations}
+\begin{align}
+& \overline{v_{12}} = v_2 - v_1 = (-1, 1, 0) \\
+& \overline{v_{23}} = v_3 - v_2 = (2, -2, k) \\
+& \overline{v_{12}} \parallel \overline{v_{23}} \Leftrightarrow \overline{v_{12}} = \alpha \overline{v_{23}} \Leftrightarrow \left\{ \begin{array}{ll}
+-1 = \alpha 2 \\
+1 = \alpha (-2) \\
+0 = \alpha k
+\end{array} \right. \Leftrightarrow \left\{ \begin{array}{ll}
+\alpha = -\frac{1}{2} \\
+\alpha = -\frac{1}{2} \\
+0 = \alpha k
+\end{array} \right.
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ k = 0 }
+\end{equation}
+
+\item Aplicando el mismo método:
+
+\begin{subequations}
+\begin{align}
+& \overline{v_{12}} = v_2 - v_1 = (0, -2, 1) \\
+& \overline{v_{23}} = v_3 - v_2 = (0, -2, k-1) \\
+& \overline{v_{12}} \parallel \overline{v_{23}} \Leftrightarrow \overline{v_{12}} = \alpha \overline{v_{23}} \Leftrightarrow \left\{ \begin{array}{ll}
+0 = \alpha 0 \\
+-2 = \alpha (-2) \\
+1 = \alpha (k-1)
+\end{array} \right. \Leftrightarrow \left\{ \begin{array}{ll}
+0 = 0 \\
+\alpha = 1 \\
+1 = \alpha (k-1)
+\end{array} \right.
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ k = 2 }
+\end{equation}
+
+Para analizar una condición general, se plantean $v_1$, $v_2$ y $v_3$ genéricos:
+
+\begin{subequations}
+\begin{align}
+& v_1 = (v_{1x}, v_{1y}, v_{1z}), v_2 = (v_{2x}, v_{2y}, v_{2z}), v_3 = (v_{3x}, v_{3y}, v_{3z}) \\
+& \overline{v_{12}} = v_2 - v_1 = (v_{2x} - v_{1x}, v_{2y} - v_{1y}, v_{2z} - v_{1z}) \\
+& \overline{v_{23}} = v_3 - v_2 = (v_{3x} - v_{2x}, v_{3y} - v_{2y}, v_{3z} - v_{2z}) \\
+& \overline{v_{12}} \parallel \overline{v_{23}} \Leftrightarrow \overline{v_{12}} = \alpha \overline{v_{23}} \Leftrightarrow \left\{ \begin{array}{ll}
+v_{2x} - v_{1x} = \alpha (v_{3x} - v_{2x}) \\
+v_{2y} - v_{1y} = \alpha (v_{3y} - v_{2y}) \\
+v_{2z} - v_{1z} = \alpha (v_{3z} - v_{2z})
+\end{array} \right.
+\end{align}
+\end{subequations}
+
+Despejando $\alpha$ en las 3 ecuaciones e igualando, resulta la condición general buscada:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ \frac{v_{2x} - v_{1x}}{v_{3x} - v_{2x}} = \frac{v_{2y} - v_{1y}}{v_{3y} - v_{2y}} = \frac{v_{2z} - v_{1z}}{v_{3z} - v_{2z}} }
+\end{equation}
+
+\end{enumerate}
+
 \end{document}
