@@ -37,9 +37,11 @@
 
 \hrule
 \vspace{10 pt}
-1. Hallar en cada caso la ecuación implícita de un plano que satisfaga las condiciones dadas. Analizar si esas condiciones determinan el plano unívocamente. 
+
+\textbf{1. Hallar en cada caso la ecuación implícita de un plano que satisfaga las condiciones dadas. Analizar si esas condiciones determinan el plano unívocamente.} 
 
 \begin{enumerate}[(a)]
+\bfseries
 \item pasa por $(1, 1, 0)$, $(0, 2, 1)$ y $(3, 2, -1)$;
 
 \item pasa por $(2, 0, 1)$ y es perpendicular a la recta que pasa por $(1, 1, 0)$ y $(4, -1, -2)$;
@@ -213,5 +215,136 @@ Para que $\Phi$ contenga a $R$ y a la vez sea perpendicular a $\Pi$, es necesari
 Dado que $R$ no es paralela a la normal de $\Pi$ (porque $(2, 3, 4)$ no es paralelo a $(1, -1, -1)$), no existe un plano perpendicular a $\Pi$ que contenga por completo a $R$. 
 
 \end{enumerate}
+
+\hrule
+\vspace{10 pt}
+\textbf{2. Hallar en cada caso las ecuaciones implícitas de una recta que satisfaga las condiciones dadas. Analizar si esas condiciones determinan la recta unívocamente.} 
+
+\begin{enumerate}[(a)]
+\bfseries
+\item pasa por el origen y es paralela a la recta de ecuaciones $x + 2y -z = 2, 2x - y + 4z = 5$
+
+\item pasa por $(1, 2, -1)$ y forma con los tres semiejes positivos ángulos iguales entre sí.
+
+\item está determinada como intersección de los planos de ecuaciones $y-x = 0$ y $z = 4 - x - y$
+\end{enumerate}
+\hrule
+
+\begin{enumerate}[(a)]
+
+\item Sean:
+
+\begin{subequations}
+\begin{align}
+& R_1: \left\{ \begin{array}{ll}
+x + 2y - z = 2 \\
+2x - y + 4z = 5
+\end{array} \right. \\
+& R_2: \text{Recta a determinar. Pasa por } (0, 0, 0) \text{ y es paralela a } R_1
+\end{align}
+\end{subequations}
+
+Respecto a la unicidad, $R_2$ está especificada por un punto y un vector dirección (paralelo al de $R_1$), por lo cual está garantizada su unicidad. Como primer paso, paso $R_1$ a forma paramétrica para obtener su vector dirección:
+
+\begin{subequations}
+\begin{align}
+& \left\{ \begin{array}{l}
+x + 2y -z = 2 \\
+2x - y + 4z =5
+\end{array} \right. \overset{F_2 \leftarrow -2F_1 + F_2}{\sim} \left\{ \begin{array}{rr}
+x + 2y - z = 2 \\
+-5y + 6z = 1
+\end{array} \right. \\
+& \text{Despejando } z \text{ en } F_2: 6z = 1 + 5y \Rightarrow z = \frac{1}{6} + \frac{5}{6} y \\
+& \text{Reemplazando en } F_1: x + 2y - \frac{1}{6} -\frac{5}{6} y = 2 \Rightarrow x = \frac{13}{6} - \frac{7}{6} y \\
+& R_1 : \left(\frac{13}{6} - \frac{7}{6} \lambda, \lambda, \frac{1}{6} + \frac{5}{6} \lambda \right) = \left(-\frac{7}{6}, 1, \frac{5}{6}\right) \lambda + \left(\frac{13}{6}, 0, \frac{1}{6}\right) \\
+& R_1: (-7, 6, 5) \lambda + (13, 0, 1)
+\end{align}
+\end{subequations}
+
+Como $R_2$ es paralela a $R_1$, tienen el mismo vector dirección. Y como $R_2$ pasa por el origen, resulta $R_2: (-7, 6, 5) \lambda $. Pasando a implícitas:
+
+\begin{equation}
+\frac{x}{-7} = \frac{y}{6} = \frac{z}{5} \Rightarrow R_2: \left\{ \begin{array}{ll}
+6x = -7y \\
+5y = 6z
+\end{array} \right.
+\end{equation}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=Recta única]
+{ \left\{ \begin{array}{llr}
+6x + &7y &= 0 \\
+&5y - 6z &= 0
+\end{array} \right. }
+\end{equation}
+
+\item Se está definiendo un punto, ¿pero cuántas direcciones posibles hay? La forma más sencilla de verlo es primero trabajando en el plano $xy$, y $z$ deberá tener el mismo ángulo. En el plano $xy$, visualizando la proyección de la recta, hay dos posibilidades, como se observa en la figura \ref{fig:1-2-b}.
+
+\begin{figure}[ht]
+\caption{Rectas con igual ángulo respecto a semiejes positivos}
+\includegraphics[scale=1]{img/ejercicios/1/2-b.png} 
+\centering
+\label{fig:1-2-b}
+\end{figure}
+
+Dado que cada uno de estos dos casos fija el valor del ángulo respecto al semieje positivo $z$, hay dos direcciones posible para la recta: $(1, 1, 1)$ y $(1, -1, -1)$. Eligiendo arbitrariamente la primera, con el punto dado resulta:
+
+\begin{equation}
+R: (1, 1, 1) \lambda + (1, 2, -1) 
+\end{equation}
+
+Pasando a ecuaciones implícitas:
+
+\begin{equation}
+\frac{x-1}{1} = \frac{y-2}{1} = \frac{z+1}{1} \Rightarrow \left\{ \begin{array}{ll}
+x-1 = y - 2 \\
+y-2 = z + 1
+\end{array} \right.
+\end{equation}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=Una de dos rectas posibles]
+{ R: \left\{ \begin{array}{llr}
+x - &y &= 0 \\
+&y - z - 3 &= 0
+\end{array} \right. }
+\end{equation}
+
+\item Las ecuaciones implícitas de una recta son, por definición, la intersección entre dos planos. Sólo restaría acomodar los términos y verificar si la intersección es una recta:
+
+\begin{equation}
+\left\{ \begin{array}{ll}
+y-x = 0 \\
+z = 4-x-y
+\end{array} \right. \sim \left\{ \begin{array}{llr}
+-x &+ y &= 0 \\
+x &+ y + z -4 &= 0
+\end{array} \right.
+\end{equation}
+
+No hace falta ninguna transformación para ver que las dos ecuaciones son l.i., y por ende determinan una única recta.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=Recta única]
+{ \left\{ \begin{array}{llr}
+-x &+ y &= 0 \\
+x &+ y + z -4 &= 0
+\end{array} \right. }
+\end{equation}
+
+\end{enumerate}
+
+\hrule
+\vspace{10 pt}
+\textbf{3. En los siguientes casos, hallar $k$ de manera que exista más de un plano que pase por $v_1$, $v_2$ y $v_3$. Analizar una condición aplicable en general.} 
+
+\begin{enumerate}[(a)]
+\bfseries
+\item $v_1 = (1, 0, 0)$, $v_2=(0, 1, 0)$, $v_3 = (2, -1, k)$;
+
+\item $v_1 = (1, 1, 0)$, $v_2=(1, -1, 1)$, $v_3 = (1, -3, k)$
+\end{enumerate}
+\hrule
 
 \end{document}
