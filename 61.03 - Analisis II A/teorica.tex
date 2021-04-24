@@ -310,7 +310,7 @@ x = a (y-c)^2 + b
 En la hipérbola de la figura \ref{fig:hiperbolas}, $a$ es el semilado $x$ del rectángulo, y $b$ corresponde al semilado $y$. El centro del rectángulo es el punto $(x_0, y_0)$, que en el gráfico de la figura \ref{fig:hiperbolas} corresponde al origen. 
 Nótese además que las diagonales del rectángulo definido por $a$ y $b$ son asíntotas oblicuas de la cónica. Por otro lado, el eje que la curva no corta es el asociado al término negativo ($y$ en este ejemplo).
 
-\subsection{Planos en \texorpdfstring{$\Bbb R^3$}{R3}}
+\subsection{Planos y rectas en \texorpdfstring{$\Bbb R^3$}{R3}}
 
 La \textbf{forma implícita} de definir un plano en $\Bbb R^3$ es:
 
@@ -345,6 +345,55 @@ En esta forma, $P = (p_1, p_2, p_3)$ y $Q = (q_1, q_2, q_3)$ son dos vectores, n
 \item Obtener la normal del plano haciendo el producto vectorial de dos vectores contenidos en él: $\overline{N} = (A,B,C) = \overline{PQ} \times \overline{QR}$
 \item Dado cualquier punto del plano $(x_0, y_0, z_0)$, $D = -(A x_0 + B y_0 + C z_0)$.
 \end{enumerate}
+
+\subsubsection{Distancia entre un punto y un plano}
+
+Sean un plano $\Pi: ax + by + cz + d = 0$ y un punto $P_1 = (x_1, y_1, z_1)$. Se desea conocer la distancia entre el punto $P$ y el plano $\Pi$.
+
+\begin{figure}[ht]
+\caption{Distancia entre punto y plano}
+\includegraphics[scale=0.8]{img/rn/distancia_punto_plano.png} 
+\centering
+\label{fig:distanciaplano}
+\end{figure}
+
+Para deducir una fórmula general para dicha distancia, obsérvese la figura \ref{fig:distanciaplano}. La distancia $D$ buscada es la distancia perpendicular entre $\Pi$ y $P_1$. Sea un punto $P_0$ arbitrario perteneciente al plano; entre ese punto, $P_1$ y su proyección, determinan un triángulo rectángulo. Sea el vector $\overline{B} = P_1 - P_0 = (x_1 - x_0, y_1 - y_0, z_1 - z_0)$. La distancia $D$ buscada es la norma de la proyección de $\overline{B}$ sobre el vector normal al plano $\overline{N} = (a, b, c)$:
+
+\begin{equation}
+D = ||\overline{P}_{\overline{N}}(\overline{B})|| = ||\overline{B}|| \cos \theta
+\end{equation}
+
+Ahora bien, recuérdese la relación entre producto escalar y ángulo entre vectores:
+
+\begin{equation}
+\overline{x} \cdot \overline{y} = ||\overline{x}|| ||\overline{y}|| \cos \theta \Rightarrow  \frac{\overline{x} \cdot \overline{y}}{||x||} = ||\overline{y}|| \cos \theta
+\end{equation}
+
+Aplicando a este caso:
+
+\begin{equation}
+D = \frac{\overline{N} \cdot \overline{B}}{||\overline{N}||}
+\end{equation}
+
+Reemplazando:
+
+\begin{equation}
+D = \frac{a (x_1 - x_0) + b (y_1 - y_0) + c (z_1 - z_0)}{\sqrt{a^2 + b^2 + c^2}}
+\end{equation}
+
+Distribuyendo en el numerador:
+
+\begin{equation}
+D = \frac{a x_1 + b y_1 + c y_1 - (a x_0 + b y_0 + c z_0)}{\sqrt{a^2 + b^2 + c^2}}
+\end{equation}
+
+Siendo $P_0$ un punto perteneciente al plano, satisface su ecuación, y por ende, $-(a x_0 + b y_0 + c z_0) = d$, sin importar el valor de $P_0$. Finalmente, tomando módulo para asegurar que la distancia sea positiva:
+
+\begin{equation}
+D = \frac{|a x_1 + b y_1 + c z_1 + d|}{\sqrt{a^2 + b^2 + c^2}}
+\end{equation}
+
+Esta expresión no depende de $P_0$, lo cual tiene sentido ya que su elección no debería afectar la distancia $D$.
 
 \subsubsection{Ecuaciones implícitas de una recta}
 
