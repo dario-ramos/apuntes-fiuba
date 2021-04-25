@@ -447,6 +447,29 @@ Si $v_x$ vale cero, $x = x_0$, y lo mismo para las demás.
 
 \end{enumerate}
 
+\subsubsection{Distancia entre un punto y una recta}
+
+Sea una recta $R$ en su forma paramétrica: $\overline{v_R} t + Q$. Dado un punto cualquiera $P_0$, la distancia entre la recta $R$ y dicho punto es la distancia entre el punto $R(t_0)$, perteneciente a la recta, tal que el vector $P_0 - R(t_0)$ es perpendicular al vector director $\overline{v_R}$. Esto puede visualizarse en la figura \ref{fig:distanciarecta}.
+
+\begin{figure}[ht]
+\caption{Distancia entre punto y recta}
+\includegraphics[scale=0.8]{img/rn/distancia_punto_recta.png} 
+\centering
+\label{fig:distanciarecta}
+\end{figure}
+
+Entonces, el primer paso es calcular el valor de $t_0$. Para ello, se exige:
+
+\begin{equation}
+(P_0 - R(t_0)) \cdot \overline{v_R} = 0
+\end{equation}
+
+Evaluando $R(t_0)$ con la ecuación paramétrica, esto conduce a una ecuación lineal en $t_0$, lo cual lo determina unívocamente. Conocido $t_0$, se puede calcular $R(t_0)$, y finalmente:
+
+\begin{equation}
+d = ||P_0 - R(t_0)||
+\end{equation}
+
 \section{Funciones; coordenadas polares; cuádricas}
 
 \begin{subequations}
