@@ -668,4 +668,273 @@ $\hat{u} = \frac{u}{||u||} = \frac{1}{3} (2, 1, -2)$
 
 \end{enumerate}
 
+\hrule
+\vspace{10 pt}
+\textbf{8. Responder a cada uno de los siguientes problemas}
+
+\begin{enumerate}[(a)]
+\bfseries
+\item Probar que el triángulo de vértices $(1, -1, 2)$, $(3, 3, 8)$ y $(2, 0, 1)$ es rectángulo.
+
+\item ¿Cuánto miden los ángulos del triángulo de vértices $(1, 0, 0)$, $(0, 2, 0)$ y $(0, 0, 3)$?
+
+\item ¿Cuánto mide el volumen del tetraedro de vértices $(1, 0, 0)$, $(1, 2, 0)$, $(2, 2, 2)$ y $(0, 3, 2)$?
+
+\item ¿Cuánto mide el ángulo entre la diagonal de un cubo y una de sus aristas?
+
+\item ¿Cuánto vale el área del triángulo de vértices $(1, 1, 0)$, $(3, 0, 2)$ y $(2, -1, 1)$? ¿Es equilátero?
+
+\item Hallar los valores de $k$ para los que los puntos $(1, 1, -1)$, $(0, 3, -2)$, $(-2, 1, 0)$ y $(k, 0, 2)$ son coplanares; determinar en esos casos una ecuación del plano que los contiene.
+
+\item Hallar el área del paralelogramo dos de cuyos lados son los segmentos que unen el origen con $(1, 0, 1)$ y $(0, 2, 1)$.
+\end{enumerate}
+\hrule
+
+\begin{enumerate}[(a)]
+\item Los tres puntos definen un triángulo: sus lados están dados por los vectores resta. Obśervese la figura \ref{fig:1-8-a}.
+
+\begin{figure}[ht]
+\caption{Triángulo definido por puntos}
+\includegraphics[scale=1]{img/ejercicios/1/8-a.png} 
+\centering
+\label{fig:1-8-a}
+\end{figure}
+
+Los ángulos internos están dados por el ángulo entre los vectores resta; el sentido de la recta es importante. Concretamente:
+
+\begin{subequations}
+\begin{align}
+& P = (1, -1, 2) \\
+& Q = (3, 3, 8) \\
+& R = (2, 0, 1) \\
+& Q\overset{\wedge}{P}R = \theta(\overline{PR}, \overline{PQ}) = \theta(R-P, Q-P) = arccos \left(\frac{(1,1,-1) \cdot (2, 4, 6)}{||(1, 1, -1)|| ||(2,4,6)||} \right) = 90^{\circ} \\
+& P\overset{\wedge}{Q}R = \theta(\overline{QP}, \overline{QR}) = \theta(P-Q, R-Q) = \theta((-2,-4,-6),(-1, -3, -7)) \approx 13,032^{\circ} \\
+& R\overset{\wedge}{R}P = \theta(\overline{RQ}, \overline{RP}) = \theta(Q-R, P-R) = \theta((1,3,7),(-1, -1, 1)) \approx 76.968^{\circ}
+\end{align}
+\end{subequations}
+
+Con demostrar que uno de los ángulos es de 90 grados, era suficiente. Sólo se calcularon los otros dos para verificar que sumen 180 grados (recordar que la suma de los ángulos internos de un triángulos siempre da 180 grados).
+
+\item Mismo procedimiento que inciso anterior, distintos puntos.
+
+\begin{subequations}
+\begin{align}
+& P = (1, 0, 0) \\
+& Q = (0, 2, 0) \\
+& R = (0, 0, 3) \\
+& \overset{\wedge}{P} = \theta(R-P, Q-P) = arccos \left(\frac{(-1,0,3) \cdot (-1, 2, 0)}{||(-1, 0, 3)|| ||(-1,2,0)||} \right) \\
+& \overset{\wedge}{Q} = \theta(P-Q, R-Q) = \theta((1,-2,0),(0, -2, 3)) \\
+& \overset{\wedge}{R} = \theta(Q-R, P-R) = \theta((0,2,-3),(1, 0, -3))
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ \overset{\wedge}{P} \approx 81,870, \overset{\wedge}{Q} \approx 60,255, \overset{\wedge}{R} \approx 37,875 }
+\end{equation}
+
+\item El volumen de un tetraedro irregular puede calcularse con la siguiente fórmula:
+
+\begin{equation}
+V = \frac{1}{3} A_b h \label{eq:voltetr}
+\end{equation}
+
+Donde $A_b$ es el área de una de las caras triangulares, y $h$ es la distancia entre dicha cara y el punto que no pertenece a ella. Esto sugiere que una forma práctica de calcular el volumen es hallar el área de una cara cualquiera, y calcular $h$ como la distancia entre el plano de los 3 puntos de esa cara y el punto restante.
+
+Se definen los cuatro puntos del tetraedro como:
+
+\begin{align}
+P = (1, 0, 0) \\
+Q = (1, 2, 0) \\
+R = (2, 2, 2) \\
+S = (0, 3, 2)
+\end{align}
+
+Graficando estos puntos en $\Bbb R^3$, se obtiene la figura \ref{fig:1-8-c}.
+
+\begin{figure}[ht]
+\caption{Tetraedro}
+\includegraphics[scale=0.6]{img/ejercicios/1/8-c.png} 
+\centering
+\label{fig:1-8-c}
+\end{figure}
+
+Obsérvese que tomando tres puntos cualquiera, se tiene una de las caras triangulares del tetraedro. Por la simetría del tetraedro, cualquiera de dichas caras puede interpretarse como la base en la fórmula. La altura estará dada por la distancia perpendicular entre el plano determinado por los 3 puntos de la base elegida, y el punto restante. Concretamente, la cara $PQR$ es un triángulo rectángulo, por lo tanto, su área puede obtenerse directamente:
+
+\begin{equation}
+A_b = \frac{1}{2} b h = \frac{1}{2} ||\overline{PQ}|| ||\overline{QR}|| = \frac{1}{2} ||Q-P|| ||R-Q|| \approx 2,2361
+\end{equation}
+
+La normal $(a,b,c)$ del plano determinado por $P$, $Q$ y $R$ está dada por el producto vectorial de los vectores resta:
+
+\begin{equation}
+(a,b,c) = \overline{PQ} \times \overline{PR} = (Q-P) \times (R-P) = (4, 0, -2)
+\end{equation}
+
+Y el parámetro $d$ en la ecuación del plano $a x + b y + c z + d = 0$ se obtiene evaluando en cualquier punto del plano:
+
+\begin{equation}
+d = -(a x_0 + b y_0 + c z_0) \overset{(x_0, y_0, z_0) = P}{\Rightarrow} = -4
+\end{equation}
+
+La altura del tetraedro con esta base será entonces la distancia entre el plano $PQR$ y el punto $S$:
+
+\begin{subequations}
+\begin{align}
+h = \frac{|a x_1 + b y_1 + c z_1 + d|}{\sqrt(a^2 + b^2 + c^2)} \overset{(x_1, y_1, z_1) = S}{\Longrightarrow} h = \frac{|4 \cdot 0 + 0 \cdot 3 -2 \cdot 2 -4|}{\sqrt{4^2 + 0^2 + 2^2}} \\
+h = \frac{8}{\sqrt{20}} \approx 1,7889
+\end{align}
+\end{subequations}
+
+Finalmente, con $A_b$ y $h$ resulta:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=Volumen del tetraedro]
+{ V = \frac{1}{3} A_b h \approx 1.3333 }
+\end{equation}
+
+A modo de verificación, existe una fórmula más directa en base a los vértices:
+
+\begin{equation}
+V = \frac{1}{6} ((\overline{PQ} \times \overline{PR}) \cdot \overline{PS}) \approx 1.3333
+\end{equation}
+
+\item Colocando un cubo de lado $a$ con una esquina inferior en el origen, y dos caras en el sentido de los semiejes positivos, una de las dos diagonales del cubo es el vector que va del origen a la esquina superior opuesta en el punto $(a,a,a)$. Dicho vector es $(a, a, a) - (0, 0, 0) = (a, a, a)$. Tomando una arista de las tres adyacentes al origen, como por ejemplo $(a, 0, 0)$, resulta:
+
+\begin{equation}
+\theta = \arccos \frac{(a,a,a) \cdot (a, 0, 0)}{||(a,a,a)|| ||(a,0,0)||} = \arccos \frac{a^2}{\sqrt{3a^2} \sqrt{a^2}} = \arccos \frac{1}{\sqrt{3}}
+\end{equation}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=Ángulo entre arista de cubo y diagonal]
+{ \theta = \arccos \frac{\sqrt{3}}{3} A_b h \approx 54,736^{\circ} }
+\end{equation}
+
+Por la simetría del cubo, cualquiera de las otras dos aristas dará el mismo valor.
+
+\item Sean los puntos del triángulo:
+
+\begin{subequations}
+\begin{align}
+P = (1, 1, 0) \\
+Q = (3, 0, 2) \\
+R = (2, -1, 1)
+\end{align}
+\end{subequations}
+
+Las longitudes de los lados son simplemente las normas de los vectores que unen los vértices. Tomando como referencia la figura \ref{fig:1-8-e}, resulta:
+
+\begin{figure}[ht]
+\caption{Triángulo}
+\includegraphics[scale=0.8]{img/ejercicios/1/8-e.png} 
+\centering
+\label{fig:1-8-e}
+\end{figure}
+
+\begin{subequations}
+\begin{align}
+a = ||\overline{PQ}|| = ||Q-P|| = 3 \\
+b = ||\overline{QR}|| = ||R-Q|| \approx 1,7321 \\
+c = ||\overline{PR}|| = ||R-P|| \approx 2,4495
+\end{align}
+\end{subequations}
+
+Claramente el triángulo no es equilátero. Aplicando trigonometría y ángulo entre vectores con las referencias de la figura \ref{fig:1-8-e}, resulta:
+
+\begin{subequations}
+\begin{align}
+& A = \frac{1}{2} \underbrace{||R-P||}_{\text{base}} \underbrace{ \mathop{op} }_{\text{altura}} \\
+& \sin \theta = \frac{\mathop{op}}{||Q-P||} \\
+& \mathop{op} = \sin (\theta) ||Q-P|| = \sin( \arccos \left( \frac{\overline{PQ} \cdot \overline{PR} }{||\overline{PQ}|| ||\overline{PR}||} \right) ) ||Q-P||
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ A \approx 2,1213 }
+\end{equation}
+
+Verificando con la fórmula de Herón:
+
+\begin{subequations}
+\begin{align}
+& A = \frac{1}{2} \sqrt{s (s-a) (s-b) (s-c)} \\
+& s \approx 3,5908 \\
+& A \approx 2,1213
+\end{align}
+\end{subequations}
+
+\item Hay tres puntos fijos y uno variable. El plano determinado por los 3 puntos fijos será:
+
+\begin{subequations}
+\begin{align}
+& P = (1, 1, -1) \\
+& Q = (0, 3, -2) \\
+& R = (-2, 1, 0) \\
+& \overline{PQ} = Q-P = (-1 2 1) \\
+& \overline{PR} = R-P = (-3 0 1) \\
+& (a,b,c) = \overline{PQ} \times \overline{PR} = (2, 4, 6) \\
+& d = -(a x_0 + b y_0 + c z_0) = -(2 \cdot -2 + 4 \cdot 1 + 6 \cdot 0) = 0
+\end{align}
+\end{subequations}
+
+La ecuación del plano resulta entonces $2x + 4y + 6z = 0$. Para que el punto $(k, 0, 2)$ pertenezca al plano, debe satisfacer su ecuación:
+
+\begin{equation}
+2k + 4 \cdot 0 + 6 \cdot 2 = 0 \Rightarrow 2k = -12
+\end{equation}
+
+Finalmente:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ k = -6 }
+\end{equation}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ \Pi: \{ 2x + 4y + 6z = 0 }
+\end{equation}
+
+\item El área de un paralelogramo está relacionada con la norma del producto vectorial entre dos lados no paralelos:
+
+\begin{equation}
+A = ||x \times y|| = ||x|| ||y|| \sin(\theta(x,y))
+\end{equation}
+
+Para este caso:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ A = ||(1, 0, 1) \times (0, 2, 1)|| = 3 }
+\end{equation}
+
+Verificación geométrica: el área del paralelogramo es $b h$, donde $b$ es la longitud de una base, y $h$ es la altura perpendicular hacia la base paralela. Tomando el vector $(0, 2, 1)$ como la base, y las referencias de la figura \ref{fig:1-8-f}, la altura $h$ del paralelogramo puede obtenerse de la siguiente manera:
+
+\begin{figure}[ht]
+\caption{Área paralelogramo}
+\includegraphics[scale=1]{img/ejercicios/1/8-f.png} 
+\centering
+\label{fig:1-8-f}
+\end{figure}
+
+\begin{equation}
+\cos \left( \theta - \frac{\pi}{2} \right) = \frac{h}{||S-P||}
+\end{equation}
+
+Recordando la identidad $\cos(\alpha - \frac{\pi}{2}) = \sin(\alpha)$:
+
+\begin{subequations}
+\begin{align}
+& \sin(\theta) = \frac{h}{||S-P||} \\
+& \theta = \arccos \left( \frac{(Q-P) \cdot (S-P)}{||Q-P|| ||S-P||} \right) \\
+& P = (0,0,0), Q = (0,2,1), S = (1, 0, 1) \\
+& \theta \approx 71,565^{\circ} \\
+& h = \sin(\theta) * ||S|| \approx 1,3416 \\
+& A = ||Q-P|| h = 3
+\end{align}
+\end{subequations}
+
+\end{enumerate}
+
 \end{document}
