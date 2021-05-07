@@ -937,4 +937,179 @@ Recordando la identidad $\cos(\alpha - \frac{\pi}{2}) = \sin(\alpha)$:
 
 \end{enumerate}
 
+\hrule
+\vspace{10 pt}
+\textbf{9. Dados $v_1 = (3, 1, 1)$, $v_2 = (2, 1, -1)$ y $v_3 = (1, 1, -1)$}
+
+\begin{enumerate}[(a)]
+\bfseries
+\item Hallar la componente de $v_3$ en el plano generado por $v_1$ y $v_2$
+
+\item Hallar la componente de $v_3$ normal a $v_1$ y $v_2$
+
+\item ¿Es cierto que la suma de los cuadrados de las normas de los vectores de los dos incisos anteriores debe ser el cuadrado de la norma de $v_3$? Justificar
+
+\item Hallar un vector $v$ en el plano generado por $v_1$ y $v_2$ perpendicular a $v_1$ y tal que al área del rectángulo que tiene $v$ y $v_1$ como lados es igual a la del paralelogramo que tiene $v_2$ y $v_1$ como lados. Hacer un dibujo ilustrativo.
+
+\item Hallar, si lo hay, un vector en la recta que une los extremos de $v_1$ y $v_3$, perpendicular a $v_2$. 
+\end{enumerate}
+\hrule
+
+\begin{enumerate}[(a)]
+\item Dados dos vectores, la normal $\overline{N} = (a, b, c)$ al plano que generan está dada por su producto vectorial:
+
+\begin{equation}
+\overline{N} = (a, b, c) = v_1 \times v_2 = (3, 1, 1) \times (2, 1, -1) = (-2, 5, 1)
+\end{equation}
+
+Como los vectores $v_1$ y $v_2$ parten del origen, dicho punto está incluido en el plano, y por ende $d = 0$ en la ecuación del plano:
+
+\begin{equation}
+\Pi: -2x + 5y + z = 0
+\end{equation}
+
+Cuando se habla de componentes normal y paralela de un vector respecto a un plano, ello consiste en descomponer ese vector en la suma de dos vectores, uno paralelo a $\overline{N}$, y otro ortogonal:
+
+\begin{subequations}
+\begin{align}
+& v_3 = v_{3\perp} + v_{3\parallel} \\
+& v_{3\perp}: \text{Componente de } v_3 \text{ en el plano} \\
+& v_{3\parallel}: \text{Componente de } v_3 \text{ normal al plano} \\
+\end{align}
+\end{subequations}
+
+Multiplicando (con producto escalar) la descomposición de $v3$ por $\overline{N}$ miembro a miembro:
+
+\begin{equation}
+v_3 \cdot \overline{N} = \underbrace{ v_{3\perp} \cdot \overline{N} }_{0} + v_{3\parallel} \cdot \overline{N}
+\end{equation}
+
+Dado que $v_{3\parallel}$ es paralelo a $\overline{N}$, $v_{3\parallel} = \lambda \overline{N}$:
+
+\begin{subequations}
+\begin{align}
+& v_3 \cdot \overline{N} = \lambda \overline{N} \cdot \overline{N} \\
+& 2 = \lambda 30 \Rightarrow \lambda = \frac{1}{15} \Rightarrow v_{3\parallel} = \frac{1}{15} (-2, 5, 1)
+\end{align}
+\end{subequations}
+
+Conocido $v_{3\parallel}$, $v_{3\perp}$ sale con una simple resta:
+
+\begin{equation}
+v_3 = v_{3\perp} + v_{3\parallel} \Rightarrow v_{3\perp} = v_3 - v_{3\parallel} \Rightarrow v_{3\perp} = \frac{1}{15} (17, 10, -16)
+\end{equation}
+
+La componente en el plano es entonces:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ v_{3\perp} = \frac{1}{15} (17, 10, -16) }
+\end{equation}
+
+\item Del inciso anterior, se obtuvo la componente normal:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ v_{3\perp} = \frac{1}{15} (-2, 5, 1) }
+\end{equation}
+
+\item Es verdadero. Para este caso particular, puede verificarse numéricamente:
+
+\begin{subequations}
+\begin{align}
+& ||v_{3\perp}||^2 + ||v_{3\parallel}||^2 = 3 \\
+& ||v_3||^2 = 3
+\end{align}
+\end{subequations}
+
+De manera más general, alcanza con ver que cuando el ángulo entre los vectores sumandos es de 90 grados, siempre forman un triángulo rectángulo con el vector suma y por ende se verifica el teorema de Pitágoras. Esto puede observarse en la figura \ref{fig:1-9-c}.
+
+\begin{figure}[ht]
+\caption{Suma de dos vectores ortogonales}
+\includegraphics[scale=1]{img/ejercicios/1/9-c.png} 
+\centering
+\label{fig:1-9-c}
+\end{figure}
+
+\item Un dibujo ilustrativo posible sería el de la figura \ref{fig:1-9-d}. Los vectores $v_1$ y $v_2$ (azul) son los que determinan el plano cuya normal es el vector $N$ (rojo). De los infinitos vectores $v$ (verde) perpendiculares a $v_1$, se busca aquellos con una norma específica, por lo que es esperable que la solución sea una circunferencia en el espacio tridimensional. 
+
+\begin{figure}[ht]
+\caption{Rectángulo y paralelogramo en $\Bbb R^3$}
+\includegraphics[scale=1]{img/ejercicios/1/9-d.png} 
+\centering
+\label{fig:1-9-d}
+\end{figure}
+
+Sea entonces $v = (v_x, v_y, v_z)$. Exigiendo que este vector sea perpendicular a $v_1$ resulta:
+
+\begin{equation}
+v \cdot v_1 = 0 \Rightarrow (v_x, v_y, v_z) \cdot (3, 1, 1) = 0 \Rightarrow 3 v_x + v_y + v_z = 0
+\end{equation}
+
+Por otro lado, la restricción de igualdad de áreas establece que:
+
+\begin{equation}
+||v|| ||v_1|| = ||v_1 \times v_2|| \Rightarrow ||v|| = \frac{||v_1 \times v_2||}{||v_1||} = k \approx 2,7273
+\end{equation}
+
+Como se previó, la solución es una circunferencia en un plano:
+
+\begin{equation}
+\left\{
+\begin{array}{ll}
+3 v_x + v_y + v_z = 0 \\
+v_x^2 + v_y^2 + v_z^2 = k^2 \approx 7,4382
+\end{array}
+\right.
+\end{equation}
+
+De estos infinitos vectores posibles, se puede elegir uno haciendo arbitrariamente $v_z = 0$. Eso determinará las otras dos componentes:
+
+\begin{equation}
+\left\{
+\begin{array}{ll}
+3 v_x + v_y = 0 \\
+v_x^2 + v_y^2 = k^2
+\end{array}
+\right.
+\end{equation}
+
+Despejando $v_y$ en la ecuación lineal, $v_y = -3 v_x$. Reemplazando en la cuadrática:
+
+\begin{equation}
+v_x^2 + 9 v_x^2 = k^2 \Rightarrow v_x = \pm \sqrt{\frac{k^2}{10}}
+\end{equation}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Un v posible de infinitos]
+{ v \approx \begin{pmatrix}
+0,52222 & -1,5667 & 0
+\end{pmatrix} }
+\end{equation}
+
+\item El vector dirección de la recta es $v_r = v_3 - v_1 = \begin{pmatrix} -2 & 0 & -2 \end{pmatrix}$. Entonces, una posible ecuación vectorial de la recta es:
+
+\begin{equation}
+v = v_r t + v_1 \Rightarrow v = \begin{pmatrix} -2 & 0 & -2 \end{pmatrix} t + \begin{pmatrix} 3 & 1 & 1 \end{pmatrix}
+\end{equation}
+
+Si $v$ es un punto cualquiera de la recta, para que sea perpendicular a $v_2$, debe existir un $t$ que satisfaga:
+
+\begin{subequations}
+\begin{align}
+& v \cdot v_2 = 0 \\
+& \begin{pmatrix} -2t+3 & 1 & -2t+1 \end{pmatrix} \cdot \begin{pmatrix} 2 & 1 & -1 \end{pmatrix} = 0 \\
+& -4t + 6 + 1 + 2t -1 = 0 \Rightarrow -2t = -6 \Rightarrow t = 3
+\end{align}
+\end{subequations}
+
+Para dicho valor de $t$, que es el único, resulta:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Única solución]
+{ v = \begin{pmatrix} -3 & 1 & -5 \end{pmatrix} }
+\end{equation} 
+
+\end{enumerate}
+
 \end{document}

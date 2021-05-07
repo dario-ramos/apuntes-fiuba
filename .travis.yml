@@ -25,12 +25,14 @@ script:
   # Texliveonfly will download packages automatically
   - texliveonfly teorica.tex
   - texliveonfly edo.tex
+  - texliveonfly ejercicios.tex
   # You can use latexmk to automatically handle bibtex and references (recommended)
   # latexmk -pdf main.tex
 
   # But you could use any other compiler as well instead of latexmk. Example:
   - pdflatex -draftmode -halt-on-error teorica.tex
   - pdflatex -draftmode -halt-on-error edo.tex
+  - pdflatex -draftmode -halt-on-error ejercicios.tex
 #  - bibtex main
 #  - pdflatex main.tex
 #  - pdflatex main.tex # Compile twice to fix references
