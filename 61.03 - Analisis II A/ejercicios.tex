@@ -1112,4 +1112,109 @@ Para dicho valor de $t$, que es el único, resulta:
 
 \end{enumerate}
 
+\hrule
+\vspace{10 pt}
+\textbf{10. Dados dos vectores distintos en $\Bbb R^3$ $v$ y $w$ con extremos $P$ y $Q$: }
+
+\begin{enumerate}[(a)]
+\bfseries
+\item Mostrar que el extremo de $(v+w)/2$ equidista de $P$ y $Q$. Ilustrar.
+
+\item Mostrar que la distancia del extremo de $v + t (w-v)$, con $0 < t < 1$, a $P$ es $t ||w-v||$. Interpretar gráficamente. 
+\end{enumerate}
+\hrule
+
+\begin{enumerate}[(a)]
+\item Primero, la demostración analítica. Sean $P_0$ y $Q_0$ los puntos origen, de manera que:
+
+\begin{subequations}
+\begin{align}
+& v = P - P_0 \\
+& w = Q - Q_0
+\end{align}
+\end{subequations}
+
+Sea el vector:
+
+\begin{equation}
+u = \frac{v + w}{2}
+\end{equation}
+
+En términos de origen y extremo:
+
+\begin{equation}
+u = \frac{1}{2} v + \frac{1}{2} w = \frac{1}{2} (P-P_0) + \frac{1}{2} (Q-Q_0) = \underbrace{ \frac{1}{2} (P+Q) }_{\text{extremo } R} - \underbrace{ \frac{1}{2} (P_0+Q_0) }_{\text{origen } R_0}
+\end{equation}
+
+Calculando la distancia entre $R$ y $P$:
+
+\begin{equation}
+||R-P|| = \left|\left| \frac{1}{2} P + \frac{1}{2} Q - P \right|\right| = \left|\left| -\frac{1}{2} P + \frac{1}{2} Q \right|\right|
+\end{equation}
+
+Y entre $R$ y $Q$:
+
+\begin{equation}
+||R-Q|| = \left|\left| \frac{1}{2} P + \frac{1}{2} Q - Q \right|\right| = \left|\left| \frac{1}{2} P - \frac{1}{2} Q \right|\right| = \left|\left| (-1) \left(- \frac{1}{2} P + \frac{1}{2} Q \right) \right|\right| = ||R-P||
+\end{equation}
+
+Gráficamente, esto puede observarse en la figura \ref{fig:1-10-a}. El extremo del vector semisuma está ubicado en la intersección de las diagonales del paralelogramo formado por $v$ y $w$, donde una diagonal es $v+w$ y la otra $v-w$. Por la simetría del paralelogramo, la intersección de sus diagonales se halla en la mitad de ambas diagonales. Por ende, el punto medio de cada diagonal es equidistante a los puntos que une.
+
+\begin{figure}[ht]
+\caption{P, Q y R}
+\includegraphics[scale=1]{img/ejercicios/1/10-a.png} 
+\centering
+\label{fig:1-10-a}
+\end{figure}
+
+\item Sean los vectores $v$ y $w$ en función de sus puntos origen y extremo:
+
+\begin{equation}
+\begin{array}{ll}
+& v = P-P_0 \\
+& w = Q-Q_0
+\end{array}
+\end{equation}
+
+Por definición:
+
+\begin{equation}
+u = v + t (w-v)
+\end{equation}
+
+Expresando $v$ y $w$ en función de sus puntos extremos:
+
+\begin{subequations}
+\begin{align}
+& u = P - P_0 + t (Q - Q_0 - P + P_0) \\
+& u = P - P_0 + t Q - t Q_0 - t P + t P_0 \\
+& u = \underbrace{ P + t (Q-P) }_{\text{extremo } R} - \underbrace{ P_0 + t (Q_0 - P_0) }_{\text{origen } R_0}
+\end{align}
+\end{subequations}
+
+La distancia entre el extremo del vector $u$, o sea el punto $R$, y el punto $P$, es entonces:
+
+\begin{equation}
+||R-P|| = ||t (Q-P)|| = |t| ||Q - P|| \overset{0<t<1}{=} t ||Q-P||
+\end{equation}
+
+Ahora bien, los puntos $Q$ y $P$ son los extremos de $w$ y $v$. La distancia entre los extremos equivale a la norma del vector resta: $||Q-P|| = ||w-v||$, con lo que se llega al resultado deseado:
+
+\begin{equation}
+||R-P|| = t ||w-v||, \text{ con } R = P + t (Q-P)
+\end{equation}
+
+Visualmente, se tiene la situación de la figura \ref{fig:1-10-b}.  
+
+\begin{figure}[ht]
+\caption{$t ||w-v||$}
+\includegraphics[scale=1]{img/ejercicios/1/10-b.png} 
+\centering
+\label{fig:1-10-b}
+\end{figure}
+
+Al variar $t$ entre 0 y 1, se está tomando un segmento proporcional del vector resta. 
+
+\end{enumerate}
+
 \end{document}
