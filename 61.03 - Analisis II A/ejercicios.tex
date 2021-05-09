@@ -1217,4 +1217,279 @@ Al variar $t$ entre 0 y 1, se está tomando un segmento proporcional del vector 
 
 \end{enumerate}
 
+\hrule
+\vspace{10 pt}
+\textbf{11. Describir mediante un gráfico las regiones planas dadas por las siguientes inecuaciones:}
+
+\begin{enumerate}[(a)]
+\bfseries
+\item $x + y \leq 1$
+
+\item $x - y \geq 1, x \geq 2$
+
+\item $x^2 + y^2 \geq 1, x \geq 0$
+
+\item $y - x^2 \geq 0, y \geq 2$
+
+\item $y - 2 - x^2 \geq 0, y \geq 2$
+
+\item $y - x^2 + 2x \geq 0, y \geq 2$
+
+\item $x y \geq 1$
+
+\item $x^2 - y^2 \geq 1$
+
+\item $x \leq e^{-y}$
+
+\item $x^2 + y^2/4 \leq 16$
+
+\item $x^2 - 2x + y^2/4 - y \leq 16$
+
+\item $y < \ln(x), x > 0$
+
+\item $y > e^x + e^{-x}$
+
+\item $\sin(x) < 1/2$
+
+\item $\tan(x) < 1$
+\end{enumerate}
+\hrule
+
+\begin{enumerate}[(a)]
+\item Con inecuaciones lineales, lo más directo es ``despejar'' $y$, graficar la función del caso $=$, y ver cuál región de las delimitadas por la curva es la de interés. En este caso:
+
+\begin{equation}
+x + y \leq 1 \Leftrightarrow y \leq -x + 1
+\end{equation}
+
+\begin{figure}[ht]
+\caption{\textbf{11-a)} $y \leq -x + 1$}
+\includegraphics[scale=2.75]{img/ejercicios/1/11-a.png} 
+\centering
+\label{fig:1-11-a}
+\end{figure}
+
+Si hay dudas sobre cuál es la región, un método es evaluar un punto $(x,y)$ de una región y ver si satisface la inecuación. Por ejemplo, en este caso, $(0,0) \Rightarrow 0 \leq 1$ y por ende pertenece, y la región es la que está debajo de la recta. Ver figura \ref{fig:1-11-a}.
+
+\item En este caso, es necesario recordar que multiplicar una inecuación por un número negativo miembro a miembro invierte el sentido de la misma. Por otro lado, en este caso se tiene la intersección de dos regiones. Ver figura \ref{fig:1-11-b}.
+
+\begin{equation}
+x - y \geq 1 \Leftrightarrow -y \geq -x + 1 \Leftrightarrow y \leq x - 1
+\end{equation}
+
+\begin{figure}[ht]
+\caption{\textbf{11-b)} $y \leq x - 1, x \geq 2$}
+\includegraphics[scale=1.75]{img/ejercicios/1/11-b.png} 
+\centering
+\label{fig:1-11-b}
+\end{figure}
+
+\item En este caso, hay que reconocer que $x^2 + y^2 \geq 1$ es el exterior de un círculo de radio 1 centrado en el origen. Con la condición extra $x >= 0$, se toma el semiplano positivo de dicho exterior. Ver figura \ref{fig:1-11-c}.
+
+\begin{figure}[ht]
+\caption{\textbf{11-c)} $x^2 + y^2 \geq 1, x \geq 0$}
+\includegraphics[scale=1.85]{img/ejercicios/1/11-c.png} 
+\centering
+\label{fig:1-11-c}
+\end{figure}
+
+\item En este caso, se tiene una parábola:
+
+\begin{equation}
+y - x^2 \geq 1 \Leftrightarrow y \geq x^2 + 1
+\end{equation}
+
+En este caso, es trivial ver que el mínimo de la parábola está en $(0, 1)$, y es simétrica respecto al eje vertical de dicho punto (la recta $x = 0$). Nuevamente, la restricción $x \geq 0$ toma el semiplano positivo de la región sobre la curva. Ver figura \ref{fig:1-11-d}.
+
+\begin{figure}[ht]
+\caption{\textbf{11-d)} $y - x^2 \geq 1, x \geq 0$}
+\includegraphics[scale=1.75]{img/ejercicios/1/11-d.png} 
+\centering
+\label{fig:1-11-d}
+\end{figure}
+
+\item Análoga a la anterior, con la salvedad de que la restricción extra es sobre $y$. Ver figura \ref{fig:1-11-e}.
+
+\begin{figure}[ht]
+\caption{\textbf{11-e)} $y \geq x^2 + 2, y \geq 2$}
+\includegraphics[scale=1.0]{img/ejercicios/1/11-e.png} 
+\centering
+\label{fig:1-11-e}
+\end{figure}
+
+\item En este caso, para graficar la parábola conviene re-expresarla completando cuadrados en la variable $x$.
+
+\begin{equation}
+y \geq x^2 - 2x \Leftrightarrow y \geq (x-1)^2 - 1
+\end{equation}
+
+Esto indica que el vértice de la parábola está en el punto $(1, -1)$. Ver figura \ref{fig:1-11-f}.
+
+\begin{figure}[ht]
+\caption{\textbf{11-f)} $y \geq (x-1)^2 - 1, y \geq 2$}
+\includegraphics[scale=0.75]{img/ejercicios/1/11-f.png} 
+\centering
+\label{fig:1-11-f}
+\end{figure}
+
+\item Este caso parece simple, porque directamente se tiene $y \geq \frac{1}{x}$ pero no lo es tanto, porque si $x$ es negativo, se invierte la desigualdad. Evaluando puntos en cada región en la desigualdad original, $x y \geq 1$, se puede aclarar la cuestión.
+
+\begin{itemize}
+\item Encima de la curva del semiplano positivo: $(1, 5) \Rightarrow 5 \geq 1$. Pertenece.
+\item Debajo de la curva del semiplano positivo: $(1, -1) \Rightarrow -1 \geq 1$. No pertenece.
+\item Encima de la curva del semiplano negativo: $(-1, 1) \Rightarrow -1 \geq 1$. No pertenece.
+\item Debajo de la curva del semiplano negativo: $(-1, -5) \Rightarrow 5 \geq 1$. Pertenece.
+\end{itemize}
+
+Ver figura \ref{fig:1-11-f}.
+
+\begin{figure}[ht]
+\caption{\textbf{11-g)} $x y \geq 1$}
+\includegraphics[scale=0.75]{img/ejercicios/1/11-g.png} 
+\centering
+\label{fig:1-11-g}
+\end{figure}
+
+\item Recúerdese la ecuación general de una hipérbola:
+
+\begin{equation}
+\frac{(x-x_0)^2}{a^2} - \frac{(y-y_0)^2}{b^2} = 1
+\end{equation}
+
+Además, recuérdese que la hipérbola se grafica tomando como referencia un rectángulo de ancho $a$ y alto $b$, centrado en el punto $(x_0, y_0)$. Extendiendo las diagonales de dicho rectángulo como rectas infinitas, se tienen las asíntotas que definen las dos ramas de la hipérbola. Con esto en mente, en este caso particular, $a=1$, $b=1$, y el centro es el origen. Evaluando un punto de cada una de las tres regiones que esto genera en el plano, se obtiene:
+
+\begin{itemize}
+\item A la izquierda de la rama negativa: $(-2, 0) \Rightarrow 4 \geq 1$. Pertenece.
+\item Entre las dos ramas: $(0, 0) \Rightarrow 0 \geq 1$. No pertenece.
+\item A la derecha de la rama positiva: $(2, 0) \Rightarrow 4 \geq 1$. Pertenece.
+\end{itemize}.
+
+Ver figura \ref{fig:1-11-h}. Tener en cuenta que la curva es sólo la dibujada en rosa; el rectángulo y sus diagonales extendidas son sólo ayudas visuales para trazar el gráfico, y no pertenecen al mismo.
+
+\begin{figure}[ht]
+\caption{\textbf{11-h)} $x^2 - y^2 \geq 1$}
+\includegraphics[scale=0.75]{img/ejercicios/1/11-h.png} 
+\centering
+\label{fig:1-11-h}
+\end{figure}
+
+\item Una forma directa es graficar con los ejes $x$ e $y$ intercambiados. Una forma más larga, pero menos confusa es poner $y$ de un lado de la desigualdad. Tomando el logaritmo natural miembro a miembro:
+
+\begin{equation}
+\ln (x) \leq -y \Leftrightarrow -\ln(x) \geq y \Leftrightarrow y \leq -\ln(x)
+\end{equation}
+
+Para graficar $-\ln(x)$, basta con reflejar el conocido gráfico de $\ln(x)$ respecto al eje x. Ver figura \ref{fig:1-11-i}.
+
+\begin{figure}[ht]
+\caption{\textbf{11-i)} $y \leq -\ln(x)$}
+\includegraphics[scale=0.75]{img/ejercicios/1/11-i.png} 
+\centering
+\label{fig:1-11-i}
+\end{figure}
+
+\item Recuérdese la forma general de una elipse:
+
+\begin{equation}
+\frac{(x-x_0)^2}{a^2} + \frac{(y-y_0)^2}{b^2} = 1
+\end{equation}
+
+Para relacionar la desigualdad con una elipse, hace falta una transformación, concretamente multiplicar por $\frac{1}{16}$ miembro a miembro (para que quede un 1 en el lado derecho):
+
+\begin{equation}
+\frac{x^2}{16} + \frac{y^2}{64} \leq 1
+\end{equation}
+
+Esta región es el interior de una elipse centrada en el origen de radio horizontal 4 y radio vertical 8. Ver figura \ref{fig:1-11-j}.
+
+\begin{figure}[ht]
+\caption{\textbf{11-j)} $\frac{x^2}{16} + \frac{y^2}{64} \leq 1$}
+\includegraphics[scale=0.3]{img/ejercicios/1/11-j.png} 
+\centering
+\label{fig:1-11-j}
+\end{figure}
+
+\item Para relacionar esta desigualdad con una elipse, es necesario completar cuadrados en $x$ y en $y$:
+
+En x:
+
+\begin{equation}
+(x-1)^2 = x^2 -2x + 1 \Rightarrow x^2 - 2x = (x-1)^2 - 1
+\end{equation}
+
+En y:
+
+\begin{equation}
+\left (\frac{1}{2} y - 1 \right)^2 = \frac{1}{4}y^2 - y + 1 \Rightarrow \frac{y^2}{4} - y = (\frac{1}{2} y - 1)^2 - 1
+\end{equation}
+
+El próximo paso es acomodar la desigualdad para que cumpla la forma general de la elipse. Reemplazando con los cuadrados completos:
+
+\begin{equation}
+(x-1)^2 - 1 + \left( \frac{1}{2} y - 1 \right)^2 - 1 \leq 16
+\end{equation}
+
+Pasando las constantes a la derecha, y sacando factor común $\frac{1}{2}$ dentro del paréntesis de $y$:
+
+\begin{equation}
+(x-1)^2 + \left( \frac{1}{2} (y - 2) \right)^2 \leq 18
+\end{equation}
+
+Distribuyendo la potencia respecto al producto en $y$:
+
+\begin{equation}
+(x-1)^2 + \frac{(y-2)^2}{4} \leq 18
+\end{equation}
+
+El último paso es multiplicar todo por $\frac{1}{18}$.
+
+\begin{equation}
+\frac{(x-1)^2}{18} + \frac{(y-2)^2}{72} \leq 1
+\end{equation}
+
+De esta manera, la región buscada es el interior de una elipse centrada en el punto $(1, 2)$, con radio horizontal $\sqrt{18} \approx 4,24$ y radio vertical $\sqrt{72} \approx 8,48$. Ver figura \ref{fig:1-11-k}.
+
+\begin{figure}[ht]
+\caption{\textbf{11-k)} $\frac{(x-1)^2}{18} + \frac{(y-2)^2}{72} \leq 1$}
+\includegraphics[scale=0.3]{img/ejercicios/1/11-k.png} 
+\centering
+\label{fig:1-11-k}
+\end{figure}
+
+\item No es necesaria ninguna transformación para determinar que esta región es la inferior a la curva $y = ln(x)$. La condición $x > 0$ es redundante en este caso, porque el dominio de la función logaritmo son los reales mayores a cero. Ver figura \ref{fig:1-11-l}.
+
+\begin{figure}[ht]
+\caption{\textbf{11-l)} $y < \ln(x), x > 0$}
+\includegraphics[scale=0.75]{img/ejercicios/1/11-l.png} 
+\centering
+\label{fig:1-11-l}
+\end{figure}
+
+\item La clave es visualizar la función $y = e^x + e^{-x}$. Pensándola como la suma de una exponencial creciente y una decreciente, la simetría de ambas funciones genera una ``parábola exponencial'' (no es realmente parábola porque su tasa de crecimiento no es cuadrática, es exponencial). Dicha curva tiene su mínimo en $(0, 2)$. Ver figura \ref{fig:1-11-m}.
+
+\begin{figure}[ht]
+\caption{\textbf{11-m)} $y < e^x + e^{-x}$}
+\includegraphics[scale=0.4]{img/ejercicios/1/11-m.png} 
+\centering
+\label{fig:1-11-m}
+\end{figure}
+
+\item Tomando el arco seno miembro a miembro, y considerando la periodicidad del seno:
+
+\begin{equation}
+x < \arcsin \left( \frac{1}{2} \right) + 2 k \pi, k \in \Bbb Z
+\end{equation}
+
+Dado que $k \in \Bbb Z$, esta región es el conjunto vacío, porque equivale a pedir $x < -\infty$. Siempre habrá infinitos $k$ menores que impedirán que $x$ satisfaga la desigualdad.
+
+\item Algo similar ocurre en este caso, tomando en consideración que la función tangente es $\pi$-periódica. 
+
+\begin{equation}
+x < \arctan(1) + k \pi, k \in \Bbb Z
+\end{equation}
+
+Nuevamente, la región buscada es el conjunto vacío.
+
+\end{enumerate}
+
 \end{document}
