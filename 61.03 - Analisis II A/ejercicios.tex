@@ -1558,4 +1558,78 @@ La región definida por el cuadrado puede describirse entonces con dos simple in
 
 \end{enumerate}
 
+\hrule
+\vspace{10 pt}
+\textbf{13. Trazar aproximadamente las curvas descriptas (en coordenadas polares) por:}
+
+\begin{enumerate}[(a)]
+\bfseries
+\item $\rho = 2, 0 \leq \phi \leq \pi/4$
+
+\item $\phi = \pi/6, 1 \leq \rho \leq 2$
+
+\item $\rho = \cos(\phi), 0 \leq \phi \leq \pi/2$
+\end{enumerate}
+\hrule
+
+\begin{enumerate}[(a)]
+\item El módulo está fijo, y varía el ángulo. Por lo tanto, esta curva es un arco sobre la circunferencia de radio 2 centrada en el origen. Va desde el ángulo cero a $\frac{\pi}{4} = 45^{\circ}$. Ver figura \ref{fig:1-13-a}.
+
+\begin{figure}[ht]
+\caption{\textbf{13-a}}
+\includegraphics[scale=1.4]{img/ejercicios/1/13-a.png} 
+\centering
+\label{fig:1-13-a}
+\end{figure}
+
+\item Ahora está fijo el ángulo, y varía el módulo. En este caso la curva será un segmento de la recta de pendiente $\frac{\pi}{6}= 30^{\circ}$ que pasa por el origen. Dicho segmento irá desde el punto que corta la circunferencia de radio 1 al punto que corta la circunferencia de radio 2. Ver figura \ref{fig:1-13-b}.
+
+\begin{figure}[ht]
+\caption{\textbf{13-b}}
+\includegraphics[scale=2.35]{img/ejercicios/1/13-b.png} 
+\centering
+\label{fig:1-13-b}
+\end{figure}
+
+\item Esto no es tan directo de visualizar, así que la forma más directa es hacer una tabla de valores.
+
+\begin{center}
+\begin{tabular}{ |c|c|c| }
+ \hline
+ $\phi$ (rad) & $\phi$ (deg) & $\rho$ \\ [0.5ex] 
+ \hline\hline
+ \hline
+ 0 & 0 & 1 \\ 
+ $\pi/12$ & 15 & 0,96 \\ 
+ $\pi/6$ & 30 & 0,86 \\
+ $\pi/4$ & 45 & 0.71 \\
+ $\pi/6$ & 60 & 0,86 \\
+ $5\pi/12$ & 75 & 0,26 \\
+ $\pi/2$ & 90 & 0 \\
+ \hline
+\end{tabular}
+\end{center}
+
+Graficando y uniendo los puntos, se obtiene la curva de la figura \ref{fig:1-13-c}.
+\begin{figure}[ht]
+\caption{\textbf{13-c}}
+\includegraphics[scale=4.5]{img/ejercicios/1/13-c.png} 
+\centering
+\label{fig:1-13-c}
+\end{figure}
+
+Para intentar entender mejor este gráfico, es posible expresar la curva de forma paramétrica, recordando la equivalencia entre coordenadas cartesianas y polares.
+
+\begin{equation}
+(x, y) = (\rho \cos(\phi), \rho \sin(\phi))
+\end{equation}
+
+En este caso, el parámetro ideal es $\phi$, ya que $\rho$ depende de él. Renombrando $\phi$ a $t$, se obtiene:
+
+\begin{equation}
+(x(t), y(t)) = (\cos(t) \cos(t), \cos(t)\sin(t)) = (\cos^2(t), \cos(t) \sin(t))
+\end{equation}
+
+\end{enumerate}
+
 \end{document}
