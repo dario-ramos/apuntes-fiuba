@@ -1632,4 +1632,70 @@ En este caso, el parámetro ideal es $\phi$, ya que $\rho$ depende de él. Renom
 
 \end{enumerate}
 
+\hrule
+\vspace{10 pt}
+\textbf{14. Describir mediante inecuaciones en coordenadas cartesianas las regiones planas descriptas (en coordenadas polares) por:}
+
+\begin{enumerate}[(a)]
+\bfseries
+\item $\pi/6 \leq \phi \leq \pi/3$
+
+\item $1 \leq \rho < 2$
+
+\item $1 < \rho \leq 2, \pi/6 \leq \phi < \pi/3$
+
+\item $\rho \geq \phi$
+\end{enumerate}
+\hrule
+
+\begin{enumerate}[(a)]
+\item Limitar el ángulo $\phi$ entre dos valores equivale a limitar las coordenadas cartesianas entre dos rectas que pasen por el origen y tengan pendiente dada por los ángulos.
+
+\begin{subequations}
+\begin{align}
+& m_1 = \arctan(\pi/6) \approx 0,4823 \\
+& m_2 = \arctan(\pi/3) \approx 0,8084
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ m_1 x \leq y \leq m_2 x }
+\end{equation}
+
+\item Análogamente, esta región es la abarcada entre dos círculos.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ 1^2 \leq x^2 + y^2 < 2^2 }
+\end{equation}
+
+\item Es la intersección entre (a) y (b), teniendo en cuenta que cambian los extremos.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ \left\{ \begin{array}{ll}
+m_1 x \leq y < m_2 x \\
+1^2 < x^2 + y^2 \leq 2^2
+\end{array} \right. }
+\end{equation}
+
+\item Si el módulo es mayor o igual al argumento, claramente esta región incluye $x^2 + y^2 >= (2\pi)^2$. En el interior de esa circunferencia, la forma más directa es transformar las coordenadas.
+
+\begin{subequations}
+\begin{align}
+& \rho = \sqrt{x^2 + y^2} \\
+& \phi = \arctan(y/x)
+\end{align}
+\end{subequations}
+
+De forma general, resulta entonces:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ \sqrt{x^2 + y^2} \geq \arctan \left( \frac{y}{x} \right) }
+\end{equation}
+
+\end{enumerate}
+
 \end{document}
