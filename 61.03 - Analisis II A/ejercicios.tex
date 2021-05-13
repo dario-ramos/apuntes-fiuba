@@ -1611,6 +1611,7 @@ La región definida por el cuadrado puede describirse entonces con dos simple in
 \end{center}
 
 Graficando y uniendo los puntos, se obtiene la curva de la figura \ref{fig:1-13-c}.
+
 \begin{figure}[ht]
 \caption{\textbf{13-c}}
 \includegraphics[scale=4.5]{img/ejercicios/1/13-c.png} 
@@ -1694,6 +1695,131 @@ De forma general, resulta entonces:
 \begin{equation}
 \tcboxmath[colback=orange!25!white,colframe=orange]
 { \sqrt{x^2 + y^2} \geq \arctan \left( \frac{y}{x} \right) }
+\end{equation}
+
+\end{enumerate}
+
+\hrule
+\vspace{10 pt}
+\textbf{15. Describir mediante inecuaciones en coordenadas polares las regiones planas descriptas (en coordenadas cartesianas) por:}
+
+\begin{enumerate}[(a)]
+\bfseries
+\item $x^2 + y^2 \leq 1$
+
+\item $x^2 + y^2 - 2y \leq 0, y > |x|$
+
+\item $x^2 \geq 3y^2$
+
+\item $x \geq y, x < 3y$
+\end{enumerate}
+\hrule
+
+\begin{enumerate}[(a)]
+\item Es el interior de un círculo de radio 1, ergo:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ \rho \leq 1 }
+\end{equation}
+
+\item De las dos restricciones, $y > |x|$ se traduce directamente a polares.
+
+\begin{figure}[ht]
+\caption{\textbf{15-b}}
+\includegraphics[scale=1]{img/ejercicios/1/15-b.png} 
+\centering
+\label{fig:1-15-b}
+\end{figure}
+
+Así, $y > |x|$ en polares es $pi/4 < \phi < 3\pi/4$. Para la otra restricción, se puede reescribir utilizando las igualdades:
+
+\begin{subequations}
+\begin{align}
+& x^2 + y^2 = \rho^2 \\
+& x = \rho \cos(\phi) \\
+& y = \rho \sin(\phi)
+\end{align}
+\end{subequations}
+
+Resulta entonces:
+
+\begin{equation}
+\rho^2 - 2 \sin(\phi) \leq 0 \Rightarrow \rho (\rho - 2 \sin(\phi)) \leq 0 \Rightarrow \rho \leq 2 \sin(\phi)
+\end{equation}
+
+En el paso en que se divide por $\rho$ miembro a miembro, se asume $\rho$ distinto de cero. La desigualdad resultante sigue satisfaciéndose para $\rho = 0, \phi = 0$, así que no hay problema.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ \left\{ \begin{array}{ll}
+\rho \leq 2 \sin(\phi) \\
+\frac{\pi}{4} < \phi < \frac{3}{4} \pi
+\end{array} \right. }
+\end{equation}
+
+\item Tomando raíz cuadrada miembro a miembro, resulta:
+
+\begin{equation}
+|x| \geq \sqrt{3} |y|
+\end{equation}
+
+Para $y > 0$, resulta:
+
+\begin{equation}
+y \leq \frac{1}{\sqrt{3}} |x|
+\end{equation}
+
+Y para $y < 0$:
+
+\begin{equation}
+y \geq -\frac{1}{\sqrt{3}} |x|
+\end{equation}
+
+Gráficamente:
+
+\begin{figure}[ht]
+\caption{\textbf{15-c}}
+\includegraphics[scale=1]{img/ejercicios/1/15-c.png} 
+\centering
+\label{fig:1-15-c}
+\end{figure}
+
+Finalmente:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ \left\{ \begin{array}{ll}
+-\frac{\pi}{6} \leq \phi \leq \frac{\pi}{6} \\
+\frac{5}{6}\pi \leq \phi \leq \frac{7}{6}\pi
+\end{array} \right. }
+\end{equation}
+
+\item Es el área entre dos rectas; puede expresarse en polares acotando el ángulo entre las dos pendientes.
+
+\begin{equation}
+\left\{
+\begin{array}{ll}
+x \geq y \\
+x < 3y
+\end{array}
+\right. \Rightarrow \left\{
+\begin{array}{ll}
+y \leq x \\
+y > \frac{1}{3} x
+\end{array}
+\right.
+\end{equation}
+
+En polares:
+
+\begin{equation}
+\arctan \left( \frac{1}{3} \right) < \phi < \frac{\pi}{4}
+\end{equation}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ 0,3218 < \phi < \frac{\pi}{4} }
 \end{equation}
 
 \end{enumerate}
