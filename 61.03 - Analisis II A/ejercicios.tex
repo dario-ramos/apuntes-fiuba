@@ -1854,7 +1854,6 @@ En polares:
 
 \begin{enumerate}[(a)]
 \item Gráficamente, esta región es el interior del círculo de radio 1 centrado en el origen, excluyendo al origen. Ver figura \ref{fig:1-16-a}.
-\end{enumerate}
 
 \begin{figure}[ht]
 \caption{\textbf{16-a}}
@@ -1882,5 +1881,21 @@ En cuanto a la frontera, la misma está constituida, por definición, por los pu
 \tcboxmath[colback=orange!25!white,colframe=orange, title=16-a: Frontera]
 { \partial{A} = (0,0) \cup \{ (x,y) \in \Bbb R^2 / x^2 + y^2 = 1 \}  }
 \end{equation}
+
+\item La misma desigualdad del inciso anterior, pero en $\Bbb R^3$, pasa a ser el interior del cilindro de radio 1 centrado en el origen, excluyendo al eje $z$ (a lo largo del cual $x = 0 \wedge y = 0$ y no se cumple la desigualdad). Como ocurría en el caso anterior, las desigualdades estrictas hacen que este sea un conjunto abierto. El análisis en base a entornos ahora se hace con esferas. Cualquier esfera centrada en un punto dentro del cilindro puede reducir su radio de manera tal que todos los puntos de la esfera estén contenidos en $A$. Ergo:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=16-b: Conjunto interior]
+{ A^{\circ} = A = \{ (x, y, z) \in \Bbb R^3 / 0 < x^2 + y^2 < 1 \}  }
+\end{equation}
+
+Y análogamente, toda esfera centrada en la cara externa del cilindro, o en el eje $z$, contendrá tanto puntos de $A$ como de $A^C$. Por lo tanto:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=16-b: Frontera]
+{ \partial{A} = \{(x, y, z) \in \Bbb R^3 / x = 0 \wedge y = 0 \} \cup \{ (x, y, z) \in \Bbb R^3 / x^2 + y^2 = 1 \}  }
+\end{equation}
+
+\end{enumerate}
 
 \end{document}
