@@ -1824,4 +1824,63 @@ En polares:
 
 \end{enumerate}
 
+\hrule
+\vspace{10 pt}
+\textbf{16. Describir mediante inecuaciones el interior y frontera de los conjuntos dados por:}
+
+\begin{enumerate}[(a)]
+\bfseries
+\item $0 < x^2 + y^2 < 1$ (en $\Bbb R^2$)
+
+\item $0 < x^2 + y^2 < 1$ (en $\Bbb R^3$)
+
+\item $x \geq 0, y < 0$ (en $\Bbb R^2$)
+
+\item $x^2 + y^2 \leq 1$ (en $\Bbb R^2$)
+
+\item $x + y = 1$ (en $\Bbb R^2$)
+
+\item $0 < |x| + |y| \leq 1$ (en $\Bbb R^2$)
+
+\item $x \leq 0, y > 1, z<2$ (en $\Bbb R^3$)
+
+\item $x^2 + y^2 <1, y + z > 2$ (en $\Bbb R^3$)
+
+\item $0 < (x-z)^2 + (y-z)^2 < 1$ (en $\Bbb R^3$)
+
+\item $1 \leq x^2 + y^2 + z^2 \leq 5$ (en $\Bbb R^3$)
+\end{enumerate}
+\hrule
+
+\begin{enumerate}[(a)]
+\item Gráficamente, esta región es el interior del círculo de radio 1 centrado en el origen, excluyendo al origen. Ver figura \ref{fig:1-16-a}.
+\end{enumerate}
+
+\begin{figure}[ht]
+\caption{\textbf{16-a}}
+\includegraphics[scale=2.5]{img/ejercicios/1/16-a.png} 
+\centering
+\label{fig:1-16-a}
+\end{figure}
+
+Utilizando la notación de la teórica, el conjunto $A$ a analizar es:
+
+\begin{equation}
+A = \{ (x,y) \in \Bbb R^2 / 0 < x^2 + y^2 < 1 \}
+\end{equation}
+
+Para cualquier conjunto $A \in \Bbb R^n$, un punto $P_0$ es interior si existe al menos un entorno centrado en $P_0$ incluido completamente en $A$. El conjunto de puntos interiores de $A$ se denomina el interior de A, y se denota con el símbolo $A^{\circ}$. En este caso en particular, estando en $\Bbb R^2$, los entornos son círculos y se observa gráficamente que $A = A^{\circ}$: todo punto de A puede rodearse con un círculo completamente contenido en $A$, haciendo el radio tan chico como sea necesario.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=16-a: Conjunto interior]
+{ A^{\circ} = A = \{ (x,y) \in \Bbb R^2 / 0 < x^2 + y^2 < 1 \}  }
+\end{equation}
+
+En cuanto a la frontera, la misma está constituida, por definición, por los puntos tales que todo entorno centrado en ellos contiene puntos tanto de $A$ como de $A^C$ (el complemento de A). En este caso, ese conjunto está formado por la circunferencia de radio 1, y el origen. Cualquier círculo centrado en un punto sobre la circunferencia contiene un punto que no pertenece a $A$: el centro del círculo, porque la circunferencia de radio 1 está excluida de $A$ por ser la desigualdad estricta. Y ese entorno también contendrá puntos de $A$, porque en tanto el radio sea mayor a cero, tomará algunos puntos del interior. Lo mismo ocurre con el origen.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=16-a: Frontera]
+{ \partial{A} = (0,0) \cup \{ (x,y) \in \Bbb R^2 / x^2 + y^2 = 1 \}  }
+\end{equation}
+
 \end{document}
