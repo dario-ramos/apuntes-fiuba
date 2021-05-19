@@ -1922,7 +1922,7 @@ En cuanto a la frontera, está formada por el semieje positivo $x$, y el semieje
 
 \begin{equation}
 \tcboxmath[colback=orange!25!white,colframe=orange, title=16-c: Conjunto frontera]
-{ A^{\circ} = (0,0) \cup \{ (x, y) \in \Bbb R^2 / x = 0 \wedge y < 0 \} \cup \{ (x, y) \in \Bbb R^2 / y = 0 \wedge x > 0 \} }
+{ \partial{A} = (0,0) \cup \{ (x, y) \in \Bbb R^2 / x = 0 \wedge y < 0 \} \cup \{ (x, y) \in \Bbb R^2 / y = 0 \wedge x > 0 \} }
 \end{equation}
 
 \item El conjunto $A$ es en este caso:
@@ -1943,13 +1943,31 @@ Gráficamente, los puntos de $A$ son los indicados en la figura \ref{fig:1-16-d}
 Resulta directo entonces, con los criterios utilizados en los incisos previos, que:
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange, title=16-c: Conjunto interior]
+\tcboxmath[colback=orange!25!white,colframe=orange, title=16-d: Conjunto interior]
 { A^{\circ} = \{ (x, y) \in \Bbb R^2 / x^2 + y^2 < 1 \}  }
 \end{equation}
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange, title=16-c: Conjunto frontera]
-{ A^{\circ} = \{ (x, y) \in \Bbb R^2 / x^2 + y^2 = 1 \} }
+\tcboxmath[colback=orange!25!white,colframe=orange, title=16-d: Conjunto frontera]
+{ \partial{A} = \{ (x, y) \in \Bbb R^2 / x^2 + y^2 = 1 \} }
+\end{equation}
+
+\item El conjunto $A$ puede definirse como:
+
+\begin{equation}
+A = \{ (x, y) \in \Bbb R^2 / x + y = 1 \}
+\end{equation}
+
+No es necesario graficar los puntos del conjunto para determinar que corresponden a la recta $y = -x + 1$. En el caso de una recta, cualquier punto de la misma que se tome tendrá puntos de $A$ y puntos de $A^C$ en todos sus entornos. Por lo tanto, el interior de $A$ es el conjunto vacío, y su frontera es el mismo conjunto $A$.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ A^{\circ} = \emptyset }
+\end{equation}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ \partial{A} = A = \{ (x, y) \in \Bbb R^2 / x + y = 1 \} }
 \end{equation}
 
 \end{enumerate}
