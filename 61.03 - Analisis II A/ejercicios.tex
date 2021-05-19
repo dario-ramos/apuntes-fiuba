@@ -1878,7 +1878,7 @@ Para cualquier conjunto $A \in \Bbb R^n$, un punto $P_0$ es interior si existe a
 En cuanto a la frontera, la misma está constituida, por definición, por los puntos tales que todo entorno centrado en ellos contiene puntos tanto de $A$ como de $A^C$ (el complemento de A). En este caso, ese conjunto está formado por la circunferencia de radio 1, y el origen. Cualquier círculo centrado en un punto sobre la circunferencia contiene un punto que no pertenece a $A$: el centro del círculo, porque la circunferencia de radio 1 está excluida de $A$ por ser la desigualdad estricta. Y ese entorno también contendrá puntos de $A$, porque en tanto el radio sea mayor a cero, tomará algunos puntos del interior. Lo mismo ocurre con el origen.
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange, title=16-a: Frontera]
+\tcboxmath[colback=orange!25!white,colframe=orange, title=16-a: Conjunto frontera]
 { \partial{A} = (0,0) \cup \{ (x,y) \in \Bbb R^2 / x^2 + y^2 = 1 \}  }
 \end{equation}
 
@@ -1892,7 +1892,7 @@ En cuanto a la frontera, la misma está constituida, por definición, por los pu
 Y análogamente, toda esfera centrada en la cara externa del cilindro, o en el eje $z$, contendrá tanto puntos de $A$ como de $A^C$. Por lo tanto:
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange, title=16-b: Frontera]
+\tcboxmath[colback=orange!25!white,colframe=orange, title=16-b: Conjunto frontera]
 { \partial{A} = \{(x, y, z) \in \Bbb R^3 / x = 0 \wedge y = 0 \} \cup \{ (x, y, z) \in \Bbb R^3 / x^2 + y^2 = 1 \}  }
 \end{equation}
 
@@ -1921,8 +1921,35 @@ El conjunto $A$ es entonces el cuarto cuadrante del plano $xy$, pero excluyendo 
 En cuanto a la frontera, está formada por el semieje positivo $x$, y el semieje negativo $y$. Cualquier entorno centrado en un punto de ambos contendrá puntos de $A$ y $A^C$. El origen también es punto frontera.
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange, title=16-c: Frontera]
+\tcboxmath[colback=orange!25!white,colframe=orange, title=16-c: Conjunto frontera]
 { A^{\circ} = (0,0) \cup \{ (x, y) \in \Bbb R^2 / x = 0 \wedge y < 0 \} \cup \{ (x, y) \in \Bbb R^2 / y = 0 \wedge x > 0 \} }
+\end{equation}
+
+\item El conjunto $A$ es en este caso:
+
+\begin{equation}
+A = \{ (x,y) \in \Bbb R^2 / x^2 + y^2 \leq 1 \}
+\end{equation}
+
+Gráficamente, los puntos de $A$ son los indicados en la figura \ref{fig:1-16-d}.
+
+\begin{figure}[ht]
+\caption{\textbf{16-d}}
+\includegraphics[scale=2.5]{img/ejercicios/1/16-d.png} 
+\centering
+\label{fig:1-16-d}
+\end{figure}
+
+Resulta directo entonces, con los criterios utilizados en los incisos previos, que:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=16-c: Conjunto interior]
+{ A^{\circ} = \{ (x, y) \in \Bbb R^2 / x^2 + y^2 < 1 \}  }
+\end{equation}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=16-c: Conjunto frontera]
+{ A^{\circ} = \{ (x, y) \in \Bbb R^2 / x^2 + y^2 = 1 \} }
 \end{equation}
 
 \end{enumerate}
