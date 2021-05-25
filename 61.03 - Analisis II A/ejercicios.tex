@@ -2074,6 +2074,31 @@ La frontera está dada por la unión de las tres caras de la región. Dichas car
 }
 \end{equation}
 
+\item Sin necesidad de graficar, la primera de las dos desigualdades representa el interior de un cilindro de radio 1, centrado en el origen. La segunda desigualdad corresponde a una de las dos regiones en que el plano $y + z = 2$ divide el espacio. La única forma de que la intersección entre ambas regiones sea vacía es que el plano sea paralelo al cilindro, externo al mismo, y que la desigualdad tome el lado externo al cilindro. Para no entrar en complicaciones calculando dicha intersección, alcanza con demostrar que el conjunto es no vacío seleccionando un terceto $(x, y, z)$ que satisfaga ambas desigualdades a la vez. Por ejemplo, $(x, y, z) = (0, 0, 3)$. De hecho, fijando $x = 0$ e $y = 0$, se tiene que la región $z > 2$ pertenece a $A$. Por lo tanto, $A$ es la sección superior del cilindro cortado por el plano $y + z = 2$.
+
+Considerando la forma del conjunto (medio cilindro cortado oblicuamente), y considerando que las desigualdades son estrictas, resulta:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ A^{\circ} = A }
+\end{equation}
+
+En cuanto a la frontera, es el borde del cilindro restringido por el plano:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{
+\partial{A} = \left\{ (x,y,z) \in \Bbb R^3 /
+\left\{
+\begin{array}{ll}
+x^2 + y^2 = 1 \\
+y + z \geq 2
+\end{array}
+\right.
+\right\}
+}
+\end{equation}
+
 \end{enumerate}
 
 \end{document}
