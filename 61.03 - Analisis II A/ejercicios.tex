@@ -2099,6 +2099,27 @@ y + z \geq 2
 }
 \end{equation}
 
+\item Para $z=0$, se tiene el interior de un círculo centrado en el origen, excluyendo su punto central (el origen). Para $z = 1$, es lo mismo pero centrado en $(1, 1)$. Para $z = 2$, el centro es $(2, 2)$. De forma general, para $z = k$ el centro es $(k, k)$. Por lo tanto, $A$ está formado por el interior del sólido formado por los círculos desplazados. Este sólido tiene como eje central la recta de ecuación paramétrica $t (1, 1, 1)$. Dicha recta está excluida de $A$, ya que es donde el radio de los círculos se anula.
+
+Dado que las igualdades son estrictas, y considerando la geometría del conjunto analizada en el párrafo anterior, se tiene un conjunto abierto:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ A^{\circ} = A }
+\end{equation}
+
+En cuanto a la frontera, consiste de los bordes de todos los círculos, y a la recta eje del sólido:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{
+\begin{array}{ll}
+\partial{A} = & \{ (x,y,z) \in \Bbb R^3 / (x-z)^2 + (y-z)^2 = 1 \} \\
+ & \cup \{ (x,y,z) \in \Bbb R^3 / (x-z)^2 + (y-z)^2 = 0 \}
+\end{array}
+}
+\end{equation}
+
 \end{enumerate}
 
 \end{document}
