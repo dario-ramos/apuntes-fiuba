@@ -2045,6 +2045,35 @@ Para la frontera, se puede definir tomando secciones de las funciones que la del
 }
 \end{equation}
 
+\item Para visualizar $A$, una forma es visualizarlo en el plano $(x, y)$ y extenderlo a 3 dimensiones. Considerando sólo $x$ e $y$, se tiene el semiplano de la figura \ref{fig:1-16-g}. 
+
+\begin{figure}[ht]
+\caption{\textbf{16-g}}
+\includegraphics[scale=1]{img/ejercicios/1/16-g.png} 
+\centering
+\label{fig:1-16-g}
+\end{figure}
+
+Para extender esto a 3 dimensiones, alcanza con imaginar que el gráfico del plano $(x,y)$ corresponde a $z = 0$, y se repite para todo $z < 2$. O sea que $A$ es una región infinita delimitada por tres planos. Tiene un vértice en el punto $(0, 1, 2)$. El interior se obtiene de forma trivial relajando la única desigualdad inclusiva:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ A^{\circ} = \{ (x,y,z) \in \Bbb R^3 / x < 0 \wedge y > 1 \wedge z < 2 \} }
+\end{equation}
+
+La frontera está dada por la unión de las tres caras de la región. Dichas caras corresponden a los planos que limitan la región, con las coordenadas libres restringidas:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{
+\begin{array}{ll}
+\partial{A} = & \{ (x,y,z) \in \Bbb R^3 / x = 0 \wedge y \geq 1 \wedge z \leq 2 \} \\
+& \cup \{ (x,y,z) \in \Bbb R^3 / y = 1 \wedge x \leq 0 \wedge z \leq 2 \} \\
+& \cup \{ (x,y,z) \in \Bbb R^3 / z = 2 \wedge x \leq 0 \wedge y \geq 1 \}
+\end{array}
+}
+\end{equation}
+
 \end{enumerate}
 
 \end{document}
