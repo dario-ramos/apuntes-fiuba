@@ -2120,6 +2120,34 @@ En cuanto a la frontera, consiste de los bordes de todos los círculos, y a la r
 }
 \end{equation}
 
+\item Pensando en términos de norma del vector, esta desigualdad exige que la norma del vector esté entre 1 y $\sqrt{5}$. Geométricamente, ese conjunto ($A$) es el interior de la esfera de radio $\sqrt{5}$, al cual se le quita (en diferencia de conjuntos) la esfera de radio 1. Ambas esferas, centradas en el origen, claro. Esto puede observarse en la figura \ref{fig:1-16-j}.
+
+\begin{figure}[ht]
+\caption{\textbf{16-j}}
+\includegraphics[scale=0.5]{img/ejercicios/1/16-j.png} 
+\centering
+\label{fig:1-16-j}
+\end{figure}
+
+Por lo tanto, el interior se obtiene relajando las desigualdades.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ A^{\circ} = \{ (x,y,z) \in \Bbb R^3 / 1 < x^2 + y^2 + z^2 < 5 \} }
+\end{equation}
+
+Y la frontera está dada por las caras de las esferas:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{
+\begin{array}{ll}
+\partial{A} = & \{ (x,y,z) \in \Bbb R^3 / x^2 + y^2 + z^2 = 1 \} \\
+ & \cup \{ (x,y,z) \in \Bbb R^3 / x^2 + y^2 + z^2 = 5 \}
+\end{array}
+}
+\end{equation}
+
 \end{enumerate}
 
 \end{document}
