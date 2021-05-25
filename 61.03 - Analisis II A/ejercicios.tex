@@ -1970,6 +1970,81 @@ No es necesario graficar los puntos del conjunto para determinar que corresponde
 { \partial{A} = A = \{ (x, y) \in \Bbb R^2 / x + y = 1 \} }
 \end{equation}
 
+\item En primer lugar, será de utilidad graficar el conjunto $A = \{ (x,y) \in \Bbb R^2 / 0 < |x| + |y| \leq 1 \}$. Dicho conjunto puede pensarse como la intersección de dos regiones:
+
+\begin{equation}
+\left\{
+\begin{array}{ll}
+0 < |x| + |y| \\
+|x| + |y| \leq 1
+\end{array}
+\right. \Rightarrow
+\left\{
+\begin{array}{ll}
+-|x| < |y| \\
+|y| \leq -|x| + 1
+\end{array}
+\right.
+\end{equation}
+
+Para el caso $y \geq 0$, resulta:$|y| = y$:
+
+\begin{equation}
+\left\{
+\begin{array}{ll}
+-|x| < y \\
+y \leq -|x| + 1
+\end{array}
+\right.
+\end{equation}
+
+Para el caso $y < 0$:
+
+\begin{equation}
+\left\{
+\begin{array}{ll}
+-|x| < -y \\
+-y \leq -|x| + 1
+\end{array}
+\right. \Rightarrow
+\left\{
+\begin{array}{ll}
+y > |x| \\
+y \geq |x| - 1
+\end{array}
+\right.
+\end{equation}
+
+\begin{figure}[ht]
+\caption{\textbf{16-f}}
+\includegraphics[scale=2.5]{img/ejercicios/1/16-f.png} 
+\centering
+\label{fig:1-16-f}
+\end{figure}
+
+En la figura \ref{fig:1-16-f}, se puede ver en azul el caso $y \geq 0$, y en rojo $y < 0$. La intersección de ambos es el conjunto $A$. El interior de $A$, entonces, se obtiene cambiando la desigualdad con 1 por una desigualdad estricta:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ A^{\circ} = \{ (x,y) \in \Bbb R^2 / 0 < |x| + |y| < 1 \} }
+\end{equation}
+
+Para la frontera, se puede definir tomando secciones de las funciones que la delimitan. Observando de nuevo la figura \ref{fig:1-16-f}, donde están rotuladas dichas funciones, resulta:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ 
+\begin{array}{ll}
+\partial{A} = & \left\{ (x,y) \in \Bbb R^2 / y = -|x|+1, -1 \leq x \leq -\frac{1}{2} \right\} \\
+& \cup \left\{ (x,y) \in \Bbb R^2 / y = |x|, -\frac{1}{2} \leq x \leq \frac{1}{2} \right\} \\
+& \cup \left\{ (x,y) \in \Bbb R^2 / y = -|x|+1, \frac{1}{2} \leq x \leq 1 \right\} \\
+& \cup \left\{ (x,y) \in \Bbb R^2 / y = |x|-1, -1 \leq x \leq -\frac{1}{2} \right\} \\
+& \cup \left\{ (x,y) \in \Bbb R^2 / y = -|x|, -\frac{1}{2} \leq x \leq \frac{1}{2} \right\} \\
+& \cup \left\{ (x,y) \in \Bbb R^2 / y = |x|-1, \frac{1}{2} \leq x \leq 1 \right\} \\
+\end{array}
+}
+\end{equation}
+
 \end{enumerate}
 
 \end{document}
