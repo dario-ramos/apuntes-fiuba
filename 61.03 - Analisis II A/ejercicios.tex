@@ -2282,6 +2282,42 @@ El conjunto $A$ tiene dos regiones que se unen en dos puntos. Dichos puntos no p
 { \text{A NO es arco-conexo} }
 \end{equation}
 
+\item La forma más directa de analizar este caso es considerar los 8 octantes del espacio tridimensional, y usar un árbol de decisión para determinar cuáles octantes pertenecen al conjunto. Dicho árbol puede visualizarse en la figura \ref{fig:1-17-e}. Los caminos verdes corresponden a tomar un valor positivo de la variable, y los rojos un valor negativo. Así, se obtienen las ocho combinaciones asociadas a los 8 octantes. El signo del triple producto se marca en el último nodo del árbol, con un signo más verde para producto positivo, y un triángulo invertido rojo para producto negativo.
+
+\begin{figure}[ht]
+\caption{\textbf{17-e}}
+\includegraphics[scale=0.5]{img/ejercicios/1/17-e.png} 
+\centering
+\label{fig:1-17-e}
+\end{figure}
+
+Resulta entonces el conjunto A:
+
+\begin{equation}
+\begin{array}{ll}
+A = & \{ (x,y,z) \in \Bbb R^3 / x > 0 \wedge y > 0 \wedge z < 0 \} \\
+& \cup \{ (x,y,z) \in \Bbb R^3 / x > 0 \wedge y < 0 \wedge z > 0 \} \\
+& \cup \{ (x,y,z) \in \Bbb R^3 / x < 0 \wedge y > 0 \wedge z > 0 \} \\
+& \cup \{ (x,y,z) \in \Bbb R^3 / x < 0 \wedge y < 0 \wedge z < 0 \}
+\end{array}
+\end{equation}
+
+Entonces, un par de posibles puntos interno y externo es:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{
+P_i = (-1, -1, -1), P_e = (0, 0, 0)
+}
+\end{equation}
+
+Las desigualdades son estrictas, lo cual excluye los ejes y el origen. Sin esas áreas de contacto, los octantes quedan desconectados entre sí. Un punto en un octante no puede ser unido con un punto de otro octante con una curva continua. Por lo tanto,
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ \text{A NO es arco-conexo} }
+\end{equation}
+
 \end{enumerate}
 
 \end{document}
