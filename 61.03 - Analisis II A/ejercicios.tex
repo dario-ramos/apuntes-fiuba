@@ -2429,6 +2429,52 @@ A = \{ &(x,y) \in \Bbb R^2 / (0<x<1 \wedge 0<y<1) \\
 { \{ (x,y) \in \Bbb R^2 / x^2 + y^2 \leq 1 \} }
 \end{equation}
 
+\item En primer lugar, considérese el gráfico de $|x|+|y| = 1$. Despejando $|y|$:
+
+\begin{equation}
+|y| = -|x| + 1
+\end{equation}
+
+Para $y \geq 0$:
+
+\begin{equation}
+y = -|x| + 1
+\end{equation}
+
+Para $y < 0$:
+
+\begin{equation}
+y = |x| - 1
+\end{equation}
+
+Uniendo ambos casos, resulta la figura \ref{fig:1-18-e-01}. Un conjunto no acotado que tiene dichas curvas como frontera es el graficado en la figura \ref{fig:1-18-e-02}.
+
+\begin{figure}[ht]
+\caption{\textbf{18-e-01}}
+\includegraphics[scale=1]{img/ejercicios/1/18-e-01.png} 
+\centering
+\label{fig:1-18-e-01}
+\end{figure}
+
+\begin{figure}[ht]
+\caption{\textbf{18-e-02}}
+\includegraphics[scale=1]{img/ejercicios/1/18-e-02.png} 
+\centering
+\label{fig:1-18-e-02}
+\end{figure}
+
+Para describir ese conjunto con inecuaciones, conviene hacerlo por partes. En los sectores laterales infinitos ($|x| \geq 1$), se cumple una desigualdad, y en el centro ($|x| \leq 1$) otra.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=18-e]
+{
+\begin{array}{ll}
+A = \{ &(x,y) \in \Bbb R^2 / -|x|+1 \leq y \leq |x|-1 \wedge |x| \geq 1 \} \\
+& \cup \{ (x,y) \in \Bbb R^2 / |x|-1 \leq y \leq -|x|+1 \wedge |x| \leq 1 \}
+\end{array}
+}
+\end{equation}
+
 \end{enumerate}
 
 \end{document}
