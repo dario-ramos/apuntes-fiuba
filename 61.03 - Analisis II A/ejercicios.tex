@@ -2365,7 +2365,7 @@ El interior de la región es un sólido continuo. Cualquier par de puntos interi
 \hrule
 
 \begin{enumerate}[(a)]
-\item Cualquier curva continua satisface que todos sus puntos sean frontera. Por ejemplo, una recta:
+\item Cualquier curva continua satisface que todos sus puntos sean frontera; cualquier entorno centrado en un punto de la curva contendrá puntos de $A$ y de $A^C$. Por ejemplo, una recta:
 
 \begin{equation}
 \tcboxmath[colback=orange!25!white,colframe=orange, title=18-a]
@@ -2380,6 +2380,25 @@ Con inecuaciones:
 x + y \geq 1 \\
 x + y \leq 1 
 \end{array} \right. \right\} }
+\end{equation}
+
+\item Cualquier conjunto formado por dos puntos (para cumplir con que sea más de uno) satisface esto; siempre existirá un entorno reducido centrado en dichos puntos tendrá intersección vacía con $A$.Por ejemplo:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=18-b]
+{ A = \{ (x,y) \in \Bbb R^2 / (x,y) = (0,0) \vee (x,y) = (1,1) \} }
+\end{equation}
+
+Como en el inciso anterior, es trivial expresar esto con inecuaciones.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=18-b]
+{
+\begin{array}{ll}
+A = \{ &(x,y) \in \Bbb R^2 / (x \geq 0 \wedge x \leq 0 \wedge y \geq 0 \wedge y \leq 0) \\
+& \vee (x \geq 1 \wedge x \leq 1 \wedge y \geq 1 \wedge y \leq 1) \}
+\end{array}
+}
 \end{equation}
 
 \end{enumerate}
