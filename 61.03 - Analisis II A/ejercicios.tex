@@ -2227,6 +2227,60 @@ P_i = (0, 0, 1), P_e = (0, 0, 0)
 { \text{A es arco-conexo} }
 \end{equation}
 
+\item Dado que $A$ está expresado como producto de dos factores, y la desigualdad exige que dicho producto sea positivo, puede analizarse el signo del producto en base a los factores.
+
+Caso 1: ambos factores son positivos.
+
+\begin{equation}
+\left\{ \begin{array}{ll}
+y - x^2 + 2 > 0 \\
+y + x^2 -4 > 0
+\end{array}
+\right. \Rightarrow \left\{ \begin{array}{ll}
+y > x^2 - 2 \\
+y > -x^2 + 4
+\end{array}
+\right.
+\end{equation}
+
+Caso 2: ambos factores son negativos.
+
+\begin{equation}
+\left\{ \begin{array}{ll}
+y - x^2 + 2 < 0 \\
+y + x^2 -4 < 0
+\end{array}
+\right. \Rightarrow \left\{ \begin{array}{ll}
+y < x^2 - 2 \\
+y < -x^2 + 4
+\end{array}
+\right.
+\end{equation}
+
+El conjunto $A$ consiste entonces en la unión de los conjuntos de ambos casos. Graficando en azul el caso 1 y en rojo el caso 2, se obtiene la figura .\ref{fig:1-17-d}.
+
+\begin{figure}[ht]
+\caption{\textbf{17-d}}
+\includegraphics[scale=1]{img/ejercicios/1/17-d.png} 
+\centering
+\label{fig:1-17-d}
+\end{figure}
+
+Por lo tanto, un par posible de puntos interno y externo es:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{
+P_i = (0, 6), P_e = (0, 0)
+}
+\end{equation}
+
+El conjunto $A$ tiene dos regiones que se unen en dos puntos. Dichos puntos no pertenecen al conjunto, porque en ellos se anula el producto. Por lo tanto, si se elige un punto de la región azul y otro de la región roja, no existe curva continua contenida en $A$ que los una. Ergo,
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]
+{ \text{A NO es arco-conexo} }
+\end{equation}
 
 \end{enumerate}
 
