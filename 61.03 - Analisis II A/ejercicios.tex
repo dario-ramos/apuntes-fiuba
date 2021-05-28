@@ -2477,4 +2477,86 @@ A = \{ &(x,y) \in \Bbb R^2 / -|x|+1 \leq y \leq |x|-1 \wedge |x| \geq 1 \} \\
 
 \end{enumerate}
 
+\bigskip
+
+\section{Funciones, límite, continuidad, derivadas}
+
+\hrule
+\vspace{10 pt}
+
+\textbf{1. En los siguientes casos, describir el dominio de $f$, determinar si es un conjunto cerrado, abierto, o acotado; describir los conjuntos de nivel de $f$ y esbozar su gráfico.} 
+
+\begin{enumerate}[(a)]
+\bfseries
+\item $f(x,y)=3 \left( 1 - \frac{x}{2} - \frac{y}{2} \right)$
+\item $f(x,y)= \sqrt{y-x}$
+\item $f(x,y)= \sqrt{4-x^2-y^2}$
+\item $f(x,y)= 9x^2 + 4y^2$
+\item $f(x,y)= x^2 - y^2$
+\item $f(x,y)= \frac{1}{\sqrt{16 -x^2 -y^2}}$
+\item $f(x,y)= 25 - x^2$
+\item $f(x,y)= e^{-x^2-y^2}$
+\item $f(x,y)= \sqrt{x^2 + 2y^2}$
+\item $f(x,y)= \min(x, y)$
+\item $f(x,y)= \max(x, y)$
+\end{enumerate}
+\hrule
+
+\begin{enumerate}[(a)]
+\item $x$ e $y$ pueden tomar cualquier combinación de valores sin causar ninguna indeterminación. Por ende,
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=1-a]
+{
+\begin{array}{ll}
+A = \mathop{Dom}(f) = \Bbb R^2 \\
+\text{A NO es cerrado} \\
+\text{A es abierto} \\
+\text{A NO es acotado} \\
+\end{array} 
+}
+\end{equation}
+
+En cuanto a los conjuntos de nivel, observando la definición de $f$, es evidente que $z = f(x,y)$ puede tomar cualquier valor real. Por lo tanto, $\mathop{Img}(f) = \Bbb R$, y:
+
+\begin{equation}
+C_k(f) = \{ (x,y) \in \Bbb R^2 / 3(1-x/2-y/2) = k, k \in \Bbb \}
+\end{equation}
+
+Acomodando para expresar $y$ como función de $x$ con parámetro $k$, resulta:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=1-a]
+{
+C_k(f) = \{ (x,y) \in \Bbb R^2 / y = -x -\frac{2}{3}k + 2, k \in \Bbb \}
+}
+\end{equation}
+
+Por lo tanto, los conjuntos de nivel de $f$ son rectas de pendiente $-1$ desplazadas verticalmente.
+
+Finalmente, para graficar $f$, observando su definición, es un plano en $\Bbb R^3$:
+
+\begin{equation}
+z = 3 -\frac{3}{2} x - \frac{3}{2} y \Rightarrow -3 = -\frac{3}{2}x -\frac{3}{2}y -z \Rightarrow 6 = 3x +3y +2z 
+\end{equation}
+
+Considerando que 3 puntos determinan unívocamente un plano, para graficar alcanza con 3 puntos. Por ejemplo, fijando valores para $x$ e $y$ y calculando el $z$ resultante, se tiene:
+
+\begin{equation}
+\begin{array}{ll}
+f(0,0) = 3 \Rightarrow (0, 0, 3) \in \mathop{Graf}(f) \\
+f(2,0) = 0 \Rightarrow (2, 0, 0) \in \mathop{Graf}(f) \\
+f(0,2) = 0 \Rightarrow (0, 2, 0) \in \mathop{Graf}(f)
+\end{array}
+\end{equation}
+
+\begin{figure}[ht]
+\caption{\textbf{2-1-a}}
+\includegraphics[scale=0.4]{img/ejercicios/2/1-a.png} 
+\centering
+\label{fig:2-1-a}
+\end{figure}
+
+\end{enumerate}
+
 \end{document}
