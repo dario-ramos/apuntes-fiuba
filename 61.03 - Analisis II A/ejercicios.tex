@@ -2597,6 +2597,42 @@ En cuanto al gráfico, si se piensa $z$ como una función de $y$ donde $x$ es un
 \label{fig:2-1-b}
 \end{figure}
 
+\item El dominio de $f$ estará dado por los valores que hagan cero o positivo el radicando: $4-x^2-y^2 \geq 0 \Leftrightarrow 4 \geq x^2 + y^2$. Ergo:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=1-c]
+{
+\begin{array}{ll}
+A = \mathop{Dom}(f) = \{ (x,y) \in \Bbb R^2 / x^2 + y^2 \leq 4 \} \\
+\text{A es cerrado } (\overline{A} = A) \\
+\text{A NO es abierto } (A^{\circ} \neq A) \\
+\text{A es acotado (totalmente contenido en un círculo de radio 3) } \\
+\end{array} 
+}
+\end{equation}
+
+Para los conjuntos de nivel, considérese primero la imagen de $f$. Su máximo valor corresponde al origen, ya que $(x,y) = (0,0)$ maximiza el radicando y por ende la raíz. En dicho caso, $z = 2$. Ahora bien, el dominio limita $x$ e $y$ de tal forma que el máximo valor que pueden tomar es $2$. En esos casos, $z = 0$. Por lo tanto, $Img(f) = [0, 2]$. Y los conjuntos de nivel resultan:
+
+\begin{equation}
+C_k(f) = \{ (x,y) \in \Bbb R^2 / \sqrt{4-x^2-y^2 = k}, 0 \leq k \leq 2 \}
+\end{equation}
+
+Estas curvas pueden expresarse como circunferencias, elevando su expresión al cuadrado miembro a miembro y acomodado:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=1-a]
+{ C_k(f) = \{ (x,y) \in \Bbb R^2 / x^2+y^2 = 4-k^2, 0 \leq k \leq 2 \} }
+\end{equation}
+
+Para el gráfico, ya se saben varias cosas clave: el dominio es el interior del círculo de radio 2, $z$ varía entre 0 y 2, el máximo está en en el origen, y el mínimo en los bordes del círculo. Además, si los conjuntos de nivel son circunferencias, la superficie es una especie de cúpula circular. La figura \ref{fig:2-1-c} lo comprueba.
+
+\begin{figure}[ht]
+\caption{\textbf{2-1-c}}
+\includegraphics[scale=0.4]{img/ejercicios/2/1-c.png} 
+\centering
+\label{fig:2-1-c}
+\end{figure}
+
 \end{enumerate}
 
 \end{document}
