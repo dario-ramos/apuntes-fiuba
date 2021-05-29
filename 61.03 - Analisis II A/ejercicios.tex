@@ -2557,6 +2557,46 @@ f(0,2) = 0 \Rightarrow (0, 2, 0) \in \mathop{Graf}(f)
 \label{fig:2-1-a}
 \end{figure}
 
+\item Dado que $z = \sqrt{y-x}$, para que la raíz cuadrada esté definida, debe ser $y-x \geq 0 \Rightarrow y \geq 0$. Por lo tanto:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=1-b]
+{
+\begin{array}{ll}
+A = \mathop{Dom}(f) = \{ (x,y) \in \Bbb R^2 / y \geq x \} \\
+\text{A es cerrado } (\overline{A} = A) \\
+\text{A NO es abierto} (A^{\circ} \neq A) \\
+\text{A NO es acotado} \\
+\end{array} 
+}
+\end{equation}
+
+La imagen de $f$ son cero y todos los reales positivos, por ser una raíz cuadrada. Por lo tanto, el conjunto de nivel $C_k(f)$ sólo está definido para $k \geq 0$, y consiste en:
+
+\begin{equation}
+C_k(f) = \{ (x,y) \in \Bbb R^2 / \sqrt{y-x} = k, k \in [0, +\infty) \}
+\end{equation}
+
+Despejando $y$ como función de $x$ parametrizada en $k$, resulta:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=1-a]
+{
+C_k(f) = \{ (x,y) \in \Bbb R^2 / y = x + k^2, k \in [0, +\infty) \}
+}
+\end{equation}
+
+Así, los conjuntos de nivel son rectas de pendiente 1 desplazadas.
+
+En cuanto al gráfico, si se piensa $z$ como una función de $y$ donde $x$ es un desplazamiento, se ve que la superficie $z$ está formada por curvas raíz cuadrada que nacen de la recta $y = x$ y crecen hacia el infinito. Véase la figura \ref{fig:1-2-b}.
+
+\begin{figure}[ht]
+\caption{\textbf{2-1-b}}
+\includegraphics[scale=0.4]{img/ejercicios/2/1-b.png} 
+\centering
+\label{fig:2-1-b}
+\end{figure}
+
 \end{enumerate}
 
 \end{document}
