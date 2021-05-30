@@ -2620,7 +2620,7 @@ C_k(f) = \{ (x,y) \in \Bbb R^2 / \sqrt{4-x^2-y^2 = k}, 0 \leq k \leq 2 \}
 Estas curvas pueden expresarse como circunferencias, elevando su expresión al cuadrado miembro a miembro y acomodado:
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange, title=1-a]
+\tcboxmath[colback=orange!25!white,colframe=orange, title=1-c]
 { C_k(f) = \{ (x,y) \in \Bbb R^2 / x^2+y^2 = 4-k^2, 0 \leq k \leq 2 \} }
 \end{equation}
 
@@ -2631,6 +2631,42 @@ Para el gráfico, ya se saben varias cosas clave: el dominio es el interior del 
 \includegraphics[scale=0.4]{img/ejercicios/2/1-c.png} 
 \centering
 \label{fig:2-1-c}
+\end{figure}
+
+\item En este caso, el dominio es todo $\Bbb R^2$.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=1-c]
+{
+\begin{array}{ll}
+A = \mathop{Dom}(f) = \Bbb R^2 \\
+\text{A NO es cerrado} \\
+\text{A es abierto} \\
+\text{A NO es acotado} \\
+\end{array} 
+}
+\end{equation}
+
+En cuanto a la imagen, $z$ es la suma de dos cuadrados, por lo que sólo puede ser positivo: $\mathop{Img}(f) = [0, +\infty)$. Por lo tanto, los conjuntos de nivel serán:
+
+\begin{equation}
+C_k(f) = \{ (x,y) \in¸\Bbb R^2 / 9x^2 + 4 y^2 = k, k \in [0, +\infty] \}
+\end{equation}
+
+Observando fijo la expresión, corresponde a elipses cuyos semiejes crecen con $k$; y el de $x$ siempre es mayor.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=1-d]
+{ C_k(f) = \left\{ (x,y) \in \Bbb R^2 / \frac{x^2}{ \left( \sqrt{\frac{k}{9}} \right)^2 } + \frac{y^2}{ \left(\sqrt{\frac{k}{4}}\right)^2 } = 1, k \in [0, +\infty] \right\} }
+\end{equation}
+
+Considerando que la imagen es $[0, +\infty)$, y los conjuntos de nivel son elipses, el gráfico de $f$ es un paraboloide elíptico, más ``estirado'' en la dirección $x$, por ser mayor ese semieje. La figura \ref{fig:2-1-d} demuestra esto.
+
+\begin{figure}[ht]
+\caption{\textbf{2-1-d}}
+\includegraphics[scale=0.4]{img/ejercicios/2/1-d.png} 
+\centering
+\label{fig:2-1-d}
 \end{figure}
 
 \end{enumerate}
