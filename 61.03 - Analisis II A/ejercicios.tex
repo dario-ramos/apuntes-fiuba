@@ -3015,7 +3015,7 @@ Para el gráfico, ya se saben varias cosas clave: el dominio es el interior del 
 En este caso, el dominio es todo $\Bbb R^2$.
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange, title=1-c]
+\tcboxmath[colback=orange!25!white,colframe=orange, title=1-d]
 {
 \begin{array}{ll}
 A = \mathop{Dom}(f) = \Bbb R^2 \\
@@ -3046,6 +3046,49 @@ Considerando que la imagen es $[0, +\infty)$, y los conjuntos de nivel son elips
 \includegraphics[scale=0.4]{img/ejercicios/2/1-d.png} 
 \centering
 \label{fig:2-1-d}
+\end{figure}
+
+\subsubsection*{2.1.e}
+\label{subsubsec:2.1.e}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.1.e}}
+
+Para cualquier combinación de $x$ e $y$, $z$ está bien definido. Por ende:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=1-e]
+{
+\begin{array}{ll}
+A = \mathop{Dom}(f) = \Bbb R^2 \\
+\text{A NO es cerrado} \\
+\text{A es abierto} \\
+\text{A NO es acotado} \\
+\end{array} 
+}
+\end{equation}
+
+Considerando los conjuntos de nivel, la imagen de $f$ es todo $\Bbb R$. Y observando la expresión $x^2 - y^2 = k$, puede expresarse como hipérbolas (en tanto $k \neq 0$):
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=1-e]
+{ C_k(f) = \left\{ (x,y) \in \Bbb R^2 / \frac{x^2}{k} - \frac{y^2}{k} = 1, k \neq 0 \right\} }
+\end{equation}
+
+Nótese que para $k < 0$, se intercambian los signos de los sumandos, y por ende la simetría pasa del eje $y$ al $x$. 
+
+El conjunto $C_0(f)$ corresponde a $x^2 - y^2 = 0 \Leftrightarrow x^2 = y^2 \Leftrightarrow |y| = |x|$. Para $y \geq 0$, es la curva $y = |x|$. Y para $y < 0$, es $y = -|x|$.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=1-d]
+{ C_0(f) = \left\{ (x,y) \in \Bbb R^2 / y = |x| \text{ para } y \geq 0, y = -|x| \text{ para } y < 0 \right\} }
+\end{equation}
+
+Considerando que los conjuntos de nivel son las diagonales en $z = 0$, e hipérbolas de separación entre curvas creciente con $k$, el gráfico de $f$ es un paraboloide hiperbólico con punto silla en el origen. La simetría cambia para $z < 0$ como se vio al analizar $C_k(f)$. Ver figura \ref{fig:2-1-e}.
+
+\begin{figure}[ht]
+\caption{\textbf{2-1-e}}
+\includegraphics[scale=0.4]{img/ejercicios/2/1-e.png} 
+\centering
+\label{fig:2-1-e}
 \end{figure}
 
 \end{document}
