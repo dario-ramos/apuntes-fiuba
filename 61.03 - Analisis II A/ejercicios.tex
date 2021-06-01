@@ -1987,7 +1987,7 @@ Es el interior de un círculo de radio 1, ergo:
 
 \begin{equation}
 \tcboxmath[colback=orange!25!white,colframe=orange,title=1.15.a]
-{ \rho \leq 1 }
+{ A = \{ (\rho, \phi) \in \Bbb R^2 / \rho \leq 1 \} }
 \end{equation}
 
 \subsubsection*{1.15.b}
@@ -2262,7 +2262,7 @@ A = \{ (x, y) \in \Bbb R^2 / x + y = 1 \}
 No es necesario graficar los puntos del conjunto para determinar que corresponden a la recta $y = -x + 1$. En el caso de una recta, cualquier punto de la misma que se tome tendrá puntos de $A$ y puntos de $A^C$ en todos sus entornos. Por lo tanto, el interior de $A$ es el conjunto vacío, y su frontera es el mismo conjunto $A$.
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange,title=1.16.e) $A^{\circ}$]
+\tcboxmath[colback=orange!25!white,colframe=orange,title=1.16.e]
 { A^{\circ} = \emptyset }
 \end{equation}
 
@@ -2392,14 +2392,14 @@ Sin necesidad de graficar, la primera de las dos desigualdades representa el int
 Considerando la forma del conjunto (medio cilindro cortado oblicuamente), y considerando que las desigualdades son estrictas, resulta:
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange,title=1.16.h) Interior]
+\tcboxmath[colback=orange!25!white,colframe=orange,title=1.16.h]
 { A^{\circ} = A }
 \end{equation}
 
 En cuanto a la frontera, es el borde del cilindro restringido por el plano:
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange,title=1.16.h) Frontera]
+\tcboxmath[colback=orange!25!white,colframe=orange,title=1.16.h]
 {
 \partial{A} = \left\{ (x,y,z) \in \Bbb R^3 /
 \left\{
@@ -2421,7 +2421,7 @@ Para $z=0$, se tiene el interior de un círculo centrado en el origen, excluyend
 Dado que las igualdades son estrictas, y considerando la geometría del conjunto analizada en el párrafo anterior, se tiene un conjunto abierto:
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange,title=1.16.i) Interior]
+\tcboxmath[colback=orange!25!white,colframe=orange,title=1.16.i]
 { A^{\circ} = A }
 \end{equation}
 
@@ -3214,6 +3214,51 @@ Considerando la imagen y los conjuntos de nivel, el gráfico de $f$ debería ser
 \includegraphics[scale=0.4]{img/ejercicios/2/1-h.png} 
 \centering
 \label{fig:2-1-h}
+\end{figure}
+
+\subsubsection*{2.1.i}
+\label{subsubsec:2.1.i}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.1.i}}
+
+El radicando eleva $x$ e $y$ al cuadrado, lo cual impide que sea negativo. Por lo tanto, $f$ está definida para todo $\Bbb R^2$.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.1.i]
+{
+\begin{array}{ll}
+A = \mathop{Dom}(f) = \Bbb R^2 \\
+\text{A NO es cerrado} \\
+\text{A es abierto} \\
+\text{A NO es acotado} \\
+\end{array} 
+}
+\end{equation}
+
+La imagen de $f$ tiene que ser cero o positiva por ser una raíz cuadrada de valores entre 0 y $+\infty$: $Im(f) = [0, +\infty]$. Los conjuntos de nivel resultan entonces:
+
+\begin{equation}
+C_k(f) = \{ (x,y) \in \Bbb R^2 / \sqrt{x^2 + 2y^2} = k, k \geq 0 \}
+\end{equation}
+
+Elevando al cuadrado miembro a miembro, se ve que estas curvas son elipses. Acomodando para reflejar eso:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.1.i]
+{
+\begin{array}{ll}
+C_k(f) = \left\{ (x,y) \in \Bbb R^2 / \frac{x^2}{k^2} + \frac{y^2}{\frac{k^2}{2}} = 1, k > 0 \right\} \\
+C_0(f) = (0, 0)
+\end{array}
+}
+\end{equation}
+
+Considerando la imagen y conjuntos de nivel, el gráfico debería ser una especie de paraboloide elíptico, cuyo mínimo está en el origen, y crece hacia infinito. El ancho en $x$ será siempre el doble que en $y$, por las relaciones entre los semiejes. La figura \ref{fig:2-1-i} confirma esto, con un agregado: los radios de las elipses crecen linealmente con $z$; visualmente, la superficie es más un cono que un paraboloide. Esto tiene sentido observando que en $C_k(f)$, $k$ está elevado al cuadrado, igual que $x$ e $y$.
+
+\begin{figure}[ht]
+\caption{\textbf{2.1.i}}
+\includegraphics[scale=0.4]{img/ejercicios/2/1-i.png} 
+\centering
+\label{fig:2-1-i}
 \end{figure}
 
 \end{document}
