@@ -3176,4 +3176,44 @@ Ergo, los conjuntos de nivel son pares de rectas paralelas y equidistantes al ej
 \label{fig:2-1-g}
 \end{figure}
 
+\subsubsection*{2.1.h}
+\label{subsubsec:2.1.h}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.1.h}}
+
+La función $f(x,y)$ está definida para toda combinación de $x$ e $y$. Ergo:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.1.h]
+{
+\begin{array}{ll}
+A = \mathop{Dom}(f) = \Bbb R^2 \\
+\text{A NO es cerrado} \\
+\text{A es abierto} \\
+\text{A NO es acotado} \\
+\end{array} 
+}
+\end{equation}
+
+La imagen de $f$ corresponde a una exponencial real cuyo exponente siempre es cero o negativo (por los cuadrados negados). Por lo tanto, el máximo valor que puede tomar es 1, en el origen. Para otros valores, tenderá a cero. Por ende, $\mathop{Img}(f) = (0, 1]$. Y los conjuntos de nivel están dados por:
+
+\begin{equation}
+C_k(f) = \{ (x,y) \in \Bbb R^2 / e^{-x^2-y^2} = k, 0 < k \leq 1 \}
+\end{equation}
+
+Aplicando la función $\ln$ miembro a miembro y acomodando, se ve que estas curvas son circunferencias.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.1.h]
+{ C_k(f) = \left\{ (x,y) \in \Bbb R^2 / x^2+y^2 = \ln \left( \frac{1}{k} \right), 0 < k \leq 1 \right\} }
+\end{equation}
+
+Considerando la imagen y los conjuntos de nivel, el gráfico de $f$ debería ser como una campana de Gauss en las direcciones de $x$ e $y$, con su máximo en el origen y tendiendo a cero de forma rápida pero suave. La figura \ref{fig:2-1-h} corrobora esto.
+
+\begin{figure}[ht]
+\caption{\textbf{2.1.h}}
+\includegraphics[scale=0.4]{img/ejercicios/2/1-h.png} 
+\centering
+\label{fig:2-1-h}
+\end{figure}
+
 \end{document}
