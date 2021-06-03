@@ -3261,4 +3261,65 @@ Considerando la imagen y conjuntos de nivel, el gráfico debería ser una especi
 \label{fig:2-1-i}
 \end{figure}
 
+\subsubsection*{2.1.j}
+\label{subsubsec:2.1.j}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.1.j}}
+
+No hay ninguna combinación de $x$ e $y$ que cause alguna indeterminación; $f$ siempre está bien definida. Por lo tanto:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.1.j]
+{
+\begin{array}{ll}
+A = \mathop{Dom}(f) = \Bbb R^2 \\
+\text{A NO es cerrado} \\
+\text{A es abierto} \\
+\text{A NO es acotado} \\
+\end{array} 
+}
+\end{equation}
+
+La imagen es claramente todo $\Bbb R$, ya que $x$ e $y$ pueden tomar cualquier valor. En cuanto a los conjuntos de nivel, su planteo por definición sería:
+
+\begin{equation}
+C_k(f) = \{ (x,y) \in \Bbb R^2 / \min(x,y) = k, k \in \Bbb R \}
+\end{equation}
+
+Para cada valor fijo $k$, hay 3 puntos que satisfacen la igualdad:
+
+\begin{equation}
+\begin{array}{ll}
+(k, k, k) \text{ si } x = y \\
+(x, k, k) \text{ si } y < x \\
+(k, y, k) \text{ si } x < y
+\end{array}
+\end{equation}
+
+Por lo tanto, cada conjunto de nivel es un trío de puntos:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.1.j]
+{ C_k(f) = \{ (x,y) \in \Bbb R^2 / (x,y)=(k,k) \vee (x,y)=(x,k) \vee (x,y)=(k,y), k \in \Bbb R \} }
+\end{equation}
+
+Para el gráfico, en esta ocasión los conjuntos de nivel no ayudan mucho. Considérese el plano dominio, $xy$; el valor que toma $z = f(x,y)$ está divido por la recta $y=x$. En la región de $\Bbb R^2$ donde $y <= x$, $z = y$, y para $y < x$, $z = x$. Ergo, $f$ puede expresarse de la siguiente manera:
+
+\begin{equation}
+z = f(x,y) = \left\{ \begin{array}{ll}
+y \text{ si } y \leq x \\
+x \text{ si } y > x
+\end{array} \right.
+\end{equation}
+
+Ambas ramas de $f$ pueden considerarse como planos. Más concretamente, el plano $z = y$ es la recta $z = y$ en el plano $zy$, replicada a lo largo del eje $x$. Análogamente, el plano $z = x$ es la recta $z = x$ replicada a lo largo del eje $y$. Con esto en mente, el gráfico de $f$ se construye tomando las secciones de ambos planos correspondientes a cada región, y considerando que los planos se intersectan en la recta $y = x$. Esto es consistente con que los conjuntos de nivel sean tríos de puntos: un punto en el plano $z = y$, otro en el plano $z = x$, y otro sobre la recta donde se cortan los planos.
+
+\begin{figure}[ht]
+\caption{\textbf{2.1.j}}
+\includegraphics[scale=0.4]{img/ejercicios/2/1-j.png} 
+\centering
+\label{fig:2-1-j}
+\end{figure}
+
+En la figura \ref{fig:2-1-j}, el plano $z = y$ se halla graficado en color cian, y el plano $z = x$ en rojo. La región $y \leq x$ en el plano $z = 0$ se halla marcada con una grilla a modo de referencia. Gracias a dicha referencia, es sencillo ver que el gráfico de $f$ corresponde a las mitades "decrecientes" de los planos demarcados por la recta $y = x$ y su proyección. Burdamente, el gráfico de $f$ es como un techo a dos aguas.
+
 \end{document}
