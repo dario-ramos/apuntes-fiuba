@@ -3320,6 +3320,40 @@ Ambas ramas de $f$ pueden considerarse como planos. Más concretamente, el plano
 \label{fig:2-1-j}
 \end{figure}
 
-En la figura \ref{fig:2-1-j}, el plano $z = y$ se halla graficado en color cian, y el plano $z = x$ en rojo. La región $y \leq x$ en el plano $z = 0$ se halla marcada con una grilla a modo de referencia. Gracias a dicha referencia, es sencillo ver que el gráfico de $f$ corresponde a las mitades "decrecientes" de los planos demarcados por la recta $y = x$ y su proyección. Burdamente, el gráfico de $f$ es como un techo a dos aguas.
+En la figura \ref{fig:2-1-j}, el plano $z = y$ se halla graficado en color cian, y el plano $z = x$ en rojo. La región $y \leq x$ en el plano $z = 0$ se halla marcada con una grilla a modo de referencia. Gracias a dicha referencia, es sencillo ver que el gráfico de $f$ corresponde a las mitades ``decrecientes'' de los planos demarcados por la recta $y = x$ y su proyección. Burdamente, el gráfico de $f$ es como un techo a dos aguas.
+
+\subsubsection*{2.1.k}
+\label{subsubsec:2.1.k}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.1.k}}
+
+Aplicando el mismo razonamiento que en el inciso anterior, con la única diferencia de tomar el máximo en lugar del mínimo:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.1.k]
+{
+\begin{array}{ll}
+A = \mathop{Dom}(f) = \Bbb R^2 \\
+\text{A NO es cerrado} \\
+\text{A es abierto} \\
+\text{A NO es acotado} \\
+\end{array} 
+}
+\end{equation}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.1.j]
+{ C_k(f) = \{ (x,y) \in \Bbb R^2 / (x,y)=(k,k) \vee (x,y)=(x,k) \vee (x,y)=(k,y), k \in \Bbb R \} }
+\end{equation}
+
+La definición por partes de $f$ intercambia los semiplanos:
+
+\begin{equation}
+z = f(x,y) = \left\{ \begin{array}{ll}
+x \text{ si } y \leq x \\
+y \text{ si } y > x
+\end{array} \right.
+\end{equation}
+
+Por lo tanto, tomando como referencia la figura \ref{fig:2-1-j}, el gráfico de $f$ corresponde a las secciones ``crecientes'' de los planos $z = x$ y $z = y$. Es un techo a dos aguas invertido.
 
 \end{document}
