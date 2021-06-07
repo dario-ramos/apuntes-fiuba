@@ -3390,4 +3390,122 @@ La función $f(x,y) = xy - x^2$ es continua en todo $\Bbb R^2$. Por lo tanto:
 { \lim_{(x,y) \rightarrow (1,-1)} f(x,y) = f(1,-1) = -2 }
 \end{equation}
 
+\subsubsection*{2.2.b}
+\label{subsubsec:2.2.b}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.2.b}}
+
+Esta función tiene una singularidad en $(0, 0)$. Probando con los límites sucesivos:
+
+\begin{align}
+l_{12} = \lim_{y \rightarrow 0} \left( \lim_{x \rightarrow 0} \frac{x^2 + y^2}{y} \right) = \lim_{y \rightarrow 0} y = 0 \\
+l_{21} = \lim_{x \rightarrow 0} \left( \lim_{y \rightarrow 0} \frac{x^2 + y^2}{y} \right) = \lim_{x \rightarrow 0} \infty
+\end{align}
+
+Si el límite existe, tiene que ser único. Por lo tanto, que difieran los límites sucesivos garantiza que:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.2.b]
+{ \lim_{(x,y) \rightarrow (0,0)} \frac{x^2 + y^2}{y} = \nexists }
+\end{equation}
+
+\subsubsection*{2.2.c}
+\label{subsubsec:2.2.c}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.2.c}}
+
+No hay singularidades en $f$.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.2.c]
+{ \lim_{(x,y) \rightarrow (0,0)} \sqrt{x^2 + y^2} = 0 }
+\end{equation}
+
+\subsubsection*{2.2.d}
+\label{subsubsec:2.2.d}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.2.d}}
+
+No hay singularidades en $f$.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.2.d]
+{ \lim_{(x,y) \rightarrow (1,-2)} x^2 + (y-2)^2 x = 5 }
+\end{equation}
+
+\subsubsection*{2.2.e}
+\label{subsubsec:2.2.e}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.2.e}}
+
+Evaluando el límite de forma directa, se ve que la función $f$ tiende a $+\infty$ cuando $(x,y)$ tiende a $(0,2)$. Por definición, si el límite existe, es un número real finito, o un vector con todas sus componentes reales y finitas. Por lo tanto, se puede concluir el ejercicio diciendo que el límite no existe.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.2.e]
+{ \lim_{(x,y) \rightarrow (0,2)} \frac{y^2 (x-2)^2}{x^2 + (y-2)^2} = \frac{16}{0^+} = +\infty = \nexists }
+\end{equation}
+
+En un análisis más detallado, se puede afirmar que al ser todos los sumandos y factores cuadrados, $f$ sólo toma valores positivos, por ende es imposible que haya una forma de aproximarse a $(0,2)$ que haga tender a $f$ a $-\infty$. Tal vez exista una forma de hacerlo finito, pero eso no cambiará el hecho de que el límite no existe. 
+
+\subsubsection*{2.2.f}
+\label{subsubsec:2.2.f}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.2.f}}
+
+La función $f$ es continua en el punto de interés, $(0, 4)$. Sus infinitas singularidades están sobre la recta $y = 0$. Por lo tanto, el límite existe y vale:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.2.f]
+{ \lim_{(x,y) \rightarrow (0,4)} \frac{x}{\sqrt{y}} = \frac{0}{2} = 0 }
+\end{equation}
+
+\subsubsection*{2.2.g}
+\label{subsubsec:2.2.g}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.2.g}}
+
+El límite de un campo vectorial es el vector formado por los límites de los campos escalares componentes, si y sólo si todos esos límites existen. En este caso particular, el campo vectorial es:
+
+\begin{equation}
+f: \Bbb R^2 \rightarrow \Bbb R^3 / f(x,y) = \left( x y, \frac{y}{x+1}, \sqrt{x^2 + y^2} \right)
+\end{equation}
+
+El primer y tercer campo escalar están bien definidos para todo par $(x,y)$. En cambio, el segundo tiene infinitas singularidades, sobre la recta $x = -1$. En todo otro punto, $f$ es continua. El punto del límite es uno de estos últimos. En consecuencia:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.2.g]
+{ \lim_{(x,y) \rightarrow (1,-2)} f(x,y) = f(1,-2) = (-2, -1, \sqrt{5}) }
+\end{equation}
+
+\subsubsection*{2.2.h}
+\label{subsubsec:2.2.h}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.2.h}}
+
+De forma similar a 2.2.e, al evaluar el límite de forma directa, el mismo resulta infinito. Por lo tanto, se puede concluir que el límite no existe.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.2.h]
+{ \lim_{(x,y,z) \rightarrow (0,1,1)} \frac{y+1}{\sqrt{z^2-1}} = \frac{2}{0} = \infty = \nexists }
+\end{equation}
+
+El denominador siempre es positivo, pero el numerador puede cambiar de signo. Según $y$ tienda a $1$ por derecha o izquierda, $f$ tenderá a infinito positivo o negativo.
+
+\subsubsection*{2.2.i}
+\label{subsubsec:2.2.i}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.2.i}}
+
+Nuevamente, al tener un campo vectorial, hay que analizar por separado sus componentes.
+Para el primero, la propiedad de cero por acotado sigue valiendo para $n$ variables.
+
+\begin{equation}
+\lim_{(x,y) \rightarrow (0,0)} \underbrace{y}_{\rightarrow 0} \underbrace{ \cos \left( \frac{1}{x} \right) }_{\in [-1,1] \forall x} = 0
+\end{equation}
+
+En el segundo caso, es un límite de una sola variable. Es válido aplicar la regla de L'Hôpital.
+
+\begin{equation}
+\lim_{(x,y) \rightarrow (0,0)} \frac{\sin (3x)}{2x} = \lim_{x \rightarrow 0} \frac{\sin (3x)}{2x} = \lim_{x \rightarrow 0} \frac{3 \cos(3x)}{2} = \frac{3}{2}
+\end{equation}
+
+El tercer campo escalar es continuo en todo $\Bbb R^2$, su límite existe y es trivial. Por ende, dado que todos los campos escalares componentes tienen límite bien definido, el límite del campo vectorial que componen está bien definido.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.2.i]
+{ \lim_{(x,y) \rightarrow (0,0) } \overline{f}(x,y) = \left( 0, \frac{3}{2}, 0 \right) }
+\end{equation}
+
 \end{document}
