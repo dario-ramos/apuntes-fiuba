@@ -3508,4 +3508,57 @@ El tercer campo escalar es continuo en todo $\Bbb R^2$, su límite existe y es t
 { \lim_{(x,y) \rightarrow (0,0) } \overline{f}(x,y) = \left( 0, \frac{3}{2}, 0 \right) }
 \end{equation}
 
+\hrule
+\vspace{10 pt}
+
+\subsection*{2.3}
+\label{subsec:2.3}
+\addcontentsline{toc}{subsection}{\nameref{subsec:2.3}}
+
+\textbf{En los siguientes casos hallar, cuando sea posible hallar una función que satisfaga las condiciones dadas. Si ello no es posible, fundamentar.} 
+
+\begin{enumerate}[(a)]
+\bfseries
+\item $ f(x,y) > 0$ cuando $x > 0 \wedge y > 0$, $\lim_{(x,y) \rightarrow (0,0)} f(x,y) = 0$
+
+\item $f(x,y) > 1$ cuando $y > x^2 + 1$, $f(x,y) < 1$ cuando $y < x^2 + 1$, y $\lim_{(x,y) \rightarrow (0,1)} f(x,y) = 1$
+\end{enumerate}
+\hrule
+
+\subsubsection*{2.3.a}
+\label{subsubsec:2.3.a}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.3.a}}
+
+Una función que es positiva en el primer cuadrante y tiende a cero en el origen es:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.3.a]
+{ f(x,y) = x + y }
+\end{equation}
+
+\subsubsection*{2.3.b}
+\label{subsubsec:2.3.b}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.3.b}}
+
+Manipulando las condiciones:
+
+\begin{align}
+y > x^2 + 1 \Rightarrow \frac{y}{x^2 + 1} > 1 \\
+y < x^2 + 1 \Rightarrow \frac{y}{x^2 + 1} < 1
+\end{align}
+
+Esto sugiere la conveniencia de definir $f(x,y) = \frac{y}{x^2+1}$. Si satisface el límite pedido, es una solución válida.
+Por continuidad de $f$ en el punto $(0, 1)$:
+
+\begin{equation}
+\lim_{(x,y) \rightarrow (0,1)} \frac{y}{x^2 + 1} = \frac{1}{0+1} = 1
+\end{equation}
+
+Finalmente:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.3.b]
+{ f(x,y) = \frac{y}{x^2 + 1} }
+\end{equation}
+
 \end{document}
