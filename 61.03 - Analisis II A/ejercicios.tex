@@ -3561,4 +3561,114 @@ Finalmente:
 { f(x,y) = \frac{y}{x^2 + 1} }
 \end{equation}
 
+\subsection*{2.4}
+\label{subsec:2.4}
+\addcontentsline{toc}{subsection}{\nameref{subsec:2.4}}
+
+\textbf{Resolver:} 
+
+\begin{enumerate}[(a)]
+\bfseries
+\item Sea $f(x,y) = \frac{x^2 + y^2 -4}{x^2 - y^2}$. Describir el dominio de $f$. Describir la región $R$ donde $f$ es positiva en coordenadas cartesianas y polares, aclarando si es o no abierta y si es o no acotada. Suponga que se define una nueva función $\hat{f}$ que coincide con $f$ en los puntos de su dominio y vale 1 en el resto del plano, es decir:
+
+\begin{equation}
+\hat{f}(x,y) = \left\{ \begin{array}{ll}
+f(x,y) &\text{ si } (x,y) \in \mathop{Dom}(f) \\
+1 & \text{ si } (x,y) \notin \mathop{Dom}(f)
+\end{array}
+\right.
+\end{equation}
+
+Analizar la continuidad de $\hat{f}$ en $(\sqrt{2}, -\sqrt{2})$.
+
+\item Sea
+
+\begin{equation}
+f(x,y) = \left\{ \begin{array}{ll}
+(1 + |2x+y|) (x^2 + y^2 -1) &\text{ si } y > x \\
+x^2 + y^2 - 1 & \text{ si } y \leq x
+\end{array}
+\right.
+\end{equation}
+
+Describir la región $R$ donde $f$ es positiva ($> 0$) en coordenadas cartesianas y polares, aclrando si es o no abierta y si es o no acotada. Analizar la continuidad de $f$ en cada punto de la recta de ecuación $y = x$.
+
+\item Supongamos que $f: \Bbb R^2 \rightarrow \Bbb R$ es una función de la que se sabe que es continua en todos los puntos del plano, y que es positiva ($> 0$) en la región descripta en polares por $(0 < \rho < 2) \wedge (0 < \phi < \frac{\pi}{3})$, negativa en la región descripta por $(\rho > 2) \vee (\frac{\pi}{3} < \phi < 2\pi)$ (donde $\wedge$ y $\vee$ denotan el y el o lógicos respectivamente)y $f(0,0) = 0$. Sea $g(x,y) = \frac{1}{f(y,x)}$. Describir el conjunto donde $g$ es positiva ($>0$), y analizar en qué puntos del plano $g$ es continua.
+
+\end{enumerate}
+\hrule
+
+\subsubsection*{2.4.a}
+\label{subsubsec:2.4.a}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.4.a}}
+
+En primer lugar, el dominio de $f$ es todo $\Bbb R^2$, excluyendo los ceros del denominador.
+
+\begin{equation}
+x^2 - y^2 = 0 \Leftrightarrow |x| = |y| \Leftrightarrow y = \left\{
+\begin{array}{ll}
+|x| \text{ si } y \geq 0 \\
+-|x| \text{ si } y < 0
+\end{array}
+\right.
+\end{equation}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.4.a. Dominio]
+{ \mathop{Dom}(f) = \Bbb R^2 - \{ (x,y) \in \Bbb R^2 / |y| = |x| \} }
+\end{equation}
+
+En segundo lugar, para que $f$ sea positiva, o bien numerador y denominador son ambos positivos, o ambos negativos. Simbólicamente:
+
+\begin{subequations}
+\begin{align}
+R &= \{ (x,y) \in \Bbb R^2 / f(x,y) > 0 \} = \\
+& \{ (x,y) \in \Bbb R^2 / (x^2 + y^2 - 4 > 0) \wedge x^2 - y^2 > 0) \vee (x^2 + y^2 - 4 < 0 \wedge x^2 - y^2 < 0) \}
+\end{align}
+\end{subequations}
+
+Resulta entonces $R$ en coordenadas cartesianas:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.4.a. R en cartesianas]
+{ R = \{ (x,y) \in \Bbb R^2 / (x^2 + y^2 > 4 \wedge |x| > |y|) \vee (x^2 + y^2 < 4 \wedge |x| < |y|) \} }
+\end{equation}
+
+Graficando los dos operandos del $\vee$ por separado, se tienen las regiones de la figura \ref{fig:2-4-a}. La región azul corresponde al primer operando, y la roja al segundo. La región $R$ es la unión de ambas regiones. 
+
+\begin{figure}[ht]
+\caption{\textbf{2.4.a}}
+\includegraphics[scale=0.8]{img/ejercicios/2/4-a.png} 
+\centering
+\label{fig:2-4-a}
+\end{figure}
+
+En coordenadas polares:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.4.a. R en polares]
+{
+\begin{array}{ll}
+R = &\left\{ (\rho, \phi) \in \Bbb R^2 / \left[ \rho > 2 \wedge \left( -\frac{\pi}{4} < \phi < \frac{\pi}{4} \vee \frac{3}{4}\pi < \phi < \frac{5}{4}\pi \right) \right] \vee \right. \\
+& \left. [\rho < 2 \wedge \left( \frac{\pi}{4} < \phi < \frac{3}{4}\pi \vee \frac{5}{4}\pi < \phi < \frac{7}{4}\pi \right)] \right\}
+\end{array}
+}
+\end{equation}
+
+Para que la función $\hat{f}$ sea continua en el punto de interés, necesariamente debe cumplirse $\lim_{(x,y) \rightarrow (\sqrt{2}, -\sqrt{2})} \hat{f}(x,y) = 1$. Dado que se está evaluando el límite, $x$ e $y$ nunca llegan al valor del punto, y por ende la expresión a evaluar es la de la $f$ original. Ello conduce a la indeterminación $\frac{0}{0}$. Observando el denominador, en particular que aparece $-y^2$, se intuye que los límites iterados pueden diferer y por ende el límite no existir. Se procede a verificar dicha hipótesis:
+
+\begin{subequations}
+\begin{align}
+l_{12} = \lim_{y \rightarrow -\sqrt{2}} \left( \lim_{x \rightarrow \sqrt{2}} \frac{x^2 + y^2 - 4}{x^2 - y^2} \right) = \lim_{y \rightarrow -\sqrt{2}} \frac{y^2 - 2}{-y^2 + 2} = \lim_{y \rightarrow -\sqrt{2}} \frac{2y}{-2y} = -1 \\
+l_{21} = \lim_{x \rightarrow \sqrt{2}} \left( \lim_{y \rightarrow -\sqrt{2}} \frac{x^2 + y^2 - 4}{x^2 - y^2} \right) = \lim_{x \rightarrow \sqrt{2}} \frac{x^2 - 2}{x^2 + 2} = 1
+\end{align}
+\end{subequations}
+
+Dado que los límites iterados difieren:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.4.a. Continuidad]
+{ \hat{f}(x,y) \text{ no es continua en } (\sqrt{2}, -\sqrt{2}) }
+\end{equation}
+
 \end{document}
