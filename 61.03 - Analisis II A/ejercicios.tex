@@ -3655,6 +3655,8 @@ R = &\left\{ (\rho, \phi) \in \Bbb R^2 / \left[ \rho > 2 \wedge \left( -\frac{\p
 }
 \end{equation}
 
+La región $R$ es entonces abierta y no acotada.
+
 Para que la función $\hat{f}$ sea continua en el punto de interés, necesariamente debe cumplirse $\lim_{(x,y) \rightarrow (\sqrt{2}, -\sqrt{2})} \hat{f}(x,y) = 1$. Dado que se está evaluando el límite, $x$ e $y$ nunca llegan al valor del punto, y por ende la expresión a evaluar es la de la $f$ original. Ello conduce a la indeterminación $\frac{0}{0}$. Observando el denominador, en particular que aparece $-y^2$, se intuye que los límites iterados pueden diferer y por ende el límite no existir. Se procede a verificar dicha hipótesis:
 
 \begin{subequations}
@@ -3669,6 +3671,84 @@ Dado que los límites iterados difieren:
 \begin{equation}
 \tcboxmath[colback=orange!25!white,colframe=orange,title=2.4.a. Continuidad]
 { \hat{f}(x,y) \text{ no es continua en } (\sqrt{2}, -\sqrt{2}) }
+\end{equation}
+
+\subsubsection*{2.4.b}
+\label{subsubsec:2.4.b}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.4.b}}
+
+\begin{equation}
+f(x,y) = \left\{ \begin{array}{ll}
+(1 + |2x + y|) (x^2 + y^2 - 1) &\text{ si } y > x \\
+x^2 + y^2 - 1 &\text{ si } y \leq x
+\end{array} \right.
+\end{equation}
+
+En la rama I ($y > x$), para que sea positiva, hay que analizar los signos de los factores del producto. O ambos son positivos, o ambos negativos.
+
+\begin{itemize}
+\item Ambos positivos:
+	\begin{itemize}
+		\item $1 + |2x + y| > 0 \Leftrightarrow |2x + y| > -1$, lo cual se cumple $\forall (x,y)$
+		\item $x^2 + y^2 -1 > 0 \Leftrightarrow x^2 + y^2 > 1$
+	\end{itemize}
+\item Ambos negativos:
+	\begin{itemize}
+		\item $1 + |2x + y| < 0 \Leftrightarrow |2x + y| < -1$, lo cual por definición de valor absoluto es imposible.
+	\end{itemize}
+\end{itemize}
+
+En la rama II ($y \leq x$), el análisis es más directo: $x^2 + y^2 - 1 > 0 \Leftrightarrow x^2 + y^2 > 1$. Combinando lo obtenido para las dos ramas, resulta:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.4.b. R en cartesianas]
+{ R = \{ (x, y) \in \Bbb R^2 / (x^2 + y^2 > 1 \wedge y > x) \vee (x^2 + y^2 \geq 1 \wedge y \leq x) \} }
+\end{equation}
+
+Convirtiendo a polares:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.4.a. R en polares]
+{
+\begin{array}{ll}
+R = &\left\{ (\rho, \phi) \in \Bbb R^2 / \left[ \rho > 1 \wedge \left( \frac{\pi}{4} < \phi < \frac{5}{4}\pi \right) \right] \vee \right. \\
+& \left. [\rho \geq 1 \wedge \left( -\frac{3}{4}\pi \leq \phi \leq \frac{\pi}{4} \right)] \right\}
+\end{array}
+}
+\end{equation}
+
+La región $R$ es entonces abierta (porque en la rama superior las desigualdades son estrictas), y no acotada.
+
+En cuanto a la continuidad sobre $y = x$, en el caso $y = x$ se evalúa la segunda rama:
+
+\begin{equation}
+f(x,x) = x^2 + x^2 - 1 = 2x^2 - 1
+\end{equation}
+
+Considérese el límite de $f(x,y)$ con una curva $y = g(x)$ que tienda a $y = x$ ``por arriba'', o sea que evalúe $f$ en la rama I ($y > x$). Una posibilidad sería $y = x + a$, con $a \rightarrow 0^+$:
+
+\begin{subequations}
+\begin{align}
+\lim_{a \rightarrow 0^+} f(x, x+a) &= \lim_{a \rightarrow 0^+} (1 + |2x + x + a|)(x^2 + (x+a)^2 - 1) \\
+&= (1 + |3x|)(2x^2 - 1)
+\end{align}
+\end{subequations}
+
+Para que haya continuidad, el límite anterior debe ser idénticamente igual a $2x^2 - 1$. Ello sólo se cumple para $x = 0$, el único valor que hace 1 el primer factor.
+
+Analizando dicho punto:
+
+\begin{subequations}
+\begin{align}
+& f(0, 0) = 0^2 + 0^2 - 1 = -1 \\
+& \lim_{x \rightarrow 0^+} ( \lim_{a \rightarrow 0^+} f(x, x+a) = \lim_{x \rightarrow 0^+} 2x^2 - 1 = -1 \\
+& \lim_{a \rightarrow 0^+} ( \lim_{x \rightarrow 0^+} f(x, x+a) = \lim_{a \rightarrow 0^+} (1 + |a|) (-1) = -1
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.4.b. Continuidad]
+{ \text{Sobre la curva } y = x, f \text{ sólo es continua en el punto } (0, 0) \} }
 \end{equation}
 
 \end{document}
