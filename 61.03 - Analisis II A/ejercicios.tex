@@ -3751,4 +3751,42 @@ Analizando dicho punto:
 { \text{Sobre la curva } y = x, f \text{ sólo es continua en el punto } (0, 0) \} }
 \end{equation}
 
+\subsubsection*{2.4.c}
+\label{subsubsec:2.4.c}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.4.c}}
+
+La función $g$ será positiva donde $f(y,x)$ sea positiva. Ahora bien, $f(y,x)$ no necesariamente es la misma función que $f(x,y)$. Dado que se conoce dónde $f(x,y)$ es positiva en coordenadas polares, es posible expresar ese conjunto en coordenadas cartesianas. Luego, se puede intercambiar $x$ e $y$ para obtener el conjunto donde $f(y,x)$ es positiva. 
+
+\begin{equation}
+R = \{ (x,y) \in \Bbb R^2 / 0 < x^2 + y^2 < 2 \wedge y > 0 \wedge y < m x \}
+\end{equation}
+
+Donde $m$ es la pendiente de la recta asociada a $\phi = \frac{\pi}{3}$. Ergo, $m = \tan(\pi/3) \approx 1.7320$. Intercambiando $x$ e $y$, resulta:
+
+\begin{equation}
+R_g = \{ (x,y) \in \Bbb R^2 / 0 < y^2 + x^2 < 2 \wedge x > 0 \wedge x < m y \}
+\end{equation}
+
+Acomodando la última expresión para restringir $y$ en vez de $x$, resulta:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.4.c. g positiva ]
+{
+ g(x,y) > 0 \forall (x,y) \in R_g = \{ (x,y) \in \Bbb R^2 / 0 < y^2 + x^2 < 2 \wedge x > 0 \wedge y < 0.57735 x \} 
+}
+\end{equation}
+
+En cuanto a la continuidad de $g$, $f$ es continua para todo par $(x,y)$. Por lo tanto, $f(y, x)$ también. Los únicos puntos problemáticos de $g$ son los ceros del denominador. Por enunciado, $f$ sólo se anula en el origen. En dicho punto:
+
+\begin{equation}
+\lim_{(x,y) \rightarrow (0,0)} \frac{1}{f(y,x)} = \infty = \nexists
+\end{equation}
+
+Ergo:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.4.c. Continuidad ]
+{ g(x,y) \in C^0(S), S = \Bbb R^2 - \{ (0,0) \} }
+\end{equation}
+
 \end{document}
