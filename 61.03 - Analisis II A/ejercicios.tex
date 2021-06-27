@@ -3789,4 +3789,68 @@ Ergo:
 { g(x,y) \in C^0(S), S = \Bbb R^2 - \{ (0,0) \} }
 \end{equation}
 
+\subsection*{2.5}
+\label{subsec:2.5}
+\addcontentsline{toc}{subsection}{\nameref{subsec:2.5}}
+
+\textbf{Determinar el dominio y los puntos de continuidad de las siguientes funciones:}
+
+\begin{enumerate}[(a)]
+\bfseries
+\item $ f(x,y) = \left\{ \begin{array}{ll}
+x^2 - y &\text{ si } x \neq 2y \\
+3 &\text{ si } x = 2y
+\end{array} \right. $
+
+\item $f(x,y) = \left\{ \begin{array}{ll}
+1 &\text{ si } x - y > 0 \\
+0 &\text{ si } x - y \leq 0
+\end{array} \right.$
+
+\item $f(x,y) = \left\{ \begin{array}{ll}
+0 &\text{ si } xy \neq 0 \\
+1 &\text{ si } xy = 0
+\end{array} \right.$
+
+\item $f(x, y, z) = \frac{1}{|y| + |z|}$
+
+\item $f(x, y, z) = \sqrt{x^2 + y^2 - z^2}$
+
+\item $f(x, y, z) = x y \sin\left( \frac{1}{z} \right)$
+
+\end{enumerate}
+\hrule
+
+\subsubsection*{2.5.a}
+\label{subsubsec:2.5.a}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.5.a}}
+
+No hay ningún par $(x,y)$ que cause una singularidad, para ninguna de las dos ramas. Por ende,
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.a. Dominio ]
+{ \mathop{Dom}(f) = \Bbb R^2 }
+\end{equation}
+
+En cuanto a continuidad, ambas ramas de la función son continuas por sí sólas. El único lugar conflictivo es la curva $x = 2y$. Considérese una curva parametrizada que tienda a ella, como $x = ay$, y luego el límite para $a$ tendiendo a 2:
+
+\begin{subequations}
+\begin{align}
+\lim_{a \rightarrow 2} f(ay, y) = \lim_{a \rightarrow 2} (ay)^2 - y = 4y^2 - y
+\end{align}
+\end{subequations}
+
+$f$ será continua sólo en los puntos donde ese límite coincida con la constante $3$:
+
+\begin{equation}
+4y^2 - y = 3 \Leftrightarrow 4y^2 - y - 3 = 0 \Leftrightarrow y_1 = 1, y_2 = -\frac{3}{4}
+\end{equation}
+
+Los valores de $y$ obtenidos determinan $x$, ya que se hallan sobre la curva $x = 2y$. Finalmente:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.a. Continuidad ]
+{ f \in C^0(S), S = \Bbb R^2 - \left\{ (2, 1), \left(-\frac{3}{2}, -\frac{3}{4} \right) \right\} }
+\end{equation}
+
 \end{document}
