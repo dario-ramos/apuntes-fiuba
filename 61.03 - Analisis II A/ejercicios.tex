@@ -3898,4 +3898,22 @@ En cuanto a la continuidad, $xy = 0 \Leftrightarrow x = 0 \vee y = 0$. En otras 
 { f \in C^0(S), S = \Bbb R^2 - \{ (x,y) \in \Bbb R^2 / x = 0 \vee y = 0 \} }
 \end{equation}
 
+\subsubsection*{2.5.d}
+\label{subsubsec:2.5.d}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.5.d}}
+
+Todas las singularidades de $f$ se hallan en los ceros del denominador. Como el mismo es una suma de módulos, la única forma de que se anule es que $y$ y $z$ sean cero a la vez. Dado que eso deja libre $x$, el conjunto a excluir del dominio es todo el eje $x$.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.d. Dominio ]
+{ \mathop{Dom}(f) = \Bbb R^3 - \{ (x,y,z) \in \Bbb R^3 / y = 0 \wedge z = 0 \} }
+\end{equation}
+
+Fuera de ese conjunto, donde $f$ tiende a infinito, $f$ es continua, de forma análoga a como $y = \frac{1}{x}$ es continua en todos los puntos excepto el cero del denominador (que en este caso es una recta en lugar de sólo un punto).
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.d. Continuidad ]
+{ f \in C^0(\mathop{Dom(f)}) }
+\end{equation}
+
 \end{document}
