@@ -3828,7 +3828,7 @@ x^2 - y &\text{ si } x \neq 2y \\
 No hay ningún par $(x,y)$ que cause una singularidad, para ninguna de las dos ramas. Por ende,
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.a. Dominio ]
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.a. Dom(f) ]
 { \mathop{Dom}(f) = \Bbb R^2 }
 \end{equation}
 
@@ -3860,7 +3860,7 @@ Los valores de $y$ obtenidos determinan $x$, ya que se hallan sobre la curva $x 
 No hay ningún par $(x,y)$ que cause una singularidad, para ninguna de las dos ramas. Por ende,
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.b. Dominio ]
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.b. Dom(f) ]
 { \mathop{Dom}(f) = \Bbb R^2 }
 \end{equation}
 
@@ -3887,7 +3887,7 @@ Vista de esta manera, $f$ tiene una discontinuidad a lo largo de toda la recta $
 No hay ningún par $(x,y)$ que cause una singularidad, para ninguna de las dos ramas. Por ende,
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.c. Dominio ]
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.c. Dom(f) ]
 { \mathop{Dom}(f) = \Bbb R^2 }
 \end{equation}
 
@@ -3912,7 +3912,7 @@ Todas las singularidades de $f$ se hallan en los ceros del denominador. Como el 
 Fuera de ese conjunto, donde $f$ tiende a infinito, $f$ es continua, de forma análoga a como $y = \frac{1}{x}$ es continua en todos los puntos excepto el cero del denominador (que en este caso es una recta en lugar de sólo un punto).
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.d. Continuidad ]
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.d. Cont. ]
 { f \in C^0(\mathop{Dom(f)}) }
 \end{equation}
 
@@ -3923,7 +3923,7 @@ Fuera de ese conjunto, donde $f$ tiende a infinito, $f$ es continua, de forma an
 El dominio de $f$ estará dado por los puntos del espacio donde el radicando sea mayor o igual que cero.
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.w. Dominio ]
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.e. Dominio ]
 { \mathop{Dom}(f) = \{ (x,y,z) \in \Bbb R^3 / x^2 + y^2 \geq z^2 \} }
 \end{equation}
 
@@ -3946,7 +3946,34 @@ En cuanto a la continuidad, si se piensa $f$ como una composición de dos funcio
 \end{subequations}
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.e. Continuidad ]
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.e. Cont. ]
+{ f \in C^0(\mathop{Dom(f)}) }
+\end{equation}
+
+\subsubsection*{2.5.f}
+\label{subsubsec:2.5.f}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.5.f}}
+
+La única singularidad posible es $z = 0$. Por lo tanto:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.f. Dominio ]
+{ \mathop{Dom}(f) = \Bbb R^3 - \{ (x,y,z) \in \Bbb R^3 / z = 0 \} }
+\end{equation}
+
+Así, el dominio es todo el espacio salvo el plano $xy$. En cuanto a la continuidad, como en el inciso previo, es posible visualizar $f$ como una composición de funciones continuas:
+
+\begin{subequations}
+\begin{align}
+& f = g \circ h_1 \circ h_2 / f(x,y,z) = g(x, y, h_1(h_2(z))) \\
+& h_2: \Bbb R \rightarrow \Bbb R / h_2(t) = \frac{1}{t}, \text{ continua en su dominio } (t \neq 0) \\
+& h_1: \Bbb R \rightarrow \Bbb R / h_1(t) = \sin{t}, \text{ continua en todo } \Bbb R \\
+& g: \Bbb R^3 \rightarrow \Bbb R / g(x,y,z) = xyz, \text{ continua por ser un simple producto }
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.f. Cont. ]
 { f \in C^0(\mathop{Dom(f)}) }
 \end{equation}
 
