@@ -3916,4 +3916,38 @@ Fuera de ese conjunto, donde $f$ tiende a infinito, $f$ es continua, de forma an
 { f \in C^0(\mathop{Dom(f)}) }
 \end{equation}
 
+\subsubsection*{2.5.e}
+\label{subsubsec:2.5.e}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.5.e}}
+
+El dominio de $f$ estará dado por los puntos del espacio donde el radicando sea mayor o igual que cero.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.w. Dominio ]
+{ \mathop{Dom}(f) = \{ (x,y,z) \in \Bbb R^3 / x^2 + y^2 \geq z^2 \} }
+\end{equation}
+
+Considerando que $x^2 + y^2 = z^2$ es la ecuación de un cono circular con inclinación unitaria centrado en el origen, el dominio de $f$ consiste en el exterior de ese cono. Esto puede verse más fácilmente observando los conjuntos de nivel:
+
+\begin{equation}
+C_k(\mathop{Dom}(f)) = \{ (x,y) \in \Bbb R^2 / x^2 + y^2 \geq k^2, k \in \Bbb R \}
+\end{equation}
+
+Para $z = k$, el conjunto de nivel es el exterior de una circunferencia de radio $k$ centrada en el origen. Para $k = 0$, esto se reduce al punto origen. Al estar $k$ elevado al cuadrado, el cono es simétrico respecto al plano $xy$: $C_k(\mathop{Dom(f)}) = C_{-k}(\mathop{Dom(f)})$.
+
+En cuanto a la continuidad, si se piensa $f$ como una composición de dos funciones continuas, se puede concluir que es continua en todo su dominio. La composición sería:
+
+\begin{subequations}
+\begin{align}
+& f = g \circ h / f(x,y,z) = g(h(x,y,z)) \\
+& h: \Bbb R^3 \rightarrow \Bbb R / h(x,y,z) = x^2 + y^2 - z^2, \text{ continua por ser un polinomio} \\
+& g: \Bbb R \rightarrow \Bbb R / g(t) = \sqrt{t}, \text{ continua en su dominio por ser una raíz cuadrada }
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.5.e. Continuidad ]
+{ f \in C^0(\mathop{Dom(f)}) }
+\end{equation}
+
 \end{document}
