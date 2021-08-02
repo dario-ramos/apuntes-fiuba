@@ -3977,4 +3977,45 @@ Así, el dominio es todo el espacio salvo el plano $xy$. En cuanto a la continui
 { f \in C^0(\mathop{Dom(f)}) }
 \end{equation}
 
+\subsection*{2.6}
+\label{subsec:2.6}
+\addcontentsline{toc}{subsection}{\nameref{subsec:2.6}}
+
+\textbf{Sean $f: \Bbb R^2 \rightarrow \Bbb R$ y $(a, b) \in \Bbb R^2$. Se definen $g$ y $h$ de $\Bbb R$ en $\Bbb R$ mediante $g(x) = f(x,b)$ y $h(y) = f(a,y)$.}
+
+\begin{enumerate}[(a)]
+\bfseries
+
+\item Estudiar las relaciones entre los gráficos de $h$ y $g$ y el gráfico de $f$.
+
+\item Si $f$ es continua en $(a,b)$, ¿es $g$ continua en $a$? ¿Es $h$ continua en $b$? Justificar.
+
+\item Si $f(x,y) = x^2 + y^3$ y $(a,b) = (1,2)$, hallar $g$ y $h$.
+
+\item Dar un ejemplo que muestre que $g$ puede ser continua en $a$ y $h$ en $b$, sin que $f$ sea continua en $(a,b)$. 
+
+\end{enumerate}
+
+\subsubsection*{2.6.a}
+\label{subsubsec:2.6.a}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.6.a}}
+
+Dado que $f$ es una función que va de $\Bbb R^2$ en $\Bbb R$, su gráfico es una superficie en $\Bbb R^3$:
+
+\begin{equation}
+\mathop{Graf}(f) = \{ (x,y,z) \in \Bbb R^3 / z = f(x,y), \text{ con } (x,y) \in \mathop{\Bbb R^2} \}
+\end{equation}
+
+Pensando en términos de conjuntos, los gráficos de $g$ y $h$ son subconjuntos de la imagen de $f$:
+
+\begin{subequations}
+\begin{align}
+\mathop{Im}(f) = \{ z \in \Bbb R / z = f(x,y) \text{ con } (x,y) \in \mathop{Dom}(f) \} \\
+\mathop{Graf}(g) = \{ z \in \Bbb R / z = f(x,y) \wedge y = b \text{ con } (x,b) \in \mathop{Dom}(f) \} \\
+\mathop{Graf}(h) = \{ z \in \Bbb R / z = f(x,y) \wedge x = a \text{ con } (a,y) \in \mathop{Dom}(f) \}
+\end{align}
+\end{subequations}
+
+Observando los gráficos definidos de esta forma, es evidente que, geométricamente, el gráfico de $g$ es la intersección entre la superficie $z = f(x,y)$ y el plano $y = b$. Así, para distintos valores de $b$, los gráficos de $g$ serán cortes del gráfico de $f$ con planos perpendiculares al eje $y$. Análogamente, el gráfico de $h$ será la intersección entre $z = f(x,y)$ y el plano $x = a$, con lo cual los gráficos de $h$ serán cortes del gráfico de $f$ con planos perpendiculares al eje $x$.
+
 \end{document}
