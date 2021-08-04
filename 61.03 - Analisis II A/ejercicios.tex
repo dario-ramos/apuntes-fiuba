@@ -4073,5 +4073,38 @@ h(y) = f(1,y) = 1 + y^3
 \end{array} }
 \end{equation}
 
+\subsubsection*{2.6.d}
+\label{subsubsec:2.6.d}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.6.d}}
+
+La forma más directa de generar un ejemplo es con una función por partes armada de tal manera que al evaluar $g$ y $h$ se obtengan constantes, que son funciones continuas. Por ejemplo, sea:
+
+\begin{subequations}
+\begin{align}
+& f(x,y) = \left\{ \begin{array}{ll}
+\frac{x}{y} \text{ si } y \neq 0 \\
+0 \text{ si } y = 0
+\end{array} \right. \\
+& (a,b) = (0,0)
+\end{align}
+\end{subequations}
+
+La función $f$ es discontinua en $(0,0)$. Una forma de demostrarlo es haciendo el límite usando la curva $y = m x$:
+
+\begin{equation}
+\lim_{x \rightarrow 0} \frac{x}{mx} = \frac{1}{m}
+\end{equation}
+
+El hecho de que el valor de este límite dependa del parámetro $m$ implica que no es único, y por ende no existe y $f$ no es continua en $(0,0)$. Sin embargo, evaluando las funciones $g$ y $h$ se obtiene:
+
+\begin{align}
+& g(x) = f(x,0) = 0 \\
+& h(y) = f(0,y) = \left\{ \begin{array}{ll}
+\frac{0}{y} = 0 \text{ si } y \neq 0 \\
+0 \text{ si } y = 0
+\end{array} \right. = 0
+\end{align}
+
+Tanto $g$ como $h$ son funciones constantes iguales a cero, y por ende continuas.
 
 \end{document}
