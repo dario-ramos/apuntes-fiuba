@@ -4140,4 +4140,33 @@ Observando la definición de $h$, es inmediato que su gráfico es un subconjunto
 
 Geométricamente, la curva del gráfico de $h$ es la proyección de la superficie $z = f(x,y)$ sobre la recta $(a,b) + t(\alpha,\beta)$ en el plano $xy$. Esto puede visualizarse en $\Bbb R^3$, graficando la recta, y los valores de cada uno de sus puntos a través de la función $f$.
 
+\subsubsection*{2.7.b}
+\label{subsubsec:2.7.b}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.7.b}}
+
+La idea del ejemplo utilizado en 2.6.d sirve también para este caso. Concretamente, sean:
+
+\begin{equation}
+f(x,y) = \left\{ \begin{array}{ll}
+\frac{x}{y} \text{ si } y \neq 0 \\
+\frac{\alpha}{\beta} \text{ si } y = 0
+\end{array} \right. \\
+(a,b) = (0,0)
+\end{equation}
+
+Como se demostró en 2.6.d, $f$ no es continua en $(a,b) = (0,0)$, porque el límite no existe. Y para este caso, $h(t)$ resulta:
+
+\begin{equation}
+h(t) = f((0,0) + t(\alpha, \beta)) = f(\alpha t, \beta t) = \left\{ \begin{array}{ll}
+\frac{\alpha t}{\beta t} \text{ si } \beta t \neq 0 \\
+\frac{\alpha}{\beta} \text{ si } \beta t = 0
+\end{array} \right. = \left\{ \begin{array}{ll}
+\frac{\alpha}{\beta} \text{ si } t \neq 0 \\
+\frac{\alpha}{\beta} \text{ si } t = 0
+\end{array} \right. = \frac{\alpha}{\beta}
+\end{equation}
+
+La función $h$ resulta entonces una constante, continua para todo $t$, a pesar de ser $f$ discontinua en $(a,b)$.
+
+
 \end{document}
