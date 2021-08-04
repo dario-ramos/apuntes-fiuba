@@ -4107,4 +4107,37 @@ El hecho de que el valor de este límite dependa del parámetro $m$ implica que 
 
 Tanto $g$ como $h$ son funciones constantes iguales a cero, y por ende continuas.
 
+\subsection*{2.7}
+\label{subsec:2.7}
+\addcontentsline{toc}{subsection}{\nameref{subsec:2.7}}
+
+\textbf{Sean $f: \Bbb R^2 \rightarrow \Bbb R$ y $(a, b) \in \Bbb R^2$. Fijado $(\alpha, \beta) \in \Bbb R^2$, se definen $h:\Bbb R \rightarrow \Bbb R / h(t) = f((a,b) + t(\alpha, \beta))$}
+
+\begin{enumerate}[(a)]
+\bfseries
+
+\item Estudiar la relación entre el gráfico de $h$ y el de $f$.
+
+\item Dar un ejemplo para mostrar que aún cuando para cada $(\alpha, \beta) \in \Bbb R^2$ $h$ resulte continua en 0, $f$ puede no ser continua en $(a,b)$.
+
+\item ¿Es cierto que si $f$ es continua en $(a,b)$ entonces $h$ es continua en 0?
+
+\end{enumerate}
+
+\subsubsection*{2.7.a}
+\label{subsubsec:2.7.a}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.7.a}}
+
+Observando la definición de $h$, es inmediato que su gráfico es un subconjunto del de $f$:
+
+\begin{subequations}
+\begin{align}
+& h(t) = f((a,b) + t(\alpha, \beta)) \Rightarrow \\
+& \mathop{Graf}(h) = \{ (x,y,z) \in \Bbb R^3 / (x,y) = (a,b) + t(\alpha, \beta) \wedge z = f(x,y), t \in \Bbb R \} \Rightarrow \\
+& \mathop{Graf}(h) \subseteq \mathop{Graf}(f)
+\end{align}
+\end{subequations}
+
+Geométricamente, la curva del gráfico de $h$ es la proyección de la superficie $z = f(x,y)$ sobre la recta $(a,b) + t(\alpha,\beta)$ en el plano $xy$. Esto puede visualizarse en $\Bbb R^3$, graficando la recta, y los valores de cada uno de sus puntos a través de la función $f$.
+
 \end{document}
