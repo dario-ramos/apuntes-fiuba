@@ -4168,5 +4168,19 @@ h(t) = f((0,0) + t(\alpha, \beta)) = f(\alpha t, \beta t) = \left\{ \begin{array
 
 La función $h$ resulta entonces una constante, continua para todo $t$, a pesar de ser $f$ discontinua en $(a,b)$.
 
+\subsubsection*{2.7.c}
+\label{subsubsec:2.7.c}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.7.c}}
+
+Analizando la continuidad de $h$ en 0 sin poner restricciones sobre $f$:
+
+\begin{subequations}
+\begin{align}
+& h(0) = f((a,b) + 0 (\alpha, \beta) ) = f(a,b) \\
+& \lim_{t \rightarrow 0} h(t) = \lim_{t \rightarrow 0} f((a,b) + t(\alpha, \beta)) = \lim_{t \rightarrow 0} f(a,b) = f(a,b)
+\end{align}
+\end{subequations}
+
+Lo único que se requiere entonces para que $h$ sea continua en 0, es que exista $f(a,b)$. La continuidad de $f$ en $(a,b)$ es una condición suficiente para la continuidad de $h$ en cero, pero no necesaria. Por ende, si $f$ es continua en $(a,b)$, $h$ es continua en 0.
 
 \end{document}
