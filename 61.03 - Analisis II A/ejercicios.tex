@@ -4183,4 +4183,69 @@ Analizando la continuidad de $h$ en 0 sin poner restricciones sobre $f$:
 
 Lo único que se requiere entonces para que $h$ sea continua en 0, es que exista $f(a,b)$. La continuidad de $f$ en $(a,b)$ es una condición suficiente para la continuidad de $h$ en cero, pero no necesaria. Por ende, si $f$ es continua en $(a,b)$, $h$ es continua en 0.
 
+\subsection*{2.8}
+\label{subsec:2.8}
+\addcontentsline{toc}{subsection}{\nameref{subsec:2.8}}
+
+\textbf{En los siguientes casos, definir si es posible una función $f$ continua en $\Bbb R^2$ que satisfaga las condiciones dadas.}
+
+\begin{enumerate}[(a)]
+\bfseries
+
+\item $f(x,y) = 0$ cuando $x^2 + y^2 < 1$, $f(x,y) = 1$ cuando $x^2 + y^2 > 2$. 
+
+\item $f(x,y) = 0$ cuando $x^2 + y^2 = 1$, $f(x,y) = 1$ cuando $x^2 + y^2/4 = 2$. 
+
+\item $f(x,y) = x-y$ cuando $x - y < 1$, $f(x,y) = (y-x)^2$ cuando $x - y > 1$. 
+
+\end{enumerate}
+
+\subsubsection*{2.8.a}
+\label{subsubsec:2.8.a}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.7.c}}
+
+Considerando que los sectores en los que está dividido el dominio de $f$ son circulares, lo más directo es definir el sector que falta a través de conjuntos de nivel que sean círculos cuyo radio varía de 1 a 2, para conectar de forma continua con los otros dos sectores. Analizando valores en ese rango, se puede ver cómo varía $z$ en base a $x$ e $y$:
+
+\begin{subequations}
+\begin{align}
+& x^2 + y^2 = 1 \Rightarrow z = 0 \text{, para ser continua con la rama } x^2 + y^2 < 1 \\
+& x^2 + y^2 = 2 \Rightarrow z = 1 \text{, para ser continua con la rama } x^2 + y^2 > 2 \\
+& x^2 + y^2 = r^2, 1 \leq r^2 \leq 2 \Rightarrow r^2 = z^2 + 1, 0 \leq z \leq 1
+\end{align}
+\end{subequations}
+
+De la última igualdad, se puede obtener $z$ en función de $x$ e $y$:
+
+\begin{equation}
+x^2 + y^2 = z^2 + 1 \Rightarrow \sqrt{x^2 + y^2 - 1} = \sqrt{z^2}
+\end{equation}
+
+Dado que en esta rama de la función $z$ es mayor o igual que cero, la raíz y el cuadrado en $z$ se cancelan directamente, sin considerar el módulo:
+
+\begin{equation}
+z = \sqrt{x^2 + y^2 - 1} \text{ si } 1 \leq x^2 + y^2 \leq 2
+\end{equation}
+
+Finalmente, la respuesta es que sí, puede hallarse una $f$ continua que satisfaga los requisitos. Son infinitas, pero una es:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.8.a]
+{
+f(x,y) = \left\{ \begin{array}{ll}
+0 \text{ si } x^2 + y^2 < 1 \\
+\sqrt{x^2 + y^2 - 1} \text{ si } 1 \leq x^2 + y^2 \leq 2 \\
+1 \text{ si } x^2 + y^2 > 2
+\end{array} \right.
+}
+\end{equation}
+
+\begin{figure}[ht]
+\caption{\textbf{2-8-a}}
+\includegraphics[scale=0.4]{img/ejercicios/2/8-a.png} 
+\centering
+\label{fig:2-8-a}
+\end{figure}
+
+Obsérvese la figura \ref{fig:2-8-a}. El gráfico de $f$ resulta la unión entre el plano $z=1$ (amarillo) y el plano $z=0$ (rojo), con agujeros de radio 2 y 1 respectivamente, unidos por una sección cónica (amarillo).
+
 \end{document}
