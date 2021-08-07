@@ -4416,4 +4416,30 @@ Para haber usado este segundo método de entrada, había que demostrar que el l�
 }
 \end{equation}
 
+\subsubsection*{2.9.b}
+\label{subsubsec:2.9.b}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.9.b}}
+
+Aplicando la definición:
+
+\begin{subequations}
+\begin{align}
+& f(x,y,z) = \frac{xz}{y+z} \\
+& \frac{\partial f}{\partial x}(1,1,1) = \lim_{h \rightarrow 0} \frac{1}{h} \left( \frac{(1+h)}{1+1} - \frac{1}{2} \right) = \lim_{h \rightarrow 0} \frac{1}{h} \left( \frac{1 + h - 1}{2} \right) = \frac{1}{2} \\
+& \frac{\partial f}{\partial y}(1,1,1) = \lim_{h \rightarrow 0} \frac{1}{h} \left( \frac{1}{1+h+1} - \frac{1}{2} \right) = \lim_{h \rightarrow 0} \frac{1}{h} \left( \frac{2 - h - 2}{(h+2) 2} \right) = \lim_{h \rightarrow 0} \frac{-1}{(h+2)2} = -\frac{1}{4} \\
+& \frac{\partial f}{\partial z}(1,1,1) = \lim_{h \rightarrow 0} \frac{1}{h} \left( \frac{1+h}{1+1+h} - \frac{1}{2} \right) = \lim_{h \rightarrow 0} \frac{1}{h} \left( \frac{2+2h-h-2}{(h+2) 2} \right) = \frac{1}{4}
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.9.b]
+{
+\begin{array}{ll}
+& \frac{\partial f}{\partial x}(1,1,1) = \frac{1}{2} \\
+& \frac{\partial f}{\partial y}(1,1,1) = -\frac{1}{4} \\
+& \frac{\partial f}{\partial z}(1,1,1) = \frac{1}{4}
+\end{array}
+}
+\end{equation}
+
 \end{document}
