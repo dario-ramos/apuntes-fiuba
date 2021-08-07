@@ -4305,4 +4305,38 @@ Dado que al reemplazar $a(z)$ y $b(z)$ resulta imposible despejar $z$ como funci
 
 Sería adelantarse a los temas de la presente guía, pero siendo $F$ diferenciable, está garantizada la existencia de $f$ por el teorema de Cauchy-Dini. Por otro lado, el gráfico de $f$ es una especie de elipsoide cuyos semiejes crecen al crecer $z$, y decrecen al acercarse $z$ a $z_1$.
 
+\subsubsection*{2.8.c}
+\label{subsubsec:2.8.c}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.8.c}}
+
+El único conjunto de $\Bbb R^2$ donde $f$ no está definida es $x-y = 1$. Dado que las dos ramas que están definidas son continuas en todo $\Bbb R^2$, para que $f$ sea continua, ambas ramas deben tener el mismo valor punto a punto sobre $x-y = 1$. Evaluando dichas ramas en $x-y=1 \Leftrightarrow y = x-1$:
+
+\begin{subequations}
+\begin{align}
+& \text{Rama } x-y<1:  x-y|_{y = x-1}= x-(x-1) = x - x + 1 = 1 \\
+& \text{Rama } x-y>1:  (y-x)^2|_{y = x-1}= (x-1-x)^2 = (-1)^2 = 1
+\end{align}
+\end{subequations}
+
+Las dos ramas valen, punto a punto, sobre la curva $x-y = 1$, la constante 1. Por lo tanto, $f$ es continua si se extiende cualquiera de las dos ramas al caso $x-y = 1$, o si se define que $f$ vale 1 sobre esa curva. Por ejemplo:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.8.c]
+{
+f(x,y) = \left\{ \begin{array}{ll}
+x-y \text{ si } x-y \leq 1 \\
+(y-x)^2 \text{ si } x-y > 1
+\end{array} \right.
+}
+\end{equation}
+
+\begin{figure}[ht]
+\caption{\textbf{2-8-c}}
+\includegraphics[scale=0.4]{img/ejercicios/2/8-c.png} 
+\centering
+\label{fig:2-8-c}
+\end{figure}
+
+Graficando $f$ definida de esta manera (ver figura \ref{fig:2-8-c}), se confirma su continuidad: es la unión de un semiplano (azul) y una sección de superficie cuadrática (naranja).
+
 \end{document}
