@@ -4495,4 +4495,28 @@ f(x, y) &= \sin(x \sqrt{y}), P_0 = \left( \frac{\pi}{3}, 4 \right) \Rightarrow f
 }
 \end{equation}
 
+\subsubsection*{2.9.e}
+\label{subsubsec:2.9.e}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.9.e}}
+
+Aplicando la definición:
+
+\begin{subequations}
+\begin{align}
+& f(x, y) = (x^2 + y^2)^{-\frac{1}{2}}, P_0 = (-3, 4) \Rightarrow f(P_0) = \frac{1}{5} \\
+& \frac{\partial f}{\partial x}(-3, 4) = \lim_{h \rightarrow 0} \frac{[(-3+h)^2 + 16]^{-\frac{1}{2}} - \frac{1}{5} } {h} \overset{L'H}{=} \lim_{h \rightarrow 0} -\frac{1}{2} [(h-3)^2 + 16]^{-\frac{3}{2}} 2 (h-3) = 3 \cdot 25^{-\frac{3}{2}} \\
+& \frac{\partial f}{\partial y}(-3, 4) = \lim_{h \rightarrow 0} \frac{[9 + (4+h)^2]^{-\frac{1}{2}} - \frac{1}{5} } {h} \overset{L'H}{=} \lim_{h \rightarrow 0} -\frac{1}{2} [(h+4)^2 + 9]^{-\frac{3}{2}} 2 (h+4) = -4 \cdot 25^{-\frac{3}{2}}
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.9.e]
+{
+\begin{array}{ll}
+& \frac{\partial f}{\partial x}(-3, 4) = 3 \cdot 25^{-\frac{3}{2}} = 0,024 \\
+& \frac{\partial f}{\partial y}(-3, 4) = -4 \cdot 25^{-\frac{3}{2}} = -0,032
+\end{array}
+}
+\end{equation}
+
 \end{document}
