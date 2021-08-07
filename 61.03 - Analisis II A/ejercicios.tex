@@ -4470,4 +4470,29 @@ Nótese que se aplicó la regla de L'Hôpital en algunas indeterminaciones del t
 }
 \end{equation}
 
+\subsubsection*{2.9.d}
+\label{subsubsec:2.9.d}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.9.d}}
+
+Aplicando la definición:
+
+\begin{subequations}
+\begin{align}
+f(x, y) &= \sin(x \sqrt{y}), P_0 = \left( \frac{\pi}{3}, 4 \right) \Rightarrow f(P_0) = \frac{\sqrt{3}}{2} \\
+\frac{\partial f}{\partial x}\left( \frac{\pi}{3}, 4 \right) &= \lim_{h \rightarrow 0} \frac{\sin\left[ \left( \frac{\pi}{3} + h \right) 2 \right] - \frac{\sqrt{3}}{2}}{h} \overset{L'H}{=} \lim_{h \rightarrow 0} \frac{\cos\left[ 2 \left(h + \frac{\pi}{3} \right) 2 \right]}{1} = 2 \cos\left( \frac{2}{3} \pi \right) = -1 & \\
+\frac{\partial f}{\partial y}\left( \frac{\pi}{3}, 4 \right) &= \lim_{h \rightarrow 0} \frac{\sin\left( \frac{\pi}{3} \sqrt{4+h} \right) - \frac{\sqrt{3}}{2}}{h} \overset{L'H}{=} \lim_{h \rightarrow 0} = \lim_{h \rightarrow 0} \cos\left[ \frac{\pi}{3} (h+4)^{\frac{1}{2}} \right] \frac{d}{\mathop{dh}} \left[ \frac{\pi}{3} (h+4)^{\frac{1}{2}} \right] & \\
+&= \lim_{h \rightarrow 0} \cos\left[ \frac{\pi}{3} (h+4)^{\frac{1}{2}} \right] \frac{\pi}{3} \frac{1}{2} (h+4)^{-\frac{1}{2}} = -\frac{\pi}{24}
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.9.d]
+{
+\begin{array}{ll}
+& \frac{\partial f}{\partial x}\left( \frac{\pi}{3}, 4 \right) = -1 \\
+& \frac{\partial f}{\partial y}\left( \frac{\pi}{3}, 4 \right) = -\frac{\pi}{24}
+\end{array}
+}
+\end{equation}
+
 \end{document}
