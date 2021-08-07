@@ -4202,7 +4202,7 @@ Lo único que se requiere entonces para que $h$ sea continua en 0, es que exista
 
 \subsubsection*{2.8.a}
 \label{subsubsec:2.8.a}
-\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.7.c}}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.8.a}}
 
 Considerando que los sectores en los que está dividido el dominio de $f$ son circulares, lo más directo es definir el sector que falta a través de conjuntos de nivel que sean círculos cuyo radio varía de 1 a 2, para conectar de forma continua con los otros dos sectores. Analizando valores en ese rango, se puede ver cómo varía $z$ en base a $x$ e $y$:
 
@@ -4247,5 +4247,62 @@ f(x,y) = \left\{ \begin{array}{ll}
 \end{figure}
 
 Obsérvese la figura \ref{fig:2-8-a}. El gráfico de $f$ resulta la unión entre el plano $z=1$ (amarillo) y el plano $z=0$ (rojo), con agujeros de radio 2 y 1 respectivamente, unidos por una sección cónica (amarillo).
+
+\subsubsection*{2.8.b}
+\label{subsubsec:2.8.b}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.8.b}}
+
+Pensando de nuevo en términos de conjuntos de nivel, para $z = 0$ se tiene:
+
+\begin{equation}
+z = 0 \Rightarrow x^2 + y^2 = 1
+\end{equation}
+
+Para $z = 1$:
+
+\begin{equation}
+z = 1 \Rightarrow x^2 + \frac{y^2}{4} = 2 \Rightarrow \frac{x^2}{2} + \frac{y^2}{8} = 1
+\end{equation}
+
+Estos conjuntos de nivel no tienen puntos $(x,y)$ en común. La elipse de $z=1$ tiene semiejes $a = \sqrt{2} \approx 1,41$ y $b = \sqrt{8} \approx 2,82$, ambos mayores que el radio 1 de la circunferencia. Intuitivamente, existe al menos una superficie continua que une estas curvas. Teniendo en cuenta que la circunferencia es un caso particular de la elipse ($a=b$), se puede plantear los conjuntos de nivel de $f$ como elipses cuyos semiejes son funciones de $z$. 
+
+\begin{equation}
+\frac{x^2}{a(z)^2} + \frac{y^2}{b(z)^2} = 1
+\end{equation}
+
+Estas funciones $a(z)$ y $b(z)$ deben satisfacer:
+
+\begin{subequations}
+\begin{align}
+& a(0) = 1 \\
+& a(1) = \sqrt{2} \\
+& b(0) = 1 \\
+& b(1) = \sqrt{8}
+\end{align}
+\end{subequations}
+
+Con dos pares de puntos para cada una, lo más directo es definirlas como funciones lineales:
+
+\begin{subequations}
+\begin{align}
+& m_a = \frac{\sqrt{2}-1}{1-0} = \sqrt{2} - 1 \Rightarrow a(z) = (\sqrt{2}-1) z + 1 \\
+& m_b = \frac{\sqrt{8}-1}{1-0} = \sqrt{8} - 1 \Rightarrow b(z) = (\sqrt{8}-1) z + 1
+\end{align}
+\end{subequations}
+
+Dado que al reemplazar $a(z)$ y $b(z)$ resulta imposible despejar $z$ como función de $x$ e $y$, $f$ sólo puede ser definida de forma implícita. Para evitar problemas con los ceros de $a(z)$ y $b(z)$, se exige que $z$ sea mayor que el máximo de ambos, concretamente $z_1 = \frac{-1}{\sqrt{8}-1} \approx -0,546$.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.8.b]
+{
+\begin{array}{ll}
+& F(x,y,z) = \frac{x^2}{[(\sqrt{2}-1)z+1]^2} + \frac{y^2}{[(\sqrt{8}-1)z+1]^2} - 1 \\
+& Dom(F) = \{ (x, y, z) \in \Bbb R^3 / z > z_1 \} \\
+& z = f(x,y) / \mathop{Graf}(f) = C_0(F) = \{ (x,y,z) \in \Bbb R^3 / F(x,y,z) = 0 \} 
+\end{array}
+}
+\end{equation}
+
+Sería adelantarse a los temas de la presente guía, pero siendo $F$ diferenciable, está garantizada la existencia de $f$ por el teorema de Cauchy-Dini. Por otro lado, el gráfico de $f$ es una especie de elipsoide cuyos semiejes crecen al crecer $z$, y decrecen al acercarse $z$ a $z_1$.
 
 \end{document}
