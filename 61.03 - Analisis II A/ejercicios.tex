@@ -4339,4 +4339,81 @@ x-y \text{ si } x-y \leq 1 \\
 
 Graficando $f$ definida de esta manera (ver figura \ref{fig:2-8-c}), se confirma su continuidad: es la unión de un semiplano (azul) y una sección de superficie cuadrática (naranja).
 
+\subsection*{2.9}
+\label{subsec:2.9}
+\addcontentsline{toc}{subsection}{\nameref{subsec:2.8}}
+
+\textbf{En los siguientes casos, calcular las derivadas parciales de $f$ en el punto indicado.}
+
+\begin{enumerate}[(a)]
+\bfseries
+
+\item $f(x,y) = xy + x^2, P_0 = (2, 0)$
+
+\item $f(x,y,z) = xz / (y+z), P_0 = (1, 1, 1)$
+
+\item $f(x, y, z) = \ln(1 + e^{x+y^2 z}), P_0 = (0, 2, 0)$
+
+\item $f(x,y) = \sin(x \sqrt{y}), P_0 = (\pi/3, 4)$
+
+\item $f(x,y) = 1/\sqrt{x^2 + y^2}, P_0 = (-3, 4)$
+
+\item $f(x,y) = \left\{ \begin{array}{ll}
+\frac{2x^3 - y^3}{x^2 + 3y^2} \text{ si } (x,y) \neq (0,0) \\
+0 \text{ si } (x,y) = (0,0)
+\end{array} \right., P_0 = (0,0)$
+
+\item $f(x,y) = \left\{ \begin{array}{ll}
+\frac{x^2 - 2y^2}{x - y} \text{ si } (x,y) \neq (0,0) \\
+0 \text{ si } (x,y) = (0,0)
+\end{array} \right., P_0 = (0,0)$ 
+
+\item $f(x,y) = \left\{ \begin{array}{ll}
+0 \text{ si } xy \neq 0 \\
+1 \text{ si } xy = 0
+\end{array} \right., P_0 = (0,0)$
+
+\item $f(x,y) = \int_{x}^{y^2} \sin(\ln(1 + t^3)) \mathop{dt}, P_0 = (1,2)$
+
+\end{enumerate}
+
+\subsubsection*{2.9.a}
+\label{subsubsec:2.9.a}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.9.a}}
+
+Por definición, las derivadas parciales de un campo escalar de $n$ variables evaluadas en un punto son los siguientes límites, si existen:
+
+\begin{equation}
+\frac{\partial f}{\partial x_i}(P_0) = \lim_{h \rightarrow 0} \frac{f(P_0 + h e_i) - f(P_0)}{h}, e_i \in \Bbb R^n / e_j = 1 \text{ si } j = i, 0 \text{ en otro caso} 
+\end{equation}
+
+Aplicando a este caso:
+
+\begin{subequations}
+\begin{align}
+& f(x,y) = xy + x^2, P_0 = (2,0) \\
+& \frac{\partial f}{\partial x}(2,0) = \lim_{h \rightarrow 0} \frac{(2+h) 0 + (2+h)^2 - 4}{h} = \lim_{h \rightarrow 0} \frac{4 + 4h + h^2 - 4}{h} = \lim_{h \rightarrow 0} 4 + h = 4 \\
+& \frac{\partial f}{\partial y}(2,0) = \lim_{h \rightarrow 0} \frac{2 (0+h) + 2^2 - 4}{h} = \lim_{h \rightarrow 0} \frac{2h}{h} = 2
+\end{align}
+\end{subequations}
+
+Esto puede verificarse calculando las derivadas parciales de forma general y evaluando:
+
+\begin{align}
+& \frac{\partial f}{\partial x}(x,y) = y + 2x \Rightarrow \frac{\partial f}{\partial x}(2,0) = 4 \\
+& \frac{\partial f}{\partial y}(x,y) = x \Rightarrow \frac{\partial f}{\partial y}(2,0) = 2
+\end{align}
+
+Para haber usado este segundo método de entrada, había que demostrar que el límite existe para todo $(x,y)$, o determinar para cuáles no existe. Por simplicidad, se utilizará el primer método para el resto del ejercicio.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.9.a]
+{
+\begin{array}{ll}
+& \frac{\partial f}{\partial x}(2,0) = 4 \\
+& \frac{\partial f}{\partial y}(2,0) = 2
+\end{array}
+}
+\end{equation}
+
 \end{document}
