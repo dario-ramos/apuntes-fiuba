@@ -4573,4 +4573,33 @@ Aplicando la definición:
 }
 \end{equation}
 
+\subsubsection*{2.9.h}
+\label{subsubsec:2.9.h}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.9.h}}
+
+Aplicando la definición:
+
+\begin{subequations}
+\begin{align}
+& f(x, y) = \left\{ \begin{array}{ll}
+0 \text{ si } xy \neq 0 \\
+1 \text{ si } xy = 0
+\end{array} \right., P_0 = (0, 0) \Rightarrow f(P_0) = 1 \\
+& \frac{\partial f}{\partial x}(0, 0) = \lim_{h \rightarrow 0} \frac{f(0+h, 0)-f(0)}{h} = \lim_{h \rightarrow 0} \frac{1-1}{h} = 0 \\
+& \frac{\partial f}{\partial y}(0, 0) = \lim_{h \rightarrow 0} \frac{f(0, 0+h)-f(0)}{h} = \lim_{h \rightarrow 0} \frac{1-1}{h} = 0
+\end{align}
+\end{subequations}
+
+A priori, se podría pensar que $f$ es discontinua en $(0,0)$, pero no lo es, al menos en las direcciones de los ejes. La función $f$ vale 1 en el origen y a lo largo de los ejes $x$ e $y$, en donde $x$, $y$ o ambos son nulos.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.9.h]
+{
+\begin{array}{ll}
+& \frac{\partial f}{\partial x}(0, 0) = 0 \\
+& \frac{\partial f}{\partial y}(0, 0) = 0
+\end{array}
+}
+\end{equation}
+
 \end{document}
