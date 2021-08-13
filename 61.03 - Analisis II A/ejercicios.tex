@@ -4602,4 +4602,68 @@ A priori, se podría pensar que $f$ es discontinua en $(0,0)$, pero no lo es, al
 }
 \end{equation}
 
+\subsubsection*{2.9.i}
+\label{subsubsec:2.9.i}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.9.i}}
+
+\begin{equation}
+f(x, y) = \int_{x}^{y^2} \sin [ \ln ( 1 + t^3 ) ] \mathop{dt}, P_0 = (1, 2)
+\end{equation}
+
+El integrando puede no estar definido para ciertos valores de $t$. Específicamente, el argumento del logaritmo debe ser mayor a cero.
+
+\begin{equation}
+1 + t^3 > 0 \Rightarrow t^3 > -1 \Rightarrow t > -1
+\end{equation}
+
+Los argumentos de $f$ son los límites de integración; considerando el dominio del integrando, $y$ está elevado al cuadrado y por ende siempre es positivo. En cambio, $x$ debe ser mayor a -1. Ergo:
+
+\begin{equation}
+\mathop{Dom}(f) = \{ (x,y) \in \Bbb R^2 / x > -1 \}
+\end{equation}
+
+El punto $P_0$ pertenece entonces al dominio de $f$. Al intentar evaluar $f(P_0)$, se concluye que la primitiva del integrando no es trivial, y un cálculo numérico determina que $f(1,2) = K_0 \approx 0,64960$. Aplicando entonces la definición para las derivadas parciales:
+
+\begin{equation}
+\frac{\partial f}{\partial x}(1,2) = \lim_{h \rightarrow 0} \frac{ \int_{1+h}^4 \sin[ \ln(1 + t^3) ] \mathop{dt} - f(1,2) }{h} 
+\end{equation}
+
+Antes de aplicar la regla de L'Hopital a la indeterminación $\frac{0}{0}$, considérese, por el Teorema Fundamental del Cálculo:
+
+\begin{subequations}
+\begin{align}
+& g(t) = \sin[ \ln(1 + t^3) ] \text{ es acotada en el intervalo } [1,4] \Rightarrow \\
+& \int_a^t g(\tau) \mathop{d\tau} = G(t) + C \\
+& G'(t) = g(t)
+\end{align}
+\end{subequations}
+
+Siendo $g$ continua en $[1,4]$, vale entonces la regla de Barrow. Aplicando LHôpital, y recordando que se deriva respecto a la variable $h$:
+
+\begin{subequations}
+\begin{align}
+\frac{\partial f}{\partial x}(1,2) &= \lim_{h \rightarrow 0} \frac{G(4) - G(1+h) - K_0}{h} & \\
+&= \lim_{h \rightarrow 0} \frac{-G'(1+h) (1+h)'}{1} = -G'(1) = -g(1) = \sin( \ln 2 ) \approx 0,63896
+\end{align}
+\end{subequations}
+
+La misma idea sirve para calcular la derivada parcial en $y$:
+
+\begin{subequations}
+\begin{align}
+\frac{\partial f}{\partial x}(1,2) &= \lim_{h \rightarrow 0} \frac{ \int_{1}^{(2+h)^2} \sin[ \ln(1 + t^3) ] \mathop{dt} - K_0 }{h} = \lim_{h \rightarrow 0} \frac{G[(h+2)^2] - G(1) - K_0}{h} & \\
+&= \lim_{h \rightarrow 0} G'[(h+2)^2] 2 (h+2) = 4 G'(4) = 4 g(4) = 4 \sin( \ln 65 ) \approx -3.4349
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.9.i]
+{
+\begin{array}{ll}
+& \frac{\partial f}{\partial x}(1, 2) = \sin( \ln 2 ) \approx 0,63896 \\
+& \frac{\partial f}{\partial y}(1, 2) = 4 \sin( \ln 65 ) \approx -3.4349
+\end{array}
+}
+\end{equation}
+
 \end{document}
