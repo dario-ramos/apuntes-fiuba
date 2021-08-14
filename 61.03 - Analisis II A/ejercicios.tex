@@ -4341,7 +4341,7 @@ Graficando $f$ definida de esta manera (ver figura \ref{fig:2-8-c}), se confirma
 
 \subsection*{2.9}
 \label{subsec:2.9}
-\addcontentsline{toc}{subsection}{\nameref{subsec:2.8}}
+\addcontentsline{toc}{subsection}{\nameref{subsec:2.9}}
 
 \textbf{En los siguientes casos, calcular las derivadas parciales de $f$ en el punto indicado.}
 
@@ -4665,5 +4665,53 @@ La misma idea sirve para calcular la derivada parcial en $y$:
 \end{array}
 }
 \end{equation}
+
+\subsection*{2.10}
+\label{subsec:2.10}
+\addcontentsline{toc}{subsection}{\nameref{subsec:2.10}}
+
+\textbf{Hallar las derivadas de de segundo orden de:}
+
+\begin{enumerate}[(a)]
+\bfseries
+
+\item $\arctan \left( \frac{x}{y} \right)$
+
+\item $\sqrt{\frac{x^2}{a^2} + \frac{y^2}{b^2}}$
+
+\item $\ln(x^2 + y)$
+
+\end{enumerate}
+
+\subsubsection*{2.10.a}
+\label{subsubsec:2.10.a}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.10.a}}
+
+La función arco tangente, como función de una variable, es derivable, y su derivada $\left( \frac{1}{1+x^2} \right)$ también. Por ende, se espera que existan las derivadas parciales de primer y segundo orden, y se calculan de forma directa. Las derivadas de primer orden resultan entonces:
+
+\begin{subequations}
+\begin{align}
+& f_x(x,y) = \frac{\partial}{\partial x} \left[ \arctan \left( \frac{x}{y} \right) \right] = \frac{1}{1 + \left( \frac{x}{y} \right)^2} \frac{1}{y} = \frac{1}{ \left( 1 + \frac{x^2}{y^2} \right) y } = \frac{1}{y + \frac{x^2}{y}} \\
+& f_y(x,y) = \frac{\partial}{\partial y} \left[ \arctan \left( x y^{-1} \right) \right] = \frac{1}{1 + \left( \frac{x}{y} \right)^2 } \cdot x \cdot (-1) \cdot y^{-2} = \frac{-x}{x^2 + y^2}
+\end{align}
+\end{subequations}
+
+Y las de segundo orden:
+
+\begin{subequations}
+\begin{align}
+f_{xy}(x,y) &= \frac{\partial}{\partial y} \left[ (y + x^2 y^{-1})^{-1} \right] = (-1) (y + x^2 y^{-1})^{-2} [1 + x^2 (-1) y^{-2}] & \\
+&= (-1) \frac{1}{(y + \frac{x^2}{y})^2} \left( 1 - \frac{x^2}{y^2} \right) = \frac{\frac{x^2}{y^2} - 1}{ \left( \frac{x^2}{y} + y \right) \left( \frac{x^2}{y} + y \right) } \frac{y^2}{y^2} & \\
+&= \tcboxmath[colback=orange!25!white,colframe=orange,title=$f_{xy}$]{ \frac{x^2 - y^2}{(x^2 + y^2)^2} } & \\
+f_{yx}(x,y) &= \frac{\partial}{\partial x} \left[ (-x) (x^2 + y^2)^{-1} \right] = (-1) (x^2 + y^2)^{-1} + (-x) (-1) (x^2 + y^2)^{-2} 2x & \\
+&= \frac{-1}{x^2 + y^2} + \frac{2x^2}{ (x^2 + y^2)^2 } = \frac{(-1)(x^2 + y^2) + 2x^2}{(x^2 + y^2)^2} & \\
+&= \tcboxmath[colback=orange!25!white,colframe=orange,title=$f_{yx}$]{ \frac{x^2 - y^2}{(x^2 + y^2)^2} } & \\
+f_{xx}(x,y) &= \frac{\partial}{\partial x} \left[ \left( \frac{1}{y} x^2 + y \right)^{-1} \right] = (-1) \left( \frac{1}{y} x^2 + y \right)^{-2} \frac{1}{y} 2x = \frac{-2x}{\left( \frac{x^2}{y} + y \right)^2} & \\
+&= \frac{-2x}{ \left( \frac{x^2}{y} + y \right) \left( \frac{x^2}{y} + y \right) } \frac{y^2}{y^2} \\
+&= \tcboxmath[colback=orange!25!white,colframe=orange,title=$f_{xx}$]{ \frac{-2xy^2}{(x^2 + y^2)^2} } & \\
+f_{yy}(x,y) &= \frac{\partial}{\partial y} \left[ -x (y^2 + x^2)^{-1}  \right] = (-x) (-1) (y^2 + x^2)^{-2} 2y & \\
+&= \tcboxmath[colback=orange!25!white,colframe=orange,title=$f_{yy}$]{ \frac{2xy}{(x^2 + y^2)^2} }
+\end{align}
+\end{subequations}
 
 \end{document}
