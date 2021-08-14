@@ -4687,6 +4687,10 @@ La misma idea sirve para calcular la derivada parcial en $y$:
 \label{subsubsec:2.10.a}
 \addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.10.a}}
 
+\begin{equation}
+f(x,y) = \arctan \left( \frac{x}{y} \right)
+\end{equation}
+
 La función arco tangente, como función de una variable, es derivable, y su derivada $\left( \frac{1}{1+x^2} \right)$ también. Por ende, se espera que existan las derivadas parciales de primer y segundo orden, y se calculan de forma directa. Las derivadas de primer orden resultan entonces:
 
 \begin{subequations}
@@ -4711,6 +4715,40 @@ f_{xx}(x,y) &= \frac{\partial}{\partial x} \left[ \left( \frac{1}{y} x^2 + y \ri
 &= \tcboxmath[colback=orange!25!white,colframe=orange,title=$f_{xx}$]{ \frac{-2xy^2}{(x^2 + y^2)^2} } & \\
 f_{yy}(x,y) &= \frac{\partial}{\partial y} \left[ -x (y^2 + x^2)^{-1}  \right] = (-x) (-1) (y^2 + x^2)^{-2} 2y & \\
 &= \tcboxmath[colback=orange!25!white,colframe=orange,title=$f_{yy}$]{ \frac{2xy}{(x^2 + y^2)^2} }
+\end{align}
+\end{subequations}
+
+Nótese que $f_{xy}(x,y) = f_{yx}(x,y)$, lo cual era de esperarse por el Teorema de Schwartz.
+
+\subsubsection*{2.10.b}
+\label{subsubsec:2.10.b}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.10.b}}
+
+\begin{equation}
+f(x,y) = \left( \frac{x^2}{a^2} + \frac{y^2}{b^2} \right)^{\frac{1}{2}}
+\end{equation}
+
+En este caso, no hay problemas de continuidad. Utilizando el mismo enfoque del inciso anterior, las derivadas de primer orden son:
+
+\begin{subequations}
+\begin{align}
+& f_x(x,y) = \frac{\partial}{\partial x} \left[ \left( \frac{x^2}{a^2} + \frac{y^2}{b^2} \right)^\frac{1}{2} \right] = \frac{1}{2} \left( \frac{x^2}{y^2} + \frac{y^2}{b^2} \right)^{-\frac{1}{2}} \frac{1}{a^2} 2x = \frac{x}{a^2} \left( \frac{x^2}{a^2} + \frac{y^2}{b^2} \right)^{-\frac{1}{2}} \\
+& f_y(x,y) = \frac{\partial}{\partial y} \left[ \left( \frac{y^2}{b^2} + \frac{x^2}{a^2} \right)^\frac{1}{2} \right] = \frac{1}{2} \left( \frac{y^2}{b^2} + \frac{x^2}{a^2} \right)^{-\frac{1}{2}} \frac{1}{b^2} 2y = \frac{y}{b^2} \left( \frac{x^2}{a^2} + \frac{y^2}{b^2} \right)^{-\frac{1}{2}}
+\end{align}
+\end{subequations}
+
+Y las de segundo orden:
+
+\begin{subequations}
+\begin{align}
+f_{xy}(x,y) &= \frac{\partial}{\partial y} \left[ \frac{x}{a^2} \left( \frac{y^2}{b^2} + \frac{x^2}{a^2} \right)^{-\frac{1}{2}} \right] = \frac{x}{a^2} \frac{-1}{2} \left( \frac{x^2}{a^2} + \frac{y^2}{b^2}\right)^{-\frac{3}{2}} \frac{2y}{b^2} & \\
+&= \tcboxmath[colback=orange!25!white,colframe=orange,title=$f_{xy}$]{ \frac{-xy}{(ab)^2} \left( \frac{x^2}{a^2} + \frac{y^2}{b^2} \right)^{-\frac{3}{2}} } & \\
+f_{yx}(x,y) &= \frac{\partial}{\partial x} \left[ \frac{y}{b^2} \left( \frac{x^2}{a^2} + \frac{y^2}{b^2} \right)^{-\frac{1}{2}} \right] = \frac{y}{b^2} \frac{-1}{2} \left( \frac{x^2}{a^2} + \frac{y^2}{b^2}\right)^{-\frac{3}{2}} \frac{2x}{a^2} & \\
+&= \tcboxmath[colback=orange!25!white,colframe=orange,title=$f_{yx}$]{ \frac{-xy}{(ab)^2} \left( \frac{x^2}{a^2} + \frac{y^2}{b^2} \right)^{-\frac{3}{2}} } & \\
+f_{xx}(x,y) &= \frac{\partial}{\partial x} \left[ \frac{x}{a^2} \left( \frac{x^2}{a^2} + \frac{y^2}{b^2} \right)^{-\frac{1}{2}} \right] = \frac{1}{a^2} \left( \frac{x^2}{a^2} + \frac{y^2}{b^2} \right)^{-\frac{1}{2}} + \frac{x}{a^2} \frac{-1}{2} \left( \frac{x^2}{a^2} + \frac{y^2}{b^2} \right)^{-\frac{3}{2}} \frac{2x}{a^2} & \\
+&= \tcboxmath[colback=orange!25!white,colframe=orange,title=$f_{xx}$]{ \frac{1}{a^2} \left( \frac{x^2}{a^2} + \frac{y^2}{b^2} \right)^{-\frac{1}{2}} - \frac{x^2}{a^2} \left( \frac{x^2}{a^2} + \frac{y^2}{b^2} \right)^{-\frac{3}{2}} } & \\
+f_{yy}(x,y) &= \frac{\partial}{\partial y} \left[ \frac{y}{b^2} \left( \frac{x^2}{a^2} + \frac{y^2}{b^2} \right)^{-\frac{1}{2}} \right] = \frac{1}{b^2} \left( \frac{x^2}{a^2} + \frac{y^2}{b^2} \right)^{-\frac{1}{2}} + \frac{y}{b^2} \frac{-1}{2} \left( \frac{x^2}{a^2} + \frac{y^2}{b^2} \right)^{-\frac{3}{2}} \frac{2y}{b^2} & \\
+&= \tcboxmath[colback=orange!25!white,colframe=orange,title=$f_{yy}$]{ \frac{1}{b^2} \left( \frac{x^2}{a^2} + \frac{y^2}{b^2} \right)^{-\frac{1}{2}} - \frac{y^2}{b^2} \left( \frac{x^2}{a^2} + \frac{y^2}{b^2} \right)^{-\frac{3}{2}} }
 \end{align}
 \end{subequations}
 
