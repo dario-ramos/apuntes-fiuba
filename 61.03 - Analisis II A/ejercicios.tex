@@ -4881,4 +4881,75 @@ f_{yx}(0,0) &= \lim_{h \rightarrow 0} \frac{f_y(0+h, 0) - f_y(0,0)}{h} = \lim_{h
 
 Esto prueba que las derivadas cruzadas no coinciden en el origen. Por el teorema de Schwartz, si $f \in C^2$, $fxy$ y $fyx$ deben ser iguales punto a punto. Dado que esto no se cumple en el origen, necesariamente $f \notin C^2$.
 
+\subsection*{2.12}
+\label{subsec:2.12}
+\addcontentsline{toc}{subsection}{\nameref{subsec:2.12}}
+
+\textbf{Analizar la existencia de las derivadas direccionales en el origen de las siguientes funciones, y calcularlas:}
+
+\begin{enumerate}[(a)]
+\bfseries
+
+\item $f(x,y) = \left\{ \begin{array}{ll}
+x^2 - y &\text{ si } x > |y| \\
+x - y &\text{ si } x \leq |y|
+\end{array} \right.$
+
+\item $f(x,y) = \left\{ \begin{array}{ll}
+x^2 + y &\text{ si } x > 2y \\
+3 &\text{ si } x \leq 2y
+\end{array} \right.$
+
+\item $f(x,y,z) = \left\{ \begin{array}{ll}
+x+y+z &\text{ si } z^2 > x^2 + y^2 \wedge z > 0 \\
+0 &\text{ en otros casos }
+\end{array} \right.$
+
+\end{enumerate}
+
+\subsubsection*{2.12.a}
+\label{subsubsec:2.12.a}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.12.a}}
+
+Por definición, la derivada direccional en el punto $P_0$ es:
+
+\begin{equation}
+f'(P_0, \overrightarrow{v}) = \lim_{h \rightarrow 0} \frac{f(P_0 + h \overrightarrow{v}) - f(P_0)}{h}
+\end{equation}
+
+En este caso, $P_0 = (0,0) \Rightarrow f(P_0) = f(0,0) = 0 - 0 = 0$ (porque $0 \leq |0|$: el origen está en la segunda rama).
+
+Planteando el vector $\overrightarrow{v}$ en sus componentes: $\overrightarrow{v} = (v_x, v_y)$:
+
+\begin{subequations}
+\begin{align}
+f'(P_0, \overrightarrow{v}) &= \lim_{h \rightarrow 0} \frac{f((0,0) + h (v_x, v_y)) - f(0,0)}{h} \\
+&= \lim_{h \rightarrow 0} \frac{f(h v_x, h v_y)}{h}
+\end{align}
+\end{subequations}
+
+Caso I: $h v_x > |h v_y| \Leftrightarrow \frac{h}{|h|} v_x > |v_y| \overset{h > 0´}{\Leftrightarrow} v_x > |v_y|$
+
+\begin{equation}
+f'(P_0, \overrightarrow{v}) = \lim_{h \rightarrow 0} \frac{h^2 {v_x}^2 - h v_y}{h} = \lim_{h \rightarrow 0} h v_x - v_y = -v_y
+\end{equation}
+
+Caso II: $h v_x \leq |h v_y| \Leftrightarrow v_x \leq |v_y|$
+
+\begin{equation}
+f'(P_0, \overrightarrow{v}) = \lim_{h \rightarrow 0} \frac{h v_x - h v_y}{h} = v_x -v_y
+\end{equation}
+
+Finalmente:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.11.a]
+{
+f'((0,0), (v_x, v_y)) = \left\{ \begin{array}{ll}
+-v_y &\text{ si } v_x > |v_y| \\
+v_x - v_y &\text{ si } v_x \leq |v_y|
+\end{array} \right.
+}
+\end{equation}
+
 \end{document}
