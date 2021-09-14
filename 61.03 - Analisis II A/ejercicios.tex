@@ -4977,11 +4977,45 @@ f'(P_0, \overrightarrow{v}) = \lim_{h \rightarrow 0} \frac{3 -3}{h} = 0
 Finalmente:
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange,title=2.11.b]
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.12.b]
 {
 f'((0,0), (v_x, v_y)) = \left\{ \begin{array}{ll}
 \nexists &\text{ si } v_x > 2 v_y \\
 0 &\text{ si } v_x \leq 2 v_y
+\end{array} \right.
+}
+\end{equation}
+
+\subsubsection*{2.12.c}
+\label{subsubsec:2.12.c}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.12.c}}
+
+Por definición:
+
+\begin{equation}
+f'(P_0, \overrightarrow{v}) = \lim_{h \rightarrow 0} \frac{f(h v_x, h v_y, h v_z)-f(0,0,0)}{h} = \lim_{h \rightarrow 0} \frac{f(h v_x, h v_y, h v_z)}{h}
+\end{equation}
+
+Caso I: $(h v_z)^2 > (h v_x)^2 + (h v_y)^2 \wedge h v_z > 0 \overset{h >0}{\Leftrightarrow} v_z^2 > v_x^2 + v_y^2 \wedge v_z > 0$
+
+\begin{equation}
+f'(P_0, \overrightarrow{v}) = \lim_{h \rightarrow 0} \frac{h v_x + h v_y + h v_z}{h} = v_x + v_y + v_z
+\end{equation}
+
+Caso II: otros casos
+
+\begin{equation}
+f'(P_0, \overrightarrow{v}) = \lim_{h \rightarrow 0} \frac{0}{h} = 0
+\end{equation}
+
+Finalmente:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.12.c]
+{
+f'((0,0,0), (v_x, v_y, v_z)) = \left\{ \begin{array}{ll}
+v_x + v_y + v_z &\text{ si } v_z^2 > v_x^2 + v_y^2 \wedge v_z > 0 \\
+0 &\text{ en otros casos }
 \end{array} \right.
 }
 \end{equation}
