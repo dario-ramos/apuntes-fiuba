@@ -4952,4 +4952,38 @@ v_x - v_y &\text{ si } v_x \leq |v_y|
 }
 \end{equation}
 
+\subsubsection*{2.12.b}
+\label{subsubsec:2.12.b}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.12.b}}
+
+Por definición:
+
+\begin{equation}
+f'(P_0, \overrightarrow{v}) = \lim_{h \rightarrow 0} \frac{f(h v_x, h v_y)-f(0,0)}{h} = \lim_{h \rightarrow 0} \frac{f(h v_x, h v_y)-3}{h}
+\end{equation}
+
+Caso I: $h v_x > 2 h v_y \Leftrightarrow v_x > 2 v_y$
+
+\begin{equation}
+f'(P_0, \overrightarrow{v}) = \lim_{h \rightarrow 0} \frac{h^2{v_x}^2 + h v_y -3}{h} = \frac{-3}{0} = \nexists
+\end{equation}
+
+Caso II: $h v_x \leq 2 h v_y \Leftrightarrow v_x \leq 2 v_y$
+
+\begin{equation}
+f'(P_0, \overrightarrow{v}) = \lim_{h \rightarrow 0} \frac{3 -3}{h} = 0
+\end{equation}
+
+Finalmente:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.11.b]
+{
+f'((0,0), (v_x, v_y)) = \left\{ \begin{array}{ll}
+\nexists &\text{ si } v_x > 2 v_y \\
+0 &\text{ si } v_x \leq 2 v_y
+\end{array} \right.
+}
+\end{equation}
+
 \end{document}
