@@ -4928,7 +4928,7 @@ f'(P_0, \overrightarrow{v}) &= \lim_{h \rightarrow 0} \frac{f((0,0) + h (v_x, v_
 \end{align}
 \end{subequations}
 
-Caso I: $h v_x > |h v_y| \Leftrightarrow \frac{h}{|h|} v_x > |v_y| \overset{h > 0´}{\Leftrightarrow} v_x > |v_y|$
+Caso I: $h v_x > |h v_y| \Leftrightarrow \frac{h}{|h|} v_x > |v_y| \overset{h > 0}{\Leftrightarrow} v_x > |v_y|$
 
 \begin{equation}
 f'(P_0, \overrightarrow{v}) = \lim_{h \rightarrow 0} \frac{h^2 {v_x}^2 - h v_y}{h} = \lim_{h \rightarrow 0} h v_x - v_y = -v_y
@@ -5062,5 +5062,49 @@ y = -x + \sqrt{2} R
 \end{equation}
 
 Este resultado concuerda con que $\sigma$ es una circunferencia de radio $R$, y $t = \pi/4$ corresponde al punto asociado al ángulo $\pi/4$. La recta tangente tiene pendiente $-1$, lo cual corresponde a un ángulo de $-pi/4$. Geométricamente, tiene sentido.
+
+\subsection*{2.14}
+\label{subsec:2.14}
+\addcontentsline{toc}{subsection}{\nameref{subsec:2.14}}
+
+\textbf{Sea $C$ la curva dada por $\sigma(t) = (t^2, t^3 + 1, t^3-1), t \in [0, 4]$. Hallar la ecuación de su recta tangente y su plano normal en $t = 2$.}
+
+El punto correspondiente a $t = 2$ es:
+
+\begin{equation}
+\sigma(2) = (2^2, 2^3+1, 2^3-1) = (4, 9, 7)
+\end{equation}
+
+El vector tangente en $t = 2$ es:
+
+\begin{equation}
+\sigma'(t) = (2t, 3t^2, 3t^2) \Rightarrow \sigma'(2) = (2 \cdot 2, 3 \cdot 4, 3 \cdot 4) = (4, 12, 12)
+\end{equation}
+
+El vector tangente es el vector dirección de la recta tangente; con un punto por donde pase, queda determinada la ecuación vectorial de la recta tangente:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.14.a]
+{
+L_T : (4, 12, 12) t + (4, 9, 7)
+}
+\end{equation}
+
+El vector tangente es ortogonal al plano normal; por ende, su normal coincide con el vector tangente. Y dado que el punto $\sigma(2)$ pertenece al plano, satisface su ecuación y eso determina el parámetro $D$ faltante:
+
+\begin{subequations}
+\begin{align}
+& 4 (x - 4) + 12 (y - 9) + 12 (z - 7) = 0 \\
+& 4x - 16 + 12y - 108 + 12z - 84 = 0 \\
+& x + 3y +3z - 52 = 0
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.14.a]
+{
+\Pi_N : x + 3y + 3z - 52 = 0
+}
+\end{equation}
 
 \end{document}
