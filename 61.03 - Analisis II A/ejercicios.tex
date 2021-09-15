@@ -5020,4 +5020,47 @@ v_x + v_y + v_z &\text{ si } v_z^2 > v_x^2 + v_y^2 \wedge v_z > 0 \\
 }
 \end{equation}
 
+\subsection*{2.13}
+\label{subsec:2.13}
+\addcontentsline{toc}{subsection}{\nameref{subsec:2.13}}
+
+\textbf{Sea $C$ la curva dada por $\sigma(t) = (R \cos(t), R\sin(t)), t \in [0, 2\pi)$. Hallar la ecuación de su recta tangente en $t = \pi/4$.}
+
+Para una curva monoparamétrica como $\sigma$, la derivada componente a componente $\sigma'(t)$ representa el vector dirección de la recta tangente en el punto $\sigma(t)$. Para este caso, dado que ambas componentes son funciones derivables por ser seno y coseno, resulta:
+
+\begin{equation}
+\sigma'(t) = (-R \sin(t), R \cos(t)) \Rightarrow \sigma'\left( \frac{\pi}{4} \right) = \left( \frac{-\sqrt{2}}{2} R, \frac{\sqrt{2}}{2} R \right)
+\end{equation}
+
+Entonces, la ecuación vectorial de la recta tangente es:
+
+\begin{equation}
+L_T : \sigma'(\pi/4) t + P_0
+\end{equation}
+
+El punto $P_0$ es un punto cualquiera por el que pasa la recta. Se sabe que pasa por $\sigma(\pi/4) = (\sqrt{2}/2 R, \sqrt{2}/2 R)$. Ergo:
+
+\begin{subequations}
+\begin{align}
+L_T &: \left( \frac{-\sqrt{2}}{2} R, \frac{\sqrt{2}}{2} R \right) t + \left( \frac{\sqrt{2}}{2} R, \frac{\sqrt{2}}{2} R \right) \\
+x &= \frac{-\sqrt{2}}{2} R t + \frac{\sqrt{2}}{2} R \\
+y &= \frac{\sqrt{2}}{2} R t + \frac{\sqrt{2}}{2} R
+\end{align}
+\end{subequations}
+
+Sumando $x$ e $y$ miembro a miembro, se obtiene la ecuación clásica de la recta:
+
+\begin{equation}
+x + y = \sqrt{2} R
+\end{equation}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.13]
+{
+y = -x + \sqrt{2} R
+}
+\end{equation}
+
+Este resultado concuerda con que $\sigma$ es una circunferencia de radio $R$, y $t = \pi/4$ corresponde al punto asociado al ángulo $\pi/4$. La recta tangente tiene pendiente $-1$, lo cual corresponde a un ángulo de $-pi/4$. Geométricamente, tiene sentido.
+
 \end{document}
