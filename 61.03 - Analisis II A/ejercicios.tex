@@ -5069,6 +5069,10 @@ Este resultado concuerda con que $\sigma$ es una circunferencia de radio $R$, y 
 
 \textbf{Sea $C$ la curva dada por $\sigma(t) = (t^2, t^3 + 1, t^3-1), t \in [0, 4]$. Hallar la ecuación de su recta tangente y su plano normal en $t = 2$.}
 
+\subsubsection*{2.14.a}
+\label{subsubsec:2.14.a}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.14.a}}
+
 El punto correspondiente a $t = 2$ es:
 
 \begin{equation}
@@ -5106,5 +5110,43 @@ El vector tangente es ortogonal al plano normal; por ende, su normal coincide co
 \Pi_N : x + 3y + 3z - 52 = 0
 }
 \end{equation}
+
+\subsubsection*{2.14.b}
+\label{subsubsec:2.14.b}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.14.b}}
+
+Dado que tres puntos en $\Bbb R^3$ determinan un plano, tomando 3 puntos arbitrarios de la curva se obtiene:
+
+\begin{subequations}
+\begin{align}
+& P = \sigma(0) = (0, 1, -1) \\
+& Q = \sigma(1) = (1, 2, 0) \\
+& R = \sigma(2) = (4, 9, 7) \\
+& \overrightarrow{N} = \overrightarrow{PQ} \times \overrightarrow{QR} = (Q-P) \times (R-Q) = (1, 1, 1) \times (3, 7, 7) = (0, -4, 4)
+\end{align}
+\end{subequations}
+
+Conocido $\overrightarrow{N}$, se puede obtener la ecuación del plano evaluando un punto conocido, por ejemplo $P$:
+
+\begin{subequations}
+\begin{align}
+& 0 (x-0) -4 (y-1) + 4 (z+1) = 0 \\
+& -4y +4 + 4z + 4 = 0 \\
+& -y + 1 + z + 1 = 0
+& \Pi: -y + z + 2 = 0
+\end{align}
+\end{subequations}
+
+Ahora bien, para que la curva $C$ sea plana, sus puntos deben pertenecer al plano $\Pi$ para todo valor de $t$ en el intervalo $[0,4]$:
+
+\begin{subequations}
+\begin{align}
+& -y(t) + z(t) + 2 = 0 \\
+& -t^3-1 +t^3-1 + 2 = 0\\
+0 = 0
+\end{align}
+\end{subequations}
+
+Dado que $\sigma(t)$ satisface la ecuación del plano $\Pi$ para todo valor de $t$, la curva completa está contenida en el plano, o en otras palabras, es plana.
 
 \end{document}
