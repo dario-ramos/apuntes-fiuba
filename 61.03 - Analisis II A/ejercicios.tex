@@ -5311,4 +5311,79 @@ L_T: (-1, 1, 0) \alpha + (1, 1, 2)
 }
 \end{equation}
 
+\subsection*{2.16}
+\label{subsec:2.16}
+\addcontentsline{toc}{subsection}{\nameref{subsec:2.16}}
+
+\textbf{Resolver los siguientes problemas:}
+
+\begin{enumerate}[(a)]
+\bfseries
+
+\item Una abeja vuela ascendiendo a lo largo de la curva intersección de $z = x^4 + xy^3 + 12$ con $x = 1$. En el punto $(1, -2, 5)$ sigue a lo largo de la tangente. ¿Dónde cruza la abeja el plano $y = 1$?
+
+\item Una partícula se mueve en el plano de manera que su posición al tiempo $t$ es $r(t) = (t - \sin(t), 1 - \cos(t))$. Hallar los máximos de los módulos de su velocidad y su aceleración. Dibujar aproximadamente la trayectoria y los vectores velocidad y aceleración.
+
+\item Una partícula se mueve a lo largo de la parte superior de la parábola de ecuación $y^2 = 2x$ de izquierda a derecha con rapidez de 5 unidades por segundo. ¿Cuál es su vector velocidad al pasar por $(2,2)$?
+
+\end{enumerate}
+
+\subsubsection*{2.16.a}
+\label{subsubsec:2.16.a}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.16.a}}
+
+La trayectoria puede considerarse un sistema de ecuaciones:
+
+\begin{equation}
+\left\{ \begin{array}{ll}
+z = x^4 + xy^3 + 12 \\
+x = 1
+\end{array} \right.
+\end{equation}
+
+Reemplazando la segunda ecuación en la primera, resulta:
+
+\begin{equation}
+z = 1 + y^3 + 12 \Rightarrow z = y^3 + 13
+\end{equation}
+
+La coordenada $x$ está fija en 1, la coordenada $y$ está libre, y la coordenada $z$ depende de la coordenada $y$. Entonces, puede parametrizarse la trayectoria según:
+
+\begin{equation}
+r(t) = (1, t, t^3 + 13)
+\end{equation}
+
+Para analizar la tangente en el punto $(1, -2, 5)$ es necesario saber a qué valor $t_0$ corresponde.
+
+\begin{equation}
+(1, t_0, t_0^3+13) = (1, -2, 5) \Rightarrow t_0 = -2
+\end{equation}
+
+Conocido $t_0$, puede evaluarse el vector tangente en dicho punto a través de $r'(t)$.
+
+\begin{equation}
+r'(t) = (0, 1, 3t^2) \Rightarrow r'(t_0) = (0, 1, 12)
+\end{equation}
+
+La recta tangente en $(1, -2, 5)$ es entonces:
+
+\begin{equation}
+L_T: (0, 1, 12) \alpha + (1, 2, -5)
+\end{equation}
+
+Para calcular la intersección de esta recta con el plano $y = 1$, basta con igualar su coordenada $y$ a 1 y calcular $\alpha_0$:
+
+\begin{equation}
+(x(\alpha), y(\alpha), z(\alpha)) = (1, \alpha+2, 12\alpha-5)
+\end{equation}
+
+Si $y(\alpha) = 1 \Rightarrow 1 = \alpha + 2 \Rightarrow \alpha = -1$; reemplazando dicho valor de $\alpha$ en las otras coordenadas, se obtiene el punto intersección buscado:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.16.a]
+{
+Q = (1, 1, -17)
+}
+\end{equation}
+
 \end{document}
