@@ -5224,11 +5224,9 @@ Para calcular la recta tangente en $P_0$ es necesario hallar el valor del parám
 
 Conocido $t_0$, puede obtenerse el vector dirección de la recta tangente evaluando $\sigma'(t_0)$:
 
-\begin{subequations}
-\begin{align}
+\begin{equation}
 \sigma'(t) = (-\sin(t), \cos(t), 0) \Rightarrow \sigma'(t_0) = (-1, 0, 0)
-\end{align}
-\end{subequations}
+\end{equation}
 
 Resulta entonces la recta tangente en $P_0$:
 
@@ -5236,6 +5234,40 @@ Resulta entonces la recta tangente en $P_0$:
 \tcboxmath[colback=orange!25!white,colframe=orange,title=2.15.a]
 {
 L_T: (-1, 0, 0) \alpha + (0, 1, 1)
+}
+\end{equation}
+
+\subsubsection*{2.15.b}
+\label{subsubsec:2.15.b}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.15.b}}
+
+La segunda ecuación pone $x$ en función de $y$ al establecer que $x = y^2$. Reemplazando eso en la primera ecuación, resulta $z = y^2 + y^2 = 2y^2$. Dado que $x$ y $z$ dependen sólo de $y$, $y$ puede hacer las veces de parámetro:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.15.b]
+{
+\sigma(t) = (t^2, t, 2t^2), t \in \Bbb R
+}
+\end{equation}
+
+Para hallar la recta tangente en $P_0$, es necesario hallar el valor $t_0$ que satisfaga $\sigma(t_0) = P_0$.
+
+\begin{equation}
+(t_0^2, t_0, 2t_0^2) = (4, 2, 8) \Rightarrow t_0 = 2
+\end{equation}
+
+Conocido $t_0$, puede obtenerse el vector dirección de la recta tangente evaluando $\sigma'(t_0)$:
+
+\begin{equation}
+\sigma'(t) = (2t, 1, 4t) \Rightarrow \sigma'(t_0) = (4, 1, 8)
+\end{equation}
+
+Resulta entonces la recta tangente en $P_0$:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.15.b]
+{
+L_T: (4, 1, 8) \alpha + (4, 2, 8)
 }
 \end{equation}
 
