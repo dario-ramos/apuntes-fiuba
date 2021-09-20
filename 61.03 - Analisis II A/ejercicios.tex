@@ -5386,4 +5386,101 @@ Q = (1, 1, -17)
 }
 \end{equation}
 
+\subsubsection*{2.16.b}
+\label{subsubsec:2.16.b}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.16.b}}
+
+La velocidad es la derivada primera de la trayectoria, y la aceleración es la derivada segunda. Ergo:
+
+\begin{subequations}
+\begin{align}
+r(t) &= (t - \sin(t), 1 - \cos()t) \\
+v(t) &= r'(t) = (1 - \cos(t), \sin(t)) \\
+a(t) &= r''(t) = v'(t) = (\sin(t), \cos(t))
+\end{align}
+\end{subequations}
+
+El módulo de la velocidad es entonces la siguiente función del tiempo:
+
+\begin{equation}
+||v(t)|| = \sqrt{(1-\cos(t))^2 + \sin^2(t)}
+\end{equation}
+
+Maximizar la raíz equivale a maximizar el radicando, por lo tanto maximizar $||v(t)||$ equivale a maximizar:
+
+\begin{equation}
+f(t) = (1- \cos(t))^2 + \sin^2(t)
+\end{equation}
+
+Expandiendo el binomio:
+
+\begin{subequations}
+\begin{align}
+f(t) &= 1 - 2\cos(t) + \underbrace{\cos^2(t) + \sin^2(t)}_{1} \\
+&= 2 - 2 \cos(t) \\
+f'(t) &= 2 \sin(t) \\
+f''(t) &= 2 \cos(t)
+\end{align}
+\end{subequations}
+
+Los ceros de $f'(t)$ son $t_k = k\pi, k \in \Bbb Z$. Para ver qué tipo de extremo son, es necesario evaluar $f''(t_k)$. Recuérdese que si $f'(t_i) = 0 \wedge f''(t_i) < 0$, entonces en $t_i$ hay un máximo local; si es mayor a cero, es un mínimo local, y si es cero, no se sabe (se requiere más información).
+
+\begin{equation}
+f''(t_k) = 2 \cos(k\pi) = \left\{ \begin{array}{ll}
+1 \text{ si } k \text{ es par} \\
+-1 \text{ si } k \text{ es impar}
+\end{array} \right.
+\end{equation}
+
+El vector velocidad es máximo en los puntos:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.16.b]
+{
+t_k = (2k+1) \pi, k \in \Bbb Z
+}
+\end{equation}
+
+En cuanto a la aceleración, $||a(t)|| = \sqrt{\sin^2(t) + \cos^2(t)} = 1$.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.16.b]
+{
+||a(t)|| = \mathop{cte} = 1
+}
+\end{equation}
+
+Para graficar, obsérvese que todas las expresiones tienen senos y cosenos de período $2\pi$; por ende, se elige $\pi/2$ como incremento para las tablas de valores.
+
+\begin{center}
+\begin{tabular}{||c c c c||} 
+ \hline
+ t & r(t) & v(t) & a(t) \\ [0.5ex] 
+ \hline\hline
+ 0 & (0,0) & (0,0) & (1,0) \\ 
+ \hline
+ $\pi/2$ & (0.6, 1.0) & (1,1) & (1,0) \\
+ \hline
+ $\pi$ & (3.1, 2.0) & (2,0) & (0,-1) \\
+ \hline
+ $3 \pi/2$ & (5.7, 1) & (1,-1) & (-1,0) \\
+ \hline
+ $2 \pi$ & (6.3, 0) & (0,0) & (0,1) \\
+ \hline
+ $5 \pi/2$ & (6.8, 1) & (1,1) & (1,0) \\
+ \hline
+ $3 \pi$ & (9.4, 2) & (2,0) & (0,-1) \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+
+Se observa que lo único que no es $2\pi$-periódico es la componente $x$ de $r(t)$, por su término lineal. Pero todo lo demás se repite cada $2\pi$. Gráficamente:
+
+\begin{figure}[ht]
+\caption{Trayectoria, velocidad y aceleración}
+\includegraphics[scale=1]{img/ejercicios/2/16-b.png} 
+\centering
+\label{fig:2-16-b}
+\end{figure}
+
 \end{document}
