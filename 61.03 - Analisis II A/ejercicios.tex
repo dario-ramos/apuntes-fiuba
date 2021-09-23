@@ -5483,4 +5483,138 @@ Se observa que lo único que no es $2\pi$-periódico es la componente $x$ de $r(
 \label{fig:2-16-b}
 \end{figure}
 
+\subsubsection*{2.16.c}
+\label{subsubsec:2.16.c}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:2.16.c}}
+
+La distancia recorrida sobre la curva desde $t=a$ (posición inicial) al tiempo $t$ (posición final), llámese $s(t)$, puede calcularse como:
+
+\begin{equation}
+s(t) = \int_{a}^t ||r'(\tau)|| \mathop{d\tau}
+\end{equation}
+
+En esta expresión, $r(t) = (x(t), y(t))$ es la trayectoria. No tiene que ser necesariamente bidimensional; esto vale para $\Bbb R^n$. Para el caso particular en que la velocidad es de módulo constante, la distancia es el producto del módulo de la velocidad por el tiempo: $s(t) = v t$. Expandiendo la norma de $r'(t)$, resulta:
+
+\begin{equation}
+s(t) = v t = \int_{a}^t \sqrt{ \left( \frac{\mathop{dx}}{\mathop{d\tau}} \right)^2 + \left( \frac{\mathop{dy}}{\mathop{d\tau}} \right)^2 } \mathop{d\tau}
+\end{equation}
+
+Para el caso en que una coordenada es función de la otra, esta expresión puede simplificarse. Por ejemplo, si $y = f(x)$, por la regla de la cadena resulta:
+
+\begin{equation}
+v t = \int_{a}^t \sqrt{ \left( \frac{\mathop{dx}}{\mathop{d\tau}} \right)^2 + \left( \frac{\mathop{df}}{\mathop{dx}} \frac{\mathop{dx}}{\mathop{d\tau}} \right)^2 } \mathop{d\tau}
+\end{equation}
+
+Sacando factor común $\left( \frac{\mathop{dx}}{\mathop{d\tau}} \right)^2$:
+
+\begin{equation}
+v t = \int_{a}^t \sqrt{ \left( \frac{\mathop{dx}}{\mathop{d\tau}} \right)^2 \left[ 1 + \left( \frac{\mathop{df}}{\mathop{dx}} \right)^2\right] } \mathop{d\tau}
+\end{equation}
+
+El factor $\left[ 1 + \left( \frac{\mathop{df}}{\mathop{dx}} \right)^2\right]$ no depende de la variable de integración $\tau$, por lo tanto puede salir de la integral:
+
+\begin{subequations}
+\begin{align}
+v t &= \sqrt{ \left[ 1 + \left( \frac{\mathop{df}}{\mathop{dx}} \right)^2\right] } \int_{a}^t \sqrt{ \left( \frac{\mathop{dx}}{\mathop{d\tau}} \right)^2 } \mathop{d\tau} \\
+&= \sqrt{ \left[ 1 + \left( \frac{\mathop{df}}{\mathop{dx}} \right)^2\right] } \int_{a}^t \frac{\mathop{dx}}{\mathop{d\tau}} \mathop{d\tau}
+\end{align}
+\end{subequations}
+
+Sin perder de vista que $x$ es una función del tiempo, la integral de $\frac{\mathop{dx}}{\mathop{d\tau}}$ es $x(\tau)$, por lo cual:
+
+\begin{equation}
+v t = \sqrt{ \left[ 1 + \left( \frac{\mathop{df}}{\mathop{dx}} \right)^2\right] } (x(t) - x(a))
+\end{equation}
+
+Cambiando la notación $x(t)$ a $x$, sin perder de vista que es una función del tiempo, y asumiendo $x(a) = 0$ para simplificar, resulta:
+
+\begin{equation}
+v t = \sqrt{ 1 + [f'(x)]^2 } x
+\end{equation}
+
+Si en esta expresión se puede despejar algebraicamente $x$ como función de $t$, luego es trivial hallar $y(t) = f(x(t))$. Con ello se obtiene una expresión cerrada para $r(t)$. Puede ocurrir que no haya solución cerrada para $x(t)$ o la coordenada elegida. Si con todas las coordenadas ocurre lo mismo, sólo queda como opción resolver numéricamente.
+
+Para este caso particular, $v = 5$, y $2x = y^2 \Rightarrow y = \sqrt{2} x^{\frac{1}{2}}$. No se toma módulo para $y$ porque el enunciado dice que se recorre la rama superior, que corresponde a $y > 0$. Resulta entonces la relación $y = f(x)$ para este caso:
+
+\begin{align}
+y = f(x) = \sqrt{2} x^{\frac{1}{2}} \Rightarrow f'(x) = \sqrt{2} \frac{1}{2} x^{-\frac{1}{2}} = \frac{\sqrt{2}}{2} x^{-\frac{1}{2}}
+\end{align}
+
+Reemplazando:
+
+\begin{subequations}
+\begin{align}
+5t &= \sqrt{1 + \left( \frac{\sqrt{2}}{2} x^{-\frac{1}{2}} \right)^2} x \\
+5t &= \sqrt{1 + \frac{1}{2} x^{-1}} x
+\end{align}
+\end{subequations}
+
+Elevando al cuadrado miembro a miembro (no se toma módulo porque al estar en la parte superior de la curva, $x > 0$ y por ende el radicando también es positivo):
+
+\begin{subequations}
+\begin{align}
+25t^2 &= \left(1 + \frac{1}{2} x^{-1} \right) x^2 \\
+25t^2 &= x^2 + \frac{1}{2} x \\
+0 &= x^2 + \frac{1}{2} x - 25t^2
+\end{align}
+\end{subequations}
+
+Resulta una ecuación cuadrática con $a = 1$, $b = \frac{1}{2}$ y $c = -25t^2$. El discriminante es:
+
+\begin{equation}
+\Delta = b^2 - 4ac = \frac{1}{4} - 4 (-25 t^2) = \frac{1 + 400 t^2}{4} > 0
+\end{equation}
+
+Hay dos soluciones posibles, pero sólo una cumple $x(t) \geq 0 \forall t \geq 0$, y es la que suma la raíz del discriminante.
+
+\begin{subequations}
+\begin{align}
+x &= \frac{1}{2} (-b + \sqrt{\Delta}) = \frac{1}{2} \left( -\frac{1}{2} + \frac{\sqrt{400t^2 + 1}}{2} \right) \\
+x(t) &= \frac{1}{4} (400t^2 + 1)^\frac{1}{2} - \frac{1}{4}
+\end{align}
+\end{subequations}
+
+Conocido $x(t)$, puede obtenerse $y(t) = \sqrt{2} \sqrt{x}$:
+
+\begin{equation}
+y(t) = \sqrt{2} \left[ \frac{1}{4} (400t^2 + 1)^\frac{1}{2} - \frac{1}{4} \right]^\frac{1}{2}
+\end{equation}
+
+Antes de continuar, vale la pena calcular las derivadas $x'(t)$ e $y'(t)$ para verificar si satisfacen que $||r'(t)|| = ||(x'(t), y'(t))|| = 5$. Aplicando la regla de la cadena:
+
+\begin{subequations}
+\begin{align}
+x'(t) &= \frac{1}{4} \frac{1}{2} (400t^2 + 1)^{-\frac{1}{2}} 800t \\
+&= 100t (400t^2 + 1)^{-\frac{1}{2}} \\
+y'(t) &= \sqrt{2} \frac{1}{2} x(t)^{-\frac{1}{2}} x'(t) \\
+&= \sqrt{2} \frac{1}{2} \left[ \frac{1}{4} (400t^2 + 1)^{\frac{1}{2}} - \frac{1}{4} \right]^{-\frac{1}{2}} 100t (400t^2 + 1)^{-\frac{1}{2}} \\
+&= 50 \sqrt{2} t \left\{ \left[ \frac{1}{4} (400t^2 + 1)^{\frac{1}{2}} - \frac{1}{4} \right] (400t^2 + 1) \right\}^{-\frac{1}{2}} \\
+&= 100 \sqrt{2} t \left[ (400t^2 + 1)^{\frac{3}{2}} - (400t^2 + 1) \right]^{-\frac{1}{2}}
+\end{align}
+\end{subequations}
+
+Es muy engorroso demostrar algebraicamente que $x'(t)^2 + y'(t)^2 = 25 \forall t > 0$, pero numéricamente se verifica, con Octave por ejemplo.
+
+Verificados $x(t)$ e $y(t)$, el próximo paso es hallar el valor $t_0$ que satisface $r(t_0) = (2, 2)$. Siendo más sencilla la expresión de $x(t)$, se calcula a través de ella y se verifica con $y(t)$.
+
+\begin{align}
+2 &= \frac{1}{4} (400 t_0^2 + 1)^{\frac{1}{2}} - \frac{1}{4} \\
+\frac{9}{4} &= \frac{1}{4} (400 t_0^2 + 1)^{\frac{1}{2}} \\
+9^2 &= 400 t_0^2 + 1 \\
+\frac{81-1}{400} &= t_0^2 \\
+\frac{1}{5} &= t_0^2 \\
+\sqrt{\frac{1}{5}} &= t_0 = \frac{\sqrt{5}}{5}
+\end{align}
+
+Se omite la verificación de $y(t_0) = 2$ por brevedad, pero se cumple. Finalmente, el vector velocidad en el punto $(2,2)$ es simplemente $r'(t_0)$:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2.16.c]
+{
+v(t_0) = r'(t_0) \approx (4.9690, 2.4845)
+}
+\end{equation}
+
+La norma de este vector es aproximadamente $5.5$, en lugar de 5 como cabría esperar. A esta altura no se supone que se manejen conceptos de análisis numérico, pero las expresiones de $x'(t)$ e $y'(t)$ son numéricamente inestables para valores pequeños como $t_0$, por contener restas de números similares y potencias. Eso causa la discrepancia en la norma y podría paliarse re-escribiendo las cuentas para evaluarlas de manera que no propaguen tanto el error de redondeo, pero eso excede los contenidos de esta materia. El concepto importante de este ejercicio es la aplicación de la regla de la cadena para simplificar el cálculo de la distancia recorrida sobre la curva; si sólo se planteara que $r'(t)$ tiene norma constante igual a 5 y la relación entre $x(t)$ e $y(t)$ dada por la curva, se llegaría a una ecuación diferencial no lineal sin solución cerrada.
+
 \end{document}
