@@ -1246,6 +1246,61 @@ Por ejemplo, para $f(x) = 2x$, un intervalo de ancho $a$ en el eje x es mapeado 
 \end{gather}
 \end{subequations}
 
+\subsection{Parametrización a velocidad constante para curvas}
+
+Dada una curva $C$ en el espacio, es de interés hallar una parametrización de velocidad constante. Vale decir, hallar:
+
+\begin{equation}
+r(t) = (x_1(t), x_2(t), \ldots, x_n(t))
+\end{equation}
+
+Esta parametrización $r(t)$ debe seguir la trayectoria de $C$ y a la vez cumplir que la norma del vector velocidad sea constante punto a punto, vale decir $||r'(t)|| = k, k \in \Bbb R$. De manera general, si la curva comienza en $t = a$, la distancia total recorrida en el tiempo transcurrido entre $a$ y $t$ es:
+
+\begin{equation}
+s(t) = \int_{a}^t ||r'(\tau)|| \mathop{d\tau}
+\end{equation}
+
+Para el caso particular en que la velocidad es de módulo constante, la distancia es el producto del módulo de la velocidad por el tiempo: $s(t) = v t$. Expandiendo la norma de $r'(t)$, resulta, para el caso bidimensional (esto es fácilmente extensible a $n$ dimensiones):
+
+\begin{equation}
+s(t) = v t = \int_{a}^t \sqrt{ \left( \frac{\mathop{dx}}{\mathop{d\tau}} \right)^2 + \left( \frac{\mathop{dy}}{\mathop{d\tau}} \right)^2 } \mathop{d\tau}
+\end{equation}
+
+Para el caso en que una coordenada es función de la otra, esta expresión puede simplificarse. Por ejemplo, si $y = f(x)$, por la regla de la cadena resulta:
+
+\begin{equation}
+v t = \int_{a}^t \sqrt{ \left( \frac{\mathop{dx}}{\mathop{d\tau}} \right)^2 + \left( \frac{\mathop{df}}{\mathop{dx}} \frac{\mathop{dx}}{\mathop{d\tau}} \right)^2 } \mathop{d\tau}
+\end{equation}
+
+Sacando factor común $\left( \frac{\mathop{dx}}{\mathop{d\tau}} \right)^2$:
+
+\begin{equation}
+v t = \int_{a}^t \sqrt{ \left( \frac{\mathop{dx}}{\mathop{d\tau}} \right)^2 \left[ 1 + \left( \frac{\mathop{df}}{\mathop{dx}} \right)^2\right] } \mathop{d\tau}
+\end{equation}
+
+El factor $\left[ 1 + \left( \frac{\mathop{df}}{\mathop{dx}} \right)^2\right]$ no depende de la variable de integración $\tau$, por lo tanto puede salir de la integral:
+
+\begin{subequations}
+\begin{align}
+v t &= \sqrt{ \left[ 1 + \left( \frac{\mathop{df}}{\mathop{dx}} \right)^2\right] } \int_{a}^t \sqrt{ \left( \frac{\mathop{dx}}{\mathop{d\tau}} \right)^2 } \mathop{d\tau} \\
+&= \sqrt{ \left[ 1 + \left( \frac{\mathop{df}}{\mathop{dx}} \right)^2\right] } \int_{a}^t \frac{\mathop{dx}}{\mathop{d\tau}} \mathop{d\tau}
+\end{align}
+\end{subequations}
+
+Sin perder de vista que $x$ es una función del tiempo, la integral de $\frac{\mathop{dx}}{\mathop{d\tau}}$ es $x(\tau)$, por lo cual:
+
+\begin{equation}
+v t = \sqrt{ \left[ 1 + \left( \frac{\mathop{df}}{\mathop{dx}} \right)^2\right] } (x(t) - x(a))
+\end{equation}
+
+Cambiando la notación $x(t)$ a $x$, sin perder de vista que es una función del tiempo, y asumiendo $x(a) = 0$ para simplificar, resulta:
+
+\begin{equation}
+v t = \sqrt{ 1 + [f'(x)]^2 } x
+\end{equation}
+
+Si en esta expresión se puede despejar algebraicamente $x$ como función de $t$, luego es trivial hallar $y(t) = f(x(t))$. Con ello se obtiene una expresión cerrada para $r(t)$. Puede ocurrir que no haya solución cerrada para $x(t)$ o la coordenada elegida. Si con todas las coordenadas ocurre lo mismo, sólo queda como opción resolver numéricamente. Este mismo método puede aplicarse en el caso en que $x$ sea función de $y$, o mayores dimensiones; cambiará la expresión que relaciona $vt$ y la coordenada a despejar, pero la idea original es la misma.
+
 \section{TFI: Teoremas de las funciones implícitas}
 
 \subsection{Teorema de Euler sobre funciones homogéneas}
@@ -2421,7 +2476,7 @@ Dado que $C_1$ y $C_2$ están en la frontera de $H$, no se puede asegurar que la
 \int_{C_1^+} \overline{f} \cdot \mathop{\overline{dC_1}} = \int_{C_2^+} \overline{f} \cdot \mathop{\overline{dC_2}} = \int_{C_3^+} \overline{f} \cdot \mathop{\overline{dC_3}}
 \end{equation}
 
-Esbozo de demostración: considérese la curva $\gamma_1$, que conecta $C_1$ y $C_2$ en la figura~\ref{fig:green32}.
+Esbozo de demostración: considérese la curva $\gamma_1$, que conecta $C_1$ y $C_2$ en la figura~\ref{fig:greendemo}.
 
 \begin{figure}[ht]
 \centering
