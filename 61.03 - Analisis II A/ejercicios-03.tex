@@ -90,4 +90,62 @@ Ergo:
 }
 \end{equation}
 
+\subsubsection*{3.1.a.2}
+\label{subsubsec:3.1.a.2}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:3.1.a.2}}
+
+La curva de nivel $k$ de f es:
+
+\begin{equation}
+C_k(f) = \{ (x,y) \in \Bbb R^2 / x^2 + y^2 = k, k \in \Bbb R, k \geq 0 \}
+\end{equation}
+
+Por lo tanto, la curva de nivel asociada a $P_0$ es:
+
+\begin{equation}
+(x_0)^2 + (y_0)^2 = 2 \Rightarrow k = 2
+\end{equation}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=3.1.a.2]
+{
+C_2(f) = \{ (x,y) \in \Bbb R^2 / x^2 + y^2 = 2 \}
+}
+\end{equation}
+
+Para hallar la recta tangente a $C_2(f)$, conviene parametrizarla como curva en $\Bbb R^3$. Es un círculo de radio $\sqrt{2}$ en el plano $z = 2$, por ende:
+
+\begin{subequations}
+\begin{align}
+& C_2(f): \sigma(t) = (\sqrt{2} \cos(t), \sqrt{2} \sin(t), 2), t \in [0, 2\pi) \\
+& \sigma'(t) = (-\sqrt{2} \sin(t), \sqrt{2} \cos(t), 0)
+\end{align}
+\end{subequations}
+
+Ahora bien, el punto donde se desea evaluar la recta tangente es $(x_0, y_0, f(x_0, y_0)) = (1, 1, 2)$. Sea $t_0$ el valor que hace $\sigma(t_0) = (x_0, y_0, f(x_0, y_0))$. El próximo paso es calcular ese valor.
+
+\begin{equation}
+(\sqrt{2} \cos(t_0), \sqrt{2} \sin(t_0), 2) = (1, 1, 2) \Rightarrow t_0 = \frac{\pi}{4}
+\end{equation}
+
+El vector dirección de la recta tangente en $\sigma(t_0)$ es $\sigma'(t_0) = (-1, 1, 0)$. La recta tangente en $(1, 1, 2)$ es entonces:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=3.1.a.2]
+{
+L_T: (-1, 1, 0) \alpha + (1, 1, 2)
+}
+\end{equation}
+
+Gráficamente, estos elementos pueden visualizarse en la figura \ref{fig:1-a-2}.
+
+\begin{figure}[ht]
+\caption{Curva de nivel, recta tangente y gradiente}
+\includegraphics[scale=0.5]{img/ejercicios/3/1-a-2.png} 
+\centering
+\label{fig:1-a-2}
+\end{figure}
+
+Nótese que el gradiente, tomando como origen el vector $(x_0, y_0, f(x_0, y_0)$ y asignando como nula su componente $z$, es un vector ortogonal al vector dirección de la recta tangente.
+
 \end{document}
