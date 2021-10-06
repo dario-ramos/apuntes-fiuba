@@ -1,0 +1,93 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[spanish]{babel}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage[margin=1.5in]{geometry}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+\usepackage{esint}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black,
+}
+
+\renewcommand{\Bbb}{\mathbb}
+
+\tcbuselibrary{theorems}
+
+\title{Ejercicios de Análisis Matemático II A (63.01) \\
+Guía 3 - Diferenciabilidad, tangentes \\
+Cátedra Acero \\
+1° C 2004}
+\author{Darío Eduardo Ramos}
+
+\begin{document}
+\maketitle
+
+\tableofcontents{}
+\newpage
+
+\section*{3.1}
+\label{sec:3.1}
+\addcontentsline{toc}{section}{\nameref{sec:3.1}}
+
+\textbf{En los siguientes casos:} 
+
+\begin{enumerate}
+\bfseries
+
+\item Calcular el gradiente de $f$ en el punto $P_0 = (x_0, y_0)$
+\item En un gráfico en 3D, trazar aproximadamente la curva de nivel $C$ de $f$ que pasa por $P_0$, su recta tangente en $P_0$ y el gradiente de $f$ con origen en $P_0$.
+\item (En el mismo gráfico) Ubicar el punto $Q_0$ de la superficie $z = f(x,y)$ cuya proyección en el plano $xy$ es $P_0$; dibujar aproximadamente la superficie $z$ en la vecindad de $Q_0$ y su plano tangente.
+\item (En el mismo gráfico) Marcar sobre la superficie $z$ la curva cuya proyección en el plano $xy$ es $C$.
+\item (En el mismo gráfico) Graficar el vector $N = (f'_x(P_0), f'_y(P_0), -1)$ con origen en $Q_0$.
+\item ¿Qué relación hay entre los distintos objetos geométricos del gráfico? Explicar las relaciones con palabras y ponerlas en evidencia en los dibujos.
+
+\end{enumerate}
+
+\begin{enumerate}[(a)]
+\bfseries
+
+\item $f(x,y)=x^2+y^2, P_0 = (1,1)$
+\item $f(x,y)=\sqrt{4-x^2-y^2}, P_0 = (1,-1)$
+\item $f(x,y)=5+2x-3y, P_0=(0,0)$
+\item $f(x,y)=7+xy, P_0=(0,0)$
+\item $f(x,y)=7+x^2-y^2, P_0=(1,1)$
+\item $f(x,y)=\sqrt{x^2+y^2/4}, P_0=(0,2)$
+
+\end{enumerate}
+\hrule
+
+\subsection*{3.1.a}
+\label{subsec:3.1.a}
+\addcontentsline{toc}{subsection}{\nameref{subsec:3.1.a}}
+
+\subsubsection*{3.1.a.1}
+\label{subsubsec:3.1.a.1}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:3.1.a.1}}
+
+Por simple inspección, $f \in C^1$ y por ende existe el gradiente:
+
+\begin{equation}
+\overrightarrow{ \nabla f }(x,y) = (f_x(x,y), f_y(x,y)) = (2x, 2y)
+\end{equation}
+
+Ergo:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=3.1.a.1]
+{
+\overrightarrow{ \nabla f }(x_0,y_0) = (2, 2)
+}
+\end{equation}
+
+\end{document}

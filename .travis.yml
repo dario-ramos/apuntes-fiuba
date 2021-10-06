@@ -27,6 +27,7 @@ script:
   - texliveonfly edo.tex
   - texliveonfly ejercicios-01.tex
   - texliveonfly ejercicios-02.tex
+  - texliveonfly ejercicios-03.tex
   # You can use latexmk to automatically handle bibtex and references (recommended)
   # latexmk -pdf main.tex
 
@@ -35,6 +36,7 @@ script:
   - pdflatex -draftmode -halt-on-error edo.tex
   - pdflatex -draftmode -halt-on-error ejercicios-01.tex
   - pdflatex -draftmode -halt-on-error ejercicios-02.tex
+  - pdflatex -draftmode -halt-on-error ejercicios-03.tex
 #  - bibtex main
 #  - pdflatex main.tex
 #  - pdflatex main.tex # Compile twice to fix references
