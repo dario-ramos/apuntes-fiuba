@@ -227,4 +227,33 @@ Observando la figura \ref{fig:1-a-5}, pueden verificarse las siguientes relacion
 \item El vector $N = (f_x(P_0), f_y(P_0), -1)$ es una normal válida del plano tangente a la superficie $z = f(x,y)$ en el punto $P_0$. Más específicamente, es la normal que apunta hacia el exterior de la superficie. Esto es consistente con el hecho de que el gradiente apunta en la dirección de mayor crecimiento de $f(x,y)$.
 \end{itemize}
 
+\subsection*{3.1.b}
+\label{subsec:3.1.b}
+\addcontentsline{toc}{subsection}{\nameref{subsec:3.1.b}}
+
+\subsubsection*{3.1.b.1}
+\label{subsubsec:3.1.b.1}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:3.1.b.1}}
+
+La función $f$ es $C^1$, con la salvedad de que al ser una raíz cuadrada, el radicando debe ser positivo. Por lo tanto, $\mathop{Dom}(f) = \{ (x,y) \in \Bbb R^2 / x^2 + y^2 \leq 4 \}$. Con eso en mente, el gradiente resulta:
+
+\begin{align}
+& \overrightarrow{ \nabla f }(x,y) = (f_x(x,y), f_y(x,y)) \\
+& f_x(x,y) = \frac{\partial}{\partial x} [ (-x^2 -y^2 +4)^\frac{1}{2} ] = \frac{1}{2} (-x^2 -y^2 +4)^{-\frac{1}{2}} (-2x) = \frac{-x}{\sqrt{4-x^2-y^2}} \\
+& f_y(x,y) = \frac{\partial}{\partial y} [ (-y^2 -x^2 +4)^\frac{1}{2} ] = \frac{-y}{\sqrt{4-x^2-y^2}}
+\end{align}
+ 
+Evaluando en $P_0 = (1,-1)$ resulta:
+
+\begin{equation}
+\overrightarrow{ \nabla f }(P_0) = \left( \frac{-1}{\sqrt{4-1-1}}, \frac{1}{\sqrt{4-1-1}} \right)
+\end{equation}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=3.1.b.1]
+{
+\overrightarrow{ \nabla f }(P_0) = \left( -\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \right)
+}
+\end{equation}
+
 \end{document}
