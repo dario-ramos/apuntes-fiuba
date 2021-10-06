@@ -256,4 +256,58 @@ Evaluando en $P_0 = (1,-1)$ resulta:
 }
 \end{equation}
 
+\subsubsection*{3.1.b.2}
+\label{subsubsec:3.1.b.2}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:3.1.b.2}}
+
+La curva de nivel $k$ de $f$ es:
+
+\begin{equation}
+C_k(f) = \{ (x,y) \in \Bbb R^2 / \sqrt{4-x^2-y^2} = k, k \in [0,2] \} = \{ (x,y) \in \Bbb R^2 / x^2 + y^2 = 4-k^2 \}
+\end{equation}
+
+La curva asociada a $P_0$ corresponde a:
+
+\begin{equation}
+(1)^2 + (-1)^2 = 4-k^2 \Rightarrow 2 = 4-k^2 \Rightarrow 2 = k^2 \Rightarrow k = \sqrt{2}
+\end{equation}
+
+La solución $k=-\sqrt{2}$ no sirve en este caso porque $\mathop{Im}(f) = [0,2]$, lo cual excluye valores negativos de $k$. La curva de nivel buscada es entonces:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=3.1.b.2]
+{
+C_{\sqrt{2}}(f) = \{ (x,y) \in \Bbb R^2 / x^2 + y^2 = 2 \}
+}
+\end{equation}
+
+Parametrizando para hallar la recta tangente en $P_0$:
+
+\begin{subequations}
+\begin{align}
+& C_{\sqrt{2}}(f): \sigma(t) = (\sqrt{2} \cos(t), \sqrt{2} \sin(t)), t \in [0, 2\pi) \\
+& \sigma'(t) = (-\sqrt{2} \sin(t), \sqrt{2} \cos(t)) \\
+& \sigma(t_0) = P_0 \Rightarrow (\sqrt{2} \cos(t_0), \sqrt{2} \sin(t_0)) = (1, -1) \Rightarrow t_0 = \frac{7}{4} \pi \\
+& \sigma'(t_0) = (1, 1)
+\end{align}
+\end{subequations}
+
+La recta tangente en $P_0$ resulta entonces:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=3.1.b.2]
+{
+L_T: (1, 1) \alpha + (1, -1)
+}
+\end{equation}
+
+Gráficamente, estos elementos pueden visualizarse en la figura \ref{fig:1-b-2}.
+
+\begin{figure}[ht]
+\caption{Curva de nivel, recta tangente y gradiente}
+\includegraphics[scale=0.35]{img/ejercicios/3/1-b-2.png} 
+\centering
+\label{fig:1-b-2}
+\end{figure}
+
 \end{document}
