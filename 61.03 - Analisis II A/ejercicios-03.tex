@@ -262,9 +262,13 @@ Evaluando en $P_0 = (1,-1)$ resulta:
 
 La curva de nivel $k$ de $f$ es:
 
-\begin{equation}
-C_k(f) = \{ (x,y) \in \Bbb R^2 / \sqrt{4-x^2-y^2} = k, k \in [0,2] \} = \{ (x,y) \in \Bbb R^2 / x^2 + y^2 = 4-k^2 \}
-\end{equation}
+\begin{subequations}
+\begin{align}
+\mathop{Im}(f) &= [0,2] \Rightarrow \\
+C_k(f) &= \{ (x,y) \in \Bbb R^2 / \sqrt{4-x^2-y^2} = k, k \in [0,2] \} \\
+       &= \{ (x,y) \in \Bbb R^2 / x^2 + y^2 = 4-k^2, k \in [0, 2] \}
+\end{align}
+\end{subequations}
 
 La curva asociada a $P_0$ corresponde a:
 
@@ -308,6 +312,43 @@ Gráficamente, estos elementos pueden visualizarse en la figura \ref{fig:1-b-2}.
 \includegraphics[scale=0.35]{img/ejercicios/3/1-b-2.png} 
 \centering
 \label{fig:1-b-2}
+\end{figure}
+
+\subsubsection*{3.1.b.3}
+\label{subsubsec:3.1.b.3}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:3.1.b.3}}
+
+Primero, para calcular el plano tangente en un punto $P_0$, recúerdese que ello puede realizarse usando las derivadas parciales:
+
+\begin{equation}
+\Pi_T: z-z_0 - f_x(P_0) (x-x_0) - f_y(P_0) (y-y_0) = 0
+\end{equation}
+
+Para este caso, $x_0 = 1$, $y_0 = -1$, $z_0 = f(x_0,y_0) = \sqrt{4-1^2-(-1)^2} = \sqrt{2}$, $f_x(P_0) = -\frac{\sqrt{2}}{2}$, y $f_y(P_0) = \frac{\sqrt{2}}{2}$. Ergo:
+
+\begin{subequations}
+\begin{align}
+& z-\sqrt{2} + \frac{\sqrt{2}}{2} (x-1) - \frac{\sqrt{2}}{2} (y+1) = 0 \\
+& z-\sqrt{2} + \frac{\sqrt{2}}{2} x -\frac{\sqrt{2}}{2} -\frac{\sqrt{2}}{2}y -\frac{\sqrt{2}}{2} = 0 \\
+& \frac{\sqrt{2}}{2} x -\frac{\sqrt{2}}{2} y + z - 2\sqrt{2} = 0 \\
+& x -y + \sqrt{2} z -4 = 0
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=3.1.b.3]
+{
+\Pi_T: x - y +\sqrt{2}z -4 = 0
+}
+\end{equation}
+
+La superficie asociada a $z = \sqrt{4 - x^2 - y^2}$ puede analizarse en base a su imagen y curvas de nivel. La imagen es el intervalo $[0,2]$. Para $k = 0$, se tiene $0 = \sqrt{4 - x^2 - y^2} \Rightarrow x^2 + y^2 = 4$, o sea un círculo de radio 2. Para $k = 2$, se tiene $2 = \sqrt{4 - x^2 -y^2} \Rightarrow 4 = 4 -x^2-y^2 \Rightarrow x^2 + y^2 = 0$, o sea sólo el origen. En los valores intermedios, se tienen círculos con radio decreciente a medida que crece $z$. Ergo, la superficie tiene forma de cuenco invertido. El punto $Q_0$ no es otra cosa que $(x_0, y_0, f(x_0, y_0)) = (1, -1, \sqrt{2})$. Agregando la superficie y el plano tangente al gráfico previo, se obtiene la figura \ref{fig:1-b-3}.
+
+\begin{figure}[ht]
+\caption{Superficie y plano tangente}
+\includegraphics[scale=0.35]{img/ejercicios/3/1-b-3.png} 
+\centering
+\label{fig:1-b-3}
 \end{figure}
 
 \end{document}
