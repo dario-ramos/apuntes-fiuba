@@ -394,4 +394,27 @@ Observando la figura \ref{fig:1-b-5}, pueden verificarse las siguientes relacion
 \item El vector $N = (f_x(P_0), f_y(P_0), -1)$ es una normal válida del plano tangente a la superficie $z = f(x,y)$ en el punto $P_0$. Más específicamente, es la normal que apunta hacia el interior de la superficie. Esto es consistente con el hecho de que el gradiente apunta en la dirección de mayor crecimiento de $f(x,y)$. En el ejercicio anterior, la normal apuntaba hacia afuera, y ahora hacia adentro; esto parecería una inconsistencia, pero tiene sentido si se piensa que el gradiente apunta en la dirección de máximo crecimiento del valor escalar $z = f(x,y)$. En el caso anterior, al crecer $x$ e $y$, crece $z$, por ello el gradiente apunta hacia afuera de la superficie. En el caso del ejercicio actual, el valor de $z$ crece al acercarse al origen, ya que allí está su valor máximo. Por eso el gradiente apunta hacia el origen, y $N$ pasa a apuntar hacia el interior de la superficie.
 \end{itemize}
 
+\subsection*{3.1.c}
+\label{subsec:3.1.c}
+\addcontentsline{toc}{subsection}{\nameref{subsec:3.1.c}}
+
+\subsubsection*{3.1.c.1}
+\label{subsubsec:3.1.c.1}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:3.1.c.1}}
+
+Por simple inspección, $f \in C^1(\Bbb R^2)$. El gradiente resulta:
+
+\begin{align}
+& \overrightarrow{ \nabla f }(x,y) = (f_x(x,y), f_y(x,y)) = \left( \frac{\partial}{\partial x}(5 +2x -3y), \frac{\partial}{\partial y}(5 +2x -3y) \right) = (2,-3)
+\end{align}
+ 
+El gradiente es entonces constante:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=3.1.c.1]
+{
+\overrightarrow{ \nabla f }(P_0) = (2, -3)
+}
+\end{equation}
+
 \end{document}
