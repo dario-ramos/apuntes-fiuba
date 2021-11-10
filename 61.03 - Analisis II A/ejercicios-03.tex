@@ -383,9 +383,9 @@ Graficando $N$ con origen en $Q_0$, se obtiene el vector negro de la figura \ref
 \label{fig:1-b-5}
 \end{figure}
 
-\subsubsection*{3.1.a.6}
-\label{subsubsec:3.1.a.6}
-\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:3.1.a.6}}
+\subsubsection*{3.1.b.6}
+\label{subsubsec:3.1.b.6}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:3.1.b.6}}
 
 Observando la figura \ref{fig:1-b-5}, pueden verificarse las siguientes relaciones:
 
@@ -474,5 +474,41 @@ Gráficamente, estos elementos pueden visualizarse en la figura \ref{fig:1-c-2}.
 \end{figure}
 
 Nótese que la curva de nivel es una recta; por lo tanto, en todo punto, la tangente coincide con ella misma.
+
+\subsubsection*{3.1.c.3}
+\label{subsubsec:3.1.c.3}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:3.1.c.3}}
+
+Primero, para calcular el plano tangente en un punto $P_0$, recúerdese que ello puede realizarse usando las derivadas parciales:
+
+\begin{equation}
+\Pi_T: z-z_0 - f_x(P_0) (x-x_0) - f_y(P_0) (y-y_0) = 0
+\end{equation}
+
+Para este caso, $x_0 = 0$, $y_0 = 0$, $z_0 = f(x_0,y_0) = 5$, $f_x(P_0) = 2$, y $f_y(P_0) = -3$. Ergo:
+
+\begin{subequations}
+\begin{align}
+& z-5 - 2 (x-0) + 3 (y-0) = 0 \\
+& z-5 -2x +3y = 0 \\
+& -2x +3y -z +5 = 0
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=3.1.c.3]
+{
+\Pi_T: 2x -3y -z +5 = 0
+}
+\end{equation}
+
+La superficie asociada a $z = 2x -3y +5$, que es un plano que coincide punto a punto con el plano tangente. El punto $Q_0$ es $(x_0, y_0, f(x_0,y_0)) = (0,0,5)$ Agregando la superficie, el plano tangente y el punto $Q_0$ al gráfico previo, se obtiene la figura \ref{fig:1-c-3}.
+
+\begin{figure}[ht]
+\caption{Superficie y plano tangente}
+\includegraphics[scale=0.35]{img/ejercicios/3/1-c-3.png} 
+\centering
+\label{fig:1-c-3}
+\end{figure}
 
 \end{document}
