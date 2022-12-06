@@ -577,4 +577,52 @@ Evaluando el gradiente en $P_0 = (0,0)$ se obtiene entonces:
 }
 \end{equation}
 
+\subsubsection*{3.1.d.2}
+\label{subsubsec:3.1.d.2}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:3.1.d.2}}
+
+La curva de nivel $k$ de $f$ es:
+
+\begin{subequations}
+\begin{align}
+\mathop{Im}(f) &= \Bbb R \Rightarrow \\
+C_k(f) &= \{ (x,y) \in \Bbb R^2 / 7 + xy = k, k \in \Bbb R \} \\
+       &= \left\{ (x,y) \in \Bbb R^2 / y = \frac{k-7}{x}, k \in \Bbb R \right\}
+\end{align}
+\end{subequations}
+
+La curva asociada a $P_0 = (0,0)$ resulta entonces, reemplazando en la primera expresión de $C_k(f)$ para evitar división por cero:
+
+\begin{equation}
+7 + 0 \cdot 0 = k \Rightarrow k = 7
+\end{equation}
+
+La curva de nivel pedida es entonces:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=3.1.d.2]
+{
+C_{7}(f) = \left\{ (x,y) \in \Bbb R^2 / xy = 0 \right\}
+}
+\end{equation}
+
+Esto es claramente $x = 0 \vee y = 0$, o sea los ejes, incluyendo el origen. Intuitivamente, la tangente no existe en el origen. Si lo queremos demostrar formalmente, una forma es con diferenciación implícita. Asumiendo que $y$ es una función de $x$, derivando miembro a miembro resulta:
+
+\begin{subequations}
+\begin{align}
+xy &= 0 \\
+y + x y' &= 0 \\
+y' &= \frac{-y}{x}
+\end{align}
+\end{subequations}
+
+Si se intenta evaluar esta expresión en $(0,0)$, se tiene una indeterminación, lo cual confirmaría que no existe tangente en ese punto.
+
+EL gráfico no tiene mucho sentido en este caso, porque:
+\begin{itemize}
+\item La curva de nivel son los ejes $x$ e $y$.
+\item El gradiente es nulo.
+\item La recta tangente no está definida.
+\end{itemize}
+
 \end{document}
