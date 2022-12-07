@@ -625,4 +625,50 @@ EL gráfico no tiene mucho sentido en este caso, porque:
 \item La recta tangente no está definida.
 \end{itemize}
 
+\subsubsection*{3.1.d.3}
+\label{subsubsec:3.1.d.3}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:3.1.d.3}}
+
+Primero, para calcular el plano tangente en $P_0$, recuérdese que ello puede hacerse usando las derivadas parciales:
+
+\begin{equation}
+\Pi_T: z-z_0 - f_x(P_0) (x-x_0) - f_y(P_0) (y-y_0) = 0
+\end{equation}
+
+Para este caso, $x_0 = 0$, $y_0 = 0$, $z_0 = f(x_0,y_0) = 7 + 0 \cdot 0 = 7$, $f_x(P_0) = 0$, y $f_y(P_0) = 0$. Ergo:
+
+\begin{subequations}
+\begin{align}
+& z-7 - 0 (x-0) - 0 (y-0) = 0 \\
+& z-7 = 0
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=3.1.d.3]
+{
+\Pi_T: z-7 = 0
+}
+\end{equation}
+
+La superficie asociada a $z = 7 + xy$ puede analizarse en base a sus curvas de nivel. La imagen es todo $\mathbb{R}$, por lo que la superficie está definida a lo largo de todo el eje $z$. Recordando que $C_k(f) = \left\{(x,y) \in \mathbb{R}^2 / y = \frac{k-7}{x}, k \in \mathbb{R}\ \right\}$, graficando para algunos valores de $k$ se obtiene la figura \ref{fig:1-d-3-1}:
+
+\begin{figure}[ht]
+\caption{Curvas de nivel}
+\includegraphics[scale=0.35]{img/ejercicios/3/1-d-3-1.png} 
+\centering
+\label{fig:1-d-3-1}
+\end{figure}
+
+Para $k=7$, la superficie está constituida por los ejes $x$ e $y$. Para $k > 7$, por las hipérbolas del primer y tercer cuadrante (tonos rojos). Y para $k < 7$, por las hipérbolas del segundo y cuarto cuadrante (tonos azules). Extrapolando a tres dimensiones, la superficie es similar a un paraboloide hiperbólico, con un punto de montura en $(0, 0, 7)$. Ello coincide con el hecho de que el gradiente sea nulo en ese punto: es un extremo de la función. No es máximo ni mínimo, pero sí el equivalente 3D a un punto de inflexión. Ese punto es justamente $Q_0 = (x_0, y_0, f(x_0, y_0)) = (0,0,7)$. Graficando la superficie, el plano tangente y $Q_0$ se obtiene la figura xx:
+
+\begin{figure}[ht]
+\caption{Superficie, plano tangente y $Q_0$}
+\includegraphics[scale=0.35]{img/ejercicios/3/1-d-3-2.png} 
+\centering
+\label{fig:1-d-3-2}
+\end{figure}
+
+Como todo hiperboloide, $z$ es difícil de graficar, pero se aprecia cómo cambia de sentido por encima y por debajo del plano tangente $z = 7$ (color verde suave en el gráfico). En $Q_0$ se puede apreciar la forma asociada a un punto de montura. Recuérdese que la tangente no está definida, y que el gradiente es nulo. 
+
 \end{document}
