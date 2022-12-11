@@ -21,7 +21,7 @@ cache:
 
 # Change working directory so including files will work
 script:
-  - cd "$TRAVIS_BUILD_DIR/61.03 - Analisis II A"
+  - cd "$TRAVIS_BUILD_DIR/spanish/61.03 - Analisis II A"
   # Texliveonfly will download packages automatically
   - texliveonfly teorica.tex
   - texliveonfly edo.tex
