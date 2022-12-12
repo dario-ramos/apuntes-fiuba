@@ -82,45 +82,45 @@ A \textbf{versor} is any vector with norm equal to 1. A vector is said to be ``n
 
 As implied, dividing a vector by a scalar is the same as multiplying it by the scalar's reciprocal.
 
-%\subsection{Ángulo entre dos vectores - Proyección}
-%
-%Si $x, y \neq \overline{0}$, el ángulo entre x e y, $\alpha(x,y)$, satisface la siguiente igualdad:
-%
-%\begin{equation}
-%\cos (\alpha(x, y)) = \frac{x \cdot y}{ \|x\| \|y\| }
-%\end{equation}
-%
-%Aplicando la igualdad del ángulo entre vectores, y considerando el versor $\breve{y} = \frac{y}{\|y\|}$, resulta:
-%
-%\begin{equation}
-%x \cdot y = \|x\| \|y\| \cos(\alpha) \Longrightarrow x \cdot \breve{y} = \|x\| \underbrace{ \cancel{ \| \breve{y} \| } }_{\text{Norma 1}} \cos(\alpha) = \|x\| \cos(\alpha)
-%\end{equation}
-%
-%Geométricamente, como se observa en la figura \ref{fig:proyeccion}, la proyección de x sobre y se obtiene como el siguiente vector:
-%
-%\begin{figure}[ht]
-%\caption{Proyección del vector x sobre el vector y}
-%\includegraphics[scale=1]{img/rn/proyeccion.png} 
-%\centering
-%\label{fig:proyeccion}
-%\end{figure}
-%
-%\begin{equation}
-%\overline{P}_{y}(x) =  \underbrace{ \|x\| \cos(\alpha) }_{\text{Escalar}}  \underbrace{ \breve{y} }_{\text{Versor}}
-%\end{equation}
-%
-%\begin{equation}
-%\tcboxmath[colback=orange!25!white,colframe=orange, title=Proyección de x sobre y]
-%{ \overline{P}_{y}(x) = (x \cdot \breve{y}) \breve{y} }
-%\end{equation}
-%
-%\begin{subequations}
-%\begin{align}
-%\overline{P}_{y}(x) = \overline{0} & \Longleftrightarrow x \perp y \Longleftrightarrow \cos \alpha = 0 \\
-%\overline{P}_{y}(x) = x & \Longleftrightarrow x = \alpha y, \alpha > 0
-%\end{align}
-%\end{subequations}
-%
+\subsection{Angle between two vectors - Projection}
+
+If $x, y \neq \overline{0}$, the angle between $x$ and $y$, $\alpha(x,y)$, satisfies the following:
+
+\begin{equation}
+\cos (\alpha(x, y)) = \frac{x \cdot y}{ \|x\| \|y\| }
+\end{equation}
+
+Applying this, and considering the versor $\breve{y} = \frac{y}{\|y\|}$, it follows that:
+
+\begin{equation}
+x \cdot y = \|x\| \|y\| \cos(\alpha) \Longrightarrow x \cdot \breve{y} = \|x\| \underbrace{ \cancel{ \| \breve{y} \| } }_{\text{Norm 1}} \cos(\alpha) = \|x\| \cos(\alpha)
+\end{equation}
+
+Geometrically, as observed in figure \ref{fig:projection}, the projection of $x$ over $y$ can be computed as:
+
+\begin{figure}[ht]
+\caption{Projection of vector $x$ over vector $y$}
+\includegraphics[scale=1]{../../common/img/rn/projection.png} 
+\centering
+\label{fig:projection}
+\end{figure}
+
+\begin{equation}
+\overline{P}_{y}(x) =  \underbrace{ \|x\| \cos(\alpha) }_{\text{Scalar}}  \underbrace{ \breve{y} }_{\text{Versor}}
+\end{equation}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=Projection of x over y]
+{ \overline{P}_{y}(x) = (x \cdot \breve{y}) \breve{y} }
+\end{equation}
+
+\begin{subequations}
+\begin{align}
+\overline{P}_{y}(x) = \overline{0} & \Longleftrightarrow x \perp y \Longleftrightarrow \cos \alpha = 0 \\
+\overline{P}_{y}(x) = x & \Longleftrightarrow x = \alpha y, \alpha > 0
+\end{align}
+\end{subequations}
+
 %\subsection{Distancia entre dos puntos}
 %
 %$\forall x, y \in \Bbb R^n$, se define la distancia entre x e y como:
