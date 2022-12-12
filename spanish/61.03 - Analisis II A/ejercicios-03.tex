@@ -737,4 +737,81 @@ Evaluando el gradiente en $P_0 = (1,1)$ se obtiene entonces:
 }
 \end{equation}
 
+\subsubsection*{3.1.e.2}
+\label{subsubsec:3.1.e.2}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:3.1.c.2}}
+
+La curva de nivel $k$ de $f$ es:
+
+\begin{subequations}
+\begin{align}
+\mathop{Im}(f) &= \Bbb R \Rightarrow \\
+C_k(f) &= \{ (x,y) \in \Bbb R^2 / 7 +x^2 -y^2 = k, k \in \Bbb R \} \\
+       &= \{ (x,y) \in \Bbb R^2 / x^2 -y^2 = k-7, k \in \Bbb R \} \\
+       &= \left\{ (x,y) \in \Bbb R^2 / \frac{x^2}{k-7} -\frac{y^2}{k-7} = 1, k \neq 7 \right\}
+\end{align}
+\end{subequations}
+
+El caso particular $k=7$ corresponde a:
+
+\begin{subequations}
+\begin{align}
+C_7(f) &= \{ (x,y) \in \Bbb R^2 / x^2 -y^2 = 0 \} \\
+       &= \{ (x,y) \in \Bbb R^2 / x^2 = y^2 \} \\
+       &= \{ (x,y) \in \Bbb R^2 / |x| = |y| \}
+\end{align}
+\end{subequations}
+
+La curva asociada a $P_0$ corresponde a:
+
+\begin{equation}
+1^2 - 1^2 = k - 7 \Rightarrow 0 = k - 7 \Rightarrow k = 7
+\end{equation}
+
+La curva de nivel buscada es entonces:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=3.1.e.2]
+{
+C_{7}(f) = \{ (x,y) \in \Bbb R^2 / |x| = |y| \}
+}
+\end{equation}
+
+Para graficar $C_7(f)$, considérese que si $y \ge 0, y = |x|$. Y para $y < 0, y = -|x|$. Graficando en el plano $(x,y)$, resulta la figura \ref{fig:1-e-2-1}.
+
+\begin{figure}[ht]
+\caption{$C_7(f)$}
+\includegraphics[scale=1.25]{img/ejercicios/3/1-e-2-1.png} 
+\centering
+\label{fig:1-e-2-1}
+\end{figure}
+
+Por lo tanto, en el punto $P_0 = (1,1)$, la curva $C_7(f)$ puede ser parametrizada trivialmente como:
+
+
+\begin{subequations}
+\begin{align}
+& \sigma(t) = (t, t), t > 0 \\
+& \sigma'(t) = (1, 1)
+\end{align}
+\end{subequations}
+
+La recta tangente en $P_0$ resulta entonces:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=3.1.e.2]
+{
+L_T: (1, 1) \alpha
+}
+\end{equation}
+
+Gráficamente, estos elementos pueden visualizarse en la figura \ref{fig:1-e-2-2}.
+
+\begin{figure}[ht]
+\caption{Curva de nivel, recta tangente y gradiente}
+\includegraphics[scale=0.25]{img/ejercicios/3/1-e-2-2.png} 
+\centering
+\label{fig:1-e-2-2}
+\end{figure}
+
 \end{document}
