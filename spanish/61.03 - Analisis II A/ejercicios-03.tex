@@ -814,4 +814,61 @@ Gráficamente, estos elementos pueden visualizarse en la figura \ref{fig:1-e-2-2
 \label{fig:1-e-2-2}
 \end{figure}
 
+\subsubsection*{3.1.e.3}
+\label{subsubsec:3.1.e.3}
+\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:3.1.e.3}}
+
+Primero, para calcular el plano tangente en un punto $P_0$, recúerdese que ello puede realizarse usando las derivadas parciales:
+
+\begin{equation}
+\Pi_T: z-z_0 - f_x(P_0) (x-x_0) - f_y(P_0) (y-y_0) = 0
+\end{equation}
+
+Para este caso, $x_0 = 1$, $y_0 = 1$, $z_0 = f(x_0,y_0) = 7$, $f_x(P_0) = 2$, y $f_y(P_0) = -2$. Ergo:
+
+\begin{subequations}
+\begin{align}
+& z-7 - 2 (x-1) + 2 (y-1) = 0 \\
+& z-7 -2x+2 +2y -2 = 0 \\
+& -2x +2y +z -7 = 0
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=3.1.e.3]
+{
+\Pi_T: 2x -2y -z +7 = 0
+}
+\end{equation}
+
+La superficie asociada a $z = 7 + x^2 - y^25$ es un paraboloide hiperbólico. Recuérdese la forma general de dicha cuádrica:
+
+\begin{equation}
+-\frac{(x-x_0)^2}{a^2} + \frac{(y-y_0)^2}{b^2} = \frac{z-z_0}{c}
+\end{equation}
+
+La función $f$ puede expresarse como:
+
+\begin{equation}
+-x^2 + y^2 = \frac{z-7}{(-1)}
+\end{equation}
+
+Al ser $c$ negativo, la simetría respecto al eje $z$ es invertida respecto al caso usual de $c > 0$. Esto se confirma observando  $C_k(f) = \left\{ (x,y) \in \Bbb R^2 / \frac{x^2}{k-7} -\frac{y^2}{k-7} = 1, k \neq 7 \right\}$. Graficando para algunos valores de $k$ se obtiene la figura \ref{fig:1-e-3-1}. De este gráfico se sigue que las hipérbolas son verticales para $k > 7$ y horizontales para $k < 7$, lo cual es al revés que el caso canónico ($c > 0$), como se predijo.
+
+\begin{figure}[ht]
+\caption{Curvas de nivel de $f$}
+\includegraphics[scale=1.25]{img/ejercicios/3/1-e-3-1.png} 
+\centering
+\label{fig:1-e-3-1}
+\end{figure}
+
+En cuanto al punto $Q_0$, es $(x_0, y_0, f(x_0, y_0)) = (1, 1, 7)$. Agregando la superficie, el planto tangente y el punto $Q_0$ al gráfico previo, se obtiene la figura \ref{fig:1-e-3-2}.
+
+\begin{figure}[ht]
+\caption{Superficie y plano tangente}
+\includegraphics[scale=0.3]{img/ejercicios/3/1-e-3-2.png} 
+\centering
+\label{fig:1-e-3-2}
+\end{figure}
+
 \end{document}
