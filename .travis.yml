@@ -40,9 +40,11 @@ script:
   - texliveonfly theory.tex
   - texliveonfly ode.tex
   - texliveonfly exercises-01.tex
+  - texliveonfly exercises-02.tex
   - pdflatex -draftmode -halt-on-error theory.tex
   - pdflatex -draftmode -halt-on-error ode.tex
   - pdflatex -draftmode -halt-on-error exercises-01.tex
+  - pdflatex -draftmode -halt-on-error exercises-02.tex
 
 #  - bibtex main
 #  - pdflatex main.tex
