@@ -39,8 +39,10 @@ script:
   - cd "$TRAVIS_BUILD_DIR/english/61.03 - Mathematical Analysis II A"
   - texliveonfly theory.tex
   - texliveonfly ode.tex
+  - texliveonfly exercises-01.tex
   - pdflatex -draftmode -halt-on-error theory.tex
   - pdflatex -draftmode -halt-on-error ode.tex
+  - pdflatex -draftmode -halt-on-error exercises-01.tex
 
 #  - bibtex main
 #  - pdflatex main.tex
