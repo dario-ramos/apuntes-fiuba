@@ -1,0 +1,268 @@
+\documentclass[answers]{exam}
+
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage{amsmath}
+\usepackage[spanish]{babel}
+
+\begin{document}
+
+\firstpageheader{75.40 - Algoritmos y Programación I}{Primer cuatrimestre 2004}{Curso 05}
+
+\textbf{Primer Parcial - Tema 03}
+
+\begin{questions}
+
+\question Escribir un algoritmo para leer un entero \textbf{N} y dos \textbf{arreglos A y B} de dimensión \textbf{N} y generar un tercer arreglo \textbf{C} de dimensión \textbf{N} que cumpla las siguientes condiciones:
+
+\begin{equation*}
+C(i) = 
+\left\{
+\begin{array}{ll}
+B(i)^i \text{ si } A(i) < B(i) \\
+A(i)^i \text{ si } A(i) \geq B(i)
+\end{array}
+\right., 0 < i < N+1
+\end{equation*}
+
+\begin{parts}
+\part Indicar el valor mínimo de cada uno de los tres arreglos y las posiciones que ocupan en cada uno de ellos.
+\part Ordenar el arreglo \textbf{C} por selección.
+\end{parts}
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Solución:}\enspace}
+
+\SetKw{Array}{array}
+\SetKw{Begin}{begin}
+\SetKw{Const}{const}
+\SetKw{Do}{do}
+\SetKw{Else}{else}
+\SetKw{End}{end}
+\SetKw{For}{for}
+\SetKw{If}{if}
+\SetKw{Integer}{integer}
+\SetKw{Of}{of}
+\SetKw{Program}{program}
+\SetKw{Procedure}{procedure}
+\SetKw{Real}{real}
+\SetKw{Then}{then}
+\SetKw{To}{to}
+\SetKw{Type}{type}
+\SetKw{Uses}{uses}
+\SetKw{Var}{var}
+
+\begin{solution}
+En Pascal:
+
+\begin{algorithm}[H]
+\Program{} ej1\;
+\Uses crt, math\;
+\Const max = 100\;
+\Type tvec = \Array [1..max] \Of \Real\;
+\Var n, i, nMinA, nMinB, nMinC: \Integer; a,b,c: tvec; minA, minB, minC: \Real\;
+
+\BlankLine
+
+\Procedure{} LeerEntero(\Var n: \Integer)\;
+\Begin\
+
+\qquad	writeln(`Ingrese un entero:')\;
+\qquad	readln(n)\;
+\End\;
+
+\BlankLine
+
+\{Ademas de leer los datos, calcula el min y su posicion\}\
+
+\Procedure LeerVector(n: \Integer; \Var a: tvec; \Var minA: \Real; \Var nMinA: \Integer)\;
+\Var i: \Integer\;
+\Begin\
+
+\qquad	minA := maxInt\;
+\qquad	nMinA := -1\;
+\qquad	writeln(`Ingrese ', n, ` enteros separados por fin de línea (enter):')\;
+\qquad	\For i:=1 \To n \Do\
+
+\qquad	\Begin\
+
+\qquad	\qquad	readln(a[i])\;
+\qquad	\qquad	\If (a[i] $<$ minA) \Then\
+
+\qquad	\qquad	\Begin\
+
+\qquad	\qquad	\qquad	minA := a[i]\;
+\qquad	\qquad	\qquad	nMinA := i\;
+\qquad	\qquad 	\End\;
+\qquad	\End\;
+\End\;
+
+\BlankLine
+
+\end{algorithm}
+
+\begin{algorithm}[H]
+\setcounter{AlgoLine}{27}
+\{Ademas de calcular C, calcula su min y posicion\}\
+
+\Procedure GenerarC(n: \Integer; a,b: tvec; \Var c: tvec; \Var minC: \Real; \Var nMinC: \Integer)\;
+\Var i: \Integer\;
+\Begin\
+
+\qquad	minC := maxInt\;
+\qquad	nMinC := -1\;
+\qquad	\For i:=1 \To n \Do\
+
+\qquad	\Begin\
+
+\qquad	\qquad	\If a[i] $<$ b[i] \Then c[i] := power(b[i], i) \
+
+\qquad	\qquad	\Else c[i] := power(a[i], i)\;
+\qquad	\qquad	\If c[i] $<$ minC \Then\
+
+\qquad	\qquad	\Begin\
+
+\qquad	\qquad	\qquad	minC := c[i]\;
+\qquad	\qquad	\qquad	nMinC := i\;
+\qquad	\qquad	\End\;
+\qquad	\End\;
+\End\;
+
+\BlankLine
+
+\Procedure Swap(\Var a, b:\Real)\;
+\Var aux: \Real\;
+\Begin\
+
+\qquad	aux := b\;
+\qquad	b := a\;
+\qquad	a := aux\;
+\End\;
+
+\BlankLine
+
+\Procedure OrdSel(n: \Integer; \Var a: tvec)\;
+\Var i, j: \Integer\;
+\Begin\
+
+\qquad	\For 	i:=1 \To n-1 \Do\
+
+\qquad	\qquad	\For j:=i+1 \To n \Do\
+
+\qquad	\qquad \qquad	\If a[i] $>$ a[j] \Then Swap(a[i], a[j])\;
+\End\;
+
+\BlankLine
+
+\Begin \{ ppal \}\
+
+\qquad	clrscr()\;
+\qquad	LeerEntero(n)\;
+\qquad	LeerVector(n, a, minA, nMinA)\;
+\qquad	LeerVector(n, b, minB, nMinB)\;
+\qquad	GenerarC(n, a, b, c, minC, nMinC)\;
+\qquad	writeln(`El mínimo de A es ', minA:0:2, ` y está en la posición ', nMinA)\;
+\qquad	writeln(`El mínimo de B es ', minB:0:2, ` y está en la posición ', nMinB)\;
+\qquad	writeln(`El mínimo de C es ', minC:0:2, ` y está en la posición ', nMinC)\;
+
+\BlankLine
+
+\qquad	OrdSel(n, c)\;
+\qquad	writeln(`C ordenado:')\;
+\qquad	\For 	i:=1 \To n \Do\
+
+\qquad	\qquad	write(c[i]:0:2, ` ')\;
+\qquad	writeln('')\;
+\End. \{ ppal \}
+
+\end{algorithm}
+
+\end{solution}
+
+\question Elaborar la función Prolijafrase que reciba una cadena de caracteres como parámetro y devuelve otra cadena, donde las palabras estén separadas por un solo espacio. Considerar \textbf{palabra} a toda secuencia de caracteres que no sean espacios, comas o puntos. (Estos caracteres: espacios, comas y puntos se consideran separadores de palabras).
+
+\SetKw{Boolean}{boolean}
+\SetKw{Char}{char}
+\SetKw{Function}{function}
+\SetKw{String}{string}
+
+\begin{solution}
+De nuevo utilizando Pascal, y además eligiendo el tipo string de Turbo Pascal para representar las cadenas de caracteres:
+
+\begin{algorithm}[H]
+\Function EsEspacio(c: \Char): \Boolean\;
+\Begin\
+
+\qquad	EsEspacio := (c = \textsc{\char13} \textsc{\char13}) or (c = \textsc{\char13},\textsc{\char13}) or (c = \textsc{\char13}.\textsc{\char13})\;
+\End;
+
+\BlankLine
+
+\Function ProlijaFrase(s: \String): \String\;
+\Var i: \Integer ; actualEsEspacio, anteriorEsEspacio: \Boolean\;
+\Begin\
+
+\qquad	ProlijaFrase := \textsc{\char13}\textsc{\char13}\;
+\qquad	anteriorEsEspacio := true\;
+\qquad	\For i:=1 \To Length(s) \Do\
+
+\qquad	\Begin\
+
+\qquad	\qquad	actualEsEspacio := EsEspacio(s[i])\;
+\qquad	\qquad	\If actualEsEspacio \Then\
+
+\qquad	\qquad	\Begin\
+
+\qquad	\qquad	\qquad	\If not anteriorEsEspacio \Then ProlijaFrase := ProlijaFrase + \textsc{\char13} \textsc{\char13}\;
+\qquad	\qquad	\qquad	anteriorEsEspacio := actualEsEspacio\;
+\qquad	\qquad	\qquad	continue\;
+\qquad	\qquad	\End\;
+\qquad	\qquad	ProlijaFrase := ProlijaFrase + s[i]\;
+\qquad	\qquad	anteriorEsEspacio := actualEsEspacio\;
+\qquad	\End\;
+\End;
+\end{algorithm}
+
+\end{solution}
+
+\question Analizar el siguiente algoritmo e indicar si existen errores justificando la respuesta. En caso de ser correcto, realizar un seguimiento con los valores 5 y 4 para las variables de entrada.
+
+\begin{algorithm}
+Algoritmo MM;
+
+var a, b: entero;
+
+procedimiento NN(i:entero; var j:entero)
+
+inicio
+
+\qquad	i = i + 10;
+	
+\qquad	j := j + 10;
+	
+\qquad	escribir(i, j)
+	
+fin;
+
+inicio
+
+\qquad	leer(a, b);
+	
+\qquad	NN(a+b, b-a);
+	
+\qquad	escribir(a, b)
+
+fin
+\end{algorithm}
+
+\begin{solution}
+Asumiendo las reglas de sintaxis de Pascal:
+\begin{itemize}
+\item En la línea 3, falta un punto y coma al final de la misma. Toda declaración de encabezado de función o procedimiento debe terminar con punto y coma.
+\item En la línea 5, se está utilizando el signo igual (=) para realizar una asignación. Debería ser el signo de dos puntos seguido de un igual (:=).
+\item En las líneas 7 y 12, falta un punto y coma al final de la sentencia.
+\item En la línea 11, se está pasando como parámetro actual una expresión (b-a) en lugar de una variable. Esto no compila, porque el parámetro formal j fue declarado como variable en la línea 3. No se puede modificar una expresión.
+\end{itemize}
+\end{solution}
+
+\end{questions}
+
+\end{document}

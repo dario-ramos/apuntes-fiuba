@@ -48,6 +48,10 @@ script:
   - pdflatex -draftmode -halt-on-error exercises-02.tex
   - pdflatex -draftmode -halt-on-error exercises-03.tex
 
+  - cd "$TRAVIS_BUILD_DIR/spanish/75.40 - Algoritmos y Programacion I"
+  - texliveonfly primer-parcial.tex
+  - pdflatex -draftmode -halt-on-error primer-parcial.tex
+
 #  - bibtex main
 #  - pdflatex main.tex
 #  - pdflatex main.tex # Compile twice to fix references
