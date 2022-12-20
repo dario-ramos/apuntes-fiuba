@@ -1,0 +1,83 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[spanish]{babel}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage[margin=1.5in]{geometry}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+\usepackage{esint}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black,
+}
+
+\renewcommand{\Bbb}{\mathbb}
+
+\tcbuselibrary{theorems}
+
+\title{Apuntes teórico-prácticos de Física I A (62.01) \\ Cátedra Menikheim \\ 1° C 2004}
+\author{Darío Eduardo Ramos}
+
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+
+\begin{document}
+\maketitle
+
+\tableofcontents{}
+\newpage
+
+\section{Cinemática}
+
+\subsection{Definiciones iniciales}
+
+La \textbf{cinemática} es la rama de la física que describe el movimiento de los objetos sólidos sin considerar las causas que lo originan. 
+
+El primer \textbf{modelo} que se adoptará para los cuerpos físicos a modelar será el de \textbf{punto material o partícula}: dichos cuerpos físicos serán considerados como sin volumen, pero sí con masa. Toda esa masa estará ``concentrada'' en el centro de masa del cuerpo, que será el punto que represente al objeto.
+
+\textbf{Movimiento}: Un cuerpo será considerado en movimiento cuando cambie de posición a lo largo del tiempo respecto a un sistema de referencia considerado fijo o inercial. Más sobre esto último cuando se estudien los sistemas inerciales y no inerciales.
+
+Cuando el cuerpo se desplaza desde una posición inicial dada por el vector $\overrightarrow{ r_i }$ a una posición final dada por el vector $\overrightarrow{ r_f }$, en un tiempo $\Delta t$, se definen las siguientes magnitudes vectoriales y escalares:
+
+\begin{itemize}
+\item \textbf{Vector desplazamiento:} $\overrightarrow{ \Delta r } = \overrightarrow{r_f} - \overrightarrow{r_i}$. Por como está definido, el vector $\overrightarrow{\Delta r}$ va de $\overrightarrow{r_i}$ hacia $\overrightarrow{r_f}$.
+\item \textbf{Camino recorrido (escalar):} longitud del arco de trayectoria entre posición inicial y final.
+\item \textbf{Vector velocidad media:} $\overrightarrow{v_m} = \frac{\overrightarrow{\Delta r}}{\Delta t}$
+\item \textbf{Rapidez media (escalar):} $\overline{v} = \frac{\Delta s}{\Delta t}$
+\item \textbf{Vector velocidad instantánea:}
+
+\begin{equation}
+\overrightarrow{v} = \lim_{\Delta t \rightarrow 0} \frac{ \mathop{\overrightarrow{\Delta r}} }{\Delta t} = \frac{d\overrightarrow{r}}{\mathop{dt}}
+\end{equation}
+
+Nótese entonces que la velocidad instantánea es la derivada de la posición respecto al tiempo. Además, al ser $\overrightarrow{r}(t)$ una función vectorial del tiempo, $\overrightarrow{v}$ también lo es. Punto a punto, el vector $\overrightarrow{v}(t_0)$ es tangente a la curva de la trayectoria en el punto $\overrightarrow{r}(t_0)$ y su sentido es el del movimiento.
+\item \textbf{Rapidez instantánea:}
+
+\begin{equation}
+v = \lim_{\Delta t \rightarrow 0} \frac{\Delta s}{\Delta t} = \frac{\mathop{ds}}{\mathop{dt}}
+\end{equation}
+
+\item \textbf{Vectores aceleración media e instantánea:}
+
+\begin{equation}
+\overrightarrow{a_m} = \frac{ \overrightarrow{ \Delta v } }{ \Delta t }
+\end{equation}
+
+\begin{equation}
+\overrightarrow{a} = \lim_{\Delta t \rightarrow 0} \frac{ \overrightarrow{ \Delta v } }{\Delta t} = \frac{ \mathop{d\overrightarrow{v}} }{ \mathop{dt} } = \frac{ \mathop{ d^2 \overrightarrow{r} } }{ \mathop{ dt^2 } }
+\end{equation}
+
+Cualquier cambio en el sentido, dirección o norma del vector velocidad indica que existe aceleración. Esto implica que en todo movimiento curvo hay aceleración no nula.
+
+\end{itemize}
+
+\end{document}
