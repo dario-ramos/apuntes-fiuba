@@ -184,6 +184,81 @@ Todo movimiento curvo puede ser analizado como la unión de movimiento circulare
 }
 \end{equation}
 
-En este escenario generalizado, $\rho$ debe deducirse geométricamente, aunque esa no es la única forma de calcularlo. Por otro lado, puede decirse que $\overrightarrow{a_{\mathop{tg}}}$ está asociado a cambios en la norma de $\overrightarrow{v}$, en tanto $\overrightarrow{a_n}$ está asociado a cambios de dirección. 
+En este escenario generalizado, $\rho$ debe deducirse geométricamente, aunque esa no es la única forma de calcularlo. Por otro lado, puede decirse que $\overrightarrow{a_{\mathop{tg}}}$ está asociado a cambios en la norma de $\overrightarrow{v}$, en tanto $\overrightarrow{a_n}$ está asociado a cambios de dirección.
+
+\subsection{Utilizando el cálculo integral}
+
+Recordando que $\overrightarrow{v} = \frac{ \mathop{d \overrightarrow{r}} }{ \mathop{dt} }$ y $\overrightarrow{a} = \frac{ \mathop{d^2 \overrightarrow{r}} }{ \mathop{dt^2} }$, es posible utilizar el cálculo integral para hallar la magnitud original si se conoce su derivada. Esto ocurre siempre que dos magnitudes se relacionan a través de la derivada. Por ejemplo:
+
+\begin{equation}
+v_x = \frac{ \mathop{dx} }{ \mathop{dt} } \Rightarrow \mathop{ dx } = v_x \cdot \mathop{ dt } \Rightarrow \int_{x_0}^x \mathop{ dx } = \int_{t_0}^t v_x \cdot \mathop{ dt } \Rightarrow x - x_0 = \int_{t_0}^t v_x \cdot \mathop{ dt }
+\end{equation}
+
+Nótese que esto requiere conocer un punto de referencia $x_0 = r_x(t_0)$. Esta misma idea puede aplicarse para obtener la velocidad a partir de la aceleración.
+
+\subsection{Calculando $\rho$}
+
+\begin{figure}[ht]
+\centering
+\caption{Radio de curvatura $\rho$}
+\includegraphics[scale=1.3]{../../common/img/62.01/theory/02-kinematics-rho.png}
+\label{fig:rho}
+\end{figure}
+
+En base a la figura \ref{fig:rho}, dada la trayectoria, para calcular $\rho$ es necesario conocer la velocidad y la aceleración. Ello suele ser más directo utilizando un sistema de coordenadas intrínseco. En cuanto a $\alpha$, se deduce geométricamente. Con esos datos obtenidos, resulta:
+
+\begin{subequations}
+\begin{align}
+a &= ||\overrightarrow{a}|| \\
+a_n &= a \cos \alpha \wedge a_n = \frac{v^2}{\rho}
+\end{align}
+\end{subequations}
+
+Finalmente:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]{
+\rho = \frac{v^2}{a_n}
+}
+\end{equation}
+
+\section{Movimiento relativo}
+
+\subsection{Traslación}
+
+\begin{figure}[ht]
+\centering
+\caption{Movimiento relativo - traslación}
+\includegraphics[scale=1.3]{../../common/img/62.01/theory/03-kinematics-rel-mov-tra.png}
+\label{fig:relMovTra}
+\end{figure}
+
+En la figura \ref{fig:relMovTra}, se tiene un sistema de coordenadas $S$ que se considera fijo, y otro sistema $S'$ que se mueve respecto a $S$, pero sólo con traslación. Instante a instante, al no haber rotación, los ejes $x$ y $x'$ son paralelos en todo instante, al igual que $y$ e $y'$. Ello garantiza la siguiente igualdad vectorial, para todo tiempo $t$:
+
+\begin{equation}
+\overrightarrow{r} = \overrightarrow{oo'} + \overrightarrow{r'}
+\end{equation}
+
+\begin{itemize}
+\item $\overrightarrow{r}$: Posición respecto al sistema fijo (posición absoluta).
+\item $\overrightarrow{oo'}$: Posición del sistema móvil respecto al fijo (posición de arrastre). No perder de vista que esta magnitud también varía a lo largo del tiempo.
+\item $\overrightarrow{r'}$: Posición respecto al sistema móvil (posición relativa).
+\end{itemize}
+
+Derivando miembro a miembro, resulta:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]{
+\overrightarrow{v_{abs}} = \overrightarrow{v_{arr}} + \overrightarrow{v_{rel}}
+}
+\end{equation}
+
+Derivando por segunda vez:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]{
+\overrightarrow{a_{abs}} = \overrightarrow{a_{arr}} + \overrightarrow{a_{rel}}
+}
+\end{equation}
 
 \end{document}
