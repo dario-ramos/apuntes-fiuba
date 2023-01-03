@@ -261,4 +261,112 @@ Derivando por segunda vez:
 }
 \end{equation}
 
+\subsection{Rotación}
+
+\begin{figure}[ht]
+\centering
+\caption{Movimiento relativo - rotación}
+\includegraphics[scale=1.3]{../../common/img/62.01/theory/04-kinematics-rel-mov-rot.png}
+\label{fig:relMovRot}
+\end{figure}
+
+En la figura \ref{fig:relMovRot}, el sistema $S'$ rota en sentido antihorario, sin transladarse, respecto al sistema $S$. Si se denota al versor $\check{i}$ como asociado al eje $x$, $\check{j}$ al eje $y$, y sus versiones primadas asociadas a los ejes de $S'$, es posible plantear:
+
+\begin{subequations}
+\begin{align}
+\overrightarrow{r} &= x \check{i} + y \check{j} \\
+\overrightarrow{r'} &= x' \check{i'} + y' \check{j'}
+\end{align}
+\end{subequations}
+
+Derivando $\overrightarrow{r}$ respecto al tiempo, se obtiene $\overrightarrow{v_{abs}}$ de manera directa. Ahora bien, derivar $\overrightarrow{r'}$ no es tan directo, porque la posición de los versores primados varía a lo largo del tiempo. Aplicando la regla del producto, resulta:
+
+\begin{equation}
+\frac{ \mathop{ \overrightarrow{dr'} } }{ \mathop{dt} } = \frac{ \mathop{dx'} }{ \mathop{dt} } \check{i'} + x' \frac{ \mathop{d\check{i}'} }{ \mathop{dt} } + \frac{ \mathop{dy'} }{ \mathop{dt} } \check{j'} + y' \frac{ \mathop{d\check{j}'} }{ \mathop{dt} }
+\end{equation}
+
+Para analizar qué son las derivadas de los versores, considérese la variación de posición de uno de ellos a lo largo del tiempo, entre dos instantes.
+
+\begin{figure}[ht]
+\centering
+\caption{Movimiento relativo - rotación - versores}
+\includegraphics[scale=1.3]{../../common/img/62.01/theory/05-kinematics-rel-mov-rot-dv.png}
+\label{fig:relMovRotDv}
+\end{figure}
+
+Observando la figura \ref{fig:relMovRotDv}, y considerando que la longitud de arco equivale al producto del ángulo por el radio, resulta, al tomar el límite:
+
+\begin{equation}
+\mathop{ d\check{i'} } = \mathop{ d\alpha } \underbrace{ ||\check{i'}|| }_{1} \check{j'}
+\end{equation}
+
+El hecho de que el diferencial de $\check{i'}$ tiene, como vector, la dirección $\check{j'}$ se observa geométricamente. Si se toma el límite, al acercarse $\check{i_0'}$ a $\check{i'}$, se observa que su dirección es ortogonal a la de $\check{i'}$. Como siguiente paso, en un abuso de notación, "dividiendo" miembro a miembro por $\mathop{dt}$, se tiene:
+
+\begin{equation}
+\frac{ \mathop{d \check{i'} } }{ \mathop{dt} } = \underbrace{ \frac{ \mathop{d\alpha} }{\mathop{dt}} }_{\omega} \check{j'}
+\end{equation}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]{
+\frac{ \mathop{d \check{i'} } }{ \mathop{dt} } = \omega \check{j'}
+}
+\end{equation}
+
+Aplicando el mismo razonamiento para el versor $\check{j'}$, resulta entonces:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]{
+\frac{ \mathop{d \check{j'} } }{ \mathop{dt} } = -\omega \check{i'}
+}
+\end{equation}
+
+Es importante tener en cuenta que todo esto asume que el sentido de rotación de $S'$ es antihorario. Si el sentido fuera horario, las últimas dos igualdades tendrían el signo opuesto en $\omega$. Volviendo a la expresión de $\overrightarrow{r'}$:
+
+\begin{subequations}
+\begin{align}
+\frac{ \mathop{ \overrightarrow{dr'} } }{ \mathop{dt} } &= \underbrace{ \frac{dx'}{dt} }_{v'_x} \check{i'} + x' \underbrace{ \frac{d\check{i'}}{dt} }_{\omega \check{j'}} + \underbrace{ \frac{dy'}{dt} }_{v'_y} \check{j'} + y' \underbrace{ \frac{d\check{j'}}{dt} }_{-\omega \check{i'}} \\
+\frac{ \mathop{ \overrightarrow{dr'} } }{ \mathop{dt} } &= v'_x \check{i'} + x' \omega \check{j'} + v'_y \check{j'} + y' -\omega \check{i'}
+\end{align}
+\end{subequations}
+
+Para el próximo paso, considérese el siguiente producto vectorial:
+
+\begin{equation}
+\overrightarrow{\omega} \times \overrightarrow{r'} = \det \begin{pmatrix}
+\check{i'} & \check{j'} & \check{k'} \\
+0 & 0 & \omega \\
+x' & y' & 0
+\end{pmatrix} = -y' \omega \check{i'} + x' \omega \check{j'}
+\end{equation}
+
+Reemplazando:
+
+\begin{equation}
+\frac{d\overrightarrow{r'}}{dt} = \underbrace{ v'_x \check{i'} + v'_y \check{j'} }_{\overrightarrow{v_{rel}}} + \underbrace{ \overrightarrow{\omega} \times \overrightarrow{r'} }_{?}
+\end{equation}
+
+¿Qué representa el segundo término? Puede pensarse como la velocidad de rotación del sistema móvil $S'$ respecto al sistema fijo $S$. Por ende, es la velocidad de arrastre.
+
+Dado que $S'$ tiene siempre el mismo origen que $S$, en lo que concierne a $S$, $\overrightarrow{r} = \overrightarrow{r'}$ en todo instante. Por lo tanto, $\frac{d\overrightarrow{r}}{dt} = \frac{d\overrightarrow{r'}}{dt} = \overrightarrow{v_{abs}}$. Con lo que resulta finalmente:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]{
+\vec{v}_{abs} = \underbrace{ v'_x \check{i'} + v'_y \check{j'} }_{\vec{v}_{rel}} + \underbrace{ \vec{\omega} \times \overrightarrow{r'} }_{\vec{v}_{arr}}
+}
+\end{equation}
+
+Para obtener la aceleración, se deriva la velocidad. La derivada de $\vec{v}_{rel}$ es $\vec{a}_{rel}$, eso es trivial. Ahora bien, al derivar el producto vectorial del segundo término, se lo vuelve a expresar en términos de sus componentes, y se aplica la regla del producto:
+
+\begin{equation}
+\vec{a}_{abs} = \underbrace{ a'_x \check{i'} + a'_y \check{j'} }_{\vec{a}_{rel}} + \underbrace{ v'_x \omega \check{j'} - \omega v'_y \check{i'} }_{\vec{\omega} \times \vec{v'}} + \vec{\gamma} \times \vec{r} + \vec{\omega} \times \vec{v'}
+\end{equation}
+
+Finalmente, y sin perder de vista que este es el caso de sólo rotación:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]{
+\vec{a}_{abs} = \vec{a}_{rel} + \underbrace{2 \vec{\omega} \times \vec{v'} }_{\text{ac. de Coriolis}} + \underbrace{ \vec{\gamma} \times \vec{r} }_{\vec{a}_{arr}}
+}
+\end{equation}
+
 \end{document}
