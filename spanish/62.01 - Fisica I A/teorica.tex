@@ -196,7 +196,7 @@ v_x = \frac{ \mathop{dx} }{ \mathop{dt} } \Rightarrow \mathop{ dx } = v_x \cdot 
 
 Nótese que esto requiere conocer un punto de referencia $x_0 = r_x(t_0)$. Esta misma idea puede aplicarse para obtener la velocidad a partir de la aceleración.
 
-\subsection{Calculando $\rho$}
+\subsection{Calculando el radio de curvatura}
 
 \begin{figure}[ht]
 \centering
@@ -222,9 +222,9 @@ Finalmente:
 }
 \end{equation}
 
-\section{Movimiento relativo}
+\subsection{Movimiento relativo}
 
-\subsection{Traslación}
+\subsubsection{Traslación}
 
 \begin{figure}[ht]
 \centering
@@ -261,7 +261,7 @@ Derivando por segunda vez:
 }
 \end{equation}
 
-\subsection{Rotación}
+\subsubsection{Rotación}
 
 \begin{figure}[ht]
 \centering
@@ -368,5 +368,39 @@ Finalmente, y sin perder de vista que este es el caso de sólo rotación:
 \vec{a}_{abs} = \vec{a}_{rel} + \underbrace{2 \vec{\omega} \times \vec{v'} }_{\text{ac. de Coriolis}} + \underbrace{ \vec{\gamma} \times \vec{r} }_{\vec{a}_{arr}}
 }
 \end{equation}
+
+\section{Dinámica}
+
+\subsection{Generalidades; 2da y 3ra leyes de Newton}
+
+La dinámica es la rama de la física que estudia las causas del movimiento. Inicialmente, el modelo a seguir seguirá siendo el de partícula. Las causas serán interacciones (acciones mutuas) entre cuerpos, que pueden clasificarse de la siguiente manera:
+
+\begin{itemize}
+\item Fuertes: a nivel molecular. Pueden ser dentro del núcleo, o fuera del núcleo.
+\item Débiles: producidas por campos. Esto incluye gravedad y electromagnetismo (por contacto o vínculo).
+\end{itemize}
+
+Nuestro estudio de la dinámica se centrará en las interacciones o fuerzas débiles.
+
+\begin{itemize}
+\item \textbf{Ley de las interacciones (3ra ley de Newton):} La característica principal de una interacción es la aparición de un par de fuerzas que actúan siempre en cuerpos distintos. Dichas fuerzas tienen igual dirección e intensidad, pero sentido opuesto.
+\item \textbf{Vínculo}: Todo aquello que le quita libertad de movimiento a los cuerpos. Por ejemplo: mesa, piso, techo, soga, cadena, otro cuerpo.
+\item \textbf{2da ley de Newton:} Para cada cuerpo, la suma vectorial de las fuerzas aplicadas sobre el mismo, o sea el vector fuerza resultante, equivale a la masa del cuerpo multiplicada por su vector aceleración. Matemáticamente:
+
+\begin{equation}
+\sum \vec{F} = \vec{F}_R = m \vec{a}
+\end{equation}
+
+En el contexto de la mecánica clásica, también llamada usualmente mecánica newtoniana, la masa se entiende como la cantidad de materia de un cuerpo, y es una magnitud escalar. En otros contexto como la mecánica cuántica, esa definición puede ser diferente. En esta materia, nos limitaremos a la definición newtoniana.
+
+\item Pasos generales para resolver un problema de dinámica:
+
+\begin{enumerate}
+\item DCL: Diagrama de cuerpo libre. Indicar para cada cuerpo, las fuerzas que actúan como vectores.
+\item Definir sistema de referencia, y sistema de coordenadas.
+\item Para cada cuerpo, plantear la 2da ley de Newton, y resolver el sistema de ecuaciones resultante.
+\end{enumerate}
+
+\end{itemize}
 
 \end{document}
