@@ -403,4 +403,39 @@ En el contexto de la mecánica clásica, también llamada usualmente mecánica n
 
 \end{itemize}
 
+\subsection{Rozamiento}
+
+La fuerza de rozamiento aparece cuando una fuerza intenta cambiar el estado de movimiento de un cuerpo. Es una interacción: siempre habrá dos fuerzas iguales y opuestas en sentido. El vector $\vec{f}_r$ tiene, por convención, sentido opuesto al deslizamiento relativo entre las dos superficies.
+
+El rozamiento puede ser \textbf{estático} o \textbf{dinámico}. El estático aplica cuando los cuerpos en contacto están sometidos a fuerzas no nulas, pero aún no hay movimiento relativo entre ambos. Para que empiece a haber movimiento, hay que vencer la fuerza de rozamiento estática. Por oposición, el rozamiento dinámico aparece cuando ya hay movimiento relativo entre los cuerpos. Como cabe esperar, los coeficientes de rozamiento son diferentes en ambos casos. Además, dependerán de los materiales de los cuerpos en contacto. Por ejemplo, hay coeficiente estático madera-madera, coeficiente estático madera-hierro, coeficiente dinámico madera-acero, etc.
+
+\begin{figure}[ht]
+\centering
+\caption{Rozamiento}
+\includegraphics[scale=3.0]{../../common/img/62.01/theory/06-dynamics-friction.png}
+\label{fig:friction}
+\end{figure}
+
+Si se grafica la intensidad de la fuerza aplicada al cuerpo contra la intensidad de la fuerza de rozamiento, suele seguir una curva como la de la figura \ref{fig:friction}. La intensidad de las fuerzas es lineal hasta que se llega a la intensidad máxima de rozamiento estático. Ese es el punto en que se pasa de rozamiento estático a dinámico. De ahí en adelante, la fuerza de rozamiento decae, pero tiende asintóticamente hacia una intensidad mínima. Vale decir, siempre habrá rozamiento.
+
+De manera general, la intensidad de la fuerza de rozamiento está asociada a la intensidad de la normal y al coeficiente de rozamiento, según:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Roz. estático]{
+||\vec{f}_{re_{max}}|| = \mu_e ||\vec{N}||
+}
+\end{equation}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Roz. dinámico]{
+||\vec{f}_{rd}|| \approx \mu_d ||\vec{N}||
+}
+\end{equation}
+
+En tanto se esté en rozamiento estático, $||\vec{f}_{re}|| \leq ||\vec{f}_{re_{max}}||$. El hecho de que una normal más intensa implica mayor fuerza de rozamiento estática máxima se condice con el hecho de que es más difícil poner en movimiento cuerpos de mayor masa. 
+
+Si $||\vec{F}|| = ||\vec{f}_{re_{max}}||$, el cuerpo se mueve a velocidad constante. 
+
+Por último, una forma intuitiva de calcular los coeficientes de rozamiento es pensar que $\mu \propto \frac{\text{ptos de contacto}}{\text{superficie}}$. Un par de superficies lisas tendrán un área de contacto casi igual a su superficie de contacto, y por ende tenderán a un coeficiente cercano a 1, que representa la ausencia de rozamiento. Por otro lado, un par de superficies más rugosas o disímiles entre sí tendrán menos puntos de contacto y por ende más fricción.
+
 \end{document}
