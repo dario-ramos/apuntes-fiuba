@@ -438,4 +438,79 @@ Si $||\vec{F}|| = ||\vec{f}_{re_{max}}||$, el cuerpo se mueve a velocidad consta
 
 Por último, una forma intuitiva de calcular los coeficientes de rozamiento es pensar que $\mu \propto \frac{\text{ptos de contacto}}{\text{superficie}}$. Un par de superficies lisas tendrán un área de contacto casi igual a su superficie de contacto, y por ende tenderán a un coeficiente cercano a 1, que representa la ausencia de rozamiento. Por otro lado, un par de superficies más rugosas o disímiles entre sí tendrán menos puntos de contacto y por ende más fricción.
 
+\subsection{Viscosidad}
+
+Dado un cuerpo en movimiento dentro de un fluido, la viscosidad es una fuerza que se opone al movimiento del cuerpo. En particular, y en casos donde sea relevante, el aire puede ser considerado un fluido. Una forma básica de modelar la viscosidad es la siguiente:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Viscosidad]{
+\vec{F}_{rv} = -k \vec{v}
+}
+\end{equation}
+
+El sufijo rv corresponde a un nombre alternativo de la fuerza viscosidad: resistencia viscosa. La constante $k$ depende del fluido, y $\vec{v}$ es, como cabe esperar, la velocidad del cuerpo. A continuación, se verá un ejemplo que combina rozamiento y viscosidad, y analiza el concepto de \textbf{velocidad crítica}.
+
+Sea un cuerpo rectangular de masa $m$, modelado como partícula, sujeto a una fuerza externa conocida $\vec{F}$. Dicho cuerpo se encuentra apoyado sobre una superficie con rozamiento dinámico $\mu_{d}$, y dentro de un fluido con viscosidad $k$. Esta situación se grafica en la figura \ref{fig:viscosity}.
+
+\begin{figure}[ht]
+\centering
+\caption{Viscosidad}
+\includegraphics[scale=1.0]{../../common/img/62.01/theory/07-dynamics-viscosity-example.png}
+\label{fig:viscosity}
+\end{figure}
+
+Modelando el cuerpo como partícula, se obtiene el diagrama de cuerpo libre de la figura \ref{fig:fbd}.
+
+\begin{figure}[ht]
+\centering
+\caption{Viscosidad - DCL}
+\includegraphics[scale=1.0]{../../common/img/62.01/theory/07-dynamics-viscosity-fbd.png}
+\label{fig:fbd}
+\end{figure}
+
+Dado que el cuerpo está apoyado en un plano horizontal, y tiene una masa $m$, se plantean la fuerza peso $\vec{P}$, y la normal del plano horizontal $\vec{N}$. En color rojo se observa la fuerza externa $\vec{F}$. Dado que, para una partícula, dicha fuerza producirá un movimiento horizontal paralelo al plano, las fuerzas de rozamiento dinámico ($\vec{F}_{rd}$) y viscosidad ($\vec{F}_{rv}$) tienen vectores dirección opuestos a los del movimiento del objeto. Se dibujó $\vec{F}_{rd}$ como si tuviera mayor módulo que $\vec{F}_{rd}$ de manera arbitraria e ilustrativa; puede darse el caso opuesto, y ello se sabrá al resolver el sistema.
+
+El segundo paso es definir un sistema de referencia. El mismo se define como un par de ejes cartesianos $x$ e $y$ con origen en la posición inicial del cuerpo.
+
+El tercer y último paso es plantear la segunda ley de Newton para las dos dimensiones del problema. En este punto, se asume que la fuerza $F$ es tal que sólo produce movimiento horizontal en el cuerpo. Vale decir, la aceleración en la componente $y$ es nula. Teniendo esto en cuenta, resulta:
+
+\begin{subequations}
+\begin{align}
+\textbf{x)} & \quad F \cos(\alpha) - k v - \mu_d N = m a \\
+\textbf{y)} & \quad N - P + F \sin(\alpha) = 0
+\end{align}
+\end{subequations}
+
+Despejando $N$ en la ecuación $\textbf{y)}$:
+
+\begin{equation}
+N = P - F \sin(\alpha)
+\end{equation}
+
+Reemplazando en la ecuación $\textbf{x)}$:
+
+\begin{equation}
+F \cos(\alpha) - k v - \mu_d (P - F \sin(\alpha)) = m a
+\end{equation}
+
+Si la fuerza $\vec{F}$ es constante en el tiempo, su módulo $F$ y el ángulo $\alpha$ también lo son. Restringiendo la solución a ese caso y recordando que $P$ es conocida por ser el producto de la masa $m$ por la constante $g$, la única incógnita que queda es la aceleración del cuerpo en función del tiempo, y su velocidad. Expresando la aceleración como la derivada de la velocidad respecto al tiempo, se obtiene la siguiente ecuación diferencial:
+
+\begin{equation}
+F [\cos(\alpha) + \mu_d \sin(\alpha)] - \mu_d P - k v = m \frac{\mathop{dv}}{\mathop{dt}}
+\end{equation}
+
+En esta ecuación, la incógnita es la función $v(t)$. Nótese que dicha ecuación es de variables separables, dado que es posible poner $t$ y $dt$ de un lado de la igualdad, y $v$ y $dv$ del otro.
+
+\begin{equation}
+\mathop{dt} = \frac{m}{-k v + F [\cos(\alpha) + \mu_d \sin(\alpha) - \mu_d P]}
+\end{equation}
+
+Integrando de ambos lados y haciendo el cambio de variable $u = $ todo el denominador, se llega a que:
+
+\begin{equation}
+v = C e^{-\frac{k}{m} t} + F [\cos(\alpha) + \mu_d \sin(\alpha) - \mu_d P]
+\end{equation}
+
+En esta expresión final de la velocidad, la constante $C$ es de integración y se calcula usando las condiciones iniciales del problema. Nótese que la solución tiene un término transitorio exponencial que depende sólo de la viscosidad y de la masa, y un término permanente constante que depende de la fuerza aplicada, el rozamiento dinámico, la masa del objeto y la aceleración de la gravedad. Este término permanente es lo que se conoce como \textbf{velocidad crítica}: a partir de cierto instante de tiempo, el término exponencial pasa a ser despreciable, y a fines prácticos, la velocidad del cuerpo se mantiene constante. Este valor de tiempo se conoce como \textbf{tiempo crítico}, y suele tomarse como $\frac{5k}{m}$. Esto surge de la regla práctica de que dada la exponencial decreciente $e^{\tau t}$, pasadas $5 \tau$ unidades de tiempo, la exponencial es, a fines prácticos, cero. Por último, nótese que como cabe esperar, el tiempo crítico depende de la viscosidad y la masa del cuerpo.
+
 \end{document}
