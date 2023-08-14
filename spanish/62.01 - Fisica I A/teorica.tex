@@ -513,4 +513,17 @@ v = C e^{-\frac{k}{m} t} + F [\cos(\alpha) + \mu_d \sin(\alpha) - \mu_d P]
 
 En esta expresión final de la velocidad, la constante $C$ es de integración y se calcula usando las condiciones iniciales del problema. Nótese que la solución tiene un término transitorio exponencial que depende sólo de la viscosidad y de la masa, y un término permanente constante que depende de la fuerza aplicada, el rozamiento dinámico, la masa del objeto y la aceleración de la gravedad. Este término permanente es lo que se conoce como \textbf{velocidad crítica}: a partir de cierto instante de tiempo, el término exponencial pasa a ser despreciable, y a fines prácticos, la velocidad del cuerpo se mantiene constante. Este valor de tiempo se conoce como \textbf{tiempo crítico}, y suele tomarse como $\frac{5k}{m}$. Esto surge de la regla práctica de que dada la exponencial decreciente $e^{\tau t}$, pasadas $5 \tau$ unidades de tiempo, la exponencial es, a fines prácticos, cero. Por último, nótese que como cabe esperar, el tiempo crítico depende de la viscosidad y la masa del cuerpo.
 
+\subsection{Vínculos}
+
+En el contexto de la mecánica clásica o newtoniana, los \textbf{vínculos} o \textbf{restricciones} describen condiciones que limitan o determinan el movimiento de los objetos o sistemas en estudio. Pueden observarse varios ejemplos de vínculos en la figura \ref{fig:constraints}. En dicha figura, los vectores de color rojo representan posibles fuerzas externas, y las flechas curvadas verdes en el caso de la rótula indican las dos posibles direcciones de movimiento de la misma. Por otro lado, en el caso del empotramiento, el cuerpo empotrado está totalmente fijo. Naturalmente, esto no contempla casos donde la fuerza sobre el cuerpo sea tan grande que lo doble o quiebre; no se modelarán ese tipo de casos en esta materia, y se asumirá que el cuerpo empotrado soportará las fuerzas a las que sea sometido.
+
+\begin{figure}[ht]
+\centering
+\caption{Vínculos}
+\includegraphics[scale=0.7]{../../common/img/62.01/theory/08-dynamics-constraints.png}
+\label{fig:constraints}
+\end{figure}
+
+Otra consideración que se adoptará al lidiar con vínculos será la siguiente: las poleas, cadenas, cuerdas y demás cuerpos vinculados serán considerados inextensibles y de masa despreciable cuando su masa sea 10 veces menor que la de los demás cuerpos considerados. Este es un buen criterio general para sistemas mecánicos básicos.
+
 \end{document}
