@@ -526,4 +526,32 @@ En el contexto de la mecánica clásica o newtoniana, los \textbf{vínculos} o \
 
 Otra consideración que se adoptará al lidiar con vínculos será la siguiente: las poleas, cadenas, cuerdas y demás cuerpos vinculados serán considerados inextensibles y de masa despreciable cuando su masa sea 10 veces menor que la de los demás cuerpos considerados. Este es un buen criterio general para sistemas mecánicos básicos.
 
+\subsection{1ra ley de Newton: inercia}
+
+Si la suma de fuerzas sobre un cuerpo es cero al menos en una dirección, en dicha dirección, si el cuerpo estaba en reposo permanecerá en reposo, y si se estaba moviendo continuará haciéndolo a velocidad constante. Recuérdese que para la suma de fuerzas también se utiliza el término \textbf{resultante}.
+
+Si un sistema se mueve a velocidad constante, es equivalente a un \textbf{sistema inercial (SI)}. En cambio, si el sistema tiene una aceleración no nula, pasa a ser un \textbf{sistema no inercial (SNI)}.
+
+Considérese el sistema de la figura \ref{fig:inertia}. Hay una barra de hielo apoyada sobre un camión. El camión tiene una aceleración no nula, y el rozamiento entre el hielo y el piso de la caja del camión es nulo.
+
+\begin{figure}[ht]
+\centering
+\caption{Inercia - ejemplo}
+\includegraphics[scale=1.0]{../../common/img/62.01/theory/09-dynamics-inertia.png}
+\label{fig:inertia}
+\end{figure}
+
+Si se observa sólo la barra de hielo tomando como referencia la tierra, la misma no se mueve: el camión avanzará y la barra resbalará hasta vincularse con el tope trasero de la caja del camión. Esto ocurre porque la tierra es un sistema inercial: para los fines de este problema, la tierra está en reposo y se cumple la 1ra ley, al menos hasta que la barra hace tope. Si se hiciera un diagrama de cuerpo libre de la barra de hielo en este caso, las únicas fuerzas serían el peso y la normal en la dirección y, y sumarían cero. En la dirección x no hay movimiento, al menos en el intervalo de interés (pre vínculo con tope trasero del camión).
+
+Ahora bien, si se toma como sistema de referencia el camión, las fuerzas son las mismas, pero se observa un movimiento en la barra. Esto ocurre porque el sistema de referencia mismo está acelerado: es un \textbf{sistema de referencia no inercial (SRNI)}. Para que sigan valiendo las leyes de Newton, es preciso aplicar una fuerza ficticia a todo cuerpo del sistema. Dicha fuerza tendrá dirección opuesta a la aceleración del sistema, y su módulo será el producto de la masa del cuerpo en cuestión por el módulo de la aceleración del sistema. Para el caso de la barra, tomando como sistema de referencia el camión, el diagrama de cuerpo libre sería ahora el de la figura \ref{fig:inertia-example}.
+
+\begin{figure}[ht]
+\centering
+\caption{Inercia - ejemplo - DCL}
+\includegraphics[scale=0.8]{../../common/img/62.01/theory/10-dynamics-inertia-example.png}
+\label{fig:inertia-example}
+\end{figure}
+
+La fuerza ficticia $\vec{f}^{*}$ es la que justifica el movimiento observado en la barra de hielo cuando el sistema de referencia es el camión. Recuérdese que si hubiera más cuerpos, todos tendrían aplicada una fuerza ficticia proporcional a su masa.
+
 \end{document}
