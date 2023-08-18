@@ -554,4 +554,37 @@ Ahora bien, si se toma como sistema de referencia el camión, las fuerzas son la
 
 La fuerza ficticia $\vec{f}^{*}$ es la que justifica el movimiento observado en la barra de hielo cuando el sistema de referencia es el camión. Recuérdese que si hubiera más cuerpos, todos tendrían aplicada una fuerza ficticia proporcional a su masa.
 
+\subsubsection{Péndulo cónico}
+
+Éste es otro ejemplo de cómo un sistema puede verse como inercial o no inercial según el sistema de referencia adoptado. Observando el diagrama de la figura \ref{fig:conic-pendulum}, y asumiendo que no hay rozamiento u otros efectos que detengan el movimiento del péndulo, el cuerpo colgado de la cuerda realizará un movimiento circular en un plano horizontal. Esto requiere que la cuerda sea larga, flexible, sin masa e inextensible (que no se estire).
+
+Si en primer lugar se toma como referencia la tierra, se tiene un sistema inercial. Concretamente, se define el eje x dentro del plano de movimiento y el eje y, perpendicular. Nótese que con este esquema, sólo se observa la posición del cuerpo en la proyección lateral del plano, no en las dos coordenadas que tendría si se observara el movimiento que realiza desde arriba. Con este sistema de referencia, fijo e inercial, y en las condiciones dadas, se observa movimiento y aceleración en la dirección x. En la dirección y, el peso del cuerpo es compensado por la componente y de la tensión en la cuerda.
+
+\begin{figure}[ht]
+\centering
+\caption{Péndulo cónico - SI}
+\includegraphics[scale=0.7]{../../common/img/62.01/theory/11-dynamics-conic-pendulum.png}
+\label{fig:conic-pendulum}
+\end{figure}
+
+Por otro lado, dado que no hay pérdida de energía, el movimiento es infinito, por lo tanto $\alpha$ es constante y en consecuencia $\omega$ también. Con eso en mente, las ecuaciones de Newton resultan:
+
+\begin{subequations}
+\begin{align}
+\textbf{x)} & \quad T \sin(\alpha) = m a_n \\
+\textbf{y)} & \quad T \cos(\alpha) - P = 0
+\end{align}
+\end{subequations}
+
+Ahora bien, si este mismo problema se plantea poniendo el sistema de referencia en el cuerpo suspendido del péndulo, el sistema pasa a ser no inercial. Cabe aclarar que en ese caso, el eje y seguiría apuntando al techo, en tanto el eje x pasaría a apuntar siempre hacia el centro del círculo. Por otro lado, el origen se movería siguiendo la posición del cuerpo. Teniendo en cuenta todo esto, el planteamiento pasa a ser el de la figura \ref{fig:conic-pendulum-ni}.
+
+\begin{figure}[ht]
+\centering
+\caption{Péndulo cónico - SNI}
+\includegraphics[scale=0.7]{../../common/img/62.01/theory/12-dynamics-conic-pendulum-ni.png}
+\label{fig:conic-pendulum-ni}
+\end{figure}
+
+Nótese la aparición de la fuerza ficticia $\vec{f}^{*}$, en el sentido opuesto al de la aceleración centrífuga que experimenta el sistema de referencia. Dicha fuerza tendrá módulo igual a $m a_n$.
+
 \end{document}
