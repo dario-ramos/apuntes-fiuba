@@ -587,4 +587,53 @@ Ahora bien, si este mismo problema se plantea poniendo el sistema de referencia 
 
 Nótese la aparición de la fuerza ficticia $\vec{f}^{*}$, en el sentido opuesto al de la aceleración centrífuga que experimenta el sistema de referencia. Dicha fuerza tendrá módulo igual a $m a_n$.
 
+\subsubsection{Péndulo ideal}
+
+Así como el péndulo cónico mueve el objeto suspendido en un plano horizontal, el péndulo ideal lo hace en un plano vertical, como se observa en la figura \ref{fig:ideal-pendulum}, en la cual, típicamente, se conocen el largo del hilo, $L$, y la masa del objeto, $m$. Para simplificar, el hilo se considera de masa despreciable comparada a la del objeto.
+
+\begin{figure}[ht]
+\centering
+\caption{Péndulo ideal}
+\includegraphics[scale=0.7]{../../common/img/62.01/theory/13-dynamics-ideal-pendulum.png}
+\label{fig:ideal-pendulum}
+\end{figure}
+
+En un planteamiento no inercial, el sistema de referencia estaría en el objeto, con un sistema de coordenadas intrínseco: un eje en la direcciones normal y otro en la tangente, instante a instante. Esto conduciría a un diagrama de cuerpo libre como el de la figura \ref{fig:ideal-pendulum-ni}.
+
+\begin{figure}[ht]
+\centering
+\caption{Péndulo ideal - SI}
+\includegraphics[scale=1]{../../common/img/62.01/theory/14-dynamics-ideal-pendulum-ni.png}
+\label{fig:ideal-pendulum-ni}
+\end{figure}
+
+Con este sistema de referencia, el sistema de referencia presenta fuerzas ficticias en la dirección normal, y aceleración tangencial en la dirección homónima. Dichas fuerzas se oponen al sentido de la aceleración. Ello conduce a las siguientes ecuaciones de Newton:
+
+\begin{subequations}
+\begin{align}
+\textbf{n)} & \quad T - P \cos(\beta) - m a_n = 0 \\
+\textbf{t)} & \quad P \sin(\beta) - m a_{tg} = 0
+\end{align}
+\end{subequations}
+
+Para resolver este sistema, lo más sencillo es tomar la ecuación tangencial y notar que el ángulo $\beta$ es congruente con el ángulo $\theta$ del péndulo, y por ende son iguales. Luego, $P = m g$. Y por último, $a_{tg}(t) = \frac{d^2s}{dt^2}$, donde $s$ es la posición del objeto medida a lo largo del arco de círculo (cero es la posición de equilibrio). Ello conduce a:
+
+\begin{subequations}
+\begin{align}
+P \sin(\beta) - m a_{tg} = 0 \\
+m g \sin(\theta) - m \frac{d^2s}{dt^2} = 0
+\end{align}
+\end{subequations}
+
+Ahora bien, la posición en el arco está relacionado con $\theta$ y la longitud del hilo: $s = L \theta$. Derivando respecto al tiempo miembro a miembro dos veces, siendo $L$ una constante, resulta que $\frac{d^2s}{dt^2} = L \frac{d^2\theta}{dt^2}$. Reemplazando, se llega a una ecuación diferencial cuya incógnita es la función $\theta(t)$.
+
+\begin{subequations}
+\begin{align}
+mg \sin(\theta) = m L \frac{d^2\theta}{dt^2} \\
+\frac{d^2\theta}{dt^2} = \frac{g}{L} \sin(\theta)
+\end{align}
+\end{subequations}
+
+Esta ecuación es bastante compleja para resolver de manera algebraica, dado que la función $\theta$ está compuesta con una función seno. Para simplificar, se puede plantear que para valores pequeños de $\theta$, $\sin(\theta) \approx \theta$. Ello conduce a una ecuación de 2do orden típica donde la solución general es una combinación lineal de un seno y coseno de cierta frecuencia.
+
 \end{document}
