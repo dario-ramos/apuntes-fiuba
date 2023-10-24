@@ -636,4 +636,45 @@ mg \sin(\theta) = m L \frac{d^2\theta}{dt^2} \\
 
 Esta ecuación es bastante compleja para resolver de manera algebraica, dado que la función $\theta$ está compuesta con una función seno. Para simplificar, se puede plantear que para valores pequeños de $\theta$, $\sin(\theta) \approx \theta$. Ello conduce a una ecuación de 2do orden típica donde la solución general es una combinación lineal de un seno y coseno de cierta frecuencia.
 
+\subsection{Resortes}
+
+Para simplificar el modelado, los resortes se considerarán sin masa. Cada resorte está caracterizado por una constante $k$, que depende de la longitud, el número de espiras, el material y demás características físicas.
+
+Otra consideración que se hará a la hora de resolver problemas es que las cargas o fuerzas aplicadas al resorte no lo quitarán de su período elástico. Cuando la fuerza aplicada sobre el resorte es demasiado grande, el mismo deja de comportarse linealmente. Además, puede que sufra modificaciones permanentes y su respuesta quede alterada. Un gráfico de este concepto puede apreciarse en la figura \ref{fig:spring-01}.
+
+\begin{figure}[ht]
+\centering
+\caption{Resorte ideal}
+\includegraphics[scale=1]{../../common/img/62.01/theory/15-dynamics-spring-01.png}
+\label{fig:spring-01}
+\end{figure}
+
+Supóngase el escenario relativamente trivial de un resorte colgando del techo, del cual se cuelga una masa $m$, como se ve en la figura \ref{fig:spring-02}. Para resolver cualquier problema de resortes donde se aplique el modelo simple establecido, se aplicará la ley de Hooke, verbigracia:
+
+\begin{figure}[ht]
+\centering
+\caption{Resorte ideal - ejemplo}
+\includegraphics[scale=1]{../../common/img/62.01/theory/15-dynamics-spring-02.png}
+\label{fig:spring-02}
+\end{figure}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Ley de Hooke]{
+\quad \overrightarrow{F_{\text{el}}} = -k \mathop{\overrightarrow{\Delta x}} \quad
+}
+\end{equation}
+
+Esta ley indica que la fuerza elástica generada sobre el resorte será proporcional al estiramiento que se le aplique, y en la dirección opuesta`. El estiramiento estará dado por la diferencia vectorial entre la posición inicial y la posición final: $\mathop{\overrightarrow{\Delta x}} = \overrightarrow{x_f} - \overrightarrow{x_i}$.
+
+Volviendo al problema de ejemplo, sobre el cuerpo colgado del resorte operarán entonces la fuerza peso y la fuerza elástica; la segunda se aplica sobre el cuerpo por estar el mismo vinculado al resorte. Véase el diagrama de cuerpo libre de la figura \ref{fig:spring-03}.
+
+\begin{figure}[ht]
+\centering
+\caption{Resorte ideal - ejemplo - DCL}
+\includegraphics[scale=1]{../../common/img/62.01/theory/15-dynamics-spring-03.png}
+\label{fig:spring-03}
+\end{figure}
+
+Este sistema estará gobernado por la ley de Hooke, instante a instante, en tanto el peso del cuerpo esté dentro del período elástico del resorte.
+
 \end{document}
