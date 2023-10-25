@@ -645,7 +645,7 @@ Otra consideración que se hará a la hora de resolver problemas es que las carg
 \begin{figure}[ht]
 \centering
 \caption{Resorte ideal}
-\includegraphics[scale=1]{../../common/img/62.01/theory/15-dynamics-spring-01.png}
+\includegraphics[scale=0.8]{../../common/img/62.01/theory/15-dynamics-spring-01.png}
 \label{fig:spring-01}
 \end{figure}
 
@@ -654,7 +654,7 @@ Supóngase el escenario relativamente trivial de un resorte colgando del techo, 
 \begin{figure}[ht]
 \centering
 \caption{Resorte ideal - ejemplo}
-\includegraphics[scale=1]{../../common/img/62.01/theory/15-dynamics-spring-02.png}
+\includegraphics[scale=0.8]{../../common/img/62.01/theory/15-dynamics-spring-02.png}
 \label{fig:spring-02}
 \end{figure}
 
@@ -671,10 +671,68 @@ Volviendo al problema de ejemplo, sobre el cuerpo colgado del resorte operarán 
 \begin{figure}[ht]
 \centering
 \caption{Resorte ideal - ejemplo - DCL}
-\includegraphics[scale=1]{../../common/img/62.01/theory/15-dynamics-spring-03.png}
+\includegraphics[scale=0.8]{../../common/img/62.01/theory/15-dynamics-spring-03.png}
 \label{fig:spring-03}
 \end{figure}
 
 Este sistema estará gobernado por la ley de Hooke, instante a instante, en tanto el peso del cuerpo esté dentro del período elástico del resorte.
+
+\subsection{Trabajo y energía}
+
+\subsubsection{Trabajo}
+
+Las ecuaciones de Newton son suficientes para un instante de tiempo específico, aceleración constante, o si se sabe previamente cómo varía la aceleración. Para los demás casos, ayuda pensar en términos de una nueva magnitud: el trabajo. Esta magnitud suele denotarse con la letra $W$, y puede definirse de varias maneras. Una muy útil es la siguiente:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Trabajo]{
+W = \oint_{r_0}^{r_f} \overrightarrow{F} \cdot \overrightarrow{\mathop{dr}} = \int_{x_0}^{x_f} F_x \mathop{dx} + \int_{y_0}^{y_f} F_y \mathop{dy} + \int_{z_0}^{z_f} F_zx \mathop{dz}
+}
+\end{equation}
+
+Como caso particular, si $\overrightarrow{F}$ es constante en módulo y dirección:
+
+\begin{equation}
+\overrightarrow{F} = \text{cte} \Rightarrow W = \overrightarrow{F} \cdot \overrightarrow{\mathop{\Delta r}} = |F| |\mathop{\Delta r}| \cos( \alpha(\overrightarrow{F}, \overrightarrow{\mathop{\Delta r}}) )
+\end{equation}
+
+Nótese que la integral es curvilínea, y se aplica sobre el producto escalar entre la fuerza y el desplazamiento. Además, se descompuso en coordenadas cartesianas, pero bien podrían utilizarse coordenadas cilíndricas, esféricas, polares, según convenga.
+
+Conceptualmente, el trabajo es una forma de energía. Más específicamente, el trabajo es realizado cuando una fuerza actúa sobre un cuerpo que se desplaza de una posición a otra. La fuerza puede variar punto a punto, vale decir ser una función de la posición del cuerpo. Se dice que el trabajo es realizado por una fuerza, en tanto la energía pertenece a un cuerpo.
+
+En cuanto a unidades, siempre van a ser un producto entre unidades de fuerza y de distancia. Algunas posibilidades son:
+
+\begin{itemize}
+\item $[W] = N \cdot m = J$ (Newton-metro = Joule)
+\item $[W] = \text{dyn} \cdot \text{cm} = \text{Erg}$ (Dina-centímetro = Ergio)
+\item $[W] = \overrightarrow{\text{kg}} \cdot m$ (kilográmetros)
+\end{itemize}
+
+El trabajo $W$ puede ser:
+
+\begin{itemize}
+\item Positivo: en este caso, se denomina \textbf{trabajo motor}. Cuando el ángulo entre fuerza y desplazamiento es cero, se tiene el máximo trabajo motor posible.
+\item Negativo: en este caso, se denomina \textbf{trabajo resistente}. Cuando el ángulo entre fuerza y desplazamiento es de 180 grados, se tiene el máximo trabajo resistente posible.
+\item Nulo: esto ocurre cuando los vectores fuerza y desplazamiento son ortogonales.
+\end{itemize}
+
+\subsubsection{Energía cinética}
+
+Dado un cuerpo de masa $m$ que se mueve con velocidad $\overrightarrow{v}$ en un instante de tiempo, su energía cinética está dada por:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Energía cinética]{
+\quad E_c = \frac{1}{2} m ||\overrightarrow{v}||^2 \quad
+}
+\end{equation}
+
+\subsubsection{Teorema de las fuerzas vivas}
+
+Este teorema establece que el trabajo de la fuerza resultante es igual a la variación de energía cinética. Por otro lado, el trabajo de la fuerza resultante es equivalente a la suma del trabajo realizado por cada fuerza. Algebraicamente:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Teorema de las fuerzas vivas]{
+\sum W = \Delta E_c \Leftrightarrow W_{F_{\text{res}}} = \Delta E_c
+}
+\end{equation}
 
 \end{document}
