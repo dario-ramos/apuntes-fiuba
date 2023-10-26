@@ -735,4 +735,130 @@ Este teorema establece que el trabajo de la fuerza resultante es igual a la vari
 }
 \end{equation}
 
+\subsection{Fuerzas conservativas y no conservativas}
+
+Se dice que una fuerza es conservativa si y sólo si el trabajo que realiza en toda trayectoria cerrada es cero. Estas fuerzas surgen de campos conservativos. En este curso, sólo la fuerza peso y la fuerza elástica serán consideradas conservativas. De manera más abarcativa, cualquier otro tipo de fuerza será considerada no conservativa hasta que se demuestre lo contrario.
+
+Que una fuerza sea conservativa tiene dos fuertes consecuencias:
+
+\begin{enumerate}
+\item Dados dos puntos A y B, el trabajo realizado por una fuerza conservativa en el trayecto de ida es igual y opuesto al trabajo del trayecto de vuelta. Simbólicamente, $W_{AB} = -W_{BA}$.
+
+\item Dados dos puntos A y B, el trabajo realizado por una fuerza conservativa no depende de la trayectoria elegida. Por lo tanto, en tanto una A con B, se puede elegir el camino que más facilite los cálculos.
+\end{enumerate}
+
+Se dice que un sistema físico es conservativo cuando no hay fuerzas no conservativas que realicen trabajo.
+
+\subsubsection{Energía potencial}
+
+Asociada a toda fuerza conservativa, hay energía potencial. Para la fuerza peso, se tiene la energía potencial gravitatoria, $E_{\text{pg}}$. Para un cuerpo de masa $m$ ubicado a una altura $h$:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Energía potencial gravitatoria]{
+\quad \quad \quad \quad E_{\text{pg}} = m g h + c \quad \quad \quad \quad
+}
+\end{equation}
+
+La constante $c$ se refiere a la posición del cero potencial. Esto se elige arbitrariamente como referencia, suele ser el nivel del suelo y suele asignarse $c = 0$. En todo caso, la posición y valor del cero potencial gravitatoria siempre debe explicitarse al resolver un problema que involucre esta magnitud.
+
+Adicionalmente, para alturas pequeñas, puede demostrarse que:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange]{
+\Delta E_p = -W_{FC}
+}
+\end{equation}
+
+Para el caso de un resorte con constante $k$ al que se ha aplicado un estiramiento $\mathop{\Delta x}$, la energía potencial elástica está dada por:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Energía potencial elástica]{
+\quad \quad \quad E_{\text{pel}} = \frac{1}{2} k \mathop{\Delta x}^2 \quad \quad \quad
+}
+\end{equation}
+
+\subsubsection{Conservación de energía mecánica}
+
+Partiendo del teorema de las fuerzas vivas, vale decir:
+
+\begin{equation}
+\sum W = \Delta E_c
+\end{equation}
+
+En el lado izquierdo de la igualdad, la suma del trabajo puede descomponerse en el trabajo realizado por fuerzas conservativas, y el trabajo realizado por fuerzas no conservativas.
+
+\begin{equation}
+\sum W_{FC} + \sum W_{F\cancel{C}} = \Delta E_c
+\end{equation}
+
+Asumiendo que las alturas involucradas son pequeñas, vale la igualdad $\Delta E_p = -W_{FC}$. Reemplazando:
+
+\begin{equation}
+-\Delta E_p + \sum W_{F\cancel{C}} = \Delta E_c
+\end{equation}
+
+Pasando la energía potencial al lado derecho:
+
+\begin{equation}
+\sum W_{F\cancel{C}} = \underbrace{ \Delta E_c + \Delta E_p }_{\Delta E_m}
+\end{equation}
+
+A la suma de energía potencial y energía cinética se la denomina \textbf{energía mecánica}, y esta denominación se extiende naturalmente a su variación o $\Delta$. Finalmente, recordando que las alturas consideradas deben ser pequeñas, se tiene el resultado:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Energía mecánica]{
+\quad \sum W_{F\cancel{C}} = \Delta E_m \quad
+}
+\end{equation}
+
+Como caso particular, considérese $\Delta E_m = 0$. Esto implica que la energía mećanica es constante, y por la igualdad anterior, la suma del trabajo de las fuerzas no conservativas es cero. Esto puede ocurrir por tres razones:
+
+\begin{enumerate}
+\item No hay fuerzas no conservativas, o se anulan entre sí.
+\item No hay desplazamiento.
+\item Las fuerzas no conservativas son ortogonales al desplazamiento.
+\end{enumerate}
+
+Volviendo a la expresión inicial del teorema de las fuerzas vivas, considerése el caso particular en que la energía cinética se conserva. Esto implicaría que $\sum W = 0$. De manera análoga, esto puede ocurrir por tres razones:
+
+\begin{enumerate}
+\item No hay fuerzas, o se anulan entre sí.
+\item No hay desplazamiento.
+\item Las fuerzas son ortogonales al desplazamiento.
+\end{enumerate}
+
+\subsection{Potencia}
+
+La potencia es la rapidez con que se realiza el trabajo. Por lo tanto, se define como su derivada respecto al tiempo.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Potencia]{
+P = \frac{\mathop{dW}}{\mathop{dt}}
+}
+\end{equation}
+
+Esta definición corresponde a la denominada \textbf{potencia instantánea}. También se puede hablar de \textbf{potencia media}, considerando un instante inicial y un instante final.
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Potencia media]{
+\overline{P} = \frac{\mathop{\Delta W}}{\mathop{\Delta t}} = \frac{W_f - W_0}{t_f - t_0}
+}
+\end{equation}
+
+Las unidades de potencia serán de energía sobre tiempo. Particularmente, $[P] = \frac{J}{s} = W$ (Watt). Cuando se habla de caballos de fuerza, se utiliza la equivalencia:
+
+\begin{equation}
+1 HP = 746 W
+\end{equation}
+
+\subsection{Rendimiento}
+
+El rendimiento de un sistema físico es el cociente entre la energía que otorga, y la energía que se le brinda. Suele denotarse con la letra griega eta.
+
+\begin{equation}
+\eta = \frac{\text{Energia obtenida}}{\text{Energia entregada}}
+\end{equation}
+
+Naturalmente, este valor es adimensional y siempre será menor a 1, ya que nunca se obtendrá más energía de la entregada, y siempre habrá pérdidas por calor, fricción, etcétera. También suele ser especificado como porcentaje, en cuyo caso es simplemente el mismo valor multiplicado por 100.
+
 \end{document}
