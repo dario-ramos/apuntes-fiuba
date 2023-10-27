@@ -861,4 +861,37 @@ El rendimiento de un sistema físico es el cociente entre la energía que otorga
 
 Naturalmente, este valor es adimensional y siempre será menor a 1, ya que nunca se obtendrá más energía de la entregada, y siempre habrá pérdidas por calor, fricción, etcétera. También suele ser especificado como porcentaje, en cuyo caso es simplemente el mismo valor multiplicado por 100.
 
+\subsection{Momento de una fuerza}
+
+El momento de una fuerza aplicada en un punto $\overrightarrow{P}$ respecto a un punto $\overrightarrow{O}$ se define como:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Momento de una fuerza respecto a un punto]{
+\overrightarrow{M_{F}^{O}} = (\overrightarrow{P}-\overrightarrow{O}) \times \overrightarrow{F} = \overrightarrow{r} \times \overrightarrow{F}
+}
+\end{equation}
+
+Por ejemplo, si se está apretando un tornillo con una llave inglesa, el punto $\overrightarrow{O}$ sería la posición del tornillo, y el punto $\overrightarrow{P}$ sería el extremo de la llave en el cual se la toma con la mano y se aplica la fuerza $\overrightarrow{F}$. Un ejemplo en 3 dimensiones se vería como la figura \ref{fig:torque-01}.
+
+\begin{figure}[ht]
+\centering
+\caption{Momento de una fuerza respecto a un punto}
+\includegraphics[scale=0.45]{../../common/img/62.01/theory/16-dynamics-torque-01.png}
+\label{fig:torque-01}
+\end{figure}
+
+En este caso, $\overrightarrow{O} = (0, 0, 0) dm$, $\overrightarrow{P} = (3, 0, 0) dm$ y $\overrightarrow{F} = (0, 0, 2) dN$. Aplicando la definición, $\overrightarrow{M_{F}^{O}} = (0, -6, 0)$. Nótese que el momento es una magnitud vectorial, y es ortogonal a los planos de los vectores $\overrightarrow{r}$ y $\overrightarrow{F}$. Su sentido está dado por la regla de la mano derecha. En este escenario, podría ser que el tornillo estuviera en el origen. Su cabeza estaría en el plano $xz$, y su cuerpo crecería en la dirección positiva del eje $y$. La llave inglesa tendría un largo de 3 decímetros (30 cm) y en su extremo se aplicaría una fuerza de 2 decinewtons en la dirección positiva del eje $z$. Esto daría un momento de $0,06 N m$ (Newton-metro) en la dirección negativa del eje y. Nótese que el momento tiene unidades de fuerza por distancia, que daría unidades de energía, pero nunca se usan Joules o Ergios para el momento para evitar confusiones. Siempre se deja expresado en unidades de fuerza por distancia.
+
+¿Qué interpretación física puede aplicarse al momento? El momento o torque puede entenderse como el equivalente rotacional de las fuerzas lineales, vale decir las que no producen rotación. Si empujamos una caja por su centro, se mueve linealmente, sin rotar; no hay torque. Ahora bien, si la empujamos por un borde, va a rotar además de deslizarse. Va a tener un momento no nulo. De manera más concreta, el torque mide la rotación de un cuerpo alrededor de un eje.
+
+Considérese el módulo del momento:
+
+\begin{equation}
+|| \overrightarrow{M_{F}^{O}} || = F r \sin(\alpha(\overrightarrow{r}, \overrightarrow{F}))
+\end{equation}
+
+Nótese que al aumentar la magnitud de $r$, aumenta la magnitud del torque: un brazo de palanca más largo produce una mayor rotación. Por ejemplo, una llave inglesa más larga atornilla más rápido. Además, el módulo se maximiza cuando el seno vale 1, o sea cuando alfa vale 90 grados. Ergo, si $\overrightarrow{F} \perp \overrightarrow{r}$, se tiene el máximo torque.
+
+Aunque el momento sea una magnitud vectorial, para ser precisos es en realidad un \textbf{pseudovector}. Al introducir el producto vectorial, el sentido del resultado está dado por la regla de la mano derecha, aunque bien podría estar dado por la mano izquierda. Esta ambigüedad hace que el producto vectorial introduzca cambios de signo espurios al aplicar ciertas transformaciones como espejado alrededor de un eje. Estos problemas no ocurren con vectores puros, por eso se dice que el producto vectorial es un pseudovector. Toda esta cuestión es meramente formalidad matemática y no afecta al mundo de la física.
+
 \end{document}
