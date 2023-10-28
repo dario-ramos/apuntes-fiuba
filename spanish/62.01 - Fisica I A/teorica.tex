@@ -894,4 +894,133 @@ Nótese que al aumentar la magnitud de $r$, aumenta la magnitud del torque: un b
 
 Aunque el momento sea una magnitud vectorial, para ser precisos es en realidad un \textbf{pseudovector}. Al introducir el producto vectorial, el sentido del resultado está dado por la regla de la mano derecha, aunque bien podría estar dado por la mano izquierda. Esta ambigüedad hace que el producto vectorial introduzca cambios de signo espurios al aplicar ciertas transformaciones como espejado alrededor de un eje. Estos problemas no ocurren con vectores puros, por eso se dice que el producto vectorial es un pseudovector. Toda esta cuestión es meramente formalidad matemática y no afecta al mundo de la física.
 
+\subsection{Momento angular}
+
+También conocido como:
+
+\begin{itemize}
+\item Momento de la cantidad de movimiento.
+\item Momento cinético.
+\item Cantidad de movimiento angular.
+\end{itemize}
+
+Esta magnitud, como el momento, también es respecto a un punto $\overrightarrow{O}$. Dado un cuerpo de masa $m$ con cierto vector velocidad $\overrightarrow{v}$, su vector cantidad de movimiento es simplemente $\overrightarrow{p} = m \overrightarrow{v}$. Con eso en mente, el momento angular respecto al punto $\overrightarrow{O}$ consiste en:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Momento angular de un cuerpo respecto a un punto]{
+\quad \quad \quad \overrightarrow{l^O} = (\overrightarrow{P} - \overrightarrow{O}) \times \overrightarrow{p} \quad \quad \quad
+}
+\end{equation}
+
+No confundir $\overrightarrow{P}$ con $\overrightarrow{p}$. El primero, $\overrightarrow{P}$, es la posición actual del cuerpo, que dicho sea de paso, sigue siendo modelado como partícula. El segundo, $\overrightarrow{p}$, es su vector cantidad de movimiento en el instante de interés, y vale $\overrightarrow{p} = m \overrightarrow{v}$. En cuanto a unidades:
+
+\begin{equation}
+[\overrightarrow{l^O}] = [d] [m] [v] = m \mathop{kg} \frac{m}{s}
+\end{equation}
+
+Para simplificar, recuérdese que $N = kg \frac{m}{s^2} \Rightarrow N s = kg \frac{m}{s}$. Ergo:
+
+\begin{equation}
+[\overrightarrow{l^O}] = N m s
+\end{equation}
+
+\subsubsection{Relaciones con momento respecto a un punto}
+
+Derivando miembro a miembro respecto al tiempo la definición de momento angular, y recordando que la regla del producto vale para el producto vectorial, se obtiene:
+
+\begin{equation}
+\overrightarrow{l^O} = \overrightarrow{r} \times \overrightarrow{p} \Rightarrow \frac{d\overrightarrow{l^O}}{dt} = \frac{d\overrightarrow{r}}{dt} \times \overrightarrow{p} + \overrightarrow{r} \times \frac{d\overrightarrow{p}}{dt}
+\end{equation}
+
+De lo visto en cinemática ya se sabe que $\frac{d\overrightarrow{r}}{dt} = \overrightarrow{v}$, ¿pero qué sería $\frac{d\overrightarrow{p}}{dt}$? Suponiendo que la masa del cuerpo se mantiene constante a lo largo del tiempo:
+
+\begin{equation}
+\overrightarrow{p} = m \overrightarrow{v} \Rightarrow \frac{d\overrightarrow{p}}{dt} = m \frac{d\overrightarrow{v}}{dt} = m \overrightarrow{a} = \overrightarrow{F}
+\end{equation}
+
+Volviendo a la ecuación inicial:
+
+\begin{equation}
+\frac{d\overrightarrow{l^O}}{dt} = \overrightarrow{v} \times \overrightarrow{p} + \overrightarrow{r} \times \overrightarrow{F}
+\end{equation}
+
+Ahora bien, nótese que $\overrightarrow{v}$ y $\overrightarrow{p} = m \overrightarrow{v}$ son colineales: el ángulo entre ambos es cero. Por ende, su producto vectorial es nulo. Resulta finalmente:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Momento angular y momento]{
+\quad \quad \frac{d\overrightarrow{l^O}}{dt} = \overrightarrow{r} \times \overrightarrow{F} = \overrightarrow{M^O_F} \quad \quad
+}
+\end{equation}
+
+\subsection{Relación con impulso}
+
+El momento angular respecto a un punto es entonces la derivada del momento respecto a ese mismo punto. Dado que se tiene dos magnitudes relacionadas mediante la derivada, es de interés integrar miembro a miembro esa relación, y analizar un caso particular.
+
+\begin{equation}
+\frac{d\overrightarrow{l^O}}{dt} = \overrightarrow{M^O_F} \Rightarrow \overrightarrow{M^O_F} \mathop{dt} = d\overrightarrow{l^O}
+\end{equation}
+
+Integrando miembro a miembro entre un instante $t_0$ y un instante $t_f$, y aplicando la definición de momento:
+
+\begin{equation}
+\int_{t_0}^{t_f} (\overrightarrow{r} \times \overrightarrow{F}) dt = \int_{\overrightarrow{l^O_0}}^{\overrightarrow{l^O_f}} d\overrightarrow{l^O}
+\end{equation}
+
+El lado derecho de la igualdad es simplemente la variación de momento angular, que se denotará $\Delta\overrightarrow{l^O} = \overrightarrow{l^O_f} - \overrightarrow{l^O_0}$.
+
+Llegado este punto, es donde se analizará un caso particular: las \textbf{fuerzas impulsivas}. Recuérdese que una fuerza impulsiva es una fuerza relativamente intensa que se aplica a un cuerpo durante un instante muy corto de tiempo. Se asume entonces que $\Delta t \rightarrow 0$, y que $\overrightarrow{r}$ permanece constante durante ese intervalo infinitesimal. Con estas hipótesis:
+
+\begin{equation}
+\overrightarrow{r} \times \int_{t_0}^{t_f} \overrightarrow{F} dt = \Delta \overrightarrow{l^O}
+\end{equation}
+
+La integral de la fuerza respecto al tiempo en un intervalo infinitesimal es justamente la definición de impulso:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Impulso]{
+\overrightarrow{J} = \lim_{\Delta t \rightarrow 0} \int_{t_0}^{t_f} \overrightarrow{F} dt
+}
+\end{equation}
+
+De esta manera, para el caso de fuerzas impulsivas, se tiene:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Momento angular e impulso]{
+\quad \quad \quad \overrightarrow{r} \times \overrightarrow{J} = \Delta \overrightarrow{l^O} \quad \quad \quad
+}
+\end{equation}
+
+\subsubsection{Conservación de momento angular}
+
+Considérese un escenario donde actuén fuerzas impulsivas, y se tenga $\Delta \overrightarrow{l^O} = 0$. Vale decir, el momento angular es constante. Esto puede desdoblarse en los siguientes escenarios:
+
+\begin{itemize}
+\item $\overrightarrow{r} \parallel \overrightarrow{J} $. Si son paralelos, el producto vectorial es nulo.
+\item $\sum \overrightarrow{J} = 0$
+\begin{itemize}
+\item $\sum \overrightarrow{F} = 0$
+\item $\overrightarrow{F} = \overrightarrow{cte}$
+\item No hay fuerzas.
+\end{itemize}
+\item $\overrightarrow{r} = 0$. En este caso, el impulso pasa por el eje de momentos.
+\end{itemize}
+
+\subsubsection{Conservación de la cantidad de movimiento}
+
+Nuevamente en un escenario con fuerzas impulsivas, recuérdese la relación entre impulso y cantidad de movimiento:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Impulso y $\overrightarrow{p}$]{
+\quad \quad \sum \overrightarrow{J} = \Delta \overrightarrow{p} \quad \quad
+}
+\end{equation}
+
+Entonces, si $\Delta \overrightarrow{p} = 0 \Rightarrow \sum \overrightarrow{J} = 0$, lo cual corresponde a los mismos tres subescenarios de la sección anterior:
+
+\begin{itemize}
+\item $\sum \overrightarrow{F} = 0$
+\item $\overrightarrow{F} = \overrightarrow{cte}$
+\item No hay fuerzas.
+\end{itemize}
+
 \end{document}
