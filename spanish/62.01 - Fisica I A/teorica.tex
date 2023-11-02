@@ -1186,4 +1186,43 @@ En cuanto a la expresión $P_I$, es un operador que recibe un vector velocidad y
 \item \textbf{Con penetración}: Un cuerpo se incrusta en el otro y lo atraviesa. Es en estos casos donde más energía cinética se pierde, y el cuerpo atravesado sufre ese impacto. Estos casos corresponden a $e < 0$.
 \end{itemize}
 
+\section{Cuerpo rígido}
+
+\subsection{Cinemática}
+
+En el contexto de la física clásica, un cuerpo rígido (CR) está caracterizado porque la distancia entre cualquier par de puntos dentro del cuerpo es constante. En otras palabras, es indeformable. Como simplificaciones adicionales para el modelo a manejar:
+
+\begin{itemize}
+\item El CR es \textbf{homogéneo}: la densidad es la misma en todo punto.
+\item El CR es perfectamente simétrico.
+\item Se considerará movimiento en un solo plano.
+\end{itemize}
+
+Una recomendación para simplificar los planteos es siempre intentar elegir el sistema de coordenadas para que algún eje coincida con la aceleración o velocidad angular, en ese orden de prioridad.
+
+\subsubsection{Traslación pura}
+
+Si el CR sólo se traslada, sin rotación alguna, todos sus puntos se mueven con igual velocidad, tanto en magnitud como dirección. Por lo tanto, en este caso particular, el CR puede ser analizado como partícula.
+
+\subsubsection{Rotación pura}
+
+El centro de masa (CM) del CR y al menos un punto más no se trasladan. Por lo tanto, lo más directo es analizar este escenario como rotación alrededor del CM. Esto implica que:
+
+\begin{equation}
+\overrightarrow{v_{\text{CM}}} = 0 \wedge \overrightarrow{a_{\text{CM}}} = 0
+\end{equation}
+
+Tanto la velocidad angular $\overrightarrow{\omega}$ como la aceleración angular $\overrightarrow{\gamma}$, aunque varíen con el tiempo, son las mismas, instante a instante, para todos los puntos del CR.
+
+Las velocidades son perpendiculares al eje que pasa por el CM; esto permite ubicar el CM experimentalmente.
+
+De manera general, la velocidad y aceleración de un punto $A$ del CR respecto a otro punto $B$ estarán dadas por:
+
+\begin{subequations}
+\begin{align}
+\overrightarrow{v_{A_B}} &= \overrightarrow{\omega} \times \overrightarrow{r_{A_B}} = \overrightarrow{\omega} \times (\overrightarrow{r_A} - \overrightarrow{r_B}) \\
+\overrightarrow{a_{A_B}} &= \overrightarrow{\gamma} \times \overrightarrow{r_{A_B}} + \overrightarrow{\omega} \times \overrightarrow{v_{A_B}}
+\end{align}
+\end{subequations}
+
 \end{document}
