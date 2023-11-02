@@ -1037,7 +1037,7 @@ Si $\overrightarrow{r}_i$, $\overrightarrow{v}_i$ y $\overrightarrow{a}_i$ son l
 
 \begin{equation}
 \tcboxmath[colback=orange!25!white,colframe=orange,title=Velocidad del CM]{
-\overrightarrow{v_{\text{CM}}} = \frac{\sum\limits_{i=1}^N m_i \overrightarrow{v_i}}{\sum\limits_{i=1}^N m_i}
+\quad \overrightarrow{v_{\text{CM}}} = \frac{\sum\limits_{i=1}^N m_i \overrightarrow{v_i}}{\sum\limits_{i=1}^N m_i} \quad
 }
 \end{equation}
 
@@ -1089,6 +1089,70 @@ Si se ubica el sistema de referencia en el CM, resulta:
 
 \begin{equation}
 0 = \sum_{i=1}^N m_i (\overrightarrow{v_i} - \overrightarrow{v_{\text{CM}}})
+\end{equation}
+
+\subsubsection{Trabajo y energía en SP}
+
+Por definición, la energía cinética total del sistema está dada por:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Energía cinética total de un SP]{
+\quad \qquad E_c = \frac{1}{2} \sum_{i=1}^N m_i ||\overrightarrow{v_i}||^2 \qquad \quad
+}
+\end{equation}
+
+Y la energía potencial gravitatoria:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=$E_{\text{pg}}$ total de un SP]{
+\quad E_{\text{pg}} = M_T g h_{\text{CM}} \quad
+}
+\end{equation}
+
+En esta expresión, la altura del centro de masa, $h_{\text{CM}}\textbf{•}$, estará dada por la coordenada de su vector posición que represente la distancia al cero de referencia.
+
+Para vincular dos instantes de tiempo, es posible aplicar:
+
+\begin{equation}
+\sum_{i=1}^N W_i = \Delta E_c
+\end{equation}
+
+\begin{equation}
+\sum_{i=1}^N W_{\mathop{f\cancel{c}}} = \Delta E_m, E_m = E_c + E_{\text{pg}}
+\end{equation}
+
+Es esencial tener en cuenta que en estas expresiones, se incluye el trabajor realizado por las fuerzas internas.
+
+Otra magnitud que puede resultar de interés es la energía cinética respecto al CM, la cual se define como:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=$E_c$ respecto a CM]{
+\quad E_{\text{C-CM}} = E_c - \frac{1}{2} M_T ||\overrightarrow{v_{\text{CM}}}||^2 \quad
+}
+\end{equation}
+
+El momento angular del CM es la suma de momento angulares respecto al CM:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Momento angular del CM]{
+\quad \qquad \overrightarrow{l^{\text{CM}}} = \sum_{i=1}^N \overrightarrow{l_i^{\text{CM}}} \qquad \quad
+}
+\end{equation}
+
+Esto implica que la relación entre momento y momento angular es:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Momento y momento angular del CM]{
+\qquad \qquad \sum_{i=1}^N \overrightarrow{M_{\text{ext}}^{\text{CM}}} = \frac{d\overrightarrow{l^{\text{CM}}_i}}{\mathop{dt}} \qquad \qquad
+}
+\end{equation}
+
+Para escenarios con fuerzas impulsivas, puede demostrarse que:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Impulsos y SP]{
+\sum_{i=1}^N \overrightarrow{J_{\text{ext}}} = \Delta \overrightarrow{p_{\text{CM}}}
+}
 \end{equation}
 
 \end{document}
