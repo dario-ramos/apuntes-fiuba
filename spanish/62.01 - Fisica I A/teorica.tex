@@ -952,7 +952,7 @@ Ahora bien, nótese que $\overrightarrow{v}$ y $\overrightarrow{p} = m \overrigh
 }
 \end{equation}
 
-\subsection{Relación con impulso}
+\subsubsection{Relación con impulso}
 
 El momento angular respecto a un punto es entonces la derivada del momento respecto a ese mismo punto. Dado que se tiene dos magnitudes relacionadas mediante la derivada, es de interés integrar miembro a miembro esa relación, y analizar un caso particular.
 
@@ -1022,5 +1022,39 @@ Entonces, si $\Delta \overrightarrow{p} = 0 \Rightarrow \sum \overrightarrow{J} 
 \item $\overrightarrow{F} = \overrightarrow{cte}$
 \item No hay fuerzas.
 \end{itemize}
+
+\subsection{Sistema de partículas}
+
+Hasta ahora, se han modelado todos los cuerpos como partículas puntuales, vale decir, toda la masa se consideraba concentrada en un punto. Como generalización de este concepto, se considerará ahora un modelo para analizar un conjunto de partículas. En un instante determinado, se tiene una configuración específica en cuanto a posición, velocidad y aceleración de cada partícula. Para analizar el conjunto como si fuera una sola partícula, se introduce el concepto de \textbf{centro de masa (CM)}. Con ello, será posible reutilizar todas las técnicas ya vistas para una sola partícula.
+
+Si $\overrightarrow{r}_i$, $\overrightarrow{v}_i$ y $\overrightarrow{a}_i$ son la posición, velocidad y aceleración instantáneas de la i-ésima partícula de un total de $N$ partículas, dichas magnitudes para el centro de masa estarán dadas por:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Posición del CM]{
+\overrightarrow{r_{\text{CM}}} = \frac{\sum\limits_{i=1}^N m_i \overrightarrow{r_i}}{\sum\limits_{i=1}^N m_i}
+}
+\end{equation}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Velocidad del CM]{
+\overrightarrow{v_{\text{CM}}} = \frac{\sum\limits_{i=1}^N m_i \overrightarrow{v_i}}{\sum\limits_{i=1}^N m_i}
+}
+\end{equation}
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Aceleración del CM]{
+\quad \overrightarrow{a_{\text{CM}}} = \frac{\sum\limits_{i=1}^N m_i \overrightarrow{a_i}}{\sum\limits_{i=1}^N m_i} \quad
+}
+\end{equation}
+
+Nótese que estas expresiones valen coordenada a coordenada. Vale decir, si se desea calcular la coordenada $y$ de la posición del centro de masa, se hace el mismo promedio ponderado sobre la coordenada $y$ de todas las partículas. Y lo mismo vale para velocidad y aceleración.
+
+En cuanto a la cantidad de movimiento, es posible demostrar que para este modelo, la cantidad de movimiento del CM es la suma de la cantidad de movimiento de todas las partículas. Ergo, si se define $M_T = \sum_{i=1}^N m_i$:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Cantidad de movimiento del CM]{
+\quad \quad \overrightarrow{p_{\text{CM}}} = M_T \overrightarrow{v_\text{CM}} = \sum_{i=1}^N \overrightarrow{p_i} \quad \quad
+}
+\end{equation}
 
 \end{document}
