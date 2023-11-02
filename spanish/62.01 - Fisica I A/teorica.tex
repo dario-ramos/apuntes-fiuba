@@ -1057,4 +1057,38 @@ En cuanto a la cantidad de movimiento, es posible demostrar que para este modelo
 }
 \end{equation}
 
+\subsubsection{Segunda ley de Newton para SP}
+
+Para reformular la segunda ley de Newton en el contexto de sistemas de partículas (SPs), es necesario introducir el concepto de \textbf{fuerzas internas y externas}. Dado un sistema de partículas, las fuerzas surgidas de interacciones entre las partículas se consideran internas, y todas las demás se consideran externas. Si se aplica la segunda ley al SP:
+
+\begin{equation}
+\sum \overrightarrow{F} = m \overrightarrow{a}
+\end{equation}
+
+En el lado izquierdo de la igualdad, es posible desdoblar las fuerzas en internas y externas. En el lado derecho, la masa del sistema es $M_T$, y la aceleración es $\overrightarrow{a_{\text{CM}}}$. 
+
+\begin{equation}
+\sum \overrightarrow{F_{\text{int}}} + \sum \overrightarrow{F_{\text{ext}}} = M_T \overrightarrow{a_{\text{CM}}}
+\end{equation}
+
+Ahora bien, por la 3ra ley de Newton, dado que las fuerzas internas son pares acción-reacción, se cancelan entre sí y su suma es cero. Por ende, resulta:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=2da ley de Newton para SP]{
+\quad \quad \sum \overrightarrow{F_{\text{ext}}} = M_T \overrightarrow{a_{\text{CM}}} \quad \quad
+}
+\end{equation}
+
+Para el caso particular en que $\sum \overrightarrow{F_{\text{ext}}} = 0$, se conserva la cantidad de movimiento del centro de masa: 
+
+\begin{equation}
+\sum \overrightarrow{F_{\text{ext}}} = 0 \Rightarrow \overrightarrow{p_{\text{CM}}} = \text{cte}
+\end{equation}
+
+Si se ubica el sistema de referencia en el CM, resulta:
+
+\begin{equation}
+0 = \sum_{i=1}^N m_i (\overrightarrow{v_i} - \overrightarrow{v_{\text{CM}}})
+\end{equation}
+
 \end{document}
