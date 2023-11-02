@@ -1155,4 +1155,35 @@ Para escenarios con fuerzas impulsivas, puede demostrarse que:
 }
 \end{equation}
 
+\subsubsection{Choques mecánicos}
+
+Para simplificar el planteo, se considera que el intervalo de choque es un infinitésimo. Más específicamente, se define como intervalo de choque el lapso de tiempo transcurrido desde que los cuerpos empiezan a juntarse hasta que los cuerpos empiezan a separarse. Esto último tendrá una salvedad en el caso particular del choque plástico, como se verá más adelante. Por otro lado, las fuerzas externas que puedan llegar a actuar se consideran despreciables en comparación con las fuerzas impulsivas generadas por el choque. Dado que dichas fuerzas son internas al sistema, su suma es nula. Por ende, la sumatoria total de fuerzas es nula, y se conserva la cantidad de movimiento. Resumiendo, para todo choque mecánico, se cumplirá:
+
+\begin{itemize}
+\item $\Delta t \rightarrow 0$
+\item $\Delta \overrightarrow{p_{\text{CM}}} = 0$
+\end{itemize}
+
+Antes de analizar los diferentes tipos de choque mecánico, es de utilidad introducir el \textbf{coeficiente de restitución}, definido como:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange,title=Coeficiente de restitución]{
+e = -\frac{P_I(\overrightarrow{v_{f2}} - \overrightarrow{v_{f1}})}{P_I(\overrightarrow{v_{02}} - \overrightarrow{v_{01}})}
+}
+\end{equation}
+
+En esta expresión, $\overrightarrow{v_{f2}}$ es la velocidad final del cuerpo 2. Por velocidad final, se entienda la que adquiere inmediatamente después del choque. Análogamente, la velocidad inicial de cada cuerpo es la medida inmediatamente antes del choque. Esto implica naturalmente que se está considerando siempre un choque entre 2 cuerpos, y que uno debe rotularse como cuerpo 1 y otro como cuerpo 2.
+
+En cuanto a la expresión $P_I$, es un operador que recibe un vector velocidad y devuelve un escalar que representa la proyección de dicho vector en la dirección del impacto. La pregunta obvia que surge es cuál es la dirección del impacto. De manera general, al chocar dos cuerpos en 3 dimensiones, es posible determinar una superficie de impacto, que en el caso de un modelo de partículas, será un plano de impacto. La dirección de impacto estará entonces dada por la normal de dicho plano; el sentido elegido como positivo es irrelevante, en tanto se use consistentemente.
+
+\textbf{Tipos de choque mecánico}:
+
+\begin{itemize}
+\item \textbf{Perfectamente elástico}: Los cuerpos no se deforman, y se conserva la energía cinética. Obviamente este es un caso idealizado que jamás se observa en la realidad, pero en muchos casos se da de manera aproximada. Por ejemplo, un choque entre bolas de billar es algo bastante cercano a un choque totalmente elástico. Este caso corresponde a $e = 1$.
+\item \textbf{Inelástico}: Hay cierto grado de deformación en ambos cuerpos. Casi todos los choques reales caen en este rango, que corresponde a $0 < e < 1$.
+\item \textbf{Plástico/perfectamente inelástico}: Luego del choque, los cuerpos permanecen unidos, y se mueven con la misma velocidad $\overrightarrow{v_f}$. En este caso, $e = 0$. Por ejemplo, un camión chocando un mosquito.
+\item \textbf{Explosivo}: Este choque ocurre cuando se gana energía cinética. Esto puede ocurrir, por ejemplo, si un cuerpo tiene energía potencial que se convierte en cinética. Por ejemplo, si un cuerpo lleva un resorte y éste se activa durante el choque. En casos así, $e > 1$.
+\item \textbf{Con penetración}: Un cuerpo se incrusta en el otro y lo atraviesa. Es en estos casos donde más energía cinética se pierde, y el cuerpo atravesado sufre ese impacto. Estos casos corresponden a $e < 0$.
+\end{itemize}
+
 \end{document}
