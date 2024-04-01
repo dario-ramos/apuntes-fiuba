@@ -91,4 +91,56 @@ Resolviendo con la misma metolodogía que el anterior, se obtiene:
 \tcboxmath[colback=orange!25!white,colframe=orange, title=1.b] { -\frac{3}{10} }
 \end{equation}
 
+\section*{2}
+\label{sec:2}
+\addcontentsline{toc}{section}{\nameref{sec:2}}
+
+\textbf{Calcule:}
+
+\begin{enumerate}[(a)]
+\bfseries
+
+\item $\left[ \frac{1}{4} - \left( \frac{2}{3} - \frac{1}{2} \right)^2 \right]^{-2}$
+
+\item $\left[ \left( 4 - \frac{1}{2} \right)^2 + \left( -3-\frac{1}{2} \right)^2 \right]^{\frac{1}{2}}$
+
+\end{enumerate}
+\hrule
+
+\subsection*{2.a}
+\label{subsec:2.a}
+\addcontentsline{toc}{subsection}{\nameref{subsec:2.a}}
+
+El enfoque del punto anterior sigue valiendo, en particular lo referido a evaluar los paréntesis más anidados primero. Lo que se agrega es lidiar con potencias. Y para ello, es conveniente tener presente que:
+
+\begin{itemize}
+\item La potenciación no es distributiva respecto a la suma o resta, pero sí respecto al producto.
+\begin{itemize}
+\renewcommand{\labelitemii}{$\diamond$}
+\item $\left(a + b\right)^c \neq a^c + b^c$
+\item $\left(a \cdot b\right)^c = a^c \cdot b^c$
+\end{itemize}
+\item Elevar a una potencia negativa equivale a elevar el recíproco de la misma potencia negada. Simbólicamente, $a^{-b} = \left( \frac{1}{a} \right)^b$, para todo a y b reales, con $a \neq 0$.
+\item Elevar a una potencia de la forma $\frac{1}{n}$, con $n$ entero y $n \neq 0$, equivale a tomar la n-ésima raíz de la base: $a^{\frac{1}{n}} = \sqrt[n]{a}$.
+\end{itemize}
+
+Aplicando estos conceptos:
+
+\begin{subequations}
+\begin{align}
+&\left[ \frac{1}{4} - \textcolor{blue}{ \underbrace{ \left( \frac{2}{3} - \frac{1}{2} \right)^2 }_{\left( \frac{1}{6} \right)^2 }} \right]^{-2} = \\
+&\left[ \frac{1}{4} - \textcolor{blue}{ \frac{1}{36} } \right]^{-2} = \left[ \frac{8}{36} \right]^{-2} = \left[ \frac{2}{9} \right]^{-2} = \left[ \frac{9}{2} \right]^2 = \tcboxmath[colback=orange!25!white,colframe=orange, title=2.a] { \frac{81}{4} = 20.25 }
+\end{align}
+\end{subequations}
+
+\subsection*{2.b}
+\label{subsec:2.b}
+\addcontentsline{toc}{subsection}{\nameref{subsec:2.b}}
+
+Es muy similar al anterior, pero se agrega un concepto. Al expresar un resultado, no es deseable que haya expresiones radicales en el denominador. Por ello se entiende raíces de números o expresiones. Para resolver eso, se multiplica y divide por la misma expresión radical a eliminar. En este caso, partiendo del resultado final con expresión radical:
+
+\begin{equation}
+\sqrt{\frac{49}{2}} = \frac{7}{\sqrt{2}} = \frac{7}{\sqrt{2}} \frac{\sqrt{2}}{\sqrt{2}} = \tcboxmath[colback=orange!25!white,colframe=orange, title=2.b] { \frac{7 \sqrt{2}}{2} \approx 4.9497 }
+\end{equation}
+
 \end{document}
