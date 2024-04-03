@@ -1,6 +1,9 @@
 \documentclass{article}
 
 \usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[spanish]{babel}
+\usepackage{cancel}
 \usepackage{enumerate}
 \usepackage{hyperref}
 \hypersetup{
@@ -16,9 +19,6 @@
 \tcbuselibrary{theorems}
 
 % TODO Remove after completing this document
-%\usepackage{amssymb}
-%\usepackage[spanish]{babel}
-%\usepackage{cancel}
 %\usepackage{caption}
 %\usepackage[margin=1.5in]{geometry}
 %\usepackage{graphicx}
@@ -26,9 +26,9 @@
 %\usepackage{tcolorbox}
 %\usepackage{esint}
 
-%
-%\renewcommand{\Bbb}{\mathbb}
-%
+
+\renewcommand{\Bbb}{\mathbb}
+
 
 \title{Ejercicios de Análisis Matemático CBC (28) \\
 Práctica 0: Preliminares \\
@@ -117,8 +117,8 @@ El enfoque del punto anterior sigue valiendo, en particular lo referido a evalua
 \item La potenciación no es distributiva respecto a la suma o resta, pero sí respecto al producto.
 \begin{itemize}
 \renewcommand{\labelitemii}{$\diamond$}
-\item $\left(a + b\right)^c \neq a^c + b^c$
-\item $\left(a \cdot b\right)^c = a^c \cdot b^c$
+\item $\left(a + b\right)^c \neq a^c + b^c \quad \forall a,b,c \in \mathbb{R}$
+\item $\left(a \cdot b\right)^c = a^c \cdot b^c \quad \forall a,b,c \in \mathbb{R}$
 \end{itemize}
 \item Elevar a una potencia negativa equivale a elevar el recíproco de la misma potencia negada. Simbólicamente, $a^{-b} = \left( \frac{1}{a} \right)^b$, para todo a y b reales, con $a \neq 0$.
 \item Elevar a una potencia de la forma $\frac{1}{n}$, con $n$ entero y $n \neq 0$, equivale a tomar la n-ésima raíz de la base: $a^{\frac{1}{n}} = \sqrt[n]{a}$.
@@ -141,6 +141,100 @@ Es muy similar al anterior, pero se agrega un concepto. Al expresar un resultado
 
 \begin{equation}
 \sqrt{\frac{49}{2}} = \frac{7}{\sqrt{2}} = \frac{7}{\sqrt{2}} \frac{\sqrt{2}}{\sqrt{2}} = \tcboxmath[colback=orange!25!white,colframe=orange, title=2.b] { \frac{7 \sqrt{2}}{2} \approx 4.9497 }
+\end{equation}
+
+\section*{3}
+\label{sec:3}
+\addcontentsline{toc}{section}{\nameref{sec:3}}
+
+\textbf{Calcule:}
+
+\begin{enumerate}[(a)]
+\bfseries
+
+\item $ \frac{3^4 \cdot 3^7}{3^{12}} $
+
+\item $\sqrt{ \frac{ (5 \cdot 10^{-6}) (4 \cdot {10}^2) }{8 \cdot {10}^5} }$
+
+\item $ {81}^{\frac{3}{4}} + \left( \frac{16}{49} \right)^{-\frac{1}{2}} + \left( \frac{64}{27} \right)^{\frac{2}{3}} + {32}^{-\frac{4}{5}} + \left( {{2}^{-6}} \right) ^{\frac{2}{3}} + 3^{\frac{7}{2}} \cdot 3^{\frac{1}{2}} $
+
+\item $ \sqrt{5^2} + \sqrt{(-3)^2} + \sqrt[4]{(-9)^2} + \sqrt[3]{-\frac{8}{27}} + \sqrt[3]{81} $
+
+\end{enumerate}
+\hrule
+
+\subsection*{3.a}
+\label{subsec:3.a}
+\addcontentsline{toc}{subsection}{\nameref{subsec:3.a}}
+
+Al multiplicar potencias de igual base, los exponentes se suman. Y al dividir potencias de igual base, los exponentes se restan.
+
+\begin{itemize}
+\item $ a^b \cdot a^c = a^{b + c} \quad \forall a, b, c \in \mathbb{R}$
+\item $ \frac{a^b}{a^c} = a^{b - c} \quad \forall a, b, c \in \mathbb{R}$
+\end{itemize}
+
+\begin{equation}
+\frac{3^4 \cdot 3^7}{3^{12}} = \frac{3^{11}}{3^{12}} = 3^{-1} = \tcboxmath[colback=orange!25!white,colframe=orange, title=3.a] { \hspace{0.25em} \frac{1}{3} \hspace{0.25em} }
+\end{equation}
+
+\subsection*{3.b}
+\label{subsec:3.b}
+\addcontentsline{toc}{subsection}{\nameref{subsec:3.b}}
+
+En el ejercicio 2.a, se vio cómo lidiar con exponentes de la forma $\frac{1}{n}$, con $n$ entero. Para el caso más general de un exponente fraccionario, puede descomponerse la exponenciación en un paso entero y un paso de la forma $\frac{1}{n}$. Verbigracia:
+
+\begin{equation}
+a^{\frac{p}{q}} = a^{(p \frac{1}{q})} = (a^p)^{\frac{1}{q}}
+\end{equation}
+
+Así, si resulta conveniente, es posible evaluar $a^p$ primero y luego tomar la q-ésima raíz de ese valor.
+
+Aplicando todo lo ya visto a este caso:
+
+\begin{subequations}
+\begin{align}
+& \sqrt{ \frac{ (5 \cdot 10^{-6}) (4 \cdot {10}^2) }{8 \cdot {10}^5} } = \\
+& \sqrt{ \frac{ 20 \cdot 10^{-4} }{8 \cdot {10}^5} } = \\
+& \sqrt{ \frac{5}{2} \cdot 10^{-9} } = \\
+& \sqrt{ \frac{5}{2} } \cdot 10^{-\frac{9}{2}} = \\
+& \frac{\sqrt{5}}{\sqrt{2}} \cdot \frac{\sqrt{2}}{\sqrt{2}} \cdot 10^{-\frac{9}{2}} = \\
+& \frac{\sqrt{10}}{2} \cdot 10^{-4} \cdot 10^{-\frac{1}{2}} = \\
+& \frac{1}{2} \cdot \cancel{10^{\frac{1}{2}}} \cdot 10^{-4} \cdot \cancel{10^{-\frac{1}{2}}} = \\
+& \frac{1}{2} \cdot 10 \cdot 10^{-5} = \tcboxmath[colback=orange!25!white,colframe=orange, title=3.b] { 5 \cdot 10^{-5} }
+\end{align}
+\end{subequations}
+
+\subsection*{3.c}
+\label{subsec:3.c}
+\addcontentsline{toc}{subsection}{\nameref{subsec:3.c}}
+
+Al llegar al final de éste, conviene sumar todas las fracciones por un lado y los enteros por otro, para minimizar las chances de error. Teniendo mucho cuidado, debería dar el siguiente valor:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=3.c] { \frac{8039}{72} = 111.652\overline{7} }
+\end{equation}
+
+\subsection*{3.d}
+\label{subsec:3.d}
+\addcontentsline{toc}{subsection}{\nameref{subsec:3.d}}
+
+La trampa en este ejercicio consiste en los signos negativos en los radicales. No es válido cancelar un exponente interno con uno externo cuando hay un signo negativo involucrado. Por ejemplo:
+
+\begin{equation}
+\sqrt{(-3)^2} = \sqrt{9} = 3
+\end{equation}
+
+Una resolución incorrecta cancelando exponentes sería:
+
+\begin{equation}
+\sqrt{(-3)^2} = {(-3)^2}^{\frac{1}{2}} = -3 \quad \textcolor{red}{\text{INCORRECTO}}
+\end{equation}
+
+La moraleja es que si el radicando tiene signo negativo, es preferible evaluar la potencia en dos pasos, considerando el signo. Cancelar exponentes puede conducir a errores. Con estas precauciones en mente, el resultado debería ser:
+
+\begin{equation}
+\tcboxmath[colback=orange!25!white,colframe=orange, title=3.d] { \frac{31}{3} + 3 \sqrt[3]{3} \approx 14,660 }
 \end{equation}
 
 \end{document}
