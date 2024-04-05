@@ -270,4 +270,54 @@ Sólo hay que reemplazar los valores y realizar las cuentas, que son triviales.
 \end{align}
 \end{subequations}
 
+\section*{5}
+\label{sec:5}
+\addcontentsline{toc}{section}{\nameref{sec:5}}
+
+\textbf{Pruebe las siguientes identidades:}
+
+\begin{enumerate}[(a)]
+\bfseries
+
+\item $ \sqrt{n+1} - \sqrt{n} = \frac{1}{\sqrt{n+1} + \sqrt{n}}, n \in \mathbb{N} $
+
+\item $ \frac{n^3 + 3n^2 + n}{n^2 + 1} = \frac{n^2 + 3n + 1}{n + \frac{1}{n}}, n \in \mathbb{N}$
+
+\end{enumerate}
+\hrule
+
+\subsection*{5.a}
+\label{subsec:5.a}
+\addcontentsline{toc}{subsection}{\nameref{subsec:5.a}}
+
+La solución más directa es tomar uno de los dos lados de la identidad y aplicarle transformaciones algebraicas válidas hasta obtener una expresión igual a la del otro lado. En este caso, el lado derecho se presta a aprovechar la siguiente propiedad:
+
+\begin{equation}
+(a + b)(a - b) = a^2 - b^2
+\end{equation}
+
+Para este caso, $a + b$ sería el denominador. Multiplicando y dividiendo por $a - b$, resulta:
+
+\begin{equation}
+\frac{1}{(\sqrt{n + 1}+\sqrt{n})} \frac{(\sqrt{n+1}-\sqrt{n})}{(\sqrt{n+1}-\sqrt{n})} = \frac{\sqrt{n+1}-\sqrt{n}}{(\sqrt{n+1})^2 -(\sqrt{n})^2 }
+\end{equation}
+
+En este punto, como $n \in \mathbb{N}$, los radicandos siempre serán positivos y por lo tanto es válido cancelar el cuadrado con la raíz cuadrada. 
+
+\begin{equation}
+\frac{\sqrt{n+1}-\sqrt{n}}{(\sqrt{n+1})^2 -(\sqrt{n})^2 } = \frac{\sqrt{n+1}-\sqrt{n}}{n+1-n} = \frac{\sqrt{n+1}-\sqrt{n}}{1} = \sqrt{n+1}-\sqrt{n}
+\end{equation}
+
+Habiendo transformado el lado derecho en el izquierdo, queda demostrada la identidad.
+
+\subsection*{5.b}
+\label{subsec:5.b}
+\addcontentsline{toc}{subsection}{\nameref{subsec:5.b}}
+
+Para que el lado derecho exista, es necesario exigir que $n \neq 0$. Hay quienes consideran a cero un número natural, y hay quienes no. En todo caso, el lado derecho de la identidad no está definido para $n = 0$, por lo cual se excluye ese valor. Hecha esta salvedad, la demostración es trivial en este caso, porque el lado izquierdo es simplemente el lado derecho multiplicado y dividido por $n$:
+
+\begin{equation}
+\frac{(n^2 + 3n + 1)}{(n + \frac{1}{n})} \frac{n}{n} = \frac{n^3 + 3n^2 + n}{n^2 + 1}, n \in \mathbb{N} \wedge n \neq 0
+\end{equation}
+
 \end{document}
