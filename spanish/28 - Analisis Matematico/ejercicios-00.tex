@@ -26,7 +26,6 @@
 %\usepackage{tcolorbox}
 %\usepackage{esint}
 
-
 \renewcommand{\Bbb}{\mathbb}
 
 
@@ -403,5 +402,31 @@ Como no es 2, es una solución válida.
 \end{subequations}
 
 Si no se hubiera simplificado el denominador del lado derecho luego de haber multiplicado miembro a miembro por $(x-1)$, se habría llegado a una ecuación cuadrática cuyas raíces son $x_1 = -\frac{5}{18}$ y $x_2 = 1$. La segunda solución es inválida porque previamente se estableció que $x \neq 1$.
+
+\section*{7}
+\label{sec:7}
+\addcontentsline{toc}{section}{\nameref{sec:7}}
+
+\textbf{Muestre que el número $\sqrt{2} + \sqrt{3}$ es solución de la ecuación \\ $  x^4 - 10 x^2 + 1 = 0$.}
+
+Es trivial hacer esto con calculadora, pero la gracia es hacerlo a mano. La clave es aplicar la fórmula del cuadrado de un binomio:
+
+\begin{equation}
+(a + b)^2 = a^2 + 2 \cdot a \cdot b + b^2
+\end{equation}
+
+Evaluando $x = \sqrt{2} + \sqrt{3}$, si es una solución de la ecuación tiene que dar cero:
+
+\begin{subequations}
+\begin{align}
+& (\sqrt{2} + \sqrt{3})^4 - 10 \cdot (\sqrt{2} + \sqrt{3})^2 + 1 = \\
+& [(\sqrt{2} + \sqrt{3})^2]^2 - 10 (\sqrt{2} + \sqrt{3})^2 + 1 = \\
+& (2 + 2 \sqrt{2} \sqrt{3} + 3)^2 - 10 (2 + 2 \sqrt{2} \sqrt{3} + 3) + 1 \\
+& (5 + 2 \sqrt{6})^2 - 10 (5 + 2 \sqrt{6}) + 1 \\
+& (25 + 2 \cdot 5 \cdot 2 \sqrt{6} + 4 \cdot 6) - 50 -20 \sqrt{6} + 1 \\
+& 49 + \cancel{20 \sqrt{6}} - 50 \cancel{-20 \sqrt{6}} + 1 \\
+& 49 -50 + 1 = 0
+\end{align}
+\end{subequations}
 
 \end{document}
