@@ -342,7 +342,7 @@ Para que el lado derecho exista, es necesario exigir que $n \neq 0$. Hay quienes
 
 \end{enumerate}
 \hrule
-
+\vspace{1em}
 Todas estas ecuaciones son lineales y triviales, excepto la última. El único recaudo necesario son las posibles divisiones por cero. Por ello, se pondrá el resultado directamente para los casos triviales y se desarrollarán los no triviales.
 
 \subsection*{6.a}
@@ -392,7 +392,8 @@ Como no es 2, es una solución válida.
 \begin{subequations}
 \begin{align}
 & \frac{x}{x-1} + \frac{3}{2(x-1)} = \frac{6x-2}{3-3x} \\
-& \text{Se exige } x \neq 1 \text{ por ser cero de los denominadores, y se multiplica miembro a miembro por } (x-1) \\
+& \text{Se exige } x \neq 1 \text{ por ser cero de los denominadores} \\
+& \text{Se multiplica miembro a miembro por } (x-1) \\
 & x + \frac{3}{2} = \frac{(6x-2) (x-1)}{3 (1-x)} \\
 & x + \frac{3}{2} = \frac{(6x-2)}{-3} \\
 & -3x - \frac{9}{2} = 6x - 2 \\
@@ -408,7 +409,9 @@ Si no se hubiera simplificado el denominador del lado derecho luego de haber mul
 \addcontentsline{toc}{section}{\nameref{sec:7}}
 
 \textbf{Muestre que el número $\sqrt{2} + \sqrt{3}$ es solución de la ecuación \\ $  x^4 - 10 x^2 + 1 = 0$.}
-
+\vspace{0.5em}
+\hrule
+\vspace{1em}
 Es trivial hacer esto con calculadora, pero la gracia es hacerlo a mano. La clave es aplicar la fórmula del cuadrado de un binomio:
 
 \begin{equation}
@@ -428,5 +431,137 @@ Evaluando $x = \sqrt{2} + \sqrt{3}$, si es una solución de la ecuación tiene q
 & 49 -50 + 1 = 0
 \end{align}
 \end{subequations}
+
+\section*{8}
+\label{sec:8}
+\addcontentsline{toc}{section}{\nameref{sec:7}}
+
+\textbf{Escriba como intervalo o unión de intervalos las soluciones de las siguientes desigualdades:}
+
+\begin{enumerate}[(a)]
+\bfseries
+
+\item $ 2x-1 \leq 2 $
+
+\item $ -2x+1 \geq 2 $
+
+\item $ 2x + 11 > 10-6x $
+
+\item $ \frac{2}{2-x} > 4 $
+
+\item $ \frac{2x-1}{x-3} < 1 $
+
+\item $ \frac{x-3}{x-1} > 1 $
+
+\end{enumerate}
+\hrule
+\vspace{1em}
+Las desigualdades se resuelven de manera similar a las ecuaciones, en el sentido de que se aplica una misma operación en ambos lados hasta lograr aislar la incógnita. Lo que se agrega es el hecho de que si se multiplica miembro a miembro por un número negativo, se invierte el signo de la desigualdad. Por lo tanto, si ese número contiene una x, hay que considerar el caso en que el factor sea positivo y el caso en que sea negativo. Y tal como en las ecuaciones, hay que descartar los valores que produzcan divisiones por cero.
+
+\subsection*{8.a}
+\label{subsec:8.a}
+\addcontentsline{toc}{subsection}{\nameref{subsec:8.a}}
+
+Trivial, no se invierte la desigualdad.
+
+\begin{equation}
+x < \frac{3}{2} \Rightarrow \tcboxmath[colback=orange!25!white,colframe=orange, title=8.a] { x \in \left(-\infty, \frac{3}{2}\right] }
+\end{equation}
+
+\subsection*{8.b}
+\label{subsec:8.b}
+\addcontentsline{toc}{subsection}{\nameref{subsec:8.b}}
+
+\begin{subequations}
+\begin{align}
+& -2x+1 \geq 2 \\
+& \text{Se resta 1 m. a m.} \\
+& -2x \geq 1 \\
+& \text{Se multiplica por } -\frac{1}{2} \text{m. a m., esto \color{red}{invierte} la desigualdad.} \\
+& x \leq -\frac{1}{2} \Rightarrow \tcboxmath[colback=orange!25!white,colframe=orange, title=8.b] { x \in \left( -\infty, -\frac{1}{2} \right] }
+\end{align}
+\end{subequations}
+
+\subsection*{8.c}
+\label{subsec:8.c}
+\addcontentsline{toc}{subsection}{\nameref{subsec:8.c}}
+
+Trivial, no se invierte la desigualdad.
+
+\begin{equation}
+x > -\frac{1}{8} \Rightarrow \tcboxmath[colback=orange!25!white,colframe=orange, title=8.c] { x \in \left(-\frac{1}{8}, +\infty \right) }
+\end{equation}
+
+\subsection*{8.d}
+\label{subsec:8.d}
+\addcontentsline{toc}{subsection}{\nameref{subsec:8.d}}
+
+Para comenzar, hay que exigir $x \neq 2$, porque es cero del denominador. Luego, se considerará el caso en que $2-x > 0$, para que al multiplicar miembro a miembro por ese valor no se invierta la desigualdad.
+
+Sea $2 - x > 0 \Rightarrow x < 2$:
+
+\begin{equation}
+\frac{2}{\cancel{(2-x)}} \cancel{(2-x)} > 4 (2-x) \Rightarrow 2 > 8-4x \Rightarrow x > \frac{3}{2}
+\end{equation}
+
+Combinando el supuesto inicial $x < 2$ con lo obtenido, resulta $\frac{3}{2} < x < 2$.
+
+Queda por considerar el caso en que el denominador es negativo. En ese caso, el lado izquierdo siempre será negativa y por ende nunca podrá ser mayor a cuatro. Así, este caso no debería aportar nada a la solución. De todas formas, se evaluará para confirmar este supuesto.
+
+Sea $2 - x < 0 \Rightarrow x > 2$. En este caso, multiplicar miembro a miembro invierte la desigualdad:
+
+\begin{equation}
+\frac{2}{\cancel{(2-x)}} \cancel{(2-x)} < 4 (2-x) \Rightarrow 2 < 8-4x \Rightarrow x < \frac{3}{2}
+\end{equation}
+
+Dado que no puede ocurrir simultáneamente que $x > 2$ y $x < \frac{3}{2}$, efectivamente este caso no agrega elementos al conjunto solución.
+
+\begin{equation}
+\frac{3}{2} < x < 2 \Rightarrow \tcboxmath[colback=orange!25!white,colframe=orange, title=8.d] { x \in \left(\frac{3}{2}, 2 \right) }
+\end{equation}
+
+\subsection*{8.e}
+\label{subsec:8.e}
+\addcontentsline{toc}{subsection}{\nameref{subsec:8.e}}
+
+Haciendo el mismo análisis que en el inciso anterior, $x \neq 3$ por ser cero del denominador. Antes de multiplicar miembro a miembro por $(x-3)$, considerar si es positivo o negativo:
+
+\begin{equation}
+x - 3 > 0 \Rightarrow 2x - 1 < x - 3 \Rightarrow x < -2
+\end{equation}
+
+Como no pueden ser a la vez $x > 3$ y $x < -2$, este caso no aporta soluciones. Y el caso negativo:
+
+\begin{equation}
+x - 3 < 0 \Rightarrow 2x - 1 > x - 3 \Rightarrow x > -2
+\end{equation}
+
+\begin{equation}
+-2 < x < 3 \Rightarrow \tcboxmath[colback=orange!25!white,colframe=orange, title=8.e] { x \in (-2, 3) }
+\end{equation}
+
+\subsection*{8.f}
+\label{subsec:8.f}
+\addcontentsline{toc}{subsection}{\nameref{subsec:8.f}}
+
+Para evitar dividir por cero, $x \neq 1$.
+
+Caso positivo:
+
+\begin{equation}
+x - 1 > 0 \Rightarrow x - 3 > x - 1 \Rightarrow -3 > -1
+\end{equation}
+
+Como se llega a una contradicción que no depende del valor de $x$, este caso no aporta soluciones.
+
+Caso negativo:
+
+\begin{equation}
+x - 1 < 0 \Rightarrow x - 3 < x - 1 \Rightarrow -3 < -1
+\end{equation}
+
+\begin{equation}
+x < 1 \Rightarrow \tcboxmath[colback=orange!25!white,colframe=orange, title=8.f] { x \in (-\infty, 1) }
+\end{equation}
 
 \end{document}
