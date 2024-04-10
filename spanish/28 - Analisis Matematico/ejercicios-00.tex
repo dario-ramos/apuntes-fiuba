@@ -26,8 +26,10 @@
 %\usepackage{tcolorbox}
 %\usepackage{esint}
 
-\renewcommand{\Bbb}{\mathbb}
+\newcommand{\hresult}[2]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] {#2} }
+\newcommand{\hresulte}[3]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] { \hspace{#3} #2 \hspace{#3} } }
 
+\renewcommand{\Bbb}{\mathbb}
 
 \title{Ejercicios de Análisis Matemático CBC (28) \\
 Práctica 0: Preliminares \\
@@ -76,7 +78,7 @@ Aplicando estas ideas, se obtiene:
 \begin{align}
 &\frac{2}{3} - \left[ -\frac{1}{2} + 1 \textcolor{blue}{ \underbrace{ - \left( -\frac{1}{2} - \frac{5}{12} \right)}_{-\left(    -\frac{11}{12} \right)}} - 2  \right] -\frac{1}{4} - \left[ -1 \textcolor{blue}{ \underbrace{ -\left(2 \frac{1}{6} - \frac{1}{4} \right) }_{-\left( \frac{1}{12} \right)}} +\frac{2}{3} \right] = \\
 &\frac{2}{3} \underbrace{ - \left[ -\frac{1}{2} + 1 \textcolor{blue}{ + \frac{11}{12} } - 2  \right] }_{\textcolor{red}{-\left[ -\frac{7}{12} \right]}} -\frac{1}{4} \underbrace{-\left[ -1 \textcolor{blue}{ -\frac{1}{12} } +\frac{2}{3} \right]}_{\textcolor{red}{-\left[ -\frac{5}{12} \right]}} = \\ 
-&\frac{2}{3} \textcolor{red}{ +\frac{7}{12} } -\frac{1}{4} \textcolor{red}{ +\frac{5}{12} } = \tcboxmath[colback=orange!25!white,colframe=orange, title=1.a] { \frac{17}{12} }
+&\frac{2}{3} \textcolor{red}{ +\frac{7}{12} } -\frac{1}{4} \textcolor{red}{ +\frac{5}{12} } = \hresult{1.a} { \frac{17}{12} }
 \end{align}
 \end{subequations}
 
@@ -87,7 +89,7 @@ Aplicando estas ideas, se obtiene:
 Resolviendo con la misma metolodogía que el anterior, se obtiene:
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange, title=1.b] { -\frac{3}{10} }
+\hresult{1.b} { -\frac{3}{10} }
 \end{equation}
 
 \section*{2}
@@ -128,7 +130,7 @@ Aplicando estos conceptos:
 \begin{subequations}
 \begin{align}
 &\left[ \frac{1}{4} - \textcolor{blue}{ \underbrace{ \left( \frac{2}{3} - \frac{1}{2} \right)^2 }_{\left( \frac{1}{6} \right)^2 }} \right]^{-2} = \\
-&\left[ \frac{1}{4} - \textcolor{blue}{ \frac{1}{36} } \right]^{-2} = \left[ \frac{8}{36} \right]^{-2} = \left[ \frac{2}{9} \right]^{-2} = \left[ \frac{9}{2} \right]^2 = \tcboxmath[colback=orange!25!white,colframe=orange, title=2.a] { \frac{81}{4} = 20.25 }
+&\left[ \frac{1}{4} - \textcolor{blue}{ \frac{1}{36} } \right]^{-2} = \left[ \frac{8}{36} \right]^{-2} = \left[ \frac{2}{9} \right]^{-2} = \left[ \frac{9}{2} \right]^2 = \hresult{2.a} { \frac{81}{4} = 20.25 }
 \end{align}
 \end{subequations}
 
@@ -139,7 +141,7 @@ Aplicando estos conceptos:
 Es muy similar al anterior, pero se agrega un concepto. Al expresar un resultado, no es deseable que haya expresiones radicales en el denominador. Por ello se entiende raíces de números o expresiones. Para resolver eso, se multiplica y divide por la misma expresión radical a eliminar. En este caso, partiendo del resultado final con expresión radical:
 
 \begin{equation}
-\sqrt{\frac{49}{2}} = \frac{7}{\sqrt{2}} = \frac{7}{\sqrt{2}} \frac{\sqrt{2}}{\sqrt{2}} = \tcboxmath[colback=orange!25!white,colframe=orange, title=2.b] { \frac{7 \sqrt{2}}{2} \approx 4.9497 }
+\sqrt{\frac{49}{2}} = \frac{7}{\sqrt{2}} = \frac{7}{\sqrt{2}} \frac{\sqrt{2}}{\sqrt{2}} = \hresult{2.b} { \frac{7 \sqrt{2}}{2} \approx 4.9497 }
 \end{equation}
 
 \section*{3}
@@ -174,7 +176,7 @@ Al multiplicar potencias de igual base, los exponentes se suman. Y al dividir po
 \end{itemize}
 
 \begin{equation}
-\frac{3^4 \cdot 3^7}{3^{12}} = \frac{3^{11}}{3^{12}} = 3^{-1} = \tcboxmath[colback=orange!25!white,colframe=orange, title=3.a] { \hspace{0.25em} \frac{1}{3} \hspace{0.25em} }
+\frac{3^4 \cdot 3^7}{3^{12}} = \frac{3^{11}}{3^{12}} = 3^{-1} = \hresulte{3.a} { \frac{1}{3} } {0.25em}
 \end{equation}
 
 \subsection*{3.b}
@@ -200,7 +202,7 @@ Aplicando todo lo ya visto a este caso:
 & \frac{\sqrt{5}}{\sqrt{2}} \cdot \frac{\sqrt{2}}{\sqrt{2}} \cdot 10^{-\frac{9}{2}} = \\
 & \frac{\sqrt{10}}{2} \cdot 10^{-4} \cdot 10^{-\frac{1}{2}} = \\
 & \frac{1}{2} \cdot \cancel{10^{\frac{1}{2}}} \cdot 10^{-4} \cdot \cancel{10^{-\frac{1}{2}}} = \\
-& \frac{1}{2} \cdot 10 \cdot 10^{-5} = \tcboxmath[colback=orange!25!white,colframe=orange, title=3.b] { 5 \cdot 10^{-5} }
+& \frac{1}{2} \cdot 10 \cdot 10^{-5} = \hresult{3.b} { 5 \cdot 10^{-5} }
 \end{align}
 \end{subequations}
 
@@ -211,7 +213,7 @@ Aplicando todo lo ya visto a este caso:
 Al llegar al final de éste, conviene sumar todas las fracciones por un lado y los enteros por otro, para minimizar las chances de error. Teniendo mucho cuidado, debería dar el siguiente valor:
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange, title=3.c] { \frac{8039}{72} = 111.652\overline{7} }
+\hresult{3.c} { \frac{8039}{72} = 111.652\overline{7} }
 \end{equation}
 
 \subsection*{3.d}
@@ -233,7 +235,7 @@ Una resolución incorrecta cancelando exponentes sería:
 La moraleja es que si el radicando tiene signo negativo, es preferible evaluar la potencia en dos pasos, considerando el signo. Cancelar exponentes puede conducir a errores. Con estas precauciones en mente, el resultado debería ser:
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange, title=3.d] { \frac{31}{3} + 3 \sqrt[3]{3} \approx 14,660 }
+\hresult{3.d} { \frac{31}{3} + 3 \sqrt[3]{3} \approx 14,660 }
 \end{equation}
 
 \section*{4}
@@ -262,10 +264,10 @@ Sólo hay que reemplazar los valores y realizar las cuentas, que son triviales.
 
 \begin{subequations}
 \begin{align}
-& x \cdot (y + z) = \tcboxmath[colback=orange!25!white,colframe=orange, title=4.a] { \hspace{0.25em} \frac{5}{3} \hspace{0.25em} } \\
-& x \cdot y + z = \tcboxmath[colback=orange!25!white,colframe=orange, title=4.b] { \hspace{0.5em} -\frac{17}{6} \hspace{0.5em} } \\
-& x + y \cdot z = \tcboxmath[colback=orange!25!white,colframe=orange, title=4.c] { \hspace{0.25em} -3 \hspace{0.25em} } \\
-& (x + y) \cdot z = \tcboxmath[colback=orange!25!white,colframe=orange, title=4.d] { \hspace{0.5em} 2 \hspace{0.5em} }
+& x \cdot (y + z) = \hresulte{4.a} { \frac{5}{3} }{0.25em} \\
+& x \cdot y + z = \hresulte{4.b} { -\frac{17}{6} }{0.5em} \\
+& x + y \cdot z = \hresulte{4.c} { -3 }{0.25em} \\
+& (x + y) \cdot z = \hresulte{4.d} { 2 }{0.5em}
 \end{align}
 \end{subequations}
 
@@ -350,7 +352,7 @@ Todas estas ecuaciones son lineales y triviales, excepto la última. El único r
 \addcontentsline{toc}{subsection}{\nameref{subsec:6.a}}
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange, title=6.a] { x = -1 }
+\hresult{6.a} { x = -1 }
 \end{equation}
 
 \subsection*{6.b}
@@ -358,7 +360,7 @@ Todas estas ecuaciones son lineales y triviales, excepto la última. El único r
 \addcontentsline{toc}{subsection}{\nameref{subsec:6.b}}
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange, title=6.b] { x = \frac{9}{5} }
+\hresult{6.b} { x = \frac{9}{5} }
 \end{equation}
 
 \subsection*{6.c}
@@ -366,7 +368,7 @@ Todas estas ecuaciones son lineales y triviales, excepto la última. El único r
 \addcontentsline{toc}{subsection}{\nameref{subsec:6.c}}
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange, title=6.c] { x = \frac{9}{13} }
+\hresult{6.c} { x = \frac{9}{13} }
 \end{equation}
 
 \subsection*{6.d}
@@ -376,7 +378,7 @@ Todas estas ecuaciones son lineales y triviales, excepto la última. El único r
 En esta ecuación, de entrada hay que exigir $x \neq 2$, porque es un cero del denominador. Con esa salvedad, resolviendo de la manera usual se obtiene:
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange, title=6.d] { x = \frac{11}{13} }
+\hresult{6.d} { x = \frac{11}{13} }
 \end{equation}
 
 Como no es 2, es una solución válida.
@@ -386,7 +388,7 @@ Como no es 2, es una solución válida.
 \addcontentsline{toc}{subsection}{\nameref{subsec:6.e}}
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange, title=6.e] { x = \frac{1}{5} }
+\hresult{6.e} { x = \frac{1}{5} }
 \end{equation}
 
 \begin{subequations}
@@ -398,7 +400,7 @@ Como no es 2, es una solución válida.
 & x + \frac{3}{2} = \frac{(6x-2)}{-3} \\
 & -3x - \frac{9}{2} = 6x - 2 \\
 & -9x = \frac{5}{2} \\
-& \tcboxmath[colback=orange!25!white,colframe=orange, title=6.f] { x = -\frac{5}{18} }
+& \hresult{6.f} { x = -\frac{5}{18} }
 \end{align}
 \end{subequations}
 
@@ -465,7 +467,7 @@ Las desigualdades se resuelven de manera similar a las ecuaciones, en el sentido
 Trivial, no se invierte la desigualdad.
 
 \begin{equation}
-x < \frac{3}{2} \Rightarrow \tcboxmath[colback=orange!25!white,colframe=orange, title=8.a] { x \in \left(-\infty, \frac{3}{2}\right] }
+x < \frac{3}{2} \Rightarrow \hresult{8.a} { x \in \left(-\infty, \frac{3}{2}\right] }
 \end{equation}
 
 \subsection*{8.b}
@@ -478,7 +480,7 @@ x < \frac{3}{2} \Rightarrow \tcboxmath[colback=orange!25!white,colframe=orange, 
 & \text{Se resta 1 m. a m.} \\
 & -2x \geq 1 \\
 & \text{Se multiplica por } -\frac{1}{2} \text{m. a m., esto \color{red}{invierte} la desigualdad.} \\
-& x \leq -\frac{1}{2} \Rightarrow \tcboxmath[colback=orange!25!white,colframe=orange, title=8.b] { x \in \left( -\infty, -\frac{1}{2} \right] }
+& x \leq -\frac{1}{2} \Rightarrow \hresult{8.b} { x \in \left( -\infty, -\frac{1}{2} \right] }
 \end{align}
 \end{subequations}
 
@@ -489,7 +491,7 @@ x < \frac{3}{2} \Rightarrow \tcboxmath[colback=orange!25!white,colframe=orange, 
 Trivial, no se invierte la desigualdad.
 
 \begin{equation}
-x > -\frac{1}{8} \Rightarrow \tcboxmath[colback=orange!25!white,colframe=orange, title=8.c] { x \in \left(-\frac{1}{8}, +\infty \right) }
+x > -\frac{1}{8} \Rightarrow \hresult{8.c} { x \in \left(-\frac{1}{8}, +\infty \right) }
 \end{equation}
 
 \subsection*{8.d}
@@ -517,7 +519,7 @@ Sea $2 - x < 0 \Rightarrow x > 2$. En este caso, multiplicar miembro a miembro i
 Dado que no puede ocurrir simultáneamente que $x > 2$ y $x < \frac{3}{2}$, efectivamente este caso no agrega elementos al conjunto solución.
 
 \begin{equation}
-\frac{3}{2} < x < 2 \Rightarrow \tcboxmath[colback=orange!25!white,colframe=orange, title=8.d] { x \in \left(\frac{3}{2}, 2 \right) }
+\frac{3}{2} < x < 2 \Rightarrow \hresult{8.d} { x \in \left(\frac{3}{2}, 2 \right) }
 \end{equation}
 
 \subsection*{8.e}
@@ -537,7 +539,7 @@ x - 3 < 0 \Rightarrow 2x - 1 > x - 3 \Rightarrow x > -2
 \end{equation}
 
 \begin{equation}
--2 < x < 3 \Rightarrow \tcboxmath[colback=orange!25!white,colframe=orange, title=8.e] { x \in (-2, 3) }
+-2 < x < 3 \Rightarrow \hresult{8.e} { x \in (-2, 3) }
 \end{equation}
 
 \subsection*{8.f}
@@ -561,7 +563,7 @@ x - 1 < 0 \Rightarrow x - 3 < x - 1 \Rightarrow -3 < -1
 \end{equation}
 
 \begin{equation}
-x < 1 \Rightarrow \tcboxmath[colback=orange!25!white,colframe=orange, title=8.f] { x \in (-\infty, 1) }
+x < 1 \Rightarrow \hresult{8.f} { x \in (-\infty, 1) }
 \end{equation}
 
 \section*{9}
@@ -627,7 +629,7 @@ Por último, hay que comparar $\frac{25}{2}$ y $\frac{38}{3}$. El MCM del denomi
 Finalmente:
 
 \begin{equation}
-\tcboxmath[colback=orange!25!white,colframe=orange, title=8.f] { -\frac{5}{2} < -\frac{4}{7} < -\frac{6}{11} < \frac{1}{3} < \frac{3}{2} < \frac{64}{41} < \frac{25}{2} < \frac{38}{3} }
+\hresult{8.f} { -\frac{5}{2} < -\frac{4}{7} < -\frac{6}{11} < \frac{1}{3} < \frac{3}{2} < \frac{64}{41} < \frac{25}{2} < \frac{38}{3} }
 \end{equation}
 
 \section*{10}
@@ -678,5 +680,294 @@ Ahora bien, el lado izquierdo es el cuadrado del binomio resta: $(a - b)^2 = a^2
 Llegado este punto, del lado izquierdo se tiene el cuadrado de un número real, y del lado derecho, cero. Esta desigualdad se cumple para cualquier par $(a, b)$. Sin embargo, hay que recordar que a lo largo del camino se usó el hecho de que $a$ y $b$ son no negativos a fin de cancelar la raíz con el cuadrado. Por lo tanto, esta desigualdad vale para $a$ y $b$ no negativos, como se quería demostrar.
 
 Por último, para que se cumpla la igualdad, basta con que $a = b$. Por ejemplo, si $a = b = 2$, se tiene $\frac{2 + 2}{4} \geq \sqrt{2 \cdot 2} \Rightarrow 2 \geq 2 $. En todo otro caso, la desigualdad es estricta. Por ejemplo, $a = 2, b = 3 \Rightarrow \frac{2+3}{2} \geq \sqrt{2 \cdot 3} \Rightarrow \frac{5}{2} \geq \sqrt{6} \Rightarrow 2.5000 \geq 2.4495$
+
+\section*{11}
+\label{sec:11}
+\addcontentsline{toc}{section}{\nameref{sec:11}}
+
+\textbf{Algunas de las siguientes relaciones no valen en general. Analice en qué casos son válidas.}
+
+\begin{enumerate}[(a)]
+\bfseries
+
+\item $ (x+y)^2 = x^2 + y^2 $
+
+\item $ \sqrt{x + y} = \sqrt{x} + \sqrt{y} $
+
+\item $ x > y \Rightarrow x^2 > y^2 $
+
+\item $ \frac{1}{x+y} = \frac{1}{x} + \frac{1}{y} $
+
+\item $ x^2 > x $
+
+\item $ x^2 < x $
+
+\item $ x^2 \geq 0 $
+
+\item $ x^3 \geq 0 $
+
+\item $ 2^x > 1 $
+
+\item $ \log(x^2) = 2 \cdot \log(x) $
+
+\item $ 2^x > 0 $
+
+\item $ \log(x + 10^2) = 2 + \log(x) $
+
+\end{enumerate}
+\hrule
+
+\subsection*{11.a}
+\label{subsec:11.a}
+\addcontentsline{toc}{subsection}{\nameref{subsec:11.a}}
+
+Expandiendo el binomio:
+
+\begin{subequations}
+\begin{align}
+& \cancel{x^2} + 2 \cdot x \cdot y + \cancel{y^2} = \cancel{x^2} + \cancel{y^2} \\
+& 2 \cdot x \cdot y = 0 \\
+& x \cdot y = 0
+\end{align}
+\end{subequations}
+
+Un producto es nulo si y sólo si uno o ambos factores son nulos. Ergo, la igualdad sólo vale para el conjunto:
+
+\begin{equation}
+\hresult{11.a}{ \{ (x,y) \in \mathbb{R}^2 / x = 0 \vee y = 0 \} }
+\end{equation}
+
+Aclaración: el símbolo $\vee$ representa el o inclusivo lógico. Esto implica que para que un par $(x,y)$ pertenezca al conjunto, puede ser $x$ nulo, $y$ nulo, o ambos a la vez. Si se utilizara un o exclusivo, no incluiría el caso en que ambos sean nulos.
+
+\subsection*{11.b}
+\label{subsec:11.b}
+\addcontentsline{toc}{subsection}{\nameref{subsec:11.b}}
+
+Para que el lado izquierdo esté definido en $\mathbb{R}$, debe ser $x + y \geq 0$. Y para que el lado derecho esté definido, deben ser $x \geq 0$ e $y \geq 0$. Asumiendo eso, para ver cuándo se cumple la igualdad, se elevan ambos lados al cuadrado:
+
+\begin{equation}
+\left( \sqrt{x+y} \right)^2 = \left( \sqrt{x} + \sqrt{y} \right)^2
+\end{equation}
+
+En este caso se pueden cancelar raíces con cuadrados sin problemas porque al aplicar la raíz primero, la base siempre es positiva.
+
+\begin{subequations}
+\begin{align}
+& \cancel{x} + \cancel{y} = \cancel{x} + 2 \sqrt{x} \sqrt{y} + \cancel{y} \\
+& 0 = 2 \sqrt{x} \sqrt{y} \\
+& 0 = \sqrt{x y} \\
+& 0 = x \cdot y
+\end{align}
+\end{subequations}
+
+Resulta entonces que la igualdad se cumple para el mismo conjunto que en el inciso anterior.
+
+\begin{equation}
+\hresult{11.b}{ \{ (x,y) \in \mathbb{R}^2 / x = 0 \vee y = 0 \} }
+\end{equation}
+
+\subsection*{11.c}
+\label{subsec:11.c}
+\addcontentsline{toc}{subsection}{\nameref{subsec:11.c}}
+
+Esto no se cumple si el módulo de $y$ es mayor al de $x$. Esto puede ocurrir pese a ser $x > y$ si $y$ es negativo, y $x$ tiene menor módulo. Por ejemplo, $x = 1$ e $y = -3$. Se satisface $x > y$, pero no $x^2 > y^2$. En conclusión, la premisa se cumple para el conjunto:
+
+\begin{equation}
+\hresult{11.c}{ \{ (x,y) \in \mathbb{R}^2 / |x| > |y| \} }
+\end{equation}
+
+\subsection*{11.d}
+\label{subsec:11.d}
+\addcontentsline{toc}{subsection}{\nameref{subsec:11.d}}
+
+Para que exista el lado izquierdo, debe ser $x + y \neq 0$. Para que exista el lado derecho, deben ser $x \neq 0 \wedge y \neq 0$. Establecido esto, es válido elevar ambos lados a $-1$:
+
+\begin{subequations}
+\begin{align}
+& \left( \frac{1}{x+y} \right)^{-1} = \left( \frac{1}{x} + \frac{1}{y} \right)^{-1} \\
+& x + y = \left( \frac{y+x}{xy} \right)^{-1} \\
+& x + y = \frac{xy}{x+y} \\
+& (x+y)^2 = xy \\
+& x^2 + 2xy + y^2 = xy \\
+& x^2 + xy + y^2 = 0
+\end{align}
+\end{subequations}
+
+En este punto, la igualdad puede ser vista de dos maneras.
+
+\begin{enumerate}
+\item Una ecuación cuadrática en $x$, con constantes $a = 1, b=y, c=y^2$.
+\item Una ecuación cuadrática en $y$, con constantes $a = 1, b=x, c=x^2$.
+\end{enumerate}
+
+En el primer caso, el determinante vale $\Delta = b^2 - 4 a c = y^2 - 4y^2 = -3y^2$.
+
+En el segundo caso, el determinante vale $ \Delta = b^2 - 4 a c = x^2 - 4x^2 = -3x^2 $
+
+En ambos casos, siendo el determinante negativo para todo valor de $x$ o $y$, no hay soluciones reales. La respuesta en este caso, para los reales, es el conjunto vacío.
+
+\begin{equation}
+\hresulte{11.d}{ \emptyset }{1em}
+\end{equation}
+
+\subsection*{11.e}
+\label{subsec:11.e}
+\addcontentsline{toc}{subsection}{\nameref{subsec:11.e}}
+
+La clave es expresar la desigualdad como el signo de un producto, y usar la regla de los signos.
+
+\begin{subequations}
+\begin{align}
+& x^2 - x > 0 \\
+& x (x-1) > 0
+\end{align}
+\end{subequations}
+
+Un producto de dos números reales es positivo si ambos factores son positivos, o ambos negativos. El primer caso conduce a:
+
+\begin{equation}
+x > 0 \wedge x - 1 > 0 \Rightarrow x > 0 \wedge x > 1 \Rightarrow x > 1
+\end{equation}
+
+El segundo caso:
+
+\begin{equation}
+x < 0 \wedge x - 1 < 0 \Rightarrow x < 0 \wedge x < 1 \Rightarrow x < 0
+\end{equation}
+
+Combinando ambos casos, el conjunto resultado es:
+
+\begin{equation}
+\hresult{11.e}{ \{ x \in \mathbb{R} / x < 0 \vee x > 1 \} }
+\end{equation}
+
+\subsection*{11.f}
+\label{subsec:11.f}
+\addcontentsline{toc}{subsection}{\nameref{subsec:11.f}}
+
+Esta desigualdad es casi la negación de la anterior. Se dice casi porque excluye la igualdad. En todo caso, se esperaría que el resultado sea el conjunto complemento del caso anterior, excluyendo la igualdad. Vale decir, $ 0 < x <1 $. Para comprobarlo, se hará el mismo análisis.
+
+\begin{subequations}
+\begin{align}
+& x^2 - x < 0 \\
+& x (x-1) < 0
+\end{align}
+\end{subequations}
+
+Un producto es negativo si los factores tienen diferente signo. Esto, nuevamente, conduce a dos casos.
+
+\begin{equation}
+x > 0 \wedge x - 1 < 0 \Rightarrow x > 0 \wedge x < 1 \Rightarrow 0 < x < 1
+\end{equation}
+
+El segundo caso:
+
+\begin{equation}
+x < 0 \wedge x - 1 > 0 \Rightarrow x < 0 \wedge x > 1 \Rightarrow \emptyset
+\end{equation}
+
+Como se predijo:
+
+\begin{equation}
+\hresult{11.f}{ \{ x \in \mathbb{R} / 0 < x < 1 \} }
+\end{equation}
+
+\subsection*{11.g}
+\label{subsec:11.g}
+\addcontentsline{toc}{subsection}{\nameref{subsec:11.g}}
+
+No hay nada que analizar, esto se cumple para todos los números reales. Una forma de verlo es considerando el gráfico de la función $y = x^2$. Tiene un mínimo en $x = 0, y = 0$, y valores positivos para el resto de la recta real.
+
+\begin{equation}
+\hresult{11.g}{ \{ x \in \mathbb{R} \} }
+\end{equation}
+
+\subsection*{11.h}
+\label{subsec:11.h}
+\addcontentsline{toc}{subsection}{\nameref{subsec:11.h}}
+
+Para $x$ negativo, su cubo es negativo. También puede verse gráficamente, considerando $y = x^3$. Toda su rama correspondiente a $x$ negativo está por debajo del eje $x$. Por ende, la desigualdad se satisface para:
+
+\begin{equation}
+\hresult{11.h}{ \{ x \in \mathbb{R} / x \geq 0 \} }
+\end{equation}
+
+\subsection*{11.i}
+\label{subsec:11.i}
+\addcontentsline{toc}{subsection}{\nameref{subsec:11.i}}
+
+Aplicando la función logaritmo en base 2 de ambos lados:
+
+\begin{subequations}
+\begin{align}
+& 2^x > 1 \\
+& \log_2(2^x) > \log_2(1) \\
+& x > 0
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{11.i}{ \{ x \in \mathbb{R} / x > 0 \} }
+\end{equation}
+
+\subsection*{11.j}
+\label{subsec:11.j}
+\addcontentsline{toc}{subsection}{\nameref{subsec:11.j}}
+
+Para que exista el lado derecho, al menos en el dominio de los reales, debe ser $ x > 0 $. Luego, elevando 10 a ambos lados:
+
+\begin{subequations}
+\begin{align}
+& \log(x^2) = 2 \cdot \log(x) \\
+& 10^{ \log(x^2) } = 10^{ 2 \cdot \log(x) } \\
+& x^2 = (10^{\log(x)})^2 \\
+& x^2 = x^2
+\end{align}
+\end{subequations}
+
+Esto es un caso particular de una propiedad de los logaritmos:
+
+\begin{equation}
+\log(a^b) = b \log(a)
+\end{equation}
+
+Por lo tanto, el único requisito es que $x$ sea mayor a cero para que exista el lado derecho.
+
+\begin{equation}
+\hresult{11.j}{ \{ x \in \mathbb{R} / x > 0 \} }
+\end{equation}
+
+\subsection*{11.k}
+\label{subsec:11.k}
+\addcontentsline{toc}{subsection}{\nameref{subsec:11.k}}
+
+Toda función exponencial es positiva y jamás se anula. Por lo tanto, la solución son todos los reales.
+
+\begin{equation}
+\hresult{11.k}{ \{ x \in \mathbb{R} \} }
+\end{equation}
+
+\subsection*{11.l}
+\label{subsec:11.l}
+\addcontentsline{toc}{subsection}{\nameref{subsec:11.l}}
+
+En primer lugar, para que exista el lado izquierdo, debe ser $ x + 10^2 > 0 \Rightarrow x > -100 $. Y para que exista el lado derecho, debe ser $ x > 0 $. Para analizar los valores que satisfacen la igualdad, se eleva 10 a ambos lados.
+
+\begin{subequations}
+\begin{align}
+& \log( x + 10^2 ) = 2 + \log(x) \\
+& 10^{ \log( x + 10^2 ) } = 10^{ 2 + \log(x) } \\
+& x + 10^2 = 10^2 \cdot 10^{ \log(x) } \\
+& x + 100 = 100 \cdot x \\
+& 99x = 100 \\
+& x = \frac{100}{99}
+\end{align}
+\end{subequations}
+
+Resulta entonces que un solo valor satisface la igualdad:
+
+\begin{equation}
+\hresult{11.l}{ x = \frac{100}{99} }
+\end{equation}
 
 \end{document}
