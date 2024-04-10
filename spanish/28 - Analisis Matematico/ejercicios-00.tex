@@ -630,4 +630,53 @@ Finalmente:
 \tcboxmath[colback=orange!25!white,colframe=orange, title=8.f] { -\frac{5}{2} < -\frac{4}{7} < -\frac{6}{11} < \frac{1}{3} < \frac{3}{2} < \frac{64}{41} < \frac{25}{2} < \frac{38}{3} }
 \end{equation}
 
+\section*{10}
+\label{sec:10}
+\addcontentsline{toc}{section}{\nameref{sec:10}}
+
+\textbf{Demuestre que si $a$ y $b$ son números no negativos vale la desigualdad:}
+
+\begin{equation}
+\frac{a+b}{2} \geq \sqrt{a \cdot b}
+\end{equation}
+
+\textbf{Exhiba un ejemplo donde la desigualdad es estricta, y otro donde valga la igualdad.}
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+Una forma de demostrar esto es transformar la desigualdad de manera que queden $a$ y $b$ del mismo lado, y una constante del otro. Hecho eso, analizar para qué valores de $a$ y $b$ se satisface la desigualdad. Para ello, primero se eleva al cuadrado miembro a miembro:
+
+\begin{equation}
+\left( \frac{a+b}{2} \right)^2 \geq \left( \sqrt{a \cdot b} \right)^2
+\end{equation}
+
+Como $a$ y $b$ son no negativos, el radicando es siempre positivo y es válido cancelar la raíz con el cuadrado en el lado derecho.
+
+\begin{subequations}
+\begin{align}
+& \frac{1}{4} (a + b)^2 \geq a \cdot b \\
+& (a + b)^2 \geq 4 \cdot a \cdot b
+\end{align}
+\end{subequations}
+
+En el lado izquierdo, se puede expandir el binomio según $(a + b)^2 = a^2 + 2 \cdot a \cdot b + b^2$.
+
+\begin{subequations}
+\begin{align}
+& a^2 + 2 \cdot a \cdot b + b^2 \geq 4 \cdot a \cdot b \\
+& a^2 - 2 \cdot a \cdot b + b^2 \geq 0
+\end{align}
+\end{subequations}
+
+Ahora bien, el lado izquierdo es el cuadrado del binomio resta: $(a - b)^2 = a^2 - 2 \cdot a \cdot b + b^2$.
+
+\begin{equation}
+(a - b)^2 \geq 0
+\end{equation}
+
+Llegado este punto, del lado izquierdo se tiene el cuadrado de un número real, y del lado derecho, cero. Esta desigualdad se cumple para cualquier par $(a, b)$. Sin embargo, hay que recordar que a lo largo del camino se usó el hecho de que $a$ y $b$ son no negativos a fin de cancelar la raíz con el cuadrado. Por lo tanto, esta desigualdad vale para $a$ y $b$ no negativos, como se quería demostrar.
+
+Por último, para que se cumpla la igualdad, basta con que $a = b$. Por ejemplo, si $a = b = 2$, se tiene $\frac{2 + 2}{4} \geq \sqrt{2 \cdot 2} \Rightarrow 2 \geq 2 $. En todo otro caso, la desigualdad es estricta. Por ejemplo, $a = 2, b = 3 \Rightarrow \frac{2+3}{2} \geq \sqrt{2 \cdot 3} \Rightarrow \frac{5}{2} \geq \sqrt{6} \Rightarrow 2.5000 \geq 2.4495$
+
 \end{document}
