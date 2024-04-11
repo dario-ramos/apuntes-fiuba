@@ -970,4 +970,85 @@ Resulta entonces que un solo valor satisface la igualdad:
 \hresult{11.l}{ x = \frac{100}{99} }
 \end{equation}
 
+\section*{12}
+\label{sec:12}
+\addcontentsline{toc}{section}{\nameref{sec:12}}
+
+\textbf{Resuelva:}
+
+\begin{enumerate}[(a)]
+\bfseries
+
+\item $ 4^{x-2} = 1 $
+
+\item $ 2^{5x-3} = \frac{1}{8} $
+
+\item $ \log(x + 7) = 100 $
+
+\item $ \log(x^2 -3x + 1) = 0 $
+
+\end{enumerate}
+\hrule
+
+\subsection*{12.a}
+\label{subsec:12.a}
+\addcontentsline{toc}{subsection}{\nameref{subsec:12.a}}
+
+Tomando logaritmo en base 4 de ambos lados:
+
+\begin{subequations}
+\begin{align}
+& 4^{x - 2} = 1 \\
+& \log_4(4^{x-2}) = \log_4(1) \\
+& x - 2 = 0 \Rightarrow \hresult{12.a} { x = 2 }
+\end{align}
+\end{subequations}
+
+\subsection*{12.b}
+\label{subsec:12.b}
+\addcontentsline{toc}{subsection}{\nameref{subsec:12.b}}
+
+Aplicando logaritmo en base 2 de ambos lados:
+
+\begin{subequations}
+\begin{align}
+& 2^{5x - 3} = \frac{1}{8} \\
+& \log_2( 2^{5x - 3} ) = \log_2 \left( \frac{1}{8} \right) \\
+& 5x-3 = - 3 \\
+& 5x = 0 \Rightarrow \hresult{12.b}{ x = 0 }
+\end{align}
+\end{subequations}
+
+\subsection*{12.c}
+\label{subsec:12.c}
+\addcontentsline{toc}{subsection}{\nameref{subsec:12.c}}
+
+En este caso, como la incógnita está dentro de un logaritmo, ambos lados se aplican como exponentes de la base del logaritmo. En este caso, 10.
+
+\begin{subequations}
+\begin{align}
+& \log(x + 7) = 100 \\
+& 10^{\log(x + 7)} = 10^{100} \\
+& x + 7 = 10^100 \Rightarrow \hresult{12.c}{ x = 10^{100} - 7 }
+\end{align}
+\end{subequations}
+
+El número $10^100$ es demasiado grande para expandirlo. También podría argumentarse que 7 es despreciable en comparación, ya que es mucho más de 2 órdenes de magnitud menor, y concluir que a fines prácticos $x \approx 10^{100} $.
+
+\subsection*{12.d}
+\label{subsec:12.d}
+\addcontentsline{toc}{subsection}{\nameref{subsec:12.d}}
+
+Aplicar ambos lados como exponentes de 10 conduce a una ecuación cuadrática.
+
+\begin{subequations}
+\begin{align}
+& \log(x^2 - 3x + 1) = 0 \\
+& 10^{\log(x^2 - 3x + 1)} = 10^0 \\
+& x^2 - 3x + 1 = 1 \\
+& x^2 - 3x = 0 \\
+& x (x-3) = 0 \Rightarrow \hresult{12.d}{ x = 0 \vee x = 3 }
+\end{align}
+\end{subequations}
+
 \end{document}
