@@ -107,6 +107,8 @@ que contiene $n$ constantes arbitrarias linealmente independientes.
 \item \textbf{Solución singular (SS)}: Una función es SS de una ED cuando la reduce a una identidad, pero no puede obtenerse a partir de una SG. No toda ED tiene SS.
 \end{itemize}
 
+\newpage
+
 \section{Conceptos generales}
 
 \subsection{Teorema Fundamental del Cálculo}
@@ -129,7 +131,7 @@ Las isoclinas son las curvas de nivel de la función derivada.
 
 \begin{figure}[ht]
 \caption{Isoclinas}
-\includegraphics[scale=1]{img/edo/isoclinas.png} 
+\includegraphics[scale=1]{../img/ode/isoclines.png} 
 \centering
 \label{fig:isoclinas}
 \end{figure}
@@ -168,6 +170,8 @@ y' = \frac{1}{\frac{K}{x}} -\frac{K}{x^2} \Rightarrow y' = \frac{-1}{x}
 \end{equation}
 
 Si una familia de curvas es solución pero está expresada implícitamente (por ejemplo, círculos), puede que haya que determinar su dominio de validez.
+
+\newpage
 
 \section{Clases de ED con resolución analítica directa}
 
@@ -430,6 +434,8 @@ y''(t) = \frac{\mathop{d^2y}}{\mathop{dt^2}} = \ddot{y} \\
 \end{align}
 \end{subequations}
 
+\newpage
+
 \section{Trayectorias ortogonales; teorema de unicidad}
 
 \subsection{Trayectorias ortogonales}
@@ -465,6 +471,8 @@ O sea que las curvas ortogonales a las parábolas son elipses, lo cual geométri
 \subsection{Teorema de existencia y unicidad para EDOs de 1er orden}
 
 Dada $y' = f(x,y)$, con $f \in C^1 \Rightarrow$ por cada punto $(x_0, y_0)$ pasa 1 y sólo 1 curva solución o curva integral. En un entorno de $x_0$, existe una única solución $y = y(x)$ que verifica $y(x_0) = y_0$, o sea la condición inicial de la EDO.
+
+\newpage
 
 \section{Ecuaciones diferenciales lineales}
 
@@ -679,6 +687,8 @@ Estos sistemas de $n \times n$ pueden resolverse con la regla de Cramer. Los mis
 
 \end{enumerate}
 
+\newpage
+
 \section{ED total exacta (EDTE)}
 
 Sea $G(x,y) = k$. Si $G \in C^1 \wedge y = y(x)$, derivando la definición de $G$ miembro a miembro y aplicando la regla de la cadena resulta:
@@ -802,6 +812,8 @@ Derivando respecto a x, e igualando a $\Phi_x$ para determinar $v(x)$:
 
 Finalmente, resulta $\Phi = (x^2 + 2 \sin(x))^{\frac{1}{2}} + k$, por lo que la SG estará dada por la familia de curvas asociada a $(x^2 + 2 \sin(x))^{\frac{1}{2}} y = C$
 
+\newpage
+
 \section{Líneas de campo}
 
 También llamadas líneas de flujo o líneas de corriente. Son las curvas incluidas en el dominio de un campo vectorial tales que los vectores del mismo son tangentes a ellas en todo punto. Para que esta última oración tenga sentido, claramente el CV tiene que tener dominio e imagen en el mismo espacio vectorial, o sea $\overline{F}: \Bbb R^2 \rightarrow \Bbb R^2, \overline{F}: \Bbb R^3 \rightarrow \Bbb R^3$, etc. Analíticamente:
@@ -815,7 +827,7 @@ Por ejemplo, dado el campo $F(x,y) = (-y,x)$, si se grafica $\overline{F}(x,y)$,
 \begin{figure}[ht]
 \centering
 \caption{Líneas de campo para $\overline{F}(x,y) = (-y,x)$}
-\includegraphics[scale=0.7]{img/edo/lineas_campo.png}
+\includegraphics[scale=0.7]{../img/ode/field_lines.png}
 \label{fig:lincamp}
 \end{figure}
 
@@ -823,7 +835,7 @@ Si las líneas de campo son curvas cerradas, como en este ejemplo, \textbf{el ca
 
 Existen dos métodos para calcular las líneas de campo.
 
-\subsubsection{Resolución vectorial}
+\subsection{Resolución vectorial}
 
 Dados el CV (dato) y las líneas de campo (incógnitas):
 

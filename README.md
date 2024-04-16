@@ -9,6 +9,7 @@ These notes are not 100% complete, as some were lost over the years, and for som
 
 ## Subject codes
 
-|Code|Name                       ------|Original name (Spanish)  |
-|----|---------------------------------|-------------------------|
-|28  |Mathematical Analysis (pre grade)|Análisis Matemático (CBC)|
+|Code |Name                             |Original name (Spanish)  |
+|---- |---------------------------------|-------------------------|
+|28   |Mathematical Analysis (pre grade)|Análisis Matemático (CBC)|
+|61.03|Mathematical Analysis II A       |Análisis Matemático II A |
