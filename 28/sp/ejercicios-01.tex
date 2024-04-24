@@ -76,9 +76,98 @@ Dado que no se tiene una expresión cerrada para $f$, existen infinitas funcione
 
 \begin{figure}[ht]
 \caption{un gráfico posible}
-\includegraphics[scale=0.2]{../img/guide_01/ex_01.png} 
+\includegraphics[scale=0.17]{../img/guide_01/ex_01.png} 
 \centering
 \label{fig:1}
+\end{figure}
+
+\section*{2}
+\label{sec:2}
+\addcontentsline{toc}{section}{\nameref{sec:2}}
+
+\textbf{Con una lámina rectangular de 40 por 30 queremos hacer una caja como muestra la figura~\ref{fig:2}}
+
+\begin{figure}[ht]
+\caption{}
+\includegraphics[scale=0.8]{../img/guide_01/ex_02.png} 
+\centering
+\label{fig:2}
+\end{figure}
+
+\begin{enumerate}[(a)]
+
+\item \textbf{Busque la expresión del volumen de la caja en función de $x$. }
+
+\item \textbf{¿Cuál es el dominio?}
+
+\item \textbf{Haga un gráfico aproximado a partir de una tabla de valores.}
+
+\end{enumerate}
+\hrule
+
+\subsection*{2.a}
+\label{subsec:2.a}
+\addcontentsline{toc}{subsection}{\nameref{subsec:2.a}}
+
+El volumen de un cubo no regular, u ortoedro o prisma rectangular, es el área de su base multiplicada por su altura. En este caso:
+
+\begin{equation}
+v(x) = (30-2x)(40-2x)x = \hresult{2.a}{ 4x^3 - 140x^2 +1200x }
+\end{equation}
+
+\subsection*{2.b}
+\label{subsec:2.b}
+
+Exigiendo que todos los lados sean mayores a cero, se obtiene:
+
+\begin{subequations}
+\begin{align}
+& 30 - 2x > 0 \Rightarrow 30 > 2x \Rightarrow x < 15 \\
+& 40 - 2x > 0 \Rightarrow 40 > 2x \Rightarrow x < 20 \\
+& x > 0
+\end{align}
+\end{subequations}
+
+Para que estas tres condiciones se cumplan al mismo tiempo, debe ser:
+
+\begin{equation}
+\hresult{2.b}{ \mathop{\text{Dom}}(v) = \{ x \in \mathbb{R} / 0 < x < 15 \} }
+\end{equation}
+
+\subsection*{2.c}
+\label{subsec:2.c}
+
+La función $v(x)$ es cúbica, con ceros en 0, 15 y 30. Cabe esperar un máximo en el dominio definido, ya que $v(0) = v(15) = 0$.
+
+\begin{center}
+\begin{tabular}{||c c||} 
+ \hline
+ x & v(x) \\ [0.5ex] 
+ \hline\hline
+ 1 & 1064 \\ 
+ \hline
+ 3 & 2448 \\
+ \hline
+ 5 & 3000 \\
+ \hline
+ 7 & 2912 \\
+ \hline
+ 9 & 2376 \\
+ \hline
+ 11 & 1584 \\
+ \hline
+ 13 & 728 \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+
+\newpage
+
+\begin{figure}[ht]
+\caption{}
+\includegraphics[scale=0.6]{../img/guide_01/ex_02c.png} 
+\centering
+\label{fig:2c}
 \end{figure}
 
 \end{document}
