@@ -511,4 +511,43 @@ En la figura~\ref{fig:9}, la recta verde es $f_a$, la azul $f_b$ y la roja $f_c$
 
 Para determinar si una recta es creciente, ni siquiera es necesario graficar. Si su pendiente $m$ es positiva, es creciente. Si es negativa, es decreciente. Y si es cero, es una constante, no crece ni decrece. Con eso en mente, $f_a$ es creciente, $f_b$ es constante, $f_c$ es decreciente y $f_d$ es creciente para todo valor de $b$.
 
+\section*{10}
+\label{sec:10}
+\addcontentsline{toc}{section}{\nameref{sec:10}}
+
+\textbf{Encuentre la función lineal $g$ que da la temperatura en grados Fahrenheit, conocida la misma en grados Celsius, sabiendo que 0ºC = 32ºF y 100ºC = 212ºF. Recíprocamente, encuentre la función $h$ que da la temperatura en grados Celsius, conocida la misma en grados Fahrenheit. Compruebe que $g(h(x)) = h(g(x)) = x$.}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+Esto es un caso particular de hallar una recta conocidos dos puntos. Para $g(x) = m_g \cdot x + b_g$:
+
+\begin{subequations}
+\begin{align}
+& m_g = \frac{\Delta y}{\Delta x} = \frac{212-32}{100-0} = \frac{4}{5} \\
+& g(0) = 32 \Rightarrow b_g = 32 \\
+& \hresult{g(x)}{  g(x) = \frac{4}{5} x + 32 }
+\end{align}
+\end{subequations}
+
+Para $h(x) = m_h \cdot x + b_h:$
+
+\begin{subequations}
+\begin{align}
+& m_h = \frac{\Delta y}{\Delta x} = \frac{100-0}{212-32} = \frac{5}{4} \\
+& h(32) = 0 \Rightarrow \frac{5}{4} 32 + b_h = 0 \Rightarrow b_h = -40 \\
+& \hresult{h(x)}{  h(x) = \frac{5}{4} x - 40 }
+\end{align}
+\end{subequations}
+
+Estas funciones son inversas entre sí, por lo cual componerlas en cualquier orden debe dar la función identidad $f(x) = x$. A continuación, las comprobaciones solicitadas:
+
+\begin{subequations}
+\begin{align}
+& g(h(x)) = \frac{4}{5} h(x) + 32 = \frac{4}{5} \left( \frac{5}{4} x - 40 \right) + 32 = x - 32 + 32 = x \\
+& h(g(x)) = \frac{5}{4} g(x) - 40 = \frac{5}{4} \left( \frac{4}{5} x +32 \right) -40 = x + 40 - 40 = x
+\end{align}
+\end{subequations}
+
 \end{document}
