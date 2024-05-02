@@ -459,4 +459,56 @@ Aplicando esto, se obtiene:
 \label{fig:8c}
 \end{figure}
 
+\section*{9}
+\label{sec:9}
+\addcontentsline{toc}{section}{\nameref{sec:9}}
+
+\textbf{Halle la ecuación de la recta de pendiente $m$ que pasa por el punto $P$, siendo:}
+
+\begin{enumerate}[(a)]
+
+\item $P = (2, 3), m = 1$
+
+\item $P = (1, 5), m = 0$
+
+\item $P = (3, -4), m = -2$
+
+\item $P = (0, b), m = 1$
+
+\end{enumerate}
+
+\textbf{Haga el gráfico de cada una de ellas. Decida cuáles son crecientes y cuáles son decrecientes.}
+\vspace{1em}
+\hrule
+\vspace{1em}
+De manera general, sea la ecuación de la recta $y = f(x) = m \cdot x + b$. Si $m$ y un punto $(x_0, y_0)$ son conocidos, sólo resta calcular $b$. Para ello, basta con evaluar $f(x)$ en $x_0$ y despejar $b$.
+
+\begin{equation}
+y_0 = f(x_0) \Rightarrow y_0 = m \cdot x_0 + b \Rightarrow b = y_0 - m \cdot x_0
+\end{equation}
+
+Aplicando esto a cada inciso, se obtiene:
+
+\begin{subequations}
+\begin{align}
+& b_a = 3 - 1 \cdot 2 = 1 \Rightarrow \hresult{9.a}{ f_a(x) = x + 1 } \\
+& b_b = 5 - 0 \cdot 1 = 5 \Rightarrow \hresult{9.b}{ f_b(x) = 5 } \\
+& b_c = -4 - (-2) \cdot 3 = 2 \Rightarrow \hresult{9.c}{ f_c(x) = -2x + 2 } \\
+& b_d = b - 1 \cdot 0 = b \Rightarrow \hresult{9.d}{ f_d(x) = x + b }
+\end{align}
+\end{subequations}
+
+\newpage
+
+\begin{figure}[ht]
+\caption{Ejercicio 9}
+\includegraphics[scale=3]{../img/guide_01/ex_09.png} 
+\centering
+\label{fig:9}
+\end{figure}
+
+En la figura~\ref{fig:9}, la recta verde es $f_a$, la azul $f_b$ y la roja $f_c$. No se grafica $f_d$ porque $b$ es desconocido, pero crecería al mismo ritmo que $f_a$ por tener ambas pendiente unitaria.
+
+Para determinar si una recta es creciente, ni siquiera es necesario graficar. Si su pendiente $m$ es positiva, es creciente. Si es negativa, es decreciente. Y si es cero, es una constante, no crece ni decrece. Con eso en mente, $f_a$ es creciente, $f_b$ es constante, $f_c$ es decreciente y $f_d$ es creciente para todo valor de $b$.
+
 \end{document}
