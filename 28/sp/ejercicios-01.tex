@@ -22,6 +22,10 @@
 
 \newcommand{\hresult}[2]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] {#2} }
 \newcommand{\hresulte}[3]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] { \hspace{#3} #2 \hspace{#3} } }
+\newcommand{\figurex}[4]{\begin{figure}[ht] \caption{#1} \includegraphics[scale=#2]{#3} \centering \label{#4}\end{figure}}
+\newcommand{\figurexnp}[4]{\afterpage{\figurex{#1}{#2}{#3}{#4}}}
+\newcommand{\sectionx}[1]{\section*{#1}\label{sec:#1}\addcontentsline{toc}{section}{\nameref{sec:#1}}}
+\newcommand{\subsectionx}[1]{\subsection*{#1}\label{subsec:#1}\addcontentsline{toc}{subsection}{\nameref{subsec:#1}}}
 
 \renewcommand{\Bbb}{\mathbb}
 
@@ -38,9 +42,7 @@ Cátedra Ruiz, curso 62802 \\
 
 \newpage
 
-\section*{1}
-\label{sec:1}
-\addcontentsline{toc}{section}{\nameref{sec:1}}
+\sectionx{1}
 
 \textbf{Haga un gráfico que refleje la evolución de la temperatura del agua a lo largo del tiempo atendiendo a la siguiente descripción:}
 
@@ -75,27 +77,17 @@ Dado que no se tiene una expresión cerrada para $f$, existen infinitas funcione
 
 \newpage
 
-\begin{figure}[ht]
-\caption{un gráfico posible}
-\includegraphics[scale=0.17]{../img/guide_01/ex_01.png} 
-\centering
-\label{fig:1}
-\end{figure}
+\figurex{un gráfico posible}{0.17}{../img/guide_01/ex_01.png}{fig:1}
 
-\section*{2}
-\label{sec:2}
-\addcontentsline{toc}{section}{\nameref{sec:2}}
+\sectionx{2}
 
 \textbf{Con una lámina rectangular de 40 por 30 queremos hacer una caja como muestra la figura~\ref{fig:2}}
 
-\begin{figure}[ht]
-\caption{}
-\includegraphics[scale=2]{../img/guide_01/ex_02.png} 
-\centering
-\label{fig:2}
-\end{figure}
+\figurex{}{2}{../img/guide_01/ex_02.png}{fig:2}
 
 \begin{enumerate}[(a)]
+
+\bfseries
 
 \item \textbf{Busque la expresión del volumen de la caja en función de $x$. }
 
@@ -106,9 +98,7 @@ Dado que no se tiene una expresión cerrada para $f$, existen infinitas funcione
 \end{enumerate}
 \hrule
 
-\subsection*{2.a}
-\label{subsec:2.a}
-\addcontentsline{toc}{subsection}{\nameref{subsec:2.a}}
+\subsectionx{2.a}
 
 El volumen de un cubo no regular, u ortoedro o prisma rectangular, es el área de su base multiplicada por su altura. En este caso:
 
@@ -116,9 +106,7 @@ El volumen de un cubo no regular, u ortoedro o prisma rectangular, es el área d
 v(x) = (30-2x)(40-2x)x = \hresult{2.a}{ 4x^3 - 140x^2 +1200x }
 \end{equation}
 
-\subsection*{2.b}
-\label{subsec:2.b}
-\addcontentsline{toc}{subsection}{\nameref{subsec:2.b}}
+\subsectionx{2.b}
 
 Exigiendo que todos los lados sean mayores a cero, se obtiene:
 
@@ -136,9 +124,7 @@ Para que estas tres condiciones se cumplan al mismo tiempo, debe ser:
 \hresult{2.b}{ \mathop{\text{Dom}}(v) = \{ x \in \mathbb{R} / 0 < x < 15 \} }
 \end{equation}
 
-\subsection*{2.c}
-\label{subsec:2.c}
-\addcontentsline{toc}{subsection}{\nameref{subsec:2.c}}
+\subsectionx{2.c}
 
 La función $v(x)$ es cúbica, con ceros en 0, 15 y 30. Cabe esperar un máximo en el dominio definido, ya que $v(0) = v(15) = 0$.
 
@@ -166,16 +152,9 @@ La función $v(x)$ es cúbica, con ceros en 0, 15 y 30. Cabe esperar un máximo 
 
 \newpage
 
-\begin{figure}[ht]
-\caption{}
-\includegraphics[scale=0.6]{../img/guide_01/ex_02c.png} 
-\centering
-\label{fig:2c}
-\end{figure}
+\figurex{}{0.6}{../img/guide_01/ex_02c.png}{fig:2c}
 
-\section*{3}
-\label{sec:3}
-\addcontentsline{toc}{section}{\nameref{sec:3}}
+\sectionx{3}
 
 \textbf{Entre todos los rectángulos de perímetro 20, halle la función que relaciona la base $x$ con la altura $y$. Haga un gráfico que la represente. ¿Cuál es el dominio?}
 
@@ -209,16 +188,9 @@ Para obtener el dominio, se exige que tanto $x$ como $y$ sean positivos. Dado qu
 
 \newpage
 
-\begin{figure}[ht]
-\caption{Gráfico de y = 10-x}
-\includegraphics[scale=0.8]{../img/guide_01/ex_03.png} 
-\centering
-\label{fig:3}
-\end{figure}
+\figurex{Gráfico de y = 10-x}{0.8}{../img/guide_01/ex_03.png}{fig:3}
 
-\section*{4}
-\label{sec:4}
-\addcontentsline{toc}{section}{\nameref{sec:4}}
+\sectionx{4}
 
 \textbf{Halle el área de un triángulo rectángulo isósceles en función del cateto. Dibuje el gráfico de la función hallada a partir de una tabla de valores. Indique cuál es el dominio.}
 
@@ -234,24 +206,13 @@ Si un cateto mide $x$, por ser isósceles el otro cateto también mide $x$. Dado
 
 \newpage
 
-\begin{figure}[ht]
-\caption{Gráfico de $y = x^2/2 $}
-\includegraphics[scale=0.8]{../img/guide_01/ex_04.png} 
-\centering
-\label{fig:4}
-\end{figure}\textbf{•}
+\figurex{Gráfico de $y = x^2/2 $}{0.8}{../img/guide_01/ex_04.png}{fig:4}
 
-\section*{5}
-\label{sec:5}
-\addcontentsline{toc}{section}{\nameref{sec:5}}
+\sectionx{5}
 
 \textbf{Dados los siguientes conjuntos del plano, determine, en cada caso, si existe una función cuyo gráfico sea el dado.}
 
-\begin{figure}[ht]
-\includegraphics[scale=2]{../img/guide_01/ex_05.png} 
-\centering
-\label{fig:5}
-\end{figure}
+\figurex{}{2}{../img/guide_01/ex_05.png}{fig:5}
 
 \hrule
 \vspace{1em}
@@ -273,23 +234,15 @@ Etiquetando de izquierda a derecha (a, b y c son la primera fila y d, e y f la s
 
 \end{enumerate}
 
-\section*{6}
-\label{sec:6}
-\addcontentsline{toc}{section}{\nameref{sec:6}}
+\sectionx{6}
 
 \textbf{Dados los siguientes gráficos de funciones, determine, en cada caso, en qué intervalos es creciente, en qué intervalos es decreciente, en qué punto alcanza su máximo, cuál es dicho valor máximo, en qué punto alcanza su mínimo y cuál es el valor mínimo.}
 
-\begin{figure}[ht]
-\includegraphics[scale=3]{../img/guide_01/ex_06.png} 
-\centering
-\label{fig:6}
-\end{figure}
+\figurex{}{3}{../img/guide_01/ex_06.png}{fig:6}
 
 \hrule
 
-\subsection*{6.a}
-\label{subsec:6.a}
-\addcontentsline{toc}{subsection}{\nameref{subsec:6.a}}
+\subsectionx{6.a}
 
 \begin{itemize}
 
@@ -303,9 +256,7 @@ Etiquetando de izquierda a derecha (a, b y c son la primera fila y d, e y f la s
 
 \end{itemize}
 
-\subsection*{6.b}
-\label{subsec:6.b}
-\addcontentsline{toc}{subsection}{\nameref{subsec:6.b}}
+\subsectionx{6.b}
 
 \begin{itemize}
 
@@ -319,9 +270,7 @@ Etiquetando de izquierda a derecha (a, b y c son la primera fila y d, e y f la s
 
 \end{itemize}
 
-\subsection*{6.c}
-\label{subsec:6.c}
-\addcontentsline{toc}{subsection}{\nameref{subsec:6.c}}
+\subsectionx{6.c}
 
 \begin{itemize}
 
@@ -337,9 +286,7 @@ Etiquetando de izquierda a derecha (a, b y c son la primera fila y d, e y f la s
 
 Nótese que a pesar de estar acotada, esta función no tiene mínimo ni máximo porque se comporta asintóticamente. Con x tendiendo a menos infinito, tiende a cero pero nunca lo alcanza. Y lo mismo ocurre con más infinito y 1.
 
-\subsection*{6.d}
-\label{subsec:6.d}
-\addcontentsline{toc}{subsection}{\nameref{subsec:6.d}}
+\subsectionx{6.d}
 
 \begin{itemize}
 
@@ -355,9 +302,7 @@ En este caso, no hay mínimo ni máximo porque la función no está acotada. Sin
 
 \end{itemize}
 
-\section*{7}
-\label{sec:7}
-\addcontentsline{toc}{section}{\nameref{sec:7}}
+\sectionx{7}
 
 \textbf{Dibuje una función que sea creciente en los intervalos $(-\infty, -1)$ y $(2, +\infty)$. Además, que el valor máximo sea 4 y se alcance en $x = -1$ y que el valor mínimo sea $-3$ y se alcance en $x = 2$.}
 
@@ -367,22 +312,18 @@ En este caso, no hay mínimo ni máximo porque la función no está acotada. Sin
 
 Hay infinitas funciones que cumplen estos requisitos, pero una podría ser la de la figura~\ref{fig:7}. Hay que tener en cuenta que para que una función tenga mínimo y máximo pero sea creciente hacia menos y más infinito, tiene que tener asíntotas horizontales de valor menor al máximo y mayor al mínimo.
 
-\begin{figure}[ht]
-\caption{Ejercicio 7}
-\includegraphics[scale=0.7]{../img/guide_01/ex_07.png} 
-\centering
-\label{fig:7}
-\end{figure}
+\figurex{Ejercicio 7}{0.7}{../img/guide_01/ex_07.png}{fig:7}
 
-\section*{8}
-\label{sec:8}
-\addcontentsline{toc}{section}{\nameref{sec:8}}
+\sectionx{8}
 
 \begin{enumerate}[(a)]
 
 \item \textbf{Encuentre en cada caso, una función lineal que satisfaga:}
 
 \begin{enumerate}
+
+\bfseries
+
 \item \textbf{$f(1) = 5; f(-3) = 2$}
 \item \textbf{$f(-1) = 3; f(80) = 3$}
 \item \textbf{$f(0) = 4; f(3) = 0;$}
@@ -396,9 +337,7 @@ Hay infinitas funciones que cumplen estos requisitos, pero una podría ser la de
 \end{enumerate}
 \hrule
 
-\subsection*{8.a}
-\label{subsec:8.a}
-\addcontentsline{toc}{subsection}{\nameref{subsec:8.a}}
+\subsectionx{8.a}
 
 De manera general, dos puntos genéricos del plano $(x_0, y_0)$ y $(x_1, y_1)$ determinan unívocamente una recta que puede ser expresada como una función $y = m x + b$. La pendiente $m$ puede calcularse según:
 
@@ -426,9 +365,7 @@ Aplicando esto, se obtiene:
 \end{align}
 \end{subequations}
 
-\subsection*{8.b}
-\label{subsec:8.b}
-\addcontentsline{toc}{subsection}{\nameref{subsec:8.b}}
+\subsectionx{8.b}
 
 \begin{subequations}
 \begin{align}
@@ -438,9 +375,7 @@ Aplicando esto, se obtiene:
 \end{align}
 \end{subequations}
 
-\subsection*{8.c}
-\label{subsec:8.c}
-\addcontentsline{toc}{subsection}{\nameref{subsec:8.c}}
+\subsectionx{8.c}
 
 \begin{subequations}
 \begin{align}
@@ -453,20 +388,15 @@ Aplicando esto, se obtiene:
 
 \newpage
 
-\begin{figure}[ht]
-\caption{Ejercicio 8.c}
-\includegraphics[scale=2.5]{../img/guide_01/ex_08c.png} 
-\centering
-\label{fig:8c}
-\end{figure}
+\figurex{Ejercicio 8.c}{2.5}{../img/guide_01/ex_08c.png}{fig:8c}
 
-\section*{9}
-\label{sec:9}
-\addcontentsline{toc}{section}{\nameref{sec:9}}
+\sectionx{9}
 
 \textbf{Halle la ecuación de la recta de pendiente $m$ que pasa por el punto $P$, siendo:}
 
 \begin{enumerate}[(a)]
+
+\bfseries
 
 \item $P = (2, 3), m = 1$
 
@@ -501,20 +431,13 @@ Aplicando esto a cada inciso, se obtiene:
 
 \newpage
 
-\begin{figure}[ht]
-\caption{Ejercicio 9}
-\includegraphics[scale=3]{../img/guide_01/ex_09.png} 
-\centering
-\label{fig:9}
-\end{figure}
+\figurex{Ejercicio 9}{3}{../img/guide_01/ex_09.png}{fig:9}
 
 En la figura~\ref{fig:9}, la recta verde es $f_a$, la azul $f_b$ y la roja $f_c$. No se grafica $f_d$ porque $b$ es desconocido, pero crecería al mismo ritmo que $f_a$ por tener ambas pendiente unitaria.
 
 Para determinar si una recta es creciente, ni siquiera es necesario graficar. Si su pendiente $m$ es positiva, es creciente. Si es negativa, es decreciente. Y si es cero, es una constante, no crece ni decrece. Con eso en mente, $f_a$ es creciente, $f_b$ es constante, $f_c$ es decreciente y $f_d$ es creciente para todo valor de $b$.
 
-\section*{10}
-\label{sec:10}
-\addcontentsline{toc}{section}{\nameref{sec:10}}
+\sectionx{10}
 
 \textbf{Encuentre la función lineal $g$ que da la temperatura en grados Fahrenheit, conocida la misma en grados Celsius, sabiendo que 0ºC = 32ºF y 100ºC = 212ºF. Recíprocamente, encuentre la función $h$ que da la temperatura en grados Celsius, conocida la misma en grados Fahrenheit. Compruebe que $g(h(x)) = h(g(x)) = x$.}
 
@@ -551,13 +474,13 @@ Estas funciones son inversas entre sí, por lo cual componerlas en cualquier ord
 \end{align}
 \end{subequations}
 
-\section*{11}
-\label{sec:11}
-\addcontentsline{toc}{section}{\nameref{sec:11}}
+\sectionx{11}
 
 \textbf{Trace el gráfico de las siguientes funciones cuadráticas:}
 
 \begin{enumerate}[(a)]
+
+\bfseries
 
 \item $f(x) = x^2$
 
@@ -570,21 +493,14 @@ Estas funciones son inversas entre sí, por lo cual componerlas en cualquier ord
 \end{enumerate}
 
 \textbf{Determine en cada caso, el conjunto imagen.}
-
+\vspace{1em}
 \hrule
 
-\subsection*{11.a}
-\label{subsec:11.a}
-\addcontentsline{toc}{subsection}{\nameref{subsec:11.a}}
+\subsectionx{11.a}
 
 Este gráfico puede hacerse con una simple tabla de valores, pero es claro que el mínimo se alcanza en $x = 0$ y vale cero. Además, dado que $f(-x) = f(x)$, se tiene simetría respecto al eje $y$.
 
-\begin{figure}[ht]
-\caption{Ejercicio 11.a}
-\includegraphics[scale=1.3]{../img/guide_01/ex_11a.png} 
-\centering
-\label{fig:11a}
-\end{figure}
+\figurex{Ejercicio 11.a}{1.3}{../img/guide_01/ex_11a.png}{fig:11a}
 
 Para obtener la imagen de la función $f$, basta con mirar el gráfico y ver qué rango de valores puede tomar $y$. En este caso, de cero a más infinito incluyendo el cero.
 
@@ -592,37 +508,23 @@ Para obtener la imagen de la función $f$, basta con mirar el gráfico y ver qu�
 \hresult{11.a}{ \mathop{\text{Img}}(f) = [0, +\infty) }
 \end{equation}
 
-\subsection*{11.b}
-\label{subsec:11.b}
-\addcontentsline{toc}{subsection}{\nameref{subsec:11.b}}
+\subsectionx{11.b}
 
 Este gráfico puede construirse invirtiendo el anterior respecto al eje $x$, y comprimiéndolo en un factor de 2. Esto es lo que causa multiplicar por $-2$. Lo que se quiere decir con compresión es que, por ejemplo, en la versión no escalada, $f(1) = 1$ y $f(2) = 4$. Ahora bien, al multiplicar por 2 resulta $f(1) = 2$ y $f(2) = 8$. Al estar todos los valores duplicados, el efecto es que la curva tiene la misma forma pero se comprime.
 
-\begin{figure}[ht]
-\caption{Ejercicio 11.b}
-\includegraphics[scale=1.3]{../img/guide_01/ex_11b.png} 
-\centering
-\label{fig:11b}
-\end{figure}
+\figurex{Ejercicio 11.b}{1.3}{../img/guide_01/ex_11b.png}{fig:11b}
 
 \begin{equation}
 \hresult{11.b}{ \mathop{\text{Img}}(f) = (-\infty, 0] }
 \end{equation}
 
-\subsection*{11.c}
-\label{subsec:11.c}
-\addcontentsline{toc}{subsection}{\nameref{subsec:11.c}}
+\subsectionx{11.c}
 
 Este gráfico puede construirse desplazando verticalmente el de $x^2$. Ahora el mínimo se alcanza en $x = 0$ pero vale -3.
 
 \newpage
 
-\begin{figure}[ht]
-\caption{Ejercicio 11.c}
-\includegraphics[scale=1.3]{../img/guide_01/ex_11c.png} 
-\centering
-\label{fig:11c}
-\end{figure}
+\figurex{Ejercicio 11c}{1.3}{../img/guide_01/ex_11c.png}{fig:11c}
 
 La imagen también resulta desplazada:
 
@@ -630,23 +532,295 @@ La imagen también resulta desplazada:
 \hresult{11.c}{ \mathop{\text{Img}}(f) = [-3, +\infty) }
 \end{equation}
 
-\subsection*{11.d}
-\label{subsec:11.d}
-\addcontentsline{toc}{subsection}{\nameref{subsec:11.d}}
+\subsectionx{11.d}
 
 En este caso, hay dos transformaciones: una traslación horizontal causada por el -5, y una reflexión respecto al eje $x$ causada por el -1 que multiplica al paréntesis.
 
-\afterpage{
-\begin{figure}[ht]
-\caption{Ejercicio 11.d}
-\includegraphics[scale=1.3]{../img/guide_01/ex_11d.png} 
-\centering
-\label{fig:11d}
-\end{figure}
-}
+\figurexnp{Ejercicio 11.d}{1.3}{../img/guide_01/ex_11d.png}{fig:11d}
 
 \begin{equation}
 \hresult{11.d}{ \mathop{\text{Img}}(f) = (-\infty, 0] }
 \end{equation}
+
+\sectionx{12}
+
+\textbf{Para las siguientes funciones cuadráticas determine en qué intervalo crecen, en qué intervalos decrecen, dónde son positivas, dónde son negativas, en qué puntos se anulan y en qué punto alcanzan su extremo.}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $f(x) = -2x^2$
+
+\item $f(x) = -2x (x-3)$
+
+\item $f(x) = -2x^2 + x$
+
+\item $f(x) = x^2 + 2x + 1$
+
+\item $f(x) = -2 (x+3) (x-5)$
+
+\end{enumerate}
+
+\hrule
+\vspace{1em}
+
+En este ejercicio, algunas cuadráticas no están en la forma más cómoda para graficar. Concretamente, esa forma es:
+
+\begin{equation}
+f(x) = k (x - x_v)^2 + y_v
+\end{equation}
+
+En esta expresión, el punto $(x_v, y_v)$ es el extremo de la cuadrática. Será un mínimo si $k$ es positivo, y un máximo si $k$ es negativo. Conocidos el extremo y $k$, graficando algunos puntos simétricos respecto a la recta $x = x_v$ será suficiente para trazar la parábola.
+
+Ahora bien, para llevar una expresión cuadrática a esta forma, lo más directo es usar la técnica de completar el cuadrado. Esto es más fácil de ver con un ejemplo, así que se verá en la solución de los ejercicios.
+
+\subsectionx{12.a}
+
+Esta función ya está en la forma deseada. Su único cero es $x = 0$, que es doble. Como $k = -2 \Rightarrow k < 0$ y el extremo es el máximo. Puede graficarse directamente. 
+
+\figurexnp{Ejercicio 12a}{1.3}{../img/guide_01/ex_12a.png}{fig:12a}
+
+A la hora de considera los intervalos de positividad, se considerará que el cero no es positivo ni negativo. Por eso, en este caso particular será el conjunto vacío.
+
+\begin{itemize}
+
+\item IC: $(-\infty, 0)$
+
+\item ID: $(0, +\infty)$
+
+\item $I^+: \emptyset$
+
+\item $I^-: \mathbb{R} - \{ 0 \}$
+
+\item Ceros: $x = 0$ (doble)
+
+\item Extremo: $(0, 0)$
+
+\end{itemize}
+
+\subsectionx{12.b}
+
+En este caso es preciso utilizar la técnica de completar el cuadrado para llevar $f(x)$ a una expresión fácil de graficar. Para eso, primero se expande el producto para tener una forma polinómica:
+
+\begin{equation}
+f(x) = -2x (x-3) = -2x^2 + 6x
+\end{equation}
+
+El próximo paso es sacar factor común $-2$ para tener $x^2$ solo y facilitar las cuentas.
+
+\begin{equation}
+f(x) = -2 (x^2 -3x)
+\end{equation}
+
+Ahora la idea es completar el cuadrado pero sólo para el paréntesis, o sea la expresión $x^2 - 3x$. Se desea convertirla al cuadrado de un binomio más una constante. Planteando esto de manera algebraica:
+
+\begin{equation}
+x^2 - 3x = (x-x_v)^2 + y_v
+\end{equation}
+
+Expandiendo el lado derecho según $(a - b)^2 = a^2 - 2ab +b^2$:
+
+\begin{equation}
+x^2 - 3x = x^2 - 2 \cdot x \cdot x_v + x_v^2 + y_v
+\end{equation}
+
+Esto es una igualdad entre polinomios. Para que se cumple para todo $x$, los coeficientes deben coincidir. Esto conduce al siguiente sistema de ecuaciones:
+
+\begin{subequations}
+\begin{align}
+& \left\{ \begin{array}{ll}
+-3 = -2 x_v \\
+0 = x_v^2 + y_v
+\end{array} \right.
+\end{align}
+\end{subequations}
+
+Despejando $x_v$ en la primera ecuación, resulta $x_v = \frac{3}{2}$. Y reemplazando eso en la segunda ecuación:
+
+\begin{equation}
+0 = \frac{9}{4} + y_v \Rightarrow y_v = -\frac{9}{4}
+\end{equation}
+
+Reemplazando el paréntesis inicial con su equivalente:
+
+\begin{equation}
+f(x) = -2 (x^2 - 3x) -2 \left[ \left(x - \frac{3}{2}\right)^2 - \frac{9}{4} \right] = -2 \left( x -\frac{3}{2} \right)^2 + \frac{9}{2}
+\end{equation}
+
+Entonces, el extremo es el punto $\left( \frac{3}{2}, \frac{9}{2} \right)$. Como $k$ es negativo, es un máximo. Además, de la forma original de $f$ se sigue por inspección que los ceros son $x = 0$ y $x = 3$. Con eso es suficiente para graficar $f$.
+
+\figurex{Ejercicio 12.b}{1.3}{../img/guide_01/ex_12b.png}{fig:12b}
+
+\begin{itemize}
+
+\item IC: $\left(-\infty, \frac{3}{2} \right)$
+
+\item ID: $\left( \frac{3}{2}, +\infty \right)$
+
+\item $I^+: (0, 3)$
+
+\item $I^-: (-\infty, 0) \cup (3, +\infty)$
+
+\item Ceros: $x = 0$, $x = 3$
+
+\item Extremo: $\left( \frac{3}{2}, \frac{9}{2} \right)$
+
+\end{itemize}
+
+\subsectionx{12.c}
+
+Aplicando la misma técnica del inciso anterior, se obtiene:
+
+\begin{equation}
+f(x) = -2x^2 + x = -2 \left( x - \frac{1}{4} \right)^2 + \frac{1}{8}
+\end{equation}
+
+De esa forma, el extremo resulta $\left( \frac{1}{4}, \frac{1}{8} \right)$. Para hallar los ceros, basta con factorizar:
+
+\begin{equation}
+f(x) = x (-2x + 1) \Rightarrow f(x) = 0 \Leftrightarrow x = 0 \vee x = \frac{1}{2}
+\end{equation}
+
+Siendo $k$ negativo, el extremo es el máximo. Con eso y los ceros, ya es directo graficar.
+
+\figurex{Ejercicio 12.c}{4}{../img/guide_01/ex_12c.png}{fig:12c}
+
+\begin{itemize}
+
+\item IC: $\left(-\infty, \frac{1}{4} \right)$
+
+\item ID: $\left( \frac{1}{4}, +\infty \right)$
+
+\item $I^+: (0, \frac{1}{2})$
+
+\item $I^-: (-\infty, 0) \cup (\frac{1}{2}, +\infty)$
+
+\item Ceros: $x = 0$, $x = \frac{1}{2}$
+
+\item Extremo: $\left( \frac{1}{4}, \frac{1}{8} \right)$
+
+\end{itemize}
+
+\subsectionx{12.d}
+
+En este caso, $f(x)$ ya es el cuadrado perfecto de un binomio:
+
+\begin{equation}
+f(x) = x^2 + 2x + 1 = (x+1)^2
+\end{equation}
+
+El extremo resulta entonces $(-1, 0)$, y el único cero, que es doble, es $x = -1$. Siendo $k = 1$, el extremo es un mínimo.
+
+\figurex{Ejercicio 12.d}{4}{../img/guide_01/ex_12d.png}{fig:12d}
+
+\begin{itemize}
+
+\item IC: $(-1, +\infty)$
+
+\item ID: $(-\infty, -1)$
+
+\item $I^+: \mathbb{R} - \{ -1 \} $
+
+\item $I^-: \emptyset $
+
+\item Ceros: $x = -1$ (doble)
+
+\item Extremo: $ (-1, 0) $
+
+\end{itemize}
+
+\subsectionx{12.e}
+
+Aplicando la técnica de completar el cuadrado:
+
+\begin{subequations}
+\begin{align}
+& -2 (x+3) (x-5) = k (x-x_v)^2 + y_v \\
+& -2 (x^2 -5x +3x -15) = k (x^2 -2 x_v x +x_v^2) + y_v \\
+& -2 x^2 +2x + 30 = k x^2 - 2 k x_v x + k v_v^2 + y_v
+\end{align}
+\end{subequations}
+
+Igualando términos:
+
+\begin{subequations}
+\begin{align}
+& \left\{ \begin{array}{ll}
+-2 = k \\
+2 = 2 k x_v \\
+30 = k x_v^2 + y_v
+\end{array} \right.
+\end{align}
+\end{subequations}
+
+Resolviendo, resulta $k = -2$, $x_v = 1$ e $y_v = 32$. Los ceros surgen de inspeccionar la forma original de $f$ y son $x = -3$ y $x = 5$. Como $k$ es negativo, el extremo es un máximo.
+
+\figurex{Ejercicio 12.e}{0.5}{../img/guide_01/ex_12e.png}{fig:12e}
+
+\sectionx{13}
+
+\textbf{Se arroja una pelota desde el suelo y la altura, en metros, viene dada por la función $h(t) = -5t^2 +10t$, siendo $t$ el tiempo medido en segundos. ¿Cuándos alcanza la altura máxima? ¿Cuál es dicha altura?}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+Este problema equivale a hallar el extremo de una función cuadrática. En este caso, la variable $t$ es la variable independiente, o sea que toma el rol de $x$, y la variable dependiente es $h$, que toma el rol de $y$. Aplicando la técnica de completar el cuadrado:
+
+\begin{equation}
+h(t) = -5 (t-1)^2 + 5
+\end{equation}
+
+Por lo tanto, la altura máxima se alcanza en $\hresult{}{t = 1}$ segundos y vale $\hresult{}{h(1) = 5}$ metros.
+
+\sectionx{14}
+
+\textbf{Represente gráficamente las siguientes funciones:}
+
+\begin{enumerate}[(a)]
+
+\item $ f(x) = x^3 $
+
+\item $ f(x) = (x-2)^3 $
+
+\item $ f(x) = x^3 - 1 $
+
+\item $ f(x) = x^4 $
+
+\end{enumerate}
+
+\textbf{Analice, en cada caso, la monotonía.}
+
+\vspace{1em}
+\hrule
+
+\subsectionx{14.a}
+
+La función cúbica básica sólo se anula en el origen, y tiene simetría respecto al origen, como toda función impar, o sea $f(-x) = -f(x)$ para todo $x$. Tomando los valores en $1, -1, 2$ y $-2$ alcanza para ver qué forma tiene.
+
+\figurex{Ejercicio 14.a}{2}{../img/guide_01/ex_14a.png}{fig:14a}
+
+En cuanto a la monotonía, la función cúbica es monótona creciente.
+
+\subsectionx{14.b}
+
+Éste es el gráfico anterior desplazado horizontalmente, 2 unidades hacia la derecha. En lugar de estar centrado en $(0,0)$, pasa a estar centrado en $(2,0)$. Fuera de eso, la curva es igual; sigue siendo monótona creciente.
+
+\figurex{Ejercicio 14.b}{2}{../img/guide_01/ex_14b.png}{fig:14b}
+
+\subsectionx{14.c}
+
+Nuevamente, este gráfico puede verse como una transformación de $f(x) = x^3$. En este caso, un desplazamiento vertical, de 1 unidad hacia abajo. El origen pasa de estar en $(0, 0)$ a estar en $(0,-1)$. Como no hay escalado, fuera de eso la curva es igual; sigue siendo monótona creciente.
+
+\figurex{Ejercicio 14.c}{1.5}{../img/guide_01/ex_14c.png}{fig:14c}
+
+\subsectionx{14.d}
+
+La función cuártica es una cuadrática que crece mucho más rápido. También es par, así que es simétrica respecto al eje $y$. Con evaluar en $0, 1, -1, 2$ y $-2$ es suficiente para ver cómo se comporta. Por otro lado, para valores menores a 1, tiende a cero más bruscamente que una cuadrática, lo que da un efecto de planchado en el intervalo $(-1, 1)$.
+
+\figurex{Ejercicio 14.d}{1}{../img/guide_01/ex_14d.png}{fig:14d}
+
+En cuanto a la monotonía, $f$ ya no es monótona: decrece en el intervalo $(-\infty, 0)$ y crece en el intervalo $(0, +\infty).$
 
 \end{document}
