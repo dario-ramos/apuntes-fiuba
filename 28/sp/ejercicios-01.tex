@@ -25,6 +25,7 @@
 \newcommand{\figurex}[4]{\begin{figure}[ht] \caption{#1} \includegraphics[scale=#2]{#3} \centering \label{#4}\end{figure}}
 \newcommand{\figurexnp}[4]{\afterpage{\figurex{#1}{#2}{#3}{#4}}}
 \newcommand{\sectionx}[1]{\section*{#1}\label{sec:#1}\addcontentsline{toc}{section}{\nameref{sec:#1}}}
+\newcommand{\subsectionx}[1]{\subsection*{#1}\label{subsec:#1}\addcontentsline{toc}{subsection}{\nameref{subsec:#1}}}
 
 \renewcommand{\Bbb}{\mathbb}
 
@@ -97,9 +98,7 @@ Dado que no se tiene una expresión cerrada para $f$, existen infinitas funcione
 \end{enumerate}
 \hrule
 
-\subsection*{2.a}
-\label{subsec:2.a}
-\addcontentsline{toc}{subsection}{\nameref{subsec:2.a}}
+\subsectionx{2.a}
 
 El volumen de un cubo no regular, u ortoedro o prisma rectangular, es el área de su base multiplicada por su altura. En este caso:
 
@@ -107,9 +106,7 @@ El volumen de un cubo no regular, u ortoedro o prisma rectangular, es el área d
 v(x) = (30-2x)(40-2x)x = \hresult{2.a}{ 4x^3 - 140x^2 +1200x }
 \end{equation}
 
-\subsection*{2.b}
-\label{subsec:2.b}
-\addcontentsline{toc}{subsection}{\nameref{subsec:2.b}}
+\subsectionx{2.b}
 
 Exigiendo que todos los lados sean mayores a cero, se obtiene:
 
@@ -127,9 +124,7 @@ Para que estas tres condiciones se cumplan al mismo tiempo, debe ser:
 \hresult{2.b}{ \mathop{\text{Dom}}(v) = \{ x \in \mathbb{R} / 0 < x < 15 \} }
 \end{equation}
 
-\subsection*{2.c}
-\label{subsec:2.c}
-\addcontentsline{toc}{subsection}{\nameref{subsec:2.c}}
+\subsectionx{2.c}
 
 La función $v(x)$ es cúbica, con ceros en 0, 15 y 30. Cabe esperar un máximo en el dominio definido, ya que $v(0) = v(15) = 0$.
 
@@ -247,9 +242,7 @@ Etiquetando de izquierda a derecha (a, b y c son la primera fila y d, e y f la s
 
 \hrule
 
-\subsection*{6.a}
-\label{subsec:6.a}
-\addcontentsline{toc}{subsection}{\nameref{subsec:6.a}}
+\subsectionx{6.a}
 
 \begin{itemize}
 
@@ -263,9 +256,7 @@ Etiquetando de izquierda a derecha (a, b y c son la primera fila y d, e y f la s
 
 \end{itemize}
 
-\subsection*{6.b}
-\label{subsec:6.b}
-\addcontentsline{toc}{subsection}{\nameref{subsec:6.b}}
+\subsectionx{6.b}
 
 \begin{itemize}
 
@@ -279,9 +270,7 @@ Etiquetando de izquierda a derecha (a, b y c son la primera fila y d, e y f la s
 
 \end{itemize}
 
-\subsection*{6.c}
-\label{subsec:6.c}
-\addcontentsline{toc}{subsection}{\nameref{subsec:6.c}}
+\subsectionx{6.c}
 
 \begin{itemize}
 
@@ -297,9 +286,7 @@ Etiquetando de izquierda a derecha (a, b y c son la primera fila y d, e y f la s
 
 Nótese que a pesar de estar acotada, esta función no tiene mínimo ni máximo porque se comporta asintóticamente. Con x tendiendo a menos infinito, tiende a cero pero nunca lo alcanza. Y lo mismo ocurre con más infinito y 1.
 
-\subsection*{6.d}
-\label{subsec:6.d}
-\addcontentsline{toc}{subsection}{\nameref{subsec:6.d}}
+\subsectionx{6.d}
 
 \begin{itemize}
 
@@ -350,9 +337,7 @@ Hay infinitas funciones que cumplen estos requisitos, pero una podría ser la de
 \end{enumerate}
 \hrule
 
-\subsection*{8.a}
-\label{subsec:8.a}
-\addcontentsline{toc}{subsection}{\nameref{subsec:8.a}}
+\subsectionx{8.a}
 
 De manera general, dos puntos genéricos del plano $(x_0, y_0)$ y $(x_1, y_1)$ determinan unívocamente una recta que puede ser expresada como una función $y = m x + b$. La pendiente $m$ puede calcularse según:
 
@@ -380,9 +365,7 @@ Aplicando esto, se obtiene:
 \end{align}
 \end{subequations}
 
-\subsection*{8.b}
-\label{subsec:8.b}
-\addcontentsline{toc}{subsection}{\nameref{subsec:8.b}}
+\subsectionx{8.b}
 
 \begin{subequations}
 \begin{align}
@@ -392,9 +375,7 @@ Aplicando esto, se obtiene:
 \end{align}
 \end{subequations}
 
-\subsection*{8.c}
-\label{subsec:8.c}
-\addcontentsline{toc}{subsection}{\nameref{subsec:8.c}}
+\subsectionx{8.c}
 
 \begin{subequations}
 \begin{align}
@@ -515,9 +496,7 @@ Estas funciones son inversas entre sí, por lo cual componerlas en cualquier ord
 \vspace{1em}
 \hrule
 
-\subsection*{11.a}
-\label{subsec:11.a}
-\addcontentsline{toc}{subsection}{\nameref{subsec:11.a}}
+\subsectionx{11.a}
 
 Este gráfico puede hacerse con una simple tabla de valores, pero es claro que el mínimo se alcanza en $x = 0$ y vale cero. Además, dado que $f(-x) = f(x)$, se tiene simetría respecto al eje $y$.
 
@@ -529,9 +508,7 @@ Para obtener la imagen de la función $f$, basta con mirar el gráfico y ver qu�
 \hresult{11.a}{ \mathop{\text{Img}}(f) = [0, +\infty) }
 \end{equation}
 
-\subsection*{11.b}
-\label{subsec:11.b}
-\addcontentsline{toc}{subsection}{\nameref{subsec:11.b}}
+\subsectionx{11.b}
 
 Este gráfico puede construirse invirtiendo el anterior respecto al eje $x$, y comprimiéndolo en un factor de 2. Esto es lo que causa multiplicar por $-2$. Lo que se quiere decir con compresión es que, por ejemplo, en la versión no escalada, $f(1) = 1$ y $f(2) = 4$. Ahora bien, al multiplicar por 2 resulta $f(1) = 2$ y $f(2) = 8$. Al estar todos los valores duplicados, el efecto es que la curva tiene la misma forma pero se comprime.
 
@@ -541,9 +518,7 @@ Este gráfico puede construirse invirtiendo el anterior respecto al eje $x$, y c
 \hresult{11.b}{ \mathop{\text{Img}}(f) = (-\infty, 0] }
 \end{equation}
 
-\subsection*{11.c}
-\label{subsec:11.c}
-\addcontentsline{toc}{subsection}{\nameref{subsec:11.c}}
+\subsectionx{11.c}
 
 Este gráfico puede construirse desplazando verticalmente el de $x^2$. Ahora el mínimo se alcanza en $x = 0$ pero vale -3.
 
@@ -557,9 +532,7 @@ La imagen también resulta desplazada:
 \hresult{11.c}{ \mathop{\text{Img}}(f) = [-3, +\infty) }
 \end{equation}
 
-\subsection*{11.d}
-\label{subsec:11.d}
-\addcontentsline{toc}{subsection}{\nameref{subsec:11.d}}
+\subsectionx{11.d}
 
 En este caso, hay dos transformaciones: una traslación horizontal causada por el -5, y una reflexión respecto al eje $x$ causada por el -1 que multiplica al paréntesis.
 
@@ -602,9 +575,7 @@ En esta expresión, el punto $(x_v, y_v)$ es el extremo de la cuadrática. Será
 
 Ahora bien, para llevar una expresión cuadrática a esta forma, lo más directo es usar la técnica de completar el cuadrado. Esto es más fácil de ver con un ejemplo, así que se verá en la solución de los ejercicios.
 
-\subsection*{12.a}
-\label{subsec:12.a}
-\addcontentsline{toc}{subsection}{\nameref{subsec:12.a}}
+\subsectionx{12.a}
 
 Esta función ya está en la forma deseada. Su único cero es $x = 0$, que es doble. Como $k = -2 \Rightarrow k < 0$ y el extremo es el máximo. Puede graficarse directamente. 
 
@@ -628,9 +599,7 @@ A la hora de considera los intervalos de positividad, se considerará que el cer
 
 \end{itemize}
 
-\subsection*{12.b}
-\label{subsec:12.b}
-\addcontentsline{toc}{subsection}{\nameref{subsec:12.b}}
+\subsectionx{12.b}
 
 En este caso es preciso utilizar la técnica de completar el cuadrado para llevar $f(x)$ a una expresión fácil de graficar. Para eso, primero se expande el producto para tener una forma polinómica:
 
@@ -699,9 +668,7 @@ Entonces, el extremo es el punto $\left( \frac{3}{2}, \frac{9}{2} \right)$. Como
 
 \end{itemize}
 
-\subsection*{12.c}
-\label{subsec:12.c}
-\addcontentsline{toc}{subsection}{\nameref{subsec:12.c}}
+\subsectionx{12.c}
 
 Aplicando la misma técnica del inciso anterior, se obtiene:
 
@@ -735,9 +702,7 @@ Siendo $k$ negativo, el extremo es el máximo. Con eso y los ceros, ya es direct
 
 \end{itemize}
 
-\subsection*{12.d}
-\label{subsec:12.d}
-\addcontentsline{toc}{subsection}{\nameref{subsec:12.d}}
+\subsectionx{12.d}
 
 En este caso, $f(x)$ ya es el cuadrado perfecto de un binomio:
 
@@ -765,9 +730,7 @@ El extremo resulta entonces $(-1, 0)$, y el único cero, que es doble, es $x = -
 
 \end{itemize}
 
-\subsection*{12.e}
-\label{subsec:12.e}
-\addcontentsline{toc}{subsection}{\nameref{subsec:12.e}}
+\subsectionx{12.e}
 
 Aplicando la técnica de completar el cuadrado:
 
@@ -832,9 +795,7 @@ Por lo tanto, la altura máxima se alcanza en $\hresult{}{t = 1}$ segundos y val
 \vspace{1em}
 \hrule
 
-\subsection*{14.a}
-\label{subsec:14.a}
-\addcontentsline{toc}{subsection}{\nameref{subsec:14.a}}
+\subsectionx{14.a}
 
 La función cúbica básica sólo se anula en el origen, y tiene simetría respecto al origen, como toda función impar, o sea $f(-x) = -f(x)$ para todo $x$. Tomando los valores en $1, -1, 2$ y $-2$ alcanza para ver qué forma tiene.
 
@@ -842,25 +803,19 @@ La función cúbica básica sólo se anula en el origen, y tiene simetría respe
 
 En cuanto a la monotonía, la función cúbica es monótona creciente.
 
-\subsection*{14.b}
-\label{subsec:14.b}
-\addcontentsline{toc}{subsection}{\nameref{subsec:14.b}}
+\subsectionx{14.b}
 
 Éste es el gráfico anterior desplazado horizontalmente, 2 unidades hacia la derecha. En lugar de estar centrado en $(0,0)$, pasa a estar centrado en $(2,0)$. Fuera de eso, la curva es igual; sigue siendo monótona creciente.
 
 \figurex{Ejercicio 14.b}{2}{../img/guide_01/ex_14b.png}{fig:14b}
 
-\subsection*{14.c}
-\label{subsec:14.c}
-\addcontentsline{toc}{subsection}{\nameref{subsec:14.c}}
+\subsectionx{14.c}
 
 Nuevamente, este gráfico puede verse como una transformación de $f(x) = x^3$. En este caso, un desplazamiento vertical, de 1 unidad hacia abajo. El origen pasa de estar en $(0, 0)$ a estar en $(0,-1)$. Como no hay escalado, fuera de eso la curva es igual.
 
 \figurex{Ejercicio 14.c}{1.5}{../img/guide_01/ex_14c.png}{fig:14c}
 
-\subsection*{14.d}
-\label{subsec:14.d}
-\addcontentsline{toc}{subsection}{\nameref{subsec:14.d}}
+\subsectionx{14.d}
 
 La función cuártica es una cuadrática que crece mucho más rápido. También es par, así que es simétrica respecto al eje $y$. Con evaluar en $0, 1, -1, 2$ y $-2$ es suficiente para ver cómo se comporta. Por otro lado, para valores menores a 1, tiende a cero más bruscamente que una cuadrática, lo que da un efecto de planchado en el intervalo $(-1, 1)$.
 
