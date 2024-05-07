@@ -23,6 +23,7 @@
 \newcommand{\hresult}[2]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] {#2} }
 \newcommand{\hresulte}[3]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] { \hspace{#3} #2 \hspace{#3} } }
 \newcommand{\figurex}[4]{\begin{figure}[ht] \caption{#1} \includegraphics[scale=#2]{#3} \centering \label{#4}\end{figure}}
+\newcommand{\sectionx}[1]{\section*{#1}\label{sec:#1}\addcontentsline{toc}{section}{\nameref{sec:#1}}}
 
 \renewcommand{\Bbb}{\mathbb}
 
@@ -39,9 +40,7 @@ Cátedra Ruiz, curso 62802 \\
 
 \newpage
 
-\section*{1}
-\label{sec:1}
-\addcontentsline{toc}{section}{\nameref{sec:1}}
+\sectionx{1}
 
 \textbf{Haga un gráfico que refleje la evolución de la temperatura del agua a lo largo del tiempo atendiendo a la siguiente descripción:}
 
@@ -78,9 +77,7 @@ Dado que no se tiene una expresión cerrada para $f$, existen infinitas funcione
 
 \figurex{un gráfico posible}{0.17}{../img/guide_01/ex_01.png}{fig:1}
 
-\section*{2}
-\label{sec:2}
-\addcontentsline{toc}{section}{\nameref{sec:2}}
+\sectionx{12}
 
 \textbf{Con una lámina rectangular de 40 por 30 queremos hacer una caja como muestra la figura~\ref{fig:2}}
 
@@ -161,9 +158,7 @@ La función $v(x)$ es cúbica, con ceros en 0, 15 y 30. Cabe esperar un máximo 
 
 \figurex{}{0.6}{../img/guide_01/ex_02c.png}{fig:2c}
 
-\section*{3}
-\label{sec:3}
-\addcontentsline{toc}{section}{\nameref{sec:3}}
+\sectionx{3}
 
 \textbf{Entre todos los rectángulos de perímetro 20, halle la función que relaciona la base $x$ con la altura $y$. Haga un gráfico que la represente. ¿Cuál es el dominio?}
 
@@ -199,9 +194,7 @@ Para obtener el dominio, se exige que tanto $x$ como $y$ sean positivos. Dado qu
 
 \figurex{Gráfico de y = 10-x}{0.8}{../img/guide_01/ex_03.png}{fig:3}
 
-\section*{4}
-\label{sec:4}
-\addcontentsline{toc}{section}{\nameref{sec:4}}
+\sectionx{4}
 
 \textbf{Halle el área de un triángulo rectángulo isósceles en función del cateto. Dibuje el gráfico de la función hallada a partir de una tabla de valores. Indique cuál es el dominio.}
 
@@ -219,9 +212,7 @@ Si un cateto mide $x$, por ser isósceles el otro cateto también mide $x$. Dado
 
 \figurex{Gráfico de $y = x^2/2 $}{0.8}{../img/guide_01/ex_04.png}{fig:4}
 
-\section*{5}
-\label{sec:5}
-\addcontentsline{toc}{section}{\nameref{sec:5}}
+\sectionx{5}
 
 \textbf{Dados los siguientes conjuntos del plano, determine, en cada caso, si existe una función cuyo gráfico sea el dado.}
 
@@ -247,9 +238,7 @@ Etiquetando de izquierda a derecha (a, b y c son la primera fila y d, e y f la s
 
 \end{enumerate}
 
-\section*{6}
-\label{sec:6}
-\addcontentsline{toc}{section}{\nameref{sec:6}}
+\sectionx{6}
 
 \textbf{Dados los siguientes gráficos de funciones, determine, en cada caso, en qué intervalos es creciente, en qué intervalos es decreciente, en qué punto alcanza su máximo, cuál es dicho valor máximo, en qué punto alcanza su mínimo y cuál es el valor mínimo.}
 
@@ -325,9 +314,7 @@ En este caso, no hay mínimo ni máximo porque la función no está acotada. Sin
 
 \end{itemize}
 
-\section*{7}
-\label{sec:7}
-\addcontentsline{toc}{section}{\nameref{sec:7}}
+\sectionx{7}
 
 \textbf{Dibuje una función que sea creciente en los intervalos $(-\infty, -1)$ y $(2, +\infty)$. Además, que el valor máximo sea 4 y se alcance en $x = -1$ y que el valor mínimo sea $-3$ y se alcance en $x = 2$.}
 
@@ -339,9 +326,7 @@ Hay infinitas funciones que cumplen estos requisitos, pero una podría ser la de
 
 \figurex{Ejercicio 7}{0.7}{../img/guide_01/ex_07.png}{fig:7}
 
-\section*{8}
-\label{sec:8}
-\addcontentsline{toc}{section}{\nameref{sec:8}}
+\sectionx{8}
 
 \begin{enumerate}[(a)]
 
@@ -423,9 +408,7 @@ Aplicando esto, se obtiene:
 
 \figurex{Ejercicio 8.c}{2.5}{../img/guide_01/ex_08c.png}{fig:8c}
 
-\section*{9}
-\label{sec:9}
-\addcontentsline{toc}{section}{\nameref{sec:9}}
+\sectionx{9}
 
 \textbf{Halle la ecuación de la recta de pendiente $m$ que pasa por el punto $P$, siendo:}
 
@@ -472,9 +455,7 @@ En la figura~\ref{fig:9}, la recta verde es $f_a$, la azul $f_b$ y la roja $f_c$
 
 Para determinar si una recta es creciente, ni siquiera es necesario graficar. Si su pendiente $m$ es positiva, es creciente. Si es negativa, es decreciente. Y si es cero, es una constante, no crece ni decrece. Con eso en mente, $f_a$ es creciente, $f_b$ es constante, $f_c$ es decreciente y $f_d$ es creciente para todo valor de $b$.
 
-\section*{10}
-\label{sec:10}
-\addcontentsline{toc}{section}{\nameref{sec:10}}
+\sectionx{10}
 
 \textbf{Encuentre la función lineal $g$ que da la temperatura en grados Fahrenheit, conocida la misma en grados Celsius, sabiendo que 0ºC = 32ºF y 100ºC = 212ºF. Recíprocamente, encuentre la función $h$ que da la temperatura en grados Celsius, conocida la misma en grados Fahrenheit. Compruebe que $g(h(x)) = h(g(x)) = x$.}
 
@@ -511,9 +492,7 @@ Estas funciones son inversas entre sí, por lo cual componerlas en cualquier ord
 \end{align}
 \end{subequations}
 
-\section*{11}
-\label{sec:11}
-\addcontentsline{toc}{section}{\nameref{sec:11}}
+\sectionx{11}
 
 \textbf{Trace el gráfico de las siguientes funciones cuadráticas:}
 
@@ -591,9 +570,7 @@ En este caso, hay dos transformaciones: una traslación horizontal causada por e
 \hresult{11.d}{ \mathop{\text{Img}}(f) = (-\infty, 0] }
 \end{equation}
 
-\section*{12}
-\label{sec:12}
-\addcontentsline{toc}{section}{\nameref{sec:12}}
+\sectionx{12}
 
 \textbf{Para las siguientes funciones cuadráticas determine en qué intervalo crecen, en qué intervalos decrecen, dónde son positivas, dónde son negativas, en qué puntos se anulan y en qué punto alcanzan su extremo.}
 
@@ -821,9 +798,7 @@ Resolviendo, resulta $k = -2$, $x_v = 1$ e $y_v = 32$. Los ceros surgen de inspe
 
 \figurex{Ejercicio 12.e}{0.5}{../img/guide_01/ex_12e.png}{fig:12e}
 
-\section*{13}
-\label{sec:13}
-\addcontentsline{toc}{section}{\nameref{sec:13}}
+\sectionx{13}
 
 \textbf{Se arroja una pelota desde el suelo y la altura, en metros, viene dada por la función $h(t) = -5t^2 +10t$, siendo $t$ el tiempo medido en segundos. ¿Cuándos alcanza la altura máxima? ¿Cuál es dicha altura?}
 
