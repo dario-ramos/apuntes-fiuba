@@ -22,6 +22,7 @@
 
 \newcommand{\hresult}[2]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] {#2} }
 \newcommand{\hresulte}[3]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] { \hspace{#3} #2 \hspace{#3} } }
+\newcommand{\figurex}[4]{\begin{figure}[ht] \caption{#1} \includegraphics[scale=#2]{#3} \centering \label{#4}\end{figure}}
 
 \renewcommand{\Bbb}{\mathbb}
 
@@ -96,6 +97,8 @@ Dado que no se tiene una expresión cerrada para $f$, existen infinitas funcione
 \end{figure}
 
 \begin{enumerate}[(a)]
+
+\bfseries
 
 \item \textbf{Busque la expresión del volumen de la caja en función de $x$. }
 
@@ -383,6 +386,9 @@ Hay infinitas funciones que cumplen estos requisitos, pero una podría ser la de
 \item \textbf{Encuentre en cada caso, una función lineal que satisfaga:}
 
 \begin{enumerate}
+
+\bfseries
+
 \item \textbf{$f(1) = 5; f(-3) = 2$}
 \item \textbf{$f(-1) = 3; f(80) = 3$}
 \item \textbf{$f(0) = 4; f(3) = 0;$}
@@ -467,6 +473,8 @@ Aplicando esto, se obtiene:
 \textbf{Halle la ecuación de la recta de pendiente $m$ que pasa por el punto $P$, siendo:}
 
 \begin{enumerate}[(a)]
+
+\bfseries
 
 \item $P = (2, 3), m = 1$
 
@@ -559,6 +567,8 @@ Estas funciones son inversas entre sí, por lo cual componerlas en cualquier ord
 
 \begin{enumerate}[(a)]
 
+\bfseries
+
 \item $f(x) = x^2$
 
 \item $f(x) = -2x^2$
@@ -570,7 +580,7 @@ Estas funciones son inversas entre sí, por lo cual componerlas en cualquier ord
 \end{enumerate}
 
 \textbf{Determine en cada caso, el conjunto imagen.}
-
+\vspace{1em}
 \hrule
 
 \subsection*{11.a}
@@ -624,6 +634,8 @@ Este gráfico puede construirse desplazando verticalmente el de $x^2$. Ahora el 
 \label{fig:11c}
 \end{figure}
 
+
+
 La imagen también resulta desplazada:
 
 \begin{equation}
@@ -648,5 +660,245 @@ En este caso, hay dos transformaciones: una traslación horizontal causada por e
 \begin{equation}
 \hresult{11.d}{ \mathop{\text{Img}}(f) = (-\infty, 0] }
 \end{equation}
+
+\section*{12}
+\label{sec:12}
+\addcontentsline{toc}{section}{\nameref{sec:12}}
+
+\textbf{Para las siguientes funciones cuadráticas determine en qué intervalo crecen, en qué intervalos decrecen, dónde son positivas, dónde son negativas, en qué puntos se anulan y en qué punto alcanzan su extremo.}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $f(x) = -2x^2$
+
+\item $f(x) = -2x (x-3)$
+
+\item $f(x) = -2x^2 + x$
+
+\item $f(x) = x^2 + 2x + 1$
+
+\item $f(x) = -2 (x+3) (x-5)$
+
+\end{enumerate}
+
+\hrule
+\vspace{1em}
+
+En este ejercicio, algunas cuadráticas no están en la forma más cómoda para graficar. Concretamente, esa forma es:
+
+\begin{equation}
+f(x) = k (x - x_v)^2 + y_v
+\end{equation}
+
+En esta expresión, el punto $(x_v, y_v)$ es el extremo de la cuadrática. Será un mínimo si $k$ es positivo, y un máximo si $k$ es negativo. Conocidos el extremo y $k$, graficando algunos puntos simétricos respecto a la recta $x = x_v$ será suficiente para trazar la parábola.
+
+Ahora bien, para llevar una expresión cuadrática a esta forma, lo más directo es usar la técnica de completar el cuadrado. Esto es más fácil de ver con un ejemplo, así que se verá en la solución de los ejercicios.
+
+\subsection*{12.a}
+\label{subsec:12.a}
+\addcontentsline{toc}{subsection}{\nameref{subsec:12.a}}
+
+Esta función ya está en la forma deseada. Su único cero es $x = 0$, que es doble. Como $k = -2 \Rightarrow k < 0$ y el extremo es el máximo. Puede graficarse directamente. 
+
+\afterpage{
+\begin{figure}[ht]
+\caption{Ejercicio 12.a}
+\includegraphics[scale=1.3]{../img/guide_01/ex_12a.png} 
+\centering
+\label{fig:12a}
+\end{figure}
+}
+
+A la hora de considera los intervalos de positividad, se considerará que el cero no es positivo ni negativo. Por eso, en este caso particular será el conjunto vacío.
+
+\begin{itemize}
+
+\item IC: $(-\infty, 0)$
+
+\item ID: $(0, +\infty)$
+
+\item $I^+: \emptyset$
+
+\item $I^-: \mathbb{R} - \{ 0 \}$
+
+\item Ceros: $x = 0$ (doble)
+
+\item Extremo: $(0, 0)$
+
+\end{itemize}
+
+\subsection*{12.b}
+\label{subsec:12.b}
+\addcontentsline{toc}{subsection}{\nameref{subsec:12.b}}
+
+En este caso es preciso utilizar la técnica de completar el cuadrado para llevar $f(x)$ a una expresión fácil de graficar. Para eso, primero se expande el producto para tener una forma polinómica:
+
+\begin{equation}
+f(x) = -2x (x-3) = -2x^2 + 6x
+\end{equation}
+
+El próximo paso es sacar factor común $-2$ para tener $x^2$ solo y facilitar las cuentas.
+
+\begin{equation}
+f(x) = -2 (x^2 -3x)
+\end{equation}
+
+Ahora la idea es completar el cuadrado pero sólo para el paréntesis, o sea la expresión $x^2 - 3x$. Se desea convertirla al cuadrado de un binomio más una constante. Planteando esto de manera algebraica:
+
+\begin{equation}
+x^2 - 3x = (x-x_v)^2 + y_v
+\end{equation}
+
+Expandiendo el lado derecho según $(a - b)^2 = a^2 - 2ab +b^2$:
+
+\begin{equation}
+x^2 - 3x = x^2 - 2 \cdot x \cdot x_v + x_v^2 + y_v
+\end{equation}
+
+Esto es una igualdad entre polinomios. Para que se cumple para todo $x$, los coeficientes deben coincidir. Esto conduce al siguiente sistema de ecuaciones:
+
+\begin{subequations}
+\begin{align}
+& \left\{ \begin{array}{ll}
+-3 = -2 x_v \\
+0 = x_v^2 + y_v
+\end{array} \right.
+\end{align}
+\end{subequations}
+
+Despejando $x_v$ en la primera ecuación, resulta $x_v = \frac{3}{2}$. Y reemplazando eso en la segunda ecuación:
+
+\begin{equation}
+0 = \frac{9}{4} + y_v \Rightarrow y_v = -\frac{9}{4}
+\end{equation}
+
+Reemplazando el paréntesis inicial con su equivalente:
+
+\begin{equation}
+f(x) = -2 (x^2 - 3x) -2 \left[ \left(x - \frac{3}{2}\right)^2 - \frac{9}{4} \right] = -2 \left( x -\frac{3}{2} \right)^2 + \frac{9}{2}
+\end{equation}
+
+Entonces, el extremo es el punto $\left( \frac{3}{2}, \frac{9}{2} \right)$. Como $k$ es negativo, es un máximo. Además, de la forma original de $f$ se sigue por inspección que los ceros son $x = 0$ y $x = 3$. Con eso es suficiente para graficar $f$.
+
+\begin{figure}[ht]
+\caption{Ejercicio 12.b}
+\includegraphics[scale=1.3]{../img/guide_01/ex_12b.png} 
+\centering
+\label{fig:12b}
+\end{figure}
+
+\begin{itemize}
+
+\item IC: $\left(-\infty, \frac{3}{2} \right)$
+
+\item ID: $\left( \frac{3}{2}, +\infty \right)$
+
+\item $I^+: (0, 3)$
+
+\item $I^-: (-\infty, 0) \cup (3, +\infty)$
+
+\item Ceros: $x = 0$, $x = 3$
+
+\item Extremo: $\left( \frac{3}{2}, \frac{9}{2} \right)$
+
+\end{itemize}
+
+\subsection*{12.c}
+\label{subsec:12.c}
+\addcontentsline{toc}{subsection}{\nameref{subsec:12.c}}
+
+Aplicando la misma técnica del inciso anterior, se obtiene:
+
+\begin{equation}
+f(x) = -2x^2 + x = -2 \left( x - \frac{1}{4} \right)^2 + \frac{1}{8}
+\end{equation}
+
+De esa forma, el extremo resulta $\left( \frac{1}{4}, \frac{1}{8} \right)$. Para hallar los ceros, basta con factorizar:
+
+\begin{equation}
+f(x) = x (-2x + 1) \Rightarrow f(x) = 0 \Leftrightarrow x = 0 \vee x = \frac{1}{2}
+\end{equation}
+
+Siendo $k$ negativo, el extremo es el máximo. Con eso y los ceros, ya es directo graficar.
+
+\figurex{Ejercicio 12.c}{4}{../img/guide_01/ex_12c.png}{fig:12c}
+
+\begin{itemize}
+
+\item IC: $\left(-\infty, \frac{1}{4} \right)$
+
+\item ID: $\left( \frac{1}{4}, +\infty \right)$
+
+\item $I^+: (0, \frac{1}{2})$
+
+\item $I^-: (-\infty, 0) \cup (\frac{1}{2}, +\infty)$
+
+\item Ceros: $x = 0$, $x = \frac{1}{2}$
+
+\item Extremo: $\left( \frac{1}{4}, \frac{1}{8} \right)$
+
+\end{itemize}
+
+\subsection*{12.d}
+\label{subsec:12.d}
+\addcontentsline{toc}{subsection}{\nameref{subsec:12.d}}
+
+En este caso, $f(x)$ ya es el cuadrado perfecto de un binomio:
+
+\begin{equation}
+f(x) = x^2 + 2x + 1 = (x+1)^2
+\end{equation}
+
+El extremo resulta entonces $(-1, 0)$, y el único cero, que es doble, es $x = -1$. Siendo $k = 1$, el extremo es un mínimo.
+
+\figurex{Ejercicio 12.d}{4}{../img/guide_01/ex_12d.png}{fig:12d}
+
+\begin{itemize}
+
+\item IC: $(-1, +\infty)$
+
+\item ID: $(-\infty, -1)$
+
+\item $I^+: \mathbb{R} - \{ -1 \} $
+
+\item $I^-: \emptyset $
+
+\item Ceros: $x = -1$ (doble)
+
+\item Extremo: $ (-1, 0) $
+
+\end{itemize}
+
+\subsection*{12.e}
+\label{subsec:12.e}
+\addcontentsline{toc}{subsection}{\nameref{subsec:12.e}}
+
+Aplicando la técnica de completar el cuadrado:
+
+\begin{subequations}
+\begin{align}
+& -2 (x+3) (x-5) = k (x-x_v)^2 + y_v \\
+& -2 (x^2 -5x +3x -15) = k (x^2 -2 x_v x +x_v^2) + y_v \\
+& -2 x^2 +2x + 30 = k x^2 - 2 k x_v x + k v_v^2 + y_v
+\end{align}
+\end{subequations}
+
+Igualando términos:
+
+\begin{subequations}
+\begin{align}
+& \left\{ \begin{array}{ll}
+-2 = k \\
+2 = 2 k x_v \\
+30 = k x_v^2 + y_v
+\end{array} \right.
+\end{align}
+\end{subequations}
+
+Resolviendo, resulta $k = -2$, $x_v = 1$ e $y_v = 32$. Los ceros surgen de inspeccionar la forma original de $f$ y son $x = -3$ y $x = 5$. Como $k$ es negativo, el extremo es un máximo.
+
+\figurex{Ejercicio 12.e}{0.5}{../img/guide_01/ex_12e.png}{fig:12e}
 
 \end{document}
