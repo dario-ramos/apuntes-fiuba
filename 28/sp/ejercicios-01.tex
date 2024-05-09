@@ -15,6 +15,8 @@
     linkcolor=black,
     urlcolor=black,
 }
+\usepackage{longdivision}
+\usepackage{polynom}
 \usepackage{tcolorbox}
 \usepackage{xcolor}
 
@@ -822,5 +824,261 @@ La función cuártica es una cuadrática que crece mucho más rápido. También 
 \figurex{Ejercicio 14.d}{1}{../img/guide_01/ex_14d.png}{fig:14d}
 
 En cuanto a la monotonía, $f$ ya no es monótona: decrece en el intervalo $(-\infty, 0)$ y crece en el intervalo $(0, +\infty).$
+
+\sectionx{15}
+
+\textbf{Represente gráficamente las siguientes funciones:}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $ f(x) = \frac{4}{x} $
+
+\item $ f(x) = -\frac{4}{x} $
+
+\item $ f(x) = \frac{4}{x-3} $
+
+\item $ f(x) = \frac{4}{x-3} + 2 $
+
+\item $ f(x) = \frac{4x+5}{x-2} $
+
+\item $ f(x) = \frac{3x+2}{x+1} $
+
+\end{enumerate}
+
+\textbf{Indique en cada caso el dominio de la función. Indique también en qué intervalos es creciente y en qué intervalos es decreciente.}
+
+\hrule
+
+\subsectionx{15.a}
+
+Esta función tiene una asíntota vertical en $x = 0$; tiende a $+\infty$ al acercarse a cero por valores positivos, y a $-\infty$ acercándose por valores negativos. Cuando $x$ tiende a $+\infty$ o $-\infty$, $f(x)$ tiende a cero, por lo que tiene una asíntota horizontal en $y = 0$. Con esto y algunos valores pequeños y simétricos (1, -1, 2, -2) alcanza para trazar el gráfico.
+
+\figurex{Ejercicio 15.a}{1.2}{../img/guide_01/ex_15a.png}{fig:15a}
+
+\begin{itemize}
+
+\item $ \mathop{\text{Dom}}(f) = \mathbb{R} - \{  0 \} $
+
+\item $ IC = \emptyset $
+
+\item $ ID = (-\infty, 0) \cup (0, +\infty) $
+
+\end{itemize}
+
+\subsectionx{15.b}
+
+Es el gráfico anterior reflejado respecto al eje $x$, ya que esa es la transformación que resulta de multiplicar por $-1$.
+
+\figurexnp{Ejercicio 15.b}{1}{../img/guide_01/ex_15b.png}{fig:15b}
+
+\begin{itemize}
+
+\item $ \mathop{\text{Dom}}(f) = \mathbb{R} - \{  0 \} $
+
+\item $ IC = (-\infty, 0) \cup (0, +\infty) $
+
+\item $ ID = \emptyset $
+
+\end{itemize}
+
+\subsectionx{15.c}
+
+Nuevamente es una transformación de 15.a. En este caso, un desplazamiento horizontal, 3 unidades a la derecha. Esto implica que la asíntota horizontal también se desplaza, de $x = 0$ a $x = 3$.
+
+\figurex{Ejercicio 15.c}{0.8}{../img/guide_01/ex_15c.png}{fig:15c}
+
+\begin{itemize}
+
+\item $ \mathop{\text{Dom}}(f) = \mathbb{R} - \{  3 \} $
+
+\item $ IC = \emptyset $
+
+\item $ ID = (-\infty, 3) \cup (3, +\infty) $
+
+\end{itemize}
+
+\subsectionx{15.d}
+
+Es el mismo gráfico que 15.c, desplazado 2 unidades hacia arriba. Esto implica que la asíntota horizontal también es desplazada, de $y = 0$ a $y = 2$.
+
+\figurex{Ejercicio 15.d}{1}{../img/guide_01/ex_15d.png}{fig:15d}
+
+\begin{itemize}
+
+\item $ \mathop{\text{Dom}}(f) = \mathbb{R} - \{  3 \} $
+
+\item $ IC = \emptyset $
+
+\item $ ID = (-\infty, 3) \cup (3, +\infty) $
+
+\end{itemize}
+
+\subsectionx{15.e}
+
+Así como está expresada, $f$ no es trivial de graficar. Pero como es un cociente de polinomios del mismo grado, se puede reformular aplicando división de polinomios. Recuérdese que dados dos polinomios $D(x)$ y $d(x)$ donde el grado de $D$ es menor a igual al de $d$:
+
+\begin{equation}
+\frac{D(x)}{d(x)} = q(x) + \frac{r(x)}{d(x)}
+\end{equation}
+
+En esta expresión, $q(x)$ es el cociente, el resultado de la división de polinomios entre $D$ y $d$, con $D$ actuando como dividendo y $d$ como divisor. De esa manera, si la división está bien hecha, debe cumplirse que:
+
+\begin{equation}
+D(x) = d(x) q(x) + r(x)
+\end{equation}
+
+Aplicando esto a este caso, vale decir $D(x) = 4x+5$ y $d(x) = x-2$, se realiza la división para calcular $q(x)$ y $r(x)$.
+
+\begin{equation}
+\polylongdiv{4x+5}{x-2}
+\end{equation}
+
+Se obtiene entonces $q(x) = 4$ y $r(x) = 13$, por ende:
+
+\begin{equation}
+f(x) = \frac{4x+5}{x-2} = 4 + \frac{13}{x-2}
+\end{equation}
+
+Esta forma equivalente es graficable de manera directa: tiene una asíntota vertical en $x = 2$, y una asíntota horizontal en $y = 4$. Como la constante que multiplica el cociente es positiva, es monótona decreciente como la de 15.a. Nótese además que la rama izquierda corta al eje $y$ en $f(0) = -\frac{5}{2}$, y al eje $x$ en $0 = 4x+5 => x = -\frac{5}{4}$.
+
+\figurex{Ejercicio 15.e}{1}{../img/guide_01/ex_15e.png}{fig:15e}
+
+\begin{itemize}
+
+\item $ \mathop{\text{Dom}}(f) = \mathbb{R} - \{  2 \} $
+
+\item $ IC = \emptyset $
+
+\item $ ID = (-\infty, 2) \cup (2, +\infty) $
+
+\end{itemize}
+
+\subsectionx{15.f}
+
+Aplicando división de polinomios como en 15.e:
+
+\begin{equation}
+f(x) = \frac{3x+2}{x+1} = 3 - \frac{1}{x+1}
+\end{equation}
+
+De nuevo, se obtiene una expresión graficable por inspección. Tiene una asíntota vertical en $ x = -1 $, y una horizontal en $ y = 3 $. Como la constante de la parte racional es negativa, ahora es monótona creciente.
+
+\figurex{Ejercicio 15.f}{1}{../img/guide_01/ex_15f.png}{fig:15f}
+
+\begin{itemize}
+
+\item $ \mathop{\text{Dom}}(f) = \mathbb{R} - \{  -1 \} $
+
+\item $ IC = (-\infty, -1) \cup (-1, +\infty) $
+
+\item $ ID = \emptyset $
+
+\end{itemize}
+
+\sectionx{16}
+
+\textbf{Represente gráficamente las siguientes funciones:}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $ f(x) = \sqrt{x} $
+
+\item $ f(x) = -\sqrt{x} $
+
+\item $ f(x) = \sqrt{x + 3} $
+
+\item $ f(x) = -\sqrt{(x-2)^2} $
+
+\end{enumerate}
+
+\textbf{Indique en cada caso el dominio de la función. Analice la monotonía.}
+
+\vspace{1em}
+\hrule
+
+\subsectionx{16.a}
+
+La función raíz cuadrada es una curva monótona creciente que comienza en el origen. Evaluando algunos valores que sean cuadrados perfectos se puede aproximar la curva: $ f(1) = 1, f(4)=2, f(9)=3 $.
+
+\figurex{Ejercicio 16.a}{0.6}{../img/guide_01/ex_16a.png}{fig:16a}
+
+\begin{itemize}
+
+\item $ \mathop{\text{Dom}}(f) = \{ x \in \mathbb{R} / x \geq 0 \} $
+
+\item $ IC = (0, +\infty) = \mathop{\text{Dom}}(f) \Rightarrow $ f es monótona creciente.
+
+\item $ ID = \emptyset $
+
+\end{itemize}
+
+\subsectionx{16.b}
+
+Es el gráfico de 16.a reflejado respecto al eje $x$.
+
+\figurex{Ejercicio 16.b}{0.6}{../img/guide_01/ex_16b.png}{fig:16b}
+
+\begin{itemize}
+
+\item $ \mathop{\text{Dom}}(f) = \{ x \in \mathbb{R} / x \geq 0 \} $
+
+\item $ IC = \emptyset $
+
+\item $ ID = (0, +\infty) = \mathop{\text{Dom}}(f) \Rightarrow $ f es monótona decreciente.
+
+\end{itemize}
+
+\subsectionx{16.c}
+
+Es el gráfico de 16.a desplazado 3 unidades hacia la izquierda. Esto se ve analizando dónde comienza la función: en $x = -3$, el radicando se anula. Como el inicio de la curva se movió de $(0, 0)$ a $(-3,0)$, se dice que se desplazó hacia la izquierda.
+
+\figurex{Ejercicio 16.c}{1}{../img/guide_01/ex_16c.png}{fig:16c}
+
+\begin{itemize}
+
+\item $ \mathop{\text{Dom}}(f) = \{ x \in \mathbb{R} / x \geq -3 \} $
+
+\item $ IC = (-3, +\infty) = \mathop{\text{Dom}}(f) \Rightarrow $ f es monótona creciente.
+
+\item $ ID = \emptyset $
+
+\end{itemize}
+
+\subsectionx{16.d}
+
+En este caso, no se puede cancelar alegremente el cuadrado y la raíz, porque al aplicarse el cuadrado primero, permite valores negativos. Por ende, se cancela pero se aplica módulo. Algebraicamente:
+
+\begin{equation}
+f(x) = \sqrt{(x-2)^2 = |x-2|}
+\end{equation}
+
+La función módulo puede definirse por partes de la siguiente manera:
+
+\begin{subequations}
+\begin{align}
+& |x| \left\{ \begin{array}{ll}
+x \text{ si } x \geq 0 \\
+-x \text{ si } x < 0
+\end{array} \right.
+\end{align}
+\end{subequations}
+
+Por lo tanto, el gráfico de $f(x) = |x-2|$ es igual al de $|x|$ pero desplazado 2 unidades hacia la derecha.
+
+\figurex{Ejercicio 16.d}{1}{../img/guide_01/ex_16d.png}{fig:16d}
+
+\begin{itemize}
+
+\item $ \mathop{\text{Dom}}(f) = \mathbb{R} $
+
+\item $ IC = (2, +\infty) $
+
+\item $ ID = (-\infty, 2) $
+
+\end{itemize}
 
 \end{document}
