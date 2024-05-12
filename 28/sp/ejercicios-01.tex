@@ -1252,4 +1252,146 @@ $\hresulte{18.c}{ \text{No} }{0.25em}$; alcanza con evaluar ambas funciones en u
 
 Como regla general, el orden importa a la hora de evaluar la composición de funciones. Y ello incluye el orden en que se asocian las funciones cuando son más de dos como en el caso $(f \circ g) \circ h$. Los paréntesis son obligatorios en este caso, porque puede ocurrir que $(f \circ g) \circ h \neq f \circ (g \circ h)$.
 
+\sectionx{19}
+
+\textbf{Halle la función inversa de:}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $ f(x) = 3x - 5 $
+
+\item $ f(x) = 2x^2 - 1, x \geq 0 $
+
+\item $ f(x) = 3 - \sqrt{x + 5} $
+
+\item $ f(x) = x^3 $
+
+\item $ f(x) = x^2 -6x + 4, x \geq 3 $
+
+\item $ f(x) = x^2 -6x +4, x \leq 3 $
+
+\end{enumerate}
+
+\hrule
+\vspace{1em}
+
+Para hallar la inversa de una función $y = f(x)$, primero es preciso asegurarse de estar trabajando en un intervalo donde $f$ sea inyectiva. Vale decir, que para cada valor de $y$, haya un sólo valor de $x$. Si esto no está garantizado, la inversa no estará bien definida. Además, en dicho intervalo es necesario hallar la imagen de $f$, porque pasará a ser el dominio de la inversa.
+
+A continuación, para hallar la expresión de la inversa, un método consiste en tomar la expresión $y = f(x)$ y despejar $x$ en función de $y$. Si esto genera una expresión que determina unívocamente $x$ en función de $y$, es posible tomar esa expresión $x = f^{-1}(y)$ e intercambiar $x$ por $y$ para obtener el resultado final $y = f^{-1}(x)$.
+
+\subsectionx{19.a}
+
+\begin{equation}
+y = 3x - 5
+\end{equation}
+
+Esta función tiene dominio $\mathbb{R}$, imagen $\mathbb{R}$, y al ser monótona creciente, es inyectiva en todo su dominio. Por lo tanto, la inversa debería estar definida en todo $\mathbb{R}$. Despejando x:
+
+\begin{equation}
+x = \frac{1}{3} y + \frac{5}{3}
+\end{equation}
+
+Esta función determina $x$ unívocamente en función de $y$, por lo tanto:
+
+\begin{equation}
+\hresult{19.a}{ f^{-1}(x) = \frac{1}{3} x + \frac{5}{3} }
+\end{equation}
+
+\subsectionx{19.b}
+
+\begin{equation}
+f(x) = 2x^2 - 1, x \geq 0
+\end{equation}
+
+En este caso, $f$ tiene como dominio $\mathbb{R}$, imagen $[-1, +\infty)$, y no es inyectiva porque toma el mismo valor para $x$ y $-x$. Sin embargo, sí es inyectiva en el intervalo $[0, +\infty)$, porque corresponde a su rama derecha y ésta es monótona creciente. Hechas estas salvedades, se puede proceder a buscar la expresión de la inversa despejando $x$.
+
+\begin{equation}
+y = 2x^2 - 1 \Rightarrow y + 1 = 2x^2 \Rightarrow \frac{y+1}{2} = x^2 \Rightarrow \sqrt{\frac{y+1}{2}} = |x|
+\end{equation}
+
+Llegado este punto, es donde se utiliza el hecho de estar considerando la rama derecha de $f$ para plantear que por ser $x \geq 0 \Rightarrow |x| = x$. Así:
+
+\begin{equation}
+x = \sqrt{\frac{y+1}{2}}
+\end{equation}
+
+Además de intercambiar las variables, es importar intercambiar dominio e imagen. La respuesta completa en este caso debe incluir el dominio de la inversa.
+
+\begin{equation}
+\hresult{19.b}{ f^{-1}(x) = \sqrt{\frac{x+1}{2}}, x \geq -1 }
+\end{equation}
+
+\subsectionx{19.c}
+
+\begin{equation}
+y = 3-\sqrt{x + 5}
+\end{equation}
+
+Esta función tiene dominio $[-5, +\infty)$, imagen $(-\infty, 3]$ y al ser monótona decreciente es inyectiva en todo su dominio. Despejando $x$:
+
+\begin{subequations}
+\begin{align}
+& \sqrt{x+5}=3-y \Rightarrow (\sqrt{x+5})^2=(3-y)^2 \Rightarrow \\
+& x + 5 = (3-y)^2 \Rightarrow x = (3-y)^2 - 5 \Rightarrow x = (y-3)^2 - 5
+\end{align}
+\end{subequations}
+
+Nótese que en este caso es válido cancelar raíz y cuadrado sin aplicar módulo porque la raíz se aplica primero, lo cual garantiza que el radicando sea no negativo. Al invertir las variables, no olvidar invertir imagen y dominio también.
+
+\begin{equation}
+\hresult{19.c}{ f^{-1}(x) = (x-3)^2 - 5, x \leq 3 }
+\end{equation}
+
+\subsectionx{19.d}
+
+\begin{equation}
+y = x^3
+\end{equation}
+
+Esta función tiene dominio $\mathbb{R}$, imagen $\mathbb{R}$ y es inyectiva en todo su dominio por ser monótona creciente. Por lo tanto, su inversa sale directamente despejando $x$:
+
+\begin{equation}
+\hresult{19.d}{ f^{-1}(x) = \sqrt[3]{x} }
+\end{equation}
+
+\subsectionx{19.e}
+
+\begin{equation}
+f(x) = x^2 -6x +4, x \geq 3
+\end{equation}
+
+Para facilitar el análisis, conviene pasar $f$ a su forma canónica completando el cuadrado.
+
+\begin{equation}
+f(x) = (x-3)^2 - 5, x \geq 3
+\end{equation}
+
+De este modo, por inspección resulta que $f$ tiene como dominio $\mathbb{R}$, imagen $[-5, +\infty)$ y no es inyectiva en todo su dominio. Sin embargo, lo es en $(-\infty, 3]$ y $[3, +\infty)$ por separado. La rama creciente corresponde a $[3, +\infty)$ y es la que atañe a este inciso. Con eso establecido, se puede pasar a despejar $x$.
+
+\begin{equation}
+y + 5 = (x-3)^2 \Rightarrow \sqrt{y+5} = |x-3|
+\end{equation}
+
+Como se eligió la rama $x \geq 3$ para calcular la inversa, $|x-3| = x - 3$. No olvidar invertir dominio e imagen.
+
+\begin{equation}
+f^{-1}(x) = \sqrt{y + 5} + 3, x \geq -5
+\end{equation}
+
+\subsectionx{19.f}
+
+\begin{equation}
+y = x^2 -6x + 4, x \leq 3
+\end{equation}
+
+Esta es la misma función del inciso anterior, pero seleccionando la otra rama. Todo es igual hasta el momento de aplicar el módulo. Como ahora se eligió $x \leq 3$, resulta $|x-3| = -x + 3$. Por lo tanto, resulta:
+
+\begin{equation}
+\hresult{19.f}{ f^{-1}(x) = -\sqrt{x+5}+3, x \geq -5 }
+\end{equation}
+
+De hecho, si se grafica $f$ completa y las inversas de sus dos ramas, éstas formarán una parábola también. Y las ramas de dicha parábola serán simétricas respecto a la recta $y = x$ con sus ramas inversas. Esta es una propiedad general: el gráfico de $f(x)$ siempre será simétrico con el de $f^{-1}(x)$, respecto a la recta $y = x$.
+
 \end{document}
