@@ -1053,7 +1053,7 @@ Es el gráfico de 16.a desplazado 3 unidades hacia la izquierda. Esto se ve anal
 En este caso, no se puede cancelar alegremente el cuadrado y la raíz, porque al aplicarse el cuadrado primero, permite valores negativos. Por ende, se cancela pero se aplica módulo. Algebraicamente:
 
 \begin{equation}
-f(x) = \sqrt{(x-2)^2 = |x-2|}
+f(x) = \sqrt{(x-2)^2} = |x-2|
 \end{equation}
 
 La función módulo puede definirse por partes de la siguiente manera:
@@ -1377,7 +1377,7 @@ y + 5 = (x-3)^2 \Rightarrow \sqrt{y+5} = |x-3|
 Como se eligió la rama $x \geq 3$ para calcular la inversa, $|x-3| = x - 3$. No olvidar invertir dominio e imagen.
 
 \begin{equation}
-f^{-1}(x) = \sqrt{y + 5} + 3, x \geq -5
+\hresult{19.e}{ f^{-1}(x) = \sqrt{y + 5} + 3, x \geq -5 }
 \end{equation}
 
 \subsectionx{19.f}
@@ -1393,5 +1393,39 @@ Esta es la misma función del inciso anterior, pero seleccionando la otra rama. 
 \end{equation}
 
 De hecho, si se grafica $f$ completa y las inversas de sus dos ramas, éstas formarán una parábola también. Y las ramas de dicha parábola serán simétricas respecto a la recta $y = x$ con sus ramas inversas. Esta es una propiedad general: el gráfico de $f(x)$ siempre será simétrico con el de $f^{-1}(x)$, respecto a la recta $y = x$.
+
+\sectionx{20}
+
+\textbf{Pruebe que la función $ f(x) = \frac{\sqrt{x} + 1}{x + 1} $ satisface $ f\left( \frac{1}{x} \right) =   \sqrt{x} f(x) $ para todo $x$ positivo.}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+Considérese $ f\left( \frac{1}{x} \right) $ en base a la definición de $ f(x) $.
+
+\begin{equation}
+f\left( \frac{1}{x} \right) = \frac{\sqrt{ \frac{1}{x} } + 1}{\frac{1}{x} + 1}
+\end{equation}
+
+Es en este punto donde se debe exigir que sea $x > 0$ para que esté definida la expresión $\sqrt{\frac{1}{x}}$. Para que no haya división por cero, la desigualdad debe ser estricta.
+
+Es sabido que $ \frac{1}{x} = x^{-1} $, y que tomar la raíz cuadrada equivale a elevar a la $\frac{1}{2}$. Reemplazando:
+
+\begin{equation}
+f\left( \frac{1}{x} \right) = \frac{ (x^{-1})^{\frac{1}{2}} + 1}{x^{-1} + 1} = \frac{x^{-\frac{1}{2}} + 1}{x^{-1} + 1}
+\end{equation}
+
+Para que el denominador coincida con la expresión a la que se quiere llegar, se ve que una forma es multiplicar y dividir por $x$. Como ya se exigió que $x > 0$, esto es válido.
+
+\begin{equation}
+f\left( \frac{1}{x} \right) = \frac{x^{-\frac{1}{2}} + 1}{x^{-1} + 1} \frac{x}{x} = \frac{x^{\frac{1}{2}} + x}{1+x}
+\end{equation}
+
+Sacando factor común $x^{\frac{1}{2}}$ en el numerador, finalmente se llega a la expresión buscada.
+
+\begin{equation}
+f\left( \frac{1}{x} \right) = x^{\frac{1}{2}} \frac{1 + x^{\frac{1}{2}}}{1 + x} = \sqrt{x} \frac{\sqrt{x} + 1}{x + 1}
+\end{equation}
 
 \end{document}
