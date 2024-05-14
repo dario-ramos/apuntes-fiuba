@@ -1428,4 +1428,54 @@ Sacando factor común $x^{\frac{1}{2}}$ en el numerador, finalmente se llega a l
 f\left( \frac{1}{x} \right) = x^{\frac{1}{2}} \frac{1 + x^{\frac{1}{2}}}{1 + x} = \sqrt{x} \frac{\sqrt{x} + 1}{x + 1}
 \end{equation}
 
+\sectionx{21}
+
+\textbf{Dadas las funciones exponenciales $ f(x) = r^x \left( r = 2, \frac{1}{2}, 3, \frac{1}{3} \right) $:}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item Haga el gráfico de cada una de ellas.
+
+\item Determine el dominio y la imagen.
+
+\item Analice la monotonía.
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{21.a}
+
+Graficar los 4 casos juntos, como en la figura~\ref{fig:21a}, resulta bastante ilustrativo:
+
+\figurex{Ejercicio 21.a}{4}{../img/guide_01/ex_21a.png}{fig:21a}
+
+Nótese que en los casos en que $ r > 1 $, la curva es creciente. A mayor $r$, crece más rápido al crecer $x$, y también decrece más rápido al decrecer $x$. En cambio, para $ 0 < r < 1$, las curvas son decrecientes. La tasa de crecimiento se comporta al revés también: a mayor $r$, menor es la tasa de cambio, ya que $\frac{1}{2} > \frac{1}{3}$ y la primera decrece más lento.
+
+No hay que perder de vista que debe ser $ r > 0 $, o nos saldríamos del campo real. Por ejemplo, si $r = -2$, $f(1/2) = \sqrt{-2}$, que no existe en el campo real.
+
+\subsectionx{21.b}
+
+El dominio y la imagen son iguales para todos los valores de $r$:
+
+\begin{itemize}
+
+\item $ \mathop{\text{Dom}}(f) = \mathbb{R}, \forall r > 0, r \neq 1 $
+
+\item $ \mathop{\text{Img}}(f) = (0, +\infty), \forall r > 0, r \neq 1 $
+
+\end{itemize}
+
+\subsectionx{21.c}
+
+\begin{itemize}
+
+\item Si $ r>1 $, $f$ es monótona creciente.
+
+\item Si $ 0<r<1 $, $f$ es monótona decreciente.
+
+\end{itemize}
+
 \end{document}
