@@ -1609,4 +1609,176 @@ Esto conduce a dos soluciones reales:
 \hresult{23.b}{ f(x) = 1 \text{ para } x_1 \approx -1,3419 \wedge x_2 \approx 0,67523 }
 \end{equation}
 
+\sectionx{24}
+
+\textbf{Halle la función inversa de:}
+
+\begin{enumerate}[(a)]
+
+\item $ f(x) = \ln(2x) $
+
+\item $ f(x) = \ln(x^2 + 4) $
+
+\item $ f(x) = \ln(x^2 - 1) $
+
+\item $ f(x) = 2^{\sqrt{x}} + 5 $
+
+\item $ f(x) = e^{x + 3} $
+
+\item $ f(x) = e^{x^2}, x > 0 $
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{24.a}
+
+Como siempre que se calcula una inversa, hay que analizar dominio e imagen de la función original. Por simple inspección:
+
+\begin{itemize}
+
+\item $ \mathop{ \text{Dom} }(f) = (0, +\infty) $
+
+\item $ \mathop{ \text{Img} }(f) = \mathbb{R} $
+
+\end{itemize}
+
+Además, $f$ es monótona creciente, por lo tanto es inyectiva en todo su dominio y la inversa es única. El próximo paso es despejar $x$. Como la imagen de $ f $ es $ \mathbb{R} $, el dominio de la inversa será $ \mathbb{R} $ también.
+
+\begin{equation}
+y = \ln(2x) \Rightarrow e^y = 2x \Rightarrow \hresult{24.a}{ f^{-1}(x) = \frac{1}{2} e^x, x \in \mathbb{R} }
+\end{equation}
+
+\subsectionx{24.b}
+
+El argumento del logaritmo nunca se anula, y el mínimo valor es $f(0) = \ln(4)$. Por ende:
+
+\begin{itemize}
+
+\item $ \mathop{ \text{Dom} }(f) = \mathbb{R} $
+
+\item $ \mathop{ \text{Img} }(f) = [ \ln(4), +\infty) $
+
+\end{itemize}
+
+Sin embargo, $f$ no es inyectiva. Al ser par, tiene dos ramas. Habrá que calcular la inversa para ambos casos. Con eso en mente, se despeja $x$. Como la imagen es la misma para ambas ramas por ser par la función, ambas inversas tendrán como dominio $ [ \ln(4), +\infty) $.
+
+\begin{equation}
+y = \ln(x^2 + 4) \Rightarrow e^y = x^2 + 4 \Rightarrow \sqrt{e^y -4} = |x|
+\end{equation}
+
+Caso 1: $ x \ge 0 $:
+
+\begin{equation}
+\hresult{24.b - inversa para rama $x \ge 0$ }{ f^{-1}(x) = \sqrt{e^x - 4}, x \in [\ln(4), +\infty) }
+\end{equation}
+
+Caso 2: $ x < 0 $:
+
+\begin{equation}
+\hresult{24.b - inversa para rama $x < 0$ }{ f^{-1}(x) = -\sqrt{e^x - 4}, x \in [\ln(4), +\infty) }
+\end{equation}
+
+\subsectionx{24.c}
+
+Para el dominio de $f$, debe ser $x^2 - 1 > 0 \Rightarrow |x| > 1$. Al acercarse a 1 o -1, el argumento del logaritmo se acercará a cero, y por ende $f$ tenderá a $ -\infty $. Por lo tanto:
+
+\begin{itemize}
+
+\item $ \mathop{ \text{Dom} }(f) = (-\infty, -1) \cup (1, +\infty) $
+
+\item $ \mathop{ \text{Img} }(f) = \mathbb{R} $
+
+\end{itemize}
+
+Como en el inciso anterior, $f$ no es inyectiva. De nuevo, es par y tiene dos ramas. Como la imagen de $f$ es $ \mathbb{R} $ para ambas ramas, el dominio de la inversa será $ \mathbb{R} $ para ambas ramas. Despejando $x$:
+
+\begin{equation}
+y = \ln(x^2 - 1) \Rightarrow e^y = x^2 - 1 \Rightarrow \sqrt{e^y + 1} = |x|
+\end{equation}
+
+Caso 1: $ x \ge 0 $:
+
+\begin{equation}
+\hresult{24.c - inversa para rama $x \ge 0$ }{ f^{-1}(x) = \sqrt{e^x +1}, x \in \mathbb{R} }
+\end{equation}
+
+Caso 2: $ x < 0 $:
+
+\begin{equation}
+\hresult{24.c - inversa para rama $x < 0$ }{ f^{-1}(x) = -\sqrt{e^x + 1}, x \in \mathbb{R} }
+\end{equation}
+
+\sectionx{24.d}
+
+Para que exista la raíz cuadrada, debe ser $x \ge 0$. El valor mínimo de $ f $ entonces es $ f(0) = 6 $. Ergo:
+
+\begin{itemize}
+
+\item $ \mathop{ \text{Dom} }(f) = [0, +\infty) $
+
+\item $ \mathop{ \text{Img} }(f) = [6, +\infty) $
+
+\end{itemize}
+
+En este caso, $ f $ es monótona creciente y por ende inyectiva en todo su dominio. Por lo tanto, basta con despejar $ x $ e invertir dominio e imagen.
+
+\begin{equation}
+y = 2^{\sqrt{x}} + 5 \Rightarrow log_2(y-5) = \sqrt{x} \Rightarrow [log_2(y-5)]^2 = x
+\end{equation}
+
+Con lo que resulta:
+
+\begin{equation}
+\hresult{24.d}{ f^{-1}(x) = [log_2(x-5)]^2, x \in [6, +\infty) }
+\end{equation}
+
+\sectionx{24.e}
+
+Por ser $f$ una exponencial sin desplazamiento vertical:
+
+\begin{itemize}
+
+\item $ \mathop{ \text{Dom} }(f) = \mathbb{R} $
+
+\item $ \mathop{ \text{Img} }(f) = (0, +\infty) $
+
+\end{itemize}
+
+Nuevamente, $f$ es monótona creciente e inyectiva en todo su dominio.
+
+\begin{equation}
+y = e^{x + 3} \Rightarrow \ln(y) = x + 3 \Rightarrow \Rightarrow x = \ln(y) - 3
+\end{equation}
+
+Finalmente:
+
+\begin{equation}
+\hresult{24.e}{ f^{-1}(x) = \ln(x) -3, x \in (0, +\infty) }
+\end{equation}
+
+\subsectionx{24.f}
+
+El dominio de $ f $ es $ \mathbb{R} $, pero está restringido a $ x > 0 $. En ese dominio, $ f $ es monótona creciente e inyectiva, por lo que todo es más directo.
+
+\begin{itemize}
+
+\item $ \mathop{ \text{Dom} }(f) = (0, +\infty) $ (por enunciado)
+
+\item $ \mathop{ \text{Img} }(f) = (1, +\infty) $
+
+Despejando $ x $:
+
+\begin{equation}
+y = e^{x^2} \Rightarrow \ln(y) = x^2 \Rightarrow \sqrt{\ln(y)} = |x|
+\end{equation}
+
+Dado que se solicitó explícitamente el caso $ x > 0 $, puede obviarse el módulo y resulta, invirtiendo dominio e imagen:
+
+\begin{equation}
+\hresult{24.f}{ f^{-1}(x) = \sqrt{\ln(x)}, x \in (1, +\infty) }
+\end{equation}
+
+\end{itemize}
+
 \end{document}
