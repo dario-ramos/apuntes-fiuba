@@ -1053,14 +1053,14 @@ Es el gráfico de 16.a desplazado 3 unidades hacia la izquierda. Esto se ve anal
 En este caso, no se puede cancelar alegremente el cuadrado y la raíz, porque al aplicarse el cuadrado primero, permite valores negativos. Por ende, se cancela pero se aplica módulo. Algebraicamente:
 
 \begin{equation}
-f(x) = \sqrt{(x-2)^2 = |x-2|}
+f(x) = \sqrt{(x-2)^2} = |x-2|
 \end{equation}
 
 La función módulo puede definirse por partes de la siguiente manera:
 
 \begin{subequations}
 \begin{align}
-& |x| \left\{ \begin{array}{ll}
+& |x| = \left\{ \begin{array}{ll}
 x \text{ si } x \geq 0 \\
 -x \text{ si } x < 0
 \end{array} \right.
@@ -1377,7 +1377,7 @@ y + 5 = (x-3)^2 \Rightarrow \sqrt{y+5} = |x-3|
 Como se eligió la rama $x \geq 3$ para calcular la inversa, $|x-3| = x - 3$. No olvidar invertir dominio e imagen.
 
 \begin{equation}
-f^{-1}(x) = \sqrt{y + 5} + 3, x \geq -5
+\hresult{19.e}{ f^{-1}(x) = \sqrt{y + 5} + 3, x \geq -5 }
 \end{equation}
 
 \subsectionx{19.f}
@@ -1393,5 +1393,392 @@ Esta es la misma función del inciso anterior, pero seleccionando la otra rama. 
 \end{equation}
 
 De hecho, si se grafica $f$ completa y las inversas de sus dos ramas, éstas formarán una parábola también. Y las ramas de dicha parábola serán simétricas respecto a la recta $y = x$ con sus ramas inversas. Esta es una propiedad general: el gráfico de $f(x)$ siempre será simétrico con el de $f^{-1}(x)$, respecto a la recta $y = x$.
+
+\sectionx{20}
+
+\textbf{Pruebe que la función $ f(x) = \frac{\sqrt{x} + 1}{x + 1} $ satisface $ f\left( \frac{1}{x} \right) =   \sqrt{x} f(x) $ para todo $x$ positivo.}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+Considérese $ f\left( \frac{1}{x} \right) $ en base a la definición de $ f(x) $.
+
+\begin{equation}
+f\left( \frac{1}{x} \right) = \frac{\sqrt{ \frac{1}{x} } + 1}{\frac{1}{x} + 1}
+\end{equation}
+
+Es en este punto donde se debe exigir que sea $x > 0$ para que esté definida la expresión $\sqrt{\frac{1}{x}}$. Para que no haya división por cero, la desigualdad debe ser estricta.
+
+Es sabido que $ \frac{1}{x} = x^{-1} $, y que tomar la raíz cuadrada equivale a elevar a la $\frac{1}{2}$. Reemplazando:
+
+\begin{equation}
+f\left( \frac{1}{x} \right) = \frac{ (x^{-1})^{\frac{1}{2}} + 1}{x^{-1} + 1} = \frac{x^{-\frac{1}{2}} + 1}{x^{-1} + 1}
+\end{equation}
+
+Para que el denominador coincida con la expresión a la que se quiere llegar, se ve que una forma es multiplicar y dividir por $x$. Como ya se exigió que $x > 0$, esto es válido.
+
+\begin{equation}
+f\left( \frac{1}{x} \right) = \frac{x^{-\frac{1}{2}} + 1}{x^{-1} + 1} \frac{x}{x} = \frac{x^{\frac{1}{2}} + x}{1+x}
+\end{equation}
+
+Sacando factor común $x^{\frac{1}{2}}$ en el numerador, finalmente se llega a la expresión buscada.
+
+\begin{equation}
+f\left( \frac{1}{x} \right) = x^{\frac{1}{2}} \frac{1 + x^{\frac{1}{2}}}{1 + x} = \sqrt{x} \frac{\sqrt{x} + 1}{x + 1}
+\end{equation}
+
+\sectionx{21}
+
+\textbf{Dadas las funciones exponenciales $ f(x) = r^x \left( r = 2, \frac{1}{2}, 3, \frac{1}{3} \right) $:}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item Haga el gráfico de cada una de ellas.
+
+\item Determine el dominio y la imagen.
+
+\item Analice la monotonía.
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{21.a}
+
+Graficar los 4 casos juntos, como en la figura~\ref{fig:21a}, resulta bastante ilustrativo:
+
+\figurex{Ejercicio 21.a}{4}{../img/guide_01/ex_21a.png}{fig:21a}
+
+Nótese que en los casos en que $ r > 1 $, la curva es creciente. A mayor $r$, crece más rápido al crecer $x$, y también decrece más rápido al decrecer $x$. En cambio, para $ 0 < r < 1$, las curvas son decrecientes. La tasa de crecimiento se comporta al revés también: a mayor $r$, menor es la tasa de cambio, ya que $\frac{1}{2} > \frac{1}{3}$ y la primera decrece más lento.
+
+No hay que perder de vista que debe ser $ r > 0 $, o nos saldríamos del campo real. Por ejemplo, si $r = -2$, $f(1/2) = \sqrt{-2}$, que no existe en el campo real.
+
+\subsectionx{21.b}
+
+El dominio y la imagen son iguales para todos los valores de $r$:
+
+\begin{itemize}
+
+\item $ \mathop{\text{Dom}}(f) = \mathbb{R}, \forall r > 0, r \neq 1 $
+
+\item $ \mathop{\text{Img}}(f) = (0, +\infty), \forall r > 0, r \neq 1 $
+
+\end{itemize}
+
+\subsectionx{21.c}
+
+\begin{itemize}
+
+\item Si $ r>1 $, $f$ es monótona creciente.
+
+\item Si $ 0<r<1 $, $f$ es monótona decreciente.
+
+\end{itemize}
+
+\sectionx{22}
+
+\textbf{Si notamos $ \log_{r}(x) $ a la función inversa de $ r^x (r > 0, r \neq 1) $:}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item Haga el gráfico de $ y = \log_{r}(x) $ para $ r =2, \frac{1}{2}, 3, \frac{1}{3} $.
+
+\item Determine el dominio y la imagen.
+
+\item Analice la monotonía.
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{22.a}
+
+Graficar los 4 casos juntos, como en la figura~\ref{fig:22a}, resulta bastante ilustrativo:
+
+\figurex{Ejercicio 22.a}{2}{../img/guide_01/ex_22a.png}{fig:22a}
+
+Nótese que en los casos en que $ r > 1 $, la curva es creciente. A mayor $r$, la curva crece más lento al crecer $x$, y también decrece más lento al decrecer $x$. En cambio, para $ 0 < r < 1$, las curvas son decrecientes. La tasa de crecimiento se comporta al revés también: a mayor $r$, mayor es la tasa de cambio, ya que $\frac{1}{2} > \frac{1}{3}$ y la primera decrece más rápido.
+
+\subsectionx{22.b}
+
+El dominio y la imagen son iguales para todos los valores de $r$:
+
+\begin{itemize}
+
+\item $ \mathop{\text{Dom}}(f) = (0, +\infty), \forall r > 0, r \neq 1 $
+
+\item $ \mathop{\text{Img}}(f) = \mathbb{R}, \forall r > 0, r \neq 1 $
+
+\end{itemize}
+
+\subsectionx{22.c}
+
+\begin{itemize}
+
+\item Si $ r>1 $, $f$ es monótona creciente.
+
+\item Si $ 0<r<1 $, $f$ es monótona decreciente.
+
+\end{itemize}
+
+\sectionx{23}
+
+\textbf{Encuentre el dominio de las siguientes funciones:}
+
+\begin{enumerate}
+
+\item $ f(x) = \ln(2x) $
+
+\item $ f(x) = \ln(3x^2 + 2x) $
+
+\end{enumerate}
+
+\textbf{En cada caso, determine los valores de $x$ para los cuales $ f(x) = 1 $.}
+
+\vspace{1em}
+\hrule
+
+\subsectionx{23.a}
+
+Para que el logaritmo natural esté definido, se requiere que su argumento sea siempre positivo. Ergo:
+
+\begin{equation}
+2x > 0 \Rightarrow x > 0 \Rightarrow \hresult{23.a - Dominio}{ \mathop{\text{Dom}}(f) = \{ x \in \mathbb{R} / x > 0 \} }
+\end{equation}
+
+Y la preimagen de 1 es:
+
+\begin{equation}
+1 = \ln(2x) \Rightarrow e^1 = e^{\ln(2x)} \Rightarrow e = 2x \Rightarrow \hresult{23.a}{ x = \frac{e}{2} \approx 1,3591 }
+\end{equation}
+
+\subsectionx{23.b}
+
+Nuevamente, para que el logaritmo natural esté definido, su argumento debe ser mayor a cero.
+
+\begin{equation}
+3x^2 + 2x > 0 \Rightarrow 3x \left(x + \frac{2}{3} \right) > 0 \Rightarrow x x \left(x + \frac{2}{3} \right) > 0
+\end{equation}
+
+Para que el producto sea positivo, hay dos casos: ambos factores positivos, y ambos negativos a la vez.
+
+\begin{subequations}
+\begin{align}
+& \left\{ \begin{array}{ll}
+x > 0 \\
+x + \frac{2}{3} \Rightarrow x > -\frac{2}{3}
+\end{array} \right. \Rightarrow x > 0
+\end{align}
+\end{subequations}
+
+\begin{subequations}
+\begin{align}
+& \left\{ \begin{array}{ll}
+x < 0 \\
+x + \frac{2}{3} \Rightarrow x < -\frac{2}{3}
+\end{array} \right. \Rightarrow x < -\frac{2}{3}
+\end{align}
+\end{subequations}
+
+Combinando estos dos casos:
+
+\begin{equation}
+\hresult{23.b - Dominio}{ \mathop{\text{Dom}}(f) = \left\{ x \in \mathbb{R} / x < -\frac{2}{3} \vee x > 0 \right\} }
+\end{equation}
+
+La preimagen de 1 se obtiene, de nuevo, elevando a la $e$ ambos lados para cancelar el logaritmo natural.
+
+\begin{equation}
+1 = \ln(3x^2 + 2x) \Rightarrow e = 3x^2 + 2x \Rightarrow 3x^2 + 2x - e = 0
+\end{equation}
+
+Esta ecuación cuadrática tiene el siguiente discriminante:
+
+\begin{equation}
+\Delta = b^2 - 4ac = 2^2 - 4 \cdot 3 \cdot (-e) \approx 36,319
+\end{equation}
+
+Esto conduce a dos soluciones reales:
+
+\begin{equation}
+\hresult{23.b}{ f(x) = 1 \text{ para } x_1 \approx -1,3419 \wedge x_2 \approx 0,67523 }
+\end{equation}
+
+\sectionx{24}
+
+\textbf{Halle la función inversa de:}
+
+\begin{enumerate}[(a)]
+
+\item $ f(x) = \ln(2x) $
+
+\item $ f(x) = \ln(x^2 + 4) $
+
+\item $ f(x) = \ln(x^2 - 1) $
+
+\item $ f(x) = 2^{\sqrt{x}} + 5 $
+
+\item $ f(x) = e^{x + 3} $
+
+\item $ f(x) = e^{x^2}, x > 0 $
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{24.a}
+
+Como siempre que se calcula una inversa, hay que analizar dominio e imagen de la función original. Por simple inspección:
+
+\begin{itemize}
+
+\item $ \mathop{ \text{Dom} }(f) = (0, +\infty) $
+
+\item $ \mathop{ \text{Img} }(f) = \mathbb{R} $
+
+\end{itemize}
+
+Además, $f$ es monótona creciente, por lo tanto es inyectiva en todo su dominio y la inversa es única. El próximo paso es despejar $x$. Como la imagen de $ f $ es $ \mathbb{R} $, el dominio de la inversa será $ \mathbb{R} $ también.
+
+\begin{equation}
+y = \ln(2x) \Rightarrow e^y = 2x \Rightarrow \hresult{24.a}{ f^{-1}(x) = \frac{1}{2} e^x, x \in \mathbb{R} }
+\end{equation}
+
+\subsectionx{24.b}
+
+El argumento del logaritmo nunca se anula, y el mínimo valor es $f(0) = \ln(4)$. Por ende:
+
+\begin{itemize}
+
+\item $ \mathop{ \text{Dom} }(f) = \mathbb{R} $
+
+\item $ \mathop{ \text{Img} }(f) = [ \ln(4), +\infty) $
+
+\end{itemize}
+
+Sin embargo, $f$ no es inyectiva. Al ser par, tiene dos ramas. Habrá que calcular la inversa para ambos casos. Con eso en mente, se despeja $x$. Como la imagen es la misma para ambas ramas por ser par la función, ambas inversas tendrán como dominio $ [ \ln(4), +\infty) $.
+
+\begin{equation}
+y = \ln(x^2 + 4) \Rightarrow e^y = x^2 + 4 \Rightarrow \sqrt{e^y -4} = |x|
+\end{equation}
+
+Caso 1: $ x \ge 0 $:
+
+\begin{equation}
+\hresult{24.b - inversa para rama $x \ge 0$ }{ f^{-1}(x) = \sqrt{e^x - 4}, x \in [\ln(4), +\infty) }
+\end{equation}
+
+Caso 2: $ x < 0 $:
+
+\begin{equation}
+\hresult{24.b - inversa para rama $x < 0$ }{ f^{-1}(x) = -\sqrt{e^x - 4}, x \in [\ln(4), +\infty) }
+\end{equation}
+
+\subsectionx{24.c}
+
+Para el dominio de $f$, debe ser $x^2 - 1 > 0 \Rightarrow |x| > 1$. Al acercarse a 1 o -1, el argumento del logaritmo se acercará a cero, y por ende $f$ tenderá a $ -\infty $. Por lo tanto:
+
+\begin{itemize}
+
+\item $ \mathop{ \text{Dom} }(f) = (-\infty, -1) \cup (1, +\infty) $
+
+\item $ \mathop{ \text{Img} }(f) = \mathbb{R} $
+
+\end{itemize}
+
+Como en el inciso anterior, $f$ no es inyectiva. De nuevo, es par y tiene dos ramas. Como la imagen de $f$ es $ \mathbb{R} $ para ambas ramas, el dominio de la inversa será $ \mathbb{R} $ para ambas ramas. Despejando $x$:
+
+\begin{equation}
+y = \ln(x^2 - 1) \Rightarrow e^y = x^2 - 1 \Rightarrow \sqrt{e^y + 1} = |x|
+\end{equation}
+
+Caso 1: $ x \ge 0 $:
+
+\begin{equation}
+\hresult{24.c - inversa para rama $x \ge 0$ }{ f^{-1}(x) = \sqrt{e^x +1}, x \in \mathbb{R} }
+\end{equation}
+
+Caso 2: $ x < 0 $:
+
+\begin{equation}
+\hresult{24.c - inversa para rama $x < 0$ }{ f^{-1}(x) = -\sqrt{e^x + 1}, x \in \mathbb{R} }
+\end{equation}
+
+\sectionx{24.d}
+
+Para que exista la raíz cuadrada, debe ser $x \ge 0$. El valor mínimo de $ f $ entonces es $ f(0) = 6 $. Ergo:
+
+\begin{itemize}
+
+\item $ \mathop{ \text{Dom} }(f) = [0, +\infty) $
+
+\item $ \mathop{ \text{Img} }(f) = [6, +\infty) $
+
+\end{itemize}
+
+En este caso, $ f $ es monótona creciente y por ende inyectiva en todo su dominio. Por lo tanto, basta con despejar $ x $ e invertir dominio e imagen.
+
+\begin{equation}
+y = 2^{\sqrt{x}} + 5 \Rightarrow log_2(y-5) = \sqrt{x} \Rightarrow [log_2(y-5)]^2 = x
+\end{equation}
+
+Con lo que resulta:
+
+\begin{equation}
+\hresult{24.d}{ f^{-1}(x) = [log_2(x-5)]^2, x \in [6, +\infty) }
+\end{equation}
+
+\sectionx{24.e}
+
+Por ser $f$ una exponencial sin desplazamiento vertical:
+
+\begin{itemize}
+
+\item $ \mathop{ \text{Dom} }(f) = \mathbb{R} $
+
+\item $ \mathop{ \text{Img} }(f) = (0, +\infty) $
+
+\end{itemize}
+
+Nuevamente, $f$ es monótona creciente e inyectiva en todo su dominio.
+
+\begin{equation}
+y = e^{x + 3} \Rightarrow \ln(y) = x + 3 \Rightarrow \Rightarrow x = \ln(y) - 3
+\end{equation}
+
+Finalmente:
+
+\begin{equation}
+\hresult{24.e}{ f^{-1}(x) = \ln(x) -3, x \in (0, +\infty) }
+\end{equation}
+
+\subsectionx{24.f}
+
+El dominio de $ f $ es $ \mathbb{R} $, pero está restringido a $ x > 0 $. En ese dominio, $ f $ es monótona creciente e inyectiva, por lo que todo es más directo.
+
+\begin{itemize}
+
+\item $ \mathop{ \text{Dom} }(f) = (0, +\infty) $ (por enunciado)
+
+\item $ \mathop{ \text{Img} }(f) = (1, +\infty) $
+
+Despejando $ x $:
+
+\begin{equation}
+y = e^{x^2} \Rightarrow \ln(y) = x^2 \Rightarrow \sqrt{\ln(y)} = |x|
+\end{equation}
+
+Dado que se solicitó explícitamente el caso $ x > 0 $, puede obviarse el módulo y resulta, invirtiendo dominio e imagen:
+
+\begin{equation}
+\hresult{24.f}{ f^{-1}(x) = \sqrt{\ln(x)}, x \in (1, +\infty) }
+\end{equation}
+
+\end{itemize}
 
 \end{document}
