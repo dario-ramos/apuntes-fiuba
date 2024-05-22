@@ -1781,4 +1781,50 @@ Dado que se solicitó explícitamente el caso $ x > 0 $, puede obviarse el módu
 
 \end{itemize}
 
+\sectionx{25}
+
+\textbf{A partir de los gráficos de $ g(x) = \sin(x) $ y $ h(x) = \cos(x) $, haga el gráfico de: }
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $ f(x) = \sin( x - \pi ) $
+
+\item $ f(x) = \cos( 2x ) $
+
+\item $ f(x) = \cos( 2x + \pi ) $
+
+\item $ f(x) = \sin\left( x + \frac{\pi}{2} \right) $
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{25.a}
+
+Este es un caso de desplazamiento horizontal, porque se le está sumando o restando una constante al argumento de la función seno. Concretamente, se tiene un desplazamiento de $ \pi $ unidades hacia la derecha. Se deduce que es hacia la derecha porque el punto correspondiente a $x = 0$ pasa a estar en $x = \pi$, que está a la derecha. 
+
+\figurex{Ejercicio 25.a}{4}{../img/guide_01/ex_25a.png}{fig:25a}
+
+\subsectionx{25.b}
+
+En este caso, se tiene un escalamiento horizontal. Al multiplicar el argumento del coseno por 2, los puntos que estaban en $x = a$ ahora pasan a estar en $x = a/2$. Visualmente, es como si la curva se comprimiera horizontalmente por un factor de dos. Tratándose además de una función periódica, el período se reduce a la mitad y la frecuencia se duplica. El nuevo período es entonces $\pi$.
+
+\figurex{Ejercicio 25.b}{5}{../img/guide_01/ex_25b.png}{fig:25b}
+
+\subsectionx{25.c}
+
+Ahora hay dos tranformaciones combinadas: un escalado horizontal con un factor de 2, y un desplazamiento horizontal de $\pi$ unidades hacia la izquierda. En estos casos, hay que tener cuidado porque el orden en que se aplican las transformaciones importa: no es lo mismo escalar y desplazar que desplazar y escalar. En este caso, partiendo del gráfico de $ h(x) = \cos(x) $, lo correcto para llegar a $ f(x) = \cos(2x + \pi) $ es desplazar $\pi$ unidades hacia la izquierda primero, y escalar horizontalmente con un factor de 2 luego. Si se hace lo inverso, el cambio de escala horizontal introducido al escalar primero hace que el desplazamiento de $\pi$ unidades ya no sea válido. De hecho, siguiendo este camino se observa que el desplazamiento debería ser de $\frac{\pi}{2}$ unidades, lo cual tiene sentido por el cambio de escala previo.
+
+\figurex{Ejercicio 25.c}{5}{../img/guide_01/ex_25c.png}{fig:25c}
+
+Esto se ilustra en la figura~\ref{fig:25c} introduciendo el paso intermedio $ f_d(x) = \cos(x + \pi) $ en color naranja. Si primero se desplaza el coseno $\pi$ unidades hacia la izquierda y luego se escala, se llega al gráfico correcto.
+
+\subsectionx{25.d}
+
+Ahora sólo hay un desplazamiento horizontal de $\pi$ unidades hacia la izquierda. Nótese que esto coincide con el gráfico del coseno, lo cual es coherente con la conocida identidad $ \cos(x) = \sin\left(x + \frac{\pi}{2} \right) $.
+
+\figurex{Ejercicio 25.d}{5}{../img/guide_01/ex_25d.png}{fig:25d}
+
 \end{document}
