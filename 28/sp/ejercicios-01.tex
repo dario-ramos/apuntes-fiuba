@@ -1783,19 +1783,19 @@ Dado que se solicitó explícitamente el caso $ x > 0 $, puede obviarse el módu
 
 \sectionx{25}
 
-\textbf{A partir de los gráficos de $ g(x) = \sin(x) $ y $ h(x) = \cos(x) $, haga el gráfico de: }
+\textbf{A partir de los gráficos de $ g(x) = \sen(x) $ y $ h(x) = \cos(x) $, haga el gráfico de: }
 
 \begin{enumerate}[(a)]
 
 \bfseries
 
-\item $ f(x) = \sin( x - \pi ) $
+\item $ f(x) = \sen( x - \pi ) $
 
 \item $ f(x) = \cos( 2x ) $
 
 \item $ f(x) = \cos( 2x + \pi ) $
 
-\item $ f(x) = \sin\left( x + \frac{\pi}{2} \right) $
+\item $ f(x) = \sen\left( x + \frac{\pi}{2} \right) $
 
 \end{enumerate}
 
@@ -1823,8 +1823,128 @@ Esto se ilustra en la figura~\ref{fig:25c} introduciendo el paso intermedio $ f_
 
 \subsectionx{25.d}
 
-Ahora sólo hay un desplazamiento horizontal de $\pi$ unidades hacia la izquierda. Nótese que esto coincide con el gráfico del coseno, lo cual es coherente con la conocida identidad $ \cos(x) = \sin\left(x + \frac{\pi}{2} \right) $.
+Ahora sólo hay un desplazamiento horizontal de $\pi$ unidades hacia la izquierda. Nótese que esto coincide con el gráfico del coseno, lo cual es coherente con la conocida identidad $ \cos(x) = \sen\left(x + \frac{\pi}{2} \right) $.
 
 \figurex{Ejercicio 25.d}{5}{../img/guide_01/ex_25d.png}{fig:25d}
+
+\sectionx{26}
+
+\textbf{Determine todos los valores de $x \in \mathbb{R}$ tales que:}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $ \sen(x) = \frac{1}{2} $
+
+\item $ \cos(x) = \frac{3}{2} $
+
+\item $ \cos^2(x) - \sen^2(x) = 1 $
+
+\item $ \sen^2(x) + \cos^2(x) = 1 $
+
+\item $ \sen(2x) = 2 \sen(x) \cos(x) $
+
+\item $ \cos\left( x + \frac{\pi}{4} \right) = \frac{\sqrt{2}}{2} ( \cos(x) - \sen(x) ) $
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{26.a}
+
+Aplicando arco seno de ambos lados, se obtiene $ x = \frac{\pi}{6} $. A partir de este valor, se puede obtener otro dado por la simetría de la función seno:
+
+\begin{equation}
+\sen(x) = \sen( \pi - x ) \Rightarrow x = \frac{5}{6} \pi \text{ también es solución}
+\end{equation}
+
+Por otro lado, la función seno es $2\pi$-periódica. Por ende, estas dos soluciones deben replicarse al infinito en ambas direcciones, usando el período. Resulta entonces:
+
+\begin{subequations}
+\begin{align}
+\hresult{26.a - 1er conjunto}{ x = \frac{\pi}{6} + 2 k \pi, k \in \mathbb{Z} } \\
+\hresult{26.a - 2do conjunto}{ x = \frac{5}{6}\pi + 2 k \pi, k \in \mathbb{Z} }
+\end{align}
+\end{subequations}
+
+\subsectionx{26.b}
+
+El conjunto imagen de la función coseno está acotado al intervalo $[-1, 1]$. El valor $ \frac{3}{2} $ está fuera de ese intervalo, y por lo tanto esta ecuación no tiene solución en los números reales. Otra forma de verlo es intentar aplicar la función arco coseno de ambos lados: dado que dicha función tiene el conjunto dominio restringido al intervalo $[-1, 1]$, se llega a la misma conclusión al intentar evaluar $ \arccos\left( \frac{3}{2} \right) $.
+
+\subsectionx{26.c}
+
+Esta ecuación recuerda a la identidad $ \sin^2(x) + \cos^2(x) = 1 $. Para que esa expresión aparezca en el lado izquierdo, es posible sumar $2 \sin^2(x)$ miembro a miembro. Ello conduce a:
+
+\begin{subequations}
+\begin{align}
+& \cos^2(x) - \sin^2(x) + 2 \sin^2(x) = 1 + 2 \sin^2(x) \\
+& \underbrace{ \cos^2(x) + \sin^2(x) }_{1} = 1 + 2 \sin^2(x) \\
+& 1 - 1 = 2 \sin^2(x) \\
+& 0 = \sin^2(x) \\
+& 0 = |\sin(x)|
+\end{align}
+\end{subequations}
+
+Los ceros del seno cuadrado y del seno con módulo son los mismos que los del seno común, vale decir:
+
+\begin{equation}
+\hresult{26.c}{ x = k \pi, k \in \mathbb{Z} }
+\end{equation}
+
+\subsectionx{26.d}
+
+Esta es una identidad trigonométrica, y se cumple para todo valor de x.
+
+\begin{equation}
+\hresult{26.d}{ x \in \mathbb{R} }
+\end{equation}
+
+\subsectionx{26.e}
+
+Identidad a aplicar: seno de la suma.
+
+\begin{equation}
+\sin(a + b) = \sin(a) \cos(b) + \cos(a) \sin(b)
+\end{equation}
+
+Para este caso particular, $ a = x, b = x $.
+
+\begin{subequations}
+\begin{align}
+& \sin(x + x) = \sin(x) \cos(x) + \cos(x) \sin(x) \\
+& \sin(2x) = 2 \sin(x) \cos(x)
+\end{align}
+\end{subequations}
+
+Por lo tanto, esta ecuación es una identidad: se cumple para todo valor de x.
+
+\begin{equation}
+\hresult{26.e}{ x \in \mathbb{R} }
+\end{equation}
+
+\subsectionx{26.f}
+
+Identidad a aplicar: coseno de la suma.
+
+\begin{equation}
+\cos(a + b) = \cos(a) \cos(b) - \sin(a) \sin(b)
+\end{equation}
+
+Para este caso particular, $ a = x, b = \frac{\pi}{4} $.
+
+\begin{subequations}
+\begin{align}
+\cos\left( x + \frac{\pi}{4} \right) &= \cos(x) \underbrace{ \cos\left( \frac{\pi}{4} \right) }_{ \sqrt{2}/2 } - \sin(x) \underbrace{ \sin\left( \frac{\pi}{4} \right) }_{ \sqrt{2}/2 } \\
+&= \frac{\sqrt{2}}{2} \cos(x) - \frac{\sqrt{2}}{2} \sin(x) \\
+&= \frac{\sqrt{2}}{2} ( \cos(x) - \sin(x) )
+\end{align}
+\end{subequations}
+
+Por lo tanto, esta ecuación es una identidad: se cumple para todo valor de x.
+
+\begin{equation}
+\hresult{26.f}{ x \in \mathbb{R} }
+\end{equation}
 
 \end{document}
