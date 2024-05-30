@@ -1947,4 +1947,142 @@ Por lo tanto, esta ecuación es una identidad: se cumple para todo valor de x.
 \hresult{26.f}{ x \in \mathbb{R} }
 \end{equation}
 
+\sectionx{27}
+
+\textbf{Haga el gráfico de las funciones inversas de $ g(x) = \sin(x) $ y $ h(x) = \cos(x) $. Determine los valores de $ x \in \mathbb{R} $ tales que:}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $ \arcsin(x) = \frac{\pi}{4} $
+
+\item $ \arccos(x) = \pi $
+
+\item $ \cos( \arcsin(x) ) = \sqrt{1 - x^2} $
+
+\end{enumerate}
+
+\hrule
+\vspace{1em}
+
+Como siempre que se calcula una función inversa, es necesario analizar dominio, imagen y sobreyectividad de la función a invertir. En el caso de $ g(x) = \sin(x) $:
+
+\begin{itemize}
+
+\item $ \mathop{\text{Dom}}(f) = \mathbb{R} $
+
+\item $ \mathop{\text{Img}}(f) = [-1, 1] $
+
+\item $ g $ no es sobreyectiva en su dominio; al ser periódica, los valores de $ y $ se repiten infinitamente y dado un valor de $y$ entre -1 y 1, su preimagen $x$ no está unívocamente determinada.
+
+\end{itemize}
+
+Dado que $ g $ no es sobreyectiva, es necesario restringir su dominio a un intervalo donde lo sea para poder calcular su inversa. Observando el gráfico del seno, el primer tramo donde es monótona creciente corresponde a $ x \in \left[-\frac{\pi}{2}, \frac{\pi}{2} \right] $. Convenientemente, ese tramo es el asociado a la rama canónica de la función arco seno. Vale decir, los valores que devuelve una calculadora para la función arco seno corresponden a la inversa de dicho tramo del seno.
+
+Para graficar la función arco seno, dado que no tiene una expresión cerrada, no queda más alternativa que armar una tabla de valores e interpolar. A la hora de elegir valores, hay que considerar que si la función original tiene dominio $ \left[-\frac{\pi}{2}, \frac{\pi}{2} \right] $ e imagen $[-1, 1]$, la función arco seno tendrá dominio $[-1, 1]$ e imagen $ \left[-\frac{\pi}{2}, \frac{\pi}{2} \right] $.
+
+\begin{table}[h!]
+\centering
+ \begin{tabular}{||c c||} 
+ \hline
+ x & arcsin(x) \\ [0.5ex] 
+ \hline\hline
+ -1 & $-\frac{\pi}{2}$ \\ 
+ \hline
+ -0,75 & -0,84806... \\ 
+ \hline
+ -0,5 & -0,52359... \\ 
+ \hline
+ -0,25 & -0,25268... \\ 
+ \hline
+ 0 & 0 \\ 
+ \hline
+ 0,25 & 0,25268... \\ 
+ \hline
+ 0,5 & 0,52359... \\ 
+ \hline
+ 0,75 & 0,84806... \\ 
+ \hline
+ 1 & $\frac{\pi}{2}$ \\ [1ex] 
+ \hline
+ \end{tabular}
+\end{table}
+
+Se observa que, al igual que la función seno, la función arco seno es impar, ya que se verifica $ \arcsin(-x) = -\arcsin(x) $. Con los valores de esta tabla se puede trazar un gráfico aproximado como el de la figura~\ref{fig:27a}. Nótese la simetría respecto a la recta $ y = x $ entre el segmento de seno y su inversa.
+
+\figurex{Ejercicio 27.a}{4.6}{../img/guide_01/ex_27a.png}{fig:27a}
+
+Aplicando este mismo procedimiento a $ h(x) = \cos(x) $, el primer tramo donde resulta sobreyectiva corresponde a $x \in [0, \pi]$. La imagen de ese tramo es $[-1, 1]$, por lo que la función arco coseno asociada a esa rama, que de nuevo es la canónica, tendrá como dominio $[-1, 1]$ y como imagen $[0, \pi]$. Tomando valores de nuevo, se puede aproximar un gráfico como el de la figura~\ref{fig:27b}.
+
+\figurex{Ejercicio 27.b}{5}{../img/guide_01/ex_27b.png}{fig:27b}
+
+\subsectionx{27.a}
+
+Asumiendo que la función arco seno considerada es la canónica, existe una sola solución a esta ecuación y se obtiene aplicando la función seno miembro a miembro.
+
+\begin{equation}
+\sin( \arcsin(x) ) = \sin\left( \frac{\pi}{4} \right) \Rightarrow \hresult{27.a}{ x = \frac{\sqrt{2}}{2} }
+\end{equation}
+
+\subsectionx{27.b}
+
+Análogamente al inciso anterior, si se supone que la función arco coseno considerada es la canónica:
+
+\begin{equation}
+\cos( \arccos(x) ) = \cos( \pi ) \Rightarrow \hresult{27.b}{ x = -1 }
+\end{equation}
+
+\subsectionx{27.c}
+
+Si se analiza esta ecuación como la búsqueda de la intersección entre dos funciones, y se grafican ambos lados de la igualdad, se notará que las tablas de valores son iguales. En otras palabras, esto es una identidad y se cumple para todos los valores de $ x $ para los que están definidos ambos lados de la igualdad.
+
+Por el lado derecho, el radicando debe ser no negativo, por ende $ 1 - x^2 \geq 0 \Rightarrow 1 \geq x^2 \Rightarrow 1 \geq |x| $. Y en el lado izquierdo, el argumento del arco seno debe estar entre -1 y 1, lo cual equivale a la restricción anterior.
+
+Para probar la identidad, el hecho de que aparezcan 1, la suma de dos cuadrados y una raíz, suena al teorema de Pitágoras. Considérese que para cualquier ángulo $ \theta $ en radianes, se satisface la identidad pitagórica:
+
+\begin{equation}
+\sin^2( \theta ) + \cos^2( \theta ) = 1
+\end{equation}
+
+Por otro lado, si $ \theta \in [ -\pi/2 \pi/2 ] $, tiene un valor seno que se vincula con la función arco seno canónica. Llámese, arbitrariamente, $x$ al arco seno de $ \theta $, de manera que:
+
+\begin{itemize}
+
+\item $ \arcsin(x) = \theta $
+
+\item $ \sin( \theta ) = x $
+
+\end{itemize}
+
+Ahora bien, reemplazando $ \sin(\theta) = x $ en la identidad pitagórica:
+
+\begin{equation}
+x^2 + \cos^2( \theta ) = 1
+\end{equation}
+
+Despejando el coseno para acercarse a la identidad buscada:
+
+\begin{equation}
+\cos^2( \theta ) = 1 - x^2
+\end{equation}
+
+Como se estableció que $ \theta \in [ -\pi/2 \pi/2 ] $, y en dicho rango la función coseno no toma valores negativos, se puede cancelar el cuadrado con la raíz del lado izquierdo sin introducir el módulo.
+
+\begin{equation}
+\cos( \theta ) = \sqrt{ 1 - x^2 }
+\end{equation}
+
+Finalmente, recuérdese que $ \theta = \arcsin(x) $, y con ello se llega a la identidad:
+
+\begin{equation}
+\cos( \arcsin(x) ) = \sqrt{ 1 - x^2 }
+\end{equation}
+
+No perder de vista que esto sólo vale para:
+
+\begin{equation}
+\hresult{27.c}{x \in [-1, 1]}
+\end{equation}
+
 \end{document}
