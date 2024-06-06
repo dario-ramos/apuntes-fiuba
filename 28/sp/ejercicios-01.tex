@@ -2198,4 +2198,42 @@ En lo que respecta a la unicidad de dicha solución, será única en tanto $ f $
 \hresult{29.b.5}{ f(x) = y \text{ tiene solución única } \Leftrightarrow y \in \left[-11, -\frac{1}{2} \right] \cup (0, +\infty) }
 \end{equation}
 
+\sectionx{30}
+
+\textbf{El impuesto a la riqueza es igual a 0,50 pesos por cada mil pesos por encima de 100 mil pesos y de 1 peso por cada mil pesos por encima de 200 mil pesos. Escriba el monto del impuesto en función de la riqueza. ¿Cuál es la riqueza de alguien que paga 530 pesos de impuesto? }
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+Asumiendo que el impuesto se aplica sobre la cantidad de pesos que exceden a 100 mil o 200 mil, es necesario restar dichos valores a la riqueza antes de multiplicar. Además, al pasar los 200 mil, se debe sumar el impuesto asociado a todos los pesos entre 100000 y 200000, que valdría $ 0,5 \cdot (200000-100000)/1000 = 50 $
+Con eso en mente, si $ x $ es la riqueza total en pesos y $ f(x) $ es el impuesto en pesos asociado a dicha riqueza, resulta:
+
+\begin{equation}
+\hresult{30.1}{
+f(x) = \left\{ \begin{array}{ll}
+0 & \text{ si } x \geq 100000 \\
+0,5 \cdot \left( \frac{x-100000}{1000} \right) & \text{ si } 100000 < x \leq 200000 \\
+50 + 1 \cdot \left( \frac{x-200000}{1000} \right) & \text{ si } x > 200000
+\end{array} \right. }
+\end{equation}
+
+Respecto a calcular la riqueza cuando el impuesto vale $ 530 $ pesos, ayuda calcular los valores extremos de cada tramo:
+
+\begin{enumerate}
+
+\item $ f(100000^{+}) = 0,5 \cdot \frac{100000^{+} - 100000}{1000} = 0^{+} $
+
+\item $ f(200000) = 0,5 \cdot \frac{200000 - 100000}{1000} = 50 $
+
+\item $ f(200000^{+}) = 50 + \frac{200000^{+} - 200000}{1000} = 50^{+} $
+
+\end{enumerate}
+
+No hace falta hacer más cuentas para concluir que 530 corresponde a la tercera rama de $ f $. Por lo tanto, se utiliza la expresión de dicha rama para calcular la preimagen.
+
+\begin{equation}
+530 = 50 + \frac{x_0 - 2000000}{1000} \Rightarrow x_0 = 480000 + 200000 \Rightarrow \hresult{30.2}{x_0 = 680000}
+\end{equation}
+
 \end{document}
