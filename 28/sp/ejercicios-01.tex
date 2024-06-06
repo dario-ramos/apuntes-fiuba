@@ -2129,4 +2129,73 @@ Aplicar módulo a la función exponencial no tiene ningún efecto, ya que no tom
 
 \figurex{Ejercicio 28.d}{2}{../img/guide_01/ex_28d.png}{fig:28d}
 
+\sectionx{29}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item Dada la función $ f(x) = \left\{ \begin{array}{ll}
+x + 2 & \text{ si } x \leq -1 \\
+-x & \text{ si } -1 < x \leq 1 \\
+3x-4 \text{ si } 1 < x
+\end{array} \right. $, calcule $ f(-3) $, $ f(1) $ y $ f(4) $. Determine para qué valores de $ y $ la ecuación $ f(x) = y $ tiene solución. ¿Cuándo es única?
+
+\item Ídem para la función $ f(x) = \left\{ \begin{array}{ll}
+3x+1 & \text{ si } x < -4 \\
+\frac{1}{x+2} & \text{ si } x \geq -4
+\end{array} \right. $
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{29.a}
+
+Para $x = -3$, $ f(x) = x+2 \Rightarrow f(-3) = -3+2 \Rightarrow \hresult{29.a.1}{ f(-3) = -1 } $
+
+Para $x = 1$, $ f(x) = -x \Rightarrow f(1) = -(1) \Rightarrow \hresult{29.a.2}{ f(1) = -1 } $
+
+Para $x = 4$, $ f(x) = 3x-4 \Rightarrow f(4) = 3 \cdot 4 - 4 \Rightarrow \hresult{29.a.3}{ f(4) = 8 } $
+
+A la hora de analizar si $ f(x) = y $ tiene solución, es de utilidad calcular el conjunto imagen de $ f $. En este caso en particular, graficar $ f $ es un camino bastante directo.
+
+\figurex{Ejercicio 29.a}{4}{../img/guide_01/ex_29a.png}{fig:29a}
+
+En la figura~\ref{fig:29a} se observa que $ \mathop{\text{Img}}(f) = \mathbb{R}$. Por ende,
+
+\begin{equation}
+\hresult{29.a.4}{ f(x) = y \text{ tiene solución para todo } y \in \mathbb{R} }
+\end{equation}
+
+En lo que respecta a la unicidad de dicha solución, será única en tanto $ f $ sea inyectiva. Gráficamente, $ f $ es inyectiva en tanto una línea horizontal no corte su curva más de una vez. Si eso ocurre, significa que existen valores de $ y $ con más de un valor de $ x $ asociado, lo cual rompe la condición de inyectividad. Aplicando ese criterio a este caso particular, $ f $ no es inyectiva para $ y $ entre -1 y 1.
+
+\begin{equation}
+\hresult{29.a.5}{ f(x) = y \text{ tiene solución única } \Leftrightarrow y < -1 \vee y > 1 }
+\end{equation}
+
+\subsectionx{29.b}
+
+Para $x = -3$, $ f(x) = \frac{1}{x+2} \Rightarrow f(-3) = \frac{1}{-3+2} \Rightarrow \hresult{29.b.1}{ f(-3) = -1 } $
+
+Para $x = 1$, $ f(x) = \frac{1}{x+2} \Rightarrow f(1) = \frac{1}{1+2} \Rightarrow \hresult{29.b.2}{ f(1) = \frac{1}{3} } $
+
+Para $x = 4$, $ f(x) = \frac{1}{x+2} \Rightarrow f(4) = \frac{1}{4+2} \Rightarrow \hresult{29.b.3}{ f(4) = \frac{1}{6} } $
+
+Nuevamente, se graficará $ f $ para calcular su conjunto imagen.
+
+\figurex{Ejercicio 29.b}{1}{../img/guide_01/ex_29b.png}{fig:29b}
+
+La rama izquierda, correspondiente a $ y = 3x+1 $, toma valores en el intervalo $(-\infty, -11)$. El 11 queda excluido porque la rama está definida para $ x < -4 $. En cuanto a la rama derecha, corresponde a una función racional de primer orden con asíntota horizontal $ y = 0 $, y una asíntota vertical $ x = -2 $. Como está recortada al ser considerada sólo para $ x \geq -4 $, su rama izquierda no está completa. Comienza en $ f(4) = -\frac{1}{2} $ y decrece hacia $-\infty$ al aproximarse a $ x = -2 $ por izquierda. Por lo tanto, la imagen para dicha rama corresponde al intervalo $ \left(-\infty, -\frac{1}{2} \right]$. Y la rama derecha tiende a $+\infty$ al aproximarse a $ x = -2 $ por derecha, por lo que su imagen es $(0, +\infty)$. Combinando todo esto, resulta $ \mathop{\text{Img}}(f) = \left(-\infty, -\frac{1}{2} \right] \cup (0, +\infty) $.
+
+\begin{equation}
+\hresult{29.b.4}{ f(x) = y \text{ tiene solución para todo } y \in \left(-\infty, -\frac{1}{2} \right] \cup (0, +\infty) }
+\end{equation}
+
+En lo que respecta a la unicidad de dicha solución, será única en tanto $ f $ sea inyectiva. Observando el gráfico, $ f $ es inyectiva para $ y \geq -11 $. Pero recuérdese que en $ \left(-\frac{1}{2}, 0 \right] $ no hay preimagen.
+
+\begin{equation}
+\hresult{29.b.5}{ f(x) = y \text{ tiene solución única } \Leftrightarrow y \in \left[-11, -\frac{1}{2} \right] \cup (0, +\infty) }
+\end{equation}
+
 \end{document}
