@@ -2236,4 +2236,57 @@ No hace falta hacer más cuentas para concluir que 530 corresponde a la tercera 
 530 = 50 + \frac{x_0 - 2000000}{1000} \Rightarrow x_0 = 480000 + 200000 \Rightarrow \hresult{30.2}{x_0 = 680000}
 \end{equation}
 
+\sectionx{P1}
+
+\textbf{La función $ f $ es lineal y la función $g$ es cuadrática. Los gráficos de ambas funciones se cortan en los puntos $ P = (-1, 2) $ y $ Q = (2, 0) $. Además, $ g $ se anula en $ x = -2 $. Hallar las fórmulas de $ f $ y $ g $, y encontrar el conjunto de los $ x $ tales que $ f(x) $ es mayor que $ g(x) $. Graficar.}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+$ f $ es una recta, y se conocen dos de sus puntos. Por lo tanto, $ f $ queda determinada por $ P $ y $ Q $ según:
+
+\begin{subequations}
+\begin{align}
+& f(x) = a_f x + b_f \\
+& a_f = \frac{\Delta y}{\Delta x} = \frac{Q_y - P_y}{Q_x - P_x} = \frac{0-2}{2-(-1)} = -\frac{2}{3}
+\end{align}
+\end{subequations}
+
+Para obtener $ b_f $, basta evaluar uno de los dos puntos.
+
+\begin{equation}
+f(2) = 0 \Rightarrow 0 = -\frac{2}{3} 2 + b_f \Rightarrow 0 = -\frac{4}{3} + b_f \Rightarrow b_f = \frac{4}{3}
+\end{equation}
+
+Resulta entonces:
+
+\begin{equation}
+\hresult{P1.1}{ f(x) = -\frac{2}{3} x + \frac{4}{3} }
+\end{equation}
+
+En cuanto a $ g $, se conocen 3 puntos y eso alcanza para determinarla plateando un sistema lineal de 3x3. Pero existe una forma más directa, ya que se conocen sus dos raíces, 2 y -2. Eso permite expresarla en forma factorizada:
+
+\begin{equation}
+g(x) = a_g (x-2) (x+2)
+\end{equation}
+
+Para determinar $ a_g $, es posible usar la información del 3er punto: $ g(-1) = 2 $.
+
+\begin{equation}
+g(-1) = 2 \Rightarrow 2 = a_g (-3) (1) \Rightarrow a_g = -\frac{2}{3}
+\end{equation}
+
+Pasando a la forma polinomial:
+
+\begin{equation}
+g(x) = -\frac{2}{3} (x^2 - 4) \Rightarrow \hresult{30.2}{ g(x) = -\frac{2}{3} x^2 + \frac{8}{3} }
+\end{equation}
+
+Para analizar los valores de $ x $ donde $ f(x) > g(x) $, es de utilidad hacer el gráfico.
+
+\figurex{Ejercicio P1}{3}{../img/guide_01/ex_p1.png}{fig:p1}
+
+Según el gráfico, $ \hresult{30.3}{ f(x) > g(x) \Leftrightarrow x \in (-\infty, -1) \cup (2, +\infty) } $. 
+
 \end{document}
