@@ -3,9 +3,9 @@
 \usepackage{afterpage}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{cancel}
 \usepackage{graphicx}
 \usepackage[spanish]{babel}
-\usepackage{cancel}
 \usepackage{enumerate}
 \usepackage{hyperref}
 \hypersetup{
@@ -2287,6 +2287,50 @@ Para analizar los valores de $ x $ donde $ f(x) > g(x) $, es de utilidad hacer e
 
 \figurex{Ejercicio P1}{3}{../img/guide_01/ex_p1.png}{fig:p1}
 
-Según el gráfico, $ \hresult{30.3}{ f(x) > g(x) \Leftrightarrow x \in (-\infty, -1) \cup (2, +\infty) } $. 
+Según el gráfico, $ \hresult{30.3}{ f(x) > g(x) \Leftrightarrow x \in (-\infty, -1) \cup (2, +\infty) } $.
+
+\sectionx{P2}
+
+\textbf{ Se definen $ \cosh(x) = \frac{e^x + e^{-x}}{2} $ y $ \sinh(x) = \frac{e^x - e^{-x}}{2} $ }. Probar que:
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $ \cosh^2(x) - \sinh^2(x) = 1 $
+
+\item Los gráficos de ambas funciones no se cortan.
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{P2.a}
+
+Aplicando las definiciones:
+
+\begin{subequations}
+\begin{align}
+& \cosh^2(x) - \sinh^2(x) = \left( \frac{e^x + e^{-x}}{2} \right) - \left( \frac{e^x - e^{-x}}{2} \right) = \\
+& \frac{1}{4} (e^{2x} + 2 e^x e^{-x} + e^{-2x}) - \frac{1}{4} (e^{2x} - 2 e^x e^{-x} + e^{-2x}) = \\
+& \cancel{ \frac{1}{4} e^{2x} } + \frac{1}{2} + \cancel{\frac{1}{4} e^{-2x} } - \cancel{\frac{1}{4} e^{2x} } + \frac{1}{2} - \cancel{\frac{1}{4} e^{-2x} } = 1
+\end{align}
+\end{subequations}
+
+\subsectionx{P2.b}
+
+Para que los gráficos de $ \cosh(x) $ y $ \sinh(x) $ se corten, debe existir al menos un valor de $ x $ para el cual se satisfaga:
+
+\begin{subequations}
+\begin{align}
+& \cosh(x) = \sinh(x) \Leftrightarrow \\
+& \frac{e^x + e^{-x}}{2} = \frac{e^x - e^{-x}}{2} \Leftrightarrow \\
+& e^{-x} = -e^{-x} \Leftrightarrow \\
+& 2 e^{-x} = 0 \Leftrightarrow \\
+& e^{-x} = 0
+\end{align}
+\end{subequations}
+
+La exponencial decreciente, al igual que la creciente, no se anula para ningún número real. Por lo tanto, los gráficos de las funciones jamás se cortan.
 
 \end{document}
