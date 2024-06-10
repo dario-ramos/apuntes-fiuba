@@ -2291,7 +2291,7 @@ Según el gráfico, $ \hresult{30.3}{ f(x) > g(x) \Leftrightarrow x \in (-\infty
 
 \sectionx{P2}
 
-\textbf{ Se definen $ \cosh(x) = \frac{e^x + e^{-x}}{2} $ y $ \sinh(x) = \frac{e^x - e^{-x}}{2} $ }. Probar que:
+\textbf{ Se definen $ \cosh(x) = \frac{e^x + e^{-x}}{2} $ y $ \sinh(x) = \frac{e^x - e^{-x}}{2} $ . Probar que:}
 
 \begin{enumerate}[(a)]
 
@@ -2332,5 +2332,78 @@ Para que los gráficos de $ \cosh(x) $ y $ \sinh(x) $ se corten, debe existir al
 \end{subequations}
 
 La exponencial decreciente, al igual que la creciente, no se anula para ningún número real. Por lo tanto, los gráficos de las funciones jamás se cortan.
+
+\sectionx{P3}
+
+\textbf{ Un cántaro vacío con capacidad para 20 litros pesa 2550 gramos. }
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item Represente la función que da el peso total del cántaro en función de la cantidad de agua, en litros, que contiene. Halle su fórmula. ¿Cuál es el dominio?
+
+\item Si disponemos de 3 litros de mercurio, cuyo peso total es 40,8 kg, repita el ítem anterior sustituyendo el agua por el mercurio. 
+
+\item Si se representan las funciones de (a) y (b) en los mismos ejes, ¿qué significa el punto de intersección?
+
+\item ¿Es cierto que a doble cantidad de líquido corresponde doble peso total?
+
+\end{enumerate}
+
+\hrule
+\vspace{1em}
+
+En primer lugar, es incorrecto decir que el cántaro pesa 2550 gramos. El peso es una fuerza, y su valor depende de la masa del objeto y la aceleración de la gravedad. La fuerza es una magnitud vectorial y su intensidad se mide en Newtons, o kilogramos fuerza; la masa es una unidad escalar y se mide en gramos. Son dos magnitudes diferentes. Como la aceleración de la gravedad en la superficie terrestre es, a fines prácticos, una constante, se suele aceptar este abuso de notación. Para ser correctos en términos físicos, se asumirá que el cántaro pesa 2550 gramos fuerza en la superficie terrestre.
+
+\sectionx{P3.a}
+
+Sean:
+
+\begin{itemize}
+
+\item $ x $: cantidad de agua en el cántaro. Unidad: litros.
+
+\item $ f(x) $: peso del cántaro con $ x $ litros de agua en su interior. Unidad: gramos fuerza.
+
+\end{itemize}
+
+Con estas definiciones, y asumiendo condiciones normales de presión y temperatura, la densidad del agua es tal que 1 cc de agua pesa 1 gramo fuerza. Siendo 1 litro igual a 1000 cc, 1 litro de agua pesa 1000 gramos fuerza. Por lo tanto:
+
+\begin{equation}
+\hresult{P3.a}{ f(x) = 2550 + 1000 \cdot x, \mathop{\text{Dom}}(f) = [0, 20] }
+\end{equation}
+
+\sectionx{P3.b}
+
+Sean:
+
+\begin{itemize}
+
+\item $ x $: cantidad de mercurio en el cántaro. Unidad: litros.
+
+\item $ g(x) $: peso del cántaro con $ x $ litros de mercurio en su interior. Unidad: gramos fuerza.
+
+\end{itemize}
+
+Si 3 litros de mercurio pesan 40,8 kg fuerza, entonces 1 litro pesa 40,8/3 = 13,6 kg fuerza = 13600 gramos fuerza. Resulta entonces:
+
+\begin{equation}
+\hresult{P3.b}{ g(x) = 2550 + 13600 \cdot x, \mathop{\text{Dom}}(f) = [0, 20] }
+\end{equation}
+
+\sectionx{P3.c}
+
+Representa el punto $(x, y)$ en donde poner $ x $ litros de agua en el cántaro hace que pese lo mismo que poniendo $ x $ litros de mercurio. Como el agua y el mercurio tienen diferentes densidades, eso sólo puede ocurrir para $ x = 0 $.
+
+\sectionx{P3.d}
+
+No, porque siempre se suma el peso del cántaro y eso rompe la proporción. Algebraicamente, para cualquier función lineal $ f(x) = ax +b $
+
+\begin{equation}
+\frac{f(2x)}{f(x)} = \frac{a 2 x + b}{ax + b}
+\end{equation}
+
+Esto sólo vale 2 para el caso $ b = 0 $.
 
 \end{document}
