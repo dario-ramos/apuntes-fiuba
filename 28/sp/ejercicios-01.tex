@@ -3,9 +3,9 @@
 \usepackage{afterpage}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{cancel}
 \usepackage{graphicx}
 \usepackage[spanish]{babel}
-\usepackage{cancel}
 \usepackage{enumerate}
 \usepackage{hyperref}
 \hypersetup{
@@ -1780,5 +1780,661 @@ Dado que se solicitó explícitamente el caso $ x > 0 $, puede obviarse el módu
 \end{equation}
 
 \end{itemize}
+
+\sectionx{25}
+
+\textbf{A partir de los gráficos de $ g(x) = \sen(x) $ y $ h(x) = \cos(x) $, haga el gráfico de: }
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $ f(x) = \sen( x - \pi ) $
+
+\item $ f(x) = \cos( 2x ) $
+
+\item $ f(x) = \cos( 2x + \pi ) $
+
+\item $ f(x) = \sen\left( x + \frac{\pi}{2} \right) $
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{25.a}
+
+Este es un caso de desplazamiento horizontal, porque se le está sumando o restando una constante al argumento de la función seno. Concretamente, se tiene un desplazamiento de $ \pi $ unidades hacia la derecha. Se deduce que es hacia la derecha porque el punto correspondiente a $x = 0$ pasa a estar en $x = \pi$, que está a la derecha. 
+
+\figurex{Ejercicio 25.a}{4}{../img/guide_01/ex_25a.png}{fig:25a}
+
+\subsectionx{25.b}
+
+En este caso, se tiene un escalamiento horizontal. Al multiplicar el argumento del coseno por 2, los puntos que estaban en $x = a$ ahora pasan a estar en $x = a/2$. Visualmente, es como si la curva se comprimiera horizontalmente por un factor de dos. Tratándose además de una función periódica, el período se reduce a la mitad y la frecuencia se duplica. El nuevo período es entonces $\pi$.
+
+\figurex{Ejercicio 25.b}{5}{../img/guide_01/ex_25b.png}{fig:25b}
+
+\subsectionx{25.c}
+
+Ahora hay dos tranformaciones combinadas: un escalado horizontal con un factor de 2, y un desplazamiento horizontal de $\pi$ unidades hacia la izquierda. En estos casos, hay que tener cuidado porque el orden en que se aplican las transformaciones importa: no es lo mismo escalar y desplazar que desplazar y escalar. En este caso, partiendo del gráfico de $ h(x) = \cos(x) $, lo correcto para llegar a $ f(x) = \cos(2x + \pi) $ es desplazar $\pi$ unidades hacia la izquierda primero, y escalar horizontalmente con un factor de 2 luego. Si se hace lo inverso, el cambio de escala horizontal introducido al escalar primero hace que el desplazamiento de $\pi$ unidades ya no sea válido. De hecho, siguiendo este camino se observa que el desplazamiento debería ser de $\frac{\pi}{2}$ unidades, lo cual tiene sentido por el cambio de escala previo.
+
+\figurex{Ejercicio 25.c}{5}{../img/guide_01/ex_25c.png}{fig:25c}
+
+Esto se ilustra en la figura~\ref{fig:25c} introduciendo el paso intermedio $ f_d(x) = \cos(x + \pi) $ en color naranja. Si primero se desplaza el coseno $\pi$ unidades hacia la izquierda y luego se escala, se llega al gráfico correcto.
+
+\subsectionx{25.d}
+
+Ahora sólo hay un desplazamiento horizontal de $\pi$ unidades hacia la izquierda. Nótese que esto coincide con el gráfico del coseno, lo cual es coherente con la conocida identidad $ \cos(x) = \sen\left(x + \frac{\pi}{2} \right) $.
+
+\figurex{Ejercicio 25.d}{5}{../img/guide_01/ex_25d.png}{fig:25d}
+
+\sectionx{26}
+
+\textbf{Determine todos los valores de $x \in \mathbb{R}$ tales que:}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $ \sen(x) = \frac{1}{2} $
+
+\item $ \cos(x) = \frac{3}{2} $
+
+\item $ \cos^2(x) - \sen^2(x) = 1 $
+
+\item $ \sen^2(x) + \cos^2(x) = 1 $
+
+\item $ \sen(2x) = 2 \sen(x) \cos(x) $
+
+\item $ \cos\left( x + \frac{\pi}{4} \right) = \frac{\sqrt{2}}{2} ( \cos(x) - \sen(x) ) $
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{26.a}
+
+Aplicando arco seno de ambos lados, se obtiene $ x = \frac{\pi}{6} $. A partir de este valor, se puede obtener otro dado por la simetría de la función seno:
+
+\begin{equation}
+\sen(x) = \sen( \pi - x ) \Rightarrow x = \frac{5}{6} \pi \text{ también es solución}
+\end{equation}
+
+Por otro lado, la función seno es $2\pi$-periódica. Por ende, estas dos soluciones deben replicarse al infinito en ambas direcciones, usando el período. Resulta entonces:
+
+\begin{subequations}
+\begin{align}
+\hresult{26.a - 1er conjunto}{ x = \frac{\pi}{6} + 2 k \pi, k \in \mathbb{Z} } \\
+\hresult{26.a - 2do conjunto}{ x = \frac{5}{6}\pi + 2 k \pi, k \in \mathbb{Z} }
+\end{align}
+\end{subequations}
+
+\subsectionx{26.b}
+
+El conjunto imagen de la función coseno está acotado al intervalo $[-1, 1]$. El valor $ \frac{3}{2} $ está fuera de ese intervalo, y por lo tanto esta ecuación no tiene solución en los números reales. Otra forma de verlo es intentar aplicar la función arco coseno de ambos lados: dado que dicha función tiene el conjunto dominio restringido al intervalo $[-1, 1]$, se llega a la misma conclusión al intentar evaluar $ \arccos\left( \frac{3}{2} \right) $.
+
+\subsectionx{26.c}
+
+Esta ecuación recuerda a la identidad $ \sin^2(x) + \cos^2(x) = 1 $. Para que esa expresión aparezca en el lado izquierdo, es posible sumar $2 \sin^2(x)$ miembro a miembro. Ello conduce a:
+
+\begin{subequations}
+\begin{align}
+& \cos^2(x) - \sin^2(x) + 2 \sin^2(x) = 1 + 2 \sin^2(x) \\
+& \underbrace{ \cos^2(x) + \sin^2(x) }_{1} = 1 + 2 \sin^2(x) \\
+& 1 - 1 = 2 \sin^2(x) \\
+& 0 = \sin^2(x) \\
+& 0 = |\sin(x)|
+\end{align}
+\end{subequations}
+
+Los ceros del seno cuadrado y del seno con módulo son los mismos que los del seno común, vale decir:
+
+\begin{equation}
+\hresult{26.c}{ x = k \pi, k \in \mathbb{Z} }
+\end{equation}
+
+\subsectionx{26.d}
+
+Esta es una identidad trigonométrica, y se cumple para todo valor de x.
+
+\begin{equation}
+\hresult{26.d}{ x \in \mathbb{R} }
+\end{equation}
+
+\subsectionx{26.e}
+
+Identidad a aplicar: seno de la suma.
+
+\begin{equation}
+\sin(a + b) = \sin(a) \cos(b) + \cos(a) \sin(b)
+\end{equation}
+
+Para este caso particular, $ a = x, b = x $.
+
+\begin{subequations}
+\begin{align}
+& \sin(x + x) = \sin(x) \cos(x) + \cos(x) \sin(x) \\
+& \sin(2x) = 2 \sin(x) \cos(x)
+\end{align}
+\end{subequations}
+
+Por lo tanto, esta ecuación es una identidad: se cumple para todo valor de x.
+
+\begin{equation}
+\hresult{26.e}{ x \in \mathbb{R} }
+\end{equation}
+
+\subsectionx{26.f}
+
+Identidad a aplicar: coseno de la suma.
+
+\begin{equation}
+\cos(a + b) = \cos(a) \cos(b) - \sin(a) \sin(b)
+\end{equation}
+
+Para este caso particular, $ a = x, b = \frac{\pi}{4} $.
+
+\begin{subequations}
+\begin{align}
+\cos\left( x + \frac{\pi}{4} \right) &= \cos(x) \underbrace{ \cos\left( \frac{\pi}{4} \right) }_{ \sqrt{2}/2 } - \sin(x) \underbrace{ \sin\left( \frac{\pi}{4} \right) }_{ \sqrt{2}/2 } \\
+&= \frac{\sqrt{2}}{2} \cos(x) - \frac{\sqrt{2}}{2} \sin(x) \\
+&= \frac{\sqrt{2}}{2} ( \cos(x) - \sin(x) )
+\end{align}
+\end{subequations}
+
+Por lo tanto, esta ecuación es una identidad: se cumple para todo valor de x.
+
+\begin{equation}
+\hresult{26.f}{ x \in \mathbb{R} }
+\end{equation}
+
+\sectionx{27}
+
+\textbf{Haga el gráfico de las funciones inversas de $ g(x) = \sin(x) $ y $ h(x) = \cos(x) $. Determine los valores de $ x \in \mathbb{R} $ tales que:}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $ \arcsin(x) = \frac{\pi}{4} $
+
+\item $ \arccos(x) = \pi $
+
+\item $ \cos( \arcsin(x) ) = \sqrt{1 - x^2} $
+
+\end{enumerate}
+
+\hrule
+\vspace{1em}
+
+Como siempre que se calcula una función inversa, es necesario analizar dominio, imagen y sobreyectividad de la función a invertir. En el caso de $ g(x) = \sin(x) $:
+
+\begin{itemize}
+
+\item $ \mathop{\text{Dom}}(f) = \mathbb{R} $
+
+\item $ \mathop{\text{Img}}(f) = [-1, 1] $
+
+\item $ g $ no es inyectiva en su dominio; al ser periódica, los valores de $ y $ se repiten infinitamente y dado un valor de $y$ entre -1 y 1, su preimagen $x$ no está unívocamente determinada.
+
+\end{itemize}
+
+Dado que $ g $ no es inyectiva, es necesario restringir su dominio a un intervalo donde lo sea para poder calcular su inversa. Observando el gráfico del seno, el primer tramo donde es monótona creciente corresponde a $ x \in \left[-\frac{\pi}{2}, \frac{\pi}{2} \right] $. Convenientemente, ese tramo es el asociado a la rama canónica de la función arco seno. Vale decir, los valores que devuelve una calculadora para la función arco seno corresponden a la inversa de dicho tramo del seno.
+
+Para graficar la función arco seno, dado que no tiene una expresión cerrada, no queda más alternativa que armar una tabla de valores e interpolar. A la hora de elegir valores, hay que considerar que si la función original tiene dominio $ \left[-\frac{\pi}{2}, \frac{\pi}{2} \right] $ e imagen $[-1, 1]$, la función arco seno tendrá dominio $[-1, 1]$ e imagen $ \left[-\frac{\pi}{2}, \frac{\pi}{2} \right] $.
+
+\begin{table}[h!]
+\centering
+ \begin{tabular}{||c c||} 
+ \hline
+ x & arcsin(x) \\ [0.5ex] 
+ \hline\hline
+ -1 & $-\frac{\pi}{2}$ \\ 
+ \hline
+ -0,75 & -0,84806... \\ 
+ \hline
+ -0,5 & -0,52359... \\ 
+ \hline
+ -0,25 & -0,25268... \\ 
+ \hline
+ 0 & 0 \\ 
+ \hline
+ 0,25 & 0,25268... \\ 
+ \hline
+ 0,5 & 0,52359... \\ 
+ \hline
+ 0,75 & 0,84806... \\ 
+ \hline
+ 1 & $\frac{\pi}{2}$ \\ [1ex] 
+ \hline
+ \end{tabular}
+\end{table}
+
+Se observa que, al igual que la función seno, la función arco seno es impar, ya que se verifica $ \arcsin(-x) = -\arcsin(x) $. Con los valores de esta tabla se puede trazar un gráfico aproximado como el de la figura~\ref{fig:27a}. Nótese la simetría respecto a la recta $ y = x $ entre el segmento de seno y su inversa.
+
+\figurex{Ejercicio 27.a}{4.6}{../img/guide_01/ex_27a.png}{fig:27a}
+
+Aplicando este mismo procedimiento a $ h(x) = \cos(x) $, el primer tramo donde resulta inyectiva corresponde a $x \in [0, \pi]$. La imagen de ese tramo es $[-1, 1]$, por lo que la función arco coseno asociada a esa rama, que de nuevo es la canónica, tendrá como dominio $[-1, 1]$ y como imagen $[0, \pi]$. Tomando valores de nuevo, se puede aproximar un gráfico como el de la figura~\ref{fig:27b}.
+
+\figurex{Ejercicio 27.b}{5}{../img/guide_01/ex_27b.png}{fig:27b}
+
+\subsectionx{27.a}
+
+Asumiendo que la función arco seno considerada es la canónica, existe una sola solución a esta ecuación y se obtiene aplicando la función seno miembro a miembro.
+
+\begin{equation}
+\sin( \arcsin(x) ) = \sin\left( \frac{\pi}{4} \right) \Rightarrow \hresult{27.a}{ x = \frac{\sqrt{2}}{2} }
+\end{equation}
+
+\subsectionx{27.b}
+
+Análogamente al inciso anterior, si se supone que la función arco coseno considerada es la canónica:
+
+\begin{equation}
+\cos( \arccos(x) ) = \cos( \pi ) \Rightarrow \hresult{27.b}{ x = -1 }
+\end{equation}
+
+\subsectionx{27.c}
+
+Si se analiza esta ecuación como la búsqueda de la intersección entre dos funciones, y se grafican ambos lados de la igualdad, se notará que las tablas de valores son iguales. En otras palabras, esto es una identidad y se cumple para todos los valores de $ x $ para los que están definidos ambos lados de la igualdad.
+
+Por el lado derecho, el radicando debe ser no negativo, por ende $ 1 - x^2 \geq 0 \Rightarrow 1 \geq x^2 \Rightarrow 1 \geq |x| $. Y en el lado izquierdo, el argumento del arco seno debe estar entre -1 y 1, lo cual equivale a la restricción anterior.
+
+Para probar la identidad, el hecho de que aparezcan 1, la suma de dos cuadrados y una raíz, suena al teorema de Pitágoras. Considérese que para cualquier ángulo $ \theta $ en radianes, se satisface la identidad pitagórica:
+
+\begin{equation}
+\sin^2( \theta ) + \cos^2( \theta ) = 1
+\end{equation}
+
+Por otro lado, si $ \theta \in [ -\pi/2 \pi/2 ] $, tiene un valor seno que se vincula con la función arco seno canónica. Llámese, arbitrariamente, $x$ al arco seno de $ \theta $, de manera que:
+
+\begin{itemize}
+
+\item $ \arcsin(x) = \theta $
+
+\item $ \sin( \theta ) = x $
+
+\end{itemize}
+
+Ahora bien, reemplazando $ \sin(\theta) = x $ en la identidad pitagórica:
+
+\begin{equation}
+x^2 + \cos^2( \theta ) = 1
+\end{equation}
+
+Despejando el coseno para acercarse a la identidad buscada:
+
+\begin{equation}
+\cos^2( \theta ) = 1 - x^2
+\end{equation}
+
+Como se estableció que $ \theta \in [ -\pi/2 \pi/2 ] $, y en dicho rango la función coseno no toma valores negativos, se puede cancelar el cuadrado con la raíz del lado izquierdo sin introducir el módulo.
+
+\begin{equation}
+\cos( \theta ) = \sqrt{ 1 - x^2 }
+\end{equation}
+
+Finalmente, recuérdese que $ \theta = \arcsin(x) $, y con ello se llega a la identidad:
+
+\begin{equation}
+\cos( \arcsin(x) ) = \sqrt{ 1 - x^2 }
+\end{equation}
+
+No perder de vista que esto sólo vale para:
+
+\begin{equation}
+\hresult{27.c}{x \in [-1, 1]}
+\end{equation}
+
+\sectionx{28}
+
+\textbf{Represente las siguientes funciones:}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $ f(x) = |x+5| $
+
+\item $ f(x) = |x-5| $
+
+\item $ f(x) = | \sin(x) | $
+
+\item $ f(x) = | e^x | $
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{28.a}
+
+Es la función módulo desplazada 5 unidades hacia la izquierda.
+
+\figurex{Ejercicio 28.a}{1.9}{../img/guide_01/ex_28a.png}{fig:28a}
+
+\subsectionx{28.b}
+
+Es la función módulo desplazada 5 unidades hacia la derecha.
+
+\figurex{Ejercicio 28.b}{1.9}{../img/guide_01/ex_28b.png}{fig:28b}
+
+\subsectionx{28.c}
+
+De manera generar, aplicar la función módulo a una función cualquiera hace que sus partes negativas se vuelvan positivas. Gráficamente, las partes de la curva que estén bajo el eje $ x $ serán reflejadas respecto al mismo. En el caso del seno, el mismo es negativo en los infinitos intervalos $ \ldots \cup (\pi, 2\pi) \cup (3\pi, 4\pi) \cup \ldots = \bigcup\limits_{k=-\infty}^{+\infty} ((2k-1)\pi, 2k\pi) $. En otras palabras, todos los lóbulos negativos de la curva seno serán invertidos respecto al eje $x$.
+
+\figurex{Ejercicio 28.c}{3.3}{../img/guide_01/ex_28c.png}{fig:28c}
+
+\subsectionx{28.d}
+
+Aplicar módulo a la función exponencial no tiene ningún efecto, ya que no toma valores negativos. Es exactamente la misma curva que $y = e^x$.
+
+\figurex{Ejercicio 28.d}{2}{../img/guide_01/ex_28d.png}{fig:28d}
+
+\sectionx{29}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item Dada la función $ f(x) = \left\{ \begin{array}{ll}
+x + 2 & \text{ si } x \leq -1 \\
+-x & \text{ si } -1 < x \leq 1 \\
+3x-4 \text{ si } 1 < x
+\end{array} \right. $, calcule $ f(-3) $, $ f(1) $ y $ f(4) $. Determine para qué valores de $ y $ la ecuación $ f(x) = y $ tiene solución. ¿Cuándo es única?
+
+\item Ídem para la función $ f(x) = \left\{ \begin{array}{ll}
+3x+1 & \text{ si } x < -4 \\
+\frac{1}{x+2} & \text{ si } x \geq -4
+\end{array} \right. $
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{29.a}
+
+Para $x = -3$, $ f(x) = x+2 \Rightarrow f(-3) = -3+2 \Rightarrow \hresult{29.a.1}{ f(-3) = -1 } $
+
+Para $x = 1$, $ f(x) = -x \Rightarrow f(1) = -(1) \Rightarrow \hresult{29.a.2}{ f(1) = -1 } $
+
+Para $x = 4$, $ f(x) = 3x-4 \Rightarrow f(4) = 3 \cdot 4 - 4 \Rightarrow \hresult{29.a.3}{ f(4) = 8 } $
+
+A la hora de analizar si $ f(x) = y $ tiene solución, es de utilidad calcular el conjunto imagen de $ f $. En este caso en particular, graficar $ f $ es un camino bastante directo.
+
+\figurex{Ejercicio 29.a}{4}{../img/guide_01/ex_29a.png}{fig:29a}
+
+En la figura~\ref{fig:29a} se observa que $ \mathop{\text{Img}}(f) = \mathbb{R}$. Por ende,
+
+\begin{equation}
+\hresult{29.a.4}{ f(x) = y \text{ tiene solución para todo } y \in \mathbb{R} }
+\end{equation}
+
+En lo que respecta a la unicidad de dicha solución, será única en tanto $ f $ sea inyectiva. Gráficamente, $ f $ es inyectiva en tanto una línea horizontal no corte su curva más de una vez. Si eso ocurre, significa que existen valores de $ y $ con más de un valor de $ x $ asociado, lo cual rompe la condición de inyectividad. Aplicando ese criterio a este caso particular, $ f $ no es inyectiva para $ y $ entre -1 y 1.
+
+\begin{equation}
+\hresult{29.a.5}{ f(x) = y \text{ tiene solución única } \Leftrightarrow y < -1 \vee y > 1 }
+\end{equation}
+
+\subsectionx{29.b}
+
+Para $x = -3$, $ f(x) = \frac{1}{x+2} \Rightarrow f(-3) = \frac{1}{-3+2} \Rightarrow \hresult{29.b.1}{ f(-3) = -1 } $
+
+Para $x = 1$, $ f(x) = \frac{1}{x+2} \Rightarrow f(1) = \frac{1}{1+2} \Rightarrow \hresult{29.b.2}{ f(1) = \frac{1}{3} } $
+
+Para $x = 4$, $ f(x) = \frac{1}{x+2} \Rightarrow f(4) = \frac{1}{4+2} \Rightarrow \hresult{29.b.3}{ f(4) = \frac{1}{6} } $
+
+Nuevamente, se graficará $ f $ para calcular su conjunto imagen.
+
+\figurex{Ejercicio 29.b}{1}{../img/guide_01/ex_29b.png}{fig:29b}
+
+La rama izquierda, correspondiente a $ y = 3x+1 $, toma valores en el intervalo $(-\infty, -11)$. El 11 queda excluido porque la rama está definida para $ x < -4 $. En cuanto a la rama derecha, corresponde a una función racional de primer orden con asíntota horizontal $ y = 0 $, y una asíntota vertical $ x = -2 $. Como está recortada al ser considerada sólo para $ x \geq -4 $, su rama izquierda no está completa. Comienza en $ f(4) = -\frac{1}{2} $ y decrece hacia $-\infty$ al aproximarse a $ x = -2 $ por izquierda. Por lo tanto, la imagen para dicha rama corresponde al intervalo $ \left(-\infty, -\frac{1}{2} \right]$. Y la rama derecha tiende a $+\infty$ al aproximarse a $ x = -2 $ por derecha, por lo que su imagen es $(0, +\infty)$. Combinando todo esto, resulta $ \mathop{\text{Img}}(f) = \left(-\infty, -\frac{1}{2} \right] \cup (0, +\infty) $.
+
+\begin{equation}
+\hresult{29.b.4}{ f(x) = y \text{ tiene solución para todo } y \in \left(-\infty, -\frac{1}{2} \right] \cup (0, +\infty) }
+\end{equation}
+
+En lo que respecta a la unicidad de dicha solución, será única en tanto $ f $ sea inyectiva. Observando el gráfico, $ f $ es inyectiva para $ y \geq -11 $. Pero recuérdese que en $ \left(-\frac{1}{2}, 0 \right] $ no hay preimagen.
+
+\begin{equation}
+\hresult{29.b.5}{ f(x) = y \text{ tiene solución única } \Leftrightarrow y \in \left[-11, -\frac{1}{2} \right] \cup (0, +\infty) }
+\end{equation}
+
+\sectionx{30}
+
+\textbf{El impuesto a la riqueza es igual a 0,50 pesos por cada mil pesos por encima de 100 mil pesos y de 1 peso por cada mil pesos por encima de 200 mil pesos. Escriba el monto del impuesto en función de la riqueza. ¿Cuál es la riqueza de alguien que paga 530 pesos de impuesto? }
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+Asumiendo que el impuesto se aplica sobre la cantidad de pesos que exceden a 100 mil o 200 mil, es necesario restar dichos valores a la riqueza antes de multiplicar. Además, al pasar los 200 mil, se debe sumar el impuesto asociado a todos los pesos entre 100000 y 200000, que valdría $ 0,5 \cdot (200000-100000)/1000 = 50 $
+Con eso en mente, si $ x $ es la riqueza total en pesos y $ f(x) $ es el impuesto en pesos asociado a dicha riqueza, resulta:
+
+\begin{equation}
+\hresult{30.1}{
+f(x) = \left\{ \begin{array}{ll}
+0 & \text{ si } x \geq 100000 \\
+0,5 \cdot \left( \frac{x-100000}{1000} \right) & \text{ si } 100000 < x \leq 200000 \\
+50 + 1 \cdot \left( \frac{x-200000}{1000} \right) & \text{ si } x > 200000
+\end{array} \right. }
+\end{equation}
+
+Respecto a calcular la riqueza cuando el impuesto vale $ 530 $ pesos, ayuda calcular los valores extremos de cada tramo:
+
+\begin{enumerate}
+
+\item $ f(100000^{+}) = 0,5 \cdot \frac{100000^{+} - 100000}{1000} = 0^{+} $
+
+\item $ f(200000) = 0,5 \cdot \frac{200000 - 100000}{1000} = 50 $
+
+\item $ f(200000^{+}) = 50 + \frac{200000^{+} - 200000}{1000} = 50^{+} $
+
+\end{enumerate}
+
+No hace falta hacer más cuentas para concluir que 530 corresponde a la tercera rama de $ f $. Por lo tanto, se utiliza la expresión de dicha rama para calcular la preimagen.
+
+\begin{equation}
+530 = 50 + \frac{x_0 - 2000000}{1000} \Rightarrow x_0 = 480000 + 200000 \Rightarrow \hresult{30.2}{x_0 = 680000}
+\end{equation}
+
+\sectionx{P1}
+
+\textbf{La función $ f $ es lineal y la función $g$ es cuadrática. Los gráficos de ambas funciones se cortan en los puntos $ P = (-1, 2) $ y $ Q = (2, 0) $. Además, $ g $ se anula en $ x = -2 $. Hallar las fórmulas de $ f $ y $ g $, y encontrar el conjunto de los $ x $ tales que $ f(x) $ es mayor que $ g(x) $. Graficar.}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+$ f $ es una recta, y se conocen dos de sus puntos. Por lo tanto, $ f $ queda determinada por $ P $ y $ Q $ según:
+
+\begin{subequations}
+\begin{align}
+& f(x) = a_f x + b_f \\
+& a_f = \frac{\Delta y}{\Delta x} = \frac{Q_y - P_y}{Q_x - P_x} = \frac{0-2}{2-(-1)} = -\frac{2}{3}
+\end{align}
+\end{subequations}
+
+Para obtener $ b_f $, basta evaluar uno de los dos puntos.
+
+\begin{equation}
+f(2) = 0 \Rightarrow 0 = -\frac{2}{3} 2 + b_f \Rightarrow 0 = -\frac{4}{3} + b_f \Rightarrow b_f = \frac{4}{3}
+\end{equation}
+
+Resulta entonces:
+
+\begin{equation}
+\hresult{P1.1}{ f(x) = -\frac{2}{3} x + \frac{4}{3} }
+\end{equation}
+
+En cuanto a $ g $, se conocen 3 puntos y eso alcanza para determinarla plateando un sistema lineal de 3x3. Pero existe una forma más directa, ya que se conocen sus dos raíces, 2 y -2. Eso permite expresarla en forma factorizada:
+
+\begin{equation}
+g(x) = a_g (x-2) (x+2)
+\end{equation}
+
+Para determinar $ a_g $, es posible usar la información del 3er punto: $ g(-1) = 2 $.
+
+\begin{equation}
+g(-1) = 2 \Rightarrow 2 = a_g (-3) (1) \Rightarrow a_g = -\frac{2}{3}
+\end{equation}
+
+Pasando a la forma polinomial:
+
+\begin{equation}
+g(x) = -\frac{2}{3} (x^2 - 4) \Rightarrow \hresult{30.2}{ g(x) = -\frac{2}{3} x^2 + \frac{8}{3} }
+\end{equation}
+
+Para analizar los valores de $ x $ donde $ f(x) > g(x) $, es de utilidad hacer el gráfico.
+
+\figurex{Ejercicio P1}{3}{../img/guide_01/ex_p1.png}{fig:p1}
+
+Según el gráfico, $ \hresult{30.3}{ f(x) > g(x) \Leftrightarrow x \in (-\infty, -1) \cup (2, +\infty) } $.
+
+\sectionx{P2}
+
+\textbf{ Se definen $ \cosh(x) = \frac{e^x + e^{-x}}{2} $ y $ \sinh(x) = \frac{e^x - e^{-x}}{2} $ . Probar que:}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $ \cosh^2(x) - \sinh^2(x) = 1 $
+
+\item Los gráficos de ambas funciones no se cortan.
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{P2.a}
+
+Aplicando las definiciones:
+
+\begin{subequations}
+\begin{align}
+& \cosh^2(x) - \sinh^2(x) = \left( \frac{e^x + e^{-x}}{2} \right) - \left( \frac{e^x - e^{-x}}{2} \right) = \\
+& \frac{1}{4} (e^{2x} + 2 e^x e^{-x} + e^{-2x}) - \frac{1}{4} (e^{2x} - 2 e^x e^{-x} + e^{-2x}) = \\
+& \cancel{ \frac{1}{4} e^{2x} } + \frac{1}{2} + \cancel{\frac{1}{4} e^{-2x} } - \cancel{\frac{1}{4} e^{2x} } + \frac{1}{2} - \cancel{\frac{1}{4} e^{-2x} } = 1
+\end{align}
+\end{subequations}
+
+\subsectionx{P2.b}
+
+Para que los gráficos de $ \cosh(x) $ y $ \sinh(x) $ se corten, debe existir al menos un valor de $ x $ para el cual se satisfaga:
+
+\begin{subequations}
+\begin{align}
+& \cosh(x) = \sinh(x) \Leftrightarrow \\
+& \frac{e^x + e^{-x}}{2} = \frac{e^x - e^{-x}}{2} \Leftrightarrow \\
+& e^{-x} = -e^{-x} \Leftrightarrow \\
+& 2 e^{-x} = 0 \Leftrightarrow \\
+& e^{-x} = 0
+\end{align}
+\end{subequations}
+
+La exponencial decreciente, al igual que la creciente, no se anula para ningún número real. Por lo tanto, los gráficos de las funciones jamás se cortan.
+
+\sectionx{P3}
+
+\textbf{ Un cántaro vacío con capacidad para 20 litros pesa 2550 gramos. }
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item Represente la función que da el peso total del cántaro en función de la cantidad de agua, en litros, que contiene. Halle su fórmula. ¿Cuál es el dominio?
+
+\item Si disponemos de 3 litros de mercurio, cuyo peso total es 40,8 kg, repita el ítem anterior sustituyendo el agua por el mercurio. 
+
+\item Si se representan las funciones de (a) y (b) en los mismos ejes, ¿qué significa el punto de intersección?
+
+\item ¿Es cierto que a doble cantidad de líquido corresponde doble peso total?
+
+\end{enumerate}
+
+\hrule
+\vspace{1em}
+
+En primer lugar, es incorrecto decir que el cántaro pesa 2550 gramos. El peso es una fuerza, y su valor depende de la masa del objeto y la aceleración de la gravedad. La fuerza es una magnitud vectorial y su intensidad se mide en Newtons, o kilogramos fuerza; la masa es una unidad escalar y se mide en gramos. Son dos magnitudes diferentes. Como la aceleración de la gravedad en la superficie terrestre es, a fines prácticos, una constante, se suele aceptar este abuso de notación. Para ser correctos en términos físicos, se asumirá que el cántaro pesa 2550 gramos fuerza en la superficie terrestre.
+
+\sectionx{P3.a}
+
+Sean:
+
+\begin{itemize}
+
+\item $ x $: cantidad de agua en el cántaro. Unidad: litros.
+
+\item $ f(x) $: peso del cántaro con $ x $ litros de agua en su interior. Unidad: gramos fuerza.
+
+\end{itemize}
+
+Con estas definiciones, y asumiendo condiciones normales de presión y temperatura, la densidad del agua es tal que 1 cc de agua pesa 1 gramo fuerza. Siendo 1 litro igual a 1000 cc, 1 litro de agua pesa 1000 gramos fuerza. Por lo tanto:
+
+\begin{equation}
+\hresult{P3.a}{ f(x) = 2550 + 1000 \cdot x, \mathop{\text{Dom}}(f) = [0, 20] }
+\end{equation}
+
+\sectionx{P3.b}
+
+Sean:
+
+\begin{itemize}
+
+\item $ x $: cantidad de mercurio en el cántaro. Unidad: litros.
+
+\item $ g(x) $: peso del cántaro con $ x $ litros de mercurio en su interior. Unidad: gramos fuerza.
+
+\end{itemize}
+
+Si 3 litros de mercurio pesan 40,8 kg fuerza, entonces 1 litro pesa 40,8/3 = 13,6 kg fuerza = 13600 gramos fuerza. Resulta entonces:
+
+\begin{equation}
+\hresult{P3.b}{ g(x) = 2550 + 13600 \cdot x, \mathop{\text{Dom}}(f) = [0, 20] }
+\end{equation}
+
+\sectionx{P3.c}
+
+Representa el punto $(x, y)$ en donde poner $ x $ litros de agua en el cántaro hace que pese lo mismo que poniendo $ x $ litros de mercurio. Como el agua y el mercurio tienen diferentes densidades, eso sólo puede ocurrir para $ x = 0 $.
+
+\sectionx{P3.d}
+
+No, porque siempre se suma el peso del cántaro y eso rompe la proporción. Algebraicamente, para cualquier función lineal $ f(x) = ax +b $:
+
+\begin{equation}
+\frac{f(2x)}{f(x)} = \frac{a 2 x + b}{ax + b}
+\end{equation}
+
+Esto sólo vale 2 para el caso $ b = 0 $.
+
+\sectionx{P4}
+
+\textbf{Si $ f(n) = \frac{2^{3n}}{4n+1} $, calcular $ \frac{f(n+1)}{f(n)} $ y obtener su valor numérico para $ n = 1, 2, 3, 4 $ y $ 5 $. }
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+Evaluando de manera directa:
+
+\begin{subequations}
+\begin{align}
+& \frac{f(n+1)}{f(n)} = \frac{2^{3(n+1)}}{4 (n+1) + 1} : \frac{2^{3n}}{4n+1} = \\
+& \frac{ \cancel{2^{3n}} 2^3}{4n+5} : \frac{ \cancel{2^{3n}} }{4n+1} = \\
+& \frac{8 (4n+1)}{(4n+5)} \Rightarrow \\
+& \hresult{P4.1}{ \frac{f(n+1)}{f(n)} = \frac{32n+8}{4n+5} }
+\end{align}
+\end{subequations}
+
+Sea $ g(n) = \frac{f(n+1)}{f(n)} $. Dando valores a $ n $ en la expresión obtenida,
+
+\begin{subequations}
+\begin{align}
+g(1) &= \frac{40}{9} \approx 4,4444 \\
+g(2) &= \frac{72}{13} \approx 5,5385 \\
+g(3) &= \frac{104}{17} \approx 6,1176 \\
+g(4) &= \frac{136}{21} \approx 6,4762 \\
+g(5) &= \frac{168}{25} = 6,72
+\end{align}
+\end{subequations}
 
 \end{document}
