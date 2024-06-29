@@ -2,7 +2,7 @@
 
 %\usepackage{afterpage}
 \usepackage{amsmath}
-%\usepackage{amssymb}
+\usepackage{amssymb}
 %\usepackage{cancel}
 %\usepackage{graphicx}
 \usepackage[spanish]{babel}
@@ -17,19 +17,19 @@
 }
 %\usepackage{longdivision}
 %\usepackage{polynom}
-%\usepackage{tcolorbox}
+\usepackage{tcolorbox}
 %\usepackage{xcolor}
 %
-%\tcbuselibrary{theorems}
+\tcbuselibrary{theorems}
 %
-%\newcommand{\hresult}[2]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] {#2} }
+\newcommand{\hresult}[2]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] {#2} }
 %\newcommand{\hresulte}[3]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] { \hspace{#3} #2 \hspace{#3} } }
-%\newcommand{\figurex}[4]{\begin{figure}[ht] \caption{#1} \includegraphics[scale=#2]{#3} \centering \label{#4}\end{figure}}
+\newcommand{\figurex}[4]{\begin{figure}[ht] \caption{#1} \includegraphics[scale=#2]{#3} \centering \label{#4}\end{figure}}
 %\newcommand{\figurexnp}[4]{\afterpage{\figurex{#1}{#2}{#3}{#4}}}
 \newcommand{\sectionx}[1]{\section*{#1}\label{sec:#1}\addcontentsline{toc}{section}{\nameref{sec:#1}}}
 \newcommand{\subsectionx}[1]{\subsection*{#1}\label{subsec:#1}\addcontentsline{toc}{subsection}{\nameref{subsec:#1}}}
-%
-%\renewcommand{\Bbb}{\mathbb}
+
+\renewcommand{\Bbb}{\mathbb}
 
 \title{Ejercicios de Análisis Matemático CBC (28) \\
 Práctica 2: La Recta real \\
@@ -129,2361 +129,267 @@ Valores de menor a mayor:
 
 \end{enumerate}
 
-%
-%\sectionx{2}
-%
-%\textbf{Con una lámina rectangular de 40 por 30 queremos hacer una caja como muestra la figura~\ref{fig:2}}
-%
-%\figurex{}{2}{../img/guide_01/ex_02.png}{fig:2}
-%
-%\begin{enumerate}[(a)]
-%
-%\bfseries
-%
-%\item \textbf{Busque la expresión del volumen de la caja en función de $x$. }
-%
-%\item \textbf{¿Cuál es el dominio?}
-%
-%\item \textbf{Haga un gráfico aproximado a partir de una tabla de valores.}
-%
-%\end{enumerate}
-%\hrule
-%
-%\subsectionx{2.a}
-%
-%El volumen de un cubo no regular, u ortoedro o prisma rectangular, es el área de su base multiplicada por su altura. En este caso:
-%
-%\begin{equation}
-%v(x) = (30-2x)(40-2x)x = \hresult{2.a}{ 4x^3 - 140x^2 +1200x }
-%\end{equation}
-%
-%\subsectionx{2.b}
-%
-%Exigiendo que todos los lados sean mayores a cero, se obtiene:
-%
-%\begin{subequations}
-%\begin{align}
-%& 30 - 2x > 0 \Rightarrow 30 > 2x \Rightarrow x < 15 \\
-%& 40 - 2x > 0 \Rightarrow 40 > 2x \Rightarrow x < 20 \\
-%& x > 0
-%\end{align}
-%\end{subequations}
-%
-%Para que estas tres condiciones se cumplan al mismo tiempo, debe ser:
-%
-%\begin{equation}
-%\hresult{2.b}{ \mathop{\text{Dom}}(v) = \{ x \in \mathbb{R} / 0 < x < 15 \} }
-%\end{equation}
-%
-%\subsectionx{2.c}
-%
-%La función $v(x)$ es cúbica, con ceros en 0, 15 y 30. Cabe esperar un máximo en el dominio definido, ya que $v(0) = v(15) = 0$.
-%
-%\begin{center}
-%\begin{tabular}{||c c||} 
-% \hline
-% x & v(x) \\ [0.5ex] 
-% \hline\hline
-% 1 & 1064 \\ 
-% \hline
-% 3 & 2448 \\
-% \hline
-% 5 & 3000 \\
-% \hline
-% 7 & 2912 \\
-% \hline
-% 9 & 2376 \\
-% \hline
-% 11 & 1584 \\
-% \hline
-% 13 & 728 \\ [1ex] 
-% \hline
-%\end{tabular}
-%\end{center}
-%
-%\newpage
-%
-%\figurex{}{0.6}{../img/guide_01/ex_02c.png}{fig:2c}
-%
-%\sectionx{3}
-%
-%\textbf{Entre todos los rectángulos de perímetro 20, halle la función que relaciona la base $x$ con la altura $y$. Haga un gráfico que la represente. ¿Cuál es el dominio?}
-%
-%\vspace{1em}
-%\hrule
-%\vspace{1em}
-%
-%El perímetro es la suma de los lados. Si la base es $x$ y la altura es $y$, el perímetro es:
-%
-%\begin{equation}
-%P = x + x + y + y
-%\end{equation}
-%
-%Dado que el perímetro es siempre 20:
-%
-%\begin{equation}
-%20 = 2x + 2y
-%\end{equation}
-%
-%Despejando y:
-%
-%\begin{equation}
-%y = 10 - x
-%\end{equation}
-%
-%Para obtener el dominio, se exige que tanto $x$ como $y$ sean positivos. Dado que $y$ depende de $x$, resulta $10 - x > 0 \Rightarrow x < 10$. El dominio es entonces:
-%
-%\begin{equation}
-%\hresult{Dominio}{ \mathop{\text{Dom(y)}} = \{ x \in \mathbb{R} / 0 < x < 10 \} }
-%\end{equation}
-%
-%\newpage
-%
-%\figurex{Gráfico de y = 10-x}{0.8}{../img/guide_01/ex_03.png}{fig:3}
-%
-%\sectionx{4}
-%
-%\textbf{Halle el área de un triángulo rectángulo isósceles en función del cateto. Dibuje el gráfico de la función hallada a partir de una tabla de valores. Indique cuál es el dominio.}
-%
-%\vspace{1em}
-%\hrule
-%\vspace{1em}
-%
-%Si un cateto mide $x$, por ser isósceles el otro cateto también mide $x$. Dado que el área de un triángulo es base por altura sobre dos, tomando un cateto como base y el otro como altura, resulta:
-%
-%\begin{equation}
-%\hresult{4}{ a(x) = \frac{x^2}{2}, \mathop{\text{Dom}}(a) = \{ x \in \mathbb{R} / x > 0 \} }
-%\end{equation}
-%
-%\newpage
-%
-%\figurex{Gráfico de $y = x^2/2 $}{0.8}{../img/guide_01/ex_04.png}{fig:4}
-%
-%\sectionx{5}
-%
-%\textbf{Dados los siguientes conjuntos del plano, determine, en cada caso, si existe una función cuyo gráfico sea el dado.}
-%
-%\figurex{}{2}{../img/guide_01/ex_05.png}{fig:5}
-%
-%\hrule
-%\vspace{1em}
-%
-%Etiquetando de izquierda a derecha (a, b y c son la primera fila y d, e y f la segunda):
-%
-%\begin{enumerate}[(a)]
-%\item Sí, es una recta con pendiente positiva. Puede verse como una función de $x$ y también como una función de $y$.
-%
-%\item Sí, aunque sólo como función de $x$. Si se ve como función de $y$, hay valores de $y$ para los cuales hay más de un valor de $x$. Esto rompe la propiedad de unicidad de las funciones. Volviendo al caso válido, $y = f(x)$ puede armarse como una función por partes. Para $x < 0$, es una recta con pendiente negativa, y para $x > 0$, pendiente positiva. Ambas cortan al eje $y$ en el mismo punto.
-%
-%\item No como función de $x$, pero sí como función de $y$. En este segundo caso, puede ser una parábola de la forma $x = a (y-y_0)^2 + b$
-%
-%\item Sí como función de $x$, no como función de $y$. En el caso válido, puede armarse como una rama parabólica para $x < 0$ y otra para $x > 0$. Ambas cortarían al eje $y$ en cero.
-%
-%\item No, ni como función de $x$ ni como función de $y$. En ambos casos la variable independiente puede tener múltiples valores de variable dependiente asociada. Aunque no se pueda definir una función para este conjunto, dado que es un círculo, puede ser definido por una expresión de la forma $ (x-x_0)^2 + (y-y_0)^2 = r^2$. Con esta notación, el punto $(x_0, y_0)$ es el centro del círculo, y $r$ su radio.
-%
-%\item No, ni como función de $x$ ni como función de $y$. En ambos casos se rompe la unicidad.
-%
-%\end{enumerate}
-%
-%\sectionx{6}
-%
-%\textbf{Dados los siguientes gráficos de funciones, determine, en cada caso, en qué intervalos es creciente, en qué intervalos es decreciente, en qué punto alcanza su máximo, cuál es dicho valor máximo, en qué punto alcanza su mínimo y cuál es el valor mínimo.}
-%
-%\figurex{}{3}{../img/guide_01/ex_06.png}{fig:6}
-%
-%\hrule
-%
-%\subsectionx{6.a}
-%
-%\begin{itemize}
-%
-%\item IC: $(-\infty, 0)$
-%
-%\item ID: $(0, +\infty)$
-%
-%\item Máximo: Se alcanza en $x = 0$, y es $f(0)$ (no se indica el valor exacto en el gráfico).
-%
-%\item Mínimo: $\nexists$
-%
-%\end{itemize}
-%
-%\subsectionx{6.b}
-%
-%\begin{itemize}
-%
-%\item IC: $(-1, 0) \cup (1, 2)$
-%
-%\item ID: $(-2, -1) \cup (0, 1)$
-%
-%\item Máximo: $1$, se alcanza en $x = 0$
-%
-%\item Mínimo: $-1$, se alcanza en $x = -1$ y $x = 1$.
-%
-%\end{itemize}
-%
-%\subsectionx{6.c}
-%
-%\begin{itemize}
-%
-%\item IC: $(-\infty, +\infty)$
-%
-%\item ID: $\emptyset$
-%
-%\item Máximo: $\nexists$
-%
-%\item Mínimo: $\nexists$
-%
-%\end{itemize}
-%
-%Nótese que a pesar de estar acotada, esta función no tiene mínimo ni máximo porque se comporta asintóticamente. Con x tendiendo a menos infinito, tiende a cero pero nunca lo alcanza. Y lo mismo ocurre con más infinito y 1.
-%
-%\subsectionx{6.d}
-%
-%\begin{itemize}
-%
-%\item IC: $(0, 1)$
-%
-%\item ID: $(-\infty, 0) \cup (1, +\infty)$
-%
-%\item Máximo: $\nexists$
-%
-%\item Mínimo: $\nexists$
-%
-%En este caso, no hay mínimo ni máximo porque la función no está acotada. Sin embargo, tiene un mínimo local en $x = 0$ y un máximo local en $x = 1$.
-%
-%\end{itemize}
-%
-%\sectionx{7}
-%
-%\textbf{Dibuje una función que sea creciente en los intervalos $(-\infty, -1)$ y $(2, +\infty)$. Además, que el valor máximo sea 4 y se alcance en $x = -1$ y que el valor mínimo sea $-3$ y se alcance en $x = 2$.}
-%
-%\vspace{1em}
-%\hrule
-%\vspace{1em}
-%
-%Hay infinitas funciones que cumplen estos requisitos, pero una podría ser la de la figura~\ref{fig:7}. Hay que tener en cuenta que para que una función tenga mínimo y máximo pero sea creciente hacia menos y más infinito, tiene que tener asíntotas horizontales de valor menor al máximo y mayor al mínimo.
-%
-%\figurex{Ejercicio 7}{0.7}{../img/guide_01/ex_07.png}{fig:7}
-%
-%\sectionx{8}
-%
-%\begin{enumerate}[(a)]
-%
-%\item \textbf{Encuentre en cada caso, una función lineal que satisfaga:}
-%
-%\begin{enumerate}
-%
-%\bfseries
-%
-%\item \textbf{$f(1) = 5; f(-3) = 2$}
-%\item \textbf{$f(-1) = 3; f(80) = 3$}
-%\item \textbf{$f(0) = 4; f(3) = 0;$}
-%\item \textbf{$f(0) = b; f(a) = 0$, con $a$ y $b$ fijos}
-%\end{enumerate}
-%
-%\item \textbf{Calcule en (1) y en (2) f(0). Calcule en (3) f(-2).}
-%
-%\item \textbf{Encuentre la pendiente de las rectas que son gráficas de las funciones lineales dadas en (a). Haga un gráfico de tales rectas.}
-%
-%\end{enumerate}
-%\hrule
-%
-%\subsectionx{8.a}
-%
-%De manera general, dos puntos genéricos del plano $(x_0, y_0)$ y $(x_1, y_1)$ determinan unívocamente una recta que puede ser expresada como una función $y = m x + b$. La pendiente $m$ puede calcularse según:
-%
-%\begin{equation}
-%m = \frac{\Delta y}{\Delta x} = \frac{y_1-y_0}{x_1-x_0}
-%\end{equation}
-%
-%Conocida la pendiente, el término independiente puede calcularse evaluando la función lineal en cualquiera de los dos puntos conocidos:
-%
-%\begin{subequations}
-%\begin{align}
-%y_1 = m \cdot x_1 + b \Rightarrow b = y_1 - m \cdot x_1 \\
-%y_0 = m \cdot x_0 + b \Rightarrow b = y_0 - m \cdot x_0
-%\end{align}
-%\end{subequations}
-%
-%Aplicando esto, se obtiene:
-%
-%\begin{subequations}
-%\begin{align}
-%& \hresult{8.a.1}{ y = \frac{3}{4} x + \frac{17}{4} } \\
-%& \hresult{8.a.2}{ y = 3 (m = 0) } \\
-%& \hresult{8.a.2}{ y = -\frac{4}{3} x + 4 }\\
-%& \hresult{8.a.2}{ y = -\frac{b}{a} x + b }
-%\end{align}
-%\end{subequations}
-%
-%\subsectionx{8.b}
-%
-%\begin{subequations}
-%\begin{align}
-%& f_1(0) = \frac{3}{4} \cdot 0 + \frac{17}{4} = \hresulte{8.b.1}{  \frac{17}{4}}{0.75em} \\
-%& f_2(0) = \hresulte{8.b.2}{ 3 }{1em} \\
-%& f_3(-2) = -\frac{4}{3} (-2) + 4 = \frac{8}{3} + 4 = \hresulte{8.b.3}{ \frac{20}{3} }{0.75em}
-%\end{align}
-%\end{subequations}
-%
-%\subsectionx{8.c}
-%
-%\begin{subequations}
-%\begin{align}
-%& m_1 = \frac{3}{4} \\
-%& m_2 = 0 \\
-%& m_3 = -\frac{4}{3} \\
-%& m_4 = -\frac{b}{a}
-%\end{align}
-%\end{subequations}
-%
-%\newpage
-%
-%\figurex{Ejercicio 8.c}{2.5}{../img/guide_01/ex_08c.png}{fig:8c}
-%
-%\sectionx{9}
-%
-%\textbf{Halle la ecuación de la recta de pendiente $m$ que pasa por el punto $P$, siendo:}
-%
-%\begin{enumerate}[(a)]
-%
-%\bfseries
-%
-%\item $P = (2, 3), m = 1$
-%
-%\item $P = (1, 5), m = 0$
-%
-%\item $P = (3, -4), m = -2$
-%
-%\item $P = (0, b), m = 1$
-%
-%\end{enumerate}
-%
-%\textbf{Haga el gráfico de cada una de ellas. Decida cuáles son crecientes y cuáles son decrecientes.}
-%\vspace{1em}
-%\hrule
-%\vspace{1em}
-%De manera general, sea la ecuación de la recta $y = f(x) = m \cdot x + b$. Si $m$ y un punto $(x_0, y_0)$ son conocidos, sólo resta calcular $b$. Para ello, basta con evaluar $f(x)$ en $x_0$ y despejar $b$.
-%
-%\begin{equation}
-%y_0 = f(x_0) \Rightarrow y_0 = m \cdot x_0 + b \Rightarrow b = y_0 - m \cdot x_0
-%\end{equation}
-%
-%Aplicando esto a cada inciso, se obtiene:
-%
-%\begin{subequations}
-%\begin{align}
-%& b_a = 3 - 1 \cdot 2 = 1 \Rightarrow \hresult{9.a}{ f_a(x) = x + 1 } \\
-%& b_b = 5 - 0 \cdot 1 = 5 \Rightarrow \hresult{9.b}{ f_b(x) = 5 } \\
-%& b_c = -4 - (-2) \cdot 3 = 2 \Rightarrow \hresult{9.c}{ f_c(x) = -2x + 2 } \\
-%& b_d = b - 1 \cdot 0 = b \Rightarrow \hresult{9.d}{ f_d(x) = x + b }
-%\end{align}
-%\end{subequations}
-%
-%\newpage
-%
-%\figurex{Ejercicio 9}{3}{../img/guide_01/ex_09.png}{fig:9}
-%
-%En la figura~\ref{fig:9}, la recta verde es $f_a$, la azul $f_b$ y la roja $f_c$. No se grafica $f_d$ porque $b$ es desconocido, pero crecería al mismo ritmo que $f_a$ por tener ambas pendiente unitaria.
-%
-%Para determinar si una recta es creciente, ni siquiera es necesario graficar. Si su pendiente $m$ es positiva, es creciente. Si es negativa, es decreciente. Y si es cero, es una constante, no crece ni decrece. Con eso en mente, $f_a$ es creciente, $f_b$ es constante, $f_c$ es decreciente y $f_d$ es creciente para todo valor de $b$.
-%
-%\sectionx{10}
-%
-%\textbf{Encuentre la función lineal $g$ que da la temperatura en grados Fahrenheit, conocida la misma en grados Celsius, sabiendo que 0ºC = 32ºF y 100ºC = 212ºF. Recíprocamente, encuentre la función $h$ que da la temperatura en grados Celsius, conocida la misma en grados Fahrenheit. Compruebe que $g(h(x)) = h(g(x)) = x$.}
-%
-%\vspace{1em}
-%\hrule
-%\vspace{1em}
-%
-%Esto es un caso particular de hallar una recta conocidos dos puntos. Para $g(x) = m_g \cdot x + b_g$:
-%
-%\begin{subequations}
-%\begin{align}
-%& m_g = \frac{\Delta y}{\Delta x} = \frac{212-32}{100-0} = \frac{4}{5} \\
-%& g(0) = 32 \Rightarrow b_g = 32 \\
-%& \hresult{g(x)}{  g(x) = \frac{4}{5} x + 32 }
-%\end{align}
-%\end{subequations}
-%
-%Para $h(x) = m_h \cdot x + b_h:$
-%
-%\begin{subequations}
-%\begin{align}
-%& m_h = \frac{\Delta y}{\Delta x} = \frac{100-0}{212-32} = \frac{5}{4} \\
-%& h(32) = 0 \Rightarrow \frac{5}{4} 32 + b_h = 0 \Rightarrow b_h = -40 \\
-%& \hresult{h(x)}{  h(x) = \frac{5}{4} x - 40 }
-%\end{align}
-%\end{subequations}
-%
-%Estas funciones son inversas entre sí, por lo cual componerlas en cualquier orden debe dar la función identidad $f(x) = x$. A continuación, las comprobaciones solicitadas:
-%
-%\begin{subequations}
-%\begin{align}
-%& g(h(x)) = \frac{4}{5} h(x) + 32 = \frac{4}{5} \left( \frac{5}{4} x - 40 \right) + 32 = x - 32 + 32 = x \\
-%& h(g(x)) = \frac{5}{4} g(x) - 40 = \frac{5}{4} \left( \frac{4}{5} x +32 \right) -40 = x + 40 - 40 = x
-%\end{align}
-%\end{subequations}
-%
-%\sectionx{11}
-%
-%\textbf{Trace el gráfico de las siguientes funciones cuadráticas:}
-%
-%\begin{enumerate}[(a)]
-%
-%\bfseries
-%
-%\item $f(x) = x^2$
-%
-%\item $f(x) = -2x^2$
-%
-%\item $f(x) = x^2-3$
-%
-%\item $f(x) = -(x-5)^2$
-%
-%\end{enumerate}
-%
-%\textbf{Determine en cada caso, el conjunto imagen.}
-%\vspace{1em}
-%\hrule
-%
-%\subsectionx{11.a}
-%
-%Este gráfico puede hacerse con una simple tabla de valores, pero es claro que el mínimo se alcanza en $x = 0$ y vale cero. Además, dado que $f(-x) = f(x)$, se tiene simetría respecto al eje $y$.
-%
-%\figurex{Ejercicio 11.a}{1.3}{../img/guide_01/ex_11a.png}{fig:11a}
-%
-%Para obtener la imagen de la función $f$, basta con mirar el gráfico y ver qué rango de valores puede tomar $y$. En este caso, de cero a más infinito incluyendo el cero.
-%
-%\begin{equation}
-%\hresult{11.a}{ \mathop{\text{Img}}(f) = [0, +\infty) }
-%\end{equation}
-%
-%\subsectionx{11.b}
-%
-%Este gráfico puede construirse invirtiendo el anterior respecto al eje $x$, y comprimiéndolo en un factor de 2. Esto es lo que causa multiplicar por $-2$. Lo que se quiere decir con compresión es que, por ejemplo, en la versión no escalada, $f(1) = 1$ y $f(2) = 4$. Ahora bien, al multiplicar por 2 resulta $f(1) = 2$ y $f(2) = 8$. Al estar todos los valores duplicados, el efecto es que la curva tiene la misma forma pero se comprime.
-%
-%\figurex{Ejercicio 11.b}{1.3}{../img/guide_01/ex_11b.png}{fig:11b}
-%
-%\begin{equation}
-%\hresult{11.b}{ \mathop{\text{Img}}(f) = (-\infty, 0] }
-%\end{equation}
-%
-%\subsectionx{11.c}
-%
-%Este gráfico puede construirse desplazando verticalmente el de $x^2$. Ahora el mínimo se alcanza en $x = 0$ pero vale -3.
-%
-%\newpage
-%
-%\figurex{Ejercicio 11c}{1.3}{../img/guide_01/ex_11c.png}{fig:11c}
-%
-%La imagen también resulta desplazada:
-%
-%\begin{equation}
-%\hresult{11.c}{ \mathop{\text{Img}}(f) = [-3, +\infty) }
-%\end{equation}
-%
-%\subsectionx{11.d}
-%
-%En este caso, hay dos transformaciones: una traslación horizontal causada por el -5, y una reflexión respecto al eje $x$ causada por el -1 que multiplica al paréntesis.
-%
-%\figurexnp{Ejercicio 11.d}{1.3}{../img/guide_01/ex_11d.png}{fig:11d}
-%
-%\begin{equation}
-%\hresult{11.d}{ \mathop{\text{Img}}(f) = (-\infty, 0] }
-%\end{equation}
-%
-%\sectionx{12}
-%
-%\textbf{Para las siguientes funciones cuadráticas determine en qué intervalo crecen, en qué intervalos decrecen, dónde son positivas, dónde son negativas, en qué puntos se anulan y en qué punto alcanzan su extremo.}
-%
-%\begin{enumerate}[(a)]
-%
-%\bfseries
-%
-%\item $f(x) = -2x^2$
-%
-%\item $f(x) = -2x (x-3)$
-%
-%\item $f(x) = -2x^2 + x$
-%
-%\item $f(x) = x^2 + 2x + 1$
-%
-%\item $f(x) = -2 (x+3) (x-5)$
-%
-%\end{enumerate}
-%
-%\hrule
-%\vspace{1em}
-%
-%En este ejercicio, algunas cuadráticas no están en la forma más cómoda para graficar. Concretamente, esa forma es:
-%
-%\begin{equation}
-%f(x) = k (x - x_v)^2 + y_v
-%\end{equation}
-%
-%En esta expresión, el punto $(x_v, y_v)$ es el extremo de la cuadrática. Será un mínimo si $k$ es positivo, y un máximo si $k$ es negativo. Conocidos el extremo y $k$, graficando algunos puntos simétricos respecto a la recta $x = x_v$ será suficiente para trazar la parábola.
-%
-%Ahora bien, para llevar una expresión cuadrática a esta forma, lo más directo es usar la técnica de completar el cuadrado. Esto es más fácil de ver con un ejemplo, así que se verá en la solución de los ejercicios.
-%
-%\subsectionx{12.a}
-%
-%Esta función ya está en la forma deseada. Su único cero es $x = 0$, que es doble. Como $k = -2 \Rightarrow k < 0$ y el extremo es el máximo. Puede graficarse directamente. 
-%
-%\figurexnp{Ejercicio 12a}{1.3}{../img/guide_01/ex_12a.png}{fig:12a}
-%
-%A la hora de considera los intervalos de positividad, se considerará que el cero no es positivo ni negativo. Por eso, en este caso particular será el conjunto vacío.
-%
-%\begin{itemize}
-%
-%\item IC: $(-\infty, 0)$
-%
-%\item ID: $(0, +\infty)$
-%
-%\item $I^+: \emptyset$
-%
-%\item $I^-: \mathbb{R} - \{ 0 \}$
-%
-%\item Ceros: $x = 0$ (doble)
-%
-%\item Extremo: $(0, 0)$
-%
-%\end{itemize}
-%
-%\subsectionx{12.b}
-%
-%En este caso es preciso utilizar la técnica de completar el cuadrado para llevar $f(x)$ a una expresión fácil de graficar. Para eso, primero se expande el producto para tener una forma polinómica:
-%
-%\begin{equation}
-%f(x) = -2x (x-3) = -2x^2 + 6x
-%\end{equation}
-%
-%El próximo paso es sacar factor común $-2$ para tener $x^2$ solo y facilitar las cuentas.
-%
-%\begin{equation}
-%f(x) = -2 (x^2 -3x)
-%\end{equation}
-%
-%Ahora la idea es completar el cuadrado pero sólo para el paréntesis, o sea la expresión $x^2 - 3x$. Se desea convertirla al cuadrado de un binomio más una constante. Planteando esto de manera algebraica:
-%
-%\begin{equation}
-%x^2 - 3x = (x-x_v)^2 + y_v
-%\end{equation}
-%
-%Expandiendo el lado derecho según $(a - b)^2 = a^2 - 2ab +b^2$:
-%
-%\begin{equation}
-%x^2 - 3x = x^2 - 2 \cdot x \cdot x_v + x_v^2 + y_v
-%\end{equation}
-%
-%Esto es una igualdad entre polinomios. Para que se cumple para todo $x$, los coeficientes deben coincidir. Esto conduce al siguiente sistema de ecuaciones:
-%
-%\begin{subequations}
-%\begin{align}
-%& \left\{ \begin{array}{ll}
-%-3 = -2 x_v \\
-%0 = x_v^2 + y_v
-%\end{array} \right.
-%\end{align}
-%\end{subequations}
-%
-%Despejando $x_v$ en la primera ecuación, resulta $x_v = \frac{3}{2}$. Y reemplazando eso en la segunda ecuación:
-%
-%\begin{equation}
-%0 = \frac{9}{4} + y_v \Rightarrow y_v = -\frac{9}{4}
-%\end{equation}
-%
-%Reemplazando el paréntesis inicial con su equivalente:
-%
-%\begin{equation}
-%f(x) = -2 (x^2 - 3x) -2 \left[ \left(x - \frac{3}{2}\right)^2 - \frac{9}{4} \right] = -2 \left( x -\frac{3}{2} \right)^2 + \frac{9}{2}
-%\end{equation}
-%
-%Entonces, el extremo es el punto $\left( \frac{3}{2}, \frac{9}{2} \right)$. Como $k$ es negativo, es un máximo. Además, de la forma original de $f$ se sigue por inspección que los ceros son $x = 0$ y $x = 3$. Con eso es suficiente para graficar $f$.
-%
-%\figurex{Ejercicio 12.b}{1.3}{../img/guide_01/ex_12b.png}{fig:12b}
-%
-%\begin{itemize}
-%
-%\item IC: $\left(-\infty, \frac{3}{2} \right)$
-%
-%\item ID: $\left( \frac{3}{2}, +\infty \right)$
-%
-%\item $I^+: (0, 3)$
-%
-%\item $I^-: (-\infty, 0) \cup (3, +\infty)$
-%
-%\item Ceros: $x = 0$, $x = 3$
-%
-%\item Extremo: $\left( \frac{3}{2}, \frac{9}{2} \right)$
-%
-%\end{itemize}
-%
-%\subsectionx{12.c}
-%
-%Aplicando la misma técnica del inciso anterior, se obtiene:
-%
-%\begin{equation}
-%f(x) = -2x^2 + x = -2 \left( x - \frac{1}{4} \right)^2 + \frac{1}{8}
-%\end{equation}
-%
-%De esa forma, el extremo resulta $\left( \frac{1}{4}, \frac{1}{8} \right)$. Para hallar los ceros, basta con factorizar:
-%
-%\begin{equation}
-%f(x) = x (-2x + 1) \Rightarrow f(x) = 0 \Leftrightarrow x = 0 \vee x = \frac{1}{2}
-%\end{equation}
-%
-%Siendo $k$ negativo, el extremo es el máximo. Con eso y los ceros, ya es directo graficar.
-%
-%\figurex{Ejercicio 12.c}{4}{../img/guide_01/ex_12c.png}{fig:12c}
-%
-%\begin{itemize}
-%
-%\item IC: $\left(-\infty, \frac{1}{4} \right)$
-%
-%\item ID: $\left( \frac{1}{4}, +\infty \right)$
-%
-%\item $I^+: (0, \frac{1}{2})$
-%
-%\item $I^-: (-\infty, 0) \cup (\frac{1}{2}, +\infty)$
-%
-%\item Ceros: $x = 0$, $x = \frac{1}{2}$
-%
-%\item Extremo: $\left( \frac{1}{4}, \frac{1}{8} \right)$
-%
-%\end{itemize}
-%
-%\subsectionx{12.d}
-%
-%En este caso, $f(x)$ ya es el cuadrado perfecto de un binomio:
-%
-%\begin{equation}
-%f(x) = x^2 + 2x + 1 = (x+1)^2
-%\end{equation}
-%
-%El extremo resulta entonces $(-1, 0)$, y el único cero, que es doble, es $x = -1$. Siendo $k = 1$, el extremo es un mínimo.
-%
-%\figurex{Ejercicio 12.d}{4}{../img/guide_01/ex_12d.png}{fig:12d}
-%
-%\begin{itemize}
-%
-%\item IC: $(-1, +\infty)$
-%
-%\item ID: $(-\infty, -1)$
-%
-%\item $I^+: \mathbb{R} - \{ -1 \} $
-%
-%\item $I^-: \emptyset $
-%
-%\item Ceros: $x = -1$ (doble)
-%
-%\item Extremo: $ (-1, 0) $
-%
-%\end{itemize}
-%
-%\subsectionx{12.e}
-%
-%Aplicando la técnica de completar el cuadrado:
-%
-%\begin{subequations}
-%\begin{align}
-%& -2 (x+3) (x-5) = k (x-x_v)^2 + y_v \\
-%& -2 (x^2 -5x +3x -15) = k (x^2 -2 x_v x +x_v^2) + y_v \\
-%& -2 x^2 +2x + 30 = k x^2 - 2 k x_v x + k v_v^2 + y_v
-%\end{align}
-%\end{subequations}
-%
-%Igualando términos:
-%
-%\begin{subequations}
-%\begin{align}
-%& \left\{ \begin{array}{ll}
-%-2 = k \\
-%2 = 2 k x_v \\
-%30 = k x_v^2 + y_v
-%\end{array} \right.
-%\end{align}
-%\end{subequations}
-%
-%Resolviendo, resulta $k = -2$, $x_v = 1$ e $y_v = 32$. Los ceros surgen de inspeccionar la forma original de $f$ y son $x = -3$ y $x = 5$. Como $k$ es negativo, el extremo es un máximo.
-%
-%\figurex{Ejercicio 12.e}{0.5}{../img/guide_01/ex_12e.png}{fig:12e}
-%
-%\sectionx{13}
-%
-%\textbf{Se arroja una pelota desde el suelo y la altura, en metros, viene dada por la función $h(t) = -5t^2 +10t$, siendo $t$ el tiempo medido en segundos. ¿Cuándos alcanza la altura máxima? ¿Cuál es dicha altura?}
-%
-%\vspace{1em}
-%\hrule
-%\vspace{1em}
-%
-%Este problema equivale a hallar el extremo de una función cuadrática. En este caso, la variable $t$ es la variable independiente, o sea que toma el rol de $x$, y la variable dependiente es $h$, que toma el rol de $y$. Aplicando la técnica de completar el cuadrado:
-%
-%\begin{equation}
-%h(t) = -5 (t-1)^2 + 5
-%\end{equation}
-%
-%Por lo tanto, la altura máxima se alcanza en $\hresult{}{t = 1}$ segundos y vale $\hresult{}{h(1) = 5}$ metros.
-%
-%\sectionx{14}
-%
-%\textbf{Represente gráficamente las siguientes funciones:}
-%
-%\begin{enumerate}[(a)]
-%
-%\item $ f(x) = x^3 $
-%
-%\item $ f(x) = (x-2)^3 $
-%
-%\item $ f(x) = x^3 - 1 $
-%
-%\item $ f(x) = x^4 $
-%
-%\end{enumerate}
-%
-%\textbf{Analice, en cada caso, la monotonía.}
-%
-%\vspace{1em}
-%\hrule
-%
-%\subsectionx{14.a}
-%
-%La función cúbica básica sólo se anula en el origen, y tiene simetría respecto al origen, como toda función impar, o sea $f(-x) = -f(x)$ para todo $x$. Tomando los valores en $1, -1, 2$ y $-2$ alcanza para ver qué forma tiene.
-%
-%\figurex{Ejercicio 14.a}{2}{../img/guide_01/ex_14a.png}{fig:14a}
-%
-%En cuanto a la monotonía, la función cúbica es monótona creciente.
-%
-%\subsectionx{14.b}
-%
-%Éste es el gráfico anterior desplazado horizontalmente, 2 unidades hacia la derecha. En lugar de estar centrado en $(0,0)$, pasa a estar centrado en $(2,0)$. Fuera de eso, la curva es igual; sigue siendo monótona creciente.
-%
-%\figurex{Ejercicio 14.b}{2}{../img/guide_01/ex_14b.png}{fig:14b}
-%
-%\subsectionx{14.c}
-%
-%Nuevamente, este gráfico puede verse como una transformación de $f(x) = x^3$. En este caso, un desplazamiento vertical, de 1 unidad hacia abajo. El origen pasa de estar en $(0, 0)$ a estar en $(0,-1)$. Como no hay escalado, fuera de eso la curva es igual; sigue siendo monótona creciente.
-%
-%\figurex{Ejercicio 14.c}{1.5}{../img/guide_01/ex_14c.png}{fig:14c}
-%
-%\subsectionx{14.d}
-%
-%La función cuártica es una cuadrática que crece mucho más rápido. También es par, así que es simétrica respecto al eje $y$. Con evaluar en $0, 1, -1, 2$ y $-2$ es suficiente para ver cómo se comporta. Por otro lado, para valores menores a 1, tiende a cero más bruscamente que una cuadrática, lo que da un efecto de planchado en el intervalo $(-1, 1)$.
-%
-%\figurex{Ejercicio 14.d}{1}{../img/guide_01/ex_14d.png}{fig:14d}
-%
-%En cuanto a la monotonía, $f$ ya no es monótona: decrece en el intervalo $(-\infty, 0)$ y crece en el intervalo $(0, +\infty).$
-%
-%\sectionx{15}
-%
-%\textbf{Represente gráficamente las siguientes funciones:}
-%
-%\begin{enumerate}[(a)]
-%
-%\bfseries
-%
-%\item $ f(x) = \frac{4}{x} $
-%
-%\item $ f(x) = -\frac{4}{x} $
-%
-%\item $ f(x) = \frac{4}{x-3} $
-%
-%\item $ f(x) = \frac{4}{x-3} + 2 $
-%
-%\item $ f(x) = \frac{4x+5}{x-2} $
-%
-%\item $ f(x) = \frac{3x+2}{x+1} $
-%
-%\end{enumerate}
-%
-%\textbf{Indique en cada caso el dominio de la función. Indique también en qué intervalos es creciente y en qué intervalos es decreciente.}
-%
-%\hrule
-%
-%\subsectionx{15.a}
-%
-%Esta función tiene una asíntota vertical en $x = 0$; tiende a $+\infty$ al acercarse a cero por valores positivos, y a $-\infty$ acercándose por valores negativos. Cuando $x$ tiende a $+\infty$ o $-\infty$, $f(x)$ tiende a cero, por lo que tiene una asíntota horizontal en $y = 0$. Con esto y algunos valores pequeños y simétricos (1, -1, 2, -2) alcanza para trazar el gráfico.
-%
-%\figurex{Ejercicio 15.a}{1.2}{../img/guide_01/ex_15a.png}{fig:15a}
-%
-%\begin{itemize}
-%
-%\item $ \mathop{\text{Dom}}(f) = \mathbb{R} - \{  0 \} $
-%
-%\item $ IC = \emptyset $
-%
-%\item $ ID = (-\infty, 0) \cup (0, +\infty) $
-%
-%\end{itemize}
-%
-%\subsectionx{15.b}
-%
-%Es el gráfico anterior reflejado respecto al eje $x$, ya que esa es la transformación que resulta de multiplicar por $-1$.
-%
-%\figurexnp{Ejercicio 15.b}{1}{../img/guide_01/ex_15b.png}{fig:15b}
-%
-%\begin{itemize}
-%
-%\item $ \mathop{\text{Dom}}(f) = \mathbb{R} - \{  0 \} $
-%
-%\item $ IC = (-\infty, 0) \cup (0, +\infty) $
-%
-%\item $ ID = \emptyset $
-%
-%\end{itemize}
-%
-%\subsectionx{15.c}
-%
-%Nuevamente es una transformación de 15.a. En este caso, un desplazamiento horizontal, 3 unidades a la derecha. Esto implica que la asíntota horizontal también se desplaza, de $x = 0$ a $x = 3$.
-%
-%\figurex{Ejercicio 15.c}{0.8}{../img/guide_01/ex_15c.png}{fig:15c}
-%
-%\begin{itemize}
-%
-%\item $ \mathop{\text{Dom}}(f) = \mathbb{R} - \{  3 \} $
-%
-%\item $ IC = \emptyset $
-%
-%\item $ ID = (-\infty, 3) \cup (3, +\infty) $
-%
-%\end{itemize}
-%
-%\subsectionx{15.d}
-%
-%Es el mismo gráfico que 15.c, desplazado 2 unidades hacia arriba. Esto implica que la asíntota horizontal también es desplazada, de $y = 0$ a $y = 2$.
-%
-%\figurex{Ejercicio 15.d}{1}{../img/guide_01/ex_15d.png}{fig:15d}
-%
-%\begin{itemize}
-%
-%\item $ \mathop{\text{Dom}}(f) = \mathbb{R} - \{  3 \} $
-%
-%\item $ IC = \emptyset $
-%
-%\item $ ID = (-\infty, 3) \cup (3, +\infty) $
-%
-%\end{itemize}
-%
-%\subsectionx{15.e}
-%
-%Así como está expresada, $f$ no es trivial de graficar. Pero como es un cociente de polinomios del mismo grado, se puede reformular aplicando división de polinomios. Recuérdese que dados dos polinomios $D(x)$ y $d(x)$ donde el grado de $D$ es menor a igual al de $d$:
-%
-%\begin{equation}
-%\frac{D(x)}{d(x)} = q(x) + \frac{r(x)}{d(x)}
-%\end{equation}
-%
-%En esta expresión, $q(x)$ es el cociente, el resultado de la división de polinomios entre $D$ y $d$, con $D$ actuando como dividendo y $d$ como divisor. De esa manera, si la división está bien hecha, debe cumplirse que:
-%
-%\begin{equation}
-%D(x) = d(x) q(x) + r(x)
-%\end{equation}
-%
-%Aplicando esto a este caso, vale decir $D(x) = 4x+5$ y $d(x) = x-2$, se realiza la división para calcular $q(x)$ y $r(x)$.
-%
-%\begin{equation}
-%\polylongdiv{4x+5}{x-2}
-%\end{equation}
-%
-%Se obtiene entonces $q(x) = 4$ y $r(x) = 13$, por ende:
-%
-%\begin{equation}
-%f(x) = \frac{4x+5}{x-2} = 4 + \frac{13}{x-2}
-%\end{equation}
-%
-%Esta forma equivalente es graficable de manera directa: tiene una asíntota vertical en $x = 2$, y una asíntota horizontal en $y = 4$. Como la constante que multiplica el cociente es positiva, es monótona decreciente como la de 15.a. Nótese además que la rama izquierda corta al eje $y$ en $f(0) = -\frac{5}{2}$, y al eje $x$ en $0 = 4x+5 => x = -\frac{5}{4}$.
-%
-%\figurex{Ejercicio 15.e}{1}{../img/guide_01/ex_15e.png}{fig:15e}
-%
-%\begin{itemize}
-%
-%\item $ \mathop{\text{Dom}}(f) = \mathbb{R} - \{  2 \} $
-%
-%\item $ IC = \emptyset $
-%
-%\item $ ID = (-\infty, 2) \cup (2, +\infty) $
-%
-%\end{itemize}
-%
-%\subsectionx{15.f}
-%
-%Aplicando división de polinomios como en 15.e:
-%
-%\begin{equation}
-%f(x) = \frac{3x+2}{x+1} = 3 - \frac{1}{x+1}
-%\end{equation}
-%
-%De nuevo, se obtiene una expresión graficable por inspección. Tiene una asíntota vertical en $ x = -1 $, y una horizontal en $ y = 3 $. Como la constante de la parte racional es negativa, ahora es monótona creciente.
-%
-%\figurex{Ejercicio 15.f}{1}{../img/guide_01/ex_15f.png}{fig:15f}
-%
-%\begin{itemize}
-%
-%\item $ \mathop{\text{Dom}}(f) = \mathbb{R} - \{  -1 \} $
-%
-%\item $ IC = (-\infty, -1) \cup (-1, +\infty) $
-%
-%\item $ ID = \emptyset $
-%
-%\end{itemize}
-%
-%\sectionx{16}
-%
-%\textbf{Represente gráficamente las siguientes funciones:}
-%
-%\begin{enumerate}[(a)]
-%
-%\bfseries
-%
-%\item $ f(x) = \sqrt{x} $
-%
-%\item $ f(x) = -\sqrt{x} $
-%
-%\item $ f(x) = \sqrt{x + 3} $
-%
-%\item $ f(x) = -\sqrt{(x-2)^2} $
-%
-%\end{enumerate}
-%
-%\textbf{Indique en cada caso el dominio de la función. Analice la monotonía.}
-%
-%\vspace{1em}
-%\hrule
-%
-%\subsectionx{16.a}
-%
-%La función raíz cuadrada es una curva monótona creciente que comienza en el origen. Evaluando algunos valores que sean cuadrados perfectos se puede aproximar la curva: $ f(1) = 1, f(4)=2, f(9)=3 $.
-%
-%\figurex{Ejercicio 16.a}{0.6}{../img/guide_01/ex_16a.png}{fig:16a}
-%
-%\begin{itemize}
-%
-%\item $ \mathop{\text{Dom}}(f) = \{ x \in \mathbb{R} / x \geq 0 \} $
-%
-%\item $ IC = (0, +\infty) = \mathop{\text{Dom}}(f) \Rightarrow $ f es monótona creciente.
-%
-%\item $ ID = \emptyset $
-%
-%\end{itemize}
-%
-%\subsectionx{16.b}
-%
-%Es el gráfico de 16.a reflejado respecto al eje $x$.
-%
-%\figurex{Ejercicio 16.b}{0.6}{../img/guide_01/ex_16b.png}{fig:16b}
-%
-%\begin{itemize}
-%
-%\item $ \mathop{\text{Dom}}(f) = \{ x \in \mathbb{R} / x \geq 0 \} $
-%
-%\item $ IC = \emptyset $
-%
-%\item $ ID = (0, +\infty) = \mathop{\text{Dom}}(f) \Rightarrow $ f es monótona decreciente.
-%
-%\end{itemize}
-%
-%\subsectionx{16.c}
-%
-%Es el gráfico de 16.a desplazado 3 unidades hacia la izquierda. Esto se ve analizando dónde comienza la función: en $x = -3$, el radicando se anula. Como el inicio de la curva se movió de $(0, 0)$ a $(-3,0)$, se dice que se desplazó hacia la izquierda.
-%
-%\figurex{Ejercicio 16.c}{1}{../img/guide_01/ex_16c.png}{fig:16c}
-%
-%\begin{itemize}
-%
-%\item $ \mathop{\text{Dom}}(f) = \{ x \in \mathbb{R} / x \geq -3 \} $
-%
-%\item $ IC = (-3, +\infty) = \mathop{\text{Dom}}(f) \Rightarrow $ f es monótona creciente.
-%
-%\item $ ID = \emptyset $
-%
-%\end{itemize}
-%
-%\subsectionx{16.d}
-%
-%En este caso, no se puede cancelar alegremente el cuadrado y la raíz, porque al aplicarse el cuadrado primero, permite valores negativos. Por ende, se cancela pero se aplica módulo. Algebraicamente:
-%
-%\begin{equation}
-%f(x) = \sqrt{(x-2)^2} = |x-2|
-%\end{equation}
-%
-%La función módulo puede definirse por partes de la siguiente manera:
-%
-%\begin{subequations}
-%\begin{align}
-%& |x| = \left\{ \begin{array}{ll}
-%x \text{ si } x \geq 0 \\
-%-x \text{ si } x < 0
-%\end{array} \right.
-%\end{align}
-%\end{subequations}
-%
-%Por lo tanto, el gráfico de $f(x) = |x-2|$ es igual al de $|x|$ pero desplazado 2 unidades hacia la derecha.
-%
-%\figurex{Ejercicio 16.d}{1}{../img/guide_01/ex_16d.png}{fig:16d}
-%
-%\begin{itemize}
-%
-%\item $ \mathop{\text{Dom}}(f) = \mathbb{R} $
-%
-%\item $ IC = (2, +\infty) $
-%
-%\item $ ID = (-\infty, 2) $
-%
-%\end{itemize}
-%
-%\subsectionx{17}
-%
-%\textbf{Halle el dominio de las siguientes funciones:}
-%
-%\begin{enumerate}[(a)]
-%
-%\bfseries
-%
-%\item $ f(x) = \sqrt{x^2 + 4} $
-%
-%\item $ f(x) = \sqrt{x -8} $
-%
-%\item $ f(x) = \sqrt{x^2 - 9} $
-%
-%\item $ f(x) = \sqrt{x (x-1)} $
-%
-%\end{enumerate}
-%
-%\hrule
-%\vspace{1em}
-%
-%Todas las funciones de este ejercicio son raíces cuadradas, y por ende su dominio se obtiene exigiendo que el radicando sea mayor o igual a cero.
-%
-%\subsectionx{17.a}
-%
-%\begin{equation}
-%x^2 + 4 \geq 0 \Rightarrow x^2 \geq -4 \Rightarrow \hresult{17.a}{ \mathop{\text{Dom}}(f) = \mathbb{R} }
-%\end{equation}
-%
-%\subsectionx{17.b}
-%
-%\begin{equation}
-%x - 8 \geq 0 \Rightarrow x \geq 8 \Rightarrow \hresult{17.b}{ \mathop{\text{Dom}}(f) = \{ x \in \mathbb{R} / x \geq 8 \} }
-%\end{equation}
-%
-%\subsectionx{17.c}
-%
-%\begin{equation}
-%x^2 - 9 \geq 0 \Rightarrow x^2 \geq 9 \Rightarrow |x| \geq 3 \Rightarrow \hresult{17.c}{ \mathop{\text{Dom}}(f) = \{ x \in \mathbb{R} / x \leq -3 \vee x \geq 3 \} }
-%\end{equation}
-%
-%\subsectionx{17.d}
-%
-%En este caso el radicando es un producto. Para que sea positivo, por la regla de los signos, deben ser ambos factores positivos o ambos negativos a la vez.
-%
-%Caso 1, ambos positivos:
-%
-%\begin{equation}
-%x \geq 0 \wedge  x - 1 \geq 0 \Rightarrow x \geq 0 \wedge x \geq 1 \Rightarrow x \geq 1
-%\end{equation}
-%
-%Caso 2, ambos negativos:
-%
-%\begin{equation}
-%x \leq 0 \wedge  x - 1 \leq 0 \Rightarrow x \leq 0 \wedge x \leq 1 \Rightarrow x \leq 0
-%\end{equation}
-%
-%Combinando ambos:
-%
-%\begin{equation}
-%\hresult{17.d}{ \mathop{\text{Dom}}(f) = \{ x \in \mathbb{R} / x \leq 0 \vee x \geq 1 \} }
-%\end{equation}
-%
-%\sectionx{18}
-%
-%\textbf{Considere las funciones reales definidas por las fórmulas:}
-%
-%\begin{equation}
-%\begin{array}{ccc}
-%f(x) = 2x^2 + 5x & g(x) = \frac{1}{x+3} & h(x) = 2x - 6
-%\end{array}
-%\end{equation}
-%
-%\begin{enumerate}[(a)]
-%
-%\bfseries
-%
-%\item Calcule, si es posible:
-%
-%\begin{equation}
-%\begin{array}{cccc}
-%(f \circ f)(-1) & (f \circ h)(1) & (g \circ f)(-1) & (h \circ g)(2)
-%\end{array}
-%\end{equation}
-%
-%\item Halle fórmulas para las composiciones que se indican a continuación:
-%
-%\begin{equation}
-%\begin{array}{ccccc}
-%(f \circ g) & (g \circ f) & (f \circ g) \circ h & (f \circ h) & (f \circ f)
-%\end{array}
-%\end{equation}
-%
-%\item ¿$ f \circ g $ y $ g \circ f $ son la misma función?
-%
-%\end{enumerate}
-%
-%\hrule
-%
-%\subsectionx{18.a}
-%
-%\begin{subequations}
-%\begin{align}
-%(f \circ f)(x) &= f(f(x)) = 2 [f(x)]^2 + 5 f(x) = \\
-%& 8x^4 + 40x^3 + 60x^2 + 25 x \Rightarrow \hresult{}{ (f \circ f)(-1) = 3 }
-%\end{align}
-%\end{subequations}
-%
-%\begin{subequations}
-%\begin{align}
-%(f \circ h)(x) &= f(h(x)) = 2 [h(x)]^2 + 5 h(x) = \\
-%& 8x^2 -38x + 42 \Rightarrow \hresult{}{ (f \circ h)(1) = 12 }
-%\end{align}
-%\end{subequations}
-%
-%\begin{equation}
-%(g \circ f)(x) = g(f(x)) = \frac{1}{f(x)+3} = \frac{1}{2x^2 + 5x +3} \Rightarrow \hresult{}{ (g \circ f)(-1) = \nexists }
-%\end{equation}
-%
-%\begin{equation}
-%(h \circ g)(x) = h(g(x)) = 2 g(x) - 6 = 2 \frac{1}{x+3} - 6 \Rightarrow \hresult{}{ (h \circ g)(2) = -\frac{28}{5} }
-%\end{equation}
-%
-%\subsectionx{18.b}
-%
-%\begin{subequations}
-%\begin{align}
-%(f \circ g)(x) &= f(g(x)) = 2 [g(x)]^2 + 5 g(x) = 2 \left( \frac{1}{x+3} \right)^2 + 5 \frac{1}{x + 3} = \\
-%& \left( \frac{1}{x+3} \right) \left( 2 \frac{1}{x+3} + 5 \right) = \left( \frac{1}{x+3} \right) \frac{2 + 5 (x+3)}{x+3} = \\
-%& \frac{1}{x+3} \frac{5x + 17}{x+3} \Rightarrow \hresult{}{ (f \circ g)(x) = \frac{5x + 17}{(x + 3)^2} }
-%\end{align}
-%\end{subequations}
-%
-%La función $ g \circ f $ fue calculada en el inciso anterior:
-%
-%\begin{subequations}
-%\begin{align}
-%\hresult{}{ (g \circ f)(x) = \frac{1}{2x^2 + 5x + 3} }
-%\end{align}
-%\end{subequations}
-%
-%\begin{subequations}
-%\begin{align}
-%((f \circ g) \circ h)(x) &= (f \circ g)(h(x)) = \frac{5 h(x) + 17}{[h(x) + 3]^2} = \\
-%& \frac{5 (2x-6) + 17}{(2x-6+3)^2} \Rightarrow \hresult{}{ ((f \circ g) \circ h)(x) = \frac{10x - 13}{(2x-3)^2} }
-%\end{align}
-%\end{subequations}
-%
-%Las dos funciones que quedan fueron calculadas en 18.a:
-%
-%\begin{equation}
-%\hresult{}{ (f \circ h)(x) = 8x^2 -38x + 42 }
-%\end{equation}
-%
-%\begin{equation}
-%\hresult{}{ (f \circ f)(x) = 8x^4 + 40x^3 + 60x^2 + 25x }
-%\end{equation}
-%
-%\subsectionx{18.c}
-%
-%$\hresulte{18.c}{ \text{No} }{0.25em}$; alcanza con evaluar ambas funciones en un mismo punto y comprobar que toman valores diferentes:
-%
-%\begin{subequations}
-%\begin{align}
-%& (f \circ g)(0) = \frac{17}{9} \\
-%& (g \circ h)(0) = \frac{1}{3}
-%\end{align}
-%\end{subequations}
-%
-%Como regla general, el orden importa a la hora de evaluar la composición de funciones. Y ello incluye el orden en que se asocian las funciones cuando son más de dos como en el caso $(f \circ g) \circ h$. Los paréntesis son obligatorios en este caso, porque puede ocurrir que $(f \circ g) \circ h \neq f \circ (g \circ h)$.
-%
-%\sectionx{19}
-%
-%\textbf{Halle la función inversa de:}
-%
-%\begin{enumerate}[(a)]
-%
-%\bfseries
-%
-%\item $ f(x) = 3x - 5 $
-%
-%\item $ f(x) = 2x^2 - 1, x \geq 0 $
-%
-%\item $ f(x) = 3 - \sqrt{x + 5} $
-%
-%\item $ f(x) = x^3 $
-%
-%\item $ f(x) = x^2 -6x + 4, x \geq 3 $
-%
-%\item $ f(x) = x^2 -6x +4, x \leq 3 $
-%
-%\end{enumerate}
-%
-%\hrule
-%\vspace{1em}
-%
-%Para hallar la inversa de una función $y = f(x)$, primero es preciso asegurarse de estar trabajando en un intervalo donde $f$ sea inyectiva. Vale decir, que para cada valor de $y$, haya un sólo valor de $x$. Si esto no está garantizado, la inversa no estará bien definida. Además, en dicho intervalo es necesario hallar la imagen de $f$, porque pasará a ser el dominio de la inversa.
-%
-%A continuación, para hallar la expresión de la inversa, un método consiste en tomar la expresión $y = f(x)$ y despejar $x$ en función de $y$. Si esto genera una expresión que determina unívocamente $x$ en función de $y$, es posible tomar esa expresión $x = f^{-1}(y)$ e intercambiar $x$ por $y$ para obtener el resultado final $y = f^{-1}(x)$.
-%
-%\subsectionx{19.a}
-%
-%\begin{equation}
-%y = 3x - 5
-%\end{equation}
-%
-%Esta función tiene dominio $\mathbb{R}$, imagen $\mathbb{R}$, y al ser monótona creciente, es inyectiva en todo su dominio. Por lo tanto, la inversa debería estar definida en todo $\mathbb{R}$. Despejando x:
-%
-%\begin{equation}
-%x = \frac{1}{3} y + \frac{5}{3}
-%\end{equation}
-%
-%Esta función determina $x$ unívocamente en función de $y$, por lo tanto:
-%
-%\begin{equation}
-%\hresult{19.a}{ f^{-1}(x) = \frac{1}{3} x + \frac{5}{3} }
-%\end{equation}
-%
-%\subsectionx{19.b}
-%
-%\begin{equation}
-%f(x) = 2x^2 - 1, x \geq 0
-%\end{equation}
-%
-%En este caso, $f$ tiene como dominio $\mathbb{R}$, imagen $[-1, +\infty)$, y no es inyectiva porque toma el mismo valor para $x$ y $-x$. Sin embargo, sí es inyectiva en el intervalo $[0, +\infty)$, porque corresponde a su rama derecha y ésta es monótona creciente. Hechas estas salvedades, se puede proceder a buscar la expresión de la inversa despejando $x$.
-%
-%\begin{equation}
-%y = 2x^2 - 1 \Rightarrow y + 1 = 2x^2 \Rightarrow \frac{y+1}{2} = x^2 \Rightarrow \sqrt{\frac{y+1}{2}} = |x|
-%\end{equation}
-%
-%Llegado este punto, es donde se utiliza el hecho de estar considerando la rama derecha de $f$ para plantear que por ser $x \geq 0 \Rightarrow |x| = x$. Así:
-%
-%\begin{equation}
-%x = \sqrt{\frac{y+1}{2}}
-%\end{equation}
-%
-%Además de intercambiar las variables, es importar intercambiar dominio e imagen. La respuesta completa en este caso debe incluir el dominio de la inversa.
-%
-%\begin{equation}
-%\hresult{19.b}{ f^{-1}(x) = \sqrt{\frac{x+1}{2}}, x \geq -1 }
-%\end{equation}
-%
-%\subsectionx{19.c}
-%
-%\begin{equation}
-%y = 3-\sqrt{x + 5}
-%\end{equation}
-%
-%Esta función tiene dominio $[-5, +\infty)$, imagen $(-\infty, 3]$ y al ser monótona decreciente es inyectiva en todo su dominio. Despejando $x$:
-%
-%\begin{subequations}
-%\begin{align}
-%& \sqrt{x+5}=3-y \Rightarrow (\sqrt{x+5})^2=(3-y)^2 \Rightarrow \\
-%& x + 5 = (3-y)^2 \Rightarrow x = (3-y)^2 - 5 \Rightarrow x = (y-3)^2 - 5
-%\end{align}
-%\end{subequations}
-%
-%Nótese que en este caso es válido cancelar raíz y cuadrado sin aplicar módulo porque la raíz se aplica primero, lo cual garantiza que el radicando sea no negativo. Al invertir las variables, no olvidar invertir imagen y dominio también.
-%
-%\begin{equation}
-%\hresult{19.c}{ f^{-1}(x) = (x-3)^2 - 5, x \leq 3 }
-%\end{equation}
-%
-%\subsectionx{19.d}
-%
-%\begin{equation}
-%y = x^3
-%\end{equation}
-%
-%Esta función tiene dominio $\mathbb{R}$, imagen $\mathbb{R}$ y es inyectiva en todo su dominio por ser monótona creciente. Por lo tanto, su inversa sale directamente despejando $x$:
-%
-%\begin{equation}
-%\hresult{19.d}{ f^{-1}(x) = \sqrt[3]{x} }
-%\end{equation}
-%
-%\subsectionx{19.e}
-%
-%\begin{equation}
-%f(x) = x^2 -6x +4, x \geq 3
-%\end{equation}
-%
-%Para facilitar el análisis, conviene pasar $f$ a su forma canónica completando el cuadrado.
-%
-%\begin{equation}
-%f(x) = (x-3)^2 - 5, x \geq 3
-%\end{equation}
-%
-%De este modo, por inspección resulta que $f$ tiene como dominio $\mathbb{R}$, imagen $[-5, +\infty)$ y no es inyectiva en todo su dominio. Sin embargo, lo es en $(-\infty, 3]$ y $[3, +\infty)$ por separado. La rama creciente corresponde a $[3, +\infty)$ y es la que atañe a este inciso. Con eso establecido, se puede pasar a despejar $x$.
-%
-%\begin{equation}
-%y + 5 = (x-3)^2 \Rightarrow \sqrt{y+5} = |x-3|
-%\end{equation}
-%
-%Como se eligió la rama $x \geq 3$ para calcular la inversa, $|x-3| = x - 3$. No olvidar invertir dominio e imagen.
-%
-%\begin{equation}
-%\hresult{19.e}{ f^{-1}(x) = \sqrt{y + 5} + 3, x \geq -5 }
-%\end{equation}
-%
-%\subsectionx{19.f}
-%
-%\begin{equation}
-%y = x^2 -6x + 4, x \leq 3
-%\end{equation}
-%
-%Esta es la misma función del inciso anterior, pero seleccionando la otra rama. Todo es igual hasta el momento de aplicar el módulo. Como ahora se eligió $x \leq 3$, resulta $|x-3| = -x + 3$. Por lo tanto, resulta:
-%
-%\begin{equation}
-%\hresult{19.f}{ f^{-1}(x) = -\sqrt{x+5}+3, x \geq -5 }
-%\end{equation}
-%
-%De hecho, si se grafica $f$ completa y las inversas de sus dos ramas, éstas formarán una parábola también. Y las ramas de dicha parábola serán simétricas respecto a la recta $y = x$ con sus ramas inversas. Esta es una propiedad general: el gráfico de $f(x)$ siempre será simétrico con el de $f^{-1}(x)$, respecto a la recta $y = x$.
-%
-%\sectionx{20}
-%
-%\textbf{Pruebe que la función $ f(x) = \frac{\sqrt{x} + 1}{x + 1} $ satisface $ f\left( \frac{1}{x} \right) =   \sqrt{x} f(x) $ para todo $x$ positivo.}
-%
-%\vspace{1em}
-%\hrule
-%\vspace{1em}
-%
-%Considérese $ f\left( \frac{1}{x} \right) $ en base a la definición de $ f(x) $.
-%
-%\begin{equation}
-%f\left( \frac{1}{x} \right) = \frac{\sqrt{ \frac{1}{x} } + 1}{\frac{1}{x} + 1}
-%\end{equation}
-%
-%Es en este punto donde se debe exigir que sea $x > 0$ para que esté definida la expresión $\sqrt{\frac{1}{x}}$. Para que no haya división por cero, la desigualdad debe ser estricta.
-%
-%Es sabido que $ \frac{1}{x} = x^{-1} $, y que tomar la raíz cuadrada equivale a elevar a la $\frac{1}{2}$. Reemplazando:
-%
-%\begin{equation}
-%f\left( \frac{1}{x} \right) = \frac{ (x^{-1})^{\frac{1}{2}} + 1}{x^{-1} + 1} = \frac{x^{-\frac{1}{2}} + 1}{x^{-1} + 1}
-%\end{equation}
-%
-%Para que el denominador coincida con la expresión a la que se quiere llegar, se ve que una forma es multiplicar y dividir por $x$. Como ya se exigió que $x > 0$, esto es válido.
-%
-%\begin{equation}
-%f\left( \frac{1}{x} \right) = \frac{x^{-\frac{1}{2}} + 1}{x^{-1} + 1} \frac{x}{x} = \frac{x^{\frac{1}{2}} + x}{1+x}
-%\end{equation}
-%
-%Sacando factor común $x^{\frac{1}{2}}$ en el numerador, finalmente se llega a la expresión buscada.
-%
-%\begin{equation}
-%f\left( \frac{1}{x} \right) = x^{\frac{1}{2}} \frac{1 + x^{\frac{1}{2}}}{1 + x} = \sqrt{x} \frac{\sqrt{x} + 1}{x + 1}
-%\end{equation}
-%
-%\sectionx{21}
-%
-%\textbf{Dadas las funciones exponenciales $ f(x) = r^x \left( r = 2, \frac{1}{2}, 3, \frac{1}{3} \right) $:}
-%
-%\begin{enumerate}[(a)]
-%
-%\bfseries
-%
-%\item Haga el gráfico de cada una de ellas.
-%
-%\item Determine el dominio y la imagen.
-%
-%\item Analice la monotonía.
-%
-%\end{enumerate}
-%
-%\hrule
-%
-%\subsectionx{21.a}
-%
-%Graficar los 4 casos juntos, como en la figura~\ref{fig:21a}, resulta bastante ilustrativo:
-%
-%\figurex{Ejercicio 21.a}{4}{../img/guide_01/ex_21a.png}{fig:21a}
-%
-%Nótese que en los casos en que $ r > 1 $, la curva es creciente. A mayor $r$, crece más rápido al crecer $x$, y también decrece más rápido al decrecer $x$. En cambio, para $ 0 < r < 1$, las curvas son decrecientes. La tasa de crecimiento se comporta al revés también: a mayor $r$, menor es la tasa de cambio, ya que $\frac{1}{2} > \frac{1}{3}$ y la primera decrece más lento.
-%
-%No hay que perder de vista que debe ser $ r > 0 $, o nos saldríamos del campo real. Por ejemplo, si $r = -2$, $f(1/2) = \sqrt{-2}$, que no existe en el campo real.
-%
-%\subsectionx{21.b}
-%
-%El dominio y la imagen son iguales para todos los valores de $r$:
-%
-%\begin{itemize}
-%
-%\item $ \mathop{\text{Dom}}(f) = \mathbb{R}, \forall r > 0, r \neq 1 $
-%
-%\item $ \mathop{\text{Img}}(f) = (0, +\infty), \forall r > 0, r \neq 1 $
-%
-%\end{itemize}
-%
-%\subsectionx{21.c}
-%
-%\begin{itemize}
-%
-%\item Si $ r>1 $, $f$ es monótona creciente.
-%
-%\item Si $ 0<r<1 $, $f$ es monótona decreciente.
-%
-%\end{itemize}
-%
-%\sectionx{22}
-%
-%\textbf{Si notamos $ \log_{r}(x) $ a la función inversa de $ r^x (r > 0, r \neq 1) $:}
-%
-%\begin{enumerate}[(a)]
-%
-%\bfseries
-%
-%\item Haga el gráfico de $ y = \log_{r}(x) $ para $ r =2, \frac{1}{2}, 3, \frac{1}{3} $.
-%
-%\item Determine el dominio y la imagen.
-%
-%\item Analice la monotonía.
-%
-%\end{enumerate}
-%
-%\hrule
-%
-%\subsectionx{22.a}
-%
-%Graficar los 4 casos juntos, como en la figura~\ref{fig:22a}, resulta bastante ilustrativo:
-%
-%\figurex{Ejercicio 22.a}{2}{../img/guide_01/ex_22a.png}{fig:22a}
-%
-%Nótese que en los casos en que $ r > 1 $, la curva es creciente. A mayor $r$, la curva crece más lento al crecer $x$, y también decrece más lento al decrecer $x$. En cambio, para $ 0 < r < 1$, las curvas son decrecientes. La tasa de crecimiento se comporta al revés también: a mayor $r$, mayor es la tasa de cambio, ya que $\frac{1}{2} > \frac{1}{3}$ y la primera decrece más rápido.
-%
-%\subsectionx{22.b}
-%
-%El dominio y la imagen son iguales para todos los valores de $r$:
-%
-%\begin{itemize}
-%
-%\item $ \mathop{\text{Dom}}(f) = (0, +\infty), \forall r > 0, r \neq 1 $
-%
-%\item $ \mathop{\text{Img}}(f) = \mathbb{R}, \forall r > 0, r \neq 1 $
-%
-%\end{itemize}
-%
-%\subsectionx{22.c}
-%
-%\begin{itemize}
-%
-%\item Si $ r>1 $, $f$ es monótona creciente.
-%
-%\item Si $ 0<r<1 $, $f$ es monótona decreciente.
-%
-%\end{itemize}
-%
-%\sectionx{23}
-%
-%\textbf{Encuentre el dominio de las siguientes funciones:}
-%
-%\begin{enumerate}
-%
-%\item $ f(x) = \ln(2x) $
-%
-%\item $ f(x) = \ln(3x^2 + 2x) $
-%
-%\end{enumerate}
-%
-%\textbf{En cada caso, determine los valores de $x$ para los cuales $ f(x) = 1 $.}
-%
-%\vspace{1em}
-%\hrule
-%
-%\subsectionx{23.a}
-%
-%Para que el logaritmo natural esté definido, se requiere que su argumento sea siempre positivo. Ergo:
-%
-%\begin{equation}
-%2x > 0 \Rightarrow x > 0 \Rightarrow \hresult{23.a - Dominio}{ \mathop{\text{Dom}}(f) = \{ x \in \mathbb{R} / x > 0 \} }
-%\end{equation}
-%
-%Y la preimagen de 1 es:
-%
-%\begin{equation}
-%1 = \ln(2x) \Rightarrow e^1 = e^{\ln(2x)} \Rightarrow e = 2x \Rightarrow \hresult{23.a}{ x = \frac{e}{2} \approx 1,3591 }
-%\end{equation}
-%
-%\subsectionx{23.b}
-%
-%Nuevamente, para que el logaritmo natural esté definido, su argumento debe ser mayor a cero.
-%
-%\begin{equation}
-%3x^2 + 2x > 0 \Rightarrow 3x \left(x + \frac{2}{3} \right) > 0 \Rightarrow x x \left(x + \frac{2}{3} \right) > 0
-%\end{equation}
-%
-%Para que el producto sea positivo, hay dos casos: ambos factores positivos, y ambos negativos a la vez.
-%
-%\begin{subequations}
-%\begin{align}
-%& \left\{ \begin{array}{ll}
-%x > 0 \\
-%x + \frac{2}{3} \Rightarrow x > -\frac{2}{3}
-%\end{array} \right. \Rightarrow x > 0
-%\end{align}
-%\end{subequations}
-%
-%\begin{subequations}
-%\begin{align}
-%& \left\{ \begin{array}{ll}
-%x < 0 \\
-%x + \frac{2}{3} \Rightarrow x < -\frac{2}{3}
-%\end{array} \right. \Rightarrow x < -\frac{2}{3}
-%\end{align}
-%\end{subequations}
-%
-%Combinando estos dos casos:
-%
-%\begin{equation}
-%\hresult{23.b - Dominio}{ \mathop{\text{Dom}}(f) = \left\{ x \in \mathbb{R} / x < -\frac{2}{3} \vee x > 0 \right\} }
-%\end{equation}
-%
-%La preimagen de 1 se obtiene, de nuevo, elevando a la $e$ ambos lados para cancelar el logaritmo natural.
-%
-%\begin{equation}
-%1 = \ln(3x^2 + 2x) \Rightarrow e = 3x^2 + 2x \Rightarrow 3x^2 + 2x - e = 0
-%\end{equation}
-%
-%Esta ecuación cuadrática tiene el siguiente discriminante:
-%
-%\begin{equation}
-%\Delta = b^2 - 4ac = 2^2 - 4 \cdot 3 \cdot (-e) \approx 36,319
-%\end{equation}
-%
-%Esto conduce a dos soluciones reales:
-%
-%\begin{equation}
-%\hresult{23.b}{ f(x) = 1 \text{ para } x_1 \approx -1,3419 \wedge x_2 \approx 0,67523 }
-%\end{equation}
-%
-%\sectionx{24}
-%
-%\textbf{Halle la función inversa de:}
-%
-%\begin{enumerate}[(a)]
-%
-%\item $ f(x) = \ln(2x) $
-%
-%\item $ f(x) = \ln(x^2 + 4) $
-%
-%\item $ f(x) = \ln(x^2 - 1) $
-%
-%\item $ f(x) = 2^{\sqrt{x}} + 5 $
-%
-%\item $ f(x) = e^{x + 3} $
-%
-%\item $ f(x) = e^{x^2}, x > 0 $
-%
-%\end{enumerate}
-%
-%\hrule
-%
-%\subsectionx{24.a}
-%
-%Como siempre que se calcula una inversa, hay que analizar dominio e imagen de la función original. Por simple inspección:
-%
-%\begin{itemize}
-%
-%\item $ \mathop{ \text{Dom} }(f) = (0, +\infty) $
-%
-%\item $ \mathop{ \text{Img} }(f) = \mathbb{R} $
-%
-%\end{itemize}
-%
-%Además, $f$ es monótona creciente, por lo tanto es inyectiva en todo su dominio y la inversa es única. El próximo paso es despejar $x$. Como la imagen de $ f $ es $ \mathbb{R} $, el dominio de la inversa será $ \mathbb{R} $ también.
-%
-%\begin{equation}
-%y = \ln(2x) \Rightarrow e^y = 2x \Rightarrow \hresult{24.a}{ f^{-1}(x) = \frac{1}{2} e^x, x \in \mathbb{R} }
-%\end{equation}
-%
-%\subsectionx{24.b}
-%
-%El argumento del logaritmo nunca se anula, y el mínimo valor es $f(0) = \ln(4)$. Por ende:
-%
-%\begin{itemize}
-%
-%\item $ \mathop{ \text{Dom} }(f) = \mathbb{R} $
-%
-%\item $ \mathop{ \text{Img} }(f) = [ \ln(4), +\infty) $
-%
-%\end{itemize}
-%
-%Sin embargo, $f$ no es inyectiva. Al ser par, tiene dos ramas. Habrá que calcular la inversa para ambos casos. Con eso en mente, se despeja $x$. Como la imagen es la misma para ambas ramas por ser par la función, ambas inversas tendrán como dominio $ [ \ln(4), +\infty) $.
-%
-%\begin{equation}
-%y = \ln(x^2 + 4) \Rightarrow e^y = x^2 + 4 \Rightarrow \sqrt{e^y -4} = |x|
-%\end{equation}
-%
-%Caso 1: $ x \ge 0 $:
-%
-%\begin{equation}
-%\hresult{24.b - inversa para rama $x \ge 0$ }{ f^{-1}(x) = \sqrt{e^x - 4}, x \in [\ln(4), +\infty) }
-%\end{equation}
-%
-%Caso 2: $ x < 0 $:
-%
-%\begin{equation}
-%\hresult{24.b - inversa para rama $x < 0$ }{ f^{-1}(x) = -\sqrt{e^x - 4}, x \in [\ln(4), +\infty) }
-%\end{equation}
-%
-%\subsectionx{24.c}
-%
-%Para el dominio de $f$, debe ser $x^2 - 1 > 0 \Rightarrow |x| > 1$. Al acercarse a 1 o -1, el argumento del logaritmo se acercará a cero, y por ende $f$ tenderá a $ -\infty $. Por lo tanto:
-%
-%\begin{itemize}
-%
-%\item $ \mathop{ \text{Dom} }(f) = (-\infty, -1) \cup (1, +\infty) $
-%
-%\item $ \mathop{ \text{Img} }(f) = \mathbb{R} $
-%
-%\end{itemize}
-%
-%Como en el inciso anterior, $f$ no es inyectiva. De nuevo, es par y tiene dos ramas. Como la imagen de $f$ es $ \mathbb{R} $ para ambas ramas, el dominio de la inversa será $ \mathbb{R} $ para ambas ramas. Despejando $x$:
-%
-%\begin{equation}
-%y = \ln(x^2 - 1) \Rightarrow e^y = x^2 - 1 \Rightarrow \sqrt{e^y + 1} = |x|
-%\end{equation}
-%
-%Caso 1: $ x \ge 0 $:
-%
-%\begin{equation}
-%\hresult{24.c - inversa para rama $x \ge 0$ }{ f^{-1}(x) = \sqrt{e^x +1}, x \in \mathbb{R} }
-%\end{equation}
-%
-%Caso 2: $ x < 0 $:
-%
-%\begin{equation}
-%\hresult{24.c - inversa para rama $x < 0$ }{ f^{-1}(x) = -\sqrt{e^x + 1}, x \in \mathbb{R} }
-%\end{equation}
-%
-%\sectionx{24.d}
-%
-%Para que exista la raíz cuadrada, debe ser $x \ge 0$. El valor mínimo de $ f $ entonces es $ f(0) = 6 $. Ergo:
-%
-%\begin{itemize}
-%
-%\item $ \mathop{ \text{Dom} }(f) = [0, +\infty) $
-%
-%\item $ \mathop{ \text{Img} }(f) = [6, +\infty) $
-%
-%\end{itemize}
-%
-%En este caso, $ f $ es monótona creciente y por ende inyectiva en todo su dominio. Por lo tanto, basta con despejar $ x $ e invertir dominio e imagen.
-%
-%\begin{equation}
-%y = 2^{\sqrt{x}} + 5 \Rightarrow log_2(y-5) = \sqrt{x} \Rightarrow [log_2(y-5)]^2 = x
-%\end{equation}
-%
-%Con lo que resulta:
-%
-%\begin{equation}
-%\hresult{24.d}{ f^{-1}(x) = [log_2(x-5)]^2, x \in [6, +\infty) }
-%\end{equation}
-%
-%\sectionx{24.e}
-%
-%Por ser $f$ una exponencial sin desplazamiento vertical:
-%
-%\begin{itemize}
-%
-%\item $ \mathop{ \text{Dom} }(f) = \mathbb{R} $
-%
-%\item $ \mathop{ \text{Img} }(f) = (0, +\infty) $
-%
-%\end{itemize}
-%
-%Nuevamente, $f$ es monótona creciente e inyectiva en todo su dominio.
-%
-%\begin{equation}
-%y = e^{x + 3} \Rightarrow \ln(y) = x + 3 \Rightarrow \Rightarrow x = \ln(y) - 3
-%\end{equation}
-%
-%Finalmente:
-%
-%\begin{equation}
-%\hresult{24.e}{ f^{-1}(x) = \ln(x) -3, x \in (0, +\infty) }
-%\end{equation}
-%
-%\subsectionx{24.f}
-%
-%El dominio de $ f $ es $ \mathbb{R} $, pero está restringido a $ x > 0 $. En ese dominio, $ f $ es monótona creciente e inyectiva, por lo que todo es más directo.
-%
-%\begin{itemize}
-%
-%\item $ \mathop{ \text{Dom} }(f) = (0, +\infty) $ (por enunciado)
-%
-%\item $ \mathop{ \text{Img} }(f) = (1, +\infty) $
-%
-%Despejando $ x $:
-%
-%\begin{equation}
-%y = e^{x^2} \Rightarrow \ln(y) = x^2 \Rightarrow \sqrt{\ln(y)} = |x|
-%\end{equation}
-%
-%Dado que se solicitó explícitamente el caso $ x > 0 $, puede obviarse el módulo y resulta, invirtiendo dominio e imagen:
-%
-%\begin{equation}
-%\hresult{24.f}{ f^{-1}(x) = \sqrt{\ln(x)}, x \in (1, +\infty) }
-%\end{equation}
-%
-%\end{itemize}
-%
-%\sectionx{25}
-%
-%\textbf{A partir de los gráficos de $ g(x) = \sen(x) $ y $ h(x) = \cos(x) $, haga el gráfico de: }
-%
-%\begin{enumerate}[(a)]
-%
-%\bfseries
-%
-%\item $ f(x) = \sen( x - \pi ) $
-%
-%\item $ f(x) = \cos( 2x ) $
-%
-%\item $ f(x) = \cos( 2x + \pi ) $
-%
-%\item $ f(x) = \sen\left( x + \frac{\pi}{2} \right) $
-%
-%\end{enumerate}
-%
-%\hrule
-%
-%\subsectionx{25.a}
-%
-%Este es un caso de desplazamiento horizontal, porque se le está sumando o restando una constante al argumento de la función seno. Concretamente, se tiene un desplazamiento de $ \pi $ unidades hacia la derecha. Se deduce que es hacia la derecha porque el punto correspondiente a $x = 0$ pasa a estar en $x = \pi$, que está a la derecha. 
-%
-%\figurex{Ejercicio 25.a}{4}{../img/guide_01/ex_25a.png}{fig:25a}
-%
-%\subsectionx{25.b}
-%
-%En este caso, se tiene un escalamiento horizontal. Al multiplicar el argumento del coseno por 2, los puntos que estaban en $x = a$ ahora pasan a estar en $x = a/2$. Visualmente, es como si la curva se comprimiera horizontalmente por un factor de dos. Tratándose además de una función periódica, el período se reduce a la mitad y la frecuencia se duplica. El nuevo período es entonces $\pi$.
-%
-%\figurex{Ejercicio 25.b}{5}{../img/guide_01/ex_25b.png}{fig:25b}
-%
-%\subsectionx{25.c}
-%
-%Ahora hay dos tranformaciones combinadas: un escalado horizontal con un factor de 2, y un desplazamiento horizontal de $\pi$ unidades hacia la izquierda. En estos casos, hay que tener cuidado porque el orden en que se aplican las transformaciones importa: no es lo mismo escalar y desplazar que desplazar y escalar. En este caso, partiendo del gráfico de $ h(x) = \cos(x) $, lo correcto para llegar a $ f(x) = \cos(2x + \pi) $ es desplazar $\pi$ unidades hacia la izquierda primero, y escalar horizontalmente con un factor de 2 luego. Si se hace lo inverso, el cambio de escala horizontal introducido al escalar primero hace que el desplazamiento de $\pi$ unidades ya no sea válido. De hecho, siguiendo este camino se observa que el desplazamiento debería ser de $\frac{\pi}{2}$ unidades, lo cual tiene sentido por el cambio de escala previo.
-%
-%\figurex{Ejercicio 25.c}{5}{../img/guide_01/ex_25c.png}{fig:25c}
-%
-%Esto se ilustra en la figura~\ref{fig:25c} introduciendo el paso intermedio $ f_d(x) = \cos(x + \pi) $ en color naranja. Si primero se desplaza el coseno $\pi$ unidades hacia la izquierda y luego se escala, se llega al gráfico correcto.
-%
-%\subsectionx{25.d}
-%
-%Ahora sólo hay un desplazamiento horizontal de $\pi$ unidades hacia la izquierda. Nótese que esto coincide con el gráfico del coseno, lo cual es coherente con la conocida identidad $ \cos(x) = \sen\left(x + \frac{\pi}{2} \right) $.
-%
-%\figurex{Ejercicio 25.d}{5}{../img/guide_01/ex_25d.png}{fig:25d}
-%
-%\sectionx{26}
-%
-%\textbf{Determine todos los valores de $x \in \mathbb{R}$ tales que:}
-%
-%\begin{enumerate}[(a)]
-%
-%\bfseries
-%
-%\item $ \sen(x) = \frac{1}{2} $
-%
-%\item $ \cos(x) = \frac{3}{2} $
-%
-%\item $ \cos^2(x) - \sen^2(x) = 1 $
-%
-%\item $ \sen^2(x) + \cos^2(x) = 1 $
-%
-%\item $ \sen(2x) = 2 \sen(x) \cos(x) $
-%
-%\item $ \cos\left( x + \frac{\pi}{4} \right) = \frac{\sqrt{2}}{2} ( \cos(x) - \sen(x) ) $
-%
-%\end{enumerate}
-%
-%\hrule
-%
-%\subsectionx{26.a}
-%
-%Aplicando arco seno de ambos lados, se obtiene $ x = \frac{\pi}{6} $. A partir de este valor, se puede obtener otro dado por la simetría de la función seno:
-%
-%\begin{equation}
-%\sen(x) = \sen( \pi - x ) \Rightarrow x = \frac{5}{6} \pi \text{ también es solución}
-%\end{equation}
-%
-%Por otro lado, la función seno es $2\pi$-periódica. Por ende, estas dos soluciones deben replicarse al infinito en ambas direcciones, usando el período. Resulta entonces:
-%
-%\begin{subequations}
-%\begin{align}
-%\hresult{26.a - 1er conjunto}{ x = \frac{\pi}{6} + 2 k \pi, k \in \mathbb{Z} } \\
-%\hresult{26.a - 2do conjunto}{ x = \frac{5}{6}\pi + 2 k \pi, k \in \mathbb{Z} }
-%\end{align}
-%\end{subequations}
-%
-%\subsectionx{26.b}
-%
-%El conjunto imagen de la función coseno está acotado al intervalo $[-1, 1]$. El valor $ \frac{3}{2} $ está fuera de ese intervalo, y por lo tanto esta ecuación no tiene solución en los números reales. Otra forma de verlo es intentar aplicar la función arco coseno de ambos lados: dado que dicha función tiene el conjunto dominio restringido al intervalo $[-1, 1]$, se llega a la misma conclusión al intentar evaluar $ \arccos\left( \frac{3}{2} \right) $.
-%
-%\subsectionx{26.c}
-%
-%Esta ecuación recuerda a la identidad $ \sin^2(x) + \cos^2(x) = 1 $. Para que esa expresión aparezca en el lado izquierdo, es posible sumar $2 \sin^2(x)$ miembro a miembro. Ello conduce a:
-%
-%\begin{subequations}
-%\begin{align}
-%& \cos^2(x) - \sin^2(x) + 2 \sin^2(x) = 1 + 2 \sin^2(x) \\
-%& \underbrace{ \cos^2(x) + \sin^2(x) }_{1} = 1 + 2 \sin^2(x) \\
-%& 1 - 1 = 2 \sin^2(x) \\
-%& 0 = \sin^2(x) \\
-%& 0 = |\sin(x)|
-%\end{align}
-%\end{subequations}
-%
-%Los ceros del seno cuadrado y del seno con módulo son los mismos que los del seno común, vale decir:
-%
-%\begin{equation}
-%\hresult{26.c}{ x = k \pi, k \in \mathbb{Z} }
-%\end{equation}
-%
-%\subsectionx{26.d}
-%
-%Esta es una identidad trigonométrica, y se cumple para todo valor de x.
-%
-%\begin{equation}
-%\hresult{26.d}{ x \in \mathbb{R} }
-%\end{equation}
-%
-%\subsectionx{26.e}
-%
-%Identidad a aplicar: seno de la suma.
-%
-%\begin{equation}
-%\sin(a + b) = \sin(a) \cos(b) + \cos(a) \sin(b)
-%\end{equation}
-%
-%Para este caso particular, $ a = x, b = x $.
-%
-%\begin{subequations}
-%\begin{align}
-%& \sin(x + x) = \sin(x) \cos(x) + \cos(x) \sin(x) \\
-%& \sin(2x) = 2 \sin(x) \cos(x)
-%\end{align}
-%\end{subequations}
-%
-%Por lo tanto, esta ecuación es una identidad: se cumple para todo valor de x.
-%
-%\begin{equation}
-%\hresult{26.e}{ x \in \mathbb{R} }
-%\end{equation}
-%
-%\subsectionx{26.f}
-%
-%Identidad a aplicar: coseno de la suma.
-%
-%\begin{equation}
-%\cos(a + b) = \cos(a) \cos(b) - \sin(a) \sin(b)
-%\end{equation}
-%
-%Para este caso particular, $ a = x, b = \frac{\pi}{4} $.
-%
-%\begin{subequations}
-%\begin{align}
-%\cos\left( x + \frac{\pi}{4} \right) &= \cos(x) \underbrace{ \cos\left( \frac{\pi}{4} \right) }_{ \sqrt{2}/2 } - \sin(x) \underbrace{ \sin\left( \frac{\pi}{4} \right) }_{ \sqrt{2}/2 } \\
-%&= \frac{\sqrt{2}}{2} \cos(x) - \frac{\sqrt{2}}{2} \sin(x) \\
-%&= \frac{\sqrt{2}}{2} ( \cos(x) - \sin(x) )
-%\end{align}
-%\end{subequations}
-%
-%Por lo tanto, esta ecuación es una identidad: se cumple para todo valor de x.
-%
-%\begin{equation}
-%\hresult{26.f}{ x \in \mathbb{R} }
-%\end{equation}
-%
-%\sectionx{27}
-%
-%\textbf{Haga el gráfico de las funciones inversas de $ g(x) = \sin(x) $ y $ h(x) = \cos(x) $. Determine los valores de $ x \in \mathbb{R} $ tales que:}
-%
-%\begin{enumerate}[(a)]
-%
-%\bfseries
-%
-%\item $ \arcsin(x) = \frac{\pi}{4} $
-%
-%\item $ \arccos(x) = \pi $
-%
-%\item $ \cos( \arcsin(x) ) = \sqrt{1 - x^2} $
-%
-%\end{enumerate}
-%
-%\hrule
-%\vspace{1em}
-%
-%Como siempre que se calcula una función inversa, es necesario analizar dominio, imagen y sobreyectividad de la función a invertir. En el caso de $ g(x) = \sin(x) $:
-%
-%\begin{itemize}
-%
-%\item $ \mathop{\text{Dom}}(f) = \mathbb{R} $
-%
-%\item $ \mathop{\text{Img}}(f) = [-1, 1] $
-%
-%\item $ g $ no es inyectiva en su dominio; al ser periódica, los valores de $ y $ se repiten infinitamente y dado un valor de $y$ entre -1 y 1, su preimagen $x$ no está unívocamente determinada.
-%
-%\end{itemize}
-%
-%Dado que $ g $ no es inyectiva, es necesario restringir su dominio a un intervalo donde lo sea para poder calcular su inversa. Observando el gráfico del seno, el primer tramo donde es monótona creciente corresponde a $ x \in \left[-\frac{\pi}{2}, \frac{\pi}{2} \right] $. Convenientemente, ese tramo es el asociado a la rama canónica de la función arco seno. Vale decir, los valores que devuelve una calculadora para la función arco seno corresponden a la inversa de dicho tramo del seno.
-%
-%Para graficar la función arco seno, dado que no tiene una expresión cerrada, no queda más alternativa que armar una tabla de valores e interpolar. A la hora de elegir valores, hay que considerar que si la función original tiene dominio $ \left[-\frac{\pi}{2}, \frac{\pi}{2} \right] $ e imagen $[-1, 1]$, la función arco seno tendrá dominio $[-1, 1]$ e imagen $ \left[-\frac{\pi}{2}, \frac{\pi}{2} \right] $.
-%
-%\begin{table}[h!]
-%\centering
-% \begin{tabular}{||c c||} 
-% \hline
-% x & arcsin(x) \\ [0.5ex] 
-% \hline\hline
-% -1 & $-\frac{\pi}{2}$ \\ 
-% \hline
-% -0,75 & -0,84806... \\ 
-% \hline
-% -0,5 & -0,52359... \\ 
-% \hline
-% -0,25 & -0,25268... \\ 
-% \hline
-% 0 & 0 \\ 
-% \hline
-% 0,25 & 0,25268... \\ 
-% \hline
-% 0,5 & 0,52359... \\ 
-% \hline
-% 0,75 & 0,84806... \\ 
-% \hline
-% 1 & $\frac{\pi}{2}$ \\ [1ex] 
-% \hline
-% \end{tabular}
-%\end{table}
-%
-%Se observa que, al igual que la función seno, la función arco seno es impar, ya que se verifica $ \arcsin(-x) = -\arcsin(x) $. Con los valores de esta tabla se puede trazar un gráfico aproximado como el de la figura~\ref{fig:27a}. Nótese la simetría respecto a la recta $ y = x $ entre el segmento de seno y su inversa.
-%
-%\figurex{Ejercicio 27.a}{4.6}{../img/guide_01/ex_27a.png}{fig:27a}
-%
-%Aplicando este mismo procedimiento a $ h(x) = \cos(x) $, el primer tramo donde resulta inyectiva corresponde a $x \in [0, \pi]$. La imagen de ese tramo es $[-1, 1]$, por lo que la función arco coseno asociada a esa rama, que de nuevo es la canónica, tendrá como dominio $[-1, 1]$ y como imagen $[0, \pi]$. Tomando valores de nuevo, se puede aproximar un gráfico como el de la figura~\ref{fig:27b}.
-%
-%\figurex{Ejercicio 27.b}{5}{../img/guide_01/ex_27b.png}{fig:27b}
-%
-%\subsectionx{27.a}
-%
-%Asumiendo que la función arco seno considerada es la canónica, existe una sola solución a esta ecuación y se obtiene aplicando la función seno miembro a miembro.
-%
-%\begin{equation}
-%\sin( \arcsin(x) ) = \sin\left( \frac{\pi}{4} \right) \Rightarrow \hresult{27.a}{ x = \frac{\sqrt{2}}{2} }
-%\end{equation}
-%
-%\subsectionx{27.b}
-%
-%Análogamente al inciso anterior, si se supone que la función arco coseno considerada es la canónica:
-%
-%\begin{equation}
-%\cos( \arccos(x) ) = \cos( \pi ) \Rightarrow \hresult{27.b}{ x = -1 }
-%\end{equation}
-%
-%\subsectionx{27.c}
-%
-%Si se analiza esta ecuación como la búsqueda de la intersección entre dos funciones, y se grafican ambos lados de la igualdad, se notará que las tablas de valores son iguales. En otras palabras, esto es una identidad y se cumple para todos los valores de $ x $ para los que están definidos ambos lados de la igualdad.
-%
-%Por el lado derecho, el radicando debe ser no negativo, por ende $ 1 - x^2 \geq 0 \Rightarrow 1 \geq x^2 \Rightarrow 1 \geq |x| $. Y en el lado izquierdo, el argumento del arco seno debe estar entre -1 y 1, lo cual equivale a la restricción anterior.
-%
-%Para probar la identidad, el hecho de que aparezcan 1, la suma de dos cuadrados y una raíz, suena al teorema de Pitágoras. Considérese que para cualquier ángulo $ \theta $ en radianes, se satisface la identidad pitagórica:
-%
-%\begin{equation}
-%\sin^2( \theta ) + \cos^2( \theta ) = 1
-%\end{equation}
-%
-%Por otro lado, si $ \theta \in [ -\pi/2 \pi/2 ] $, tiene un valor seno que se vincula con la función arco seno canónica. Llámese, arbitrariamente, $x$ al arco seno de $ \theta $, de manera que:
-%
-%\begin{itemize}
-%
-%\item $ \arcsin(x) = \theta $
-%
-%\item $ \sin( \theta ) = x $
-%
-%\end{itemize}
-%
-%Ahora bien, reemplazando $ \sin(\theta) = x $ en la identidad pitagórica:
-%
-%\begin{equation}
-%x^2 + \cos^2( \theta ) = 1
-%\end{equation}
-%
-%Despejando el coseno para acercarse a la identidad buscada:
-%
-%\begin{equation}
-%\cos^2( \theta ) = 1 - x^2
-%\end{equation}
-%
-%Como se estableció que $ \theta \in [ -\pi/2 \pi/2 ] $, y en dicho rango la función coseno no toma valores negativos, se puede cancelar el cuadrado con la raíz del lado izquierdo sin introducir el módulo.
-%
-%\begin{equation}
-%\cos( \theta ) = \sqrt{ 1 - x^2 }
-%\end{equation}
-%
-%Finalmente, recuérdese que $ \theta = \arcsin(x) $, y con ello se llega a la identidad:
-%
-%\begin{equation}
-%\cos( \arcsin(x) ) = \sqrt{ 1 - x^2 }
-%\end{equation}
-%
-%No perder de vista que esto sólo vale para:
-%
-%\begin{equation}
-%\hresult{27.c}{x \in [-1, 1]}
-%\end{equation}
-%
-%\sectionx{28}
-%
-%\textbf{Represente las siguientes funciones:}
-%
-%\begin{enumerate}[(a)]
-%
-%\bfseries
-%
-%\item $ f(x) = |x+5| $
-%
-%\item $ f(x) = |x-5| $
-%
-%\item $ f(x) = | \sin(x) | $
-%
-%\item $ f(x) = | e^x | $
-%
-%\end{enumerate}
-%
-%\hrule
-%
-%\subsectionx{28.a}
-%
-%Es la función módulo desplazada 5 unidades hacia la izquierda.
-%
-%\figurex{Ejercicio 28.a}{1.9}{../img/guide_01/ex_28a.png}{fig:28a}
-%
-%\subsectionx{28.b}
-%
-%Es la función módulo desplazada 5 unidades hacia la derecha.
-%
-%\figurex{Ejercicio 28.b}{1.9}{../img/guide_01/ex_28b.png}{fig:28b}
-%
-%\subsectionx{28.c}
-%
-%De manera generar, aplicar la función módulo a una función cualquiera hace que sus partes negativas se vuelvan positivas. Gráficamente, las partes de la curva que estén bajo el eje $ x $ serán reflejadas respecto al mismo. En el caso del seno, el mismo es negativo en los infinitos intervalos $ \ldots \cup (\pi, 2\pi) \cup (3\pi, 4\pi) \cup \ldots = \bigcup\limits_{k=-\infty}^{+\infty} ((2k-1)\pi, 2k\pi) $. En otras palabras, todos los lóbulos negativos de la curva seno serán invertidos respecto al eje $x$.
-%
-%\figurex{Ejercicio 28.c}{3.3}{../img/guide_01/ex_28c.png}{fig:28c}
-%
-%\subsectionx{28.d}
-%
-%Aplicar módulo a la función exponencial no tiene ningún efecto, ya que no toma valores negativos. Es exactamente la misma curva que $y = e^x$.
-%
-%\figurex{Ejercicio 28.d}{2}{../img/guide_01/ex_28d.png}{fig:28d}
-%
-%\sectionx{29}
-%
-%\begin{enumerate}[(a)]
-%
-%\bfseries
-%
-%\item Dada la función $ f(x) = \left\{ \begin{array}{ll}
-%x + 2 & \text{ si } x \leq -1 \\
-%-x & \text{ si } -1 < x \leq 1 \\
-%3x-4 \text{ si } 1 < x
-%\end{array} \right. $, calcule $ f(-3) $, $ f(1) $ y $ f(4) $. Determine para qué valores de $ y $ la ecuación $ f(x) = y $ tiene solución. ¿Cuándo es única?
-%
-%\item Ídem para la función $ f(x) = \left\{ \begin{array}{ll}
-%3x+1 & \text{ si } x < -4 \\
-%\frac{1}{x+2} & \text{ si } x \geq -4
-%\end{array} \right. $
-%
-%\end{enumerate}
-%
-%\hrule
-%
-%\subsectionx{29.a}
-%
-%Para $x = -3$, $ f(x) = x+2 \Rightarrow f(-3) = -3+2 \Rightarrow \hresult{29.a.1}{ f(-3) = -1 } $
-%
-%Para $x = 1$, $ f(x) = -x \Rightarrow f(1) = -(1) \Rightarrow \hresult{29.a.2}{ f(1) = -1 } $
-%
-%Para $x = 4$, $ f(x) = 3x-4 \Rightarrow f(4) = 3 \cdot 4 - 4 \Rightarrow \hresult{29.a.3}{ f(4) = 8 } $
-%
-%A la hora de analizar si $ f(x) = y $ tiene solución, es de utilidad calcular el conjunto imagen de $ f $. En este caso en particular, graficar $ f $ es un camino bastante directo.
-%
-%\figurex{Ejercicio 29.a}{4}{../img/guide_01/ex_29a.png}{fig:29a}
-%
-%En la figura~\ref{fig:29a} se observa que $ \mathop{\text{Img}}(f) = \mathbb{R}$. Por ende,
-%
-%\begin{equation}
-%\hresult{29.a.4}{ f(x) = y \text{ tiene solución para todo } y \in \mathbb{R} }
-%\end{equation}
-%
-%En lo que respecta a la unicidad de dicha solución, será única en tanto $ f $ sea inyectiva. Gráficamente, $ f $ es inyectiva en tanto una línea horizontal no corte su curva más de una vez. Si eso ocurre, significa que existen valores de $ y $ con más de un valor de $ x $ asociado, lo cual rompe la condición de inyectividad. Aplicando ese criterio a este caso particular, $ f $ no es inyectiva para $ y $ entre -1 y 1.
-%
-%\begin{equation}
-%\hresult{29.a.5}{ f(x) = y \text{ tiene solución única } \Leftrightarrow y < -1 \vee y > 1 }
-%\end{equation}
-%
-%\subsectionx{29.b}
-%
-%Para $x = -3$, $ f(x) = \frac{1}{x+2} \Rightarrow f(-3) = \frac{1}{-3+2} \Rightarrow \hresult{29.b.1}{ f(-3) = -1 } $
-%
-%Para $x = 1$, $ f(x) = \frac{1}{x+2} \Rightarrow f(1) = \frac{1}{1+2} \Rightarrow \hresult{29.b.2}{ f(1) = \frac{1}{3} } $
-%
-%Para $x = 4$, $ f(x) = \frac{1}{x+2} \Rightarrow f(4) = \frac{1}{4+2} \Rightarrow \hresult{29.b.3}{ f(4) = \frac{1}{6} } $
-%
-%Nuevamente, se graficará $ f $ para calcular su conjunto imagen.
-%
-%\figurex{Ejercicio 29.b}{1}{../img/guide_01/ex_29b.png}{fig:29b}
-%
-%La rama izquierda, correspondiente a $ y = 3x+1 $, toma valores en el intervalo $(-\infty, -11)$. El 11 queda excluido porque la rama está definida para $ x < -4 $. En cuanto a la rama derecha, corresponde a una función racional de primer orden con asíntota horizontal $ y = 0 $, y una asíntota vertical $ x = -2 $. Como está recortada al ser considerada sólo para $ x \geq -4 $, su rama izquierda no está completa. Comienza en $ f(4) = -\frac{1}{2} $ y decrece hacia $-\infty$ al aproximarse a $ x = -2 $ por izquierda. Por lo tanto, la imagen para dicha rama corresponde al intervalo $ \left(-\infty, -\frac{1}{2} \right]$. Y la rama derecha tiende a $+\infty$ al aproximarse a $ x = -2 $ por derecha, por lo que su imagen es $(0, +\infty)$. Combinando todo esto, resulta $ \mathop{\text{Img}}(f) = \left(-\infty, -\frac{1}{2} \right] \cup (0, +\infty) $.
-%
-%\begin{equation}
-%\hresult{29.b.4}{ f(x) = y \text{ tiene solución para todo } y \in \left(-\infty, -\frac{1}{2} \right] \cup (0, +\infty) }
-%\end{equation}
-%
-%En lo que respecta a la unicidad de dicha solución, será única en tanto $ f $ sea inyectiva. Observando el gráfico, $ f $ es inyectiva para $ y \geq -11 $. Pero recuérdese que en $ \left(-\frac{1}{2}, 0 \right] $ no hay preimagen.
-%
-%\begin{equation}
-%\hresult{29.b.5}{ f(x) = y \text{ tiene solución única } \Leftrightarrow y \in \left[-11, -\frac{1}{2} \right] \cup (0, +\infty) }
-%\end{equation}
-%
-%\sectionx{30}
-%
-%\textbf{El impuesto a la riqueza es igual a 0,50 pesos por cada mil pesos por encima de 100 mil pesos y de 1 peso por cada mil pesos por encima de 200 mil pesos. Escriba el monto del impuesto en función de la riqueza. ¿Cuál es la riqueza de alguien que paga 530 pesos de impuesto? }
-%
-%\vspace{1em}
-%\hrule
-%\vspace{1em}
-%
-%Asumiendo que el impuesto se aplica sobre la cantidad de pesos que exceden a 100 mil o 200 mil, es necesario restar dichos valores a la riqueza antes de multiplicar. Además, al pasar los 200 mil, se debe sumar el impuesto asociado a todos los pesos entre 100000 y 200000, que valdría $ 0,5 \cdot (200000-100000)/1000 = 50 $
-%Con eso en mente, si $ x $ es la riqueza total en pesos y $ f(x) $ es el impuesto en pesos asociado a dicha riqueza, resulta:
-%
-%\begin{equation}
-%\hresult{30.1}{
-%f(x) = \left\{ \begin{array}{ll}
-%0 & \text{ si } x \geq 100000 \\
-%0,5 \cdot \left( \frac{x-100000}{1000} \right) & \text{ si } 100000 < x \leq 200000 \\
-%50 + 1 \cdot \left( \frac{x-200000}{1000} \right) & \text{ si } x > 200000
-%\end{array} \right. }
-%\end{equation}
-%
-%Respecto a calcular la riqueza cuando el impuesto vale $ 530 $ pesos, ayuda calcular los valores extremos de cada tramo:
-%
-%\begin{enumerate}
-%
-%\item $ f(100000^{+}) = 0,5 \cdot \frac{100000^{+} - 100000}{1000} = 0^{+} $
-%
-%\item $ f(200000) = 0,5 \cdot \frac{200000 - 100000}{1000} = 50 $
-%
-%\item $ f(200000^{+}) = 50 + \frac{200000^{+} - 200000}{1000} = 50^{+} $
-%
-%\end{enumerate}
-%
-%No hace falta hacer más cuentas para concluir que 530 corresponde a la tercera rama de $ f $. Por lo tanto, se utiliza la expresión de dicha rama para calcular la preimagen.
-%
-%\begin{equation}
-%530 = 50 + \frac{x_0 - 2000000}{1000} \Rightarrow x_0 = 480000 + 200000 \Rightarrow \hresult{30.2}{x_0 = 680000}
-%\end{equation}
-%
-%\sectionx{P1}
-%
-%\textbf{La función $ f $ es lineal y la función $g$ es cuadrática. Los gráficos de ambas funciones se cortan en los puntos $ P = (-1, 2) $ y $ Q = (2, 0) $. Además, $ g $ se anula en $ x = -2 $. Hallar las fórmulas de $ f $ y $ g $, y encontrar el conjunto de los $ x $ tales que $ f(x) $ es mayor que $ g(x) $. Graficar.}
-%
-%\vspace{1em}
-%\hrule
-%\vspace{1em}
-%
-%$ f $ es una recta, y se conocen dos de sus puntos. Por lo tanto, $ f $ queda determinada por $ P $ y $ Q $ según:
-%
-%\begin{subequations}
-%\begin{align}
-%& f(x) = a_f x + b_f \\
-%& a_f = \frac{\Delta y}{\Delta x} = \frac{Q_y - P_y}{Q_x - P_x} = \frac{0-2}{2-(-1)} = -\frac{2}{3}
-%\end{align}
-%\end{subequations}
-%
-%Para obtener $ b_f $, basta evaluar uno de los dos puntos.
-%
-%\begin{equation}
-%f(2) = 0 \Rightarrow 0 = -\frac{2}{3} 2 + b_f \Rightarrow 0 = -\frac{4}{3} + b_f \Rightarrow b_f = \frac{4}{3}
-%\end{equation}
-%
-%Resulta entonces:
-%
-%\begin{equation}
-%\hresult{P1.1}{ f(x) = -\frac{2}{3} x + \frac{4}{3} }
-%\end{equation}
-%
-%En cuanto a $ g $, se conocen 3 puntos y eso alcanza para determinarla plateando un sistema lineal de 3x3. Pero existe una forma más directa, ya que se conocen sus dos raíces, 2 y -2. Eso permite expresarla en forma factorizada:
-%
-%\begin{equation}
-%g(x) = a_g (x-2) (x+2)
-%\end{equation}
-%
-%Para determinar $ a_g $, es posible usar la información del 3er punto: $ g(-1) = 2 $.
-%
-%\begin{equation}
-%g(-1) = 2 \Rightarrow 2 = a_g (-3) (1) \Rightarrow a_g = -\frac{2}{3}
-%\end{equation}
-%
-%Pasando a la forma polinomial:
-%
-%\begin{equation}
-%g(x) = -\frac{2}{3} (x^2 - 4) \Rightarrow \hresult{30.2}{ g(x) = -\frac{2}{3} x^2 + \frac{8}{3} }
-%\end{equation}
-%
-%Para analizar los valores de $ x $ donde $ f(x) > g(x) $, es de utilidad hacer el gráfico.
-%
-%\figurex{Ejercicio P1}{3}{../img/guide_01/ex_p1.png}{fig:p1}
-%
-%Según el gráfico, $ \hresult{30.3}{ f(x) > g(x) \Leftrightarrow x \in (-\infty, -1) \cup (2, +\infty) } $.
-%
-%\sectionx{P2}
-%
-%\textbf{ Se definen $ \cosh(x) = \frac{e^x + e^{-x}}{2} $ y $ \sinh(x) = \frac{e^x - e^{-x}}{2} $ . Probar que:}
-%
-%\begin{enumerate}[(a)]
-%
-%\bfseries
-%
-%\item $ \cosh^2(x) - \sinh^2(x) = 1 $
-%
-%\item Los gráficos de ambas funciones no se cortan.
-%
-%\end{enumerate}
-%
-%\hrule
-%
-%\subsectionx{P2.a}
-%
-%Aplicando las definiciones:
-%
-%\begin{subequations}
-%\begin{align}
-%& \cosh^2(x) - \sinh^2(x) = \left( \frac{e^x + e^{-x}}{2} \right) - \left( \frac{e^x - e^{-x}}{2} \right) = \\
-%& \frac{1}{4} (e^{2x} + 2 e^x e^{-x} + e^{-2x}) - \frac{1}{4} (e^{2x} - 2 e^x e^{-x} + e^{-2x}) = \\
-%& \cancel{ \frac{1}{4} e^{2x} } + \frac{1}{2} + \cancel{\frac{1}{4} e^{-2x} } - \cancel{\frac{1}{4} e^{2x} } + \frac{1}{2} - \cancel{\frac{1}{4} e^{-2x} } = 1
-%\end{align}
-%\end{subequations}
-%
-%\subsectionx{P2.b}
-%
-%Para que los gráficos de $ \cosh(x) $ y $ \sinh(x) $ se corten, debe existir al menos un valor de $ x $ para el cual se satisfaga:
-%
-%\begin{subequations}
-%\begin{align}
-%& \cosh(x) = \sinh(x) \Leftrightarrow \\
-%& \frac{e^x + e^{-x}}{2} = \frac{e^x - e^{-x}}{2} \Leftrightarrow \\
-%& e^{-x} = -e^{-x} \Leftrightarrow \\
-%& 2 e^{-x} = 0 \Leftrightarrow \\
-%& e^{-x} = 0
-%\end{align}
-%\end{subequations}
-%
-%La exponencial decreciente, al igual que la creciente, no se anula para ningún número real. Por lo tanto, los gráficos de las funciones jamás se cortan.
-%
-%\sectionx{P3}
-%
-%\textbf{ Un cántaro vacío con capacidad para 20 litros pesa 2550 gramos. }
-%
-%\begin{enumerate}[(a)]
-%
-%\bfseries
-%
-%\item Represente la función que da el peso total del cántaro en función de la cantidad de agua, en litros, que contiene. Halle su fórmula. ¿Cuál es el dominio?
-%
-%\item Si disponemos de 3 litros de mercurio, cuyo peso total es 40,8 kg, repita el ítem anterior sustituyendo el agua por el mercurio. 
-%
-%\item Si se representan las funciones de (a) y (b) en los mismos ejes, ¿qué significa el punto de intersección?
-%
-%\item ¿Es cierto que a doble cantidad de líquido corresponde doble peso total?
-%
-%\end{enumerate}
-%
-%\hrule
-%\vspace{1em}
-%
-%En primer lugar, es incorrecto decir que el cántaro pesa 2550 gramos. El peso es una fuerza, y su valor depende de la masa del objeto y la aceleración de la gravedad. La fuerza es una magnitud vectorial y su intensidad se mide en Newtons, o kilogramos fuerza; la masa es una unidad escalar y se mide en gramos. Son dos magnitudes diferentes. Como la aceleración de la gravedad en la superficie terrestre es, a fines prácticos, una constante, se suele aceptar este abuso de notación. Para ser correctos en términos físicos, se asumirá que el cántaro pesa 2550 gramos fuerza en la superficie terrestre.
-%
-%\sectionx{P3.a}
-%
-%Sean:
-%
-%\begin{itemize}
-%
-%\item $ x $: cantidad de agua en el cántaro. Unidad: litros.
-%
-%\item $ f(x) $: peso del cántaro con $ x $ litros de agua en su interior. Unidad: gramos fuerza.
-%
-%\end{itemize}
-%
-%Con estas definiciones, y asumiendo condiciones normales de presión y temperatura, la densidad del agua es tal que 1 cc de agua pesa 1 gramo fuerza. Siendo 1 litro igual a 1000 cc, 1 litro de agua pesa 1000 gramos fuerza. Por lo tanto:
-%
-%\begin{equation}
-%\hresult{P3.a}{ f(x) = 2550 + 1000 \cdot x, \mathop{\text{Dom}}(f) = [0, 20] }
-%\end{equation}
-%
-%\sectionx{P3.b}
-%
-%Sean:
-%
-%\begin{itemize}
-%
-%\item $ x $: cantidad de mercurio en el cántaro. Unidad: litros.
-%
-%\item $ g(x) $: peso del cántaro con $ x $ litros de mercurio en su interior. Unidad: gramos fuerza.
-%
-%\end{itemize}
-%
-%Si 3 litros de mercurio pesan 40,8 kg fuerza, entonces 1 litro pesa 40,8/3 = 13,6 kg fuerza = 13600 gramos fuerza. Resulta entonces:
-%
-%\begin{equation}
-%\hresult{P3.b}{ g(x) = 2550 + 13600 \cdot x, \mathop{\text{Dom}}(f) = [0, 20] }
-%\end{equation}
-%
-%\sectionx{P3.c}
-%
-%Representa el punto $(x, y)$ en donde poner $ x $ litros de agua en el cántaro hace que pese lo mismo que poniendo $ x $ litros de mercurio. Como el agua y el mercurio tienen diferentes densidades, eso sólo puede ocurrir para $ x = 0 $.
-%
-%\sectionx{P3.d}
-%
-%No, porque siempre se suma el peso del cántaro y eso rompe la proporción. Algebraicamente, para cualquier función lineal $ f(x) = ax +b $:
-%
-%\begin{equation}
-%\frac{f(2x)}{f(x)} = \frac{a 2 x + b}{ax + b}
-%\end{equation}
-%
-%Esto sólo vale 2 para el caso $ b = 0 $.
-%
-%\sectionx{P4}
-%
-%\textbf{Si $ f(n) = \frac{2^{3n}}{4n+1} $, calcular $ \frac{f(n+1)}{f(n)} $ y obtener su valor numérico para $ n = 1, 2, 3, 4 $ y $ 5 $. }
-%
-%\vspace{1em}
-%\hrule
-%\vspace{1em}
-%
-%Evaluando de manera directa:
-%
-%\begin{subequations}
-%\begin{align}
-%& \frac{f(n+1)}{f(n)} = \frac{2^{3(n+1)}}{4 (n+1) + 1} : \frac{2^{3n}}{4n+1} = \\
-%& \frac{ \cancel{2^{3n}} 2^3}{4n+5} : \frac{ \cancel{2^{3n}} }{4n+1} = \\
-%& \frac{8 (4n+1)}{(4n+5)} \Rightarrow \\
-%& \hresult{P4.1}{ \frac{f(n+1)}{f(n)} = \frac{32n+8}{4n+5} }
-%\end{align}
-%\end{subequations}
-%
-%Sea $ g(n) = \frac{f(n+1)}{f(n)} $. Dando valores a $ n $ en la expresión obtenida,
-%
-%\begin{subequations}
-%\begin{align}
-%g(1) &= \frac{40}{9} \approx 4,4444 \\
-%g(2) &= \frac{72}{13} \approx 5,5385 \\
-%g(3) &= \frac{104}{17} \approx 6,1176 \\
-%g(4) &= \frac{136}{21} \approx 6,4762 \\
-%g(5) &= \frac{168}{25} = 6,72
-%\end{align}
-%\end{subequations}
+
+\sectionx{2}
+
+\textbf{Represente en la recta numérica los siguientes conjuntos. Escribirlos como intervalos o unión de intervalos.}
+
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item Todos los números reales mayores que -1.
+
+\item Todos los números reales menores o iguales que 2.
+
+\item Todos los números reales que distan del 0 menos que 3.
+
+\item $ \{ x \in \mathbb{R} / 2x - 3 > 5 \} $
+
+\item $ \{ x \in \mathbb{R} / -3 < x \leq 3 \} $
+
+\item $ \{ x \in \mathbb{R} / 1 < 2x-3 < 5 \} $
+
+\item $ \{ x \in \mathbb{R} / x(2x-3) > 0 \} $
+
+\item $ \{ x \in \mathbb{R} / x^2 - 36 < 0 \} $
+
+\item $ \{ x \in \mathbb{R} / x^3 - x < 0 \} $
+
+\item $ \{ x \in \mathbb{R} / 1 + \frac{2}{x} < 3 \} $
+
+\item $ \{ x \in \mathbb{R} / \frac{1}{x} < \frac{4}{x} \} $
+
+\item $ \{ x \in \mathbb{R} / |x| < 3 \} $
+
+\item $ \{ x \in \mathbb{R} / |x-2| < 3 \} $
+
+\item $ \{ x \in \mathbb{R} / |x+2| < 3 \} $
+
+\item $ \{ x \in \mathbb{R} / |x| > 3 \} $
+
+\end{enumerate}
+\hrule
+\vspace{1em}
+
+Representar gráficamente un conjunto en la recta real no tiene mucho más misterio que colorear un intervalo o unión de intervalos. Para representar que un extremo no se incluye por desigualdad estricta, se suele dibujar un círculo vacío alrededor del punto a excluir. Cuando la desigualdad no es estricta, se pinta el interior del círculo. Por brevedad, se harán algunos gráficos como ejemplos y se omitirá el resto.
+
+\subsectionx{2.a}
+
+Si se denomina $A$ al conjunto pedido, expresarlo como intervalo es directo:
+
+\begin{equation}
+\hresult{2.a}{ A = (-1, +\infty) }
+\end{equation}
+
+\figurex{Ejercicio 2.a}{5}{../img/guide_02/ex_02a.png}{fig:2a}
+
+\subsectionx{2.b}
+
+\begin{equation}
+\hresult{2.b}{ A = (-\infty, 2] }
+\end{equation}
+
+\figurex{Ejercicio 2.b}{5}{../img/guide_02/ex_02b.png}{fig:2b}
+
+\subsectionx{2.c}
+
+\begin{equation}
+\hresult{2.c}{ A = (-3, 3) }
+\end{equation}
+
+\subsectionx{2.d}
+
+En este caso hay que transformar la desigualdad un poco:
+
+\begin{subequations}
+\begin{align}
+& 2x-3 > 5 \\
+& 2x > 8 \\
+& x > 4
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{2.d}{ A = (4, +\infty) }
+\end{equation}
+
+\subsectionx{2.e}
+
+\begin{equation}
+\hresult{2.e}{ A = (-3, 3] }
+\end{equation}
+
+\subsectionx{2.f}
+
+\begin{subequations}
+\begin{align}
+& 1 < 2x-3 < 5 \\
+& 4 < 2x < 8 \\
+& 2 < x < 4
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{2.f}{ A = (2, 4) }
+\end{equation}
+
+\subsectionx{2.g}
+
+En este caso se tiene un producto, por lo que hay que considerar dos casos usando la regla de los signos.
+
+En primer lugar, que ambos factores sean positivos y no nulos:
+
+\begin{equation}
+x > 0 \wedge 2x-3 > 0 \Rightarrow x > 0 \wedge x > \frac{3}{2} \Rightarrow x \in \left( \frac{3}{2}, +\infty \right)
+\end{equation}
+
+En segundo y último lugar, que ambos factores sean negativos a la vez.
+
+\begin{equation}
+x < 0 \wedge 2x-3 < 0 \Rightarrow x < 0 \wedge x < \frac{3}{2} \Rightarrow x \in (-\infty, 0)
+\end{equation}
+
+El resultado final es la unión de los intervalos asociados a cada caso:
+
+\begin{equation}
+\hresult{2.g}{ A = (-\infty, 0) \cup \left( \frac{3}{2}, +\infty \right) }
+\end{equation}
+
+\subsectionx{2.h}
+
+Recuérdese que cuando se eleva un valor al cuadrado y luego se toma la raíz cuadrada, no se puede cancelar raíz con cuadrado sin considerar el módulo. Esto es porque al elevar los valores negativos al cuadrado, el resultado es positivo y puede tomarse la raíz.
+
+\begin{subequations}
+\begin{align}
+& x^2 - 36 < 0 \\
+& x^2 < 36 \\
+& \sqrt{x^2} < 6 \\
+& |x| < 6 \\
+& -6 < x < 6
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{2.h}{ A = (-6, 6) }
+\end{equation}
+
+\subsectionx{2.i}
+
+Siempre que se analiza el signo, conviene llevar la expresión a un producto de dos factores.
+
+\begin{subequations}
+\begin{align}
+& x^3 - x < 0 \\
+& x (x^2-1) < 0
+\end{align}
+\end{subequations}
+
+Caso 1: primer factor positivo, segundo negativo.
+
+\begin{equation}
+x > 0 \wedge x^2-1 < 0 \Rightarrow x > 0 \wedge |x| < 1  \Rightarrow x \in (0, 1)
+\end{equation}
+
+Caso 2: primer factor negativo, segundo positivo.
+
+\begin{equation}
+x < 0 \wedge x^2-1 > 0 \Rightarrow x < 0 \wedge |x| > 1  \Rightarrow x \in (-\infty, -1)
+\end{equation}
+
+\begin{equation}
+\hresult{2.i}{ A = (-\infty, -1) \cup (0,1) }
+\end{equation}
+
+\subsectionx{2.j}
+
+\begin{subequations}
+\begin{align}
+& 1 + \frac{2}{x} < 3 \\
+& \frac{2}{x} < 2 \\
+& \frac{1}{x} < 1
+\end{align}
+\end{subequations}
+
+Llegado este punto, no se puede multiplicar miembro a miembro por $ x $ directamente, porque si $ x $ es negativo hay que invertir la desigualdad. Por lo tanto, se consideran ambos casos:
+
+Caso 1: x positivo.
+
+\begin{equation}
+x > 0 \wedge 1 < x \Rightarrow x \in (1, +\infty)
+\end{equation}
+
+Caso 2: x negativo.
+
+\begin{equation}
+x < 0 \wedge 1 > x \Rightarrow x \in (-\infty, 0)
+\end{equation}
+
+\begin{equation}
+\hresult{2.j}{ A = (-\infty, 0) \cup (1, +\infty) }
+\end{equation}
+
+\subsectionx{2.k}
+
+Nuevamente, hay que considerar el signo de $ x $.
+
+Caso 1: x positivo.
+
+\begin{equation}
+x > 0 \wedge \frac{1}{x} < \frac{4}{x} \Rightarrow x > 0 \wedge 1 < 4 \Rightarrow x \in (0, +\infty)
+\end{equation}
+
+Caso 2: x negativo.
+
+\begin{equation}
+x < 0 \wedge \frac{1}{x} < \frac{4}{x} \Rightarrow x < 0 \wedge 1 > 4 \Rightarrow x \in \emptyset
+\end{equation}
+
+Como el caso 2 no aporta elementos, resulta:
+
+\begin{equation}
+\hresult{2.k}{ A = (0, +\infty) }
+\end{equation}
+
+\subsectionx{2.l}
+
+De manera general, $ |x| < k \Rightarrow -k < x < k $. Por lo tanto:
+
+\begin{equation}
+\hresult{2.l}{ A = (-3, 3) }
+\end{equation}
+
+\subsectionx{2.m}
+
+Hay que analizar el signo del argumento del módulo.
+
+Caso 1: $ x-2 \geq 0 \Rightarrow x - 2 < 3 \Rightarrow x \geq 2 \wedge x < 5 \Rightarrow x \in [2, 5) $.
+
+Caso 2: $ x - 2 < 0 \Rightarrow -x+2 < 3 \Rightarrow x < 2 \wedge x > -1 \Rightarrow x \in (-1, 2)  $
+
+Combinando los dos intervalos, resulta entonces:
+
+\begin{equation}
+\hresult{2.m}{ A = (-1, 5) }
+\end{equation}
+
+\subsectionx{2.n}
+
+Caso 1: $ x+2 \geq 0 \Rightarrow x + 2 < 3 \Rightarrow x \geq -2 \wedge x < 1 \Rightarrow x \in [-2, 1) $.
+
+Caso 2: $ x+2 < 0 \Rightarrow -x-2 < 3 \Rightarrow x < -2 \wedge x > -5 \Rightarrow x \in (-5, -2)  $
+
+\begin{equation}
+\hresult{2.n}{ A = (-5, 1) }
+\end{equation}
+
+\subsectionx{2.ñ}
+
+De manera general, para $ k \in \mathbb{R} \wedge k > 0 $, $ |x| > k \Rightarrow x > k \wedge x < -k \Rightarrow x \in \{ (-\infty, -k) \cup (k, +\infty) \} $,.
+
+\begin{equation}
+\hresult{2.ñ}{ A = (-\infty, -3) \cup (3, +\infty) }
+\end{equation}
 
 \end{document}
