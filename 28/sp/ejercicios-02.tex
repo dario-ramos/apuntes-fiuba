@@ -524,4 +524,54 @@ Es lo mismo que el inciso anterior pero hasta el infinito. Vale decir:
 
 Gráficamente, esto es una acumulación de puntos que se aproximan infinitesimalmente a 1.
 
+\sectionx{5}
+
+\textbf{ Demostrar que $ \sqrt{3} $ no es racional. }
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+La forma más directa de demostrar esto es vía el método de reducción al absurdo. Si $ \sqrt{3} $ es racional, por definición existen $ p $ y $ q $ enteros y sin factores en común aparte de 1 tales que:
+
+\begin{equation}
+\sqrt{3} = \frac{p}{q}, p \in \mathbb{Z}, q \in \mathbb{Z}, \text{ con p y q coprimos }
+\end{equation}
+
+Recuérdese que exigir que dos enteros no tengan factores en común además de 1 es la definición de números coprimos.
+
+Elevando ambos lados al cuadrado:
+
+\begin{equation}
+3 = \frac{p^2}{q^2}
+\end{equation}
+
+Multiplicando miembro a miembro por $ q^2 $:
+
+\begin{equation}
+3 q^2 = p^2
+\end{equation}
+
+Esta igualdad indica que $ p^2 $ es divisible por 3, ya que puede expresarse como $ 3 q^2 $. En este punto, se utiliza el siguiente resultado:
+
+\begin{equation}
+a \in \mathbb{Z} \wedge k \text{ primo } \wedge k | a^2 \Rightarrow k | a
+\end{equation}
+
+Vale decir, si $ a^2 $ es divisible por un número primo $ k $, entonces $ a $ también. Aplicando esto a este caso, al ser 3 un número primo y $ p^2 $ divisible por 3, resulta entonces que $ p $ es divisible por 3.
+
+Ahora bien, si $ p $ es divisible por 3, existe un entero $ \alpha $ tal que $ p = 3 \alpha $. Reemplazando:
+
+\begin{subequations}
+\begin{align}
+& 3 q^2 = (3 \alpha)^2 \\
+& 3 q^2 = 9 \alpha^2 \\
+& q^2 = 3 \alpha^2
+\end{align}
+\end{subequations}
+
+Esto implica que $ q^2 $ es divisible por 3. Utilizando el mismo resultado de antes, eso implica que $ q $ también es divisible por 3.
+
+Es en este punto donde aparece la contradicción: la hipótesis inicial de que $ p $ y $ q $ son coprimos se contradice con el hecho de que ambos sean divisibles por 3. Por lo tanto, $ \sqrt{3} $ es irracional.
+
 \end{document}
