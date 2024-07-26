@@ -183,7 +183,7 @@ Si se denomina $A$ al conjunto pedido, expresarlo como intervalo es directo:
 \hresult{2.a}{ A = (-1, +\infty) }
 \end{equation}
 
-\figurex{Ejercicio 2.a}{5}{../img/guide_02/ex_02a.png}{fig:2a}
+\figurex{Ejercicio 2.a}{4.5}{../img/guide_02/ex_02a.png}{fig:2a}
 
 \subsectionx{2.b}
 
@@ -191,7 +191,7 @@ Si se denomina $A$ al conjunto pedido, expresarlo como intervalo es directo:
 \hresult{2.b}{ A = (-\infty, 2] }
 \end{equation}
 
-\figurex{Ejercicio 2.b}{5}{../img/guide_02/ex_02b.png}{fig:2b}
+\figurex{Ejercicio 2.b}{4.5}{../img/guide_02/ex_02b.png}{fig:2b}
 
 \subsectionx{2.c}
 
@@ -607,5 +607,414 @@ Una propiedad útil para este caso es la siguiente: si a un número irracional s
 \end{equation} 
 
 Esto puede generalizarse y por eso se dice que los irracionales son un conjunto denso dentro de los reales.
+
+\sectionx{7}
+
+\textbf{Considerar los siguientes conjuntos:}
+
+\begin{enumerate}[(A)]
+
+\bfseries
+
+\item $ A = \left\{ \frac{1}{n} : n \in \mathbb{N} \right\} $
+
+\item $ B = \left\{ \frac{n}{n+1} : n \in \mathbb{N} \right\} $
+
+\item $ C = (0, 7) $
+
+\item $ D = \mathbb{N} $
+
+\item $ E = \left\{ n \frac{1}{n^2} : n \in \mathbb{N} \right\} $
+
+\item $ F = \{ 1, 2, 3, 4 \} $
+
+\item $ G = \{ 5; 5,9; 5,99; 5,999; \dots \} $
+
+\item $ H = \{ x \in \mathbb{R} / |x-2| < 1 \} $
+
+\item $ I = \{ x \in \mathbb{R} / |x| > 3 \} $
+
+\end{enumerate}
+
+En cada caso:
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item Determinar si 7 es una cota superior.
+
+\item Determinar si 0 es una cota inferior.
+
+\item Decidir si está acotado superiormente.
+
+\item Decidir si está acotado inferiormente.
+
+\item En caso afirmativo, encontrar el supremo y/o el ínfimo del conjunto. Decidir si alguno de ellos es el máximo o el mínimo del conjunto correspondiente.
+
+\end{enumerate}
+
+\hrule
+\vspace{1em}
+
+Antes de comenzar, se repasarán las definiciones. Dados un conjunto $ A \subset \mathbb{R} $ y un número real $ M $:
+
+\begin{itemize}
+
+\item \textbf{Máximo:} $ A $ tiene elemento máximo $ \Leftrightarrow \exists a_0 \in A / \forall a \in A, a \le a_0 $
+
+\item \textbf{Mínimo:} $ A $ tiene elemento mínimo $ \Leftrightarrow \exists b_0 \in A / \forall b \in A, b \ge b_0 $
+
+\item \textbf{Cota superior:} $ M $ es cota superior de A $ \Leftrightarrow \forall a \in A, a \leq M $
+
+\item \textbf{Cota inferior:} $ M \text{ es cota inferior de A } \Leftrightarrow \forall a \in A, a \geq M $
+
+\item \textbf{Conjunto acotado superiormente:} A está acotado superiormente si y sólo si tiene al menos una cota superior. De hecho, o no tiene, o tiene infinitas, porque si M es cota superior, también lo son M+1, M+2, ...
+
+\item \textbf{Conjunto acotado inferiormente:} A está acotado inferiormente si y sólo si tiene una cota inferior. Al igual que con las superiores, o no tiene ninguna, o tiene infinitas.
+
+\item \textbf{Conjunto acotado:} A está acotado, a secas, si y sólo si está acotado superior e inferiormente a la vez.
+
+\item \textbf{Supremo:} Dado A acotado superiormente, su supremo es la mínima cota superior.
+
+\item \textbf{Ínfimo:} Dado A acotado inferiormente, su ínfimo es la máxima cota inferior.
+
+\end{itemize}
+
+Nótese que si existen, el máximo, mínimo, supremo e ínfimo son únicos para cada conjunto. En cambio, las cotas, si existen, siempre son infinitas.
+
+\subsectionx{7.A}
+
+\begin{equation}
+A = \left\{ \frac{1}{n} : n \in \mathbb{N} \right\}
+\end{equation}
+
+Todo elemento de $ A $ es una fracción. El numerador siempre es 1, y el denominador comienza en 1 y va creciendo. Por lo tanto, el máximo valor de A es el asociado a $ n = 1 $ y vale 1. Al crecer $ n $, crece el denominador y la fracción tiende a cero pero nunca lo alcanza. Por ende, $ A $ está acotado:
+
+\begin{equation}
+\forall a \in A, 0 < a \le 1
+\end{equation}
+
+\begin{enumerate}[(a)]
+
+\item ¿7 es una cota superior? Sí, porque todo elemento de A es menor que 7.
+
+\item ¿0 es una cota inferior? Sí, porque todo elemento de A es mayor que 0.
+
+\item ¿A está acotado superiormente? Sí, porque todo elemento es menor o igual a 1.
+
+\item ¿A está acotado inferiormente? Sí, porque todo elemento es mayor que 0.
+
+\item Supremo, ínfimo, mínimo y máximo: en base al análisis inicial:
+
+\begin{itemize}
+
+\item $ \mathop{sup}(A) = 1 $
+
+\item $ \mathop{max}(A) = 1 $
+
+\item $ \mathop{inf}(A) = 0 $
+
+\item $ \mathop{min(A)} = \nexists $
+ 
+\end{itemize}
+
+El mínimo no existe porque siempre se puede encontrar un elemento de A más cercano al cero que el anterior. Y el valor cero no pertenece al conjunto, por ende hay ínfimo pero no hay mínimo en este caso.
+
+\end{enumerate}
+
+\subsectionx{7.B}
+
+\begin{equation}
+B = \left\{ \frac{n}{n+1} : n \in \mathbb{N} \right\}
+\end{equation}
+
+Analizando los primeros valores:
+
+\begin{equation}
+A = \left\{ \frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \dots \right\}
+\end{equation}
+
+Cuando $ n $ tiende a infinito, el 1 en el numerador se vuelve despreciable comparado a $ n $, por lo tanto el límite es 1. A simple vista, los valores comienzan en $ \frac{1}{2} $ y crecen monótonamente acercándose a 1. Esto puede comprobarse formalmente analizando el cociente $ \frac{a_{n+1}}{a_n} $:
+
+\begin{equation}
+\frac{a_{n+1}}{a_n} = \frac{n+1}{n+2} : \frac{n}{n+1} = \frac{(n+1)^2}{n(n+2)} = \frac{n^2 + 2n + 1}{n^2 + 2n}
+\end{equation}
+
+Nótese que el numerador es el denominador +1, por ende, para todo n:
+
+\begin{equation}
+\frac{a_{n+1}}{a_n} > 1 \Rightarrow a_{n+1} > a_{n} \forall n
+\end{equation}
+
+Tener en cuenta que multiplicar miembro a miembro por $ a_n $ es válido en este caso particular porque $ a_n $ es positivo para todo n.
+
+\begin{enumerate}[(a)]
+
+\item ¿7 es una cota superior? Sí, porque todo elemento de A es menor que 7.
+
+\item ¿0 es una cota inferior? Sí, porque todo elemento de A es mayor que 0.
+
+\item ¿A está acotado superiormente? Sí, porque todo elemento es menor a 1.
+
+\item ¿A está acotado inferiormente? Sí, porque todo elemento es mayor o igual que $ \frac{1}{2} $.
+
+\item Supremo, ínfimo, mínimo y máximo: en base al análisis inicial:
+
+\begin{itemize}
+
+\item $ \mathop{sup}(A) = 1 $
+
+\item $ \mathop{max}(A) = \nexists $
+
+\item $ \mathop{inf}(A) = \frac{1}{2} $
+
+\item $ \mathop{min(A)} = \frac{1}{2} $
+ 
+\end{itemize}
+
+El máximo no existe porque siempre se puede encontrar un elemento de A más cercano a 1 que el anterior. Y el valor 1 no pertenece al conjunto, por ende hay supremo pero no hay máximo en este caso.
+
+\end{enumerate}
+
+\subsectionx{7.C}
+
+\begin{equation}
+C = (0, 7)
+\end{equation}
+
+\begin{enumerate}[(a)]
+
+\item ¿7 es una cota superior? Sí, porque todo elemento de A es menor que 7.
+
+\item ¿0 es una cota inferior? Sí, porque todo elemento de A es mayor que 0.
+
+\item ¿A está acotado superiormente? Sí, porque todo elemento es menor a 7.
+
+\item ¿A está acotado inferiormente? Sí, porque todo elemento es mayor a 0.
+
+\item Supremo, ínfimo, mínimo y máximo: en base al análisis inicial:
+
+\begin{itemize}
+
+\item $ \mathop{sup}(A) = 7 $
+
+\item $ \mathop{max}(A) = \nexists $
+
+\item $ \mathop{inf}(A) = 0 $
+
+\item $ \mathop{min(A)} = \nexists $
+ 
+\end{itemize}
+
+Pese a que el conjunto está acotado, no hay mínimo ni máximo porque 0 y 7 no pertenecen al mismo.
+
+\end{enumerate}
+
+\subsectionx{7.D}
+
+\begin{equation}
+D = \mathbb{N}
+\end{equation}
+
+\begin{enumerate}[(a)]
+
+\item ¿7 es una cota superior? No, el conjunto de los naturales no tiene cota superior. Para cualquier número natural $ n $, existe $ n + 1 $ mayor.
+
+\item ¿0 es una cota inferior? Sí, porque todo número natural es mayor a cero. Nótese que se adopta la convención de que cero no pertene a $ \mathbb{N} $.
+
+\item ¿A está acotado superiormente? No.
+
+\item ¿A está acotado inferiormente? Sí, porque todo elemento es mayor a 0.
+
+\item Supremo, ínfimo, mínimo y máximo: en base al análisis inicial:
+
+\begin{itemize}
+
+\item $ \mathop{sup}(A) = \nexists $
+
+\item $ \mathop{max}(A) = \nexists $
+
+\item $ \mathop{inf}(A) = 1 $
+
+\item $ \mathop{min(A)} = 1 $
+ 
+\end{itemize}
+
+\end{enumerate}
+
+\subsectionx{7.E}
+
+\begin{equation}
+E = \left\{ n - \frac{1}{n^2}, n \in \mathbb{N} \right\} = \left\{ \frac{n^3-1}{n^2}, n \in \mathbb{N} \right\}
+\end{equation}
+
+Analizando los valores:
+
+\begin{equation}
+E = \left\{ 0, \frac{7}{4}, \frac{26}{9}, \frac{63}{16}, \dots \right\}
+\end{equation}
+
+Analizando para valores de $ n $ grandes, en el numerador el -1 se torna despreciable, y simplificando, la expresión tiende a $ n $. Por ende, los valores tienden a $ +\infty $. 
+
+\begin{enumerate}[(a)]
+
+\item ¿7 es una cota superior? No, este conjunto no tiene cotas superiores.
+
+\item ¿0 es una cota inferior? Sí, porque todo elemento es mayor o igual a cero.
+
+\item ¿A está acotado superiormente? No.
+
+\item ¿A está acotado inferiormente? Sí, porque todo elemento es mayor o igual a 0.
+
+\item Supremo, ínfimo, mínimo y máximo: en base al análisis inicial:
+
+\begin{itemize}
+
+\item $ \mathop{sup}(A) = \nexists $
+
+\item $ \mathop{max}(A) = \nexists $
+
+\item $ \mathop{inf}(A) = 0 $
+
+\item $ \mathop{min(A)} = 0 $
+ 
+\end{itemize}
+
+\end{enumerate}
+
+\subsectionx{7.F}
+
+\begin{equation}
+F = \{ 1, 2, 3, 4 \}
+\end{equation}
+
+\begin{enumerate}[(a)]
+
+\item ¿7 es una cota superior? Sí, porque todo elemento es menor a 7.
+
+\item ¿0 es una cota inferior? Sí, porque todo elemento es mayor a cero.
+
+\item ¿A está acotado superiormente? Sí.
+
+\item ¿A está acotado inferiormente? Sí.
+
+\item Supremo, ínfimo, mínimo y máximo: en base al análisis inicial:
+
+\begin{itemize}
+
+\item $ \mathop{sup}(A) = 4 $
+
+\item $ \mathop{max}(A) = 4 $
+
+\item $ \mathop{inf}(A) = 1 $
+
+\item $ \mathop{min(A)} = 1 $
+ 
+\end{itemize}
+
+\end{enumerate}
+
+\subsectionx{7.G}
+
+\begin{equation}
+G = \{ 5; 5,9; 5,99; 5,999; \dots \}
+\end{equation}
+
+Este conjunto está acotado entre 5 y 6. El valor 5 pertenece, pero 6 no, aunque los valores se aproximen infinitesimalmente.
+
+\begin{enumerate}[(a)]
+
+\item ¿7 es una cota superior? Sí, porque todo elemento es menor a 7.
+
+\item ¿0 es una cota inferior? Sí, porque todo elemento es mayor a cero.
+
+\item ¿A está acotado superiormente? Sí.
+
+\item ¿A está acotado inferiormente? Sí.
+
+\item Supremo, ínfimo, mínimo y máximo: en base al análisis inicial:
+
+\begin{itemize}
+
+\item $ \mathop{sup}(A) = 6 $
+
+\item $ \mathop{max}(A) = \nexists $
+
+\item $ \mathop{inf}(A) = 5 $
+
+\item $ \mathop{min(A)} = 5 $
+ 
+\end{itemize}
+
+\end{enumerate}
+
+\subsectionx{7.H}
+
+\begin{equation}
+H = \{ x \in \mathbb{R} / |x-2| < 1 \}
+\end{equation}
+
+Este conjunto comprende los números que están a una distancia menor a 1 respecto a 2. Por lo tanto, es el intervalo real $ (1, 3) $. Determinado esto, el análisis es trivial.
+
+\begin{enumerate}[(a)]
+
+\item ¿7 es una cota superior? Sí, porque todo elemento es menor a 7.
+
+\item ¿0 es una cota inferior? Sí, porque todo elemento es mayor a cero.
+
+\item ¿A está acotado superiormente? Sí.
+
+\item ¿A está acotado inferiormente? Sí.
+
+\item Supremo, ínfimo, mínimo y máximo: en base al análisis inicial:
+
+\begin{itemize}
+
+\item $ \mathop{sup}(A) = 3 $
+
+\item $ \mathop{max}(A) = \nexists $
+
+\item $ \mathop{inf}(A) = 1 $
+
+\item $ \mathop{min(A)} = \nexists $
+ 
+\end{itemize}
+
+\end{enumerate}
+
+\subsectionx{7.I}
+
+\begin{equation}
+I = \{ x \in \mathbb{R} / |x| > 3 \}
+\end{equation}
+
+Este conjunto comprende los números cuyo valor absoluto es mayor a 3. Por lo tanto, es es la unión de intervalos $ (-\infty, -3) \cup (3, +\infty) $. Determinado esto:
+
+\begin{enumerate}[(a)]
+
+\item ¿7 es una cota superior? No, porque el conjunto no está acotado superiormente.
+
+\item ¿0 es una cota inferior? No, porque el conjunto no está acotado inferiormente.
+
+\item ¿A está acotado superiormente? No.
+
+\item ¿A está acotado inferiormente? No.
+
+\item Supremo, ínfimo, mínimo y máximo: en base al análisis previo:
+
+\begin{itemize}
+
+\item $ \mathop{sup}(A) = \nexists $
+
+\item $ \mathop{max}(A) = \nexists $
+
+\item $ \mathop{inf}(A) = \nexists $
+
+\item $ \mathop{min(A)} = \nexists $
+ 
+\end{itemize}
+
+\end{enumerate}
 
 \end{document}
