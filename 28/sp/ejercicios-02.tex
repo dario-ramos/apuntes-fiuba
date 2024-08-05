@@ -1151,4 +1151,38 @@ Llegado este punto, se utiliza el hecho de que $ t < 2 $ para elegir de qué lad
 
 Nótese que en el último paso, se utilizó el hecho de que $ t < 2 \Rightarrow 0 < 2-t $ para poder dividir miembro a miembro sin alterar la desigualdad. Por ende, para cualquier valor de $ t < 2$, existirá $ p = \lceil \frac{2t+1}{2-t} \rceil $ tal que $ t < p < 2$. En otras palabras, los elementos de $ P $ se acercan infinitesimalmente a 2 al crecer n. Por ende, 2 es la mínima cota superior de P, lo que la convierte en el supremo del conjunto. Nótese que por los mismos motivos, P no tiene un máximo.
 
+\sectionx{10}
+
+\textbf{Mostrar que existe un número natural $ n $ que satisface $ \frac{1}{n} < 0,001 $. En general, mostrar que cualquiera sea $ x $ positivo, existe un número natural $ n $ que satisface $ \frac{1}{n} < x $. Deducir de ello que $ \mathop{\text{inf}}\left\{ \frac{1}{n}, n \in \mathbb{N} \right\} = 0$}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+En primer lugar, se calcularán los valores de $ n $ que satisfacen $ \frac{1}{n} < 0,001 $.
+
+\begin{equation}
+\frac{1}{n} < 0,001
+\end{equation}
+
+Siendo $ n $ natural, es positivo y multiplicar miembro a miembro por $ n $ no altera la desigualdad.
+
+\begin{equation}
+1 < 0,001 n \Rightarrow \frac{1}{0,001} < n \Rightarrow 1000 < n
+\end{equation}
+
+Por lo tanto, cualquier valor de $ n $ mayor a 1000 satisface la desigualdad. De manera general, considérese un valor $ x $ positivo.
+
+\begin{equation}
+\frac{1}{n} < x \Rightarrow 1 < n \cdot x
+\end{equation}
+
+En este punto, se utiliza el hecho de que $ x > 0 $ para multiplicar miembro a miembro por $ \frac{1}{x} $ sin alterar la desigualdad.
+
+\begin{equation}
+\frac{1}{x} < n
+\end{equation}
+
+Esto establece el hecho de que la expresión $ \frac{1}{n} $ puede tomar valores arbitrariamente cercanos a cero. Agregando a esto el hecho de que $ \frac{1}{n} > 0 $ para todo $ n $ por ser $ n $ positivo, resulta entonces que 0 es la mínima cota inferior del conjunto y por ende es el ínfimo.
+
 \end{document}
