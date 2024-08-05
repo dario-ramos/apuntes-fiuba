@@ -1077,4 +1077,78 @@ Para $ n = 100 $, resulta $ \Rightarrow \hresult{8.c}{ b = \frac{100}{101} = 0,9
 
 Para $ n = 10 $, resulta $ \hresult{8.b}{ b = \frac{10}{11} = 0,909090\dots } $
 
+\sectionx{9}
+
+\textbf{Considerar el conjunto $ P = \left\{ \frac{2n-1}{n+2}, n \in \mathbb{N} \right\} $}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item Mostrar que 2 es una cota superior de P.
+
+\item Exhibir un elemento $p$ de P que satisfaga $ 1,99 < p < 2 $.
+
+\item Mostrar que si $ t < 2 $, existe un elemento $ p $ de P que satisface $ t < p < 2 $. Deducir entonces que $ \mathop{\text{sup}}(P) = 2 $.
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{9.a}
+
+¿Para qué valores de $ n $ se satisface $ p_n \leq 2 $?
+
+\begin{equation}
+\frac{2n-1}{n+2} \leq 2
+\end{equation}
+
+Siendo $ n $ un número natural, $ (n+2) > 0 $ para todo $ n $ y por ende multiplicar miembro a miembro no altera el sentido de la desigualdad.
+
+\begin{equation}
+2n-1 \leq 2n + 4 \Rightarrow -1 \leq 4
+\end{equation}
+
+Esto se cumple para todo valor de $ n $, y por ende todo elemento de $ P $ es menor o igual a 2, lo cual satisface la definición de cota superior.
+
+\subsectionx{9.b}
+
+En el inciso anterior, cambiar $ \leq $ por $ < $ no cambia nada; todo elemento de $ P $ es estrictamente menor a 2, por lo cual esa restricción ya está cubierta. Considérese qué valores de $ n $ satisfacen $ p_n > 1,99 $.
+
+\begin{equation}
+1,99 < \frac{2n-1}{n+2}
+\end{equation}
+
+Multiplicando miembro a miembro por $ (n+2) $:
+
+\begin{equation}
+1,99 n + 3,98 < 2n - 1 \Rightarrow 4,98 < 0,01 n \Rightarrow 498 < n
+\end{equation}
+
+Hay infinitos elementos de P que satisfacen lo pedido, pero el mínimo es el correspondiente a $ n = 499 $.
+
+\begin{equation}
+\hresult{9.b}{ p = p_{499} \approx 1,9900 }
+\end{equation}
+
+\subsectionx{9.c}
+
+De manera general, considérese para qué valores de $ n $ se cumple $ p_n > t $.
+
+\begin{subequations}
+\begin{align}
+& t < \frac{2n-1}{n+2} \\
+& t (n+2) < 2n-1 \\
+& t \cdot n + 2t < 2n -1 \\
+\end{align}
+\end{subequations}
+
+Llegado este punto, se utiliza el hecho de que $ t < 2 $ para elegir de qué lado acomodar los términos con $ n $. Para que el coeficiente quede positivo, se resta $ t \cdot n $ miembro a miembro.
+
+\begin{equation}
+2t + 1 < (2-t) n \Rightarrow \frac{2t+1}{2-t} < n
+\end{equation}
+
+Nótese que en el último paso, se utilizó el hecho de que $ t < 2 \Rightarrow 0 < 2-t $ para poder dividir miembro a miembro sin alterar la desigualdad. Por ende, para cualquier valor de $ t < 2$, existirá $ p = \lceil \frac{2t+1}{2-t} \rceil $ tal que $ t < p < 2$. En otras palabras, los elementos de $ P $ se acercan infinitesimalmente a 2 al crecer n. Por ende, 2 es la mínima cota superior de P, lo que la convierte en el supremo del conjunto. Nótese que por los mismos motivos, P no tiene un máximo.
+
 \end{document}
