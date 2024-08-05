@@ -1185,4 +1185,88 @@ En este punto, se utiliza el hecho de que $ x > 0 $ para multiplicar miembro a m
 
 Esto establece el hecho de que la expresión $ \frac{1}{n} $ puede tomar valores arbitrariamente cercanos a cero. Agregando a esto el hecho de que $ \frac{1}{n} > 0 $ para todo $ n $ por ser $ n $ positivo, resulta entonces que 0 es la mínima cota inferior del conjunto y por ende es el ínfimo.
 
+\sectionx{10}
+
+\textbf{Sean A y B dos conjuntos de números reales no vacíos y acotados de modo que $ A \in B $. Ordenar de menor a mayor los siguientes números:}
+
+\begin{equation}
+\mathop{\text{sup}} A, \mathop{\text{sup}} B, \mathop{\text{inf}} A, \mathop{\text{inf}} B
+\end{equation}
+
+\textbf{Exhibir un ejemplo donde $ \mathop{\text{sup}} A = \mathop{\text{sup}} B $ y otro donde la desigualdad sea estricta}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+Si $ A \in B $, tiene que cumplirse lo siguiente:
+
+\begin{itemize}
+\item $ \mathop{\text{inf}} B \leq \mathop{\text{inf}} A $: Porque A no puede tener elementos menores al ínfimo de B. 
+\item $ \mathop{\text{sup}} A \leq \mathop{\text{sup}} B $: Porque A no puede tener elementos mayores al supremo de B.
+\item $ \mathop{\text{inf}} A \leq \mathop{\text{sup A}} $: Para cualquier conjunto, el ínfimo no puede superar al supremo.
+\end{itemize}
+
+Esto garantiza que todo elemento de A esté contenido en B. Ahora bien, las desigualdades pueden darse en diferentes combinaciones. El orden general siempre será el mismo, pero algunos valores pueden coincidir.
+
+\begin{itemize}
+
+\item Caso 1: Sin coincidencias.
+
+\begin{equation}
+\mathop{\text{inf}} B < \mathop{\text{inf}} A < \mathop{\text{sup}} A < \mathop{\text{sup}} B.
+\end{equation}
+
+Ejemplo: $ A = (-1,1), B = (-3, 3) $
+
+\item Caso 2: Coinciden los ínfimos de A y B.
+
+\begin{equation}
+\mathop{\text{inf}} B = \mathop{\text{inf}} A < \mathop{\text{sup}} A < \mathop{\text{sup}} B.
+\end{equation}
+
+Ejemplo: $ A = (-3,0), B = (-3,3) $
+
+\item Caso 3: Coinciden los supremos de A y B.
+
+\begin{equation}
+\mathop{\text{inf}} B < \mathop{\text{inf}} A < \mathop{\text{sup}} A = \mathop{\text{sup}} B.
+\end{equation}
+
+Ejemplo: $ A = (0,3), B = (-3,3) $
+
+\item Caso 4: A y B comparten tanto ínfimo como supremo, pero no son el mismo conjunto.
+
+\begin{equation}
+\mathop{\text{inf}} B = \mathop{\text{inf}} A < \mathop{\text{sup}} A = \mathop{\text{sup}} B.
+\end{equation}
+
+Ejemplo: $ A = (-3,3), B = [-3,3] $
+
+\item Caso 5: A tiene el mismo ínfimo y supremo (es un punto), y ninguno coincide con los de B.
+
+\begin{equation}
+\mathop{\text{inf}} B < \mathop{\text{inf}} A = \mathop{\text{sup}} A < \mathop{\text{sup}} B.
+\end{equation}
+
+Ejemplo: $ A = \{0\}, B = (-3,3) $
+
+\item Caso 6: A tiene el mismo ínfimo y supremo (es un punto), y su ínfimo coincide con el de B.
+
+\begin{equation}
+\mathop{\text{inf}} B = \mathop{\text{inf}} A = \mathop{\text{sup}} A < \mathop{\text{sup}} B.
+\end{equation}
+
+Ejemplo: $ A = \{-3\}, B = (-3,3) $
+
+\item Caso 7: A tiene el mismo ínfimo y supremo (es un punto), y su supremo coincide con el de B.
+
+\begin{equation}
+\mathop{\text{inf}} B < \mathop{\text{inf}} A = \mathop{\text{sup}} A = \mathop{\text{sup}} B.
+\end{equation}
+
+Ejemplo: $ A = \{3\}, B = (-3,3) $
+
+\end{itemize}
+
 \end{document}
