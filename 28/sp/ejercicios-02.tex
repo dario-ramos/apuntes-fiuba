@@ -1269,4 +1269,138 @@ Ejemplo: $ A = \{3\}, B = (-3,3) $
 
 \end{itemize}
 
+\sectionx{12}
+
+\textbf{Determinar, en caso de que existan, el supremo, el ínfimo, el máximo y el mínimo de los siguientes conjuntos:}
+
+\begin{enumerate}[(a)]
+
+\item $ A = \{ x \in \mathbb{R} / x^2 - 3x + 2 < 0 \} $
+
+\item $ B = \{ y = x^2 - 3x + 2, x \in (0, 2) \} $
+
+\item $ C = \{ y = x^2 - 3x + 2, x \in \mathbb{R} \} $
+
+\end{enumerate}
+
+\hrule
+\vspace{1em}
+
+Considerando que los 3 conjuntos están definidos en base a la misma función cuadrática, conviene analizarla. Aplicando la fórmula para las raíces, vale decir:
+
+\begin{equation}
+x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+\end{equation}
+
+Se obtienen las raíces reales y diferentes $ x_1 = 2, x_2 = 1 $. Por ende:
+
+\begin{equation}
+x^2 - 3x + 2 = (x-2) (x-1)
+\end{equation}
+
+Esto servirá para analizar el signo. Para analizar la imagen, conviene pasar a la forma canónica. Completando el cuadrado, resulta:
+
+\begin{equation}
+x^2 - 3x + 2 = \left( x- \frac{3}{2} \right)^2 - \frac{1}{4}
+\end{equation}
+
+\subsectionx{12.a}
+
+\begin{equation}
+A = \{ x \in \mathbb{R} / x^2 - 3x + 2 < 0 \}
+\end{equation}
+
+Para esto conviene usar la forma factorizada.
+
+\begin{equation}
+(x-2) (x-1) < 0
+\end{equation}
+
+Caso 1: primer factor positivo y segundo factor negativo.
+
+\begin{subequations}
+\begin{align}
+& x-2 < 0 \Rightarrow x < 2 \\
+& x-1 > 0 \Rightarrow x > 1
+\end{align}
+\end{subequations}
+
+Ergo, este caso corresponde al conjunto $ (1, 2) $.
+
+Caso 2: primer factor negativo y segundo factor positivo.
+
+\begin{subequations}
+\begin{align}
+& x-2 > 0 \Rightarrow x > 2 \\
+& x-1 < 0 \Rightarrow x < 1
+\end{align}
+\end{subequations}
+
+Este caso correponde al conjunto vacío, dado que no pueden darse a la vez $ x > 2 \wedge x < 1 $. Por lo tanto, resulta:
+
+\begin{equation}
+A = \{ x \in \mathbb{R} / x^2 - 3x + 2 < 0 \} = (1, 2)
+\end{equation}
+
+Por lo tanto:
+
+\begin{itemize}
+
+\item $ \hresult{}{ \mathop{\text{inf}} A = 1 } $
+\item $ \hresult{}{ \mathop{\text{min}} A = \nexists } $
+\item $ \hresult{}{ \mathop{\text{max}} A = \nexists } $
+\item $ \hresult{}{ \mathop{\text{sup}} A = 2 } $
+
+\end{itemize}
+
+\subsectionx{12.b}
+
+\begin{equation}
+B = \{ y = x^2 - 3x + 2, x \in (0, 2) \}
+\end{equation}
+
+El conjunto B sería entonces la imagen del intervalo (0, 2) a través de la función cuadrática. La forma más directa de visualizar esto es graficarla. Para ello conviene usar la forma canónica calculada previamente:
+
+\begin{equation}
+x^2 - 3x + 2 = \left( x- \frac{3}{2} \right)^2 - \frac{1}{4}
+\end{equation}
+
+Por ende, el vértice de la parábola se halla en el punto $ \left( -\frac{3}{2}, -\frac{1}{4} \right) $. Sabiendo esto y que las raíces son $ x_1 = 2, x_2 = 1 $, el gráfico resulta:
+
+\figurex{Ejercicio 12.b}{2.0}{../img/guide_02/ex_12b.png}{fig:12b} 
+
+Resulta entonces, observando los valores que toma la función en el intervalo (0, 2), $ B = \left[ -\frac{1}{4}, 2 \right) $. Nótese que el mínimo se incluye porque se alcanza dentro del intervalo, y el máximo no entra porque se alcanza en el extremo del intervalo, que no pertenece al conjunto. Por eso se omite el 2. Ergo:
+
+\begin{itemize}
+
+\item $ \hresult{}{ \mathop{\text{inf}} B = -\frac{1}{4} } $
+\item $ \hresult{}{ \mathop{\text{min}} B = -\frac{1}{4} } $
+\item $ \hresult{}{ \mathop{\text{max}} B = \nexists } $
+\item $ \hresult{}{ \mathop{\text{sup}} B = 2 } $
+
+\end{itemize}
+
+\subsectionx{12.c}
+
+\begin{equation}
+C = \{ y = x^2 - 3x + 2, x \in \mathbb{R} \}
+\end{equation}
+
+Ahora se pide el conjunto imagen completo. Observando el gráfico, resulta:
+
+\begin{equation}
+C = \left[ -\frac{1}{4}, +\infty \right)
+\end{equation}
+
+Por ende:
+
+\begin{itemize}
+
+\item $ \hresult{}{ \mathop{\text{inf}} C = -\frac{1}{4} } $
+\item $ \hresult{}{ \mathop{\text{min}} C = -\frac{1}{4} } $
+\item $ \hresult{}{ \mathop{\text{max}} C = \nexists } $
+\item $ \hresult{}{ \mathop{\text{sup}} C = \nexists } $
+
+\end{itemize}
+
 \end{document}
