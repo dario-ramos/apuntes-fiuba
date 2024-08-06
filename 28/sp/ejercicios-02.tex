@@ -1,10 +1,7 @@
 \documentclass{article}
 
-%\usepackage{afterpage}
 \usepackage{amsmath}
 \usepackage{amssymb}
-%\usepackage{cancel}
-%\usepackage{graphicx}
 \usepackage[spanish]{babel}
 \usepackage{enumerate}
 \usepackage{hyperref}
@@ -15,17 +12,12 @@
     linkcolor=black,
     urlcolor=black,
 }
-%\usepackage{longdivision}
-%\usepackage{polynom}
 \usepackage{tcolorbox}
-%\usepackage{xcolor}
-%
+
 \tcbuselibrary{theorems}
-%
+
 \newcommand{\hresult}[2]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] {#2} }
-%\newcommand{\hresulte}[3]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] { \hspace{#3} #2 \hspace{#3} } }
 \newcommand{\figurex}[4]{\begin{figure}[ht] \caption{#1} \includegraphics[scale=#2]{#3} \centering \label{#4}\end{figure}}
-%\newcommand{\figurexnp}[4]{\afterpage{\figurex{#1}{#2}{#3}{#4}}}
 \newcommand{\sectionx}[1]{\section*{#1}\label{sec:#1}\addcontentsline{toc}{section}{\nameref{sec:#1}}}
 \newcommand{\subsectionx}[1]{\subsection*{#1}\label{subsec:#1}\addcontentsline{toc}{subsection}{\nameref{subsec:#1}}}
 
@@ -1016,5 +1008,391 @@ Este conjunto comprende los números cuyo valor absoluto es mayor a 3. Por lo ta
 \end{itemize}
 
 \end{enumerate}
+
+\sectionx{8}
+
+\textbf{Considerar el conjunto B del ejercicio anterior.}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item Mostrar que 1 es cota superior de B.
+
+\item Exhibir un elemento $ b $ de B que satisfaga $ 0,9 < b < 1 $.
+
+\item Exhibir un elemento $ b $ de B que satisfaga $ 0,99 < b < 1 $.
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{8.a}
+
+\begin{equation}
+B = \left\{ \frac{n}{n+1}, n \in \mathbb{N} \right\}
+\end{equation}
+
+Para hallar los valores de $ n $ para los que se satisface $ b_n = \frac{n}{n+1} < 1 $, se plantea:
+
+\begin{equation}
+\frac{n}{n + 1} < 1
+\end{equation}
+
+Como $ n $ es siempre positivo por ser natural, es válido multiplicar miembro a miembro por $(n+1)$.
+
+\begin{equation}
+n < n + 1
+\end{equation}
+
+Esto se satisface para todo $ n $ natural, por lo tanto 1 es una cota superior del conjunto $ B $.
+
+\subsectionx{8.b}
+
+Si se exige $ b_n > 0,9 $, se hallará el menor valor de $ n $ que satisfaga lo pedido.
+
+\begin{equation}
+\frac{n}{n+1} > 0,9 \Rightarrow n > 0,9 n + 0,9 \Rightarrow 0,1 n > 0,9 \Rightarrow n > 9
+\end{equation}
+
+Para $ n = 10 $, resulta $ \hresult{8.b}{ b = \frac{10}{11} = 0,909090\dots } $
+
+\subsectionx{8.c}
+
+Planteando $ b_n > 0,99 $ y operando igual que en el inciso previo, resulta $ n > 99 $.
+
+Para $ n = 100 $, resulta $ \Rightarrow \hresult{8.c}{ b = \frac{100}{101} = 0,990990\dots } $
+
+\begin{equation}
+\frac{n}{n+1} > 0,9 \Rightarrow n > 0,9 n + 0,9 \Rightarrow 0,1 n > 0,9 \Rightarrow n > 9
+\end{equation}
+
+Para $ n = 10 $, resulta $ \hresult{8.b}{ b = \frac{10}{11} = 0,909090\dots } $
+
+\sectionx{9}
+
+\textbf{Considerar el conjunto $ P = \left\{ \frac{2n-1}{n+2}, n \in \mathbb{N} \right\} $}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item Mostrar que 2 es una cota superior de P.
+
+\item Exhibir un elemento $p$ de P que satisfaga $ 1,99 < p < 2 $.
+
+\item Mostrar que si $ t < 2 $, existe un elemento $ p $ de P que satisface $ t < p < 2 $. Deducir entonces que $ \mathop{\text{sup}}(P) = 2 $.
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{9.a}
+
+¿Para qué valores de $ n $ se satisface $ p_n \leq 2 $?
+
+\begin{equation}
+\frac{2n-1}{n+2} \leq 2
+\end{equation}
+
+Siendo $ n $ un número natural, $ (n+2) > 0 $ para todo $ n $ y por ende multiplicar miembro a miembro no altera el sentido de la desigualdad.
+
+\begin{equation}
+2n-1 \leq 2n + 4 \Rightarrow -1 \leq 4
+\end{equation}
+
+Esto se cumple para todo valor de $ n $, y por ende todo elemento de $ P $ es menor o igual a 2, lo cual satisface la definición de cota superior.
+
+\subsectionx{9.b}
+
+En el inciso anterior, cambiar $ \leq $ por $ < $ no cambia nada; todo elemento de $ P $ es estrictamente menor a 2, por lo cual esa restricción ya está cubierta. Considérese qué valores de $ n $ satisfacen $ p_n > 1,99 $.
+
+\begin{equation}
+1,99 < \frac{2n-1}{n+2}
+\end{equation}
+
+Multiplicando miembro a miembro por $ (n+2) $:
+
+\begin{equation}
+1,99 n + 3,98 < 2n - 1 \Rightarrow 4,98 < 0,01 n \Rightarrow 498 < n
+\end{equation}
+
+Hay infinitos elementos de P que satisfacen lo pedido, pero el mínimo es el correspondiente a $ n = 499 $.
+
+\begin{equation}
+\hresult{9.b}{ p = p_{499} \approx 1,9900 }
+\end{equation}
+
+\subsectionx{9.c}
+
+De manera general, considérese para qué valores de $ n $ se cumple $ p_n > t $.
+
+\begin{subequations}
+\begin{align}
+& t < \frac{2n-1}{n+2} \\
+& t (n+2) < 2n-1 \\
+& t \cdot n + 2t < 2n -1 \\
+\end{align}
+\end{subequations}
+
+Llegado este punto, se utiliza el hecho de que $ t < 2 $ para elegir de qué lado acomodar los términos con $ n $. Para que el coeficiente quede positivo, se resta $ t \cdot n $ miembro a miembro.
+
+\begin{equation}
+2t + 1 < (2-t) n \Rightarrow \frac{2t+1}{2-t} < n
+\end{equation}
+
+Nótese que en el último paso, se utilizó el hecho de que $ t < 2 \Rightarrow 0 < 2-t $ para poder dividir miembro a miembro sin alterar la desigualdad. Por ende, para cualquier valor de $ t < 2$, existirá $ p = \lceil \frac{2t+1}{2-t} \rceil $ tal que $ t < p < 2$. En otras palabras, los elementos de $ P $ se acercan infinitesimalmente a 2 al crecer n. Por ende, 2 es la mínima cota superior de P, lo que la convierte en el supremo del conjunto. Nótese que por los mismos motivos, P no tiene un máximo.
+
+\sectionx{10}
+
+\textbf{Mostrar que existe un número natural $ n $ que satisface $ \frac{1}{n} < 0,001 $. En general, mostrar que cualquiera sea $ x $ positivo, existe un número natural $ n $ que satisface $ \frac{1}{n} < x $. Deducir de ello que $ \mathop{\text{inf}}\left\{ \frac{1}{n}, n \in \mathbb{N} \right\} = 0$}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+En primer lugar, se calcularán los valores de $ n $ que satisfacen $ \frac{1}{n} < 0,001 $.
+
+\begin{equation}
+\frac{1}{n} < 0,001
+\end{equation}
+
+Siendo $ n $ natural, es positivo y multiplicar miembro a miembro por $ n $ no altera la desigualdad.
+
+\begin{equation}
+1 < 0,001 n \Rightarrow \frac{1}{0,001} < n \Rightarrow 1000 < n
+\end{equation}
+
+Por lo tanto, cualquier valor de $ n $ mayor a 1000 satisface la desigualdad. De manera general, considérese un valor $ x $ positivo.
+
+\begin{equation}
+\frac{1}{n} < x \Rightarrow 1 < n \cdot x
+\end{equation}
+
+En este punto, se utiliza el hecho de que $ x > 0 $ para multiplicar miembro a miembro por $ \frac{1}{x} $ sin alterar la desigualdad.
+
+\begin{equation}
+\frac{1}{x} < n
+\end{equation}
+
+Esto establece el hecho de que la expresión $ \frac{1}{n} $ puede tomar valores arbitrariamente cercanos a cero. Agregando a esto el hecho de que $ \frac{1}{n} > 0 $ para todo $ n $ por ser $ n $ positivo, resulta entonces que 0 es la mínima cota inferior del conjunto y por ende es el ínfimo.
+
+\sectionx{10}
+
+\textbf{Sean A y B dos conjuntos de números reales no vacíos y acotados de modo que $ A \in B $. Ordenar de menor a mayor los siguientes números:}
+
+\begin{equation}
+\mathop{\text{sup}} A, \mathop{\text{sup}} B, \mathop{\text{inf}} A, \mathop{\text{inf}} B
+\end{equation}
+
+\textbf{Exhibir un ejemplo donde $ \mathop{\text{sup}} A = \mathop{\text{sup}} B $ y otro donde la desigualdad sea estricta}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+Si $ A \in B $, tiene que cumplirse lo siguiente:
+
+\begin{itemize}
+\item $ \mathop{\text{inf}} B \leq \mathop{\text{inf}} A $: Porque A no puede tener elementos menores al ínfimo de B. 
+\item $ \mathop{\text{sup}} A \leq \mathop{\text{sup}} B $: Porque A no puede tener elementos mayores al supremo de B.
+\item $ \mathop{\text{inf}} A \leq \mathop{\text{sup A}} $: Para cualquier conjunto, el ínfimo no puede superar al supremo.
+\end{itemize}
+
+Esto garantiza que todo elemento de A esté contenido en B. Ahora bien, las desigualdades pueden darse en diferentes combinaciones. El orden general siempre será el mismo, pero algunos valores pueden coincidir.
+
+\begin{itemize}
+
+\item Caso 1: Sin coincidencias.
+
+\begin{equation}
+\mathop{\text{inf}} B < \mathop{\text{inf}} A < \mathop{\text{sup}} A < \mathop{\text{sup}} B.
+\end{equation}
+
+Ejemplo: $ A = (-1,1), B = (-3, 3) $
+
+\item Caso 2: Coinciden los ínfimos de A y B.
+
+\begin{equation}
+\mathop{\text{inf}} B = \mathop{\text{inf}} A < \mathop{\text{sup}} A < \mathop{\text{sup}} B.
+\end{equation}
+
+Ejemplo: $ A = (-3,0), B = (-3,3) $
+
+\item Caso 3: Coinciden los supremos de A y B.
+
+\begin{equation}
+\mathop{\text{inf}} B < \mathop{\text{inf}} A < \mathop{\text{sup}} A = \mathop{\text{sup}} B.
+\end{equation}
+
+Ejemplo: $ A = (0,3), B = (-3,3) $
+
+\item Caso 4: A y B comparten tanto ínfimo como supremo, pero no son el mismo conjunto.
+
+\begin{equation}
+\mathop{\text{inf}} B = \mathop{\text{inf}} A < \mathop{\text{sup}} A = \mathop{\text{sup}} B.
+\end{equation}
+
+Ejemplo: $ A = (-3,3), B = [-3,3] $
+
+\item Caso 5: A tiene el mismo ínfimo y supremo (es un punto), y ninguno coincide con los de B.
+
+\begin{equation}
+\mathop{\text{inf}} B < \mathop{\text{inf}} A = \mathop{\text{sup}} A < \mathop{\text{sup}} B.
+\end{equation}
+
+Ejemplo: $ A = \{0\}, B = (-3,3) $
+
+\item Caso 6: A tiene el mismo ínfimo y supremo (es un punto), y su ínfimo coincide con el de B.
+
+\begin{equation}
+\mathop{\text{inf}} B = \mathop{\text{inf}} A = \mathop{\text{sup}} A < \mathop{\text{sup}} B.
+\end{equation}
+
+Ejemplo: $ A = \{-3\}, B = (-3,3) $
+
+\item Caso 7: A tiene el mismo ínfimo y supremo (es un punto), y su supremo coincide con el de B.
+
+\begin{equation}
+\mathop{\text{inf}} B < \mathop{\text{inf}} A = \mathop{\text{sup}} A = \mathop{\text{sup}} B.
+\end{equation}
+
+Ejemplo: $ A = \{3\}, B = (-3,3) $
+
+\end{itemize}
+
+\sectionx{12}
+
+\textbf{Determinar, en caso de que existan, el supremo, el ínfimo, el máximo y el mínimo de los siguientes conjuntos:}
+
+\begin{enumerate}[(a)]
+
+\item $ A = \{ x \in \mathbb{R} / x^2 - 3x + 2 < 0 \} $
+
+\item $ B = \{ y = x^2 - 3x + 2, x \in (0, 2) \} $
+
+\item $ C = \{ y = x^2 - 3x + 2, x \in \mathbb{R} \} $
+
+\end{enumerate}
+
+\hrule
+\vspace{1em}
+
+Considerando que los 3 conjuntos están definidos en base a la misma función cuadrática, conviene analizarla. Aplicando la fórmula para las raíces, vale decir:
+
+\begin{equation}
+x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+\end{equation}
+
+Se obtienen las raíces reales y diferentes $ x_1 = 2, x_2 = 1 $. Por ende:
+
+\begin{equation}
+x^2 - 3x + 2 = (x-2) (x-1)
+\end{equation}
+
+Esto servirá para analizar el signo. Para analizar la imagen, conviene pasar a la forma canónica. Completando el cuadrado, resulta:
+
+\begin{equation}
+x^2 - 3x + 2 = \left( x- \frac{3}{2} \right)^2 - \frac{1}{4}
+\end{equation}
+
+\subsectionx{12.a}
+
+\begin{equation}
+A = \{ x \in \mathbb{R} / x^2 - 3x + 2 < 0 \}
+\end{equation}
+
+Para esto conviene usar la forma factorizada.
+
+\begin{equation}
+(x-2) (x-1) < 0
+\end{equation}
+
+Caso 1: primer factor positivo y segundo factor negativo.
+
+\begin{subequations}
+\begin{align}
+& x-2 < 0 \Rightarrow x < 2 \\
+& x-1 > 0 \Rightarrow x > 1
+\end{align}
+\end{subequations}
+
+Ergo, este caso corresponde al conjunto $ (1, 2) $.
+
+Caso 2: primer factor negativo y segundo factor positivo.
+
+\begin{subequations}
+\begin{align}
+& x-2 > 0 \Rightarrow x > 2 \\
+& x-1 < 0 \Rightarrow x < 1
+\end{align}
+\end{subequations}
+
+Este caso correponde al conjunto vacío, dado que no pueden darse a la vez $ x > 2 \wedge x < 1 $. Por lo tanto, resulta:
+
+\begin{equation}
+A = \{ x \in \mathbb{R} / x^2 - 3x + 2 < 0 \} = (1, 2)
+\end{equation}
+
+Por lo tanto:
+
+\begin{itemize}
+
+\item $ \hresult{}{ \mathop{\text{inf}} A = 1 } $
+\item $ \hresult{}{ \mathop{\text{min}} A = \nexists } $
+\item $ \hresult{}{ \mathop{\text{max}} A = \nexists } $
+\item $ \hresult{}{ \mathop{\text{sup}} A = 2 } $
+
+\end{itemize}
+
+\subsectionx{12.b}
+
+\begin{equation}
+B = \{ y = x^2 - 3x + 2, x \in (0, 2) \}
+\end{equation}
+
+El conjunto B sería entonces la imagen del intervalo (0, 2) a través de la función cuadrática. La forma más directa de visualizar esto es graficarla. Para ello conviene usar la forma canónica calculada previamente:
+
+\begin{equation}
+x^2 - 3x + 2 = \left( x- \frac{3}{2} \right)^2 - \frac{1}{4}
+\end{equation}
+
+Por ende, el vértice de la parábola se halla en el punto $ \left( -\frac{3}{2}, -\frac{1}{4} \right) $. Sabiendo esto y que las raíces son $ x_1 = 2, x_2 = 1 $, el gráfico resulta:
+
+\figurex{Ejercicio 12.b}{2.0}{../img/guide_02/ex_12b.png}{fig:12b} 
+
+Resulta entonces, observando los valores que toma la función en el intervalo (0, 2), $ B = \left[ -\frac{1}{4}, 2 \right) $. Nótese que el mínimo se incluye porque se alcanza dentro del intervalo, y el máximo no entra porque se alcanza en el extremo del intervalo, que no pertenece al conjunto. Por eso se omite el 2. Ergo:
+
+\begin{itemize}
+
+\item $ \hresult{}{ \mathop{\text{inf}} B = -\frac{1}{4} } $
+\item $ \hresult{}{ \mathop{\text{min}} B = -\frac{1}{4} } $
+\item $ \hresult{}{ \mathop{\text{max}} B = \nexists } $
+\item $ \hresult{}{ \mathop{\text{sup}} B = 2 } $
+
+\end{itemize}
+
+\subsectionx{12.c}
+
+\begin{equation}
+C = \{ y = x^2 - 3x + 2, x \in \mathbb{R} \}
+\end{equation}
+
+Ahora se pide el conjunto imagen completo. Observando el gráfico, resulta:
+
+\begin{equation}
+C = \left[ -\frac{1}{4}, +\infty \right)
+\end{equation}
+
+Por ende:
+
+\begin{itemize}
+
+\item $ \hresult{}{ \mathop{\text{inf}} C = -\frac{1}{4} } $
+\item $ \hresult{}{ \mathop{\text{min}} C = -\frac{1}{4} } $
+\item $ \hresult{}{ \mathop{\text{max}} C = \nexists } $
+\item $ \hresult{}{ \mathop{\text{sup}} C = \nexists } $
+
+\end{itemize}
 
 \end{document}
