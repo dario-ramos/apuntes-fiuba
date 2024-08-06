@@ -1,10 +1,7 @@
 \documentclass{article}
 
-%\usepackage{afterpage}
 \usepackage{amsmath}
 \usepackage{amssymb}
-%\usepackage{cancel}
-%\usepackage{graphicx}
 \usepackage[spanish]{babel}
 \usepackage{enumerate}
 \usepackage{hyperref}
@@ -15,17 +12,12 @@
     linkcolor=black,
     urlcolor=black,
 }
-%\usepackage{longdivision}
-%\usepackage{polynom}
 \usepackage{tcolorbox}
-%\usepackage{xcolor}
-%
+
 \tcbuselibrary{theorems}
-%
+
 \newcommand{\hresult}[2]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] {#2} }
-%\newcommand{\hresulte}[3]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] { \hspace{#3} #2 \hspace{#3} } }
 \newcommand{\figurex}[4]{\begin{figure}[ht] \caption{#1} \includegraphics[scale=#2]{#3} \centering \label{#4}\end{figure}}
-%\newcommand{\figurexnp}[4]{\afterpage{\figurex{#1}{#2}{#3}{#4}}}
 \newcommand{\sectionx}[1]{\section*{#1}\label{sec:#1}\addcontentsline{toc}{section}{\nameref{sec:#1}}}
 \newcommand{\subsectionx}[1]{\subsection*{#1}\label{subsec:#1}\addcontentsline{toc}{subsection}{\nameref{subsec:#1}}}
 
