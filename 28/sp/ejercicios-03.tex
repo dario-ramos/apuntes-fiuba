@@ -1,0 +1,364 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[spanish]{babel}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black,
+}
+\usepackage{tcolorbox}
+
+\tcbuselibrary{theorems}
+
+\newcommand{\hresult}[2]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] {#2} }
+\newcommand{\figurex}[4]{\begin{figure}[ht] \caption{#1} \includegraphics[scale=#2]{#3} \centering \label{#4}\end{figure}}
+\newcommand{\sectionx}[1]{\section*{#1}\label{sec:#1}\addcontentsline{toc}{section}{\nameref{sec:#1}}}
+\newcommand{\subsectionx}[1]{\subsection*{#1}\label{subsec:#1}\addcontentsline{toc}{subsection}{\nameref{subsec:#1}}}
+
+\renewcommand{\Bbb}{\mathbb}
+
+\title{Ejercicios de Análisis Matemático CBC (28) \\
+Práctica 3: Sucesiones \\
+Cátedra Ruiz, curso 62802 \\
+1° C 2003}
+\author{Darío Eduardo Ramos}
+
+\begin{document}
+\maketitle
+
+\tableofcontents{}
+
+\newpage
+
+\sectionx{1}
+
+\textbf{Escribir los primeros cinco términos de las siguientes sucesiones:}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $ a_n = \frac{\sqrt{n}}{n+1} $
+
+\item $ b_n = \frac{2^{n-1}}{(2n-1)^3} $
+
+\item $ c_n = \frac{(-1)^{n+1}}{n!} $
+
+\item $ d_n = \frac{\cos(n\pi)}{n} $
+
+\end{enumerate}
+
+\hrule
+\vspace{1em}
+
+Evaluar el término $ a_i $ equivale a hacer $ n = i $ en la expresión del término general $ a_n $ y calcular el valor. En este caso, se piden $ a_1, a_2, \dots, a_5 $. Se asume la convención de que todas las sucesiones comienzan en $ n = 1 $.
+
+\subsectionx{1.a}
+
+\begin{equation}
+a_n = \frac{\sqrt{n}}{n+1}
+\end{equation}
+
+\begin{subequations}
+\begin{align}
+& \hresult{}{a_1 = \frac{1}{2} = 0,5000 } \\
+& \hresult{}{a_2 = \frac{\sqrt{2}}{3} \approx 0,47140 } \\
+& \hresult{}{a_3 = \frac{\sqrt{3}}{4} \approx 0,43301 } \\
+& \hresult{}{a_4 = \frac{\sqrt{4}}{5} =  0,4000 } \\
+& \hresult{}{a_5 = \frac{\sqrt{5}}{6} =  0,37268 }
+\end{align}
+\end{subequations}
+
+\subsectionx{1.b}
+
+\begin{equation}
+b_n = \frac{2^{n-1}}{(2n-1)^3}
+\end{equation}
+
+\begin{subequations}
+\begin{align}
+& \hresult{}{b_1 = \frac{2^0}{1^3} = \frac{1}{1} = 1,0000 } \\
+& \hresult{}{b_2 = \frac{2^1}{3^3} = \frac{2}{27} \approx 0,074074 } \\
+& \hresult{}{b_3 = \frac{2^2}{5^3} = \frac{4}{125} = 0,032000 } \\
+& \hresult{}{b_4 = \frac{2^3}{7^3} = \frac{8}{343} \approx 0,023323 } \\
+& \hresult{}{b_5 = \frac{2^4}{9^3} = \frac{16}{729} \approx 0,021948 }
+\end{align}
+\end{subequations}
+
+\subsectionx{1.c}
+
+\begin{equation}
+c_n = \frac{(-1)^{n+1}}{n!}
+\end{equation}
+
+\begin{subequations}
+\begin{align}
+& \hresult{}{c_1 = \frac{1}{1!} = \frac{1}{1} = 1,0000 } \\
+& \hresult{}{c_2 = \frac{-1}{2!} = -\frac{1}{2} = 0,5000 } \\
+& \hresult{}{c_3 = \frac{1}{3!} = \frac{1}{6} \approx 0,16667 } \\
+& \hresult{}{c_4 = \frac{-1}{4!} = -\frac{1}{24} \approx -0,041667 } \\
+& \hresult{}{c_5 = \frac{1}{5!} = \frac{1}{120} \approx 0,008333 }
+\end{align}
+\end{subequations}
+
+\subsectionx{1.d}
+
+\begin{equation}
+d_n = \frac{\cos(n\pi)}{n}
+\end{equation}
+
+\begin{subequations}
+\begin{align}
+& \hresult{}{d_1 = \frac{ \cos(\pi) }{1} = -\frac{1}{1} = -1,0000 } \\
+& \hresult{}{d_2 = \frac{ \cos(2\pi) }{2} = \frac{1}{2} = 0,5000 } \\
+& \hresult{}{d_3 = \frac{ \cos(3\pi) }{3} = -\frac{1}{3} \approx 0,33333 } \\
+& \hresult{}{d_4 = \frac{ \cos(4\pi) }{4} = \frac{1}{4} = 0,25000 } \\
+& \hresult{}{d_5 = \frac{ \cos(5\pi) }{5} = -\frac{1}{5} = 0,20000 0,008333 }
+\end{align}
+\end{subequations}
+
+\sectionx{2}
+
+\textbf{Para cada una de las siguientes sucesiones:}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item Encontrar el término 100 y el término 200 de cada una de ellas.
+
+\item Hallar, si es posible, el término general $ a_n $.
+
+\item Clasificar en convergentes o no convergentes.
+
+\end{enumerate}
+
+\begin{enumerate}[(i)]
+
+\bfseries
+
+\item $ 1, 2, 3, 4, \dots $
+
+\item $ -1, -\frac{1}{2}, -\frac{1}{3}, -\frac{1}{4}, \dots $
+
+\item $ 1, -\frac{1}{2}, \frac{1}{3}, -\frac{1}{4}, \dots $
+
+\item $ \frac{1}{2}, -\frac{1}{4}, \frac{1}{8}, -\frac{1}{16}, \dots $
+
+\item $ -1, 2, -3, 4, \dots $
+
+\item $ 0, \frac{1}{2}, 0, \frac{1}{3}, 0, \frac{1}{4}, \dots $
+
+\item $ 1, -1, 1, -1, \dots $
+
+\item $ 2, \frac{3}{2}, \frac{4}{3}, \frac{5}{4}, \dots $
+
+\item $ 1, 1, \frac{1}{2}, 2, \frac{1}{3}, 3, \frac{1}{4}, \dots $
+
+\item $ a_1 = 1, a_{n+1} = 2a_n $
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{2.i}
+
+\begin{equation}
+a_n = \{ 1, 2, 3, 4, \dots \}
+\end{equation}
+
+Esta es la sucesión de los números naturales. El término general no es otra cosa que $n$.
+
+\begin{equation}
+\hresult{2.i}{ a_n = n \Rightarrow a_{100} = 100, a_{200} = 200 }
+\end{equation}
+
+El conjunto $ \{a_n, n \in \mathbb{N}\} $ no está acotado, y por ende la sucesión es \textbf{no convergente}.
+
+\subsectionx{2.ii}
+
+\begin{equation}
+a_n = \left\{ -1, -\frac{1}{2}, -\frac{1}{3}, -\frac{1}{4}, \dots \right\}
+\end{equation}
+
+Por inspección, el término general es:
+
+\begin{equation}
+\hresult{2.ii}{ a_n = -\frac{1}{n} \Rightarrow a_{100} = -\frac{1}{100} = 0,01, a_{200} = -\frac{1}{200} = -0,005 }
+\end{equation}
+
+Todos los elementos están entre -1 y 0, por lo que esta sucesión puede ser convergente. 
+
+Por definición:
+
+\begin{equation}
+a_n \rightarrow L \Leftrightarrow \forall \epsilon > 0 \exists N / \forall n \geq N, |a_n - L| < \epsilon
+\end{equation}
+
+En palabras, la sucesión $ a_n $ converge a un número real $ L $ si y sólo si para todo $ \epsilon $ real positivo, es posible hallar un entero $ N $ tal que para todo $ n \geq N $, el módulo de $ a_n - L $ es menor a $ \epsilon $.
+
+Para este caso particular, considérese primero la expresión $ |a_n - L| < \epsilon $. La sucesión parece converger a cero, por ende se plantea $ L = 0 $.
+
+\begin{equation}
+\left| \frac{1}{n} - 0 \right| < \epsilon \Rightarrow \frac{1}{n} < \epsilon \Rightarrow n > \frac{1}{e}
+\end{equation}
+
+Dado que al resolver la desigualdad para $ n $ se obtuvo $ n > \frac{1}{e} $, esto sugiere elegir $ N = \lceil \frac{1}{e} \rceil $.
+
+El próximo paso es verificar que para esa elección de $ N $, la condición $ \frac{1}{n} < \epsilon $ se satisface para todo $ n \geq N $.
+
+Si $ n \geq N \Rightarrow n \geq \lceil \frac{1}{\epsilon} \rceil $. Como son todos positivos, se puede invertir miembro a miembro, obteniendo:
+
+\begin{equation}
+\frac{1}{n} \leq \frac{1}{\lceil \frac{1}{\epsilon} \rceil }
+\end{equation}
+
+Quitar la función techo genera un numerador menor o igual, por ende es una cota superior válida.
+
+\begin{equation}
+\frac{1}{n} \leq \frac{1}{\lceil \frac{1}{\epsilon} \rceil } \geq \frac{1}{\frac{1}{\epsilon}} = \epsilon 
+\end{equation}
+
+Se demostró entonces que para esta elección de $ N $, $ |a_n - 0| $ está acotada para todo valor de $ \epsilon $. Por ende, \textbf{$ a_n $ converge a cero}.
+
+\subsectionx{2.iii}
+
+\begin{equation}
+a_n = \left\{ 1, -\frac{1}{2}, \frac{1}{3}, -\frac{1}{4}, \dots \right\}
+\end{equation}
+
+Es la misma sucesión del inciso anterior, pero sólo los términos de índice par son negativos. Para lograr esto, se puede introducir un factor $ (-1)^{n+1} $. Nótese que se introdujo un +1 porque sin eso, los términos de índice impar quedarían negativos, y se desea hacer eso para los de índice par.
+
+\begin{equation}
+\hresult{2.iii}{ a_n = (-1)^{n+1} \frac{1}{n} \Rightarrow a_{100} = -\frac{1}{100} = -0,01, a_{200} = -\frac{1}{200} = -0,005 }
+\end{equation}
+
+Al tomar el módulo, esta sucesión se convierte en $ \frac{1}{n} $, por ende \textbf{converge a cero}.
+
+\subsectionx{2.iv}
+
+\begin{equation}
+a_n = \left\{ \frac{1}{2}, -\frac{1}{4}, \frac{1}{8}, -\frac{1}{16}, \dots \right\}
+\end{equation}
+
+Al tener signo alternado, de nuevo hay un factor $ (-1)^{n+1} $, ya que los negativos son los de índice par. El numerador siempre es 1, y el denominador es la sucesión de potencias de 2.
+
+\begin{equation}
+\hresult{2.iv}{ a_n = (-1)^{n+1} \frac{1}{2^n} \Rightarrow a_{100} = -\frac{1}{2^{100}}, a_{200} = -\frac{1}{2^{200}} }
+\end{equation}
+
+En cuanto a la convergencia, al tomar módulo se tiene $ \frac{1}{2^n} $, que es término a término menor a $ \frac{1}{n} $. Esto permite utilizar la propiedad de que si una sucesión es menor término a término respecto a una sucesión convergente, entonces también converge. Por ende, $ a_n $ \textbf{converge a cero}.
+
+\subsectionx{2.v}
+
+\begin{equation}
+a_n = \{ -1, 2, -3, 4, \dots \}
+\end{equation}
+
+Es la sucesión de los naturales con un factor $ (-1)^n $. Como en este caso los negativos son los términos de índice impar, se usa $ (-1)^n $ en lugar de $ (-1)^{n+1} $.
+
+\begin{equation}
+\hresult{2.v}{ a_n = (-1)^n n \Rightarrow a_{100} = 100, a_{200} = 200 }
+\end{equation}
+
+Esta sucesión no está acotada, y por ende \textbf{no converge}.
+
+\subsectionx{2.vi}
+
+\begin{equation}
+a_n = \left\{ 0, \frac{1}{2}, 0, \frac{1}{3}, 0, \frac{1}{4}, \dots \right\}
+\end{equation}
+
+Cuando se tiene una sucesión con una forma clara para términos de índice impar y otra forma diferente para los de índice par, suele ser más práctico expresarla de la siguiente manera:
+
+\begin{subequations}
+\begin{align}
+& \hresult{2.vi}{ a_{2n-1} = 0 } \\
+& \hresult{2.vi}{ a_{2n} = \frac{1}{n} } \\
+& \hresult{2.vi}{ a_{100} = \frac{1}{50}, a_{200} = \frac{1}{100} }
+\end{align}
+\end{subequations}
+
+Nótese que el término general tiene una forma para los términos de índice par, $ a_{2n} $, y otra para los términos de índice impar: $ a_{2n-1} $.
+
+Para analizar la convergencia, se utiliza la propiedad de que si una sucesión converge, todas sus subsucesiones también, y al mismo valor. En este caso, una es una constante y la otra converge a cero. Dado que la constante coincide con cero, podemos afirmar que la sucesión completa \textbf{converge a cero}.
+
+\subsectionx{2.vii}
+
+\begin{equation}
+a_n = \{ 1, -1, 1, -1, \dots \}
+\end{equation}
+
+Es $ (-1)^{n+1} $, ya que los negativos son los de índice par.
+
+\begin{equation}
+\hresult{2.viii}{ a_n = (-1)^{n+1} \Rightarrow a_{100} = a_{200} = -1 }
+\end{equation}
+
+Esta sucesión está acotada, pero no converge. Si se toma la subsucesión de índices pares, es la constante -1. Y si se toma la subsucesión de índices impares, es la constante 1. Es en este punto donde se aplica la propiedad de que si dos subsucesiones convergen a distintos valores, la sucesión completa \textbf{no converge}.
+
+\subsectionx{2.viii}
+
+\begin{equation}
+a_n = \left\{ 2, \frac{3}{2}, \frac{4}{3}, \frac{5}{4}, \dots \right\}
+\end{equation}
+
+Por inspección, el numerador es $ n+1 $ y el denominador es $ n $.
+
+\begin{equation}
+a_n = \frac{n+1}{n} \Rightarrow a_{100} = \frac{101}{100}, a_{200} = \frac{201}{200}
+\end{equation}
+
+Para valores grandes de $ n $, el +1 del numerador es despreciable, por lo que queda $ \frac{n}{n} $ y puede intuirse que esta sucesión converge a 1. Aplicando la definición, considérese:
+
+\begin{subequations}
+\begin{align}
+& \left| \frac{n+1}{n} - 1 \right| < \epsilon \\
+& \left| \frac{n+1-n}{n} \right| < \epsilon \\
+& \frac{1}{n} < \epsilon
+\end{align}
+\end{subequations}
+
+No es necesario continuar, porque demostrar esta convergencia es equivalente a demostrar la de $ \frac{1}{n} $, y eso ya se hizo. Conclusión: la sucesión \textbf{converge a 1}.
+
+\subsectionx{2.ix}
+
+\begin{equation}
+a_n = \left\{ 1, 1, \frac{1}{2}, 2, \frac{1}{3}, 3, \frac{1}{4}, \dots \right\}
+\end{equation}
+
+Nuevamente, hay una subsucesión para los índices pares y otra para los impares. Una forma cómoda de expresar esto es la ya vista:
+
+\begin{subequations}
+\begin{align}
+& \hresult{2.ix}{ a_{2n-1} = n } \\
+& \hresult{2.ix}{ a_{2n} = \frac{1}{n} } \\
+& \hresult{2.ix}{ a_{100} = \frac{1}{50}, a_{200} = \frac{1}{100} }
+\end{align}
+\end{subequations}
+
+En cuanto a la convergencia, se utilizará la propiedad de que si una subsucesión no converge, la sucesión completa no converge. En este caso, la sucesión de índices impares no converge, por ende no hace falta analizar la otra para concluir que la sucesión completa \textbf{no converge}.
+
+\subsectionx{2.x}
+
+Observando los valores de los primeros términos, se obtiene:
+
+\begin{equation}
+a_n = \{ 1, 2, 4, 8, 16, \dots... \}
+\end{equation}
+
+Son las potencias de dos comenzando en el exponente cero. Por lo tanto:
+
+\begin{equation}
+\hresult{2.x}{ a_n = 2^{n-1} \Rightarrow a_{100} = 2^{99}, a_{200} = 2^{199} }
+\end{equation}
+
+Esta sucesión no está acotada, por lo cual \textbf{no converge}.
+
+\end{document}
