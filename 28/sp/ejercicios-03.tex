@@ -361,4 +361,162 @@ Son las potencias de dos comenzando en el exponente cero. Por lo tanto:
 
 Esta sucesión no está acotada, por lo cual \textbf{no converge}.
 
+\sectionx{3}
+
+\textbf{Hallar un valor de $ n \in \mathbb{N} $ a partir del cual haya certeza de que: }
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $ n^2 - 5n - 8 $ sea mayor que \textbf{(i)} 10 y \textbf{(ii)} 1000.
+
+\item $ 2^n - 100 $ sea mayor que \textbf{(i)} 10 y \textbf{(ii)} 1000.
+
+\item $ \frac{(-1)^n}{n+1} + 2 $ esté entre \textbf{(i)} 1,9 y 2,1 y \textbf{(ii)} 1,999 y 2,001.
+
+\item $ \frac{\sin n}{n} $ esté entre \textbf{(i)} -0,1 y 0,1 y \textbf{(ii)} -0,001 y 0,001.  
+
+\end{enumerate}
+
+\subsectionx{3.a}
+
+Sea el caso general:
+
+\begin{equation}
+n^2 - 5n -8 > k \Leftrightarrow n^2 - 5n -8 - k > 0
+\end{equation}
+
+En este punto, conviene expresar la función cuadrática en forma factorizada según sus raíces $ x_1 $ y $ x_2 $. Nótese que para este análisis se usa una función de variable continua y no una sucesión, pero dado que el análisis vale para todo $ x $ real, vale para el subconjunto de los valores de la sucesión.
+
+\begin{equation}
+x^2 - 5x -8 - k = (x-x_1) (x-x_2)
+\end{equation}
+
+Aplicando la fórmula de las raíces:
+
+\begin{equation}
+x_1, x_2 = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2a} = \frac{5 \pm \sqrt{25 - 4 (-8-k)}}{2} = \frac{5 \pm \sqrt{57 + 4k}}{2}
+\end{equation}
+
+Para k = 10, resulta:
+
+\begin{subequations}
+\begin{align}
+& x_1 = \frac{5+\sqrt{97}}{2} \approx 7,4244 \\
+& x_2 = \frac{5-\sqrt{97}}{2} \approx -2,4244
+\end{align}
+\end{subequations}
+
+Dado que $ f(x) = (x-x_1) (x-x_2) $ y se está buscando los valores de $ x $ para los que $ f(x) $ es positiva, hay dos escenarios.
+
+Caso 1: ambos factores del producto positivos.
+
+\begin{equation}
+x > x_1 \wedge x > x_2 \Rightarrow x > \mathop{\text{max}}(x_1, x_2) \Rightarrow x > 7,4244
+\end{equation}
+
+Caso 2: ambos factores del producto negativos.
+
+\begin{equation}
+x < x_1 \wedge x < x_2 \Rightarrow x < \mathop{\text{min}}(x_1, x_2) \Rightarrow x < -2,4244
+\end{equation}
+
+Volviendo a los números naturales, el intervalo negativo no interesa. Y para el caso positivo, el primer entero mayor a $ x_1 $ es 8. Por ende, se obtiene:
+
+\begin{equation}
+\hresult{3.a.i}{ k = 10 \Rightarrow n \geq 8 }
+\end{equation}
+
+Repitiendo este análisis para $ k = 1000 $, se obtiene:
+
+\begin{equation}
+\hresult{3.a.ii}{ k = 1000 \Rightarrow n \geq 35 }
+\end{equation}
+
+\subsectionx{3.b}
+
+Nuevamente, analizando de manera general:
+
+\begin{subequations}
+\begin{align}
+& 2^n - 100 > k \\
+& 2^n > k + 100 \\
+& \log_2( 2^n ) > \log_2( k + 100 ) \\
+& n > \log_2( k + 100 )
+\end{align}
+\end{subequations}
+
+Para los valores solicitados de $ k $, resulta:
+
+\begin{subequations}
+\begin{align}
+& \hresult{3.b.i}{ k = 10 \Rightarrow n \geq 7 } \\
+& \hresult{3.b.ii}{ k = 1000 \Rightarrow n \geq 11 }
+\end{align}
+\end{subequations}
+
+\subsectionx{3.c}
+
+En este caso hay una cota superior y otra inferior, lo cual dificulta el análisis genérico. Para el primer caso:
+
+\begin{subequations}
+\begin{align}
+& 1,9 < \frac{(-1)^n}{n+1} + 2 < 2,1 \\
+& -0,1 < \frac{(-1)^n}{n+1} < 0,1
+\end{align}
+\end{subequations}
+
+Llegado este punto, nótese que las cotas son el mismo valor pero con distinto signo. Por lo tanto, las desigualdades pueden simplificarse en una sola utilizando la siguiente propiedad de la función módulo:
+
+\begin{equation}
+|x| < a, a > 0 \Leftrightarrow -a < x < a
+\end{equation}
+
+Para este caso, se obtiene:
+
+\begin{subequations}
+\begin{align}
+& \left| \frac{(-1)^n}{n+1} \right| < 0,1 \\
+& \frac{1}{n+1} < 0,1 \\
+& 1 < 0,1 (n+1) \\
+& \hresult{3.c.i}{ n \geq 10 }
+\end{align}
+\end{subequations}
+
+Haciendo el mismo análisis para el segundo caso:
+
+\begin{equation}
+\hresult{3.c.ii}{ n \geq 1000 }
+\end{equation}
+
+\subsectionx{3.d}
+
+Aunque de nuevo haya dos desigualdades, es posible explotar las propiedades de la función seno para hacer un análisis genérico.
+
+\begin{subequations}
+\begin{align}
+& -k < \frac{\sin n}{n} < k \\
+& -k n < \sin n < k n
+\end{align}
+\end{subequations}
+
+La función seno está acotada entre -1 y 1, por ende debe satisfacerse:
+
+\begin{subequations}
+\begin{align}
+& -k n \leq -1 \Rightarrow n \geq \frac{1}{k} \\
+& k n \geq 1 \Rightarrow n \geq \frac{1}{k}
+\end{align}
+\end{subequations}
+
+Finalmente:
+
+\begin{subequations}
+\begin{align}
+& \hresult{3.d.i}{ k = 0,1 \Rightarrow n \geq 10 } \\
+& \hresult{3.d.ii}{ k = 0,001 \Rightarrow n \geq 1000 }
+\end{align}
+\end{subequations}
+
 \end{document}
