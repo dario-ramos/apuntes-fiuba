@@ -519,4 +519,125 @@ Finalmente:
 \end{align}
 \end{subequations}
 
+\sectionx{4}
+
+\textbf{ Considerar la sucesión $ a_n = \frac{n+1}{n-1000,2} $. A partir de que el $ \lim_{ n \rightarrow +\infty } a_n = 1 $, responder cuáles de las siguientes afirmaciones son verdaderas, justificando en cada caso. }
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n > 0 $.
+
+\item Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n > \frac{1}{2} $.
+
+\item Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n < 1 $.
+
+\item Existe un $ n \in \mathbb{N} $ para el cual $ a_n = 1 $.
+
+\item La sucesión $ a_n $ está acotada.
+
+\end{enumerate}
+
+\textbf{ Escribir las afirmaciones que correspondan con la nomenclatura pctn. }
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+La nomenclatura pctn significa ``para casi todo n'', y se usa para indicar propiedades que se cumplen para todos los valores naturales excepto una cantidad finita de valores. Por ejemplo, se puede decir que la sucesión $ a_n = n-3 $ es mayor a cero pctn, dado que sólo es negativa o cero para $ n = 1, n=2 $ y $n=3$.
+
+De manera más formal y general, un predicado $P(n)$, donde $P:\mathbb{N} \rightarrow {F, V}$ se cumple pctn si y sólo el conjunto $ \{ P(n), n \in \mathbb{N} / P(n) = F  \} $ es acotado.
+
+\subsectionx{4.a}
+
+Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n > 0 $.
+
+Esta afirmación es equivalente a decir que $ a_n > 0 $ pctn. A priori, cabe esperar que esto sea \textbf{verdadero}, ya que al ser 1 el límite, a partir de cierto $ n $ los valores estarán concentrados alrededor de 1. Una forma de verificar esto es ver para qué valores de $ n $ resulta $ a_n $ positiva.
+
+\begin{equation}
+\frac{n+1}{n-1000, 2} > 0
+\end{equation}
+
+El numerador es siempre positivo, por ser $ n $ natural. Por lo tanto, para que el cociente sea positivo, debe ser el denominador positivo también. Ergo:
+
+\begin{equation}
+n-1000,2 > 0 \Rightarrow n > 1000,2 \Rightarrow n \geq 1001
+\end{equation}
+
+\begin{equation}
+\hresult{4.a}{ \textbf{(V)} a_n > 0 \text{ pctn, dado que } a_n > 0 \text{ para } n \geq 1001 }
+\end{equation}
+
+\subsectionx{4.b}
+
+Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n > \frac{1}{2} $.
+
+De manera análoga al inciso anterior, al ser el límite 1, cabe esperar que haya infinitos valores de $ a_n $ en la vecindad de 1. para confirmar esto, se analizará para qué valores de $ n $ se cumple que $ a_n $ es mayor a $ \frac{1}{2} $.
+
+\begin{subequations}
+\begin{align}
+& \frac{n+1}{n-1000,2} > \frac{1}{2} \\
+& \frac{2(n+1)}{n-1000,2} > 1 \\
+& \frac{2n+2}{n-1000,2} - 1 > 0 \\
+& \frac{2n+2-(n-1000,2)}{n-1000,2} > 0 \\
+& \frac{n+1002,2}{n-1000,2} > 0
+\end{align}
+\end{subequations}
+
+El numerador siempre es positivo, por ende el denominador tiene que serlo. Esto conduce nuevamente a $ a_n \geq 1001 $. Ergo:
+
+\begin{equation}
+\hresult{4.b}{ \textbf{(V)} a_n > \frac{1}{2} \text{ pctn, dado que } a_n > \frac{1}{2} \text{ para } n \geq 1001 }
+\end{equation}
+
+\subsectionx{4.c}
+
+Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n < 1 $.
+
+En este caso, cabe esperar que la afirmación sea falsa, ya que al ser el numerador siempre mayor que el denominador, el cociente $ a_n $ tiende a 1 ``por arriba''. Formalmente:
+
+\begin{subequations}
+\begin{align}
+& \frac{n+1}{n-1000,2} < 1 \\
+& \frac{n+1}{n-1000,2} - 1 < 0 \\
+& \frac{n+1-(n-1000,2)}{n-1000,2} < 0 \\
+& \frac{1001,2}{n-1000,2} < 0 \\
+& n < 1000,2 \\
+& n \leq 1000
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{4.c}{ \textbf{(F)} a_n < 1 \text{ sólo para } n \leq 1000 (a_n \geq 1 \text{ pctn}) }
+\end{equation}
+
+\subsectionx{4.d}
+
+Existe un $ n \in \mathbb{N} $ para el cual $ a_n = 1 $.
+
+En este caso, el límite nunca se alcanza, ni en el infinito ni en valores particulares. Téngase en cuenta que sí puede ocurrir que el límite sea 1 y el valor 1 se alcance. Por ejemplo, para la sucesión constante $ a_n = 1 $. Pero volviendo a este caso:
+
+\begin{subequations}
+\begin{align}
+& \frac{n+1}{n-1000,2} = 1 \\
+& n+1 = n-1000,2 \\
+& 1 = -1000,2
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{4.d}{ \textbf{(F)} \text{ No existe valor de } n \text{ natural que satisfaga } a_n = 1 }
+\end{equation}
+
+\subsectionx{4.e}
+
+La sucesión $ a_n $ está acotada.
+
+Que una sucesión esté acotada es una condición necesaria para que sea convergente. Por ende, que el límite exista y sea finito implica que $ a_n $ está acotada.
+
+\begin{equation}
+\hresult{4.e}{ (V) a_n \text{ convergente } \Rightarrow a_n \text{ acotada. } }
+\end{equation}
+
 \end{document}
