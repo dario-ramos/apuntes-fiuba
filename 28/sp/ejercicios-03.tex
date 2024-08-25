@@ -2,6 +2,7 @@
 
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{cancel}
 \usepackage[spanish]{babel}
 \usepackage{enumerate}
 \usepackage{hyperref}
@@ -833,6 +834,263 @@ Para este caso, $ a = 1 $, $ r = \frac{1}{2} $, lo cual conduce a que la suma va
 
 \begin{equation}
 \hresult{5.h}{\limninf a_n = 2}
+\end{equation}
+
+\sectionx{6}
+
+\textbf{Continuar con las siguientes sucesiones:}
+
+\begin{enumerate}[(a)]
+
+\item $ \frac{n^2-5n+7}{n+3} + \frac{n^2 + 5}{n+1} $
+
+\item $ \frac{n^2-5n+7}{n+3} - \frac{n^2 + 5}{n+1} $
+
+\item $ \sqrt{n^2+n-2} + n $
+
+\item $ \sqrt{n^2+n-2} - n $
+
+\item $ \sqrt{n^2+1} - \sqrt{n^2-n+3} $
+
+\item $ \sqrt{ \frac{2n^2-1}{3n^2+2} } + \frac{3n-1}{2n+3} $
+
+\item $ \sqrt{n} ( \sqrt{n+2} - \sqrt{n} ) $
+
+\item $ n ( \sqrt{n+2} - \sqrt{n} ) $
+
+\item $ \frac{n}{\sqrt{n+1}-n} $
+
+\item $ \sqrt{n} ( \sqrt{n^2+2} - \sqrt{n} ) $
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{6.a}
+
+\begin{equation}
+a_n = \frac{n^2-5n+7}{n+3} + \frac{n^2 + 5}{n+1}
+\end{equation}
+
+Ambos términos tienden a $ +\infty $, porque el numerador es de mayor grado que el denominador, y los signos de los coeficientes de mayor grado de numerador y denominador son positivos. Dado que se tiene una suma de términos que tienden a infinito, no hay indeterminación: la sucesión completa diverge a $ +\infty $.
+
+\begin{equation}
+\hresult{6.a}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
+
+\subsectionx{6.b}
+
+\begin{equation}
+a_n = \frac{n^2-5n+7}{n+3} - \frac{n^2 + 5}{n+1}
+\end{equation}
+
+En este caso sí hay una indeterminación, porque se tiene una diferencia de términos que tienden a $ +\infty $. Despreciar los términos de menor grado conduciría a que el límite sería cero. Pero esto es erróneo, porque los términos de mayor grado se cancelan. Cuando eso ocurre, los términos de menor grado son los que determinan el límite, y es necesario un análisis más detallado. Para este caso particular, un camino posible es realizar la suma algebraica.
+
+\begin{subequations}
+\begin{align}
+& \limninf \frac{n^2-5n+7}{n+3} - \frac{n^2 + 5}{n+1} = \\
+& \limninf \frac{(n+1)(n^2-5n+7)-(n+3)(n^2+5)}{(n+3) (n+1))} = \\
+& \limninf \frac{n^3-5n^2+7n+n^2-5n+7-(n^3+5n+3n^2+15)}{n^2+n+3n+3} = \\
+& \limninf \frac{n^3-4n^2+2n+7-(n^3+3n^2+5n+15)}{n^2+4n+3} = \\
+& \limninf \frac{\cancel{n^3}-4n^2+2n+7-\cancel{n^3}-3n^2-5n-15}{n^2+4n+3} = \\
+& \limninf \frac{-7n^2-3n-8}{n^2+4n+3}
+\end{align}
+\end{subequations}
+
+En este punto, se ha eliminado la indeterminación. Ahora se tiene un cociente de polinomios, y es válido despreciar todo salvo los términos de mayor grado. Ello conduce a:
+
+\begin{equation}
+\hresult{6.b}{ \limninf a_n = -7 }
+\end{equation}
+
+\subsectionx{6.c}
+
+\begin{equation}
+a_n = \sqrt{n^2+n-2} + n
+\end{equation}
+
+Como en 6.a, no hay indeterminación. Es la suma de dos términos que tienden a $ +\infty $.
+
+\begin{equation}
+\hresult{6.c}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
+
+\subsectionx{6.d}
+
+\begin{equation}
+a_n = \sqrt{n^2+n-2} - n
+\end{equation}
+
+Ahora sí hay una indeterminación, porque se tiene una diferencia de términos que tiende a $ +\infty $. De manera análoga a como ocurría en el caso de los polinomios, despreciar los términos de menor grado conduce al resultado erróneo de que el límite es cero. En este caso particular, una transformación algebraica útil es multiplicar y dividir por una expresión que permite aprovechar la propiedad:
+
+\begin{equation}
+(a+b)(a-b) = a^2 - b^2
+\end{equation}
+
+Como se verá, esto eliminará las raíces cuadradas y la indeterminación.
+
+\begin{subequations}
+\begin{align}
+& \limninf \sqrt{n^2+n-2} - n = \\
+& \limninf \left( \sqrt{n^2+n-2} - n \right) \frac{\sqrt{n^2+n-2} + n}{\sqrt{n^2+n-2} + n} = \\
+& \limninf \frac{(\sqrt{n^2+n-2})^2 - n^2}{\sqrt{n^2+n-2} + n}
+\end{align}
+\end{subequations}
+
+Para valores grandes de $ n $, el radicando siempre es positivo. Equivalentemente, es positivo pctn. Por lo tanto, es válido cancelar la raíz con el cuadrado en el numerador.
+
+\begin{equation}
+\limninf \frac{\cancel{n^2}+n-2-\cancel{n^2}}{\sqrt{n^2+n-2} + n} = 
+\limninf \frac{n-2}{\sqrt{n^2+n-2}+n}
+\end{equation}
+
+La indeterminación ha sido salvada; es válido despreciar términos de menor grado.
+
+\begin{subequations}
+\begin{align}
+& \limninf \frac{n}{\sqrt{n^2}+n} = \\
+& \limninf \frac{n}{n+n} = \frac{1}{2}
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{6.d}{ \limninf a_n = \frac{1}{2} }
+\end{equation}
+
+\subsectionx{6.e}
+
+\begin{equation}
+a_n = \sqrt{n^2+1} - \sqrt{n^2-n+3}
+\end{equation}
+
+Nuevamente, se tiene una indeterminación del tipo $ \infty - \infty $. Como en el inciso previo, es útil multiplicar y dividir por una expresión apropiada.
+
+\begin{subequations}
+\begin{align}
+& \limninf \sqrt{n^2+1}-\sqrt{n^2-n+3} = \\
+& \limninf \left( \sqrt{n^2+1}-\sqrt{n^2-n+3} \right) \frac{\sqrt{n^2+1}+\sqrt{n^2-n+3}}{\sqrt{n^2+1}+\sqrt{n^2-n+3}} = \\
+& \limninf \frac{(\sqrt{n^2+1})^2-(\sqrt{n^2-n+3})^2}{\sqrt{n^2+1}+\sqrt{n^2-n+3}} \\
+& \limninf \frac{n^2+1-(n^2-n+3)}{\sqrt{n^2+1}+\sqrt{n^2-n+3}} = \\
+& \limninf \frac{\cancel{n^2} + 1 -\cancel{n^2} +n -3}{\sqrt{n^2+1}+\sqrt{n^2-n+3}} = \\
+& \limninf \frac{n}{\sqrt{n^2}+\sqrt{n^2}} = \\
+& \limninf \frac{n}{n+n} = \frac{1}{2}
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{6.e}{ \limninf a_n = \frac{1}{2} }
+\end{equation}
+
+\subsectionx{6.f}
+
+\begin{equation}
+a_n = \sqrt{ \frac{2n^2-1}{3n^2+2} } + \frac{3n-1}{2n+3}
+\end{equation}
+
+En este caso, no hay indeterminación alguna. Ambos sumandos tienden a un valor finito.
+
+\begin{subequations}
+\begin{align}
+& \limninf \sqrt{ \frac{2n^2-1}{3n^2+2} } + \frac{3n-1}{2n+3} = \\
+& \limninf \sqrt{ \frac{2n^2}{3n^2} } + \frac{3n}{2n} = \\
+& \sqrt{\frac{2}{3}} + \frac{3}{2}
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{6.f}{ \limninf a_n = \frac{\sqrt{6}}{3} + \frac{3}{2} \approx 2,3165 }
+\end{equation}
+
+\subsectionx{6.g}
+
+\begin{equation}
+a_n = \sqrt{n} \left( \sqrt{n+2} - \sqrt{n} \right)
+\end{equation}
+
+Uno de los factores del producto está indeterminado, lo cual hace que la expresión completa resulte indeterminada. En este caso, es posible simplificar un poco antes de aplicar la técnica de multiplicar y dividir. Dado que todos los términos tienen raíz, $n$ puede ingresar multiplicando.
+
+\begin{subequations}
+\begin{align}
+& \limninf \sqrt{n} \left( \sqrt{n+2} - \sqrt{n} \right) = \\
+& \limninf \sqrt{n} \sqrt{n+2} - \sqrt{n} \sqrt{n} = \\
+& \limninf \sqrt{n(n+2)} - n = \\
+& \limninf \left( \sqrt{n^2+2n} - n \right) \frac{\sqrt{n^2+2n}+n}{\sqrt{n^2+2n}+n} = \\
+& \limninf \frac{(\sqrt{n^2+2n})^2-n^2}{\sqrt{n^2+2n}+n} = \\
+& \limninf \frac{\cancel{n^2}+2n-\cancel{n^2}}{\sqrt{n^2+2n}+n} = \\
+& \limninf \frac{2n}{\sqrt{n^2+2n}+n} = \\
+& \limninf \frac{2n}{\sqrt{n^2}+n} = \\
+& \limninf \frac{2n}{n+n} = 1
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{6.g}{ \limninf a_n = 1 }
+\end{equation}
+
+\subsectionx{6.h}
+
+\begin{equation}
+a_n = n ( \sqrt{n+2} - \sqrt{n} )
+\end{equation}
+
+En este caso no es muy útil distribuir el producto; se aplicará directamente la técnica usual para estos casos: multiplicar y dividir por una expresión conveniente.
+
+\begin{subequations}
+\begin{align}
+& \limninf n \left( \sqrt{n+2} - \sqrt{n} \right) \frac{\sqrt{n+2} + \sqrt{n}}{\sqrt{n+2} + \sqrt{n}} = \\
+& \limninf n \frac{(\sqrt{n+2})^2-(\sqrt{n})^2}{\sqrt{n+2} + \sqrt{n}} = \\
+& \limninf n \frac{\cancel{n}+2-\cancel{n}}{\sqrt{n+2} + \sqrt{n}} = \\
+& \limninf \frac{2n}{\sqrt{n+2} + \sqrt{n}} \\
+& \limninf \frac{2n}{\sqrt{n}+\sqrt{n}} = \\
+& \limninf \sqrt{n}
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{6.h}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
+
+\subsectionx{6.i}
+
+\begin{equation}
+a_n = \frac{n}{\sqrt{n+1}-n}
+\end{equation}
+
+En este caso no hay indeterminación. Aunque en el denominador podría pensarse que sí, hay una expresión de grado 1 y otra de grado $ \frac{1}{2} $. Ésta es despreciable comparada con el término lineal $ n $. Esto conduce, por observación, a que el límite sea -1. Sólo para verificar esto, es posible transformar la expresión multiplicando y dividiendo por una expresión apropiada.
+
+\begin{subequations}
+\begin{align}
+& \limninf \frac{n}{\sqrt{n+1}-n} \frac{\sqrt{n+1}+n}{\sqrt{n+1}+n} = \\
+& \limninf \frac{n (\sqrt{n+1}+n) }{(\sqrt{n+1})^2-n^2} = \\
+& \limninf \frac{n \sqrt{n+1} + n^2}{n+1-n^2} = \\
+& \limninf \frac{n \sqrt{n} - n^2}{1+n-n^2} = \\
+& \limninf \frac{n^2 + n^{\frac{3}{2}}}{-n^2+n+1} = -1
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{6.i}{ \limninf a_n = -1 }
+\end{equation}
+
+\subsectionx{6.j}
+
+En este caso, no hay indeterminación porque no se cancelan los términos de mayor grado al despreciar los demás. Por observación, el límite no existe y la sucesión diverge a $ +\infty $. Para confirmar, se aplicará la técnica usual.
+
+\begin{subequations}
+\begin{align}
+& \limninf \sqrt{n} \left( \sqrt{n^2+2} - \sqrt{n} \right) = \\
+& \limninf \sqrt{n} \sqrt{n^2+2} - \sqrt{n} \sqrt{n} = \\
+& \limninf \sqrt{n (n^2+2)} - n = \\
+& \limninf \left( \sqrt{n^3+2n} - n \right) \frac{\sqrt{n^3+2n} + n}{\sqrt{n^3+2n} + n} = \\
+& \limninf \frac{n^3+2n-n^2}{\sqrt{n^3+2n} + n} = \\
+& \limninf \frac{n^3}{\sqrt{n^3} + n} = \\
+& \limninf \frac{n^3}{n^{\frac{3}{2}}+n} = \\
+& \limninf \frac{n^3}{n^{\frac{3}{2}}} = \limninf n^{\frac{3}{2}}
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{6.j}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
 \end{equation}
 
 \end{document}
