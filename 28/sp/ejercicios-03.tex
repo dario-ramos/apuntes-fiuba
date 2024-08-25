@@ -2,6 +2,7 @@
 
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{cancel}
 \usepackage[spanish]{babel}
 \usepackage{enumerate}
 \usepackage{hyperref}
@@ -20,6 +21,7 @@
 \newcommand{\figurex}[4]{\begin{figure}[ht] \caption{#1} \includegraphics[scale=#2]{#3} \centering \label{#4}\end{figure}}
 \newcommand{\sectionx}[1]{\section*{#1}\label{sec:#1}\addcontentsline{toc}{section}{\nameref{sec:#1}}}
 \newcommand{\subsectionx}[1]{\subsection*{#1}\label{subsec:#1}\addcontentsline{toc}{subsection}{\nameref{subsec:#1}}}
+\newcommand{\limninf}{\lim_{n \rightarrow +\infty}}
 
 \renewcommand{\Bbb}{\mathbb}
 
@@ -360,5 +362,735 @@ Son las potencias de dos comenzando en el exponente cero. Por lo tanto:
 \end{equation}
 
 Esta sucesión no está acotada, por lo cual \textbf{no converge}.
+
+\sectionx{3}
+
+\textbf{Hallar un valor de $ n \in \mathbb{N} $ a partir del cual haya certeza de que: }
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $ n^2 - 5n - 8 $ sea mayor que \textbf{(i)} 10 y \textbf{(ii)} 1000.
+
+\item $ 2^n - 100 $ sea mayor que \textbf{(i)} 10 y \textbf{(ii)} 1000.
+
+\item $ \frac{(-1)^n}{n+1} + 2 $ esté entre \textbf{(i)} 1,9 y 2,1 y \textbf{(ii)} 1,999 y 2,001.
+
+\item $ \frac{\sin n}{n} $ esté entre \textbf{(i)} -0,1 y 0,1 y \textbf{(ii)} -0,001 y 0,001.  
+
+\end{enumerate}
+
+\subsectionx{3.a}
+
+Sea el caso general:
+
+\begin{equation}
+n^2 - 5n -8 > k \Leftrightarrow n^2 - 5n -8 - k > 0
+\end{equation}
+
+En este punto, conviene expresar la función cuadrática en forma factorizada según sus raíces $ x_1 $ y $ x_2 $. Nótese que para este análisis se usa una función de variable continua y no una sucesión, pero dado que el análisis vale para todo $ x $ real, vale para el subconjunto de los valores de la sucesión.
+
+\begin{equation}
+x^2 - 5x -8 - k = (x-x_1) (x-x_2)
+\end{equation}
+
+Aplicando la fórmula de las raíces:
+
+\begin{equation}
+x_1, x_2 = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2a} = \frac{5 \pm \sqrt{25 - 4 (-8-k)}}{2} = \frac{5 \pm \sqrt{57 + 4k}}{2}
+\end{equation}
+
+Para k = 10, resulta:
+
+\begin{subequations}
+\begin{align}
+& x_1 = \frac{5+\sqrt{97}}{2} \approx 7,4244 \\
+& x_2 = \frac{5-\sqrt{97}}{2} \approx -2,4244
+\end{align}
+\end{subequations}
+
+Dado que $ f(x) = (x-x_1) (x-x_2) $ y se está buscando los valores de $ x $ para los que $ f(x) $ es positiva, hay dos escenarios.
+
+Caso 1: ambos factores del producto positivos.
+
+\begin{equation}
+x > x_1 \wedge x > x_2 \Rightarrow x > \mathop{\text{max}}(x_1, x_2) \Rightarrow x > 7,4244
+\end{equation}
+
+Caso 2: ambos factores del producto negativos.
+
+\begin{equation}
+x < x_1 \wedge x < x_2 \Rightarrow x < \mathop{\text{min}}(x_1, x_2) \Rightarrow x < -2,4244
+\end{equation}
+
+Volviendo a los números naturales, el intervalo negativo no interesa. Y para el caso positivo, el primer entero mayor a $ x_1 $ es 8. Por ende, se obtiene:
+
+\begin{equation}
+\hresult{3.a.i}{ k = 10 \Rightarrow n \geq 8 }
+\end{equation}
+
+Repitiendo este análisis para $ k = 1000 $, se obtiene:
+
+\begin{equation}
+\hresult{3.a.ii}{ k = 1000 \Rightarrow n \geq 35 }
+\end{equation}
+
+\subsectionx{3.b}
+
+Nuevamente, analizando de manera general:
+
+\begin{subequations}
+\begin{align}
+& 2^n - 100 > k \\
+& 2^n > k + 100 \\
+& \log_2( 2^n ) > \log_2( k + 100 ) \\
+& n > \log_2( k + 100 )
+\end{align}
+\end{subequations}
+
+Para los valores solicitados de $ k $, resulta:
+
+\begin{subequations}
+\begin{align}
+& \hresult{3.b.i}{ k = 10 \Rightarrow n \geq 7 } \\
+& \hresult{3.b.ii}{ k = 1000 \Rightarrow n \geq 11 }
+\end{align}
+\end{subequations}
+
+\subsectionx{3.c}
+
+En este caso hay una cota superior y otra inferior, lo cual dificulta el análisis genérico. Para el primer caso:
+
+\begin{subequations}
+\begin{align}
+& 1,9 < \frac{(-1)^n}{n+1} + 2 < 2,1 \\
+& -0,1 < \frac{(-1)^n}{n+1} < 0,1
+\end{align}
+\end{subequations}
+
+Llegado este punto, nótese que las cotas son el mismo valor pero con distinto signo. Por lo tanto, las desigualdades pueden simplificarse en una sola utilizando la siguiente propiedad de la función módulo:
+
+\begin{equation}
+|x| < a, a > 0 \Leftrightarrow -a < x < a
+\end{equation}
+
+Para este caso, se obtiene:
+
+\begin{subequations}
+\begin{align}
+& \left| \frac{(-1)^n}{n+1} \right| < 0,1 \\
+& \frac{1}{n+1} < 0,1 \\
+& 1 < 0,1 (n+1) \\
+& \hresult{3.c.i}{ n \geq 10 }
+\end{align}
+\end{subequations}
+
+Haciendo el mismo análisis para el segundo caso:
+
+\begin{equation}
+\hresult{3.c.ii}{ n \geq 1000 }
+\end{equation}
+
+\subsectionx{3.d}
+
+Aunque de nuevo haya dos desigualdades, es posible explotar las propiedades de la función seno para hacer un análisis genérico.
+
+\begin{subequations}
+\begin{align}
+& -k < \frac{\sin n}{n} < k \\
+& -k n < \sin n < k n
+\end{align}
+\end{subequations}
+
+La función seno está acotada entre -1 y 1, por ende debe satisfacerse:
+
+\begin{subequations}
+\begin{align}
+& -k n \leq -1 \Rightarrow n \geq \frac{1}{k} \\
+& k n \geq 1 \Rightarrow n \geq \frac{1}{k}
+\end{align}
+\end{subequations}
+
+Finalmente:
+
+\begin{subequations}
+\begin{align}
+& \hresult{3.d.i}{ k = 0,1 \Rightarrow n \geq 10 } \\
+& \hresult{3.d.ii}{ k = 0,001 \Rightarrow n \geq 1000 }
+\end{align}
+\end{subequations}
+
+\sectionx{4}
+
+\textbf{ Considerar la sucesión $ a_n = \frac{n+1}{n-1000,2} $. A partir de que $ \limninf a_n = 1 $, responder cuáles de las siguientes afirmaciones son verdaderas, justificando en cada caso. }
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n > 0 $.
+
+\item Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n > \frac{1}{2} $.
+
+\item Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n < 1 $.
+
+\item Existe un $ n \in \mathbb{N} $ para el cual $ a_n = 1 $.
+
+\item La sucesión $ a_n $ está acotada.
+
+\end{enumerate}
+
+\textbf{ Escribir las afirmaciones que correspondan con la nomenclatura pctn. }
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+La nomenclatura pctn significa ``para casi todo n'', y se usa para indicar propiedades que se cumplen para todos los valores naturales excepto una cantidad finita de valores. Por ejemplo, se puede decir que la sucesión $ a_n = n-3 $ es mayor a cero pctn, dado que sólo es negativa o cero para $ n = 1, n=2 $ y $n=3$.
+
+De manera más formal y general, un predicado $P(n)$, donde $P:\mathbb{N} \rightarrow {F, V}$ se cumple pctn si y sólo el conjunto $ \{ P(n), n \in \mathbb{N} / P(n) = F  \} $ es acotado.
+
+\subsectionx{4.a}
+
+Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n > 0 $.
+
+Esta afirmación es equivalente a decir que $ a_n > 0 $ pctn. A priori, cabe esperar que esto sea \textbf{verdadero}, ya que al ser 1 el límite, a partir de cierto $ n $ los valores estarán concentrados alrededor de 1. Una forma de verificar esto es ver para qué valores de $ n $ resulta $ a_n $ positiva.
+
+\begin{equation}
+\frac{n+1}{n-1000, 2} > 0
+\end{equation}
+
+El numerador es siempre positivo, por ser $ n $ natural. Por lo tanto, para que el cociente sea positivo, debe ser el denominador positivo también. Ergo:
+
+\begin{equation}
+n-1000,2 > 0 \Rightarrow n > 1000,2 \Rightarrow n \geq 1001
+\end{equation}
+
+\begin{equation}
+\hresult{4.a}{ \textbf{(V)} a_n > 0 \text{ pctn, dado que } a_n > 0 \text{ para } n \geq 1001 }
+\end{equation}
+
+\subsectionx{4.b}
+
+Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n > \frac{1}{2} $.
+
+De manera análoga al inciso anterior, al ser el límite 1, cabe esperar que haya infinitos valores de $ a_n $ en la vecindad de 1. para confirmar esto, se analizará para qué valores de $ n $ se cumple que $ a_n $ es mayor a $ \frac{1}{2} $.
+
+\begin{subequations}
+\begin{align}
+& \frac{n+1}{n-1000,2} > \frac{1}{2} \\
+& \frac{2(n+1)}{n-1000,2} > 1 \\
+& \frac{2n+2}{n-1000,2} - 1 > 0 \\
+& \frac{2n+2-(n-1000,2)}{n-1000,2} > 0 \\
+& \frac{n+1002,2}{n-1000,2} > 0
+\end{align}
+\end{subequations}
+
+El numerador siempre es positivo, por ende el denominador tiene que serlo. Esto conduce nuevamente a $ a_n \geq 1001 $. Ergo:
+
+\begin{equation}
+\hresult{4.b}{ \textbf{(V)} a_n > \frac{1}{2} \text{ pctn, dado que } a_n > \frac{1}{2} \text{ para } n \geq 1001 }
+\end{equation}
+
+\subsectionx{4.c}
+
+Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n < 1 $.
+
+En este caso, cabe esperar que la afirmación sea falsa, ya que al ser el numerador siempre mayor que el denominador, el cociente $ a_n $ tiende a 1 ``por arriba''. Formalmente:
+
+\begin{subequations}
+\begin{align}
+& \frac{n+1}{n-1000,2} < 1 \\
+& \frac{n+1}{n-1000,2} - 1 < 0 \\
+& \frac{n+1-(n-1000,2)}{n-1000,2} < 0 \\
+& \frac{1001,2}{n-1000,2} < 0 \\
+& n < 1000,2 \\
+& n \leq 1000
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{4.c}{ \textbf{(F)} a_n < 1 \text{ sólo para } n \leq 1000 (a_n \geq 1 \text{ pctn}) }
+\end{equation}
+
+\subsectionx{4.d}
+
+Existe un $ n \in \mathbb{N} $ para el cual $ a_n = 1 $.
+
+En este caso, el límite nunca se alcanza, ni en el infinito ni en valores particulares. Téngase en cuenta que sí puede ocurrir que el límite sea 1 y el valor 1 se alcance. Por ejemplo, para la sucesión constante $ a_n = 1 $. Pero volviendo a este caso:
+
+\begin{subequations}
+\begin{align}
+& \frac{n+1}{n-1000,2} = 1 \\
+& n+1 = n-1000,2 \\
+& 1 = -1000,2
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{4.d}{ \textbf{(F)} \text{ No existe valor de } n \text{ natural que satisfaga } a_n = 1 }
+\end{equation}
+
+\subsectionx{4.e}
+
+La sucesión $ a_n $ está acotada.
+
+Que una sucesión esté acotada es una condición necesaria para que sea convergente. Por ende, que el límite exista y sea finito implica que $ a_n $ está acotada.
+
+\begin{equation}
+\hresult{4.e}{ (V) a_n \text{ convergente } \Rightarrow a_n \text{ acotada. } }
+\end{equation}
+
+\sectionx{5}
+
+\textbf{Calcular, si existe, el límite de las siguientes sucesiones. En cada caso, explicar las propiedades utilizadas para obtener la respuesta.}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $ a_n = \frac{-4n^3 + 2n^2 - 3n -1}{5n^2 + 4} $
+
+\item $ a_n = \frac{7n^3-5}{n+3} $
+
+\item $ a_n = \frac{\sqrt{n^3}+2}{n^2-1} $
+
+\item $ a_n = \sqrt{ \frac{2n^2-1}{3n^2+2} } $
+
+\item $ a_n = \frac{4n^2 + 3}{3n^2 + 4000} $
+
+\item $ a_n = \frac{-n}{\sqrt{n^2-n}+n} $
+
+\item $ a_n = \{ 3, \frac{4}{3}, \frac{5}{2}, \frac{8}{5}, \frac{7}{3}, \frac{16}{9}, \frac{9}{4}, \frac{32}{17}, \frac{11}{5}, \frac{64}{33}, \dots \} $
+
+\item $ a_n = \{ 1, 1 + \frac{1}{2}, 1 + \frac{1}{2} + \frac{1}{4}, \dots \} $
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{5.a}
+
+\begin{equation}
+a_n = \frac{-4n^3 + 2n^2 - 3n -1}{5n^2 + 4}
+\end{equation}
+
+Al evaluar expresiones polinómicas en el infinito, se descartan todos los términos excepto el de mayor grado. Esto es porque al estar asociado a la potencia más alta, para valores grandes de $ n $, los demás términos serán despreciables en comparación. Para este caso:
+
+\begin{equation}
+\limninf \frac{-4n^3 + 2n^2 - 3n -1}{5n^2 + 4} = \limninf \frac{-4n^3}{5n^2} = \limninf -\frac{4}{5} n
+\end{equation}
+
+Se adoptará la convención de que los límites infinitos no existen, y se informará hacia dónde diverge la sucesión en dichos casos.
+
+\begin{equation}
+\hresult{5.a}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } -\infty }
+\end{equation}
+
+\subsectionx{5.b}
+
+\begin{equation}
+a_n = \frac{7n^3-5}{n+3}
+\end{equation}
+
+\begin{equation}
+\limninf \frac{7n^3-5}{n+3} = \limninf \frac{7n^3}{n} = \limninf 7n^2
+\end{equation}
+
+\begin{equation}
+\hresult{5.a}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
+
+\subsectionx{5.c}
+
+\begin{equation}
+a_n = \frac{\sqrt{n^3}+2}{n^2-1}
+\end{equation}
+
+Estrictamente hablando, el numerador no es una expresión polinómica porque hay un exponente fraccionario. De todas maneras, de manera más general, si se tiene una suma de potencias, al evaluar en el infinito, se puede descartar todos los términos excepto el de mayor exponente. En este caso:
+
+\begin{equation}
+\limninf \frac{\sqrt{n^3}+2}{n^2-1} = \limninf \frac{n^{\frac{3}{2}} +2}{n^2-1} = \limninf \frac{n^{\frac{3}{2}}}{n^2} = \limninf n^{-\frac{1}{2}} = \limninf \sqrt{\frac{1}{n}}
+\end{equation}
+
+Ya se ha demostrado que $ \limninf \frac{1}{n} = 0	 $. Al tomar la raíz cuadrada, se tiene una sucesión que es término a término menor que $ \frac{1}{n} $. Por ende, es convergente, y en este caso al mismo valor.
+
+\begin{equation}
+\hresult{5.c}{\limninf a_n = 0}
+\end{equation}
+
+\subsectionx{5.d}
+
+\begin{equation}
+a_n = \sqrt{ \frac{2n^2-1}{3n^2+2} }
+\end{equation}
+
+De manera similar al caso anterior, aunque no se tenga un cociente de polinomios, el argumento de la raíz cuadrada sí lo es y pueden despreciarse los términos de menor grado.
+
+\begin{equation}
+\limninf \sqrt{ \frac{2n^2-1}{3n^2+2} } = \limninf \sqrt{ \frac{2n^2}{3n^2} } = \limninf \sqrt{\frac{2}{3}} = \sqrt{\frac{2}{3}} = \sqrt{\frac{2}{3}} \frac{\sqrt{3}}{\sqrt{3}} = \frac{\sqrt{6}}{3}
+\end{equation}
+
+\begin{equation}
+\hresult{5.d}{\limninf a_n = \frac{\sqrt{6}}{3}}
+\end{equation}
+
+\subsectionx{5.e}
+
+\begin{equation}
+a_n = \frac{4n^2 + 3}{3n^2 + 4000}
+\end{equation}
+
+\begin{equation}
+\limninf \frac{4n^2 + 3}{3n^2 + 4000} = \limninf \frac{4n^2}{3n^2} = \frac{4}{3}
+\end{equation}
+
+\begin{equation}
+\hresult{5.e}{\limninf a_n = \frac{4}{3}}
+\end{equation}
+
+\subsectionx{5.f}
+
+\begin{equation}
+a_n = \frac{-n}{\sqrt{n^2-n}+n}
+\end{equation}
+
+Esta expresión tampoco es un polinomio. Pero dentro de la raíz cuadrada, sí hay un polinomio. Para valores muy grandes de $ n $, $ n $ es despreciable comparado con $ n^2 $. Por lo tanto:
+
+\begin{equation}
+\limninf \frac{-n}{\sqrt{n^2-n}+n} = \limninf \frac{-n}{\sqrt{n^2}+n}
+\end{equation}
+
+Siendo n natural, es siempre positivo y por ende vale cancelar la raíz con el cuadrado de manera directa.
+
+\begin{equation}
+\limninf \frac{-n}{\sqrt{n^2}+n} = \limninf \frac{-n}{n+n} = \limninf \frac{-n}{2n} = -\frac{1}{2}
+\end{equation}
+
+\begin{equation}
+\hresult{5.f}{\limninf a_n = -\frac{1}{2}}
+\end{equation}
+
+\subsectionx{5.g}
+
+\begin{equation}
+a_n = \left\{ 3, \frac{4}{3}, \frac{5}{2}, \frac{8}{5}, \frac{7}{3}, \frac{16}{9}, \frac{9}{4}, \frac{32}{17}, \frac{11}{5}, \frac{64}{33}, \dots \right\}
+\end{equation}
+
+Hay una subsucesión para los índices impares, y otra para los pares. Por observación, la primera tiene los números impares empezando en 3 el numerador, y $ n $ en el denominador.
+
+\begin{equation}
+a_{2n-1} = \frac{2n+1}{n}
+\end{equation}
+
+En cuanto a la sucesión de índices pares, el numerador es siempre una potencia de dos, empezando en 4. Y el denominador es la potencia anterior a la del numerador, sumándole 1.
+
+\begin{equation}
+a_{2n} = \frac{2^{n+1}}{2^n + 1}
+\end{equation}
+
+Una propiedad ya mencionada es que si una sucesión converge a un valor, todas sus subsucesiones convergen a ese mismo valor. Recíprocamente, si se consideran subsucesiones que conforman la sucesión completa, como es el caso de índices pares e impares, si ambas convergen a un mismo valor, ése será necesariamente el límite de la sucesión completa. En este caso particular:
+
+\begin{equation}
+\limninf a_{2n-1} = \limninf \frac{2n+1}{n} = \limninf \frac{2n}{n} = 2
+\end{equation}
+
+\begin{equation}
+\limninf a_{2n} = \limninf \frac{2^{n+1}}{2^n+1} = \limninf \frac{2^{n+1}}{2^n} = 2
+\end{equation}
+
+Nótese que en el cálculo del segundo límite se descartó el 1 del denominador porque es despreciable comparado con $ 2^n $. Finalmente, resulta:
+
+\begin{equation}
+\hresult{5.g}{\limninf a_n = 2}
+\end{equation}
+
+\subsectionx{5.h}
+
+\begin{equation}
+a_n = \left\{ 1, 1 + \frac{1}{2}, 1 + \frac{1}{2} + \frac{1}{4}, \dots \right\}
+\end{equation}
+
+Calculando los primeros 5 términos, es posible inferir el término general de esta sucesión.
+
+\begin{equation}
+a_n = \left\{ 1, \frac{3}{2}, \frac{7}{4}, \frac{15}{8}, \frac{31}{16}, \dots \right\}
+\end{equation}
+
+El numerador es la n-ésima potencia de 2 menos uno, y el denominador es la potencia de 2 anterior.
+
+\begin{equation}
+a_n = \frac{2^n-1}{2^{n-1}} \Rightarrow \limninf a_n = \limninf \frac{2^n}{2^{n-1}} = 2
+\end{equation}
+
+Como solución alternativa, también es posible aplicar la siguiente propiedad. La suma de una serie geométrica con razón $ r $ es, para $ |r| < 1 $:
+
+\begin{equation}
+|r| < 1 \Rightarrow \sum_{k=0}^{+\infty} a \cdot r^k = \frac{a}{1-r} 
+\end{equation}
+
+Para este caso, $ a = 1 $, $ r = \frac{1}{2} $, lo cual conduce a que la suma vale 2.
+
+\begin{equation}
+\hresult{5.h}{\limninf a_n = 2}
+\end{equation}
+
+\sectionx{6}
+
+\textbf{Continuar con las siguientes sucesiones:}
+
+\begin{enumerate}[(a)]
+
+\item $ \frac{n^2-5n+7}{n+3} + \frac{n^2 + 5}{n+1} $
+
+\item $ \frac{n^2-5n+7}{n+3} - \frac{n^2 + 5}{n+1} $
+
+\item $ \sqrt{n^2+n-2} + n $
+
+\item $ \sqrt{n^2+n-2} - n $
+
+\item $ \sqrt{n^2+1} - \sqrt{n^2-n+3} $
+
+\item $ \sqrt{ \frac{2n^2-1}{3n^2+2} } + \frac{3n-1}{2n+3} $
+
+\item $ \sqrt{n} ( \sqrt{n+2} - \sqrt{n} ) $
+
+\item $ n ( \sqrt{n+2} - \sqrt{n} ) $
+
+\item $ \frac{n}{\sqrt{n+1}-n} $
+
+\item $ \sqrt{n} ( \sqrt{n^2+2} - \sqrt{n} ) $
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{6.a}
+
+\begin{equation}
+a_n = \frac{n^2-5n+7}{n+3} + \frac{n^2 + 5}{n+1}
+\end{equation}
+
+Ambos términos tienden a $ +\infty $, porque el numerador es de mayor grado que el denominador, y los signos de los coeficientes de mayor grado de numerador y denominador son positivos. Dado que se tiene una suma de términos que tienden a infinito, no hay indeterminación: la sucesión completa diverge a $ +\infty $.
+
+\begin{equation}
+\hresult{6.a}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
+
+\subsectionx{6.b}
+
+\begin{equation}
+a_n = \frac{n^2-5n+7}{n+3} - \frac{n^2 + 5}{n+1}
+\end{equation}
+
+En este caso sí hay una indeterminación, porque se tiene una diferencia de términos que tienden a $ +\infty $. Despreciar los términos de menor grado conduciría a que el límite sería cero. Pero esto es erróneo, porque los términos de mayor grado se cancelan. Cuando eso ocurre, los términos de menor grado son los que determinan el límite, y es necesario un análisis más detallado. Para este caso particular, un camino posible es realizar la suma algebraica.
+
+\begin{subequations}
+\begin{align}
+& \limninf \frac{n^2-5n+7}{n+3} - \frac{n^2 + 5}{n+1} = \\
+& \limninf \frac{(n+1)(n^2-5n+7)-(n+3)(n^2+5)}{(n+3) (n+1))} = \\
+& \limninf \frac{n^3-5n^2+7n+n^2-5n+7-(n^3+5n+3n^2+15)}{n^2+n+3n+3} = \\
+& \limninf \frac{n^3-4n^2+2n+7-(n^3+3n^2+5n+15)}{n^2+4n+3} = \\
+& \limninf \frac{\cancel{n^3}-4n^2+2n+7-\cancel{n^3}-3n^2-5n-15}{n^2+4n+3} = \\
+& \limninf \frac{-7n^2-3n-8}{n^2+4n+3}
+\end{align}
+\end{subequations}
+
+En este punto, se ha eliminado la indeterminación. Ahora se tiene un cociente de polinomios, y es válido despreciar todo salvo los términos de mayor grado. Ello conduce a:
+
+\begin{equation}
+\hresult{6.b}{ \limninf a_n = -7 }
+\end{equation}
+
+\subsectionx{6.c}
+
+\begin{equation}
+a_n = \sqrt{n^2+n-2} + n
+\end{equation}
+
+Como en 6.a, no hay indeterminación. Es la suma de dos términos que tienden a $ +\infty $.
+
+\begin{equation}
+\hresult{6.c}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
+
+\subsectionx{6.d}
+
+\begin{equation}
+a_n = \sqrt{n^2+n-2} - n
+\end{equation}
+
+Ahora sí hay una indeterminación, porque se tiene una diferencia de términos que tiende a $ +\infty $. De manera análoga a como ocurría en el caso de los polinomios, despreciar los términos de menor grado conduce al resultado erróneo de que el límite es cero. En este caso particular, una transformación algebraica útil es multiplicar y dividir por una expresión que permite aprovechar la propiedad:
+
+\begin{equation}
+(a+b)(a-b) = a^2 - b^2
+\end{equation}
+
+Como se verá, esto eliminará las raíces cuadradas y la indeterminación.
+
+\begin{subequations}
+\begin{align}
+& \limninf \sqrt{n^2+n-2} - n = \\
+& \limninf \left( \sqrt{n^2+n-2} - n \right) \frac{\sqrt{n^2+n-2} + n}{\sqrt{n^2+n-2} + n} = \\
+& \limninf \frac{(\sqrt{n^2+n-2})^2 - n^2}{\sqrt{n^2+n-2} + n}
+\end{align}
+\end{subequations}
+
+Para valores grandes de $ n $, el radicando siempre es positivo. Equivalentemente, es positivo pctn. Por lo tanto, es válido cancelar la raíz con el cuadrado en el numerador.
+
+\begin{equation}
+\limninf \frac{\cancel{n^2}+n-2-\cancel{n^2}}{\sqrt{n^2+n-2} + n} = 
+\limninf \frac{n-2}{\sqrt{n^2+n-2}+n}
+\end{equation}
+
+La indeterminación ha sido salvada; es válido despreciar términos de menor grado.
+
+\begin{subequations}
+\begin{align}
+& \limninf \frac{n}{\sqrt{n^2}+n} = \\
+& \limninf \frac{n}{n+n} = \frac{1}{2}
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{6.d}{ \limninf a_n = \frac{1}{2} }
+\end{equation}
+
+\subsectionx{6.e}
+
+\begin{equation}
+a_n = \sqrt{n^2+1} - \sqrt{n^2-n+3}
+\end{equation}
+
+Nuevamente, se tiene una indeterminación del tipo $ \infty - \infty $. Como en el inciso previo, es útil multiplicar y dividir por una expresión apropiada.
+
+\begin{subequations}
+\begin{align}
+& \limninf \sqrt{n^2+1}-\sqrt{n^2-n+3} = \\
+& \limninf \left( \sqrt{n^2+1}-\sqrt{n^2-n+3} \right) \frac{\sqrt{n^2+1}+\sqrt{n^2-n+3}}{\sqrt{n^2+1}+\sqrt{n^2-n+3}} = \\
+& \limninf \frac{(\sqrt{n^2+1})^2-(\sqrt{n^2-n+3})^2}{\sqrt{n^2+1}+\sqrt{n^2-n+3}} \\
+& \limninf \frac{n^2+1-(n^2-n+3)}{\sqrt{n^2+1}+\sqrt{n^2-n+3}} = \\
+& \limninf \frac{\cancel{n^2} + 1 -\cancel{n^2} +n -3}{\sqrt{n^2+1}+\sqrt{n^2-n+3}} = \\
+& \limninf \frac{n}{\sqrt{n^2}+\sqrt{n^2}} = \\
+& \limninf \frac{n}{n+n} = \frac{1}{2}
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{6.e}{ \limninf a_n = \frac{1}{2} }
+\end{equation}
+
+\subsectionx{6.f}
+
+\begin{equation}
+a_n = \sqrt{ \frac{2n^2-1}{3n^2+2} } + \frac{3n-1}{2n+3}
+\end{equation}
+
+En este caso, no hay indeterminación alguna. Ambos sumandos tienden a un valor finito.
+
+\begin{subequations}
+\begin{align}
+& \limninf \sqrt{ \frac{2n^2-1}{3n^2+2} } + \frac{3n-1}{2n+3} = \\
+& \limninf \sqrt{ \frac{2n^2}{3n^2} } + \frac{3n}{2n} = \\
+& \sqrt{\frac{2}{3}} + \frac{3}{2}
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{6.f}{ \limninf a_n = \frac{\sqrt{6}}{3} + \frac{3}{2} \approx 2,3165 }
+\end{equation}
+
+\subsectionx{6.g}
+
+\begin{equation}
+a_n = \sqrt{n} \left( \sqrt{n+2} - \sqrt{n} \right)
+\end{equation}
+
+Uno de los factores del producto está indeterminado, lo cual hace que la expresión completa resulte indeterminada. En este caso, es posible simplificar un poco antes de aplicar la técnica de multiplicar y dividir. Dado que todos los términos tienen raíz, $n$ puede ingresar multiplicando.
+
+\begin{subequations}
+\begin{align}
+& \limninf \sqrt{n} \left( \sqrt{n+2} - \sqrt{n} \right) = \\
+& \limninf \sqrt{n} \sqrt{n+2} - \sqrt{n} \sqrt{n} = \\
+& \limninf \sqrt{n(n+2)} - n = \\
+& \limninf \left( \sqrt{n^2+2n} - n \right) \frac{\sqrt{n^2+2n}+n}{\sqrt{n^2+2n}+n} = \\
+& \limninf \frac{(\sqrt{n^2+2n})^2-n^2}{\sqrt{n^2+2n}+n} = \\
+& \limninf \frac{\cancel{n^2}+2n-\cancel{n^2}}{\sqrt{n^2+2n}+n} = \\
+& \limninf \frac{2n}{\sqrt{n^2+2n}+n} = \\
+& \limninf \frac{2n}{\sqrt{n^2}+n} = \\
+& \limninf \frac{2n}{n+n} = 1
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{6.g}{ \limninf a_n = 1 }
+\end{equation}
+
+\subsectionx{6.h}
+
+\begin{equation}
+a_n = n ( \sqrt{n+2} - \sqrt{n} )
+\end{equation}
+
+En este caso no es muy útil distribuir el producto; se aplicará directamente la técnica usual para estos casos: multiplicar y dividir por una expresión conveniente.
+
+\begin{subequations}
+\begin{align}
+& \limninf n \left( \sqrt{n+2} - \sqrt{n} \right) \frac{\sqrt{n+2} + \sqrt{n}}{\sqrt{n+2} + \sqrt{n}} = \\
+& \limninf n \frac{(\sqrt{n+2})^2-(\sqrt{n})^2}{\sqrt{n+2} + \sqrt{n}} = \\
+& \limninf n \frac{\cancel{n}+2-\cancel{n}}{\sqrt{n+2} + \sqrt{n}} = \\
+& \limninf \frac{2n}{\sqrt{n+2} + \sqrt{n}} \\
+& \limninf \frac{2n}{\sqrt{n}+\sqrt{n}} = \\
+& \limninf \sqrt{n}
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{6.h}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
+
+\subsectionx{6.i}
+
+\begin{equation}
+a_n = \frac{n}{\sqrt{n+1}-n}
+\end{equation}
+
+En este caso no hay indeterminación. Aunque en el denominador podría pensarse que sí, hay una expresión de grado 1 y otra de grado $ \frac{1}{2} $. Ésta es despreciable comparada con el término lineal $ n $. Esto conduce, por observación, a que el límite sea -1. Sólo para verificar esto, es posible transformar la expresión multiplicando y dividiendo por una expresión apropiada.
+
+\begin{subequations}
+\begin{align}
+& \limninf \frac{n}{\sqrt{n+1}-n} \frac{\sqrt{n+1}+n}{\sqrt{n+1}+n} = \\
+& \limninf \frac{n (\sqrt{n+1}+n) }{(\sqrt{n+1})^2-n^2} = \\
+& \limninf \frac{n \sqrt{n+1} + n^2}{n+1-n^2} = \\
+& \limninf \frac{n \sqrt{n} - n^2}{1+n-n^2} = \\
+& \limninf \frac{n^2 + n^{\frac{3}{2}}}{-n^2+n+1} = -1
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{6.i}{ \limninf a_n = -1 }
+\end{equation}
+
+\subsectionx{6.j}
+
+En este caso, no hay indeterminación porque no se cancelan los términos de mayor grado al despreciar los demás. Por observación, el límite no existe y la sucesión diverge a $ +\infty $. Para confirmar, se aplicará la técnica usual.
+
+\begin{subequations}
+\begin{align}
+& \limninf \sqrt{n} \left( \sqrt{n^2+2} - \sqrt{n} \right) = \\
+& \limninf \sqrt{n} \sqrt{n^2+2} - \sqrt{n} \sqrt{n} = \\
+& \limninf \sqrt{n (n^2+2)} - n = \\
+& \limninf \left( \sqrt{n^3+2n} - n \right) \frac{\sqrt{n^3+2n} + n}{\sqrt{n^3+2n} + n} = \\
+& \limninf \frac{n^3+2n-n^2}{\sqrt{n^3+2n} + n} = \\
+& \limninf \frac{n^3}{\sqrt{n^3} + n} = \\
+& \limninf \frac{n^3}{n^{\frac{3}{2}}+n} = \\
+& \limninf \frac{n^3}{n^{\frac{3}{2}}} = \limninf n^{\frac{3}{2}}
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{6.j}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
 
 \end{document}
