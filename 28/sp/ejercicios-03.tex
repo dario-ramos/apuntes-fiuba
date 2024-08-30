@@ -1132,6 +1132,8 @@ En este caso, no hay indeterminación porque no se cancelan los términos de may
 
 \end{enumerate}
 
+\hrule
+
 \subsectionx{7.a.i}
 
 Ejemplo 1:
@@ -1214,6 +1216,102 @@ Ejemplo 2:
 
 \begin{equation}
 a_n = \frac{1}{n^2} \wedge b_n = 2^n \Rightarrow \limninf (b_n)^{a_n}  = \limninf (2^n)^{\frac{1}{n^2}} = \limninf 2^{\frac{1}{n}} \hresult{}{ 1 }
+\end{equation}
+
+\sectionx{8}
+
+\textbf{Marcar, en casa caso, la única respuesta correcta:}
+
+\begin{enumerate}[(a)]
+
+\item Si $ \limninfs a_n = +\infty $ y $ b_n $ oscila finitamente entonces $ \limninfs (a_n + b_n) $:
+
+\begin{enumerate}[(i)]
+
+\item Oscila.
+
+\item Tiende a más infinito.
+
+\item Es una indeterminación.
+
+\end{enumerate}
+
+\item Si $ \limninf a_n = L $ y $ a_n > 0 $ entonces hay certeza de que:
+
+\begin{enumerate}[(i)]
+
+\item $ L > 0 $.
+
+\item $ L = 0 $.
+
+\item $ L \geq 0 $.
+
+\item ninguna de las anteriores.
+
+\end{enumerate}
+
+\item Si $ \limninfs a_n = 0 $ y $ \limninfs b_n = +\infty $ entonces $ \limninfs \frac{a_n}{b_n} $:
+
+\begin{enumerate}[(i)]
+
+\item Es igual a 0.
+
+\item Tiende a más infinito.
+
+\item Es una indeterminación.
+
+\item No existe.
+
+\end{enumerate}
+
+\item Si $ \limninfs a_n = 0 $ y $ \limninfs b_n = +\infty $ entonces $ \limninfs {(a_n)}^{b_n} $:
+
+\begin{enumerate}[(i)]
+
+\item Es igual a 0.
+
+\item Tiende a más infinito.
+
+\item Es una indeterminación.
+
+\item No existe.
+
+\end{enumerate}
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{8.a}
+
+Se tiene un término que diverge y otro que está acotado finitamente. Por lo tanto, al sumarlos eventualmente el término divergente crecerá lo suficiente para que el acotado sea despreciable.
+
+\begin{equation}
+\hresult{8.a}{ \text{(II) Tiende a más infinito} }
+\end{equation}
+
+\subsectionx{8.b}
+
+Se tiene una sucesión convergente cuyos términos son todos positivos. Para el caso particular $ a_n = \frac{1}{n} $, $ L = 0 $. Eso descarta la opción (I), $ L > 0 $. Para el caso $ a_n = 1 $, se tiene $ L > 0 $, lo cual descarta la opción $ L = 0 $. Por la definición de límite, no puede ser $ L < 0 $, porque eso implicaría que hay términos negativos. Por lo tanto:
+
+\begin{equation}
+\hresult{8.b}{ (III) L \geq 0 }
+\end{equation}
+
+\subsectionx{8.c}
+
+El numerador es cada vez más pequeño, y el numerador cada vez más grande. Sin importar por dónde se aproxime el numerador a cero, sea por izquierda, derecha u oscilando, el cociente convergerá a cero de todas maneras.
+
+\begin{equation}
+\hresult{8.c}{ \text{(I) Es igual a 0.} }
+\end{equation}
+
+\subsectionx{8.d}
+
+Un número cada vez más cercano a cero, elevado a un número positivo cada vez más grande, dará un número aún más cercano a cero.
+
+\begin{equation}
+\hresult{8.d}{ \text{(I) Es igual a 0.} }
 \end{equation}
 
 \end{document}
