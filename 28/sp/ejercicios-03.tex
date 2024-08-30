@@ -22,6 +22,7 @@
 \newcommand{\sectionx}[1]{\section*{#1}\label{sec:#1}\addcontentsline{toc}{section}{\nameref{sec:#1}}}
 \newcommand{\subsectionx}[1]{\subsection*{#1}\label{subsec:#1}\addcontentsline{toc}{subsection}{\nameref{subsec:#1}}}
 \newcommand{\limninf}{\lim_{n \rightarrow +\infty}}
+\newcommand{\limninfs}{\lim\limits_{n \rightarrow +\infty}}
 
 \renewcommand{\Bbb}{\mathbb}
 
@@ -1091,6 +1092,128 @@ En este caso, no hay indeterminación porque no se cancelan los términos de may
 
 \begin{equation}
 \hresult{6.j}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
+
+\sectionx{7}
+
+\textbf{Mostrar que cada una de las siguientes situaciones constituye una indeterminación. Para ello, exhibir dos ejemplos donde los límites sean distintos (finitos o infinitos). Suponer , cuando sea necesario, condiciones suficientes para que las sucesiones estén bien definidas para todo n.}
+
+\begin{enumerate}[(a)]
+
+\item $ \limninfs a_n = +\infty \wedge \limninf b_n = +\infty $
+
+\begin{enumerate}[(i)]
+
+\item $ \limninfs (a_n - b_n) $
+
+\item $ \limninfs \frac{a_n}{b_n} $
+
+\end{enumerate}
+
+\item $ \limninfs a_n = 0 \wedge \limninfs b_n = 0 $
+
+\begin{enumerate}[(i)]
+
+\item $ \limninfs \frac{a_n}{b_n} $
+
+\item $ \limninfs {(a_n)}^{b_n} $
+
+\end{enumerate}
+
+\item $ \limninfs a_n = 0 \wedge \limninfs b_n = +\infty $
+
+\begin{enumerate}[(i)]
+
+\item $ \limninfs a_n \cdot b_n $
+
+\item $ \limninfs {(b_n)}^{a_n} $
+
+\end{enumerate}
+
+\end{enumerate}
+
+\subsectionx{7.a.i}
+
+Ejemplo 1:
+
+\begin{equation}
+a_n = n^2 \wedge b_n = n \Rightarrow \limninf (a_n-b_n) = \limninf n^2 - n = \hresult{}{ +\infty }
+\end{equation}
+
+Ejemplo 2:
+
+\begin{equation}
+a_n = \frac{n^2-5n+7}{n+3} \wedge \frac{n^2+5}{n+1} \Rightarrow \limninf (a_n-b_n) = \hresult{}{ -7 }
+\end{equation}
+
+\subsectionx{7.a.ii}
+
+Ejemplo 1:
+
+\begin{equation}
+a_n = n^2 \wedge b_n = n \Rightarrow \limninf \frac{a_n}{b_n} = \limninf \frac{n^2}{n} = \hresult{}{ +\infty }
+\end{equation}
+
+Ejemplo 2:
+
+\begin{equation}
+a_n = n \wedge b_n = n^2 \Rightarrow \limninf \frac{a_n}{b_n} = \limninf \frac{n}{n^2} = \hresult{}{ 0 }
+\end{equation}
+
+\subsectionx{7.b.i}
+
+Ejemplo 1:
+
+\begin{equation}
+a_n = \frac{1}{n} \wedge b_n = \frac{1}{n^2} \Rightarrow \limninf \frac{a_n}{b_n} = \limninf \frac{1}{n} : \frac{1}{n^2} = \frac{n^2}{n} = \hresult{}{ +\infty }
+\end{equation}
+
+Ejemplo 2:
+
+\begin{equation}
+a_n = \frac{1}{n^2} \wedge b_n = \frac{1}{n} \Rightarrow \limninf \frac{a_n}{b_n} = \limninf \frac{1}{n^2} : \frac{1}{n} = \frac{n}{n^2} = \hresult{}{ 0 }
+\end{equation}
+
+\subsectionx{7.b.ii}
+
+Ejemplo 1:
+
+\begin{equation}
+a_n = \frac{1}{2^n} \wedge b_n = \frac{1}{n} \Rightarrow \limninf {(a_n)}^{b_n} = \limninf {\frac{1}{2^n}}^{\frac{1}{n}} = \limninf {(2^{-n})}^n = \hresult{}{ \frac{1}{2} }
+\end{equation}
+
+Ejemplo 2:
+
+\begin{equation}
+a_n = \frac{1}{3^n} \wedge b_n = \frac{1}{n} \Rightarrow \limninf {(a_n)}^{b_n} = \limninf {\frac{1}{3^n}}^{\frac{1}{n}} = \limninf {(3^{-n})}^n = \hresult{}{ \frac{1}{3} }
+\end{equation}
+
+\subsectionx{7.c.i}
+
+Ejemplo 1:
+
+\begin{equation}
+a_n = \frac{1}{n} \wedge b_n = n \Rightarrow \limninf a_n \cdot b_n = \limninf \frac{1}{n} n = \hresult{}{ 1 }
+\end{equation}
+
+Ejemplo 2:
+
+\begin{equation}
+a_n = \frac{1}{n} \wedge b_n = n^2 \Rightarrow \limninf a_n \cdot b_n = \limninf \frac{1}{n} n^2 = \hresult{}{ +\infty }
+\end{equation}
+
+\subsectionx{7.c.ii}
+
+Ejemplo 1:
+
+\begin{equation}
+a_n = \frac{1}{n} \wedge b_n = 2^n \Rightarrow \limninf (b_n)^{a_n}  = \limninf (2^n)^{\frac{1}{n}} = \hresult{}{ 2 }
+\end{equation}
+
+Ejemplo 2:
+
+\begin{equation}
+a_n = \frac{1}{n^2} \wedge b_n = 2^n \Rightarrow \limninf (b_n)^{a_n}  = \limninf (2^n)^{\frac{1}{n^2}} = \limninf 2^{\frac{1}{n}} \hresult{}{ 1 }
 \end{equation}
 
 \end{document}
