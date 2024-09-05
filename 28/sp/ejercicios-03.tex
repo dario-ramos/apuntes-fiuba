@@ -22,6 +22,7 @@
 \newcommand{\sectionx}[1]{\section*{#1}\label{sec:#1}\addcontentsline{toc}{section}{\nameref{sec:#1}}}
 \newcommand{\subsectionx}[1]{\subsection*{#1}\label{subsec:#1}\addcontentsline{toc}{subsection}{\nameref{subsec:#1}}}
 \newcommand{\limninf}{\lim_{n \rightarrow +\infty}}
+\newcommand{\limninfs}{\lim\limits_{n \rightarrow +\infty}}
 
 \renewcommand{\Bbb}{\mathbb}
 
@@ -380,6 +381,8 @@ Esta sucesión no está acotada, por lo cual \textbf{no converge}.
 \item $ \frac{\sin n}{n} $ esté entre \textbf{(i)} -0,1 y 0,1 y \textbf{(ii)} -0,001 y 0,001.  
 
 \end{enumerate}
+
+\hrule
 
 \subsectionx{3.a}
 
@@ -1091,6 +1094,668 @@ En este caso, no hay indeterminación porque no se cancelan los términos de may
 
 \begin{equation}
 \hresult{6.j}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
+
+\sectionx{7}
+
+\textbf{Mostrar que cada una de las siguientes situaciones constituye una indeterminación. Para ello, exhibir dos ejemplos donde los límites sean distintos (finitos o infinitos). Suponer , cuando sea necesario, condiciones suficientes para que las sucesiones estén bien definidas para todo n.}
+
+\begin{enumerate}[(a)]
+
+\item $ \limninfs a_n = +\infty \wedge \limninf b_n = +\infty $
+
+\begin{enumerate}[(i)]
+
+\item $ \limninfs (a_n - b_n) $
+
+\item $ \limninfs \frac{a_n}{b_n} $
+
+\end{enumerate}
+
+\item $ \limninfs a_n = 0 \wedge \limninfs b_n = 0 $
+
+\begin{enumerate}[(i)]
+
+\item $ \limninfs \frac{a_n}{b_n} $
+
+\item $ \limninfs {(a_n)}^{b_n} $
+
+\end{enumerate}
+
+\item $ \limninfs a_n = 0 \wedge \limninfs b_n = +\infty $
+
+\begin{enumerate}[(i)]
+
+\item $ \limninfs a_n \cdot b_n $
+
+\item $ \limninfs {(b_n)}^{a_n} $
+
+\end{enumerate}
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{7.a.i}
+
+Ejemplo 1:
+
+\begin{equation}
+a_n = n^2 \wedge b_n = n \Rightarrow \limninf (a_n-b_n) = \limninf n^2 - n = \hresult{}{ +\infty }
+\end{equation}
+
+Ejemplo 2:
+
+\begin{equation}
+a_n = \frac{n^2-5n+7}{n+3} \wedge \frac{n^2+5}{n+1} \Rightarrow \limninf (a_n-b_n) = \hresult{}{ -7 }
+\end{equation}
+
+\subsectionx{7.a.ii}
+
+Ejemplo 1:
+
+\begin{equation}
+a_n = n^2 \wedge b_n = n \Rightarrow \limninf \frac{a_n}{b_n} = \limninf \frac{n^2}{n} = \hresult{}{ +\infty }
+\end{equation}
+
+Ejemplo 2:
+
+\begin{equation}
+a_n = n \wedge b_n = n^2 \Rightarrow \limninf \frac{a_n}{b_n} = \limninf \frac{n}{n^2} = \hresult{}{ 0 }
+\end{equation}
+
+\subsectionx{7.b.i}
+
+Ejemplo 1:
+
+\begin{equation}
+a_n = \frac{1}{n} \wedge b_n = \frac{1}{n^2} \Rightarrow \limninf \frac{a_n}{b_n} = \limninf \frac{1}{n} : \frac{1}{n^2} = \frac{n^2}{n} = \hresult{}{ +\infty }
+\end{equation}
+
+Ejemplo 2:
+
+\begin{equation}
+a_n = \frac{1}{n^2} \wedge b_n = \frac{1}{n} \Rightarrow \limninf \frac{a_n}{b_n} = \limninf \frac{1}{n^2} : \frac{1}{n} = \frac{n}{n^2} = \hresult{}{ 0 }
+\end{equation}
+
+\subsectionx{7.b.ii}
+
+Ejemplo 1:
+
+\begin{equation}
+a_n = \frac{1}{2^n} \wedge b_n = \frac{1}{n} \Rightarrow \limninf {(a_n)}^{b_n} = \limninf {\frac{1}{2^n}}^{\frac{1}{n}} = \limninf {(2^{-n})}^n = \hresult{}{ \frac{1}{2} }
+\end{equation}
+
+Ejemplo 2:
+
+\begin{equation}
+a_n = \frac{1}{3^n} \wedge b_n = \frac{1}{n} \Rightarrow \limninf {(a_n)}^{b_n} = \limninf {\frac{1}{3^n}}^{\frac{1}{n}} = \limninf {(3^{-n})}^n = \hresult{}{ \frac{1}{3} }
+\end{equation}
+
+\subsectionx{7.c.i}
+
+Ejemplo 1:
+
+\begin{equation}
+a_n = \frac{1}{n} \wedge b_n = n \Rightarrow \limninf a_n \cdot b_n = \limninf \frac{1}{n} n = \hresult{}{ 1 }
+\end{equation}
+
+Ejemplo 2:
+
+\begin{equation}
+a_n = \frac{1}{n} \wedge b_n = n^2 \Rightarrow \limninf a_n \cdot b_n = \limninf \frac{1}{n} n^2 = \hresult{}{ +\infty }
+\end{equation}
+
+\subsectionx{7.c.ii}
+
+Ejemplo 1:
+
+\begin{equation}
+a_n = \frac{1}{n} \wedge b_n = 2^n \Rightarrow \limninf (b_n)^{a_n}  = \limninf (2^n)^{\frac{1}{n}} = \hresult{}{ 2 }
+\end{equation}
+
+Ejemplo 2:
+
+\begin{equation}
+a_n = \frac{1}{n^2} \wedge b_n = 2^n \Rightarrow \limninf (b_n)^{a_n}  = \limninf (2^n)^{\frac{1}{n^2}} = \limninf 2^{\frac{1}{n}} \hresult{}{ 1 }
+\end{equation}
+
+\sectionx{8}
+
+\textbf{Marcar, en casa caso, la única respuesta correcta:}
+
+\begin{enumerate}[(a)]
+
+\item Si $ \limninfs a_n = +\infty $ y $ b_n $ oscila finitamente entonces $ \limninfs (a_n + b_n) $:
+
+\begin{enumerate}[(i)]
+
+\item Oscila.
+
+\item Tiende a más infinito.
+
+\item Es una indeterminación.
+
+\end{enumerate}
+
+\item Si $ \limninf a_n = L $ y $ a_n > 0 $ entonces hay certeza de que:
+
+\begin{enumerate}[(i)]
+
+\item $ L > 0 $.
+
+\item $ L = 0 $.
+
+\item $ L \geq 0 $.
+
+\item ninguna de las anteriores.
+
+\end{enumerate}
+
+\item Si $ \limninfs a_n = 0 $ y $ \limninfs b_n = +\infty $ entonces $ \limninfs \frac{a_n}{b_n} $:
+
+\begin{enumerate}[(i)]
+
+\item Es igual a 0.
+
+\item Tiende a más infinito.
+
+\item Es una indeterminación.
+
+\item No existe.
+
+\end{enumerate}
+
+\item Si $ \limninfs a_n = 0 $ y $ \limninfs b_n = +\infty $ entonces $ \limninfs {(a_n)}^{b_n} $:
+
+\begin{enumerate}[(i)]
+
+\item Es igual a 0.
+
+\item Tiende a más infinito.
+
+\item Es una indeterminación.
+
+\item No existe.
+
+\end{enumerate}
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{8.a}
+
+Se tiene un término que diverge y otro que está acotado finitamente. Por lo tanto, al sumarlos eventualmente el término divergente crecerá lo suficiente para que el acotado sea despreciable.
+
+\begin{equation}
+\hresult{8.a}{ \text{(II) Tiende a más infinito} }
+\end{equation}
+
+\subsectionx{8.b}
+
+Se tiene una sucesión convergente cuyos términos son todos positivos. Para el caso particular $ a_n = \frac{1}{n} $, $ L = 0 $. Eso descarta la opción (I), $ L > 0 $. Para el caso $ a_n = 1 $, se tiene $ L > 0 $, lo cual descarta la opción $ L = 0 $. Por la definición de límite, no puede ser $ L < 0 $, porque eso implicaría que hay términos negativos. Por lo tanto:
+
+\begin{equation}
+\hresult{8.b}{ (III) L \geq 0 }
+\end{equation}
+
+\subsectionx{8.c}
+
+El numerador es cada vez más pequeño, y el numerador cada vez más grande. Sin importar por dónde se aproxime el numerador a cero, sea por izquierda, derecha u oscilando, el cociente convergerá a cero de todas maneras.
+
+\begin{equation}
+\hresult{8.c}{ \text{(I) Es igual a 0.} }
+\end{equation}
+
+\subsectionx{8.d}
+
+Un número cada vez más cercano a cero, elevado a un número positivo cada vez más grande, dará un número aún más cercano a cero.
+
+\begin{equation}
+\hresult{8.d}{ \text{(I) Es igual a 0.} }
+\end{equation}
+
+\sectionx{9}
+
+\textbf{Calcular, si existe, el límite de las siguientes sucesiones. Como siempre, explicar las propiedades utilizadas para llegar al resultado.}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $ \frac{\sin n}{n} $
+
+\item $ (-1)^n (\sqrt{n+2} - \sqrt{n}) $
+
+\item $ (-1)^n + \frac{1}{n} $
+
+\item $ (-1)^n (\sqrt{n+2} + \sqrt{n}) $
+
+\item $ \left( \frac{2}{5} \right)^n $
+
+\item $ \frac{2^n + 5}{3^n} (-1)^n $
+
+\item $ (1,5)^n $
+
+\item $ (0,95)^n $
+
+\item $ \frac{3^n + 4^{n+1} +2}{2^{2n} + 2^n} $
+
+\item $ \sqrt[n]{(n^2+1)} $
+
+\item $ \sqrt[n]{\frac{3n^3+2n^2+1}{n^2+2}} $
+
+\item $ \sqrt[n]{\frac{5n+1}{3n+1}} $
+
+\item $ \left( \frac{n^2 + 2}{5n^2 + 3} \right)^{\frac{1}{n}} $
+
+\item $ \sqrt[n]{(2^n + 5^n)} $
+
+\item $ (n^4 + 1)^{\frac{1}{2n}} $
+
+\item $ (1 + (-1)^n)^n \frac{1}{n} $
+
+\item $ \left( \frac{5}{3} \right)^{ \left( \frac{8}{11} \right)^n } $
+
+\item $ \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^n } $
+
+\item $ \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^{\frac{1}{n}} } $
+
+\item $ \frac{3^{2n+1} + \cos n}{2 \cdot 9^n + \sin n} $
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{9.a}
+
+\begin{equation}
+a_n = \frac{\sin n}{n}
+\end{equation}
+
+Al considerar este límite, no hay indeterminación, ni hace falta alguna propiedad para resolver. El numerador está acotado entre -1 y 1, y el denominador tiende a $ +\infty $. Por lo tanto, el cociente tiende a cero.
+
+\begin{equation}
+\hresult{9.a}{ \limninf \frac{\sin n}{n} = 0 }
+\end{equation}
+
+\subsectionx{9.b}
+
+\begin{equation}
+a_n = (-1)^n (\sqrt{n+2} - \sqrt{n})
+\end{equation}
+
+El segundo factor de este producto parece tender a cero, lo cual multiplicado por $ (-1)^n $ tiende a cero. Para confirmar esto, se puede analizar el segundo factor por separado, aplicando la técnica de multiplicar y dividir por un factor apropiado.
+
+\begin{subequations}
+\begin{align}
+& \limninf \sqrt{n+2} - \sqrt{n} = \\
+& \limninf (\sqrt{n+2} - \sqrt{n}) \frac{\sqrt{n+2} + \sqrt{n}}{\sqrt{n+2} + \sqrt{n}} \\
+& \limninf \frac{(\sqrt{n+2})^2-(\sqrt{n})^2}{\sqrt{n+2} + \sqrt{n}} = \\
+& \limninf \frac{\cancel{n}+2-\cancel{n}}{\sqrt{n+2} + \sqrt{n}} = 0
+\end{align}
+\end{subequations}
+
+Demostrado esto, puede concluirse que:
+
+\begin{equation}
+\hresult{9.b}{ \limninf (-1)^n (\sqrt{n+2} - \sqrt{n}) = 0 }
+\end{equation}
+
+\subsectionx{9.c}
+
+\begin{equation}
+a_n = (-1)^n + \frac{1}{n}
+\end{equation}
+
+El primer sumando oscila entre -1 y 1, y el segundo sumando tiende a cero. Por lo tanto, la suma oscila y el límite no existe.
+
+\begin{equation}
+\hresult{9.c}{ \limninf (-1)^n + \frac{1}{n} \text{ no existe, y } a_n \text{ oscila entre -1 y 1 } }
+\end{equation}
+
+\subsectionx{9.d}
+
+\begin{equation}
+a_n = (-1)^n (\sqrt{n+2} + \sqrt{n})
+\end{equation}
+
+El primer factor del producto oscila entre -1 y 1, y el segundo factor tiende a más infinito. Ergo, el producto oscila entre $-\infty$ y $+\infty$ y por lo tanto el límite no existe.
+
+\begin{equation}
+\hresult{9.d}{ \limninf (-1)^n (\sqrt{n+2} + \sqrt{n}) \text{ no existe, y } a_n \text{ oscila entre } -\infty \text{ y } +\infty }
+\end{equation}
+
+\subsectionx{9.e}
+
+\begin{equation}
+a_n = \left( \frac{2}{5} \right)^n
+\end{equation}
+
+Propiedad: dada $ a_n = r^n $:
+
+\begin{itemize}
+
+\item $ r > 1 \Rightarrow \limninfs a_n = +\infty $
+
+\item $ r = 1 \Rightarrow \limninfs a_n = 1 $
+
+\item $ 0 < r < 1 \Rightarrow \limninfs a_n = 0 $
+
+\end{itemize}
+
+\begin{equation}
+\hresult{9.e}{ \limninf \left( \frac{2}{5} \right)^n = 0 }
+\end{equation}
+
+\subsectionx{9.f}
+
+\begin{equation}
+a_n = \frac{2^n + 5}{3^n} (-1)^n
+\end{equation}
+
+La única forma de que esto converja es que el primer factor tienda a cero, porque el segundo oscila. Por ende, sólo es necesario analizar dicho factor.
+
+\begin{subequations}
+\begin{align}
+& \limninf \frac{2^n + 5}{3^n} = \\
+& \limninf \frac{2^n}{3^n} = \\
+& \limninf \left( \frac{2}{3} \right)^n = 0
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{9.f}{ \limninf \frac{2^n + 5}{3^n} (-1)^n = 0 }
+\end{equation}
+
+\subsectionx{9.g}
+
+\begin{equation}
+a_n = (1,5)^n
+\end{equation}
+
+Por la propiedad descrita en 9.e:
+
+\begin{equation}
+\hresult{9.g}{ \limninf (1,5)^n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
+
+\subsectionx{9.h}
+
+\begin{equation}
+a_n = (0,95)^n
+\end{equation}
+
+Por la propiedad descrita en 9.e:
+
+\begin{equation}
+\hresult{9.h}{ \limninf (0,95)^n = 0 }
+\end{equation}
+
+\subsectionx{9.i}
+
+\begin{equation}
+a_n = \frac{3^n + 4^{n+1} + 2}{2^{2n} + 2^n}
+\end{equation}
+
+De las funciones exponenciales que aparecen, 4 parece ser la mayor. Es posible operar algebraicamente para eliminar la indeterminación $ \frac{+\infty}{+\infty} $.
+
+\begin{subequations}
+\begin{align}
+& \limninf \frac{3^n + 4^{n+1} + 2}{2^{2n} + 2^n} = \\
+& \limninf \frac{3^n + 4^{n+1}}{2^{2n} + 2^n} = \\
+& \limninf \frac{3^n + 4 \cdot 4^n}{(2^2)^n + 2^n} = \\
+& \limninf \frac{3^n + 4 \cdot 4^n}{4^n + 2^n} \frac{4^{-n}}{4^{-n}} = \\
+& \limninf \frac{ \frac{3^n}{4^n} + 4 }{ 1 + \frac{2^n}{4^n} } = \\
+& \limninf \frac{ \left( \frac{3}{4} \right)^n + 4 }{ 1 + \left( \frac{2}{4} \right)^n } = 4
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{9.i}{ \limninf \frac{3^n + 4^{n+1} + 2}{2^{2n} + 2^n} = 4 }
+\end{equation}
+
+\subsectionx{9.j}
+
+\begin{equation}
+a_n = \sqrt[n]{n^2 + 1}
+\end{equation}
+
+En primer lugar, se utilizará la propiedad $ x = e^{\ln x} $.
+
+\begin{equation}
+\sqrt[n]{n^2 + 1} = (n^2 + 1)^{\frac{1}{n}} = \left[ e^{ \ln(n^2 + 1) } \right]^{\frac{1}{n}}
+\end{equation}
+
+Al tener potencias consecutivas, se puede multiplicar los exponentes.
+
+\begin{equation}
+\left[ e^{ \ln(n^2 + 1) } \right]^{\frac{1}{n}} = e^{ \frac{1}{n} \ln(n^2 + 1) }
+\end{equation}
+
+Cuando $ n $ es grande, $ n^2 >> 1 $.
+
+\begin{equation}
+e^{ \frac{1}{n} \ln(n^2 + 1) } \approx e^{ \frac{1}{n} \ln(n^2) } \text{ para } n \rightarrow +\infty
+\end{equation}
+
+En este punto se aplica una propiedad de los logaritmos:
+
+\begin{equation}
+\ln( a^b ) = b \ln(a)
+\end{equation}
+
+Esta propiedad se muestra para el logaritmo natural, pero vale para cualquier base. En este caso:
+
+\begin{equation}
+e^{ \frac{1}{n} \ln(n^2) } = e^{ 2 \frac{\ln n}{n} }
+\end{equation}
+
+Analizando esta última expresión, se tiene el cociente $ \frac{\ln n}{n} $. Esto tiende a cero, porque el logaritmo de cualquier base crece más lentamente que una función lineal. En consecuencia:
+
+\begin{equation}
+\hresult{9.j}{ \limninf \sqrt[n]{n^2 + 1} = e^0 = 1 }
+\end{equation}
+
+\subsectionx{9.k}
+
+\begin{equation}
+a_n = \sqrt[n]{ \frac{3n^3 + 2n^2 + 1}{n^2+2} }
+\end{equation}
+
+Este límite puede resolverse combinando las técnicas para cocientes de polinomios y $ x = e^{\ln x} $.
+
+Otra propiedad de logaritmos utilizada:
+
+\begin{equation}
+\ln(a \cdot b) = \ln(a) + \ln(b)
+\end{equation}
+
+\begin{subequations}
+\begin{align}
+& \limninf \left( \frac{3n^3 + 2n^2 + 1}{n^2+2} \right)^{ \frac{1}{n} } = \\
+& \limninf \left( \frac{3n^3}{n^2} \right)^{ \frac{1}{n} } = \\
+& \limninf (3n)^{ \frac{1}{n} } = \\
+& \limninf \left[ e^{ \ln(3n) } \right]^{ \frac{1}{n} } = \\
+& \limninf e^{ \frac{\ln(3) + \ln(n)}{n} } = \\
+& \limninf e^{ \frac{\ln n}{n} } = e^0 = 1
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{9.k}{ \limninf \sqrt[n]{ \frac{3n^3 + 2n^2 + 1}{n^2+2} } = 1 }
+\end{equation}
+
+\subsectionx{9.l}
+
+\begin{equation}
+a_n = \sqrt[n]{\frac{5n + 1}{3n + 1}}
+\end{equation}
+
+En este caso, no hay indeterminación que salvar. La base tiende a $ \frac{5}{3} $, y el exponente a 0.
+
+\begin{equation}
+\hresult{9.l}{ \limninf \left( \frac{5n + 1}{3n + 1} \right)^{ \frac{1}{n} } = {\frac{5}{3} }^0 = 1 }
+\end{equation}
+
+\subsectionx{9.m}
+
+\begin{equation}
+a_n = \left( \frac{n^2 + 2}{5n^2 + 3} \right)^{ \frac{1}{n} }
+\end{equation}
+
+Nuevamente, no hay indeterminación que salvar. La base tiende a $ \frac{1}{5} $, y el exponente a 0.
+
+\begin{equation}
+\hresult{9.l}{ \limninf \left( \frac{n^2 + 2}{5n^2 + 3} \right)^{ \frac{1}{n} } = {\frac{1}{5}}^0 = 1 }
+\end{equation}
+
+\subsectionx{9.n}
+
+\begin{equation}
+a_n = (2^n + 5^n)^{ \frac{1}{n} }
+\end{equation}
+
+Sacando factor común $ 5^n $ en la base:
+
+\begin{equation}
+(2^n + 5^n)^{ \frac{1}{n} } = \left[ 5^n \left( \frac{2^n}{5^n} + 1  \right) \right]^{ \frac{1}{n} }
+\end{equation}
+
+Distribuyendo la potencia con el producto:
+
+\begin{equation}
+\left[ 5^n \left( \frac{2^n}{5^n} + 1  \right) \right]^{ \frac{1}{n} } = (5^n)^{ \frac{1}{n} } \left[ \left(\frac{2}{5}\right)^n + 1 \right]^{ \frac{1}{n} }
+\end{equation}
+
+Cancelando exponentes en el primer factor:
+
+\begin{equation}
+a_n = 5 \left[ \left(\frac{2}{5}\right)^n + 1 \right]^{ \frac{1}{n} }
+\end{equation}
+
+El segundo factor tiende a $ 1^0 $, que no es indeterminación y tiende a 1. Por ende:
+
+\begin{equation}
+\hresult{9.n}{ \limninf (2^n + 5^n)^{ \frac{1}{n} } = 5 }
+\end{equation}
+
+\subsectionx{9.o}
+
+\begin{equation}
+a_n = (n^4 + 1)^{ \frac{1}{2n} }
+\end{equation}
+
+Utilizando $ x = e^{\ln x} $ y propiedades de los logaritmos:
+
+\begin{subequations}
+\begin{align}
+& \limninf (n^4 + 1)^{ \frac{1}{2n} } = \\
+& \limninf \left[ e^{ \ln(n^4 + 1) } \right]^{ \frac{1}{2n} } = \\
+& \limninf e^{ \ln(n^4 + 1) \frac{1}{2n} } = \\
+& \limninf e^{ 4 \frac{\ln(n)}{2n} } = \\
+& \limninf e^{ 2 \frac{\ln n}{n} } = e^0 = 1
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{9.o}{ \limninf (n^4 + 1)^{ \frac{1}{2n} } = 1 }
+\end{equation}
+
+\subsectionx{9.p}
+
+\begin{equation}
+a_n = [1 + (-1)^n]^n \frac{1}{n}
+\end{equation}
+
+En este caso, conviene analizar por separado las subsucesiones de índices pares e impares por separado.
+
+La subsucesión de índices pares es:
+
+\begin{equation}
+a_{2n} = [1 + (-1)^{2n}]^{2n} \frac{1}{2n} = \frac{2^{2n}}{2n} = \frac{1}{2} \frac{4^n}{n}
+\end{equation}
+
+Y la de impares es:
+
+\begin{equation}
+a_{2n+1} = [1 + (-1)^{2n+1}] \frac{1}{2n+1} = 0
+\end{equation}
+
+Entonces, la subsucesión de índices pares tiende a $ +\infty $ y la de índices impares es constantemente cero. Por lo tanto, el límite no existe.
+
+\begin{equation}
+\hresult{9.p}{ \limninf a_n = [1 + (-1)^n]^n \frac{1}{n} \text{ no existe, y } a_n \text{ oscila entre cero y } +\infty }
+\end{equation}
+
+\subsectionx{9.q}
+
+\begin{equation}
+a_n = \left( \frac{5}{3} \right)^{ \left( \frac{8}{11} \right)^n }
+\end{equation}
+
+Por la propiedad vista en 9.e, $ \left( \frac{8}{11} \right)^n $ tiende a cero por tener una base positiva menor a 1. Nótese que multiplicar los exponentes sería un error porque el exponente $ n  $ está aplicado sólo sobre $ \frac{8}{11} $ y no sobre toda la expresión. No hay una base en común para aplicar esa propiedad. Éste es un error muy común en estos escenarios.·
+
+\begin{equation}
+\limninf \left( \frac{5}{3} \right)^{ \left( \frac{8}{11} \right)^n } = \limninf \left( \frac{5}{3} \right)^0 = 1
+\end{equation}
+
+\begin{equation}
+\hresult{9.q}{ \limninf \left( \frac{5}{3} \right)^{ \left( \frac{8}{11} \right)^n } = 1 }
+\end{equation}
+
+\subsectionx{9.r}
+
+\begin{equation}
+a_n = \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^n }
+\end{equation}
+
+Teniendo la misma precaución que en el inciso anterior respecto a no multiplicar los exponentes, resulta:
+
+\begin{equation}
+\limninf \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^n } = \limninf \left( \frac{8}{11} \right)^{+\infty} = 0
+\end{equation}
+
+\begin{equation}
+\hresult{9.q}{ \limninf \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^n } = 0 }
+\end{equation}
+
+\subsectionx{9.s}
+
+\begin{equation}
+a_n = \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^{ \frac{1}{n} } }
+\end{equation}
+
+Nuevamente evitando multiplicar exponentes, se obtiene:
+
+\begin{equation}
+\limninf \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^{ \frac{1}{n} } } = \limninf \left( \frac{8}{11} \right)^{ {\frac{5}{3}}^0 } = {\frac{8}{11}}^1 = \frac{8}{11}
+\end{equation}
+
+\begin{equation}
+\hresult{9.q}{ \limninf \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^{ \frac{1}{n} } } = \frac{8}{11} \approx 0,72727 }
+\end{equation}
+
+\subsectionx{9.t}
+
+\begin{equation}
+a_n = \frac{3^{2n+1} + \cos n}{ 2 \cdot 9^n + \sin n }
+\end{equation}
+
+Para valores grandes de $ n $, las funciones exponenciales son mucho mayores que las trigonométricas, las cuales están acotadas entre -1 y 1. Por ende, pueden despreciar el coseno y el seno.
+
+\begin{subequations}
+\begin{align}
+& \limninf \frac{3^{2n+1} + \cos n}{ 2 \cdot 9^n + \sin n } = \\
+& \limninf \frac{3^{2n+1}}{ 2 \cdot 9^n} = \\
+& \limninf \frac{3^{2n} \cdot 3}{2 \cdot (3^2)^n} = \\
+& \limninf \frac{3 \cdot \cancel{3^{2n}}}{2 \cdot \cancel{3^{2n}}} = \frac{3}{2}
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{9.t}{ \limninf \frac{3^{2n+1} + \cos n}{ 2 \cdot 9^n + \sin n} = \frac{3}{2} }
 \end{equation}
 
 \end{document}
