@@ -382,6 +382,8 @@ Esta sucesión no está acotada, por lo cual \textbf{no converge}.
 
 \end{enumerate}
 
+\hrule
+
 \subsectionx{3.a}
 
 Sea el caso general:
@@ -1312,6 +1314,448 @@ Un número cada vez más cercano a cero, elevado a un número positivo cada vez 
 
 \begin{equation}
 \hresult{8.d}{ \text{(I) Es igual a 0.} }
+\end{equation}
+
+\sectionx{9}
+
+\textbf{Calcular, si existe, el límite de las siguientes sucesiones. Como siempre, explicar las propiedades utilizadas para llegar al resultado.}
+
+\begin{enumerate}[(a)]
+
+\bfseries
+
+\item $ \frac{\sin n}{n} $
+
+\item $ (-1)^n (\sqrt{n+2} - \sqrt{n}) $
+
+\item $ (-1)^n + \frac{1}{n} $
+
+\item $ (-1)^n (\sqrt{n+2} + \sqrt{n}) $
+
+\item $ \left( \frac{2}{5} \right)^n $
+
+\item $ \frac{2^n + 5}{3^n} (-1)^n $
+
+\item $ (1,5)^n $
+
+\item $ (0,95)^n $
+
+\item $ \frac{3^n + 4^{n+1} +2}{2^{2n} + 2^n} $
+
+\item $ \sqrt[n]{(n^2+1)} $
+
+\item $ \sqrt[n]{\frac{3n^3+2n^2+1}{n^2+2}} $
+
+\item $ \sqrt[n]{\frac{5n+1}{3n+1}} $
+
+\item $ \left( \frac{n^2 + 2}{5n^2 + 3} \right)^{\frac{1}{n}} $
+
+\item $ \sqrt[n]{(2^n + 5^n)} $
+
+\item $ (n^4 + 1)^{\frac{1}{2n}} $
+
+\item $ (1 + (-1)^n)^n \frac{1}{n} $
+
+\item $ \left( \frac{5}{3} \right)^{ \left( \frac{8}{11} \right)^n } $
+
+\item $ \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^n } $
+
+\item $ \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^{\frac{1}{n}} } $
+
+\item $ \frac{3^{2n+1} + \cos n}{2 \cdot 9^n + \sin n} $
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{9.a}
+
+\begin{equation}
+a_n = \frac{\sin n}{n}
+\end{equation}
+
+Al considerar este límite, no hay indeterminación, ni hace falta alguna propiedad para resolver. El numerador está acotado entre -1 y 1, y el denominador tiende a $ +\infty $. Por lo tanto, el cociente tiende a cero.
+
+\begin{equation}
+\hresult{9.a}{ \limninf \frac{\sin n}{n} = 0 }
+\end{equation}
+
+\subsectionx{9.b}
+
+\begin{equation}
+a_n = (-1)^n (\sqrt{n+2} - \sqrt{n})
+\end{equation}
+
+El segundo factor de este producto parece tender a cero, lo cual multiplicado por $ (-1)^n $ tiende a cero. Para confirmar esto, se puede analizar el segundo factor por separado, aplicando la técnica de multiplicar y dividir por un factor apropiado.
+
+\begin{subequations}
+\begin{align}
+& \limninf \sqrt{n+2} - \sqrt{n} = \\
+& \limninf (\sqrt{n+2} - \sqrt{n}) \frac{\sqrt{n+2} + \sqrt{n}}{\sqrt{n+2} + \sqrt{n}} \\
+& \limninf \frac{(\sqrt{n+2})^2-(\sqrt{n})^2}{\sqrt{n+2} + \sqrt{n}} = \\
+& \limninf \frac{\cancel{n}+2-\cancel{n}}{\sqrt{n+2} + \sqrt{n}} = 0
+\end{align}
+\end{subequations}
+
+Demostrado esto, puede concluirse que:
+
+\begin{equation}
+\hresult{9.b}{ \limninf (-1)^n (\sqrt{n+2} - \sqrt{n}) = 0 }
+\end{equation}
+
+\subsectionx{9.c}
+
+\begin{equation}
+a_n = (-1)^n + \frac{1}{n}
+\end{equation}
+
+El primer sumando oscila entre -1 y 1, y el segundo sumando tiende a cero. Por lo tanto, la suma oscila y el límite no existe.
+
+\begin{equation}
+\hresult{9.c}{ \limninf (-1)^n + \frac{1}{n} \text{ no existe, y } a_n \text{ oscila entre -1 y 1 } }
+\end{equation}
+
+\subsectionx{9.d}
+
+\begin{equation}
+a_n = (-1)^n (\sqrt{n+2} + \sqrt{n})
+\end{equation}
+
+El primer factor del producto oscila entre -1 y 1, y el segundo factor tiende a más infinito. Ergo, el producto oscila entre $-\infty$ y $+\infty$ y por lo tanto el límite no existe.
+
+\begin{equation}
+\hresult{9.d}{ \limninf (-1)^n (\sqrt{n+2} + \sqrt{n}) \text{ no existe, y } a_n \text{ oscila entre } -\infty \text{ y } +\infty }
+\end{equation}
+
+\subsectionx{9.e}
+
+\begin{equation}
+a_n = \left( \frac{2}{5} \right)^n
+\end{equation}
+
+Propiedad: dada $ a_n = r^n $:
+
+\begin{itemize}
+
+\item $ r > 1 \Rightarrow \limninfs a_n = +\infty $
+
+\item $ r = 1 \Rightarrow \limninfs a_n = 1 $
+
+\item $ 0 < r < 1 \Rightarrow \limninfs a_n = 0 $
+
+\end{itemize}
+
+\begin{equation}
+\hresult{9.e}{ \limninf \left( \frac{2}{5} \right)^n = 0 }
+\end{equation}
+
+\subsectionx{9.f}
+
+\begin{equation}
+a_n = \frac{2^n + 5}{3^n} (-1)^n
+\end{equation}
+
+La única forma de que esto converja es que el primer factor tienda a cero, porque el segundo oscila. Por ende, sólo es necesario analizar dicho factor.
+
+\begin{subequations}
+\begin{align}
+& \limninf \frac{2^n + 5}{3^n} = \\
+& \limninf \frac{2^n}{3^n} = \\
+& \limninf \left( \frac{2}{3} \right)^n = 0
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{9.f}{ \limninf \frac{2^n + 5}{3^n} (-1)^n = 0 }
+\end{equation}
+
+\subsectionx{9.g}
+
+\begin{equation}
+a_n = (1,5)^n
+\end{equation}
+
+Por la propiedad descrita en 9.e:
+
+\begin{equation}
+\hresult{9.g}{ \limninf (1,5)^n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
+
+\subsectionx{9.h}
+
+\begin{equation}
+a_n = (0,95)^n
+\end{equation}
+
+Por la propiedad descrita en 9.e:
+
+\begin{equation}
+\hresult{9.h}{ \limninf (0,95)^n = 0 }
+\end{equation}
+
+\subsectionx{9.i}
+
+\begin{equation}
+a_n = \frac{3^n + 4^{n+1} + 2}{2^{2n} + 2^n}
+\end{equation}
+
+De las funciones exponenciales que aparecen, 4 parece ser la mayor. Es posible operar algebraicamente para eliminar la indeterminación $ \frac{+\infty}{+\infty} $.
+
+\begin{subequations}
+\begin{align}
+& \limninf \frac{3^n + 4^{n+1} + 2}{2^{2n} + 2^n} = \\
+& \limninf \frac{3^n + 4^{n+1}}{2^{2n} + 2^n} = \\
+& \limninf \frac{3^n + 4 \cdot 4^n}{(2^2)^n + 2^n} = \\
+& \limninf \frac{3^n + 4 \cdot 4^n}{4^n + 2^n} \frac{4^{-n}}{4^{-n}} = \\
+& \limninf \frac{ \frac{3^n}{4^n} + 4 }{ 1 + \frac{2^n}{4^n} } = \\
+& \limninf \frac{ \left( \frac{3}{4} \right)^n + 4 }{ 1 + \left( \frac{2}{4} \right)^n } = 4
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{9.i}{ \limninf \frac{3^n + 4^{n+1} + 2}{2^{2n} + 2^n} = 4 }
+\end{equation}
+
+\subsectionx{9.j}
+
+\begin{equation}
+a_n = \sqrt[n]{n^2 + 1}
+\end{equation}
+
+En primer lugar, se utilizará la propiedad $ x = e^{\ln x} $.
+
+\begin{equation}
+\sqrt[n]{n^2 + 1} = (n^2 + 1)^{\frac{1}{n}} = \left[ e^{ \ln(n^2 + 1) } \right]^{\frac{1}{n}}
+\end{equation}
+
+Al tener potencias consecutivas, se puede multiplicar los exponentes.
+
+\begin{equation}
+\left[ e^{ \ln(n^2 + 1) } \right]^{\frac{1}{n}} = e^{ \frac{1}{n} \ln(n^2 + 1) }
+\end{equation}
+
+Cuando $ n $ es grande, $ n^2 >> 1 $.
+
+\begin{equation}
+e^{ \frac{1}{n} \ln(n^2 + 1) } \approx e^{ \frac{1}{n} \ln(n^2) } \text{ para } n \rightarrow +\infty
+\end{equation}
+
+En este punto se aplica una propiedad de los logaritmos:
+
+\begin{equation}
+\ln( a^b ) = b \ln(a)
+\end{equation}
+
+Esta propiedad se muestra para el logaritmo natural, pero vale para cualquier base. En este caso:
+
+\begin{equation}
+e^{ \frac{1}{n} \ln(n^2) } = e^{ 2 \frac{\ln n}{n} }
+\end{equation}
+
+Analizando esta última expresión, se tiene el cociente $ \frac{\ln n}{n} $. Esto tiende a cero, porque el logaritmo de cualquier base crece más lentamente que una función lineal. En consecuencia:
+
+\begin{equation}
+\hresult{9.j}{ \limninf \sqrt[n]{n^2 + 1} = e^0 = 1 }
+\end{equation}
+
+\subsectionx{9.k}
+
+\begin{equation}
+a_n = \sqrt[n]{ \frac{3n^3 + 2n^2 + 1}{n^2+2} }
+\end{equation}
+
+Este límite puede resolverse combinando las técnicas para cocientes de polinomios y $ x = e^{\ln x} $.
+
+Otra propiedad de logaritmos utilizada:
+
+\begin{equation}
+\ln(a \cdot b) = \ln(a) + \ln(b)
+\end{equation}
+
+\begin{subequations}
+\begin{align}
+& \limninf \left( \frac{3n^3 + 2n^2 + 1}{n^2+2} \right)^{ \frac{1}{n} } = \\
+& \limninf \left( \frac{3n^3}{n^2} \right)^{ \frac{1}{n} } = \\
+& \limninf (3n)^{ \frac{1}{n} } = \\
+& \limninf \left[ e^{ \ln(3n) } \right]^{ \frac{1}{n} } = \\
+& \limninf e^{ \frac{\ln(3) + \ln(n)}{n} } = \\
+& \limninf e^{ \frac{\ln n}{n} } = e^0 = 1
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{9.k}{ \limninf \sqrt[n]{ \frac{3n^3 + 2n^2 + 1}{n^2+2} } = 1 }
+\end{equation}
+
+\subsectionx{9.l}
+
+\begin{equation}
+a_n = \sqrt[n]{\frac{5n + 1}{3n + 1}}
+\end{equation}
+
+En este caso, no hay indeterminación que salvar. La base tiende a $ \frac{5}{3} $, y el exponente a 0.
+
+\begin{equation}
+\hresult{9.l}{ \limninf \left( \frac{5n + 1}{3n + 1} \right)^{ \frac{1}{n} } = {\frac{5}{3} }^0 = 1 }
+\end{equation}
+
+\subsectionx{9.m}
+
+\begin{equation}
+a_n = \left( \frac{n^2 + 2}{5n^2 + 3} \right)^{ \frac{1}{n} }
+\end{equation}
+
+Nuevamente, no hay indeterminación que salvar. La base tiende a $ \frac{1}{5} $, y el exponente a 0.
+
+\begin{equation}
+\hresult{9.l}{ \limninf \left( \frac{n^2 + 2}{5n^2 + 3} \right)^{ \frac{1}{n} } = {\frac{1}{5}}^0 = 1 }
+\end{equation}
+
+\subsectionx{9.n}
+
+\begin{equation}
+a_n = (2^n + 5^n)^{ \frac{1}{n} }
+\end{equation}
+
+Sacando factor común $ 5^n $ en la base:
+
+\begin{equation}
+(2^n + 5^n)^{ \frac{1}{n} } = \left[ 5^n \left( \frac{2^n}{5^n} + 1  \right) \right]^{ \frac{1}{n} }
+\end{equation}
+
+Distribuyendo la potencia con el producto:
+
+\begin{equation}
+\left[ 5^n \left( \frac{2^n}{5^n} + 1  \right) \right]^{ \frac{1}{n} } = (5^n)^{ \frac{1}{n} } \left[ \left(\frac{2}{5}\right)^n + 1 \right]^{ \frac{1}{n} }
+\end{equation}
+
+Cancelando exponentes en el primer factor:
+
+\begin{equation}
+a_n = 5 \left[ \left(\frac{2}{5}\right)^n + 1 \right]^{ \frac{1}{n} }
+\end{equation}
+
+El segundo factor tiende a $ 1^0 $, que no es indeterminación y tiende a 1. Por ende:
+
+\begin{equation}
+\hresult{9.n}{ \limninf (2^n + 5^n)^{ \frac{1}{n} } = 5 }
+\end{equation}
+
+\subsectionx{9.o}
+
+\begin{equation}
+a_n = (n^4 + 1)^{ \frac{1}{2n} }
+\end{equation}
+
+Utilizando $ x = e^{\ln x} $ y propiedades de los logaritmos:
+
+\begin{subequations}
+\begin{align}
+& \limninf (n^4 + 1)^{ \frac{1}{2n} } = \\
+& \limninf \left[ e^{ \ln(n^4 + 1) } \right]^{ \frac{1}{2n} } = \\
+& \limninf e^{ \ln(n^4 + 1) \frac{1}{2n} } = \\
+& \limninf e^{ 4 \frac{\ln(n)}{2n} } = \\
+& \limninf e^{ 2 \frac{\ln n}{n} } = e^0 = 1
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{9.o}{ \limninf (n^4 + 1)^{ \frac{1}{2n} } = 1 }
+\end{equation}
+
+\subsectionx{9.p}
+
+\begin{equation}
+a_n = [1 + (-1)^n]^n \frac{1}{n}
+\end{equation}
+
+En este caso, conviene analizar por separado las subsucesiones de índices pares e impares por separado.
+
+La subsucesión de índices pares es:
+
+\begin{equation}
+a_{2n} = [1 + (-1)^{2n}]^{2n} \frac{1}{2n} = \frac{2^{2n}}{2n} = \frac{1}{2} \frac{4^n}{n}
+\end{equation}
+
+Y la de impares es:
+
+\begin{equation}
+a_{2n+1} = [1 + (-1)^{2n+1}] \frac{1}{2n+1} = 0
+\end{equation}
+
+Entonces, la subsucesión de índices pares tiende a $ +\infty $ y la de índices impares es constantemente cero. Por lo tanto, el límite no existe.
+
+\begin{equation}
+\hresult{9.p}{ \limninf a_n = [1 + (-1)^n]^n \frac{1}{n} \text{ no existe, y } a_n \text{ oscila entre cero y } +\infty }
+\end{equation}
+
+\subsectionx{9.q}
+
+\begin{equation}
+a_n = \left( \frac{5}{3} \right)^{ \left( \frac{8}{11} \right)^n }
+\end{equation}
+
+Por la propiedad vista en 9.e, $ \left( \frac{8}{11} \right)^n $ tiende a cero por tener una base positiva menor a 1. Nótese que multiplicar los exponentes sería un error porque el exponente $ n  $ está aplicado sólo sobre $ \frac{8}{11} $ y no sobre toda la expresión. No hay una base en común para aplicar esa propiedad. Éste es un error muy común en estos escenarios.·
+
+\begin{equation}
+\limninf \left( \frac{5}{3} \right)^{ \left( \frac{8}{11} \right)^n } = \limninf \left( \frac{5}{3} \right)^0 = 1
+\end{equation}
+
+\begin{equation}
+\hresult{9.q}{ \limninf \left( \frac{5}{3} \right)^{ \left( \frac{8}{11} \right)^n } = 1 }
+\end{equation}
+
+\subsectionx{9.r}
+
+\begin{equation}
+a_n = \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^n }
+\end{equation}
+
+Teniendo la misma precaución que en el inciso anterior respecto a no multiplicar los exponentes, resulta:
+
+\begin{equation}
+\limninf \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^n } = \limninf \left( \frac{8}{11} \right)^{+\infty} = 0
+\end{equation}
+
+\begin{equation}
+\hresult{9.q}{ \limninf \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^n } = 0 }
+\end{equation}
+
+\subsectionx{9.s}
+
+\begin{equation}
+a_n = \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^{ \frac{1}{n} } }
+\end{equation}
+
+Nuevamente evitando multiplicar exponentes, se obtiene:
+
+\begin{equation}
+\limninf \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^{ \frac{1}{n} } } = \limninf \left( \frac{8}{11} \right)^{ {\frac{5}{3}}^0 } = {\frac{8}{11}}^1 = \frac{8}{11}
+\end{equation}
+
+\begin{equation}
+\hresult{9.q}{ \limninf \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^{ \frac{1}{n} } } = \frac{8}{11} \approx 0,72727 }
+\end{equation}
+
+\subsectionx{9.t}
+
+\begin{equation}
+a_n = \frac{3^{2n+1} + \cos n}{ 2 \cdot 9^n + \sin n }
+\end{equation}
+
+Para valores grandes de $ n $, las funciones exponenciales son mucho mayores que las trigonométricas, las cuales están acotadas entre -1 y 1. Por ende, pueden despreciar el coseno y el seno.
+
+\begin{subequations}
+\begin{align}
+& \limninf \frac{3^{2n+1} + \cos n}{ 2 \cdot 9^n + \sin n } = \\
+& \limninf \frac{3^{2n+1}}{ 2 \cdot 9^n} = \\
+& \limninf \frac{3^{2n} \cdot 3}{2 \cdot (3^2)^n} = \\
+& \limninf \frac{3 \cdot \cancel{3^{2n}}}{2 \cdot \cancel{3^{2n}}} = \frac{3}{2}
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{9.t}{ \limninf \frac{3^{2n+1} + \cos n}{ 2 \cdot 9^n + \sin n} = \frac{3}{2} }
 \end{equation}
 
 \end{document}
