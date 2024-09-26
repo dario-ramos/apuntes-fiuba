@@ -2,9 +2,11 @@
 
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{cancel}
 \usepackage[spanish]{babel}
+\usepackage{cancel}
 \usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks,
@@ -13,11 +15,14 @@
     linkcolor=black,
     urlcolor=black,
 }
+\usepackage{longdivision}
+\usepackage{polynom}
 \usepackage{tcolorbox}
 
 \tcbuselibrary{theorems}
 
 \newcommand{\hresult}[2]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] {#2} }
+\newcommand{\hresulte}[3]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] { \hspace{#3} #2 \hspace{#3} } }
 \newcommand{\figurex}[4]{\begin{figure}[ht] \caption{#1} \includegraphics[scale=#2]{#3} \centering \label{#4}\end{figure}}
 \newcommand{\sectionx}[1]{\section*{#1}\label{sec:#1}\addcontentsline{toc}{section}{\nameref{sec:#1}}}
 \newcommand{\subsectionx}[1]{\subsection*{#1}\label{subsec:#1}\addcontentsline{toc}{subsection}{\nameref{subsec:#1}}}
@@ -43,7 +48,7 @@ Cátedra Ruiz, curso 62802 \\
 
 \textbf{Escribir los primeros cinco términos de las siguientes sucesiones:}
 
-\begin{enumerate}[(a)]
+\begin{enumerate}[label=(\alph*)]
 
 \bfseries
 
@@ -130,7 +135,7 @@ d_n = \frac{\cos(n\pi)}{n}
 
 \textbf{Para cada una de las siguientes sucesiones:}
 
-\begin{enumerate}[(a)]
+\begin{enumerate}[label=(\alph*)]
 
 \bfseries
 
@@ -142,7 +147,7 @@ d_n = \frac{\cos(n\pi)}{n}
 
 \end{enumerate}
 
-\begin{enumerate}[(i)]
+\begin{enumerate}[label=\textbf{(\roman*)}]
 
 \bfseries
 
@@ -368,7 +373,7 @@ Esta sucesión no está acotada, por lo cual \textbf{no converge}.
 
 \textbf{Hallar un valor de $ n \in \mathbb{N} $ a partir del cual haya certeza de que: }
 
-\begin{enumerate}[(a)]
+\begin{enumerate}[label=(\alph*)]
 
 \bfseries
 
@@ -528,7 +533,7 @@ Finalmente:
 
 \textbf{ Considerar la sucesión $ a_n = \frac{n+1}{n-1000,2} $. A partir de que $ \limninf a_n = 1 $, responder cuáles de las siguientes afirmaciones son verdaderas, justificando en cada caso. }
 
-\begin{enumerate}[(a)]
+\begin{enumerate}[label=(\alph*)]
 
 \bfseries
 
@@ -649,7 +654,7 @@ Que una sucesión esté acotada es una condición necesaria para que sea converg
 
 \textbf{Calcular, si existe, el límite de las siguientes sucesiones. En cada caso, explicar las propiedades utilizadas para obtener la respuesta.}
 
-\begin{enumerate}[(a)]
+\begin{enumerate}[label=(\alph*)]
 
 \bfseries
 
@@ -843,7 +848,7 @@ Para este caso, $ a = 1 $, $ r = \frac{1}{2} $, lo cual conduce a que la suma va
 
 \textbf{Continuar con las siguientes sucesiones:}
 
-\begin{enumerate}[(a)]
+\begin{enumerate}[label=(\alph*)]
 
 \item $ \frac{n^2-5n+7}{n+3} + \frac{n^2 + 5}{n+1} $
 
@@ -1100,11 +1105,11 @@ En este caso, no hay indeterminación porque no se cancelan los términos de may
 
 \textbf{Mostrar que cada una de las siguientes situaciones constituye una indeterminación. Para ello, exhibir dos ejemplos donde los límites sean distintos (finitos o infinitos). Suponer , cuando sea necesario, condiciones suficientes para que las sucesiones estén bien definidas para todo n.}
 
-\begin{enumerate}[(a)]
+\begin{enumerate}[label=(\alph*)]
 
 \item $ \limninfs a_n = +\infty \wedge \limninf b_n = +\infty $
 
-\begin{enumerate}[(i)]
+\begin{enumerate}[label=\textbf{(\roman*)}]
 
 \item $ \limninfs (a_n - b_n) $
 
@@ -1114,7 +1119,7 @@ En este caso, no hay indeterminación porque no se cancelan los términos de may
 
 \item $ \limninfs a_n = 0 \wedge \limninfs b_n = 0 $
 
-\begin{enumerate}[(i)]
+\begin{enumerate}[label=\textbf{(\roman*)}]
 
 \item $ \limninfs \frac{a_n}{b_n} $
 
@@ -1124,7 +1129,7 @@ En este caso, no hay indeterminación porque no se cancelan los términos de may
 
 \item $ \limninfs a_n = 0 \wedge \limninfs b_n = +\infty $
 
-\begin{enumerate}[(i)]
+\begin{enumerate}[label=\textbf{(\roman*)}]
 
 \item $ \limninfs a_n \cdot b_n $
 
@@ -1224,11 +1229,11 @@ a_n = \frac{1}{n^2} \wedge b_n = 2^n \Rightarrow \limninf (b_n)^{a_n}  = \limnin
 
 \textbf{Marcar, en casa caso, la única respuesta correcta:}
 
-\begin{enumerate}[(a)]
+\begin{enumerate}[label=(\alph*)]
 
 \item Si $ \limninfs a_n = +\infty $ y $ b_n $ oscila finitamente entonces $ \limninfs (a_n + b_n) $:
 
-\begin{enumerate}[(i)]
+\begin{enumerate}[label=\textbf{(\roman*)}]
 
 \item Oscila.
 
@@ -1240,7 +1245,7 @@ a_n = \frac{1}{n^2} \wedge b_n = 2^n \Rightarrow \limninf (b_n)^{a_n}  = \limnin
 
 \item Si $ \limninf a_n = L $ y $ a_n > 0 $ entonces hay certeza de que:
 
-\begin{enumerate}[(i)]
+\begin{enumerate}[label=\textbf{(\roman*)}]
 
 \item $ L > 0 $.
 
@@ -1254,7 +1259,7 @@ a_n = \frac{1}{n^2} \wedge b_n = 2^n \Rightarrow \limninf (b_n)^{a_n}  = \limnin
 
 \item Si $ \limninfs a_n = 0 $ y $ \limninfs b_n = +\infty $ entonces $ \limninfs \frac{a_n}{b_n} $:
 
-\begin{enumerate}[(i)]
+\begin{enumerate}[label=\textbf{(\roman*)}]
 
 \item Es igual a 0.
 
@@ -1268,7 +1273,7 @@ a_n = \frac{1}{n^2} \wedge b_n = 2^n \Rightarrow \limninf (b_n)^{a_n}  = \limnin
 
 \item Si $ \limninfs a_n = 0 $ y $ \limninfs b_n = +\infty $ entonces $ \limninfs {(a_n)}^{b_n} $:
 
-\begin{enumerate}[(i)]
+\begin{enumerate}[label=\textbf{(\roman*)}]
 
 \item Es igual a 0.
 
@@ -1320,7 +1325,7 @@ Un número cada vez más cercano a cero, elevado a un número positivo cada vez 
 
 \textbf{Calcular, si existe, el límite de las siguientes sucesiones. Como siempre, explicar las propiedades utilizadas para llegar al resultado.}
 
-\begin{enumerate}[(a)]
+\begin{enumerate}[label=(\alph*)]
 
 \bfseries
 
@@ -1534,7 +1539,7 @@ Al tener potencias consecutivas, se puede multiplicar los exponentes.
 \left[ e^{ \ln(n^2 + 1) } \right]^{\frac{1}{n}} = e^{ \frac{1}{n} \ln(n^2 + 1) }
 \end{equation}
 
-Cuando $ n $ es grande, $ n^2 >> 1 $.
+Cuando $ n $ es grande, $ n^2 \gg 1 $.
 
 \begin{equation}
 e^{ \frac{1}{n} \ln(n^2 + 1) } \approx e^{ \frac{1}{n} \ln(n^2) } \text{ para } n \rightarrow +\infty
@@ -1756,6 +1761,317 @@ Para valores grandes de $ n $, las funciones exponenciales son mucho mayores que
 
 \begin{equation}
 \hresult{9.t}{ \limninf \frac{3^{2n+1} + \cos n}{ 2 \cdot 9^n + \sin n} = \frac{3}{2} }
+\end{equation}
+
+\sectionx{10}
+
+\textbf{Calcular el límite de las siguientes sucesiones.}
+
+\begin{enumerate}[label=(\alph*)]
+
+\bfseries
+
+\item $ \left( \frac{3n+1}{3n-5} \right)^n $
+
+\item $ \left( \frac{4n+1}{3n-5} \right)^n $
+
+\item $ \left( \frac{3n-2}{3n+1} \right)^{2n+1} $
+
+\item $ \left( 1 + \frac{1}{n^2} \right)^n $
+
+\item $ \left( 1 + \frac{17}{n} \right)^n $
+
+\item $ \left( \frac{2n^2-5n}{3n-1} \right)^{n^3+2n} $
+
+\item $ \left( \frac{3n^2+2n+1}{3n^2-5} \right)^{ \frac{n^2+2}{2n+1} } $
+
+\item $ \left( 1 + \frac{\sin n}{n^2} \right)^n $
+
+\item $ \left( \cos\left( \frac{1}{n} \right) \right)^{ \frac{2}{\sin^2\left( \frac{1}{n} \right)  } } $
+
+\item $ \left( 1 + \frac{\cos n}{5n^3 + 1} \right)^{2n^2 + 3} $
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{10.a}
+
+\begin{equation}
+a_n = \left( \frac{3n+1}{3n-5} \right)^n
+\end{equation}
+
+Este es un caso de indeterminación $ 1^{+\infty} $. Si se hiciera la división de polinomios, quedaría una expresión de la forma $ 1 + $ una expresión racional. Esto sugiere que tal vez sea conveniente utilizar la siguiente propiedad:
+
+Dada una sucesión $ b_n $ que diverge a $ +\infty $:
+
+\begin{equation}
+\limninf \left( 1 + \frac{1}{b_n}  \right)^{b_n} = e
+\end{equation}
+
+Por otro lado, recuérdese el algoritmo para división de polinomios. Dada una expresión racional $ \frac{D(x)}{d(x)} $, donde el grado del numerador es menor o igual al del denominador:
+
+\begin{equation}
+\frac{D(x)}{d(x)} = C(x) + \frac{R(x)}{d(x)}
+\end{equation}
+
+En esta expresión, $ C(x) $ y $ R(x) $ son los polinomios cociente y resto respectivamente, y se obtienen haciendo la división. Considérese que pese a que esta propiedad está enunciada para polinomios de variable continua $ x $, valen perfectamente para polinomios de variable discreta $ n $. Si la igualdad vale para todo $ x $ real, vale para todo $ n $ natural.
+
+Volviendo a este caso particular:
+
+\begin{subequations}
+\begin{align}
+& D(n) = 3n+1 \\
+& d(n) = 3n-5
+\end{align}
+\end{subequations}
+
+Haciendo la división, se obtienen $ C(n) $ y $ R(n) $.
+
+\begin{equation}
+\polylongdiv[vars=n]{3n+1}{3n-5}
+\end{equation}
+
+Resulta entonces:
+
+\begin{subequations}
+\begin{align}
+& C(x) = 1 \\
+& R(x) = 6
+\end{align}
+\end{subequations}
+
+Reemplazando en $ a_n $:
+
+\begin{subequations}
+\begin{align}
+& \limninf \left( \frac{3n+1}{3n-5} \right)^n = \\
+& \limninf \left( 1 + \frac{6}{3n-5} \right)^n = \\
+& \limninf \left( 1 + \frac{1}{\frac{3n-5}{6}} \right)^n = \\
+& \limninf \left( 1 + \frac{1}{\frac{3n-5}{6}} \right)^{ \frac{3n-5}{6} \frac{6}{3n-5} n } = \\
+& \limninf \left[ \underbrace{ \left( 1 + \frac{1}{\frac{3n-5}{6}} \right)^{ \frac{3n-5}{6}} }_{e} \right]^{ \underbrace{ \frac{6n}{3n-5} }_{2} } = \\
+& \hresulte{10.a}{ \limninf a_n = e^2 \approx 7,3891 }{ 1em }
+\end{align}
+\end{subequations}
+
+\subsectionx{10.b}
+
+\begin{equation}
+a_n = \left( \frac{4n+1}{3n-5} \right)^n
+\end{equation}
+
+En este caso, no hay indeterminación. La base tiende a $ \frac{4}{3} $, y el exponente a $ +\infty $. Al tender la base a un valor mayor a 1, el límite no existe y la sucesión diverge a $ +\infty $.
+
+\begin{equation}
+\hresult{10.b}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
+
+\subsectionx{10.c}
+
+\begin{equation}
+a_n = \left( \frac{3n-2}{3n+1} \right)^{2n+1} 
+\end{equation}
+
+Al tener nuevamente una indeterminación de la forma $ 1^{+\infty} $ donde la base es un cociente de polinomios, se aplica de nuevo la técnica de hacer la división.
+
+\begin{equation}
+\polylongdiv[vars = n]{3n-2}{3n+1}
+\end{equation}
+
+\begin{subequations}
+\begin{align}
+& \limninf \left( \frac{3n-2}{3n+1} \right)^{2n+1} = \\
+& \limninf \left( 1 - \frac{3}{3n+1} \right)^{2n+1}
+\end{align}
+\end{subequations}
+
+Llegado este punto, no es válido usar la técnica de e: el denominador tendería a $ -\infty $, y no se cumplirían las condiciones para el límite. Por lo tanto, lo que se utilizará para avanzar es la técnica de $ x = e^{\ln x} $
+
+\begin{subequations}
+\begin{align}
+& \limninf \left( 1 - \frac{3}{3n+1} \right)^{2n+1} = \\
+& \limninf e^{ \ln\left[\left( 1 - \frac{3}{3n+1} \right)^{2n+1}\right] }
+\end{align}
+\end{subequations}
+
+En este punto, es necesario utilizar otra propiedad muy útil.
+
+\begin{equation}
+x \rightarrow 0 \Rightarrow \ln(1-x) \approx -x
+\end{equation}
+
+En este caso, la expresión de interés es $ x = \frac{3}{3n+1} $, que efectivamente tiende a cero cuando n tiende a $ +\infty $. Ergo:
+
+\begin{subequations}
+\begin{align}
+& \limninf e^{ \ln\left[\left( 1 - \frac{3}{3n+1} \right)^{2n+1}\right] } = \\
+& \limninf e^{ (2n+1) \ln\left( 1 - \frac{3}{3n+1} \right) } = \\
+& \limninf e^{ (2n+1) \frac{-3}{3n+1} } = \\
+& \hresult{10.c}{ \limninf a_n = e^{-2} \approx 0,13533 }
+\end{align}
+\end{subequations}
+
+\subsectionx{10.d}
+
+\begin{equation}
+a_n = \left( 1 + \frac{1}{n^2} \right)^n
+\end{equation}
+
+Se tiene una indeterminación de la forma $ 1^{+\infty} $, y una expresión muy similar a la del límite de e. El denominador del segundo sumando tiende a $ +\infty $. Sólo resta manipular algebraicamente para poder aplicar el resultado.
+
+\begin{subequations}
+\begin{align}
+& \limninf \left( 1 + \frac{1}{n^2} \right)^n = \\
+& \limninf \left( 1 + \frac{1}{n^2} \right)^{ n^2 \frac{1}{n^2} n } = \\
+& \limninf \left[ \underbrace{ \left( 1 + \frac{1}{n^2} \right)^{n^2} }_{e} \right]^{  \frac{1}{n} } = \\
+& e^0 = \hresult{10.d}{ \limninf a_n = 1 }
+\end{align}
+\end{subequations}
+
+\subsectionx{10.e}
+
+\begin{equation}
+a_n = \left( 1 + \frac{17}{n} \right)^n
+\end{equation}
+
+De nuevo se tiene un escenario ideal para aplicar la técnica de e.
+
+\begin{subequations}
+\begin{align}
+& \limninf \left( 1 + \frac{17}{n} \right)^n = \\
+& \limninf \left( 1 + \frac{1}{ \frac{n}{17} } \right)^n = \\
+& \limninf \left( 1 + \frac{1}{ \frac{n}{17} } \right)^{ \frac{n}{17} \frac{17}{n} n } = \\
+& \limninf \left[ \underbrace{ \left( 1 + \frac{1}{ \frac{n}{17} } \right)^{ \frac{n}{17} } }_{e} \right]^{17} = \\
+& \hresult{10.e}{ \limninf a_n = e^{17} \approx 24154952 }
+\end{align}
+\end{subequations}
+
+Nótese que al ser tan grande el valor del límite, podría creerse erróneamente que $ a_n $ diverge al evaluar algunos términos grandes.
+
+\subsectionx{10.f}
+
+\begin{equation}
+a_n = \left( \frac{2n^2-5n}{3n-1} \right)^{n^3+2n}
+\end{equation}
+
+Aquí no hay indeterminación. La base tiende a $ +\infty $ por ser el numerador de mayor grado que el denominador. Y como el exponente también tiende a $ +\infty $, el límite no existe y la sucesión diverge a $ +\infty $.
+
+\begin{equation}
+\hresult{10.f}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
+
+\subsectionx{10.g}
+
+\begin{equation}
+a_n = \left( \frac{3n^2+2n+1}{3n^2-5} \right)^{ \frac{n^2+2}{2n+1} }
+\end{equation}
+
+En este caso, se tiene de nuevo una indeterminación de la forma $ 1^{+\infty} $, y la base es un cociente de polinomios. Realizando la división:
+
+\begin{equation}
+\polylongdiv[vars = n]{3n^2+2n+1}{3n^2-5}
+\end{equation}
+
+Reemplazando:
+
+\begin{subequations}
+\begin{align}
+& \limninf \left( \frac{3n^2+2n+1}{3n^2-5} \right)^{ \frac{n^2+2}{2n+1} } = \\
+& \limninf \left( 1 + \frac{2n+6}{3n^2-5} \right)^{ \frac{n^2+2}{2n+1} } = \\
+& \limninf \left( 1 + \frac{1}{ \frac{3n^2-5}{2n+6} } \right)^{ \frac{3n^2-5}{2n+6} \frac{2n+6}{3n^2-5} \frac{n^2+2}{2n+1} } = \\
+& \limninf \left[ \underbrace{ \left( 1 + \frac{1}{ \frac{3n^2-5}{2n+6} } \right)^{ \frac{3n^2-5}{2n+6} } }_{e} \right]^{ \frac{2n+6}{3n^2-5} \frac{n^2+2}{2n+1} } = \\
+& \hresult{10.g}{ \limninf a_n = e^{ \frac{1}{3} } \approx 1,3956 }
+\end{align}
+\end{subequations}
+
+\subsectionx{10.h}
+
+\begin{equation}
+a_n = \left( 1 + \frac{\sin n}{n^2} \right)^n
+\end{equation}
+
+En este caso, hay indeterminación $ 1^{+\infty} $, pero no es válido utilizar la técnica de e porque el denominador oscilaría entre + y - infinito, por el seno. Por lo tanto, hay que aplicar la técnica de $ e^ln $.
+
+\begin{subequations}
+\begin{align}
+& \limninf \left( 1 + \frac{\sin n}{n^2} \right)^n = \\
+& \limninf e^{ \ln\left[\left( 1 + \frac{\sin n}{n^2} \right)^n \right] } = \\
+& \limninf e^{ n \ln\left( 1 + \frac{\sin n}{n^2} \right) }
+\end{align}
+\end{subequations}
+
+La aproximación logarítmica usada antes también vale para valores positivos.
+
+\begin{equation}
+x \rightarrow 0 \Rightarrow \ln(1+x) \approx x
+\end{equation}
+
+\begin{subequations}
+\begin{align}
+& \limninf e^{ n \ln\left( 1 + \frac{\sin n}{n^2} \right) } = \\
+& \limninf e^{ n \frac{\sin n}{n^2} } = \\
+& \limninf e^{ \frac{\sin n}{n} } = \\
+& \hresult{10.h}{ \limninf a_n = e^0 = 1 }
+\end{align}
+\end{subequations}
+
+\subsectionx{10.i}
+
+\begin{equation}
+a_n = \left( \cos\left( \frac{1}{n} \right) \right)^{ \frac{2}{\sin^2\left( \frac{1}{n} \right)  } }
+\end{equation}
+
+Es una indeterminación de la forma $ 1^{+\infty} $. La técnica de e no sirve porque no hay forma de introducir un 1. Por lo tanto, se empieza por aplicar $ x = e^{\ln(x)} $.
+
+\begin{subequations}
+\begin{align}
+& \limninf \left( \cos\left( \frac{1}{n} \right) \right)^{ \frac{2}{\sin^2\left( \frac{1}{n} \right)  } } = \\
+& \limninf e^{ \ln\left[ \left( \cos\left( \frac{1}{n} \right) \right)^{ \frac{2}{\sin^2\left( \frac{1}{n} \right)  } } \right] } = \\
+& \limninf e^{ \frac{2}{\sin^2\left( \frac{1}{n} \right)  } \ln\left( \cos\left( \frac{1}{n} \right) \right) }
+\end{align}
+\end{subequations}
+
+Llegado este punto, se aplicarán aproximaciones basadas en la serie de Taylor.
+
+\begin{subequations}
+\begin{align}
+& x \rightarrow 0 \Rightarrow \cos(x) \rightarrow 1 - \frac{x^2}{2} \\
+& x \rightarrow 0 \Rightarrow \sin(x) \rightarrow x \\
+& x \rightarrow 0 \Rightarrow \ln(1-x) \rightarrow -x
+\end{align}
+\end{subequations}
+
+\begin{subequations}
+\begin{align}
+& \limninf e^{ \frac{2}{\sin^2\left( \frac{1}{n} \right)  } \ln\left( \cos\left( \frac{1}{n} \right) \right) } = \\
+& \limninf e^{ \frac{2}{ \frac{1}{n} \frac{1}{n} } \ln\left( 1 - \frac{1}{2} \frac{1}{n^2} \right) } = \\
+& \limninf e^{ 2n^2 \frac{-1}{2n^2} } = \\
+& \hresult{10.i}{ \limninf a_n = e^{-1} \approx 0,36788 }
+\end{align}
+\end{subequations}
+
+\subsectionx{10.j}
+
+\begin{equation}
+a_n = \left( 1 + \frac{\cos n}{5n^3 + 1} \right)^{2n^2 + 3}
+\end{equation}
+
+Como ocurrió en 10.h, no se puede aplicar el límite de e porque la función coseno introduce una oscilación. Ergo, se utiliza $ x = e^{\ln(x)} $ y una aproximación de Taylor.
+
+\begin{subequations}
+\begin{align}
+& \limninf \left( 1 + \frac{\cos n}{5n^3 + 1} \right)^{2n^2 + 3} = \\
+& \limninf e^{ \ln \left[ \left( 1 + \frac{\cos n}{5n^3 + 1} \right)^{2n^2 + 3} \right] } = \\
+& \limninf e^{ (2n^2+3) \ln\left( 1 + \frac{\cos n}{5n^3 + 1} \right) } = \\
+& \limninf e^{ (2n^2+3) \frac{\cos(n)}{5n^3+1} } = \\
+& \limninf e^{ \cos(n) \frac{2n^2+3}{5n^3+1} }
+\end{align}
+\end{subequations}
+
+En la última expresión, el segundo factor del producto en el exponente tiende a cero, por ser el denominador de mayor grado que el numerador. Una expresión que tiende a cero multiplicada por una expresión acotada, como $ \cos(n) $, tiende a cero. Ergo:
+
+\begin{equation}
+\hresult{10.j}{ \limninf a_n = e^0 = 1 }
 \end{equation}
 
 \end{document}
