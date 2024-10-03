@@ -2074,4 +2074,326 @@ En la última expresión, el segundo factor del producto en el exponente tiende 
 \hresult{10.j}{ \limninf a_n = e^0 = 1 }
 \end{equation}
 
+\sectionx{11}
+
+\textbf{Calcular, si existe, el límite de las siguientes sucesiones.}
+
+\begin{enumerate}[label=(\alph*)]
+
+\bfseries
+
+\item $ \frac{n}{2^{n+1}} $
+
+\item $ \left( 2 - \frac{1}{n} \right)^n $
+
+\item $ \frac{n 2^n}{n!} $
+
+\item $ \sqrt[n]{n!} $
+
+\item $ \frac{n^3 + n!}{2^n + 3^n} $
+
+\item $ \frac{2^{2n+1}}{(2n)!} $
+
+\item $ \left( \frac{1}{2} + \frac{2}{n} \right)^n $
+
+\item $ \frac{n^2}{n!} $
+
+\item $ \frac{n!}{n^n} $
+
+\item $ \frac{n^4 4^n n!}{n^n} $
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{11.a}
+
+\begin{equation}
+a_n = \frac{n}{2^{n+1}}
+\end{equation}
+
+Cuando una sucesión es un cociente y hay potencias de n, suele ser una buena oportunidad para aplicar el \textbf{criterio de D'Alembert}. Formalmente, el mismo plantea lo siguiente:
+
+Dada una sucesión $ a_n $ de números reales o complejos, considérese el límite:
+
+\begin{equation}
+L = \limninf \left| \frac{a_{n+1}}{a_n} \right|
+\end{equation}
+
+\begin{itemize}
+
+\item Si $ L $ existe y $ L < 1 \Rightarrow a_n $ converge a cero.
+
+\item Si $ L $ existe y $ L > 1 $, o no existe y diverge a $ +\infty \Rightarrow a_n $ diverge.
+
+\item Si $ L $ existe y $ L = 1 $ o $ L $ no existe y no está definido, el criterio no permite extraer conclusiones.    
+
+\end{itemize}
+
+En este caso particular, dado que se supone que la exponencial del denominador crece más rápido que la función lineal del numerador, se espera que aplicar el criterio conduzca a que el límite es cero.
+
+\begin{subequations}
+\begin{align}
+& \limninf \left| \frac{a_{n+1}}{a_n} \right| = \\
+& \limninf \left| \frac{n+1}{2^{(n+1)+1}} : \frac{n}{2^{n+1}} \right| = \\
+& \limninf \frac{n+1}{4 \cdot \cancel{2^n}} : \frac{n}{2 \cdot \cancel{2^n}} = \\
+& \limninf \frac{2 (n+1) }{4n} = \frac{1}{2}
+\end{align}
+\end{subequations}
+
+El límite existe y es menor a 1, por lo tanto se concluye por el criterio de D'Alembert que:
+
+\begin{equation}
+\hresult{11.a}{ \limninf a_n = 0 }
+\end{equation}
+
+\subsectionx{11.b}
+
+\begin{equation}
+a_n = \left( 2 - \frac{1}{n} \right)^n
+\end{equation}
+
+En este caso, no hay indeterminación. La base tiende a 2, y el exponente a $ +\infty $. Al ser la base mayor a 1, la sucesión diverge a $ +\infty $.
+
+\begin{equation}
+\hresult{11.b}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
+
+\subsectionx{11.c}
+
+Cabe esperar que el factorial crezca más rápido, por ende se aplica el criterio de D'Alembert.
+
+\begin{subequations}
+\begin{align}
+& \limninf \left| \frac{a_{n+1}}{a_n} \right| = \\
+& \limninf \left| \frac{(n+1) 2^{n+1}}{(n+1)!} : \frac{n 2^n}{n!} \right|
+\end{align}
+\end{subequations}
+
+Una propiedad que será de utilidad cada vez que aparezca el factorial es la siguiente. Por la definición recursiva de factorial, se tiene:
+
+\begin{equation}
+n! = n (n-1)! \Rightarrow (n+1)! = (n+1) n!
+\end{equation}
+
+\begin{subequations}
+\begin{align}
+& \limninf \left| \frac{(n+1) 2^{n+1}}{(n+1)!} : \frac{n 2^n}{n!} \right| = \\
+& \limninf \frac{ \cancel{(n+1)} 2 \cdot \cancel{2^n} }{\cancel{(n+1)} \cancel{n!}} : \frac{n \cancel{2^n}}{\cancel{n!}} = \\
+& \limninf \frac{2}{n} = 0
+\end{align}
+\end{subequations}
+
+El límite de D'Alembert es finito y menor a 1, por lo tanto:
+
+\begin{equation}
+\hresult{11.c}{ \limninf a_n = 0 }
+\end{equation}
+
+\subsectionx{11.d}
+
+\begin{equation}
+a_n = \sqrt[n]{n!}
+\end{equation}
+
+Dado que $ \sqrt[n]{n!} = (n!)^{ \frac{1}{n} } $, se tiene una indeterminación del tipo $ (+\infty)^0 $. Usar D'Alembert no ayuda mucho porque la potencia queda como $ \frac{1}{n+1} $. Tampoco es útil el criterio de Cauchy, porque se estaría aplicando una raíz enésima sobre una raíz enésima. Lo más directo en este caso es utilizar la \textbf{aproximación de Stirling} para la función factorial:
+
+\begin{equation}
+\hresult{}{n! \approx \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n}
+\end{equation}
+
+Aplicando esto en el radicando, resulta:
+
+\begin{subequations}
+\begin{align}
+& \limninf (n!)^{ \frac{1}{n} } = \\
+& \limninf \left[ \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n \right]^{ \frac{1}{n} } = \\
+& \limninf \left[ (2 \pi n)^{\frac{1}{2}} \left( \frac{n}{e} \right)^n \right]^{ \frac{1}{n} } = \\
+& \limninf (2 \pi n)^{\frac{1}{2n}} \left( \frac{n}{e} \right)
+\end{align}
+\end{subequations}
+
+En este producto, el segundo factor, $ \frac{n}{e} $ tiende a $ +\infty $, y el primero tiene una indeterminación del tipo $ (+\infty)^0 $. Analizando esa expresión por separado, dado que no se puede transformar la base, lo más directo es aplicar $ x = e^{\ln(x)} $.
+
+\begin{subequations}
+\begin{align}
+& \limninf (2 \pi n)^{ \frac{1}{2n} } = \\
+& \limninf \left[ e^{ \ln(2 \pi n) } \right]^{ \frac{1}{2n} } = \\
+& \limninf e^{ \frac{ \ln(2 \pi n) }{2n} } = \\
+& \limninf e^{ \frac{ \ln(2 \pi) + \ln(n) }{2n} } = \\
+& \limninf e^{ \frac{\ln(n)}{2n} } = e^0 = 1
+\end{align}
+\end{subequations}
+
+En el último paso, se aplicó el resultado ya visto de que $ \frac{\ln(n)}{n} $ tiende a cero porque el logaritmo crece más lento que la función lineal.
+
+Volviendo al problema inicial, si el primer factor tiende a 1 y el segundo a $ +\infty $, la sucesión completa diverge a $ +\infty $.
+
+\begin{equation}
+\hresult{11.d}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
+
+\subsectionx{11.e}
+
+\begin{equation}
+a_n = \frac{n^3 + n!}{2^n + 3^n}
+\end{equation}
+
+A simple vista, podría suponerse que al crecer $ n! $ más rápido que $ n^a $ o $ a^n $, la sucesión diverge a $ +\infty $. Para confirmar eso, se puede multiplicar y dividir por $ n! $ y mirar cada término.
+
+\begin{subequations}
+\begin{align}
+& \limninf \frac{n^3 + n!}{2^n + 3^n} = \\
+& \limninf \frac{n^3 + n!}{2^n + 3^n} \frac{ \frac{1}{n!} }{ \frac{1}{n!} } = \\
+& \limninf \frac{ \frac{n^3}{n!} + 1 }{ \frac{2^n}{n!} + \frac{3^n}{n!} }
+\end{align}
+\end{subequations}
+
+Para continuar, se demostrará el supuesto de que $ n! $ crece más rápido que cualquier polinomio o exponencial. Para ambos casos, se utilizará el criterio de D'Alembert. Sea:
+
+\begin{subequations}
+\begin{align}
+& b_n = \frac{n^a}{n!}, a > 0 \\
+& \limninf \left| \frac{b_{n+1}}{b_n} \right| = \\
+& \limninf \left| \frac{(n+1)^a}{(n+1)!} : \frac{n^a}{n!} \right| = \\
+& \limninf \frac{(n+1)^a \cancel{n!} }{(n+1) \cancel{n!} n^a} = \\
+& \limninf \frac{1}{n+1} \left( \frac{n+1}{n} \right)^a
+\end{align}
+\end{subequations}
+
+En este punto, el primer factor del producto tiende a cero, y el segundo a $ 1^a = 1 $. Por ende, el límite de D'Alembert existe y es cero, lo cual implica que $ b_n $ converge a cero como se esperaba.
+
+Sólo queda la exponencial. Sea:
+
+\begin{subequations}
+\begin{align}
+& c_n = \frac{a^n}{n!}, a > 0 \\
+& \limninf \left| \frac{c_{n+1}}{c_n} \right| = \\
+& \limninf \left| \frac{a^{n+1}}{(n+1)!} : \frac{a^n}{n!} \right| = \\
+& \limninf \frac{a \cdot \cancel{a^n}}{(n+1) \cancel{n!}} : \frac{\cancel{a^n}}{\cancel{n!}} = \\
+& \limninf \frac{a}{n+1} = 0
+\end{align}
+\end{subequations}
+
+Nuevamente, el límite de D'Alembert existe y es cero, lo cual implica que $ c_n $ converge a cero.
+
+Volviendo al problema original:
+
+\begin{equation}
+\limninf \frac{ \frac{n^3}{n!} + 1 }{ \frac{2^n}{n!} + \frac{3^n}{n!}}
+\end{equation}
+
+En base a los resultados demostrados, todas las fracciones tienden a cero, por ende se tiene $ \frac{1}{0^+} = +\infty $. Finalmente:
+
+\begin{equation}
+\hresult{11.e}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
+
+\subsectionx{11.f}
+
+\begin{equation}
+a_n = \frac{2^{2n+1}}{(2n)!}
+\end{equation}
+
+Cabe esperar que el factorial crezca más rápido que la exponencial, incluso compuesta con una función lineal. En todo caso, para mayor certeza, se puede aplicar el criterio de D'Alembert.
+
+\begin{subequations}
+\begin{align}
+& \limninf \left| \frac{a_{n+1}}{a_n} \right| = \\
+& \limninf \left| \frac{2^{2(n+1)+1}}{(2(n+1))!} : \frac{2^{2n+1}}{(2n)!} \right| = \\
+& \limninf \frac{ 2^2 \cdot \cancel{2^{2n+1}} }{(2n+2)!} : \frac{ \cancel{2^{2n+1}} }{(2n)!} = \\
+& \limninf \frac{4}{ (2n+2)(2n+1)\cancel{(2n)!} } : \frac{1}{ \cancel{(2n)!} } = \\
+& \limninf \frac{4}{(2n+2)(2n+1)} = 0
+\end{align}
+\end{subequations}
+
+Al existir el límite de D'Alembert y valer cero, puede concluirse que $ a_n $ converge a cero.
+
+\begin{equation}
+\hresult{11.f}{ \limninf a_n = 0 }
+\end{equation}
+
+\subsectionx{11.g}
+
+\begin{equation}
+a_n = \left( \frac{1}{2} + \frac{2}{n} \right)^n
+\end{equation}
+
+En este caso, no hay indeterminación. La base tiende a $ \frac{1}{2} $, y el exponente a $ +\infty $. Al ser la base positiva y menor a 1, la sucesión converge a cero.
+
+\begin{equation}
+\hresult{11.g}{ \limninf a_n = 0 }
+\end{equation}
+
+\subsectionx{11.h}
+
+\begin{equation}
+a_n = \frac{n^2}{n!}
+\end{equation}
+
+Ya se demostró en 11.e que la función factorial crece más rápido que cualquier polinomio. Esto es un caso particular $ (a = 2) $. Por lo tanto:
+
+\begin{equation}
+\hresult{11.h}{ \limninf a_n = 0 }
+\end{equation}
+
+\subsectionx{11.i}
+
+\begin{equation}
+a_n = \frac{n!}{n^n}
+\end{equation}
+
+En este caso, no es evidente si $ n! $ crece más rápido que $ n^n $. Se utilizará el criterio de D'Alembert de manera exploratoria.
+
+\begin{subequations}
+\begin{align}
+& \limninf \left| \frac{a_{n+1}}{a_n} \right| = \\
+& \limninf \left| \frac{(n+1)!}{(n+1)^{n+1}} : \frac{n!}{n^n} \right| = \\
+& \limninf \frac{ \cancel{(n+1)} \cancel{n!} }{ \cancel{(n+1)} (n+1)^n } : \frac{ \cancel{n!} }{n^n} = \\
+& \limninf \frac{n^n}{(n+1)^n} = \\
+& \limninf \left( \frac{n}{n+1} \right)^n = \\
+& \limninf \left( 1 - \frac{1}{n+1} \right)^n = \\
+& \limninf e^{ \left[ \ln\left( 1 - \frac{1}{n+1} \right) \right]^n } = \\
+& \limninf e^{ n \ln\left( 1 - \frac{1}{n+1} \right) } = \\
+& \limninf e^{ n \left( \frac{-1}{n+1} \right) } = e^{-1}
+\end{align}
+\end{subequations}
+
+En el último paso se utilizó la ya vista aproximación de Taylor:
+
+\begin{equation}
+\hresult{}{ x \rightarrow 0 \Rightarrow \ln(1-x) \approx -x }
+\end{equation}
+
+Concluyendo, dado que el límite de D'Alembert existe y es menor a 1, la sucesión converge a cero. Esto también demuestra que $ n^n $ crece más rápido que $ n! $.
+
+\begin{equation}
+\hresult{11.h}{ \limninf a_n = 0 }
+\end{equation}
+
+\subsectionx{11.j}
+
+\begin{equation}
+a_n = \frac{n^4 4^n n!}{n^n}
+\end{equation}
+
+Ya se vio que $ n^n $ crece más rápido que todo lo que hay en el numerador, pero como están multiplicados, no se puede predecir a simple vista el comportamiento. Por lo tanto, se aplica D'Alembert para explorar.
+
+\begin{subequations}
+\begin{align}
+& \limninf \left| \frac{a_{n+1}}{a_n} \right| = \\
+& \limninf \left| \frac{(n+1)^4 4^{n+1} (n+1)! }{(n+1)^{n+1}} : \frac{n^4 4^n n!}{n^n} \right| = \\
+& \limninf \frac{ (n+1)^4 4 \cdot \cancel{4^n} \cancel{(n+1)} \cancel{n!} }{ \cancel{(n+1)} (n+1)^n} : \frac{n^4 \cancel{4^n} \cancel{n!} }{n^n} = \\
+& \limninf \frac{4 (n+1)^4 n^n}{n^4 (n+1)^n} = \\
+& \limninf 4 \underbrace{ \left( \frac{n+1}{n} \right)^4 }_{1} \underbrace{ \left( \frac{n}{n+1} \right)^n }_{e^{-1}} = \\
+& \frac{4}{e} \approx 1,4715
+\end{align}
+\end{subequations}
+
+El límite de D'Alembert existe, pero da un valor mayor a 1. Por lo tanto, la sucesión diverge a $ +\infty $. Esto demuestra que el numerador crece más rápido que el denominador, pese a que este último es $ n^n $.
+
+\begin{equation}
+\hresult{11.j}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
+
 \end{document}
