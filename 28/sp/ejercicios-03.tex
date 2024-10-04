@@ -2396,4 +2396,190 @@ El límite de D'Alembert existe, pero da un valor mayor a 1. Por lo tanto, la su
 \hresult{11.j}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
 \end{equation}
 
+\sectionx{12}
+
+\textbf{En cada caso, la sucesión $ a_n $ se encuentra sujeta a las condiciones indicadas. Analizar la existencia de límite, y en caso afirmativo, calcularlo.}
+
+\begin{enumerate}[label=(\alph*)]
+
+\bfseries
+
+\item $ 2 - \frac{3}{2^n} < 5 - 2 a_n \leq 1 + \sqrt[n]{4} $
+
+\item $ 0 < 3 a_n + 2 < \frac{2^n n!}{ n^{2n+1} } $
+
+\item $ \frac{1}{a_n} > \left( 1 + \frac{1}{n} \right)^{ n^2 } $
+
+\item $ 2 a_n + 6 > \frac{1}{ \sqrt[n]{n+1} - 1 } $
+
+\end{enumerate}
+
+\hrule
+
+\subsectionx{12.a}
+
+\begin{equation}
+2 - \frac{3}{2^n} < 5 - 2 a_n \leq 1 + \sqrt[n]{4}
+\end{equation}
+
+Se tiene una sucesión acotada inferior y superiormente, lo cual sugiere la posibilidad de aplicar el \textbf{Teorema del Sandwich}, a saber.
+
+Dadas tres sucesions $ a_n $, $ b_n $ y $ c_n $ tales que:
+
+\begin{equation}
+a_n \leq b_n \leq c_n, \text{ pctn }
+\end{equation}
+
+Entonces, si además se cumple que:
+
+\begin{equation}
+\limninf a_n = \limninf c_n = L
+\end{equation}
+
+Si se cumplen estas condiciones, entonces el teorema garantiza que:
+
+\begin{equation}
+\hresult{}{ \limninf b_n = L }
+\end{equation}
+
+Aclaración: las desigualdades entre las sucesiones pueden ser total o parcialmente estrictas. Vale decir, el teorema vale para los casos $ a_n < b_n \leq  $, $ a_n \leq b_n < c_n $ y demás combinaciones.
+
+Volviendo a este caso en particular, restando 5 miembro a miembro resulta:
+
+\begin{equation}
+-3 - \frac{3}{2^n} < -2 a_n \leq -4 + (4)^{ \frac{1}{n} }
+\end{equation}
+
+Multiplicando miembro a miembro por $ -\frac{1}{2} $, lo cual invierte el sentido de las desigualdades, se obtiene que:
+
+\begin{equation}
+\frac{3}{2} + \frac{3}{2^{n+1}} > a_n \geq 2 - \frac{1}{2} (4)^{ \frac{1}{n} }
+\end{equation}
+
+Tomando el límite miembro a miembro:
+
+\begin{subequations}
+\begin{align}
+& \limninf \frac{3}{2} + \underbrace{ \frac{3}{2^{n+1}} }_{0} > \limninf a_n \geq \limninf 2 - \frac{1}{2} \underbrace{ (4)^{ \frac{1}{n} } }_{1} \\
+& \frac{3}{2} > \limninf a_n \geq 2 - \frac{1}{2} \\
+& \frac{3}{2} > \limninf a_n \geq \frac{3}{2} \\
+\end{align}
+\end{subequations}
+
+Dado que se satisfacen las condiciones del teorema del sandwich, es posible concluir que:
+
+\begin{equation}
+\hresult{12.a}{ \limninf a_n = \frac{3}{2} }
+\end{equation}
+
+\subsectionx{12.b}
+
+\begin{equation}
+0 < 3 a_n + 2 < \frac{2^n n!}{ n^{2n+1} }
+\end{equation}
+
+Nuevamente la situación se presta para aplicar el teorema del sandwich. Restando 2 miembro a miembro:
+
+\begin{equation}
+-2 < 3 a_n < -2 + \frac{2^n n!}{ n^{2n+1} }
+\end{equation}
+
+Multiplicando por $ \frac{1}{3} $ miembro a miembro:
+
+\begin{equation}
+-\frac{2}{3} < a_n < -\frac{2}{3} + \frac{1}{3} \frac{2^n n!}{ n^{2n+1} }
+\end{equation}
+
+Tomando límite miembro a miembro, la única incógnita es qué pasa con esta expresión:
+
+\begin{equation}
+b_n = \frac{2^n n!}{n^{2n+1}}
+\end{equation}
+
+Aplicando el criterio de D'Alembert:
+
+\begin{subequations}
+\begin{align}
+& \limninf \left| \frac{b_{n+1}}{b_n} \right| = \\
+& \limninf \left| \frac{ 2^{n+1} (n+1)! }{ (n+1)^{2(n+1)+1} } : \frac{ 2^n n! }{ n^{ 2n+1 } } \right| = \\
+& \limninf \frac{ 2 \cdot \cancel{2^n} \cancel{(n+1)} \cancel{n!} }{ \cancel{(n+1)}(n+1)(n+1)^{2n+1} } : \frac{ \cancel{2^n} \cancel{n!} }{ n^{2n+1} } = \\
+& \limninf \frac{2}{n+1} \left( \frac{n}{n+1} \right)^{2n+1} = \\
+& \limninf \frac{2}{n+1} \left[ e^{ \ln\left( \frac{n}{n+1} \right) } \right]^{2n+1} = \\
+& \limninf \frac{2}{n+1} e^{ (2n+1) \ln\left( 1 - \frac{1}{n+1} \right) } = \\
+& \limninf \frac{2}{n+1} e^{ (2n+1) \frac{-1}{n+1} } = \\
+& \limninf \frac{2 e^{-2} }{n+1} = 0
+\end{align}
+\end{subequations}
+
+El límite de D'Alembert existe y es cero. Por ende, $ b_n $ converge a cero. Volviendo a las desigualdades originales:
+
+\begin{equation}
+-\frac{2}{3} < \limninf a_n < -\frac{2}{3}
+\end{equation}
+
+Esto satisface las condiciones del teorema del sandwich, y por lo tanto se concluye que:
+
+\begin{equation}
+\hresult{12.b}{ \limninf a_n = -\frac{2}{3} }
+\end{equation}
+
+\subsectionx{12.c}
+
+\begin{equation}
+\frac{1}{a_n} > \left( 1 + \frac{1}{n} \right)^{ n^2 }
+\end{equation}
+
+En este caso, no se sabe el signo de $ a_n $, por lo que no es conveniente multiplicar miembro a miembro por $ a_n $, o elevar a la -1 miembro a miembro. Tomando límite miembro a miembro a modo exploratorio, resulta:
+
+\begin{subequations}
+\begin{align}
+& \limninf \frac{1}{a_n} > \limninf \left( 1 + \frac{1}{n} \right)^{ n^2 } \\
+& \limninf \frac{1}{a_n} > \limninf \left[ \underbrace{ \left( 1 + \frac{1}{n} \right)^n }_e \right]^n \\
+& \limninf \frac{1}{a_n} > +\infty
+\end{align}
+\end{subequations}
+
+Llegado este punto, para que se cumpla esta desigualdad, $ a_n $ tiene que tender a cero por derecha.
+
+\begin{equation}
+\hresult{12.c}{ \limninf a_n = 0^{+} }
+\end{equation}
+
+\subsectionx{12.d}
+
+\begin{equation}
+2 a_n + 6 > \frac{1}{ \sqrt[n]{n+1} - 1 }
+\end{equation}
+
+Esta es una situación similar a la del inciso anterior. Mirando el lado derecho cuando $ n \rightarrow +\infty $, la expresión de interés es:
+
+\begin{subequations}
+\begin{align}
+& b_n = (n+1)^{ \frac{1}{n} } \Rightarrow \\
+& \limninf b_n = \\
+& \limninf (n+1)^{ \frac{1}{n} } = \\
+& \limninf [ e^{ \ln(n+1) } ]^{ \frac{1}{n} } = \\
+& \limninf e^{ \frac{\ln(n+1)}{n} } = e^{0^+} = 1^{+}
+\end{align}
+\end{subequations}
+
+Volviendo a la desigualdad:
+
+\begin{subequations}
+\begin{align}
+& \limninf 2 a_n + 6 > \frac{1}{ 1^{+} - 1 } \\
+& \limninf 2 a_n + 6 > +\infty \\
+& \limninf 2 a_n > +\infty - 6 \\
+& \limninf 2 a_n > +\infty \\
+& \limninf a_n > \frac{+\infty}{2} \\
+& \limninf a_n > +\infty
+\end{align}
+\end{subequations}
+
+Para que se cumpla la desigualdad, $ a_n $ tiene que diverger a $ +\infty $.
+
+\begin{equation}
+\hresult{12.d}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
+
 \end{document}
