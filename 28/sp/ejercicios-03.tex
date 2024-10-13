@@ -2582,4 +2582,79 @@ Para que se cumpla la desigualdad, $ a_n $ tiene que diverger a $ +\infty $.
 \hresult{12.d}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
 \end{equation}
 
+\subsectionx{13}
+
+\textbf{ Dada la sucesión $1, 3, 5, 7, 7, 5, 3, 1, 1, 3, 5, 7, \dots $, escribir el término general de $ a_{2n}, a_{4n} $ y $ a_{8n-3} $. Encontrar dos subsucesiones convergentes. }
+
+\hrule
+\vspace{1em}
+
+En este caso particular, se tiene una sucesión definida a partir de un patrón fijo que se repite. Dado que dicho patrón es relativamente chico, con 8 elementos, o en otras palabras la sucesión es periódica con período $ N = 8 $, una forma práctica de definir el término general es usando aritmética modular. Por ejemplo, $ a_1 = a_9 = a_{17} = \dots = a_{8k-7}, k \in \mathbb{N} $. Otra forma práctica de caracterizar los índices de estos valores es que son todos los naturales tales que el resto de su división entera por 8 da 1. Haciendo esto para resto 2, 3, $ \dots $, 7, se puede definir toda la sucesión.
+
+\begin{equation}
+a_n = 
+	\begin{cases}
+		1 & \text{ si } n \equiv 1 \mod 8 \\
+		3 & \text{ si } n \equiv 2 \mod 8 \\
+		5 & \text{ si } n \equiv 3 \mod 8 \\
+		7 & \text{ si } n \equiv 4 \mod 8 \\
+		7 & \text{ si } n \equiv 5 \mod 8 \\
+		5 & \text{ si } n \equiv 6 \mod 8 \\
+		3 & \text{ si } n \equiv 7 \mod 8 \\
+		1 & \text{ si } n \equiv 0 \mod 8
+	\end{cases}
+\end{equation}
+
+Nótese que este mecanismo utilizando el resto de la división entera puede generalizarse para expresar cualquier sucesión definida como un patrón periódico de valores fijos.
+
+Volviendo a lo que pide el enunciado, considérse $ a_{2n} $. Observando los valores:
+
+\begin{equation}
+a_{2n} = \{ a_2, a_4, a_6, a_8, a_10, a_12, a_14, \dots \} = \{ 3, 7, 5, 1, 3, 7, 5, \dots \}
+\end{equation}
+
+Nuevamente se tiene un patrón que se repite, pero con período 4. Por lo tanto, una forma posible de expresar $ a_{2n} $ es la siguiente.
+
+\begin{equation}
+\hresult{13.i}{
+a_{2n} = 
+	\begin{cases}
+		3 & \text{ si } n \equiv 1 \mod 4 \\
+		7 & \text{ si } n \equiv 2 \mod 4 \\
+		5 & \text{ si } n \equiv 3 \mod 4 \\
+		1 & \text{ si } n \equiv 0 \mod 4
+	\end{cases}
+}
+\end{equation}
+
+Para el caso de $ a_{4n} $, los valores son:
+
+\begin{equation}
+a_{4n} = \{ a_4, a_8, a_12, a_16, a_20, \dots \} = \{ 7, 1, 7, 1, 7, \dots \}
+\end{equation}
+
+\begin{equation}
+\hresult{13.ii}{
+a_{4n} = 
+	\begin{cases}
+		7 & \text{ si } n \equiv 1 \mod 2 \text{ (n impar) } \\
+		1 & \text{ si } n \equiv 0 \mod 2 \text{ (n par) }
+	\end{cases}
+}
+\end{equation}
+
+Una forma de ver $ a_{2n} $ y $ a_{4n} $ es como muestreos de $ a_{n} $. En el primero, en lugar de tomar valores con frecuencia 1, se toma con el doble. Por eso el período pasa de 8 a 4: duplicar la frecuencia equivale a dividir el período por 2. Aplicando esto de nuevo al pasar a $ a_{4n} $, se toman valores con el cuádruple de frecuencia, y el período se reduce a 2: cuadruplicar la frecuencia equivale a dividir el período por 4.
+
+Finalmente, considérese el caso de $ a_{8n-3} $. Una forma directa de analizar esto a priori es considerar que se toman múltiplos de 8 y se les resta 3. El primer valor es 5, que tiene resto 5 al dividir por 8. El segundo valor es 13, que también tiene resto 5. Al restarle 3 a los múltiplos de 8, se obtienen los números que divididos por 8 dan resto 5. En el término general de $ a_n $, eso es 7 para todo $ n $. Esto puede confirmarse observando los valores de $ a_5, a_13 $ y demás.
+
+\begin{equation}
+\hresult{13.iii}{ a_{8n-3} = 7 }
+\end{equation}
+
+Por último, se pide hallar dos subsucesiones convergentes. Como se observó al analizar $ a_{8n-3} $, restando constantes a los múltiplos de 8 se obtienen subsucesiones constantes. Por lo tanto, dos subsucesiones que cumplen lo pedido son:
+
+\begin{equation}
+\hresult{13.iv}{ a_{8n-7} = 1, a_{8n-6} = 3 }
+\end{equation}
+
 \end{document}
