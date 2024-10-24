@@ -23,2638 +23,2642 @@
 
 \newcommand{\hresult}[2]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] {#2} }
 \newcommand{\hresulte}[3]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] { \hspace{#3} #2 \hspace{#3} } }
-\newcommand{\figurex}[4]{\begin{figure}[ht] \caption{#1} \includegraphics[scale=#2]{#3} \centering \label{#4}\end{figure}}
-\newcommand{\sectionx}[1]{\section*{#1}\label{sec:#1}\addcontentsline{toc}{section}{\nameref{sec:#1}}}
-\newcommand{\subsectionx}[1]{\subsection*{#1}\label{subsec:#1}\addcontentsline{toc}{subsection}{\nameref{subsec:#1}}}
+%\newcommand{\figurex}[4]{\begin{figure}[ht] \caption{#1} \includegraphics[scale=#2]{#3} \centering \label{#4}\end{figure}}
+%\newcommand{\sectionx}[1]{\section*{#1}\label{sec:#1}\addcontentsline{toc}{section}{\nameref{sec:#1}}}
+%\newcommand{\subsectionx}[1]{\subsection*{#1}\label{subsec:#1}\addcontentsline{toc}{subsection}{\nameref{subsec:#1}}}
 \newcommand{\limninf}{\lim_{n \rightarrow +\infty}}
 \newcommand{\limninfs}{\lim\limits_{n \rightarrow +\infty}}
 
 \renewcommand{\Bbb}{\mathbb}
 
-\title{Ejercicios de Análisis Matemático CBC (28) \\
-Práctica 3: Sucesiones \\
-Cátedra Ruiz, curso 62802 \\
-1° C 2003}
-\author{Darío Eduardo Ramos}
+%\title{Ejercicios de Análisis Matemático CBC (28) \\
+%Práctica 3: Sucesiones \\
+%Cátedra Ruiz, curso 62802 \\
+%1° C 2003}
+%\author{Darío Eduardo Ramos}
 
 \begin{document}
-\maketitle
 
-\tableofcontents{}
-
-\newpage
-
-\sectionx{1}
-
-\textbf{Escribir los primeros cinco términos de las siguientes sucesiones:}
-
-\begin{enumerate}[label=(\alph*)]
-
-\bfseries
-
-\item $ a_n = \frac{\sqrt{n}}{n+1} $
-
-\item $ b_n = \frac{2^{n-1}}{(2n-1)^3} $
-
-\item $ c_n = \frac{(-1)^{n+1}}{n!} $
-
-\item $ d_n = \frac{\cos(n\pi)}{n} $
-
-\end{enumerate}
-
-\hrule
-\vspace{1em}
-
-Evaluar el término $ a_i $ equivale a hacer $ n = i $ en la expresión del término general $ a_n $ y calcular el valor. En este caso, se piden $ a_1, a_2, \dots, a_5 $. Se asume la convención de que todas las sucesiones comienzan en $ n = 1 $.
-
-\subsectionx{1.a}
-
-\begin{equation}
-a_n = \frac{\sqrt{n}}{n+1}
-\end{equation}
-
-\begin{subequations}
-\begin{align}
-& \hresult{}{a_1 = \frac{1}{2} = 0,5000 } \\
-& \hresult{}{a_2 = \frac{\sqrt{2}}{3} \approx 0,47140 } \\
-& \hresult{}{a_3 = \frac{\sqrt{3}}{4} \approx 0,43301 } \\
-& \hresult{}{a_4 = \frac{\sqrt{4}}{5} =  0,4000 } \\
-& \hresult{}{a_5 = \frac{\sqrt{5}}{6} =  0,37268 }
-\end{align}
-\end{subequations}
-
-\subsectionx{1.b}
-
-\begin{equation}
-b_n = \frac{2^{n-1}}{(2n-1)^3}
-\end{equation}
-
-\begin{subequations}
-\begin{align}
-& \hresult{}{b_1 = \frac{2^0}{1^3} = \frac{1}{1} = 1,0000 } \\
-& \hresult{}{b_2 = \frac{2^1}{3^3} = \frac{2}{27} \approx 0,074074 } \\
-& \hresult{}{b_3 = \frac{2^2}{5^3} = \frac{4}{125} = 0,032000 } \\
-& \hresult{}{b_4 = \frac{2^3}{7^3} = \frac{8}{343} \approx 0,023323 } \\
-& \hresult{}{b_5 = \frac{2^4}{9^3} = \frac{16}{729} \approx 0,021948 }
-\end{align}
-\end{subequations}
-
-\subsectionx{1.c}
-
-\begin{equation}
-c_n = \frac{(-1)^{n+1}}{n!}
-\end{equation}
-
-\begin{subequations}
-\begin{align}
-& \hresult{}{c_1 = \frac{1}{1!} = \frac{1}{1} = 1,0000 } \\
-& \hresult{}{c_2 = \frac{-1}{2!} = -\frac{1}{2} = 0,5000 } \\
-& \hresult{}{c_3 = \frac{1}{3!} = \frac{1}{6} \approx 0,16667 } \\
-& \hresult{}{c_4 = \frac{-1}{4!} = -\frac{1}{24} \approx -0,041667 } \\
-& \hresult{}{c_5 = \frac{1}{5!} = \frac{1}{120} \approx 0,008333 }
-\end{align}
-\end{subequations}
-
-\subsectionx{1.d}
-
-\begin{equation}
-d_n = \frac{\cos(n\pi)}{n}
-\end{equation}
-
-\begin{subequations}
-\begin{align}
-& \hresult{}{d_1 = \frac{ \cos(\pi) }{1} = -\frac{1}{1} = -1,0000 } \\
-& \hresult{}{d_2 = \frac{ \cos(2\pi) }{2} = \frac{1}{2} = 0,5000 } \\
-& \hresult{}{d_3 = \frac{ \cos(3\pi) }{3} = -\frac{1}{3} \approx 0,33333 } \\
-& \hresult{}{d_4 = \frac{ \cos(4\pi) }{4} = \frac{1}{4} = 0,25000 } \\
-& \hresult{}{d_5 = \frac{ \cos(5\pi) }{5} = -\frac{1}{5} = 0,20000 0,008333 }
-\end{align}
-\end{subequations}
-
-\sectionx{2}
-
-\textbf{Para cada una de las siguientes sucesiones:}
-
-\begin{enumerate}[label=(\alph*)]
-
-\bfseries
-
-\item Encontrar el término 100 y el término 200 de cada una de ellas.
-
-\item Hallar, si es posible, el término general $ a_n $.
-
-\item Clasificar en convergentes o no convergentes.
-
-\end{enumerate}
-
-\begin{enumerate}[label=\textbf{(\roman*)}]
-
-\bfseries
-
-\item $ 1, 2, 3, 4, \dots $
-
-\item $ -1, -\frac{1}{2}, -\frac{1}{3}, -\frac{1}{4}, \dots $
-
-\item $ 1, -\frac{1}{2}, \frac{1}{3}, -\frac{1}{4}, \dots $
-
-\item $ \frac{1}{2}, -\frac{1}{4}, \frac{1}{8}, -\frac{1}{16}, \dots $
-
-\item $ -1, 2, -3, 4, \dots $
-
-\item $ 0, \frac{1}{2}, 0, \frac{1}{3}, 0, \frac{1}{4}, \dots $
-
-\item $ 1, -1, 1, -1, \dots $
-
-\item $ 2, \frac{3}{2}, \frac{4}{3}, \frac{5}{4}, \dots $
-
-\item $ 1, 1, \frac{1}{2}, 2, \frac{1}{3}, 3, \frac{1}{4}, \dots $
-
-\item $ a_1 = 1, a_{n+1} = 2a_n $
-
-\end{enumerate}
-
-\hrule
-
-\subsectionx{2.i}
-
-\begin{equation}
-a_n = \{ 1, 2, 3, 4, \dots \}
-\end{equation}
-
-Esta es la sucesión de los números naturales. El término general no es otra cosa que $n$.
-
-\begin{equation}
-\hresult{2.i}{ a_n = n \Rightarrow a_{100} = 100, a_{200} = 200 }
-\end{equation}
-
-El conjunto $ \{a_n, n \in \mathbb{N}\} $ no está acotado, y por ende la sucesión es \textbf{no convergente}.
-
-\subsectionx{2.ii}
-
-\begin{equation}
-a_n = \left\{ -1, -\frac{1}{2}, -\frac{1}{3}, -\frac{1}{4}, \dots \right\}
-\end{equation}
-
-Por inspección, el término general es:
-
-\begin{equation}
-\hresult{2.ii}{ a_n = -\frac{1}{n} \Rightarrow a_{100} = -\frac{1}{100} = 0,01, a_{200} = -\frac{1}{200} = -0,005 }
-\end{equation}
-
-Todos los elementos están entre -1 y 0, por lo que esta sucesión puede ser convergente. 
-
-Por definición:
-
-\begin{equation}
-a_n \rightarrow L \Leftrightarrow \forall \epsilon > 0 \exists N / \forall n \geq N, |a_n - L| < \epsilon
-\end{equation}
-
-En palabras, la sucesión $ a_n $ converge a un número real $ L $ si y sólo si para todo $ \epsilon $ real positivo, es posible hallar un entero $ N $ tal que para todo $ n \geq N $, el módulo de $ a_n - L $ es menor a $ \epsilon $.
-
-Para este caso particular, considérese primero la expresión $ |a_n - L| < \epsilon $. La sucesión parece converger a cero, por ende se plantea $ L = 0 $.
-
-\begin{equation}
-\left| \frac{1}{n} - 0 \right| < \epsilon \Rightarrow \frac{1}{n} < \epsilon \Rightarrow n > \frac{1}{e}
-\end{equation}
-
-Dado que al resolver la desigualdad para $ n $ se obtuvo $ n > \frac{1}{e} $, esto sugiere elegir $ N = \lceil \frac{1}{e} \rceil $.
-
-El próximo paso es verificar que para esa elección de $ N $, la condición $ \frac{1}{n} < \epsilon $ se satisface para todo $ n \geq N $.
-
-Si $ n \geq N \Rightarrow n \geq \lceil \frac{1}{\epsilon} \rceil $. Como son todos positivos, se puede invertir miembro a miembro, obteniendo:
-
-\begin{equation}
-\frac{1}{n} \leq \frac{1}{\lceil \frac{1}{\epsilon} \rceil }
-\end{equation}
-
-Quitar la función techo genera un numerador menor o igual, por ende es una cota superior válida.
-
-\begin{equation}
-\frac{1}{n} \leq \frac{1}{\lceil \frac{1}{\epsilon} \rceil } \geq \frac{1}{\frac{1}{\epsilon}} = \epsilon 
-\end{equation}
-
-Se demostró entonces que para esta elección de $ N $, $ |a_n - 0| $ está acotada para todo valor de $ \epsilon $. Por ende, \textbf{$ a_n $ converge a cero}.
-
-\subsectionx{2.iii}
-
-\begin{equation}
-a_n = \left\{ 1, -\frac{1}{2}, \frac{1}{3}, -\frac{1}{4}, \dots \right\}
-\end{equation}
-
-Es la misma sucesión del inciso anterior, pero sólo los términos de índice par son negativos. Para lograr esto, se puede introducir un factor $ (-1)^{n+1} $. Nótese que se introdujo un +1 porque sin eso, los términos de índice impar quedarían negativos, y se desea hacer eso para los de índice par.
-
-\begin{equation}
-\hresult{2.iii}{ a_n = (-1)^{n+1} \frac{1}{n} \Rightarrow a_{100} = -\frac{1}{100} = -0,01, a_{200} = -\frac{1}{200} = -0,005 }
-\end{equation}
-
-Al tomar el módulo, esta sucesión se convierte en $ \frac{1}{n} $, por ende \textbf{converge a cero}.
-
-\subsectionx{2.iv}
-
-\begin{equation}
-a_n = \left\{ \frac{1}{2}, -\frac{1}{4}, \frac{1}{8}, -\frac{1}{16}, \dots \right\}
-\end{equation}
-
-Al tener signo alternado, de nuevo hay un factor $ (-1)^{n+1} $, ya que los negativos son los de índice par. El numerador siempre es 1, y el denominador es la sucesión de potencias de 2.
-
-\begin{equation}
-\hresult{2.iv}{ a_n = (-1)^{n+1} \frac{1}{2^n} \Rightarrow a_{100} = -\frac{1}{2^{100}}, a_{200} = -\frac{1}{2^{200}} }
-\end{equation}
-
-En cuanto a la convergencia, al tomar módulo se tiene $ \frac{1}{2^n} $, que es término a término menor a $ \frac{1}{n} $. Esto permite utilizar la propiedad de que si una sucesión es menor término a término respecto a una sucesión convergente, entonces también converge. Por ende, $ a_n $ \textbf{converge a cero}.
-
-\subsectionx{2.v}
-
-\begin{equation}
-a_n = \{ -1, 2, -3, 4, \dots \}
-\end{equation}
-
-Es la sucesión de los naturales con un factor $ (-1)^n $. Como en este caso los negativos son los términos de índice impar, se usa $ (-1)^n $ en lugar de $ (-1)^{n+1} $.
-
-\begin{equation}
-\hresult{2.v}{ a_n = (-1)^n n \Rightarrow a_{100} = 100, a_{200} = 200 }
-\end{equation}
-
-Esta sucesión no está acotada, y por ende \textbf{no converge}.
-
-\subsectionx{2.vi}
-
-\begin{equation}
-a_n = \left\{ 0, \frac{1}{2}, 0, \frac{1}{3}, 0, \frac{1}{4}, \dots \right\}
-\end{equation}
-
-Cuando se tiene una sucesión con una forma clara para términos de índice impar y otra forma diferente para los de índice par, suele ser más práctico expresarla de la siguiente manera:
-
-\begin{subequations}
-\begin{align}
-& \hresult{2.vi}{ a_{2n-1} = 0 } \\
-& \hresult{2.vi}{ a_{2n} = \frac{1}{n} } \\
-& \hresult{2.vi}{ a_{100} = \frac{1}{50}, a_{200} = \frac{1}{100} }
-\end{align}
-\end{subequations}
-
-Nótese que el término general tiene una forma para los términos de índice par, $ a_{2n} $, y otra para los términos de índice impar: $ a_{2n-1} $.
-
-Para analizar la convergencia, se utiliza la propiedad de que si una sucesión converge, todas sus subsucesiones también, y al mismo valor. En este caso, una es una constante y la otra converge a cero. Dado que la constante coincide con cero, podemos afirmar que la sucesión completa \textbf{converge a cero}.
-
-\subsectionx{2.vii}
-
-\begin{equation}
-a_n = \{ 1, -1, 1, -1, \dots \}
-\end{equation}
-
-Es $ (-1)^{n+1} $, ya que los negativos son los de índice par.
-
-\begin{equation}
-\hresult{2.viii}{ a_n = (-1)^{n+1} \Rightarrow a_{100} = a_{200} = -1 }
-\end{equation}
-
-Esta sucesión está acotada, pero no converge. Si se toma la subsucesión de índices pares, es la constante -1. Y si se toma la subsucesión de índices impares, es la constante 1. Es en este punto donde se aplica la propiedad de que si dos subsucesiones convergen a distintos valores, la sucesión completa \textbf{no converge}.
-
-\subsectionx{2.viii}
-
-\begin{equation}
-a_n = \left\{ 2, \frac{3}{2}, \frac{4}{3}, \frac{5}{4}, \dots \right\}
-\end{equation}
-
-Por inspección, el numerador es $ n+1 $ y el denominador es $ n $.
-
-\begin{equation}
-a_n = \frac{n+1}{n} \Rightarrow a_{100} = \frac{101}{100}, a_{200} = \frac{201}{200}
-\end{equation}
-
-Para valores grandes de $ n $, el +1 del numerador es despreciable, por lo que queda $ \frac{n}{n} $ y puede intuirse que esta sucesión converge a 1. Aplicando la definición, considérese:
-
-\begin{subequations}
-\begin{align}
-& \left| \frac{n+1}{n} - 1 \right| < \epsilon \\
-& \left| \frac{n+1-n}{n} \right| < \epsilon \\
-& \frac{1}{n} < \epsilon
-\end{align}
-\end{subequations}
-
-No es necesario continuar, porque demostrar esta convergencia es equivalente a demostrar la de $ \frac{1}{n} $, y eso ya se hizo. Conclusión: la sucesión \textbf{converge a 1}.
-
-\subsectionx{2.ix}
-
-\begin{equation}
-a_n = \left\{ 1, 1, \frac{1}{2}, 2, \frac{1}{3}, 3, \frac{1}{4}, \dots \right\}
-\end{equation}
-
-Nuevamente, hay una subsucesión para los índices pares y otra para los impares. Una forma cómoda de expresar esto es la ya vista:
-
-\begin{subequations}
-\begin{align}
-& \hresult{2.ix}{ a_{2n-1} = n } \\
-& \hresult{2.ix}{ a_{2n} = \frac{1}{n} } \\
-& \hresult{2.ix}{ a_{100} = \frac{1}{50}, a_{200} = \frac{1}{100} }
-\end{align}
-\end{subequations}
-
-En cuanto a la convergencia, se utilizará la propiedad de que si una subsucesión no converge, la sucesión completa no converge. En este caso, la sucesión de índices impares no converge, por ende no hace falta analizar la otra para concluir que la sucesión completa \textbf{no converge}.
-
-\subsectionx{2.x}
-
-Observando los valores de los primeros términos, se obtiene:
-
-\begin{equation}
-a_n = \{ 1, 2, 4, 8, 16, \dots... \}
-\end{equation}
-
-Son las potencias de dos comenzando en el exponente cero. Por lo tanto:
-
-\begin{equation}
-\hresult{2.x}{ a_n = 2^{n-1} \Rightarrow a_{100} = 2^{99}, a_{200} = 2^{199} }
-\end{equation}
-
-Esta sucesión no está acotada, por lo cual \textbf{no converge}.
-
-\sectionx{3}
-
-\textbf{Hallar un valor de $ n \in \mathbb{N} $ a partir del cual haya certeza de que: }
-
-\begin{enumerate}[label=(\alph*)]
-
-\bfseries
-
-\item $ n^2 - 5n - 8 $ sea mayor que \textbf{(i)} 10 y \textbf{(ii)} 1000.
-
-\item $ 2^n - 100 $ sea mayor que \textbf{(i)} 10 y \textbf{(ii)} 1000.
-
-\item $ \frac{(-1)^n}{n+1} + 2 $ esté entre \textbf{(i)} 1,9 y 2,1 y \textbf{(ii)} 1,999 y 2,001.
-
-\item $ \frac{\sin n}{n} $ esté entre \textbf{(i)} -0,1 y 0,1 y \textbf{(ii)} -0,001 y 0,001.  
-
-\end{enumerate}
-
-\hrule
-
-\subsectionx{3.a}
-
-Sea el caso general:
-
-\begin{equation}
-n^2 - 5n -8 > k \Leftrightarrow n^2 - 5n -8 - k > 0
-\end{equation}
-
-En este punto, conviene expresar la función cuadrática en forma factorizada según sus raíces $ x_1 $ y $ x_2 $. Nótese que para este análisis se usa una función de variable continua y no una sucesión, pero dado que el análisis vale para todo $ x $ real, vale para el subconjunto de los valores de la sucesión.
-
-\begin{equation}
-x^2 - 5x -8 - k = (x-x_1) (x-x_2)
-\end{equation}
-
-Aplicando la fórmula de las raíces:
-
-\begin{equation}
-x_1, x_2 = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2a} = \frac{5 \pm \sqrt{25 - 4 (-8-k)}}{2} = \frac{5 \pm \sqrt{57 + 4k}}{2}
-\end{equation}
-
-Para k = 10, resulta:
-
-\begin{subequations}
-\begin{align}
-& x_1 = \frac{5+\sqrt{97}}{2} \approx 7,4244 \\
-& x_2 = \frac{5-\sqrt{97}}{2} \approx -2,4244
-\end{align}
-\end{subequations}
-
-Dado que $ f(x) = (x-x_1) (x-x_2) $ y se está buscando los valores de $ x $ para los que $ f(x) $ es positiva, hay dos escenarios.
-
-Caso 1: ambos factores del producto positivos.
-
-\begin{equation}
-x > x_1 \wedge x > x_2 \Rightarrow x > \mathop{\text{max}}(x_1, x_2) \Rightarrow x > 7,4244
-\end{equation}
-
-Caso 2: ambos factores del producto negativos.
-
-\begin{equation}
-x < x_1 \wedge x < x_2 \Rightarrow x < \mathop{\text{min}}(x_1, x_2) \Rightarrow x < -2,4244
-\end{equation}
-
-Volviendo a los números naturales, el intervalo negativo no interesa. Y para el caso positivo, el primer entero mayor a $ x_1 $ es 8. Por ende, se obtiene:
-
-\begin{equation}
-\hresult{3.a.i}{ k = 10 \Rightarrow n \geq 8 }
-\end{equation}
-
-Repitiendo este análisis para $ k = 1000 $, se obtiene:
-
-\begin{equation}
-\hresult{3.a.ii}{ k = 1000 \Rightarrow n \geq 35 }
-\end{equation}
-
-\subsectionx{3.b}
-
-Nuevamente, analizando de manera general:
-
-\begin{subequations}
-\begin{align}
-& 2^n - 100 > k \\
-& 2^n > k + 100 \\
-& \log_2( 2^n ) > \log_2( k + 100 ) \\
-& n > \log_2( k + 100 )
-\end{align}
-\end{subequations}
-
-Para los valores solicitados de $ k $, resulta:
-
-\begin{subequations}
-\begin{align}
-& \hresult{3.b.i}{ k = 10 \Rightarrow n \geq 7 } \\
-& \hresult{3.b.ii}{ k = 1000 \Rightarrow n \geq 11 }
-\end{align}
-\end{subequations}
-
-\subsectionx{3.c}
-
-En este caso hay una cota superior y otra inferior, lo cual dificulta el análisis genérico. Para el primer caso:
-
-\begin{subequations}
-\begin{align}
-& 1,9 < \frac{(-1)^n}{n+1} + 2 < 2,1 \\
-& -0,1 < \frac{(-1)^n}{n+1} < 0,1
-\end{align}
-\end{subequations}
-
-Llegado este punto, nótese que las cotas son el mismo valor pero con distinto signo. Por lo tanto, las desigualdades pueden simplificarse en una sola utilizando la siguiente propiedad de la función módulo:
-
-\begin{equation}
-|x| < a, a > 0 \Leftrightarrow -a < x < a
-\end{equation}
-
-Para este caso, se obtiene:
-
-\begin{subequations}
-\begin{align}
-& \left| \frac{(-1)^n}{n+1} \right| < 0,1 \\
-& \frac{1}{n+1} < 0,1 \\
-& 1 < 0,1 (n+1) \\
-& \hresult{3.c.i}{ n \geq 10 }
-\end{align}
-\end{subequations}
-
-Haciendo el mismo análisis para el segundo caso:
-
-\begin{equation}
-\hresult{3.c.ii}{ n \geq 1000 }
-\end{equation}
-
-\subsectionx{3.d}
-
-Aunque de nuevo haya dos desigualdades, es posible explotar las propiedades de la función seno para hacer un análisis genérico.
-
-\begin{subequations}
-\begin{align}
-& -k < \frac{\sin n}{n} < k \\
-& -k n < \sin n < k n
-\end{align}
-\end{subequations}
-
-La función seno está acotada entre -1 y 1, por ende debe satisfacerse:
-
-\begin{subequations}
-\begin{align}
-& -k n \leq -1 \Rightarrow n \geq \frac{1}{k} \\
-& k n \geq 1 \Rightarrow n \geq \frac{1}{k}
-\end{align}
-\end{subequations}
-
-Finalmente:
-
-\begin{subequations}
-\begin{align}
-& \hresult{3.d.i}{ k = 0,1 \Rightarrow n \geq 10 } \\
-& \hresult{3.d.ii}{ k = 0,001 \Rightarrow n \geq 1000 }
-\end{align}
-\end{subequations}
-
-\sectionx{4}
-
-\textbf{ Considerar la sucesión $ a_n = \frac{n+1}{n-1000,2} $. A partir de que $ \limninf a_n = 1 $, responder cuáles de las siguientes afirmaciones son verdaderas, justificando en cada caso. }
-
-\begin{enumerate}[label=(\alph*)]
-
-\bfseries
-
-\item Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n > 0 $.
-
-\item Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n > \frac{1}{2} $.
-
-\item Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n < 1 $.
-
-\item Existe un $ n \in \mathbb{N} $ para el cual $ a_n = 1 $.
-
-\item La sucesión $ a_n $ está acotada.
-
-\end{enumerate}
-
-\textbf{ Escribir las afirmaciones que correspondan con la nomenclatura pctn. }
-
-\vspace{1em}
-\hrule
-\vspace{1em}
-
-La nomenclatura pctn significa ``para casi todo n'', y se usa para indicar propiedades que se cumplen para todos los valores naturales excepto una cantidad finita de valores. Por ejemplo, se puede decir que la sucesión $ a_n = n-3 $ es mayor a cero pctn, dado que sólo es negativa o cero para $ n = 1, n=2 $ y $n=3$.
-
-De manera más formal y general, un predicado $P(n)$, donde $P:\mathbb{N} \rightarrow {F, V}$ se cumple pctn si y sólo el conjunto $ \{ P(n), n \in \mathbb{N} / P(n) = F  \} $ es acotado.
-
-\subsectionx{4.a}
-
-Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n > 0 $.
-
-Esta afirmación es equivalente a decir que $ a_n > 0 $ pctn. A priori, cabe esperar que esto sea \textbf{verdadero}, ya que al ser 1 el límite, a partir de cierto $ n $ los valores estarán concentrados alrededor de 1. Una forma de verificar esto es ver para qué valores de $ n $ resulta $ a_n $ positiva.
-
-\begin{equation}
-\frac{n+1}{n-1000, 2} > 0
-\end{equation}
-
-El numerador es siempre positivo, por ser $ n $ natural. Por lo tanto, para que el cociente sea positivo, debe ser el denominador positivo también. Ergo:
-
-\begin{equation}
-n-1000,2 > 0 \Rightarrow n > 1000,2 \Rightarrow n \geq 1001
-\end{equation}
-
-\begin{equation}
-\hresult{4.a}{ \textbf{(V)} a_n > 0 \text{ pctn, dado que } a_n > 0 \text{ para } n \geq 1001 }
-\end{equation}
-
-\subsectionx{4.b}
-
-Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n > \frac{1}{2} $.
-
-De manera análoga al inciso anterior, al ser el límite 1, cabe esperar que haya infinitos valores de $ a_n $ en la vecindad de 1. para confirmar esto, se analizará para qué valores de $ n $ se cumple que $ a_n $ es mayor a $ \frac{1}{2} $.
-
-\begin{subequations}
-\begin{align}
-& \frac{n+1}{n-1000,2} > \frac{1}{2} \\
-& \frac{2(n+1)}{n-1000,2} > 1 \\
-& \frac{2n+2}{n-1000,2} - 1 > 0 \\
-& \frac{2n+2-(n-1000,2)}{n-1000,2} > 0 \\
-& \frac{n+1002,2}{n-1000,2} > 0
-\end{align}
-\end{subequations}
-
-El numerador siempre es positivo, por ende el denominador tiene que serlo. Esto conduce nuevamente a $ a_n \geq 1001 $. Ergo:
-
-\begin{equation}
-\hresult{4.b}{ \textbf{(V)} a_n > \frac{1}{2} \text{ pctn, dado que } a_n > \frac{1}{2} \text{ para } n \geq 1001 }
-\end{equation}
-
-\subsectionx{4.c}
-
-Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n < 1 $.
-
-En este caso, cabe esperar que la afirmación sea falsa, ya que al ser el numerador siempre mayor que el denominador, el cociente $ a_n $ tiende a 1 ``por arriba''. Formalmente:
-
-\begin{subequations}
-\begin{align}
-& \frac{n+1}{n-1000,2} < 1 \\
-& \frac{n+1}{n-1000,2} - 1 < 0 \\
-& \frac{n+1-(n-1000,2)}{n-1000,2} < 0 \\
-& \frac{1001,2}{n-1000,2} < 0 \\
-& n < 1000,2 \\
-& n \leq 1000
-\end{align}
-\end{subequations}
-
-\begin{equation}
-\hresult{4.c}{ \textbf{(F)} a_n < 1 \text{ sólo para } n \leq 1000 (a_n \geq 1 \text{ pctn}) }
-\end{equation}
-
-\subsectionx{4.d}
-
-Existe un $ n \in \mathbb{N} $ para el cual $ a_n = 1 $.
-
-En este caso, el límite nunca se alcanza, ni en el infinito ni en valores particulares. Téngase en cuenta que sí puede ocurrir que el límite sea 1 y el valor 1 se alcance. Por ejemplo, para la sucesión constante $ a_n = 1 $. Pero volviendo a este caso:
-
-\begin{subequations}
-\begin{align}
-& \frac{n+1}{n-1000,2} = 1 \\
-& n+1 = n-1000,2 \\
-& 1 = -1000,2
-\end{align}
-\end{subequations}
-
-\begin{equation}
-\hresult{4.d}{ \textbf{(F)} \text{ No existe valor de } n \text{ natural que satisfaga } a_n = 1 }
-\end{equation}
-
-\subsectionx{4.e}
-
-La sucesión $ a_n $ está acotada.
-
-Que una sucesión esté acotada es una condición necesaria para que sea convergente. Por ende, que el límite exista y sea finito implica que $ a_n $ está acotada.
-
-\begin{equation}
-\hresult{4.e}{ (V) a_n \text{ convergente } \Rightarrow a_n \text{ acotada. } }
-\end{equation}
-
-\sectionx{5}
-
-\textbf{Calcular, si existe, el límite de las siguientes sucesiones. En cada caso, explicar las propiedades utilizadas para obtener la respuesta.}
-
-\begin{enumerate}[label=(\alph*)]
-
-\bfseries
-
-\item $ a_n = \frac{-4n^3 + 2n^2 - 3n -1}{5n^2 + 4} $
-
-\item $ a_n = \frac{7n^3-5}{n+3} $
-
-\item $ a_n = \frac{\sqrt{n^3}+2}{n^2-1} $
-
-\item $ a_n = \sqrt{ \frac{2n^2-1}{3n^2+2} } $
-
-\item $ a_n = \frac{4n^2 + 3}{3n^2 + 4000} $
-
-\item $ a_n = \frac{-n}{\sqrt{n^2-n}+n} $
-
-\item $ a_n = \{ 3, \frac{4}{3}, \frac{5}{2}, \frac{8}{5}, \frac{7}{3}, \frac{16}{9}, \frac{9}{4}, \frac{32}{17}, \frac{11}{5}, \frac{64}{33}, \dots \} $
-
-\item $ a_n = \{ 1, 1 + \frac{1}{2}, 1 + \frac{1}{2} + \frac{1}{4}, \dots \} $
-
-\end{enumerate}
-
-\hrule
-
-\subsectionx{5.a}
-
-\begin{equation}
-a_n = \frac{-4n^3 + 2n^2 - 3n -1}{5n^2 + 4}
-\end{equation}
-
-Al evaluar expresiones polinómicas en el infinito, se descartan todos los términos excepto el de mayor grado. Esto es porque al estar asociado a la potencia más alta, para valores grandes de $ n $, los demás términos serán despreciables en comparación. Para este caso:
-
-\begin{equation}
-\limninf \frac{-4n^3 + 2n^2 - 3n -1}{5n^2 + 4} = \limninf \frac{-4n^3}{5n^2} = \limninf -\frac{4}{5} n
-\end{equation}
-
-Se adoptará la convención de que los límites infinitos no existen, y se informará hacia dónde diverge la sucesión en dichos casos.
-
-\begin{equation}
-\hresult{5.a}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } -\infty }
-\end{equation}
-
-\subsectionx{5.b}
-
-\begin{equation}
-a_n = \frac{7n^3-5}{n+3}
-\end{equation}
-
-\begin{equation}
-\limninf \frac{7n^3-5}{n+3} = \limninf \frac{7n^3}{n} = \limninf 7n^2
-\end{equation}
-
-\begin{equation}
-\hresult{5.a}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
-\end{equation}
-
-\subsectionx{5.c}
-
-\begin{equation}
-a_n = \frac{\sqrt{n^3}+2}{n^2-1}
-\end{equation}
-
-Estrictamente hablando, el numerador no es una expresión polinómica porque hay un exponente fraccionario. De todas maneras, de manera más general, si se tiene una suma de potencias, al evaluar en el infinito, se puede descartar todos los términos excepto el de mayor exponente. En este caso:
-
-\begin{equation}
-\limninf \frac{\sqrt{n^3}+2}{n^2-1} = \limninf \frac{n^{\frac{3}{2}} +2}{n^2-1} = \limninf \frac{n^{\frac{3}{2}}}{n^2} = \limninf n^{-\frac{1}{2}} = \limninf \sqrt{\frac{1}{n}}
-\end{equation}
-
-Ya se ha demostrado que $ \limninf \frac{1}{n} = 0	 $. Al tomar la raíz cuadrada, se tiene una sucesión que es término a término menor que $ \frac{1}{n} $. Por ende, es convergente, y en este caso al mismo valor.
-
-\begin{equation}
-\hresult{5.c}{\limninf a_n = 0}
-\end{equation}
-
-\subsectionx{5.d}
-
-\begin{equation}
-a_n = \sqrt{ \frac{2n^2-1}{3n^2+2} }
-\end{equation}
-
-De manera similar al caso anterior, aunque no se tenga un cociente de polinomios, el argumento de la raíz cuadrada sí lo es y pueden despreciarse los términos de menor grado.
-
-\begin{equation}
-\limninf \sqrt{ \frac{2n^2-1}{3n^2+2} } = \limninf \sqrt{ \frac{2n^2}{3n^2} } = \limninf \sqrt{\frac{2}{3}} = \sqrt{\frac{2}{3}} = \sqrt{\frac{2}{3}} \frac{\sqrt{3}}{\sqrt{3}} = \frac{\sqrt{6}}{3}
-\end{equation}
-
-\begin{equation}
-\hresult{5.d}{\limninf a_n = \frac{\sqrt{6}}{3}}
-\end{equation}
-
-\subsectionx{5.e}
-
-\begin{equation}
-a_n = \frac{4n^2 + 3}{3n^2 + 4000}
-\end{equation}
-
-\begin{equation}
-\limninf \frac{4n^2 + 3}{3n^2 + 4000} = \limninf \frac{4n^2}{3n^2} = \frac{4}{3}
-\end{equation}
-
-\begin{equation}
-\hresult{5.e}{\limninf a_n = \frac{4}{3}}
-\end{equation}
-
-\subsectionx{5.f}
-
-\begin{equation}
-a_n = \frac{-n}{\sqrt{n^2-n}+n}
-\end{equation}
-
-Esta expresión tampoco es un polinomio. Pero dentro de la raíz cuadrada, sí hay un polinomio. Para valores muy grandes de $ n $, $ n $ es despreciable comparado con $ n^2 $. Por lo tanto:
-
-\begin{equation}
-\limninf \frac{-n}{\sqrt{n^2-n}+n} = \limninf \frac{-n}{\sqrt{n^2}+n}
-\end{equation}
-
-Siendo n natural, es siempre positivo y por ende vale cancelar la raíz con el cuadrado de manera directa.
-
-\begin{equation}
-\limninf \frac{-n}{\sqrt{n^2}+n} = \limninf \frac{-n}{n+n} = \limninf \frac{-n}{2n} = -\frac{1}{2}
-\end{equation}
-
-\begin{equation}
-\hresult{5.f}{\limninf a_n = -\frac{1}{2}}
-\end{equation}
-
-\subsectionx{5.g}
-
-\begin{equation}
-a_n = \left\{ 3, \frac{4}{3}, \frac{5}{2}, \frac{8}{5}, \frac{7}{3}, \frac{16}{9}, \frac{9}{4}, \frac{32}{17}, \frac{11}{5}, \frac{64}{33}, \dots \right\}
-\end{equation}
-
-Hay una subsucesión para los índices impares, y otra para los pares. Por observación, la primera tiene los números impares empezando en 3 el numerador, y $ n $ en el denominador.
-
-\begin{equation}
-a_{2n-1} = \frac{2n+1}{n}
-\end{equation}
-
-En cuanto a la sucesión de índices pares, el numerador es siempre una potencia de dos, empezando en 4. Y el denominador es la potencia anterior a la del numerador, sumándole 1.
-
-\begin{equation}
-a_{2n} = \frac{2^{n+1}}{2^n + 1}
-\end{equation}
-
-Una propiedad ya mencionada es que si una sucesión converge a un valor, todas sus subsucesiones convergen a ese mismo valor. Recíprocamente, si se consideran subsucesiones que conforman la sucesión completa, como es el caso de índices pares e impares, si ambas convergen a un mismo valor, ése será necesariamente el límite de la sucesión completa. En este caso particular:
-
-\begin{equation}
-\limninf a_{2n-1} = \limninf \frac{2n+1}{n} = \limninf \frac{2n}{n} = 2
-\end{equation}
-
-\begin{equation}
-\limninf a_{2n} = \limninf \frac{2^{n+1}}{2^n+1} = \limninf \frac{2^{n+1}}{2^n} = 2
-\end{equation}
-
-Nótese que en el cálculo del segundo límite se descartó el 1 del denominador porque es despreciable comparado con $ 2^n $. Finalmente, resulta:
-
-\begin{equation}
-\hresult{5.g}{\limninf a_n = 2}
-\end{equation}
-
-\subsectionx{5.h}
-
-\begin{equation}
-a_n = \left\{ 1, 1 + \frac{1}{2}, 1 + \frac{1}{2} + \frac{1}{4}, \dots \right\}
-\end{equation}
-
-Calculando los primeros 5 términos, es posible inferir el término general de esta sucesión.
-
-\begin{equation}
-a_n = \left\{ 1, \frac{3}{2}, \frac{7}{4}, \frac{15}{8}, \frac{31}{16}, \dots \right\}
-\end{equation}
-
-El numerador es la n-ésima potencia de 2 menos uno, y el denominador es la potencia de 2 anterior.
-
-\begin{equation}
-a_n = \frac{2^n-1}{2^{n-1}} \Rightarrow \limninf a_n = \limninf \frac{2^n}{2^{n-1}} = 2
-\end{equation}
-
-Como solución alternativa, también es posible aplicar la siguiente propiedad. La suma de una serie geométrica con razón $ r $ es, para $ |r| < 1 $:
-
-\begin{equation}
-|r| < 1 \Rightarrow \sum_{k=0}^{+\infty} a \cdot r^k = \frac{a}{1-r} 
-\end{equation}
-
-Para este caso, $ a = 1 $, $ r = \frac{1}{2} $, lo cual conduce a que la suma vale 2.
-
-\begin{equation}
-\hresult{5.h}{\limninf a_n = 2}
-\end{equation}
-
-\sectionx{6}
-
-\textbf{Continuar con las siguientes sucesiones:}
-
-\begin{enumerate}[label=(\alph*)]
-
-\item $ \frac{n^2-5n+7}{n+3} + \frac{n^2 + 5}{n+1} $
-
-\item $ \frac{n^2-5n+7}{n+3} - \frac{n^2 + 5}{n+1} $
-
-\item $ \sqrt{n^2+n-2} + n $
-
-\item $ \sqrt{n^2+n-2} - n $
-
-\item $ \sqrt{n^2+1} - \sqrt{n^2-n+3} $
-
-\item $ \sqrt{ \frac{2n^2-1}{3n^2+2} } + \frac{3n-1}{2n+3} $
-
-\item $ \sqrt{n} ( \sqrt{n+2} - \sqrt{n} ) $
-
-\item $ n ( \sqrt{n+2} - \sqrt{n} ) $
-
-\item $ \frac{n}{\sqrt{n+1}-n} $
-
-\item $ \sqrt{n} ( \sqrt{n^2+2} - \sqrt{n} ) $
-
-\end{enumerate}
-
-\hrule
-
-\subsectionx{6.a}
-
-\begin{equation}
-a_n = \frac{n^2-5n+7}{n+3} + \frac{n^2 + 5}{n+1}
-\end{equation}
-
-Ambos términos tienden a $ +\infty $, porque el numerador es de mayor grado que el denominador, y los signos de los coeficientes de mayor grado de numerador y denominador son positivos. Dado que se tiene una suma de términos que tienden a infinito, no hay indeterminación: la sucesión completa diverge a $ +\infty $.
-
-\begin{equation}
-\hresult{6.a}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
-\end{equation}
-
-\subsectionx{6.b}
-
-\begin{equation}
-a_n = \frac{n^2-5n+7}{n+3} - \frac{n^2 + 5}{n+1}
-\end{equation}
-
-En este caso sí hay una indeterminación, porque se tiene una diferencia de términos que tienden a $ +\infty $. Despreciar los términos de menor grado conduciría a que el límite sería cero. Pero esto es erróneo, porque los términos de mayor grado se cancelan. Cuando eso ocurre, los términos de menor grado son los que determinan el límite, y es necesario un análisis más detallado. Para este caso particular, un camino posible es realizar la suma algebraica.
-
-\begin{subequations}
-\begin{align}
-& \limninf \frac{n^2-5n+7}{n+3} - \frac{n^2 + 5}{n+1} = \\
-& \limninf \frac{(n+1)(n^2-5n+7)-(n+3)(n^2+5)}{(n+3) (n+1))} = \\
-& \limninf \frac{n^3-5n^2+7n+n^2-5n+7-(n^3+5n+3n^2+15)}{n^2+n+3n+3} = \\
-& \limninf \frac{n^3-4n^2+2n+7-(n^3+3n^2+5n+15)}{n^2+4n+3} = \\
-& \limninf \frac{\cancel{n^3}-4n^2+2n+7-\cancel{n^3}-3n^2-5n-15}{n^2+4n+3} = \\
-& \limninf \frac{-7n^2-3n-8}{n^2+4n+3}
-\end{align}
-\end{subequations}
-
-En este punto, se ha eliminado la indeterminación. Ahora se tiene un cociente de polinomios, y es válido despreciar todo salvo los términos de mayor grado. Ello conduce a:
-
-\begin{equation}
-\hresult{6.b}{ \limninf a_n = -7 }
-\end{equation}
-
-\subsectionx{6.c}
-
-\begin{equation}
-a_n = \sqrt{n^2+n-2} + n
-\end{equation}
-
-Como en 6.a, no hay indeterminación. Es la suma de dos términos que tienden a $ +\infty $.
-
-\begin{equation}
-\hresult{6.c}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
-\end{equation}
-
-\subsectionx{6.d}
-
-\begin{equation}
-a_n = \sqrt{n^2+n-2} - n
-\end{equation}
-
-Ahora sí hay una indeterminación, porque se tiene una diferencia de términos que tiende a $ +\infty $. De manera análoga a como ocurría en el caso de los polinomios, despreciar los términos de menor grado conduce al resultado erróneo de que el límite es cero. En este caso particular, una transformación algebraica útil es multiplicar y dividir por una expresión que permite aprovechar la propiedad:
-
-\begin{equation}
-(a+b)(a-b) = a^2 - b^2
-\end{equation}
-
-Como se verá, esto eliminará las raíces cuadradas y la indeterminación.
-
-\begin{subequations}
-\begin{align}
-& \limninf \sqrt{n^2+n-2} - n = \\
-& \limninf \left( \sqrt{n^2+n-2} - n \right) \frac{\sqrt{n^2+n-2} + n}{\sqrt{n^2+n-2} + n} = \\
-& \limninf \frac{(\sqrt{n^2+n-2})^2 - n^2}{\sqrt{n^2+n-2} + n}
-\end{align}
-\end{subequations}
-
-Para valores grandes de $ n $, el radicando siempre es positivo. Equivalentemente, es positivo pctn. Por lo tanto, es válido cancelar la raíz con el cuadrado en el numerador.
-
-\begin{equation}
-\limninf \frac{\cancel{n^2}+n-2-\cancel{n^2}}{\sqrt{n^2+n-2} + n} = 
-\limninf \frac{n-2}{\sqrt{n^2+n-2}+n}
-\end{equation}
-
-La indeterminación ha sido salvada; es válido despreciar términos de menor grado.
-
-\begin{subequations}
-\begin{align}
-& \limninf \frac{n}{\sqrt{n^2}+n} = \\
-& \limninf \frac{n}{n+n} = \frac{1}{2}
-\end{align}
-\end{subequations}
-
-\begin{equation}
-\hresult{6.d}{ \limninf a_n = \frac{1}{2} }
-\end{equation}
-
-\subsectionx{6.e}
-
-\begin{equation}
-a_n = \sqrt{n^2+1} - \sqrt{n^2-n+3}
-\end{equation}
-
-Nuevamente, se tiene una indeterminación del tipo $ \infty - \infty $. Como en el inciso previo, es útil multiplicar y dividir por una expresión apropiada.
-
-\begin{subequations}
-\begin{align}
-& \limninf \sqrt{n^2+1}-\sqrt{n^2-n+3} = \\
-& \limninf \left( \sqrt{n^2+1}-\sqrt{n^2-n+3} \right) \frac{\sqrt{n^2+1}+\sqrt{n^2-n+3}}{\sqrt{n^2+1}+\sqrt{n^2-n+3}} = \\
-& \limninf \frac{(\sqrt{n^2+1})^2-(\sqrt{n^2-n+3})^2}{\sqrt{n^2+1}+\sqrt{n^2-n+3}} \\
-& \limninf \frac{n^2+1-(n^2-n+3)}{\sqrt{n^2+1}+\sqrt{n^2-n+3}} = \\
-& \limninf \frac{\cancel{n^2} + 1 -\cancel{n^2} +n -3}{\sqrt{n^2+1}+\sqrt{n^2-n+3}} = \\
-& \limninf \frac{n}{\sqrt{n^2}+\sqrt{n^2}} = \\
-& \limninf \frac{n}{n+n} = \frac{1}{2}
-\end{align}
-\end{subequations}
-
-\begin{equation}
-\hresult{6.e}{ \limninf a_n = \frac{1}{2} }
-\end{equation}
-
-\subsectionx{6.f}
-
-\begin{equation}
-a_n = \sqrt{ \frac{2n^2-1}{3n^2+2} } + \frac{3n-1}{2n+3}
-\end{equation}
-
-En este caso, no hay indeterminación alguna. Ambos sumandos tienden a un valor finito.
-
-\begin{subequations}
-\begin{align}
-& \limninf \sqrt{ \frac{2n^2-1}{3n^2+2} } + \frac{3n-1}{2n+3} = \\
-& \limninf \sqrt{ \frac{2n^2}{3n^2} } + \frac{3n}{2n} = \\
-& \sqrt{\frac{2}{3}} + \frac{3}{2}
-\end{align}
-\end{subequations}
-
-\begin{equation}
-\hresult{6.f}{ \limninf a_n = \frac{\sqrt{6}}{3} + \frac{3}{2} \approx 2,3165 }
-\end{equation}
-
-\subsectionx{6.g}
-
-\begin{equation}
-a_n = \sqrt{n} \left( \sqrt{n+2} - \sqrt{n} \right)
-\end{equation}
-
-Uno de los factores del producto está indeterminado, lo cual hace que la expresión completa resulte indeterminada. En este caso, es posible simplificar un poco antes de aplicar la técnica de multiplicar y dividir. Dado que todos los términos tienen raíz, $n$ puede ingresar multiplicando.
-
-\begin{subequations}
-\begin{align}
-& \limninf \sqrt{n} \left( \sqrt{n+2} - \sqrt{n} \right) = \\
-& \limninf \sqrt{n} \sqrt{n+2} - \sqrt{n} \sqrt{n} = \\
-& \limninf \sqrt{n(n+2)} - n = \\
-& \limninf \left( \sqrt{n^2+2n} - n \right) \frac{\sqrt{n^2+2n}+n}{\sqrt{n^2+2n}+n} = \\
-& \limninf \frac{(\sqrt{n^2+2n})^2-n^2}{\sqrt{n^2+2n}+n} = \\
-& \limninf \frac{\cancel{n^2}+2n-\cancel{n^2}}{\sqrt{n^2+2n}+n} = \\
-& \limninf \frac{2n}{\sqrt{n^2+2n}+n} = \\
-& \limninf \frac{2n}{\sqrt{n^2}+n} = \\
-& \limninf \frac{2n}{n+n} = 1
-\end{align}
-\end{subequations}
-
-\begin{equation}
-\hresult{6.g}{ \limninf a_n = 1 }
-\end{equation}
-
-\subsectionx{6.h}
-
-\begin{equation}
-a_n = n ( \sqrt{n+2} - \sqrt{n} )
-\end{equation}
-
-En este caso no es muy útil distribuir el producto; se aplicará directamente la técnica usual para estos casos: multiplicar y dividir por una expresión conveniente.
-
-\begin{subequations}
-\begin{align}
-& \limninf n \left( \sqrt{n+2} - \sqrt{n} \right) \frac{\sqrt{n+2} + \sqrt{n}}{\sqrt{n+2} + \sqrt{n}} = \\
-& \limninf n \frac{(\sqrt{n+2})^2-(\sqrt{n})^2}{\sqrt{n+2} + \sqrt{n}} = \\
-& \limninf n \frac{\cancel{n}+2-\cancel{n}}{\sqrt{n+2} + \sqrt{n}} = \\
-& \limninf \frac{2n}{\sqrt{n+2} + \sqrt{n}} \\
-& \limninf \frac{2n}{\sqrt{n}+\sqrt{n}} = \\
-& \limninf \sqrt{n}
-\end{align}
-\end{subequations}
-
-\begin{equation}
-\hresult{6.h}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
-\end{equation}
-
-\subsectionx{6.i}
-
-\begin{equation}
-a_n = \frac{n}{\sqrt{n+1}-n}
-\end{equation}
-
-En este caso no hay indeterminación. Aunque en el denominador podría pensarse que sí, hay una expresión de grado 1 y otra de grado $ \frac{1}{2} $. Ésta es despreciable comparada con el término lineal $ n $. Esto conduce, por observación, a que el límite sea -1. Sólo para verificar esto, es posible transformar la expresión multiplicando y dividiendo por una expresión apropiada.
-
-\begin{subequations}
-\begin{align}
-& \limninf \frac{n}{\sqrt{n+1}-n} \frac{\sqrt{n+1}+n}{\sqrt{n+1}+n} = \\
-& \limninf \frac{n (\sqrt{n+1}+n) }{(\sqrt{n+1})^2-n^2} = \\
-& \limninf \frac{n \sqrt{n+1} + n^2}{n+1-n^2} = \\
-& \limninf \frac{n \sqrt{n} - n^2}{1+n-n^2} = \\
-& \limninf \frac{n^2 + n^{\frac{3}{2}}}{-n^2+n+1} = -1
-\end{align}
-\end{subequations}
-
-\begin{equation}
-\hresult{6.i}{ \limninf a_n = -1 }
-\end{equation}
-
-\subsectionx{6.j}
-
-En este caso, no hay indeterminación porque no se cancelan los términos de mayor grado al despreciar los demás. Por observación, el límite no existe y la sucesión diverge a $ +\infty $. Para confirmar, se aplicará la técnica usual.
-
-\begin{subequations}
-\begin{align}
-& \limninf \sqrt{n} \left( \sqrt{n^2+2} - \sqrt{n} \right) = \\
-& \limninf \sqrt{n} \sqrt{n^2+2} - \sqrt{n} \sqrt{n} = \\
-& \limninf \sqrt{n (n^2+2)} - n = \\
-& \limninf \left( \sqrt{n^3+2n} - n \right) \frac{\sqrt{n^3+2n} + n}{\sqrt{n^3+2n} + n} = \\
-& \limninf \frac{n^3+2n-n^2}{\sqrt{n^3+2n} + n} = \\
-& \limninf \frac{n^3}{\sqrt{n^3} + n} = \\
-& \limninf \frac{n^3}{n^{\frac{3}{2}}+n} = \\
-& \limninf \frac{n^3}{n^{\frac{3}{2}}} = \limninf n^{\frac{3}{2}}
-\end{align}
-\end{subequations}
-
-\begin{equation}
-\hresult{6.j}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
-\end{equation}
-
-\sectionx{7}
-
-\textbf{Mostrar que cada una de las siguientes situaciones constituye una indeterminación. Para ello, exhibir dos ejemplos donde los límites sean distintos (finitos o infinitos). Suponer , cuando sea necesario, condiciones suficientes para que las sucesiones estén bien definidas para todo n.}
-
-\begin{enumerate}[label=(\alph*)]
-
-\item $ \limninfs a_n = +\infty \wedge \limninf b_n = +\infty $
-
-\begin{enumerate}[label=\textbf{(\roman*)}]
-
-\item $ \limninfs (a_n - b_n) $
-
-\item $ \limninfs \frac{a_n}{b_n} $
-
-\end{enumerate}
-
-\item $ \limninfs a_n = 0 \wedge \limninfs b_n = 0 $
-
-\begin{enumerate}[label=\textbf{(\roman*)}]
-
-\item $ \limninfs \frac{a_n}{b_n} $
-
-\item $ \limninfs {(a_n)}^{b_n} $
-
-\end{enumerate}
-
-\item $ \limninfs a_n = 0 \wedge \limninfs b_n = +\infty $
-
-\begin{enumerate}[label=\textbf{(\roman*)}]
-
-\item $ \limninfs a_n \cdot b_n $
-
-\item $ \limninfs {(b_n)}^{a_n} $
-
-\end{enumerate}
-
-\end{enumerate}
-
-\hrule
-
-\subsectionx{7.a.i}
-
-Ejemplo 1:
-
-\begin{equation}
-a_n = n^2 \wedge b_n = n \Rightarrow \limninf (a_n-b_n) = \limninf n^2 - n = \hresult{}{ +\infty }
-\end{equation}
-
-Ejemplo 2:
-
-\begin{equation}
-a_n = \frac{n^2-5n+7}{n+3} \wedge \frac{n^2+5}{n+1} \Rightarrow \limninf (a_n-b_n) = \hresult{}{ -7 }
-\end{equation}
-
-\subsectionx{7.a.ii}
-
-Ejemplo 1:
-
-\begin{equation}
-a_n = n^2 \wedge b_n = n \Rightarrow \limninf \frac{a_n}{b_n} = \limninf \frac{n^2}{n} = \hresult{}{ +\infty }
-\end{equation}
-
-Ejemplo 2:
-
-\begin{equation}
-a_n = n \wedge b_n = n^2 \Rightarrow \limninf \frac{a_n}{b_n} = \limninf \frac{n}{n^2} = \hresult{}{ 0 }
-\end{equation}
-
-\subsectionx{7.b.i}
-
-Ejemplo 1:
-
-\begin{equation}
-a_n = \frac{1}{n} \wedge b_n = \frac{1}{n^2} \Rightarrow \limninf \frac{a_n}{b_n} = \limninf \frac{1}{n} : \frac{1}{n^2} = \frac{n^2}{n} = \hresult{}{ +\infty }
-\end{equation}
-
-Ejemplo 2:
-
-\begin{equation}
-a_n = \frac{1}{n^2} \wedge b_n = \frac{1}{n} \Rightarrow \limninf \frac{a_n}{b_n} = \limninf \frac{1}{n^2} : \frac{1}{n} = \frac{n}{n^2} = \hresult{}{ 0 }
-\end{equation}
-
-\subsectionx{7.b.ii}
-
-Ejemplo 1:
-
-\begin{equation}
-a_n = \frac{1}{2^n} \wedge b_n = \frac{1}{n} \Rightarrow \limninf {(a_n)}^{b_n} = \limninf {\frac{1}{2^n}}^{\frac{1}{n}} = \limninf {(2^{-n})}^n = \hresult{}{ \frac{1}{2} }
-\end{equation}
-
-Ejemplo 2:
-
-\begin{equation}
-a_n = \frac{1}{3^n} \wedge b_n = \frac{1}{n} \Rightarrow \limninf {(a_n)}^{b_n} = \limninf {\frac{1}{3^n}}^{\frac{1}{n}} = \limninf {(3^{-n})}^n = \hresult{}{ \frac{1}{3} }
-\end{equation}
-
-\subsectionx{7.c.i}
-
-Ejemplo 1:
-
-\begin{equation}
-a_n = \frac{1}{n} \wedge b_n = n \Rightarrow \limninf a_n \cdot b_n = \limninf \frac{1}{n} n = \hresult{}{ 1 }
-\end{equation}
-
-Ejemplo 2:
-
-\begin{equation}
-a_n = \frac{1}{n} \wedge b_n = n^2 \Rightarrow \limninf a_n \cdot b_n = \limninf \frac{1}{n} n^2 = \hresult{}{ +\infty }
-\end{equation}
-
-\subsectionx{7.c.ii}
-
-Ejemplo 1:
-
-\begin{equation}
-a_n = \frac{1}{n} \wedge b_n = 2^n \Rightarrow \limninf (b_n)^{a_n}  = \limninf (2^n)^{\frac{1}{n}} = \hresult{}{ 2 }
-\end{equation}
-
-Ejemplo 2:
-
-\begin{equation}
-a_n = \frac{1}{n^2} \wedge b_n = 2^n \Rightarrow \limninf (b_n)^{a_n}  = \limninf (2^n)^{\frac{1}{n^2}} = \limninf 2^{\frac{1}{n}} \hresult{}{ 1 }
-\end{equation}
-
-\sectionx{8}
-
-\textbf{Marcar, en casa caso, la única respuesta correcta:}
-
-\begin{enumerate}[label=(\alph*)]
-
-\item Si $ \limninfs a_n = +\infty $ y $ b_n $ oscila finitamente entonces $ \limninfs (a_n + b_n) $:
-
-\begin{enumerate}[label=\textbf{(\roman*)}]
-
-\item Oscila.
-
-\item Tiende a más infinito.
-
-\item Es una indeterminación.
-
-\end{enumerate}
-
-\item Si $ \limninf a_n = L $ y $ a_n > 0 $ entonces hay certeza de que:
-
-\begin{enumerate}[label=\textbf{(\roman*)}]
-
-\item $ L > 0 $.
-
-\item $ L = 0 $.
-
-\item $ L \geq 0 $.
-
-\item ninguna de las anteriores.
-
-\end{enumerate}
-
-\item Si $ \limninfs a_n = 0 $ y $ \limninfs b_n = +\infty $ entonces $ \limninfs \frac{a_n}{b_n} $:
-
-\begin{enumerate}[label=\textbf{(\roman*)}]
-
-\item Es igual a 0.
-
-\item Tiende a más infinito.
-
-\item Es una indeterminación.
-
-\item No existe.
-
-\end{enumerate}
-
-\item Si $ \limninfs a_n = 0 $ y $ \limninfs b_n = +\infty $ entonces $ \limninfs {(a_n)}^{b_n} $:
-
-\begin{enumerate}[label=\textbf{(\roman*)}]
-
-\item Es igual a 0.
-
-\item Tiende a más infinito.
-
-\item Es una indeterminación.
-
-\item No existe.
-
-\end{enumerate}
-
-\end{enumerate}
-
-\hrule
-
-\subsectionx{8.a}
-
-Se tiene un término que diverge y otro que está acotado finitamente. Por lo tanto, al sumarlos eventualmente el término divergente crecerá lo suficiente para que el acotado sea despreciable.
-
-\begin{equation}
-\hresult{8.a}{ \text{(II) Tiende a más infinito} }
-\end{equation}
-
-\subsectionx{8.b}
-
-Se tiene una sucesión convergente cuyos términos son todos positivos. Para el caso particular $ a_n = \frac{1}{n} $, $ L = 0 $. Eso descarta la opción (I), $ L > 0 $. Para el caso $ a_n = 1 $, se tiene $ L > 0 $, lo cual descarta la opción $ L = 0 $. Por la definición de límite, no puede ser $ L < 0 $, porque eso implicaría que hay términos negativos. Por lo tanto:
-
-\begin{equation}
-\hresult{8.b}{ (III) L \geq 0 }
-\end{equation}
-
-\subsectionx{8.c}
-
-El numerador es cada vez más pequeño, y el numerador cada vez más grande. Sin importar por dónde se aproxime el numerador a cero, sea por izquierda, derecha u oscilando, el cociente convergerá a cero de todas maneras.
-
-\begin{equation}
-\hresult{8.c}{ \text{(I) Es igual a 0.} }
-\end{equation}
-
-\subsectionx{8.d}
-
-Un número cada vez más cercano a cero, elevado a un número positivo cada vez más grande, dará un número aún más cercano a cero.
-
-\begin{equation}
-\hresult{8.d}{ \text{(I) Es igual a 0.} }
-\end{equation}
-
-\sectionx{9}
-
-\textbf{Calcular, si existe, el límite de las siguientes sucesiones. Como siempre, explicar las propiedades utilizadas para llegar al resultado.}
-
-\begin{enumerate}[label=(\alph*)]
-
-\bfseries
-
-\item $ \frac{\sin n}{n} $
-
-\item $ (-1)^n (\sqrt{n+2} - \sqrt{n}) $
-
-\item $ (-1)^n + \frac{1}{n} $
-
-\item $ (-1)^n (\sqrt{n+2} + \sqrt{n}) $
-
-\item $ \left( \frac{2}{5} \right)^n $
-
-\item $ \frac{2^n + 5}{3^n} (-1)^n $
-
-\item $ (1,5)^n $
-
-\item $ (0,95)^n $
-
-\item $ \frac{3^n + 4^{n+1} +2}{2^{2n} + 2^n} $
-
-\item $ \sqrt[n]{(n^2+1)} $
-
-\item $ \sqrt[n]{\frac{3n^3+2n^2+1}{n^2+2}} $
-
-\item $ \sqrt[n]{\frac{5n+1}{3n+1}} $
-
-\item $ \left( \frac{n^2 + 2}{5n^2 + 3} \right)^{\frac{1}{n}} $
-
-\item $ \sqrt[n]{(2^n + 5^n)} $
-
-\item $ (n^4 + 1)^{\frac{1}{2n}} $
-
-\item $ (1 + (-1)^n)^n \frac{1}{n} $
-
-\item $ \left( \frac{5}{3} \right)^{ \left( \frac{8}{11} \right)^n } $
-
-\item $ \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^n } $
-
-\item $ \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^{\frac{1}{n}} } $
-
-\item $ \frac{3^{2n+1} + \cos n}{2 \cdot 9^n + \sin n} $
-
-\end{enumerate}
-
-\hrule
-
-\subsectionx{9.a}
-
-\begin{equation}
-a_n = \frac{\sin n}{n}
-\end{equation}
-
-Al considerar este límite, no hay indeterminación, ni hace falta alguna propiedad para resolver. El numerador está acotado entre -1 y 1, y el denominador tiende a $ +\infty $. Por lo tanto, el cociente tiende a cero.
-
-\begin{equation}
-\hresult{9.a}{ \limninf \frac{\sin n}{n} = 0 }
-\end{equation}
-
-\subsectionx{9.b}
-
-\begin{equation}
-a_n = (-1)^n (\sqrt{n+2} - \sqrt{n})
-\end{equation}
-
-El segundo factor de este producto parece tender a cero, lo cual multiplicado por $ (-1)^n $ tiende a cero. Para confirmar esto, se puede analizar el segundo factor por separado, aplicando la técnica de multiplicar y dividir por un factor apropiado.
-
-\begin{subequations}
-\begin{align}
-& \limninf \sqrt{n+2} - \sqrt{n} = \\
-& \limninf (\sqrt{n+2} - \sqrt{n}) \frac{\sqrt{n+2} + \sqrt{n}}{\sqrt{n+2} + \sqrt{n}} \\
-& \limninf \frac{(\sqrt{n+2})^2-(\sqrt{n})^2}{\sqrt{n+2} + \sqrt{n}} = \\
-& \limninf \frac{\cancel{n}+2-\cancel{n}}{\sqrt{n+2} + \sqrt{n}} = 0
-\end{align}
-\end{subequations}
-
-Demostrado esto, puede concluirse que:
-
-\begin{equation}
-\hresult{9.b}{ \limninf (-1)^n (\sqrt{n+2} - \sqrt{n}) = 0 }
-\end{equation}
-
-\subsectionx{9.c}
-
-\begin{equation}
-a_n = (-1)^n + \frac{1}{n}
-\end{equation}
-
-El primer sumando oscila entre -1 y 1, y el segundo sumando tiende a cero. Por lo tanto, la suma oscila y el límite no existe.
-
-\begin{equation}
-\hresult{9.c}{ \limninf (-1)^n + \frac{1}{n} \text{ no existe, y } a_n \text{ oscila entre -1 y 1 } }
-\end{equation}
-
-\subsectionx{9.d}
-
-\begin{equation}
-a_n = (-1)^n (\sqrt{n+2} + \sqrt{n})
-\end{equation}
-
-El primer factor del producto oscila entre -1 y 1, y el segundo factor tiende a más infinito. Ergo, el producto oscila entre $-\infty$ y $+\infty$ y por lo tanto el límite no existe.
-
-\begin{equation}
-\hresult{9.d}{ \limninf (-1)^n (\sqrt{n+2} + \sqrt{n}) \text{ no existe, y } a_n \text{ oscila entre } -\infty \text{ y } +\infty }
-\end{equation}
-
-\subsectionx{9.e}
-
-\begin{equation}
-a_n = \left( \frac{2}{5} \right)^n
-\end{equation}
-
-Propiedad: dada $ a_n = r^n $:
-
-\begin{itemize}
-
-\item $ r > 1 \Rightarrow \limninfs a_n = +\infty $
-
-\item $ r = 1 \Rightarrow \limninfs a_n = 1 $
-
-\item $ 0 < r < 1 \Rightarrow \limninfs a_n = 0 $
-
-\end{itemize}
-
-\begin{equation}
-\hresult{9.e}{ \limninf \left( \frac{2}{5} \right)^n = 0 }
-\end{equation}
-
-\subsectionx{9.f}
-
-\begin{equation}
-a_n = \frac{2^n + 5}{3^n} (-1)^n
-\end{equation}
-
-La única forma de que esto converja es que el primer factor tienda a cero, porque el segundo oscila. Por ende, sólo es necesario analizar dicho factor.
-
-\begin{subequations}
-\begin{align}
-& \limninf \frac{2^n + 5}{3^n} = \\
-& \limninf \frac{2^n}{3^n} = \\
-& \limninf \left( \frac{2}{3} \right)^n = 0
-\end{align}
-\end{subequations}
-
-\begin{equation}
-\hresult{9.f}{ \limninf \frac{2^n + 5}{3^n} (-1)^n = 0 }
-\end{equation}
-
-\subsectionx{9.g}
-
-\begin{equation}
-a_n = (1,5)^n
-\end{equation}
-
-Por la propiedad descrita en 9.e:
-
-\begin{equation}
-\hresult{9.g}{ \limninf (1,5)^n \text{ no existe, y } a_n \text{ diverge a } +\infty }
-\end{equation}
-
-\subsectionx{9.h}
-
-\begin{equation}
-a_n = (0,95)^n
-\end{equation}
-
-Por la propiedad descrita en 9.e:
-
-\begin{equation}
-\hresult{9.h}{ \limninf (0,95)^n = 0 }
-\end{equation}
-
-\subsectionx{9.i}
-
-\begin{equation}
-a_n = \frac{3^n + 4^{n+1} + 2}{2^{2n} + 2^n}
-\end{equation}
-
-De las funciones exponenciales que aparecen, 4 parece ser la mayor. Es posible operar algebraicamente para eliminar la indeterminación $ \frac{+\infty}{+\infty} $.
-
-\begin{subequations}
-\begin{align}
-& \limninf \frac{3^n + 4^{n+1} + 2}{2^{2n} + 2^n} = \\
-& \limninf \frac{3^n + 4^{n+1}}{2^{2n} + 2^n} = \\
-& \limninf \frac{3^n + 4 \cdot 4^n}{(2^2)^n + 2^n} = \\
-& \limninf \frac{3^n + 4 \cdot 4^n}{4^n + 2^n} \frac{4^{-n}}{4^{-n}} = \\
-& \limninf \frac{ \frac{3^n}{4^n} + 4 }{ 1 + \frac{2^n}{4^n} } = \\
-& \limninf \frac{ \left( \frac{3}{4} \right)^n + 4 }{ 1 + \left( \frac{2}{4} \right)^n } = 4
-\end{align}
-\end{subequations}
-
-\begin{equation}
-\hresult{9.i}{ \limninf \frac{3^n + 4^{n+1} + 2}{2^{2n} + 2^n} = 4 }
-\end{equation}
-
-\subsectionx{9.j}
-
-\begin{equation}
-a_n = \sqrt[n]{n^2 + 1}
-\end{equation}
-
-En primer lugar, se utilizará la propiedad $ x = e^{\ln x} $.
-
-\begin{equation}
-\sqrt[n]{n^2 + 1} = (n^2 + 1)^{\frac{1}{n}} = \left[ e^{ \ln(n^2 + 1) } \right]^{\frac{1}{n}}
-\end{equation}
-
-Al tener potencias consecutivas, se puede multiplicar los exponentes.
-
-\begin{equation}
-\left[ e^{ \ln(n^2 + 1) } \right]^{\frac{1}{n}} = e^{ \frac{1}{n} \ln(n^2 + 1) }
-\end{equation}
-
-Cuando $ n $ es grande, $ n^2 \gg 1 $.
-
-\begin{equation}
-e^{ \frac{1}{n} \ln(n^2 + 1) } \approx e^{ \frac{1}{n} \ln(n^2) } \text{ para } n \rightarrow +\infty
-\end{equation}
-
-En este punto se aplica una propiedad de los logaritmos:
-
-\begin{equation}
-\ln( a^b ) = b \ln(a)
-\end{equation}
-
-Esta propiedad se muestra para el logaritmo natural, pero vale para cualquier base. En este caso:
-
-\begin{equation}
-e^{ \frac{1}{n} \ln(n^2) } = e^{ 2 \frac{\ln n}{n} }
-\end{equation}
-
-Analizando esta última expresión, se tiene el cociente $ \frac{\ln n}{n} $. Esto tiende a cero, porque el logaritmo de cualquier base crece más lentamente que una función lineal. En consecuencia:
-
-\begin{equation}
-\hresult{9.j}{ \limninf \sqrt[n]{n^2 + 1} = e^0 = 1 }
-\end{equation}
-
-\subsectionx{9.k}
-
-\begin{equation}
-a_n = \sqrt[n]{ \frac{3n^3 + 2n^2 + 1}{n^2+2} }
-\end{equation}
-
-Este límite puede resolverse combinando las técnicas para cocientes de polinomios y $ x = e^{\ln x} $.
-
-Otra propiedad de logaritmos utilizada:
-
-\begin{equation}
-\ln(a \cdot b) = \ln(a) + \ln(b)
-\end{equation}
-
-\begin{subequations}
-\begin{align}
-& \limninf \left( \frac{3n^3 + 2n^2 + 1}{n^2+2} \right)^{ \frac{1}{n} } = \\
-& \limninf \left( \frac{3n^3}{n^2} \right)^{ \frac{1}{n} } = \\
-& \limninf (3n)^{ \frac{1}{n} } = \\
-& \limninf \left[ e^{ \ln(3n) } \right]^{ \frac{1}{n} } = \\
-& \limninf e^{ \frac{\ln(3) + \ln(n)}{n} } = \\
-& \limninf e^{ \frac{\ln n}{n} } = e^0 = 1
-\end{align}
-\end{subequations}
-
-\begin{equation}
-\hresult{9.k}{ \limninf \sqrt[n]{ \frac{3n^3 + 2n^2 + 1}{n^2+2} } = 1 }
-\end{equation}
-
-\subsectionx{9.l}
-
-\begin{equation}
-a_n = \sqrt[n]{\frac{5n + 1}{3n + 1}}
-\end{equation}
-
-En este caso, no hay indeterminación que salvar. La base tiende a $ \frac{5}{3} $, y el exponente a 0.
-
-\begin{equation}
-\hresult{9.l}{ \limninf \left( \frac{5n + 1}{3n + 1} \right)^{ \frac{1}{n} } = {\frac{5}{3} }^0 = 1 }
-\end{equation}
-
-\subsectionx{9.m}
-
-\begin{equation}
-a_n = \left( \frac{n^2 + 2}{5n^2 + 3} \right)^{ \frac{1}{n} }
-\end{equation}
-
-Nuevamente, no hay indeterminación que salvar. La base tiende a $ \frac{1}{5} $, y el exponente a 0.
-
-\begin{equation}
-\hresult{9.l}{ \limninf \left( \frac{n^2 + 2}{5n^2 + 3} \right)^{ \frac{1}{n} } = {\frac{1}{5}}^0 = 1 }
-\end{equation}
-
-\subsectionx{9.n}
-
-\begin{equation}
-a_n = (2^n + 5^n)^{ \frac{1}{n} }
-\end{equation}
-
-Sacando factor común $ 5^n $ en la base:
-
-\begin{equation}
-(2^n + 5^n)^{ \frac{1}{n} } = \left[ 5^n \left( \frac{2^n}{5^n} + 1  \right) \right]^{ \frac{1}{n} }
-\end{equation}
-
-Distribuyendo la potencia con el producto:
-
-\begin{equation}
-\left[ 5^n \left( \frac{2^n}{5^n} + 1  \right) \right]^{ \frac{1}{n} } = (5^n)^{ \frac{1}{n} } \left[ \left(\frac{2}{5}\right)^n + 1 \right]^{ \frac{1}{n} }
-\end{equation}
-
-Cancelando exponentes en el primer factor:
-
-\begin{equation}
-a_n = 5 \left[ \left(\frac{2}{5}\right)^n + 1 \right]^{ \frac{1}{n} }
-\end{equation}
-
-El segundo factor tiende a $ 1^0 $, que no es indeterminación y tiende a 1. Por ende:
-
-\begin{equation}
-\hresult{9.n}{ \limninf (2^n + 5^n)^{ \frac{1}{n} } = 5 }
-\end{equation}
-
-\subsectionx{9.o}
-
-\begin{equation}
-a_n = (n^4 + 1)^{ \frac{1}{2n} }
-\end{equation}
-
-Utilizando $ x = e^{\ln x} $ y propiedades de los logaritmos:
-
-\begin{subequations}
-\begin{align}
-& \limninf (n^4 + 1)^{ \frac{1}{2n} } = \\
-& \limninf \left[ e^{ \ln(n^4 + 1) } \right]^{ \frac{1}{2n} } = \\
-& \limninf e^{ \ln(n^4 + 1) \frac{1}{2n} } = \\
-& \limninf e^{ 4 \frac{\ln(n)}{2n} } = \\
-& \limninf e^{ 2 \frac{\ln n}{n} } = e^0 = 1
-\end{align}
-\end{subequations}
-
-\begin{equation}
-\hresult{9.o}{ \limninf (n^4 + 1)^{ \frac{1}{2n} } = 1 }
-\end{equation}
-
-\subsectionx{9.p}
-
-\begin{equation}
-a_n = [1 + (-1)^n]^n \frac{1}{n}
-\end{equation}
-
-En este caso, conviene analizar por separado las subsucesiones de índices pares e impares por separado.
-
-La subsucesión de índices pares es:
-
-\begin{equation}
-a_{2n} = [1 + (-1)^{2n}]^{2n} \frac{1}{2n} = \frac{2^{2n}}{2n} = \frac{1}{2} \frac{4^n}{n}
-\end{equation}
-
-Y la de impares es:
-
-\begin{equation}
-a_{2n+1} = [1 + (-1)^{2n+1}] \frac{1}{2n+1} = 0
-\end{equation}
-
-Entonces, la subsucesión de índices pares tiende a $ +\infty $ y la de índices impares es constantemente cero. Por lo tanto, el límite no existe.
-
-\begin{equation}
-\hresult{9.p}{ \limninf a_n = [1 + (-1)^n]^n \frac{1}{n} \text{ no existe, y } a_n \text{ oscila entre cero y } +\infty }
-\end{equation}
-
-\subsectionx{9.q}
-
-\begin{equation}
-a_n = \left( \frac{5}{3} \right)^{ \left( \frac{8}{11} \right)^n }
-\end{equation}
-
-Por la propiedad vista en 9.e, $ \left( \frac{8}{11} \right)^n $ tiende a cero por tener una base positiva menor a 1. Nótese que multiplicar los exponentes sería un error porque el exponente $ n  $ está aplicado sólo sobre $ \frac{8}{11} $ y no sobre toda la expresión. No hay una base en común para aplicar esa propiedad. Éste es un error muy común en estos escenarios.·
-
-\begin{equation}
-\limninf \left( \frac{5}{3} \right)^{ \left( \frac{8}{11} \right)^n } = \limninf \left( \frac{5}{3} \right)^0 = 1
-\end{equation}
-
-\begin{equation}
-\hresult{9.q}{ \limninf \left( \frac{5}{3} \right)^{ \left( \frac{8}{11} \right)^n } = 1 }
-\end{equation}
-
-\subsectionx{9.r}
-
-\begin{equation}
-a_n = \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^n }
-\end{equation}
-
-Teniendo la misma precaución que en el inciso anterior respecto a no multiplicar los exponentes, resulta:
-
-\begin{equation}
-\limninf \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^n } = \limninf \left( \frac{8}{11} \right)^{+\infty} = 0
-\end{equation}
-
-\begin{equation}
-\hresult{9.q}{ \limninf \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^n } = 0 }
-\end{equation}
-
-\subsectionx{9.s}
-
-\begin{equation}
-a_n = \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^{ \frac{1}{n} } }
-\end{equation}
-
-Nuevamente evitando multiplicar exponentes, se obtiene:
-
-\begin{equation}
-\limninf \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^{ \frac{1}{n} } } = \limninf \left( \frac{8}{11} \right)^{ {\frac{5}{3}}^0 } = {\frac{8}{11}}^1 = \frac{8}{11}
-\end{equation}
-
-\begin{equation}
-\hresult{9.q}{ \limninf \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^{ \frac{1}{n} } } = \frac{8}{11} \approx 0,72727 }
-\end{equation}
-
-\subsectionx{9.t}
-
-\begin{equation}
-a_n = \frac{3^{2n+1} + \cos n}{ 2 \cdot 9^n + \sin n }
-\end{equation}
-
-Para valores grandes de $ n $, las funciones exponenciales son mucho mayores que las trigonométricas, las cuales están acotadas entre -1 y 1. Por ende, pueden despreciar el coseno y el seno.
-
-\begin{subequations}
-\begin{align}
-& \limninf \frac{3^{2n+1} + \cos n}{ 2 \cdot 9^n + \sin n } = \\
-& \limninf \frac{3^{2n+1}}{ 2 \cdot 9^n} = \\
-& \limninf \frac{3^{2n} \cdot 3}{2 \cdot (3^2)^n} = \\
-& \limninf \frac{3 \cdot \cancel{3^{2n}}}{2 \cdot \cancel{3^{2n}}} = \frac{3}{2}
-\end{align}
-\end{subequations}
-
-\begin{equation}
-\hresult{9.t}{ \limninf \frac{3^{2n+1} + \cos n}{ 2 \cdot 9^n + \sin n} = \frac{3}{2} }
-\end{equation}
-
-\sectionx{10}
-
-\textbf{Calcular el límite de las siguientes sucesiones.}
-
-\begin{enumerate}[label=(\alph*)]
-
-\bfseries
-
-\item $ \left( \frac{3n+1}{3n-5} \right)^n $
-
-\item $ \left( \frac{4n+1}{3n-5} \right)^n $
-
-\item $ \left( \frac{3n-2}{3n+1} \right)^{2n+1} $
-
-\item $ \left( 1 + \frac{1}{n^2} \right)^n $
-
-\item $ \left( 1 + \frac{17}{n} \right)^n $
-
-\item $ \left( \frac{2n^2-5n}{3n-1} \right)^{n^3+2n} $
-
-\item $ \left( \frac{3n^2+2n+1}{3n^2-5} \right)^{ \frac{n^2+2}{2n+1} } $
-
-\item $ \left( 1 + \frac{\sin n}{n^2} \right)^n $
-
-\item $ \left( \cos\left( \frac{1}{n} \right) \right)^{ \frac{2}{\sin^2\left( \frac{1}{n} \right)  } } $
-
-\item $ \left( 1 + \frac{\cos n}{5n^3 + 1} \right)^{2n^2 + 3} $
-
-\end{enumerate}
-
-\hrule
-
-\subsectionx{10.a}
-
-\begin{equation}
-a_n = \left( \frac{3n+1}{3n-5} \right)^n
-\end{equation}
-
-Este es un caso de indeterminación $ 1^{+\infty} $. Si se hiciera la división de polinomios, quedaría una expresión de la forma $ 1 + $ una expresión racional. Esto sugiere que tal vez sea conveniente utilizar la siguiente propiedad:
-
-Dada una sucesión $ b_n $ que diverge a $ +\infty $:
-
-\begin{equation}
-\limninf \left( 1 + \frac{1}{b_n}  \right)^{b_n} = e
-\end{equation}
-
-Por otro lado, recuérdese el algoritmo para división de polinomios. Dada una expresión racional $ \frac{D(x)}{d(x)} $, donde el grado del numerador es menor o igual al del denominador:
-
-\begin{equation}
-\frac{D(x)}{d(x)} = C(x) + \frac{R(x)}{d(x)}
-\end{equation}
-
-En esta expresión, $ C(x) $ y $ R(x) $ son los polinomios cociente y resto respectivamente, y se obtienen haciendo la división. Considérese que pese a que esta propiedad está enunciada para polinomios de variable continua $ x $, valen perfectamente para polinomios de variable discreta $ n $. Si la igualdad vale para todo $ x $ real, vale para todo $ n $ natural.
-
-Volviendo a este caso particular:
-
-\begin{subequations}
-\begin{align}
-& D(n) = 3n+1 \\
-& d(n) = 3n-5
-\end{align}
-\end{subequations}
-
-Haciendo la división, se obtienen $ C(n) $ y $ R(n) $.
-
-\begin{equation}
-\polylongdiv[vars=n]{3n+1}{3n-5}
-\end{equation}
-
-Resulta entonces:
-
-\begin{subequations}
-\begin{align}
-& C(x) = 1 \\
-& R(x) = 6
-\end{align}
-\end{subequations}
-
-Reemplazando en $ a_n $:
-
-\begin{subequations}
-\begin{align}
-& \limninf \left( \frac{3n+1}{3n-5} \right)^n = \\
-& \limninf \left( 1 + \frac{6}{3n-5} \right)^n = \\
-& \limninf \left( 1 + \frac{1}{\frac{3n-5}{6}} \right)^n = \\
-& \limninf \left( 1 + \frac{1}{\frac{3n-5}{6}} \right)^{ \frac{3n-5}{6} \frac{6}{3n-5} n } = \\
-& \limninf \left[ \underbrace{ \left( 1 + \frac{1}{\frac{3n-5}{6}} \right)^{ \frac{3n-5}{6}} }_{e} \right]^{ \underbrace{ \frac{6n}{3n-5} }_{2} } = \\
-& \hresulte{10.a}{ \limninf a_n = e^2 \approx 7,3891 }{ 1em }
-\end{align}
-\end{subequations}
-
-\subsectionx{10.b}
-
-\begin{equation}
-a_n = \left( \frac{4n+1}{3n-5} \right)^n
-\end{equation}
-
-En este caso, no hay indeterminación. La base tiende a $ \frac{4}{3} $, y el exponente a $ +\infty $. Al tender la base a un valor mayor a 1, el límite no existe y la sucesión diverge a $ +\infty $.
-
-\begin{equation}
-\hresult{10.b}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
-\end{equation}
-
-\subsectionx{10.c}
-
-\begin{equation}
-a_n = \left( \frac{3n-2}{3n+1} \right)^{2n+1} 
-\end{equation}
-
-Al tener nuevamente una indeterminación de la forma $ 1^{+\infty} $ donde la base es un cociente de polinomios, se aplica de nuevo la técnica de hacer la división.
-
-\begin{equation}
-\polylongdiv[vars = n]{3n-2}{3n+1}
-\end{equation}
-
-\begin{subequations}
-\begin{align}
-& \limninf \left( \frac{3n-2}{3n+1} \right)^{2n+1} = \\
-& \limninf \left( 1 - \frac{3}{3n+1} \right)^{2n+1}
-\end{align}
-\end{subequations}
-
-Llegado este punto, no es válido usar la técnica de e: el denominador tendería a $ -\infty $, y no se cumplirían las condiciones para el límite. Por lo tanto, lo que se utilizará para avanzar es la técnica de $ x = e^{\ln x} $
-
-\begin{subequations}
-\begin{align}
-& \limninf \left( 1 - \frac{3}{3n+1} \right)^{2n+1} = \\
-& \limninf e^{ \ln\left[\left( 1 - \frac{3}{3n+1} \right)^{2n+1}\right] }
-\end{align}
-\end{subequations}
-
-En este punto, es necesario utilizar otra propiedad muy útil.
-
-\begin{equation}
-x \rightarrow 0 \Rightarrow \ln(1-x) \approx -x
-\end{equation}
-
-En este caso, la expresión de interés es $ x = \frac{3}{3n+1} $, que efectivamente tiende a cero cuando n tiende a $ +\infty $. Ergo:
-
-\begin{subequations}
-\begin{align}
-& \limninf e^{ \ln\left[\left( 1 - \frac{3}{3n+1} \right)^{2n+1}\right] } = \\
-& \limninf e^{ (2n+1) \ln\left( 1 - \frac{3}{3n+1} \right) } = \\
-& \limninf e^{ (2n+1) \frac{-3}{3n+1} } = \\
-& \hresult{10.c}{ \limninf a_n = e^{-2} \approx 0,13533 }
-\end{align}
-\end{subequations}
-
-\subsectionx{10.d}
-
-\begin{equation}
-a_n = \left( 1 + \frac{1}{n^2} \right)^n
-\end{equation}
-
-Se tiene una indeterminación de la forma $ 1^{+\infty} $, y una expresión muy similar a la del límite de e. El denominador del segundo sumando tiende a $ +\infty $. Sólo resta manipular algebraicamente para poder aplicar el resultado.
-
-\begin{subequations}
-\begin{align}
-& \limninf \left( 1 + \frac{1}{n^2} \right)^n = \\
-& \limninf \left( 1 + \frac{1}{n^2} \right)^{ n^2 \frac{1}{n^2} n } = \\
-& \limninf \left[ \underbrace{ \left( 1 + \frac{1}{n^2} \right)^{n^2} }_{e} \right]^{  \frac{1}{n} } = \\
-& e^0 = \hresult{10.d}{ \limninf a_n = 1 }
-\end{align}
-\end{subequations}
-
-\subsectionx{10.e}
-
-\begin{equation}
-a_n = \left( 1 + \frac{17}{n} \right)^n
-\end{equation}
-
-De nuevo se tiene un escenario ideal para aplicar la técnica de e.
-
-\begin{subequations}
-\begin{align}
-& \limninf \left( 1 + \frac{17}{n} \right)^n = \\
-& \limninf \left( 1 + \frac{1}{ \frac{n}{17} } \right)^n = \\
-& \limninf \left( 1 + \frac{1}{ \frac{n}{17} } \right)^{ \frac{n}{17} \frac{17}{n} n } = \\
-& \limninf \left[ \underbrace{ \left( 1 + \frac{1}{ \frac{n}{17} } \right)^{ \frac{n}{17} } }_{e} \right]^{17} = \\
-& \hresult{10.e}{ \limninf a_n = e^{17} \approx 24154952 }
-\end{align}
-\end{subequations}
-
-Nótese que al ser tan grande el valor del límite, podría creerse erróneamente que $ a_n $ diverge al evaluar algunos términos grandes.
-
-\subsectionx{10.f}
-
-\begin{equation}
-a_n = \left( \frac{2n^2-5n}{3n-1} \right)^{n^3+2n}
-\end{equation}
-
-Aquí no hay indeterminación. La base tiende a $ +\infty $ por ser el numerador de mayor grado que el denominador. Y como el exponente también tiende a $ +\infty $, el límite no existe y la sucesión diverge a $ +\infty $.
-
-\begin{equation}
-\hresult{10.f}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
-\end{equation}
-
-\subsectionx{10.g}
-
-\begin{equation}
-a_n = \left( \frac{3n^2+2n+1}{3n^2-5} \right)^{ \frac{n^2+2}{2n+1} }
-\end{equation}
-
-En este caso, se tiene de nuevo una indeterminación de la forma $ 1^{+\infty} $, y la base es un cociente de polinomios. Realizando la división:
-
-\begin{equation}
-\polylongdiv[vars = n]{3n^2+2n+1}{3n^2-5}
-\end{equation}
-
-Reemplazando:
-
-\begin{subequations}
-\begin{align}
-& \limninf \left( \frac{3n^2+2n+1}{3n^2-5} \right)^{ \frac{n^2+2}{2n+1} } = \\
-& \limninf \left( 1 + \frac{2n+6}{3n^2-5} \right)^{ \frac{n^2+2}{2n+1} } = \\
-& \limninf \left( 1 + \frac{1}{ \frac{3n^2-5}{2n+6} } \right)^{ \frac{3n^2-5}{2n+6} \frac{2n+6}{3n^2-5} \frac{n^2+2}{2n+1} } = \\
-& \limninf \left[ \underbrace{ \left( 1 + \frac{1}{ \frac{3n^2-5}{2n+6} } \right)^{ \frac{3n^2-5}{2n+6} } }_{e} \right]^{ \frac{2n+6}{3n^2-5} \frac{n^2+2}{2n+1} } = \\
-& \hresult{10.g}{ \limninf a_n = e^{ \frac{1}{3} } \approx 1,3956 }
-\end{align}
-\end{subequations}
-
-\subsectionx{10.h}
-
-\begin{equation}
-a_n = \left( 1 + \frac{\sin n}{n^2} \right)^n
-\end{equation}
-
-En este caso, hay indeterminación $ 1^{+\infty} $, pero no es válido utilizar la técnica de e porque el denominador oscilaría entre + y - infinito, por el seno. Por lo tanto, hay que aplicar la técnica de $ e^ln $.
-
-\begin{subequations}
-\begin{align}
-& \limninf \left( 1 + \frac{\sin n}{n^2} \right)^n = \\
-& \limninf e^{ \ln\left[\left( 1 + \frac{\sin n}{n^2} \right)^n \right] } = \\
-& \limninf e^{ n \ln\left( 1 + \frac{\sin n}{n^2} \right) }
-\end{align}
-\end{subequations}
-
-La aproximación logarítmica usada antes también vale para valores positivos.
-
-\begin{equation}
-x \rightarrow 0 \Rightarrow \ln(1+x) \approx x
-\end{equation}
-
-\begin{subequations}
-\begin{align}
-& \limninf e^{ n \ln\left( 1 + \frac{\sin n}{n^2} \right) } = \\
-& \limninf e^{ n \frac{\sin n}{n^2} } = \\
-& \limninf e^{ \frac{\sin n}{n} } = \\
-& \hresult{10.h}{ \limninf a_n = e^0 = 1 }
-\end{align}
-\end{subequations}
-
-\subsectionx{10.i}
-
-\begin{equation}
-a_n = \left( \cos\left( \frac{1}{n} \right) \right)^{ \frac{2}{\sin^2\left( \frac{1}{n} \right)  } }
-\end{equation}
-
-Es una indeterminación de la forma $ 1^{+\infty} $. La técnica de e no sirve porque no hay forma de introducir un 1. Por lo tanto, se empieza por aplicar $ x = e^{\ln(x)} $.
-
-\begin{subequations}
-\begin{align}
-& \limninf \left( \cos\left( \frac{1}{n} \right) \right)^{ \frac{2}{\sin^2\left( \frac{1}{n} \right)  } } = \\
-& \limninf e^{ \ln\left[ \left( \cos\left( \frac{1}{n} \right) \right)^{ \frac{2}{\sin^2\left( \frac{1}{n} \right)  } } \right] } = \\
-& \limninf e^{ \frac{2}{\sin^2\left( \frac{1}{n} \right)  } \ln\left( \cos\left( \frac{1}{n} \right) \right) }
-\end{align}
-\end{subequations}
-
-Llegado este punto, se aplicarán aproximaciones basadas en la serie de Taylor.
-
-\begin{subequations}
-\begin{align}
-& x \rightarrow 0 \Rightarrow \cos(x) \rightarrow 1 - \frac{x^2}{2} \\
-& x \rightarrow 0 \Rightarrow \sin(x) \rightarrow x \\
-& x \rightarrow 0 \Rightarrow \ln(1-x) \rightarrow -x
-\end{align}
-\end{subequations}
-
-\begin{subequations}
-\begin{align}
-& \limninf e^{ \frac{2}{\sin^2\left( \frac{1}{n} \right)  } \ln\left( \cos\left( \frac{1}{n} \right) \right) } = \\
-& \limninf e^{ \frac{2}{ \frac{1}{n} \frac{1}{n} } \ln\left( 1 - \frac{1}{2} \frac{1}{n^2} \right) } = \\
-& \limninf e^{ 2n^2 \frac{-1}{2n^2} } = \\
-& \hresult{10.i}{ \limninf a_n = e^{-1} \approx 0,36788 }
-\end{align}
-\end{subequations}
-
-\subsectionx{10.j}
-
-\begin{equation}
-a_n = \left( 1 + \frac{\cos n}{5n^3 + 1} \right)^{2n^2 + 3}
-\end{equation}
-
-Como ocurrió en 10.h, no se puede aplicar el límite de e porque la función coseno introduce una oscilación. Ergo, se utiliza $ x = e^{\ln(x)} $ y una aproximación de Taylor.
-
-\begin{subequations}
-\begin{align}
-& \limninf \left( 1 + \frac{\cos n}{5n^3 + 1} \right)^{2n^2 + 3} = \\
-& \limninf e^{ \ln \left[ \left( 1 + \frac{\cos n}{5n^3 + 1} \right)^{2n^2 + 3} \right] } = \\
-& \limninf e^{ (2n^2+3) \ln\left( 1 + \frac{\cos n}{5n^3 + 1} \right) } = \\
-& \limninf e^{ (2n^2+3) \frac{\cos(n)}{5n^3+1} } = \\
-& \limninf e^{ \cos(n) \frac{2n^2+3}{5n^3+1} }
-\end{align}
-\end{subequations}
-
-En la última expresión, el segundo factor del producto en el exponente tiende a cero, por ser el denominador de mayor grado que el numerador. Una expresión que tiende a cero multiplicada por una expresión acotada, como $ \cos(n) $, tiende a cero. Ergo:
-
-\begin{equation}
-\hresult{10.j}{ \limninf a_n = e^0 = 1 }
-\end{equation}
-
-\sectionx{11}
-
-\textbf{Calcular, si existe, el límite de las siguientes sucesiones.}
-
-\begin{enumerate}[label=(\alph*)]
-
-\bfseries
-
-\item $ \frac{n}{2^{n+1}} $
-
-\item $ \left( 2 - \frac{1}{n} \right)^n $
-
-\item $ \frac{n 2^n}{n!} $
-
-\item $ \sqrt[n]{n!} $
-
-\item $ \frac{n^3 + n!}{2^n + 3^n} $
-
-\item $ \frac{2^{2n+1}}{(2n)!} $
-
-\item $ \left( \frac{1}{2} + \frac{2}{n} \right)^n $
-
-\item $ \frac{n^2}{n!} $
-
-\item $ \frac{n!}{n^n} $
-
-\item $ \frac{n^4 4^n n!}{n^n} $
-
-\end{enumerate}
-
-\hrule
-
-\subsectionx{11.a}
-
-\begin{equation}
-a_n = \frac{n}{2^{n+1}}
-\end{equation}
-
-Cuando una sucesión es un cociente y hay potencias de n, suele ser una buena oportunidad para aplicar el \textbf{criterio de D'Alembert}. Formalmente, el mismo plantea lo siguiente:
-
-Dada una sucesión $ a_n $ de números reales o complejos, considérese el límite:
-
-\begin{equation}
-L = \limninf \left| \frac{a_{n+1}}{a_n} \right|
-\end{equation}
-
-\begin{itemize}
-
-\item Si $ L $ existe y $ L < 1 \Rightarrow a_n $ converge a cero.
-
-\item Si $ L $ existe y $ L > 1 $, o no existe y diverge a $ +\infty \Rightarrow a_n $ diverge.
-
-\item Si $ L $ existe y $ L = 1 $ o $ L $ no existe y no está definido, el criterio no permite extraer conclusiones.    
-
-\end{itemize}
-
-En este caso particular, dado que se supone que la exponencial del denominador crece más rápido que la función lineal del numerador, se espera que aplicar el criterio conduzca a que el límite es cero.
-
-\begin{subequations}
-\begin{align}
-& \limninf \left| \frac{a_{n+1}}{a_n} \right| = \\
-& \limninf \left| \frac{n+1}{2^{(n+1)+1}} : \frac{n}{2^{n+1}} \right| = \\
-& \limninf \frac{n+1}{4 \cdot \cancel{2^n}} : \frac{n}{2 \cdot \cancel{2^n}} = \\
-& \limninf \frac{2 (n+1) }{4n} = \frac{1}{2}
-\end{align}
-\end{subequations}
-
-El límite existe y es menor a 1, por lo tanto se concluye por el criterio de D'Alembert que:
-
-\begin{equation}
-\hresult{11.a}{ \limninf a_n = 0 }
-\end{equation}
-
-\subsectionx{11.b}
-
-\begin{equation}
-a_n = \left( 2 - \frac{1}{n} \right)^n
-\end{equation}
-
-En este caso, no hay indeterminación. La base tiende a 2, y el exponente a $ +\infty $. Al ser la base mayor a 1, la sucesión diverge a $ +\infty $.
-
-\begin{equation}
-\hresult{11.b}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
-\end{equation}
-
-\subsectionx{11.c}
-
-Cabe esperar que el factorial crezca más rápido, por ende se aplica el criterio de D'Alembert.
-
-\begin{subequations}
-\begin{align}
-& \limninf \left| \frac{a_{n+1}}{a_n} \right| = \\
-& \limninf \left| \frac{(n+1) 2^{n+1}}{(n+1)!} : \frac{n 2^n}{n!} \right|
-\end{align}
-\end{subequations}
-
-Una propiedad que será de utilidad cada vez que aparezca el factorial es la siguiente. Por la definición recursiva de factorial, se tiene:
-
-\begin{equation}
-n! = n (n-1)! \Rightarrow (n+1)! = (n+1) n!
-\end{equation}
-
-\begin{subequations}
-\begin{align}
-& \limninf \left| \frac{(n+1) 2^{n+1}}{(n+1)!} : \frac{n 2^n}{n!} \right| = \\
-& \limninf \frac{ \cancel{(n+1)} 2 \cdot \cancel{2^n} }{\cancel{(n+1)} \cancel{n!}} : \frac{n \cancel{2^n}}{\cancel{n!}} = \\
-& \limninf \frac{2}{n} = 0
-\end{align}
-\end{subequations}
-
-El límite de D'Alembert es finito y menor a 1, por lo tanto:
-
-\begin{equation}
-\hresult{11.c}{ \limninf a_n = 0 }
-\end{equation}
-
-\subsectionx{11.d}
-
-\begin{equation}
-a_n = \sqrt[n]{n!}
-\end{equation}
-
-Dado que $ \sqrt[n]{n!} = (n!)^{ \frac{1}{n} } $, se tiene una indeterminación del tipo $ (+\infty)^0 $. Usar D'Alembert no ayuda mucho porque la potencia queda como $ \frac{1}{n+1} $. Tampoco es útil el criterio de Cauchy, porque se estaría aplicando una raíz enésima sobre una raíz enésima. Lo más directo en este caso es utilizar la \textbf{aproximación de Stirling} para la función factorial:
-
-\begin{equation}
-\hresult{}{n! \approx \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n}
-\end{equation}
-
-Aplicando esto en el radicando, resulta:
-
-\begin{subequations}
-\begin{align}
-& \limninf (n!)^{ \frac{1}{n} } = \\
-& \limninf \left[ \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n \right]^{ \frac{1}{n} } = \\
-& \limninf \left[ (2 \pi n)^{\frac{1}{2}} \left( \frac{n}{e} \right)^n \right]^{ \frac{1}{n} } = \\
-& \limninf (2 \pi n)^{\frac{1}{2n}} \left( \frac{n}{e} \right)
-\end{align}
-\end{subequations}
-
-En este producto, el segundo factor, $ \frac{n}{e} $ tiende a $ +\infty $, y el primero tiene una indeterminación del tipo $ (+\infty)^0 $. Analizando esa expresión por separado, dado que no se puede transformar la base, lo más directo es aplicar $ x = e^{\ln(x)} $.
-
-\begin{subequations}
-\begin{align}
-& \limninf (2 \pi n)^{ \frac{1}{2n} } = \\
-& \limninf \left[ e^{ \ln(2 \pi n) } \right]^{ \frac{1}{2n} } = \\
-& \limninf e^{ \frac{ \ln(2 \pi n) }{2n} } = \\
-& \limninf e^{ \frac{ \ln(2 \pi) + \ln(n) }{2n} } = \\
-& \limninf e^{ \frac{\ln(n)}{2n} } = e^0 = 1
-\end{align}
-\end{subequations}
-
-En el último paso, se aplicó el resultado ya visto de que $ \frac{\ln(n)}{n} $ tiende a cero porque el logaritmo crece más lento que la función lineal.
-
-Volviendo al problema inicial, si el primer factor tiende a 1 y el segundo a $ +\infty $, la sucesión completa diverge a $ +\infty $.
-
-\begin{equation}
-\hresult{11.d}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
-\end{equation}
-
-\subsectionx{11.e}
-
-\begin{equation}
-a_n = \frac{n^3 + n!}{2^n + 3^n}
-\end{equation}
-
-A simple vista, podría suponerse que al crecer $ n! $ más rápido que $ n^a $ o $ a^n $, la sucesión diverge a $ +\infty $. Para confirmar eso, se puede multiplicar y dividir por $ n! $ y mirar cada término.
-
-\begin{subequations}
-\begin{align}
-& \limninf \frac{n^3 + n!}{2^n + 3^n} = \\
-& \limninf \frac{n^3 + n!}{2^n + 3^n} \frac{ \frac{1}{n!} }{ \frac{1}{n!} } = \\
-& \limninf \frac{ \frac{n^3}{n!} + 1 }{ \frac{2^n}{n!} + \frac{3^n}{n!} }
-\end{align}
-\end{subequations}
-
-Para continuar, se demostrará el supuesto de que $ n! $ crece más rápido que cualquier polinomio o exponencial. Para ambos casos, se utilizará el criterio de D'Alembert. Sea:
-
-\begin{subequations}
-\begin{align}
-& b_n = \frac{n^a}{n!}, a > 0 \\
-& \limninf \left| \frac{b_{n+1}}{b_n} \right| = \\
-& \limninf \left| \frac{(n+1)^a}{(n+1)!} : \frac{n^a}{n!} \right| = \\
-& \limninf \frac{(n+1)^a \cancel{n!} }{(n+1) \cancel{n!} n^a} = \\
-& \limninf \frac{1}{n+1} \left( \frac{n+1}{n} \right)^a
-\end{align}
-\end{subequations}
-
-En este punto, el primer factor del producto tiende a cero, y el segundo a $ 1^a = 1 $. Por ende, el límite de D'Alembert existe y es cero, lo cual implica que $ b_n $ converge a cero como se esperaba.
-
-Sólo queda la exponencial. Sea:
-
-\begin{subequations}
-\begin{align}
-& c_n = \frac{a^n}{n!}, a > 0 \\
-& \limninf \left| \frac{c_{n+1}}{c_n} \right| = \\
-& \limninf \left| \frac{a^{n+1}}{(n+1)!} : \frac{a^n}{n!} \right| = \\
-& \limninf \frac{a \cdot \cancel{a^n}}{(n+1) \cancel{n!}} : \frac{\cancel{a^n}}{\cancel{n!}} = \\
-& \limninf \frac{a}{n+1} = 0
-\end{align}
-\end{subequations}
-
-Nuevamente, el límite de D'Alembert existe y es cero, lo cual implica que $ c_n $ converge a cero.
-
-Volviendo al problema original:
-
-\begin{equation}
-\limninf \frac{ \frac{n^3}{n!} + 1 }{ \frac{2^n}{n!} + \frac{3^n}{n!}}
-\end{equation}
-
-En base a los resultados demostrados, todas las fracciones tienden a cero, por ende se tiene $ \frac{1}{0^+} = +\infty $. Finalmente:
-
-\begin{equation}
-\hresult{11.e}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
-\end{equation}
-
-\subsectionx{11.f}
-
-\begin{equation}
-a_n = \frac{2^{2n+1}}{(2n)!}
-\end{equation}
-
-Cabe esperar que el factorial crezca más rápido que la exponencial, incluso compuesta con una función lineal. En todo caso, para mayor certeza, se puede aplicar el criterio de D'Alembert.
-
-\begin{subequations}
-\begin{align}
-& \limninf \left| \frac{a_{n+1}}{a_n} \right| = \\
-& \limninf \left| \frac{2^{2(n+1)+1}}{(2(n+1))!} : \frac{2^{2n+1}}{(2n)!} \right| = \\
-& \limninf \frac{ 2^2 \cdot \cancel{2^{2n+1}} }{(2n+2)!} : \frac{ \cancel{2^{2n+1}} }{(2n)!} = \\
-& \limninf \frac{4}{ (2n+2)(2n+1)\cancel{(2n)!} } : \frac{1}{ \cancel{(2n)!} } = \\
-& \limninf \frac{4}{(2n+2)(2n+1)} = 0
-\end{align}
-\end{subequations}
-
-Al existir el límite de D'Alembert y valer cero, puede concluirse que $ a_n $ converge a cero.
-
-\begin{equation}
-\hresult{11.f}{ \limninf a_n = 0 }
-\end{equation}
-
-\subsectionx{11.g}
-
-\begin{equation}
-a_n = \left( \frac{1}{2} + \frac{2}{n} \right)^n
-\end{equation}
-
-En este caso, no hay indeterminación. La base tiende a $ \frac{1}{2} $, y el exponente a $ +\infty $. Al ser la base positiva y menor a 1, la sucesión converge a cero.
-
-\begin{equation}
-\hresult{11.g}{ \limninf a_n = 0 }
-\end{equation}
-
-\subsectionx{11.h}
-
-\begin{equation}
-a_n = \frac{n^2}{n!}
-\end{equation}
-
-Ya se demostró en 11.e que la función factorial crece más rápido que cualquier polinomio. Esto es un caso particular $ (a = 2) $. Por lo tanto:
-
-\begin{equation}
-\hresult{11.h}{ \limninf a_n = 0 }
-\end{equation}
-
-\subsectionx{11.i}
-
-\begin{equation}
-a_n = \frac{n!}{n^n}
-\end{equation}
-
-En este caso, no es evidente si $ n! $ crece más rápido que $ n^n $. Se utilizará el criterio de D'Alembert de manera exploratoria.
-
-\begin{subequations}
-\begin{align}
-& \limninf \left| \frac{a_{n+1}}{a_n} \right| = \\
-& \limninf \left| \frac{(n+1)!}{(n+1)^{n+1}} : \frac{n!}{n^n} \right| = \\
-& \limninf \frac{ \cancel{(n+1)} \cancel{n!} }{ \cancel{(n+1)} (n+1)^n } : \frac{ \cancel{n!} }{n^n} = \\
-& \limninf \frac{n^n}{(n+1)^n} = \\
-& \limninf \left( \frac{n}{n+1} \right)^n = \\
-& \limninf \left( 1 - \frac{1}{n+1} \right)^n = \\
-& \limninf e^{ \left[ \ln\left( 1 - \frac{1}{n+1} \right) \right]^n } = \\
-& \limninf e^{ n \ln\left( 1 - \frac{1}{n+1} \right) } = \\
-& \limninf e^{ n \left( \frac{-1}{n+1} \right) } = e^{-1}
-\end{align}
-\end{subequations}
-
-En el último paso se utilizó la ya vista aproximación de Taylor:
-
-\begin{equation}
-\hresult{}{ x \rightarrow 0 \Rightarrow \ln(1-x) \approx -x }
-\end{equation}
-
-Concluyendo, dado que el límite de D'Alembert existe y es menor a 1, la sucesión converge a cero. Esto también demuestra que $ n^n $ crece más rápido que $ n! $.
-
-\begin{equation}
-\hresult{11.h}{ \limninf a_n = 0 }
-\end{equation}
-
-\subsectionx{11.j}
-
-\begin{equation}
-a_n = \frac{n^4 4^n n!}{n^n}
-\end{equation}
-
-Ya se vio que $ n^n $ crece más rápido que todo lo que hay en el numerador, pero como están multiplicados, no se puede predecir a simple vista el comportamiento. Por lo tanto, se aplica D'Alembert para explorar.
-
-\begin{subequations}
-\begin{align}
-& \limninf \left| \frac{a_{n+1}}{a_n} \right| = \\
-& \limninf \left| \frac{(n+1)^4 4^{n+1} (n+1)! }{(n+1)^{n+1}} : \frac{n^4 4^n n!}{n^n} \right| = \\
-& \limninf \frac{ (n+1)^4 4 \cdot \cancel{4^n} \cancel{(n+1)} \cancel{n!} }{ \cancel{(n+1)} (n+1)^n} : \frac{n^4 \cancel{4^n} \cancel{n!} }{n^n} = \\
-& \limninf \frac{4 (n+1)^4 n^n}{n^4 (n+1)^n} = \\
-& \limninf 4 \underbrace{ \left( \frac{n+1}{n} \right)^4 }_{1} \underbrace{ \left( \frac{n}{n+1} \right)^n }_{e^{-1}} = \\
-& \frac{4}{e} \approx 1,4715
-\end{align}
-\end{subequations}
-
-El límite de D'Alembert existe, pero da un valor mayor a 1. Por lo tanto, la sucesión diverge a $ +\infty $. Esto demuestra que el numerador crece más rápido que el denominador, pese a que este último es $ n^n $.
-
-\begin{equation}
-\hresult{11.j}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
-\end{equation}
-
-\sectionx{12}
-
-\textbf{En cada caso, la sucesión $ a_n $ se encuentra sujeta a las condiciones indicadas. Analizar la existencia de límite, y en caso afirmativo, calcularlo.}
-
-\begin{enumerate}[label=(\alph*)]
-
-\bfseries
-
-\item $ 2 - \frac{3}{2^n} < 5 - 2 a_n \leq 1 + \sqrt[n]{4} $
-
-\item $ 0 < 3 a_n + 2 < \frac{2^n n!}{ n^{2n+1} } $
-
-\item $ \frac{1}{a_n} > \left( 1 + \frac{1}{n} \right)^{ n^2 } $
-
-\item $ 2 a_n + 6 > \frac{1}{ \sqrt[n]{n+1} - 1 } $
-
-\end{enumerate}
-
-\hrule
-
-\subsectionx{12.a}
-
-\begin{equation}
-2 - \frac{3}{2^n} < 5 - 2 a_n \leq 1 + \sqrt[n]{4}
-\end{equation}
-
-Se tiene una sucesión acotada inferior y superiormente, lo cual sugiere la posibilidad de aplicar el \textbf{Teorema del Sandwich}, a saber.
-
-Dadas tres sucesions $ a_n $, $ b_n $ y $ c_n $ tales que:
-
-\begin{equation}
-a_n \leq b_n \leq c_n, \text{ pctn }
-\end{equation}
-
-Entonces, si además se cumple que:
-
-\begin{equation}
-\limninf a_n = \limninf c_n = L
-\end{equation}
-
-Si se cumplen estas condiciones, entonces el teorema garantiza que:
-
-\begin{equation}
-\hresult{}{ \limninf b_n = L }
-\end{equation}
-
-Aclaración: las desigualdades entre las sucesiones pueden ser total o parcialmente estrictas. Vale decir, el teorema vale para los casos $ a_n < b_n \leq  $, $ a_n \leq b_n < c_n $ y demás combinaciones.
-
-Volviendo a este caso en particular, restando 5 miembro a miembro resulta:
-
-\begin{equation}
--3 - \frac{3}{2^n} < -2 a_n \leq -4 + (4)^{ \frac{1}{n} }
-\end{equation}
-
-Multiplicando miembro a miembro por $ -\frac{1}{2} $, lo cual invierte el sentido de las desigualdades, se obtiene que:
-
-\begin{equation}
-\frac{3}{2} + \frac{3}{2^{n+1}} > a_n \geq 2 - \frac{1}{2} (4)^{ \frac{1}{n} }
-\end{equation}
-
-Tomando el límite miembro a miembro:
-
-\begin{subequations}
-\begin{align}
-& \limninf \frac{3}{2} + \underbrace{ \frac{3}{2^{n+1}} }_{0} > \limninf a_n \geq \limninf 2 - \frac{1}{2} \underbrace{ (4)^{ \frac{1}{n} } }_{1} \\
-& \frac{3}{2} > \limninf a_n \geq 2 - \frac{1}{2} \\
-& \frac{3}{2} > \limninf a_n \geq \frac{3}{2} \\
-\end{align}
-\end{subequations}
-
-Dado que se satisfacen las condiciones del teorema del sandwich, es posible concluir que:
-
-\begin{equation}
-\hresult{12.a}{ \limninf a_n = \frac{3}{2} }
-\end{equation}
-
-\subsectionx{12.b}
-
-\begin{equation}
-0 < 3 a_n + 2 < \frac{2^n n!}{ n^{2n+1} }
-\end{equation}
-
-Nuevamente la situación se presta para aplicar el teorema del sandwich. Restando 2 miembro a miembro:
-
-\begin{equation}
--2 < 3 a_n < -2 + \frac{2^n n!}{ n^{2n+1} }
-\end{equation}
-
-Multiplicando por $ \frac{1}{3} $ miembro a miembro:
-
-\begin{equation}
--\frac{2}{3} < a_n < -\frac{2}{3} + \frac{1}{3} \frac{2^n n!}{ n^{2n+1} }
-\end{equation}
-
-Tomando límite miembro a miembro, la única incógnita es qué pasa con esta expresión:
-
-\begin{equation}
-b_n = \frac{2^n n!}{n^{2n+1}}
-\end{equation}
-
-Aplicando el criterio de D'Alembert:
-
-\begin{subequations}
-\begin{align}
-& \limninf \left| \frac{b_{n+1}}{b_n} \right| = \\
-& \limninf \left| \frac{ 2^{n+1} (n+1)! }{ (n+1)^{2(n+1)+1} } : \frac{ 2^n n! }{ n^{ 2n+1 } } \right| = \\
-& \limninf \frac{ 2 \cdot \cancel{2^n} \cancel{(n+1)} \cancel{n!} }{ \cancel{(n+1)}(n+1)(n+1)^{2n+1} } : \frac{ \cancel{2^n} \cancel{n!} }{ n^{2n+1} } = \\
-& \limninf \frac{2}{n+1} \left( \frac{n}{n+1} \right)^{2n+1} = \\
-& \limninf \frac{2}{n+1} \left[ e^{ \ln\left( \frac{n}{n+1} \right) } \right]^{2n+1} = \\
-& \limninf \frac{2}{n+1} e^{ (2n+1) \ln\left( 1 - \frac{1}{n+1} \right) } = \\
-& \limninf \frac{2}{n+1} e^{ (2n+1) \frac{-1}{n+1} } = \\
-& \limninf \frac{2 e^{-2} }{n+1} = 0
-\end{align}
-\end{subequations}
-
-El límite de D'Alembert existe y es cero. Por ende, $ b_n $ converge a cero. Volviendo a las desigualdades originales:
-
-\begin{equation}
--\frac{2}{3} < \limninf a_n < -\frac{2}{3}
-\end{equation}
-
-Esto satisface las condiciones del teorema del sandwich, y por lo tanto se concluye que:
-
-\begin{equation}
-\hresult{12.b}{ \limninf a_n = -\frac{2}{3} }
-\end{equation}
-
-\subsectionx{12.c}
-
-\begin{equation}
-\frac{1}{a_n} > \left( 1 + \frac{1}{n} \right)^{ n^2 }
-\end{equation}
-
-En este caso, no se sabe el signo de $ a_n $, por lo que no es conveniente multiplicar miembro a miembro por $ a_n $, o elevar a la -1 miembro a miembro. Tomando límite miembro a miembro a modo exploratorio, resulta:
-
-\begin{subequations}
-\begin{align}
-& \limninf \frac{1}{a_n} > \limninf \left( 1 + \frac{1}{n} \right)^{ n^2 } \\
-& \limninf \frac{1}{a_n} > \limninf \left[ \underbrace{ \left( 1 + \frac{1}{n} \right)^n }_e \right]^n \\
-& \limninf \frac{1}{a_n} > +\infty
-\end{align}
-\end{subequations}
-
-Llegado este punto, para que se cumpla esta desigualdad, $ a_n $ tiene que tender a cero por derecha.
-
-\begin{equation}
-\hresult{12.c}{ \limninf a_n = 0^{+} }
-\end{equation}
-
-\subsectionx{12.d}
-
-\begin{equation}
-2 a_n + 6 > \frac{1}{ \sqrt[n]{n+1} - 1 }
-\end{equation}
-
-Esta es una situación similar a la del inciso anterior. Mirando el lado derecho cuando $ n \rightarrow +\infty $, la expresión de interés es:
-
-\begin{subequations}
-\begin{align}
-& b_n = (n+1)^{ \frac{1}{n} } \Rightarrow \\
-& \limninf b_n = \\
-& \limninf (n+1)^{ \frac{1}{n} } = \\
-& \limninf [ e^{ \ln(n+1) } ]^{ \frac{1}{n} } = \\
-& \limninf e^{ \frac{\ln(n+1)}{n} } = e^{0^+} = 1^{+}
-\end{align}
-\end{subequations}
-
-Volviendo a la desigualdad:
-
-\begin{subequations}
-\begin{align}
-& \limninf 2 a_n + 6 > \frac{1}{ 1^{+} - 1 } \\
-& \limninf 2 a_n + 6 > +\infty \\
-& \limninf 2 a_n > +\infty - 6 \\
-& \limninf 2 a_n > +\infty \\
-& \limninf a_n > \frac{+\infty}{2} \\
-& \limninf a_n > +\infty
-\end{align}
-\end{subequations}
-
-Para que se cumpla la desigualdad, $ a_n $ tiene que diverger a $ +\infty $.
-
-\begin{equation}
-\hresult{12.d}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
-\end{equation}
-
-\subsectionx{13}
-
-\textbf{ Dada la sucesión $1, 3, 5, 7, 7, 5, 3, 1, 1, 3, 5, 7, \dots $, escribir el término general de $ a_{2n}, a_{4n} $ y $ a_{8n-3} $. Encontrar dos subsucesiones convergentes. }
-
-\hrule
-\vspace{1em}
-
-En este caso particular, se tiene una sucesión definida a partir de un patrón fijo que se repite. Dado que dicho patrón es relativamente chico, con 8 elementos, o en otras palabras la sucesión es periódica con período $ N = 8 $, una forma práctica de definir el término general es usando aritmética modular. Por ejemplo, $ a_1 = a_9 = a_{17} = \dots = a_{8k-7}, k \in \mathbb{N} $. Otra forma práctica de caracterizar los índices de estos valores es que son todos los naturales tales que el resto de su división entera por 8 da 1. Haciendo esto para resto 2, 3, $ \dots $, 7, se puede definir toda la sucesión.
-
-\begin{equation}
-a_n = 
-	\begin{cases}
-		1 & \text{ si } n \equiv 1 \mod 8 \\
-		3 & \text{ si } n \equiv 2 \mod 8 \\
-		5 & \text{ si } n \equiv 3 \mod 8 \\
-		7 & \text{ si } n \equiv 4 \mod 8 \\
-		7 & \text{ si } n \equiv 5 \mod 8 \\
-		5 & \text{ si } n \equiv 6 \mod 8 \\
-		3 & \text{ si } n \equiv 7 \mod 8 \\
-		1 & \text{ si } n \equiv 0 \mod 8
-	\end{cases}
-\end{equation}
-
-Nótese que este mecanismo utilizando el resto de la división entera puede generalizarse para expresar cualquier sucesión definida como un patrón periódico de valores fijos.
-
-Volviendo a lo que pide el enunciado, considérse $ a_{2n} $. Observando los valores:
-
-\begin{equation}
-a_{2n} = \{ a_2, a_4, a_6, a_8, a_10, a_12, a_14, \dots \} = \{ 3, 7, 5, 1, 3, 7, 5, \dots \}
-\end{equation}
-
-Nuevamente se tiene un patrón que se repite, pero con período 4. Por lo tanto, una forma posible de expresar $ a_{2n} $ es la siguiente.
-
-\begin{equation}
-\hresult{13.i}{
-a_{2n} = 
-	\begin{cases}
-		3 & \text{ si } n \equiv 1 \mod 4 \\
-		7 & \text{ si } n \equiv 2 \mod 4 \\
-		5 & \text{ si } n \equiv 3 \mod 4 \\
-		1 & \text{ si } n \equiv 0 \mod 4
-	\end{cases}
-}
-\end{equation}
-
-Para el caso de $ a_{4n} $, los valores son:
-
-\begin{equation}
-a_{4n} = \{ a_4, a_8, a_12, a_16, a_20, \dots \} = \{ 7, 1, 7, 1, 7, \dots \}
-\end{equation}
-
-\begin{equation}
-\hresult{13.ii}{
-a_{4n} = 
-	\begin{cases}
-		7 & \text{ si } n \equiv 1 \mod 2 \text{ (n impar) } \\
-		1 & \text{ si } n \equiv 0 \mod 2 \text{ (n par) }
-	\end{cases}
-}
-\end{equation}
-
-Una forma de ver $ a_{2n} $ y $ a_{4n} $ es como muestreos de $ a_{n} $. En el primero, en lugar de tomar valores con frecuencia 1, se toma con el doble. Por eso el período pasa de 8 a 4: duplicar la frecuencia equivale a dividir el período por 2. Aplicando esto de nuevo al pasar a $ a_{4n} $, se toman valores con el cuádruple de frecuencia, y el período se reduce a 2: cuadruplicar la frecuencia equivale a dividir el período por 4.
-
-Finalmente, considérese el caso de $ a_{8n-3} $. Una forma directa de analizar esto a priori es considerar que se toman múltiplos de 8 y se les resta 3. El primer valor es 5, que tiene resto 5 al dividir por 8. El segundo valor es 13, que también tiene resto 5. Al restarle 3 a los múltiplos de 8, se obtienen los números que divididos por 8 dan resto 5. En el término general de $ a_n $, eso es 7 para todo $ n $. Esto puede confirmarse observando los valores de $ a_5, a_13 $ y demás.
-
-\begin{equation}
-\hresult{13.iii}{ a_{8n-3} = 7 }
-\end{equation}
-
-Por último, se pide hallar dos subsucesiones convergentes. Como se observó al analizar $ a_{8n-3} $, restando constantes a los múltiplos de 8 se obtienen subsucesiones constantes. Por lo tanto, dos subsucesiones que cumplen lo pedido son:
-
-\begin{equation}
-\hresult{13.iv}{ a_{8n-7} = 1, a_{8n-6} = 3 }
-\end{equation}
+%\maketitle
+%
+%\tableofcontents{}
+%
+%\newpage
+
+%\sectionx{1}
+%
+%\textbf{Escribir los primeros cinco términos de las siguientes sucesiones:}
+%
+%\begin{enumerate}[label=(\alph*)]
+%
+%\bfseries
+%
+%\item $ a_n = \frac{\sqrt{n}}{n+1} $
+%
+%\item $ b_n = \frac{2^{n-1}}{(2n-1)^3} $
+%
+%\item $ c_n = \frac{(-1)^{n+1}}{n!} $
+%
+%\item $ d_n = \frac{\cos(n\pi)}{n} $
+%
+%\end{enumerate}
+
+%\hrule
+%\vspace{1em}
+%
+%Evaluar el término $ a_i $ equivale a hacer $ n = i $ en la expresión del término general $ a_n $ y calcular el valor. En este caso, se piden $ a_1, a_2, \dots, a_5 $. Se asume la convención de que todas las sucesiones comienzan en $ n = 1 $.
+%
+%\subsectionx{1.a}
+%
+%\begin{equation}
+%a_n = \frac{\sqrt{n}}{n+1}
+%\end{equation}
+%
+%\begin{subequations}
+%\begin{align}
+%& \hresult{}{a_1 = \frac{1}{2} = 0,5000 } \\
+%& \hresult{}{a_2 = \frac{\sqrt{2}}{3} \approx 0,47140 } \\
+%& \hresult{}{a_3 = \frac{\sqrt{3}}{4} \approx 0,43301 } \\
+%& \hresult{}{a_4 = \frac{\sqrt{4}}{5} =  0,4000 } \\
+%& \hresult{}{a_5 = \frac{\sqrt{5}}{6} =  0,37268 }
+%\end{align}
+%\end{subequations}
+%
+%\subsectionx{1.b}
+%
+%\begin{equation}
+%b_n = \frac{2^{n-1}}{(2n-1)^3}
+%\end{equation}
+%
+%\begin{subequations}
+%\begin{align}
+%& \hresult{}{b_1 = \frac{2^0}{1^3} = \frac{1}{1} = 1,0000 } \\
+%& \hresult{}{b_2 = \frac{2^1}{3^3} = \frac{2}{27} \approx 0,074074 } \\
+%& \hresult{}{b_3 = \frac{2^2}{5^3} = \frac{4}{125} = 0,032000 } \\
+%& \hresult{}{b_4 = \frac{2^3}{7^3} = \frac{8}{343} \approx 0,023323 } \\
+%& \hresult{}{b_5 = \frac{2^4}{9^3} = \frac{16}{729} \approx 0,021948 }
+%\end{align}
+%\end{subequations}
+%
+%\subsectionx{1.c}
+%
+%\begin{equation}
+%c_n = \frac{(-1)^{n+1}}{n!}
+%\end{equation}
+%
+%\begin{subequations}
+%\begin{align}
+%& \hresult{}{c_1 = \frac{1}{1!} = \frac{1}{1} = 1,0000 } \\
+%& \hresult{}{c_2 = \frac{-1}{2!} = -\frac{1}{2} = 0,5000 } \\
+%& \hresult{}{c_3 = \frac{1}{3!} = \frac{1}{6} \approx 0,16667 } \\
+%& \hresult{}{c_4 = \frac{-1}{4!} = -\frac{1}{24} \approx -0,041667 } \\
+%& \hresult{}{c_5 = \frac{1}{5!} = \frac{1}{120} \approx 0,008333 }
+%\end{align}
+%\end{subequations}
+%
+%\subsectionx{1.d}
+%
+%\begin{equation}
+%d_n = \frac{\cos(n\pi)}{n}
+%\end{equation}
+%
+%\begin{subequations}
+%\begin{align}
+%& \hresult{}{d_1 = \frac{ \cos(\pi) }{1} = -\frac{1}{1} = -1,0000 } \\
+%& \hresult{}{d_2 = \frac{ \cos(2\pi) }{2} = \frac{1}{2} = 0,5000 } \\
+%& \hresult{}{d_3 = \frac{ \cos(3\pi) }{3} = -\frac{1}{3} \approx 0,33333 } \\
+%& \hresult{}{d_4 = \frac{ \cos(4\pi) }{4} = \frac{1}{4} = 0,25000 } \\
+%& \hresult{}{d_5 = \frac{ \cos(5\pi) }{5} = -\frac{1}{5} = 0,20000 0,008333 }
+%\end{align}
+%\end{subequations}
+%
+%\sectionx{2}
+%
+%\textbf{Para cada una de las siguientes sucesiones:}
+%
+%\begin{enumerate}[label=(\alph*)]
+%
+%\bfseries
+%
+%\item Encontrar el término 100 y el término 200 de cada una de ellas.
+%
+%\item Hallar, si es posible, el término general $ a_n $.
+%
+%\item Clasificar en convergentes o no convergentes.
+%
+%\end{enumerate}
+%
+%\begin{enumerate}[label=\textbf{(\roman*)}]
+%
+%\bfseries
+%
+%\item $ 1, 2, 3, 4, \dots $
+%
+%\item $ -1, -\frac{1}{2}, -\frac{1}{3}, -\frac{1}{4}, \dots $
+%
+%\item $ 1, -\frac{1}{2}, \frac{1}{3}, -\frac{1}{4}, \dots $
+%
+%\item $ \frac{1}{2}, -\frac{1}{4}, \frac{1}{8}, -\frac{1}{16}, \dots $
+%
+%\item $ -1, 2, -3, 4, \dots $
+%
+%\item $ 0, \frac{1}{2}, 0, \frac{1}{3}, 0, \frac{1}{4}, \dots $
+%
+%\item $ 1, -1, 1, -1, \dots $
+%
+%\item $ 2, \frac{3}{2}, \frac{4}{3}, \frac{5}{4}, \dots $
+%
+%\item $ 1, 1, \frac{1}{2}, 2, \frac{1}{3}, 3, \frac{1}{4}, \dots $
+%
+%\item $ a_1 = 1, a_{n+1} = 2a_n $
+%
+%\end{enumerate}
+%
+%\hrule
+%
+%\subsectionx{2.i}
+%
+%\begin{equation}
+%a_n = \{ 1, 2, 3, 4, \dots \}
+%\end{equation}
+%
+%Esta es la sucesión de los números naturales. El término general no es otra cosa que $n$.
+%
+%\begin{equation}
+%\hresult{2.i}{ a_n = n \Rightarrow a_{100} = 100, a_{200} = 200 }
+%\end{equation}
+%
+%El conjunto $ \{a_n, n \in \mathbb{N}\} $ no está acotado, y por ende la sucesión es \textbf{no convergente}.
+%
+%\subsectionx{2.ii}
+%
+%\begin{equation}
+%a_n = \left\{ -1, -\frac{1}{2}, -\frac{1}{3}, -\frac{1}{4}, \dots \right\}
+%\end{equation}
+%
+%Por inspección, el término general es:
+%
+%\begin{equation}
+%\hresult{2.ii}{ a_n = -\frac{1}{n} \Rightarrow a_{100} = -\frac{1}{100} = 0,01, a_{200} = -\frac{1}{200} = -0,005 }
+%\end{equation}
+%
+%Todos los elementos están entre -1 y 0, por lo que esta sucesión puede ser convergente. 
+%
+%Por definición:
+%
+%\begin{equation}
+%a_n \rightarrow L \Leftrightarrow \forall \epsilon > 0 \exists N / \forall n \geq N, |a_n - L| < \epsilon
+%\end{equation}
+%
+%En palabras, la sucesión $ a_n $ converge a un número real $ L $ si y sólo si para todo $ \epsilon $ real positivo, es posible hallar un entero $ N $ tal que para todo $ n \geq N $, el módulo de $ a_n - L $ es menor a $ \epsilon $.
+%
+%Para este caso particular, considérese primero la expresión $ |a_n - L| < \epsilon $. La sucesión parece converger a cero, por ende se plantea $ L = 0 $.
+%
+%\begin{equation}
+%\left| \frac{1}{n} - 0 \right| < \epsilon \Rightarrow \frac{1}{n} < \epsilon \Rightarrow n > \frac{1}{e}
+%\end{equation}
+%
+%Dado que al resolver la desigualdad para $ n $ se obtuvo $ n > \frac{1}{e} $, esto sugiere elegir $ N = \lceil \frac{1}{e} \rceil $.
+%
+%El próximo paso es verificar que para esa elección de $ N $, la condición $ \frac{1}{n} < \epsilon $ se satisface para todo $ n \geq N $.
+%
+%Si $ n \geq N \Rightarrow n \geq \lceil \frac{1}{\epsilon} \rceil $. Como son todos positivos, se puede invertir miembro a miembro, obteniendo:
+%
+%\begin{equation}
+%\frac{1}{n} \leq \frac{1}{\lceil \frac{1}{\epsilon} \rceil }
+%\end{equation}
+%
+%Quitar la función techo genera un numerador menor o igual, por ende es una cota superior válida.
+%
+%\begin{equation}
+%\frac{1}{n} \leq \frac{1}{\lceil \frac{1}{\epsilon} \rceil } \geq \frac{1}{\frac{1}{\epsilon}} = \epsilon 
+%\end{equation}
+%
+%Se demostró entonces que para esta elección de $ N $, $ |a_n - 0| $ está acotada para todo valor de $ \epsilon $. Por ende, \textbf{$ a_n $ converge a cero}.
+%
+%\subsectionx{2.iii}
+%
+%\begin{equation}
+%a_n = \left\{ 1, -\frac{1}{2}, \frac{1}{3}, -\frac{1}{4}, \dots \right\}
+%\end{equation}
+%
+%Es la misma sucesión del inciso anterior, pero sólo los términos de índice par son negativos. Para lograr esto, se puede introducir un factor $ (-1)^{n+1} $. Nótese que se introdujo un +1 porque sin eso, los términos de índice impar quedarían negativos, y se desea hacer eso para los de índice par.
+%
+%\begin{equation}
+%\hresult{2.iii}{ a_n = (-1)^{n+1} \frac{1}{n} \Rightarrow a_{100} = -\frac{1}{100} = -0,01, a_{200} = -\frac{1}{200} = -0,005 }
+%\end{equation}
+%
+%Al tomar el módulo, esta sucesión se convierte en $ \frac{1}{n} $, por ende \textbf{converge a cero}.
+%
+%\subsectionx{2.iv}
+%
+%\begin{equation}
+%a_n = \left\{ \frac{1}{2}, -\frac{1}{4}, \frac{1}{8}, -\frac{1}{16}, \dots \right\}
+%\end{equation}
+%
+%Al tener signo alternado, de nuevo hay un factor $ (-1)^{n+1} $, ya que los negativos son los de índice par. El numerador siempre es 1, y el denominador es la sucesión de potencias de 2.
+%
+%\begin{equation}
+%\hresult{2.iv}{ a_n = (-1)^{n+1} \frac{1}{2^n} \Rightarrow a_{100} = -\frac{1}{2^{100}}, a_{200} = -\frac{1}{2^{200}} }
+%\end{equation}
+%
+%En cuanto a la convergencia, al tomar módulo se tiene $ \frac{1}{2^n} $, que es término a término menor a $ \frac{1}{n} $. Esto permite utilizar la propiedad de que si una sucesión es menor término a término respecto a una sucesión convergente, entonces también converge. Por ende, $ a_n $ \textbf{converge a cero}.
+%
+%\subsectionx{2.v}
+%
+%\begin{equation}
+%a_n = \{ -1, 2, -3, 4, \dots \}
+%\end{equation}
+%
+%Es la sucesión de los naturales con un factor $ (-1)^n $. Como en este caso los negativos son los términos de índice impar, se usa $ (-1)^n $ en lugar de $ (-1)^{n+1} $.
+%
+%\begin{equation}
+%\hresult{2.v}{ a_n = (-1)^n n \Rightarrow a_{100} = 100, a_{200} = 200 }
+%\end{equation}
+%
+%Esta sucesión no está acotada, y por ende \textbf{no converge}.
+%
+%\subsectionx{2.vi}
+%
+%\begin{equation}
+%a_n = \left\{ 0, \frac{1}{2}, 0, \frac{1}{3}, 0, \frac{1}{4}, \dots \right\}
+%\end{equation}
+%
+%Cuando se tiene una sucesión con una forma clara para términos de índice impar y otra forma diferente para los de índice par, suele ser más práctico expresarla de la siguiente manera:
+%
+%\begin{subequations}
+%\begin{align}
+%& \hresult{2.vi}{ a_{2n-1} = 0 } \\
+%& \hresult{2.vi}{ a_{2n} = \frac{1}{n} } \\
+%& \hresult{2.vi}{ a_{100} = \frac{1}{50}, a_{200} = \frac{1}{100} }
+%\end{align}
+%\end{subequations}
+%
+%Nótese que el término general tiene una forma para los términos de índice par, $ a_{2n} $, y otra para los términos de índice impar: $ a_{2n-1} $.
+%
+%Para analizar la convergencia, se utiliza la propiedad de que si una sucesión converge, todas sus subsucesiones también, y al mismo valor. En este caso, una es una constante y la otra converge a cero. Dado que la constante coincide con cero, podemos afirmar que la sucesión completa \textbf{converge a cero}.
+%
+%\subsectionx{2.vii}
+%
+%\begin{equation}
+%a_n = \{ 1, -1, 1, -1, \dots \}
+%\end{equation}
+%
+%Es $ (-1)^{n+1} $, ya que los negativos son los de índice par.
+%
+%\begin{equation}
+%\hresult{2.viii}{ a_n = (-1)^{n+1} \Rightarrow a_{100} = a_{200} = -1 }
+%\end{equation}
+%
+%Esta sucesión está acotada, pero no converge. Si se toma la subsucesión de índices pares, es la constante -1. Y si se toma la subsucesión de índices impares, es la constante 1. Es en este punto donde se aplica la propiedad de que si dos subsucesiones convergen a distintos valores, la sucesión completa \textbf{no converge}.
+%
+%\subsectionx{2.viii}
+%
+%\begin{equation}
+%a_n = \left\{ 2, \frac{3}{2}, \frac{4}{3}, \frac{5}{4}, \dots \right\}
+%\end{equation}
+%
+%Por inspección, el numerador es $ n+1 $ y el denominador es $ n $.
+%
+%\begin{equation}
+%a_n = \frac{n+1}{n} \Rightarrow a_{100} = \frac{101}{100}, a_{200} = \frac{201}{200}
+%\end{equation}
+%
+%Para valores grandes de $ n $, el +1 del numerador es despreciable, por lo que queda $ \frac{n}{n} $ y puede intuirse que esta sucesión converge a 1. Aplicando la definición, considérese:
+%
+%\begin{subequations}
+%\begin{align}
+%& \left| \frac{n+1}{n} - 1 \right| < \epsilon \\
+%& \left| \frac{n+1-n}{n} \right| < \epsilon \\
+%& \frac{1}{n} < \epsilon
+%\end{align}
+%\end{subequations}
+%
+%No es necesario continuar, porque demostrar esta convergencia es equivalente a demostrar la de $ \frac{1}{n} $, y eso ya se hizo. Conclusión: la sucesión \textbf{converge a 1}.
+%
+%\subsectionx{2.ix}
+%
+%\begin{equation}
+%a_n = \left\{ 1, 1, \frac{1}{2}, 2, \frac{1}{3}, 3, \frac{1}{4}, \dots \right\}
+%\end{equation}
+%
+%Nuevamente, hay una subsucesión para los índices pares y otra para los impares. Una forma cómoda de expresar esto es la ya vista:
+%
+%\begin{subequations}
+%\begin{align}
+%& \hresult{2.ix}{ a_{2n-1} = n } \\
+%& \hresult{2.ix}{ a_{2n} = \frac{1}{n} } \\
+%& \hresult{2.ix}{ a_{100} = \frac{1}{50}, a_{200} = \frac{1}{100} }
+%\end{align}
+%\end{subequations}
+%
+%En cuanto a la convergencia, se utilizará la propiedad de que si una subsucesión no converge, la sucesión completa no converge. En este caso, la sucesión de índices impares no converge, por ende no hace falta analizar la otra para concluir que la sucesión completa \textbf{no converge}.
+%
+%\subsectionx{2.x}
+%
+%Observando los valores de los primeros términos, se obtiene:
+%
+%\begin{equation}
+%a_n = \{ 1, 2, 4, 8, 16, \dots... \}
+%\end{equation}
+%
+%Son las potencias de dos comenzando en el exponente cero. Por lo tanto:
+%
+%\begin{equation}
+%\hresult{2.x}{ a_n = 2^{n-1} \Rightarrow a_{100} = 2^{99}, a_{200} = 2^{199} }
+%\end{equation}
+%
+%Esta sucesión no está acotada, por lo cual \textbf{no converge}.
+%
+%\sectionx{3}
+%
+%\textbf{Hallar un valor de $ n \in \mathbb{N} $ a partir del cual haya certeza de que: }
+%
+%\begin{enumerate}[label=(\alph*)]
+%
+%\bfseries
+%
+%\item $ n^2 - 5n - 8 $ sea mayor que \textbf{(i)} 10 y \textbf{(ii)} 1000.
+%
+%\item $ 2^n - 100 $ sea mayor que \textbf{(i)} 10 y \textbf{(ii)} 1000.
+%
+%\item $ \frac{(-1)^n}{n+1} + 2 $ esté entre \textbf{(i)} 1,9 y 2,1 y \textbf{(ii)} 1,999 y 2,001.
+%
+%\item $ \frac{\sin n}{n} $ esté entre \textbf{(i)} -0,1 y 0,1 y \textbf{(ii)} -0,001 y 0,001.  
+%
+%\end{enumerate}
+%
+%\hrule
+%
+%\subsectionx{3.a}
+%
+%Sea el caso general:
+%
+%\begin{equation}
+%n^2 - 5n -8 > k \Leftrightarrow n^2 - 5n -8 - k > 0
+%\end{equation}
+%
+%En este punto, conviene expresar la función cuadrática en forma factorizada según sus raíces $ x_1 $ y $ x_2 $. Nótese que para este análisis se usa una función de variable continua y no una sucesión, pero dado que el análisis vale para todo $ x $ real, vale para el subconjunto de los valores de la sucesión.
+%
+%\begin{equation}
+%x^2 - 5x -8 - k = (x-x_1) (x-x_2)
+%\end{equation}
+%
+%Aplicando la fórmula de las raíces:
+%
+%\begin{equation}
+%x_1, x_2 = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2a} = \frac{5 \pm \sqrt{25 - 4 (-8-k)}}{2} = \frac{5 \pm \sqrt{57 + 4k}}{2}
+%\end{equation}
+%
+%Para k = 10, resulta:
+%
+%\begin{subequations}
+%\begin{align}
+%& x_1 = \frac{5+\sqrt{97}}{2} \approx 7,4244 \\
+%& x_2 = \frac{5-\sqrt{97}}{2} \approx -2,4244
+%\end{align}
+%\end{subequations}
+%
+%Dado que $ f(x) = (x-x_1) (x-x_2) $ y se está buscando los valores de $ x $ para los que $ f(x) $ es positiva, hay dos escenarios.
+%
+%Caso 1: ambos factores del producto positivos.
+%
+%\begin{equation}
+%x > x_1 \wedge x > x_2 \Rightarrow x > \mathop{\text{max}}(x_1, x_2) \Rightarrow x > 7,4244
+%\end{equation}
+%
+%Caso 2: ambos factores del producto negativos.
+%
+%\begin{equation}
+%x < x_1 \wedge x < x_2 \Rightarrow x < \mathop{\text{min}}(x_1, x_2) \Rightarrow x < -2,4244
+%\end{equation}
+%
+%Volviendo a los números naturales, el intervalo negativo no interesa. Y para el caso positivo, el primer entero mayor a $ x_1 $ es 8. Por ende, se obtiene:
+%
+%\begin{equation}
+%\hresult{3.a.i}{ k = 10 \Rightarrow n \geq 8 }
+%\end{equation}
+%
+%Repitiendo este análisis para $ k = 1000 $, se obtiene:
+%
+%\begin{equation}
+%\hresult{3.a.ii}{ k = 1000 \Rightarrow n \geq 35 }
+%\end{equation}
+%
+%\subsectionx{3.b}
+%
+%Nuevamente, analizando de manera general:
+%
+%\begin{subequations}
+%\begin{align}
+%& 2^n - 100 > k \\
+%& 2^n > k + 100 \\
+%& \log_2( 2^n ) > \log_2( k + 100 ) \\
+%& n > \log_2( k + 100 )
+%\end{align}
+%\end{subequations}
+%
+%Para los valores solicitados de $ k $, resulta:
+%
+%\begin{subequations}
+%\begin{align}
+%& \hresult{3.b.i}{ k = 10 \Rightarrow n \geq 7 } \\
+%& \hresult{3.b.ii}{ k = 1000 \Rightarrow n \geq 11 }
+%\end{align}
+%\end{subequations}
+%
+%\subsectionx{3.c}
+%
+%En este caso hay una cota superior y otra inferior, lo cual dificulta el análisis genérico. Para el primer caso:
+%
+%\begin{subequations}
+%\begin{align}
+%& 1,9 < \frac{(-1)^n}{n+1} + 2 < 2,1 \\
+%& -0,1 < \frac{(-1)^n}{n+1} < 0,1
+%\end{align}
+%\end{subequations}
+%
+%Llegado este punto, nótese que las cotas son el mismo valor pero con distinto signo. Por lo tanto, las desigualdades pueden simplificarse en una sola utilizando la siguiente propiedad de la función módulo:
+%
+%\begin{equation}
+%|x| < a, a > 0 \Leftrightarrow -a < x < a
+%\end{equation}
+%
+%Para este caso, se obtiene:
+%
+%\begin{subequations}
+%\begin{align}
+%& \left| \frac{(-1)^n}{n+1} \right| < 0,1 \\
+%& \frac{1}{n+1} < 0,1 \\
+%& 1 < 0,1 (n+1) \\
+%& \hresult{3.c.i}{ n \geq 10 }
+%\end{align}
+%\end{subequations}
+%
+%Haciendo el mismo análisis para el segundo caso:
+%
+%\begin{equation}
+%\hresult{3.c.ii}{ n \geq 1000 }
+%\end{equation}
+%
+%\subsectionx{3.d}
+%
+%Aunque de nuevo haya dos desigualdades, es posible explotar las propiedades de la función seno para hacer un análisis genérico.
+%
+%\begin{subequations}
+%\begin{align}
+%& -k < \frac{\sin n}{n} < k \\
+%& -k n < \sin n < k n
+%\end{align}
+%\end{subequations}
+%
+%La función seno está acotada entre -1 y 1, por ende debe satisfacerse:
+%
+%\begin{subequations}
+%\begin{align}
+%& -k n \leq -1 \Rightarrow n \geq \frac{1}{k} \\
+%& k n \geq 1 \Rightarrow n \geq \frac{1}{k}
+%\end{align}
+%\end{subequations}
+%
+%Finalmente:
+%
+%\begin{subequations}
+%\begin{align}
+%& \hresult{3.d.i}{ k = 0,1 \Rightarrow n \geq 10 } \\
+%& \hresult{3.d.ii}{ k = 0,001 \Rightarrow n \geq 1000 }
+%\end{align}
+%\end{subequations}
+%
+%\sectionx{4}
+%
+%\textbf{ Considerar la sucesión $ a_n = \frac{n+1}{n-1000,2} $. A partir de que $ \limninf a_n = 1 $, responder cuáles de las siguientes afirmaciones son verdaderas, justificando en cada caso. }
+%
+%\begin{enumerate}[label=(\alph*)]
+%
+%\bfseries
+%
+%\item Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n > 0 $.
+%
+%\item Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n > \frac{1}{2} $.
+%
+%\item Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n < 1 $.
+%
+%\item Existe un $ n \in \mathbb{N} $ para el cual $ a_n = 1 $.
+%
+%\item La sucesión $ a_n $ está acotada.
+%
+%\end{enumerate}
+%
+%\textbf{ Escribir las afirmaciones que correspondan con la nomenclatura pctn. }
+%
+%\vspace{1em}
+%\hrule
+%\vspace{1em}
+%
+%La nomenclatura pctn significa ``para casi todo n'', y se usa para indicar propiedades que se cumplen para todos los valores naturales excepto una cantidad finita de valores. Por ejemplo, se puede decir que la sucesión $ a_n = n-3 $ es mayor a cero pctn, dado que sólo es negativa o cero para $ n = 1, n=2 $ y $n=3$.
+%
+%De manera más formal y general, un predicado $P(n)$, donde $P:\mathbb{N} \rightarrow {F, V}$ se cumple pctn si y sólo el conjunto $ \{ P(n), n \in \mathbb{N} / P(n) = F  \} $ es acotado.
+%
+%\subsectionx{4.a}
+%
+%Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n > 0 $.
+%
+%Esta afirmación es equivalente a decir que $ a_n > 0 $ pctn. A priori, cabe esperar que esto sea \textbf{verdadero}, ya que al ser 1 el límite, a partir de cierto $ n $ los valores estarán concentrados alrededor de 1. Una forma de verificar esto es ver para qué valores de $ n $ resulta $ a_n $ positiva.
+%
+%\begin{equation}
+%\frac{n+1}{n-1000, 2} > 0
+%\end{equation}
+%
+%El numerador es siempre positivo, por ser $ n $ natural. Por lo tanto, para que el cociente sea positivo, debe ser el denominador positivo también. Ergo:
+%
+%\begin{equation}
+%n-1000,2 > 0 \Rightarrow n > 1000,2 \Rightarrow n \geq 1001
+%\end{equation}
+%
+%\begin{equation}
+%\hresult{4.a}{ \textbf{(V)} a_n > 0 \text{ pctn, dado que } a_n > 0 \text{ para } n \geq 1001 }
+%\end{equation}
+%
+%\subsectionx{4.b}
+%
+%Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n > \frac{1}{2} $.
+%
+%De manera análoga al inciso anterior, al ser el límite 1, cabe esperar que haya infinitos valores de $ a_n $ en la vecindad de 1. para confirmar esto, se analizará para qué valores de $ n $ se cumple que $ a_n $ es mayor a $ \frac{1}{2} $.
+%
+%\begin{subequations}
+%\begin{align}
+%& \frac{n+1}{n-1000,2} > \frac{1}{2} \\
+%& \frac{2(n+1)}{n-1000,2} > 1 \\
+%& \frac{2n+2}{n-1000,2} - 1 > 0 \\
+%& \frac{2n+2-(n-1000,2)}{n-1000,2} > 0 \\
+%& \frac{n+1002,2}{n-1000,2} > 0
+%\end{align}
+%\end{subequations}
+%
+%El numerador siempre es positivo, por ende el denominador tiene que serlo. Esto conduce nuevamente a $ a_n \geq 1001 $. Ergo:
+%
+%\begin{equation}
+%\hresult{4.b}{ \textbf{(V)} a_n > \frac{1}{2} \text{ pctn, dado que } a_n > \frac{1}{2} \text{ para } n \geq 1001 }
+%\end{equation}
+%
+%\subsectionx{4.c}
+%
+%Existe un $ n \in \mathbb{N} $ a partir del cual $ a_n < 1 $.
+%
+%En este caso, cabe esperar que la afirmación sea falsa, ya que al ser el numerador siempre mayor que el denominador, el cociente $ a_n $ tiende a 1 ``por arriba''. Formalmente:
+%
+%\begin{subequations}
+%\begin{align}
+%& \frac{n+1}{n-1000,2} < 1 \\
+%& \frac{n+1}{n-1000,2} - 1 < 0 \\
+%& \frac{n+1-(n-1000,2)}{n-1000,2} < 0 \\
+%& \frac{1001,2}{n-1000,2} < 0 \\
+%& n < 1000,2 \\
+%& n \leq 1000
+%\end{align}
+%\end{subequations}
+%
+%\begin{equation}
+%\hresult{4.c}{ \textbf{(F)} a_n < 1 \text{ sólo para } n \leq 1000 (a_n \geq 1 \text{ pctn}) }
+%\end{equation}
+%
+%\subsectionx{4.d}
+%
+%Existe un $ n \in \mathbb{N} $ para el cual $ a_n = 1 $.
+%
+%En este caso, el límite nunca se alcanza, ni en el infinito ni en valores particulares. Téngase en cuenta que sí puede ocurrir que el límite sea 1 y el valor 1 se alcance. Por ejemplo, para la sucesión constante $ a_n = 1 $. Pero volviendo a este caso:
+%
+%\begin{subequations}
+%\begin{align}
+%& \frac{n+1}{n-1000,2} = 1 \\
+%& n+1 = n-1000,2 \\
+%& 1 = -1000,2
+%\end{align}
+%\end{subequations}
+%
+%\begin{equation}
+%\hresult{4.d}{ \textbf{(F)} \text{ No existe valor de } n \text{ natural que satisfaga } a_n = 1 }
+%\end{equation}
+%
+%\subsectionx{4.e}
+%
+%La sucesión $ a_n $ está acotada.
+%
+%Que una sucesión esté acotada es una condición necesaria para que sea convergente. Por ende, que el límite exista y sea finito implica que $ a_n $ está acotada.
+%
+%\begin{equation}
+%\hresult{4.e}{ (V) a_n \text{ convergente } \Rightarrow a_n \text{ acotada. } }
+%\end{equation}
+%
+%\sectionx{5}
+%
+%\textbf{Calcular, si existe, el límite de las siguientes sucesiones. En cada caso, explicar las propiedades utilizadas para obtener la respuesta.}
+%
+%\begin{enumerate}[label=(\alph*)]
+%
+%\bfseries
+%
+%\item $ a_n = \frac{-4n^3 + 2n^2 - 3n -1}{5n^2 + 4} $
+%
+%\item $ a_n = \frac{7n^3-5}{n+3} $
+%
+%\item $ a_n = \frac{\sqrt{n^3}+2}{n^2-1} $
+%
+%\item $ a_n = \sqrt{ \frac{2n^2-1}{3n^2+2} } $
+%
+%\item $ a_n = \frac{4n^2 + 3}{3n^2 + 4000} $
+%
+%\item $ a_n = \frac{-n}{\sqrt{n^2-n}+n} $
+%
+%\item $ a_n = \{ 3, \frac{4}{3}, \frac{5}{2}, \frac{8}{5}, \frac{7}{3}, \frac{16}{9}, \frac{9}{4}, \frac{32}{17}, \frac{11}{5}, \frac{64}{33}, \dots \} $
+%
+%\item $ a_n = \{ 1, 1 + \frac{1}{2}, 1 + \frac{1}{2} + \frac{1}{4}, \dots \} $
+%
+%\end{enumerate}
+%
+%\hrule
+%
+%\subsectionx{5.a}
+%
+%\begin{equation}
+%a_n = \frac{-4n^3 + 2n^2 - 3n -1}{5n^2 + 4}
+%\end{equation}
+%
+%Al evaluar expresiones polinómicas en el infinito, se descartan todos los términos excepto el de mayor grado. Esto es porque al estar asociado a la potencia más alta, para valores grandes de $ n $, los demás términos serán despreciables en comparación. Para este caso:
+%
+%\begin{equation}
+%\limninf \frac{-4n^3 + 2n^2 - 3n -1}{5n^2 + 4} = \limninf \frac{-4n^3}{5n^2} = \limninf -\frac{4}{5} n
+%\end{equation}
+%
+%Se adoptará la convención de que los límites infinitos no existen, y se informará hacia dónde diverge la sucesión en dichos casos.
+%
+%\begin{equation}
+%\hresult{5.a}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } -\infty }
+%\end{equation}
+%
+%\subsectionx{5.b}
+%
+%\begin{equation}
+%a_n = \frac{7n^3-5}{n+3}
+%\end{equation}
+%
+%\begin{equation}
+%\limninf \frac{7n^3-5}{n+3} = \limninf \frac{7n^3}{n} = \limninf 7n^2
+%\end{equation}
+%
+%\begin{equation}
+%\hresult{5.a}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+%\end{equation}
+%
+%\subsectionx{5.c}
+%
+%\begin{equation}
+%a_n = \frac{\sqrt{n^3}+2}{n^2-1}
+%\end{equation}
+%
+%Estrictamente hablando, el numerador no es una expresión polinómica porque hay un exponente fraccionario. De todas maneras, de manera más general, si se tiene una suma de potencias, al evaluar en el infinito, se puede descartar todos los términos excepto el de mayor exponente. En este caso:
+%
+%\begin{equation}
+%\limninf \frac{\sqrt{n^3}+2}{n^2-1} = \limninf \frac{n^{\frac{3}{2}} +2}{n^2-1} = \limninf \frac{n^{\frac{3}{2}}}{n^2} = \limninf n^{-\frac{1}{2}} = \limninf \sqrt{\frac{1}{n}}
+%\end{equation}
+%
+%Ya se ha demostrado que $ \limninf \frac{1}{n} = 0	 $. Al tomar la raíz cuadrada, se tiene una sucesión que es término a término menor que $ \frac{1}{n} $. Por ende, es convergente, y en este caso al mismo valor.
+%
+%\begin{equation}
+%\hresult{5.c}{\limninf a_n = 0}
+%\end{equation}
+%
+%\subsectionx{5.d}
+%
+%\begin{equation}
+%a_n = \sqrt{ \frac{2n^2-1}{3n^2+2} }
+%\end{equation}
+%
+%De manera similar al caso anterior, aunque no se tenga un cociente de polinomios, el argumento de la raíz cuadrada sí lo es y pueden despreciarse los términos de menor grado.
+%
+%\begin{equation}
+%\limninf \sqrt{ \frac{2n^2-1}{3n^2+2} } = \limninf \sqrt{ \frac{2n^2}{3n^2} } = \limninf \sqrt{\frac{2}{3}} = \sqrt{\frac{2}{3}} = \sqrt{\frac{2}{3}} \frac{\sqrt{3}}{\sqrt{3}} = \frac{\sqrt{6}}{3}
+%\end{equation}
+%
+%\begin{equation}
+%\hresult{5.d}{\limninf a_n = \frac{\sqrt{6}}{3}}
+%\end{equation}
+%
+%\subsectionx{5.e}
+%
+%\begin{equation}
+%a_n = \frac{4n^2 + 3}{3n^2 + 4000}
+%\end{equation}
+%
+%\begin{equation}
+%\limninf \frac{4n^2 + 3}{3n^2 + 4000} = \limninf \frac{4n^2}{3n^2} = \frac{4}{3}
+%\end{equation}
+%
+%\begin{equation}
+%\hresult{5.e}{\limninf a_n = \frac{4}{3}}
+%\end{equation}
+%
+%\subsectionx{5.f}
+%
+%\begin{equation}
+%a_n = \frac{-n}{\sqrt{n^2-n}+n}
+%\end{equation}
+%
+%Esta expresión tampoco es un polinomio. Pero dentro de la raíz cuadrada, sí hay un polinomio. Para valores muy grandes de $ n $, $ n $ es despreciable comparado con $ n^2 $. Por lo tanto:
+%
+%\begin{equation}
+%\limninf \frac{-n}{\sqrt{n^2-n}+n} = \limninf \frac{-n}{\sqrt{n^2}+n}
+%\end{equation}
+%
+%Siendo n natural, es siempre positivo y por ende vale cancelar la raíz con el cuadrado de manera directa.
+%
+%\begin{equation}
+%\limninf \frac{-n}{\sqrt{n^2}+n} = \limninf \frac{-n}{n+n} = \limninf \frac{-n}{2n} = -\frac{1}{2}
+%\end{equation}
+%
+%\begin{equation}
+%\hresult{5.f}{\limninf a_n = -\frac{1}{2}}
+%\end{equation}
+%
+%\subsectionx{5.g}
+%
+%\begin{equation}
+%a_n = \left\{ 3, \frac{4}{3}, \frac{5}{2}, \frac{8}{5}, \frac{7}{3}, \frac{16}{9}, \frac{9}{4}, \frac{32}{17}, \frac{11}{5}, \frac{64}{33}, \dots \right\}
+%\end{equation}
+%
+%Hay una subsucesión para los índices impares, y otra para los pares. Por observación, la primera tiene los números impares empezando en 3 el numerador, y $ n $ en el denominador.
+%
+%\begin{equation}
+%a_{2n-1} = \frac{2n+1}{n}
+%\end{equation}
+%
+%En cuanto a la sucesión de índices pares, el numerador es siempre una potencia de dos, empezando en 4. Y el denominador es la potencia anterior a la del numerador, sumándole 1.
+%
+%\begin{equation}
+%a_{2n} = \frac{2^{n+1}}{2^n + 1}
+%\end{equation}
+%
+%Una propiedad ya mencionada es que si una sucesión converge a un valor, todas sus subsucesiones convergen a ese mismo valor. Recíprocamente, si se consideran subsucesiones que conforman la sucesión completa, como es el caso de índices pares e impares, si ambas convergen a un mismo valor, ése será necesariamente el límite de la sucesión completa. En este caso particular:
+%
+%\begin{equation}
+%\limninf a_{2n-1} = \limninf \frac{2n+1}{n} = \limninf \frac{2n}{n} = 2
+%\end{equation}
+%
+%\begin{equation}
+%\limninf a_{2n} = \limninf \frac{2^{n+1}}{2^n+1} = \limninf \frac{2^{n+1}}{2^n} = 2
+%\end{equation}
+%
+%Nótese que en el cálculo del segundo límite se descartó el 1 del denominador porque es despreciable comparado con $ 2^n $. Finalmente, resulta:
+%
+%\begin{equation}
+%\hresult{5.g}{\limninf a_n = 2}
+%\end{equation}
+%
+%\subsectionx{5.h}
+%
+%\begin{equation}
+%a_n = \left\{ 1, 1 + \frac{1}{2}, 1 + \frac{1}{2} + \frac{1}{4}, \dots \right\}
+%\end{equation}
+%
+%Calculando los primeros 5 términos, es posible inferir el término general de esta sucesión.
+%
+%\begin{equation}
+%a_n = \left\{ 1, \frac{3}{2}, \frac{7}{4}, \frac{15}{8}, \frac{31}{16}, \dots \right\}
+%\end{equation}
+%
+%El numerador es la n-ésima potencia de 2 menos uno, y el denominador es la potencia de 2 anterior.
+%
+%\begin{equation}
+%a_n = \frac{2^n-1}{2^{n-1}} \Rightarrow \limninf a_n = \limninf \frac{2^n}{2^{n-1}} = 2
+%\end{equation}
+%
+%Como solución alternativa, también es posible aplicar la siguiente propiedad. La suma de una serie geométrica con razón $ r $ es, para $ |r| < 1 $:
+%
+%\begin{equation}
+%|r| < 1 \Rightarrow \sum_{k=0}^{+\infty} a \cdot r^k = \frac{a}{1-r} 
+%\end{equation}
+%
+%Para este caso, $ a = 1 $, $ r = \frac{1}{2} $, lo cual conduce a que la suma vale 2.
+%
+%\begin{equation}
+%\hresult{5.h}{\limninf a_n = 2}
+%\end{equation}
+%
+%\sectionx{6}
+%
+%\textbf{Continuar con las siguientes sucesiones:}
+%
+%\begin{enumerate}[label=(\alph*)]
+%
+%\item $ \frac{n^2-5n+7}{n+3} + \frac{n^2 + 5}{n+1} $
+%
+%\item $ \frac{n^2-5n+7}{n+3} - \frac{n^2 + 5}{n+1} $
+%
+%\item $ \sqrt{n^2+n-2} + n $
+%
+%\item $ \sqrt{n^2+n-2} - n $
+%
+%\item $ \sqrt{n^2+1} - \sqrt{n^2-n+3} $
+%
+%\item $ \sqrt{ \frac{2n^2-1}{3n^2+2} } + \frac{3n-1}{2n+3} $
+%
+%\item $ \sqrt{n} ( \sqrt{n+2} - \sqrt{n} ) $
+%
+%\item $ n ( \sqrt{n+2} - \sqrt{n} ) $
+%
+%\item $ \frac{n}{\sqrt{n+1}-n} $
+%
+%\item $ \sqrt{n} ( \sqrt{n^2+2} - \sqrt{n} ) $
+%
+%\end{enumerate}
+%
+%\hrule
+%
+%\subsectionx{6.a}
+%
+%\begin{equation}
+%a_n = \frac{n^2-5n+7}{n+3} + \frac{n^2 + 5}{n+1}
+%\end{equation}
+%
+%Ambos términos tienden a $ +\infty $, porque el numerador es de mayor grado que el denominador, y los signos de los coeficientes de mayor grado de numerador y denominador son positivos. Dado que se tiene una suma de términos que tienden a infinito, no hay indeterminación: la sucesión completa diverge a $ +\infty $.
+%
+%\begin{equation}
+%\hresult{6.a}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+%\end{equation}
+%
+%\subsectionx{6.b}
+%
+%\begin{equation}
+%a_n = \frac{n^2-5n+7}{n+3} - \frac{n^2 + 5}{n+1}
+%\end{equation}
+%
+%En este caso sí hay una indeterminación, porque se tiene una diferencia de términos que tienden a $ +\infty $. Despreciar los términos de menor grado conduciría a que el límite sería cero. Pero esto es erróneo, porque los términos de mayor grado se cancelan. Cuando eso ocurre, los términos de menor grado son los que determinan el límite, y es necesario un análisis más detallado. Para este caso particular, un camino posible es realizar la suma algebraica.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \frac{n^2-5n+7}{n+3} - \frac{n^2 + 5}{n+1} = \\
+%& \limninf \frac{(n+1)(n^2-5n+7)-(n+3)(n^2+5)}{(n+3) (n+1))} = \\
+%& \limninf \frac{n^3-5n^2+7n+n^2-5n+7-(n^3+5n+3n^2+15)}{n^2+n+3n+3} = \\
+%& \limninf \frac{n^3-4n^2+2n+7-(n^3+3n^2+5n+15)}{n^2+4n+3} = \\
+%& \limninf \frac{\cancel{n^3}-4n^2+2n+7-\cancel{n^3}-3n^2-5n-15}{n^2+4n+3} = \\
+%& \limninf \frac{-7n^2-3n-8}{n^2+4n+3}
+%\end{align}
+%\end{subequations}
+%
+%En este punto, se ha eliminado la indeterminación. Ahora se tiene un cociente de polinomios, y es válido despreciar todo salvo los términos de mayor grado. Ello conduce a:
+%
+%\begin{equation}
+%\hresult{6.b}{ \limninf a_n = -7 }
+%\end{equation}
+%
+%\subsectionx{6.c}
+%
+%\begin{equation}
+%a_n = \sqrt{n^2+n-2} + n
+%\end{equation}
+%
+%Como en 6.a, no hay indeterminación. Es la suma de dos términos que tienden a $ +\infty $.
+%
+%\begin{equation}
+%\hresult{6.c}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+%\end{equation}
+%
+%\subsectionx{6.d}
+%
+%\begin{equation}
+%a_n = \sqrt{n^2+n-2} - n
+%\end{equation}
+%
+%Ahora sí hay una indeterminación, porque se tiene una diferencia de términos que tiende a $ +\infty $. De manera análoga a como ocurría en el caso de los polinomios, despreciar los términos de menor grado conduce al resultado erróneo de que el límite es cero. En este caso particular, una transformación algebraica útil es multiplicar y dividir por una expresión que permite aprovechar la propiedad:
+%
+%\begin{equation}
+%(a+b)(a-b) = a^2 - b^2
+%\end{equation}
+%
+%Como se verá, esto eliminará las raíces cuadradas y la indeterminación.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \sqrt{n^2+n-2} - n = \\
+%& \limninf \left( \sqrt{n^2+n-2} - n \right) \frac{\sqrt{n^2+n-2} + n}{\sqrt{n^2+n-2} + n} = \\
+%& \limninf \frac{(\sqrt{n^2+n-2})^2 - n^2}{\sqrt{n^2+n-2} + n}
+%\end{align}
+%\end{subequations}
+%
+%Para valores grandes de $ n $, el radicando siempre es positivo. Equivalentemente, es positivo pctn. Por lo tanto, es válido cancelar la raíz con el cuadrado en el numerador.
+%
+%\begin{equation}
+%\limninf \frac{\cancel{n^2}+n-2-\cancel{n^2}}{\sqrt{n^2+n-2} + n} = 
+%\limninf \frac{n-2}{\sqrt{n^2+n-2}+n}
+%\end{equation}
+%
+%La indeterminación ha sido salvada; es válido despreciar términos de menor grado.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \frac{n}{\sqrt{n^2}+n} = \\
+%& \limninf \frac{n}{n+n} = \frac{1}{2}
+%\end{align}
+%\end{subequations}
+%
+%\begin{equation}
+%\hresult{6.d}{ \limninf a_n = \frac{1}{2} }
+%\end{equation}
+%
+%\subsectionx{6.e}
+%
+%\begin{equation}
+%a_n = \sqrt{n^2+1} - \sqrt{n^2-n+3}
+%\end{equation}
+%
+%Nuevamente, se tiene una indeterminación del tipo $ \infty - \infty $. Como en el inciso previo, es útil multiplicar y dividir por una expresión apropiada.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \sqrt{n^2+1}-\sqrt{n^2-n+3} = \\
+%& \limninf \left( \sqrt{n^2+1}-\sqrt{n^2-n+3} \right) \frac{\sqrt{n^2+1}+\sqrt{n^2-n+3}}{\sqrt{n^2+1}+\sqrt{n^2-n+3}} = \\
+%& \limninf \frac{(\sqrt{n^2+1})^2-(\sqrt{n^2-n+3})^2}{\sqrt{n^2+1}+\sqrt{n^2-n+3}} \\
+%& \limninf \frac{n^2+1-(n^2-n+3)}{\sqrt{n^2+1}+\sqrt{n^2-n+3}} = \\
+%& \limninf \frac{\cancel{n^2} + 1 -\cancel{n^2} +n -3}{\sqrt{n^2+1}+\sqrt{n^2-n+3}} = \\
+%& \limninf \frac{n}{\sqrt{n^2}+\sqrt{n^2}} = \\
+%& \limninf \frac{n}{n+n} = \frac{1}{2}
+%\end{align}
+%\end{subequations}
+%
+%\begin{equation}
+%\hresult{6.e}{ \limninf a_n = \frac{1}{2} }
+%\end{equation}
+%
+%\subsectionx{6.f}
+%
+%\begin{equation}
+%a_n = \sqrt{ \frac{2n^2-1}{3n^2+2} } + \frac{3n-1}{2n+3}
+%\end{equation}
+%
+%En este caso, no hay indeterminación alguna. Ambos sumandos tienden a un valor finito.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \sqrt{ \frac{2n^2-1}{3n^2+2} } + \frac{3n-1}{2n+3} = \\
+%& \limninf \sqrt{ \frac{2n^2}{3n^2} } + \frac{3n}{2n} = \\
+%& \sqrt{\frac{2}{3}} + \frac{3}{2}
+%\end{align}
+%\end{subequations}
+%
+%\begin{equation}
+%\hresult{6.f}{ \limninf a_n = \frac{\sqrt{6}}{3} + \frac{3}{2} \approx 2,3165 }
+%\end{equation}
+%
+%\subsectionx{6.g}
+%
+%\begin{equation}
+%a_n = \sqrt{n} \left( \sqrt{n+2} - \sqrt{n} \right)
+%\end{equation}
+%
+%Uno de los factores del producto está indeterminado, lo cual hace que la expresión completa resulte indeterminada. En este caso, es posible simplificar un poco antes de aplicar la técnica de multiplicar y dividir. Dado que todos los términos tienen raíz, $n$ puede ingresar multiplicando.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \sqrt{n} \left( \sqrt{n+2} - \sqrt{n} \right) = \\
+%& \limninf \sqrt{n} \sqrt{n+2} - \sqrt{n} \sqrt{n} = \\
+%& \limninf \sqrt{n(n+2)} - n = \\
+%& \limninf \left( \sqrt{n^2+2n} - n \right) \frac{\sqrt{n^2+2n}+n}{\sqrt{n^2+2n}+n} = \\
+%& \limninf \frac{(\sqrt{n^2+2n})^2-n^2}{\sqrt{n^2+2n}+n} = \\
+%& \limninf \frac{\cancel{n^2}+2n-\cancel{n^2}}{\sqrt{n^2+2n}+n} = \\
+%& \limninf \frac{2n}{\sqrt{n^2+2n}+n} = \\
+%& \limninf \frac{2n}{\sqrt{n^2}+n} = \\
+%& \limninf \frac{2n}{n+n} = 1
+%\end{align}
+%\end{subequations}
+%
+%\begin{equation}
+%\hresult{6.g}{ \limninf a_n = 1 }
+%\end{equation}
+%
+%\subsectionx{6.h}
+%
+%\begin{equation}
+%a_n = n ( \sqrt{n+2} - \sqrt{n} )
+%\end{equation}
+%
+%En este caso no es muy útil distribuir el producto; se aplicará directamente la técnica usual para estos casos: multiplicar y dividir por una expresión conveniente.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf n \left( \sqrt{n+2} - \sqrt{n} \right) \frac{\sqrt{n+2} + \sqrt{n}}{\sqrt{n+2} + \sqrt{n}} = \\
+%& \limninf n \frac{(\sqrt{n+2})^2-(\sqrt{n})^2}{\sqrt{n+2} + \sqrt{n}} = \\
+%& \limninf n \frac{\cancel{n}+2-\cancel{n}}{\sqrt{n+2} + \sqrt{n}} = \\
+%& \limninf \frac{2n}{\sqrt{n+2} + \sqrt{n}} \\
+%& \limninf \frac{2n}{\sqrt{n}+\sqrt{n}} = \\
+%& \limninf \sqrt{n}
+%\end{align}
+%\end{subequations}
+%
+%\begin{equation}
+%\hresult{6.h}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+%\end{equation}
+%
+%\subsectionx{6.i}
+%
+%\begin{equation}
+%a_n = \frac{n}{\sqrt{n+1}-n}
+%\end{equation}
+%
+%En este caso no hay indeterminación. Aunque en el denominador podría pensarse que sí, hay una expresión de grado 1 y otra de grado $ \frac{1}{2} $. Ésta es despreciable comparada con el término lineal $ n $. Esto conduce, por observación, a que el límite sea -1. Sólo para verificar esto, es posible transformar la expresión multiplicando y dividiendo por una expresión apropiada.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \frac{n}{\sqrt{n+1}-n} \frac{\sqrt{n+1}+n}{\sqrt{n+1}+n} = \\
+%& \limninf \frac{n (\sqrt{n+1}+n) }{(\sqrt{n+1})^2-n^2} = \\
+%& \limninf \frac{n \sqrt{n+1} + n^2}{n+1-n^2} = \\
+%& \limninf \frac{n \sqrt{n} - n^2}{1+n-n^2} = \\
+%& \limninf \frac{n^2 + n^{\frac{3}{2}}}{-n^2+n+1} = -1
+%\end{align}
+%\end{subequations}
+%
+%\begin{equation}
+%\hresult{6.i}{ \limninf a_n = -1 }
+%\end{equation}
+%
+%\subsectionx{6.j}
+%
+%En este caso, no hay indeterminación porque no se cancelan los términos de mayor grado al despreciar los demás. Por observación, el límite no existe y la sucesión diverge a $ +\infty $. Para confirmar, se aplicará la técnica usual.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \sqrt{n} \left( \sqrt{n^2+2} - \sqrt{n} \right) = \\
+%& \limninf \sqrt{n} \sqrt{n^2+2} - \sqrt{n} \sqrt{n} = \\
+%& \limninf \sqrt{n (n^2+2)} - n = \\
+%& \limninf \left( \sqrt{n^3+2n} - n \right) \frac{\sqrt{n^3+2n} + n}{\sqrt{n^3+2n} + n} = \\
+%& \limninf \frac{n^3+2n-n^2}{\sqrt{n^3+2n} + n} = \\
+%& \limninf \frac{n^3}{\sqrt{n^3} + n} = \\
+%& \limninf \frac{n^3}{n^{\frac{3}{2}}+n} = \\
+%& \limninf \frac{n^3}{n^{\frac{3}{2}}} = \limninf n^{\frac{3}{2}}
+%\end{align}
+%\end{subequations}
+%
+%\begin{equation}
+%\hresult{6.j}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+%\end{equation}
+%
+%\sectionx{7}
+%
+%\textbf{Mostrar que cada una de las siguientes situaciones constituye una indeterminación. Para ello, exhibir dos ejemplos donde los límites sean distintos (finitos o infinitos). Suponer , cuando sea necesario, condiciones suficientes para que las sucesiones estén bien definidas para todo n.}
+%
+%\begin{enumerate}[label=(\alph*)]
+%
+%\item $ \limninfs a_n = +\infty \wedge \limninf b_n = +\infty $
+%
+%\begin{enumerate}[label=\textbf{(\roman*)}]
+%
+%\item $ \limninfs (a_n - b_n) $
+%
+%\item $ \limninfs \frac{a_n}{b_n} $
+%
+%\end{enumerate}
+%
+%\item $ \limninfs a_n = 0 \wedge \limninfs b_n = 0 $
+%
+%\begin{enumerate}[label=\textbf{(\roman*)}]
+%
+%\item $ \limninfs \frac{a_n}{b_n} $
+%
+%\item $ \limninfs {(a_n)}^{b_n} $
+%
+%\end{enumerate}
+%
+%\item $ \limninfs a_n = 0 \wedge \limninfs b_n = +\infty $
+%
+%\begin{enumerate}[label=\textbf{(\roman*)}]
+%
+%\item $ \limninfs a_n \cdot b_n $
+%
+%\item $ \limninfs {(b_n)}^{a_n} $
+%
+%\end{enumerate}
+%
+%\end{enumerate}
+%
+%\hrule
+%
+%\subsectionx{7.a.i}
+%
+%Ejemplo 1:
+%
+%\begin{equation}
+%a_n = n^2 \wedge b_n = n \Rightarrow \limninf (a_n-b_n) = \limninf n^2 - n = \hresult{}{ +\infty }
+%\end{equation}
+%
+%Ejemplo 2:
+%
+%\begin{equation}
+%a_n = \frac{n^2-5n+7}{n+3} \wedge \frac{n^2+5}{n+1} \Rightarrow \limninf (a_n-b_n) = \hresult{}{ -7 }
+%\end{equation}
+%
+%\subsectionx{7.a.ii}
+%
+%Ejemplo 1:
+%
+%\begin{equation}
+%a_n = n^2 \wedge b_n = n \Rightarrow \limninf \frac{a_n}{b_n} = \limninf \frac{n^2}{n} = \hresult{}{ +\infty }
+%\end{equation}
+%
+%Ejemplo 2:
+%
+%\begin{equation}
+%a_n = n \wedge b_n = n^2 \Rightarrow \limninf \frac{a_n}{b_n} = \limninf \frac{n}{n^2} = \hresult{}{ 0 }
+%\end{equation}
+%
+%\subsectionx{7.b.i}
+%
+%Ejemplo 1:
+%
+%\begin{equation}
+%a_n = \frac{1}{n} \wedge b_n = \frac{1}{n^2} \Rightarrow \limninf \frac{a_n}{b_n} = \limninf \frac{1}{n} : \frac{1}{n^2} = \frac{n^2}{n} = \hresult{}{ +\infty }
+%\end{equation}
+%
+%Ejemplo 2:
+%
+%\begin{equation}
+%a_n = \frac{1}{n^2} \wedge b_n = \frac{1}{n} \Rightarrow \limninf \frac{a_n}{b_n} = \limninf \frac{1}{n^2} : \frac{1}{n} = \frac{n}{n^2} = \hresult{}{ 0 }
+%\end{equation}
+%
+%\subsectionx{7.b.ii}
+%
+%Ejemplo 1:
+%
+%\begin{equation}
+%a_n = \frac{1}{2^n} \wedge b_n = \frac{1}{n} \Rightarrow \limninf {(a_n)}^{b_n} = \limninf {\frac{1}{2^n}}^{\frac{1}{n}} = \limninf {(2^{-n})}^n = \hresult{}{ \frac{1}{2} }
+%\end{equation}
+%
+%Ejemplo 2:
+%
+%\begin{equation}
+%a_n = \frac{1}{3^n} \wedge b_n = \frac{1}{n} \Rightarrow \limninf {(a_n)}^{b_n} = \limninf {\frac{1}{3^n}}^{\frac{1}{n}} = \limninf {(3^{-n})}^n = \hresult{}{ \frac{1}{3} }
+%\end{equation}
+%
+%\subsectionx{7.c.i}
+%
+%Ejemplo 1:
+%
+%\begin{equation}
+%a_n = \frac{1}{n} \wedge b_n = n \Rightarrow \limninf a_n \cdot b_n = \limninf \frac{1}{n} n = \hresult{}{ 1 }
+%\end{equation}
+%
+%Ejemplo 2:
+%
+%\begin{equation}
+%a_n = \frac{1}{n} \wedge b_n = n^2 \Rightarrow \limninf a_n \cdot b_n = \limninf \frac{1}{n} n^2 = \hresult{}{ +\infty }
+%\end{equation}
+%
+%\subsectionx{7.c.ii}
+%
+%Ejemplo 1:
+%
+%\begin{equation}
+%a_n = \frac{1}{n} \wedge b_n = 2^n \Rightarrow \limninf (b_n)^{a_n}  = \limninf (2^n)^{\frac{1}{n}} = \hresult{}{ 2 }
+%\end{equation}
+%
+%Ejemplo 2:
+%
+%\begin{equation}
+%a_n = \frac{1}{n^2} \wedge b_n = 2^n \Rightarrow \limninf (b_n)^{a_n}  = \limninf (2^n)^{\frac{1}{n^2}} = \limninf 2^{\frac{1}{n}} \hresult{}{ 1 }
+%\end{equation}
+%
+%\sectionx{8}
+%
+%\textbf{Marcar, en casa caso, la única respuesta correcta:}
+%
+%\begin{enumerate}[label=(\alph*)]
+%
+%\item Si $ \limninfs a_n = +\infty $ y $ b_n $ oscila finitamente entonces $ \limninfs (a_n + b_n) $:
+%
+%\begin{enumerate}[label=\textbf{(\roman*)}]
+%
+%\item Oscila.
+%
+%\item Tiende a más infinito.
+%
+%\item Es una indeterminación.
+%
+%\end{enumerate}
+%
+%\item Si $ \limninf a_n = L $ y $ a_n > 0 $ entonces hay certeza de que:
+%
+%\begin{enumerate}[label=\textbf{(\roman*)}]
+%
+%\item $ L > 0 $.
+%
+%\item $ L = 0 $.
+%
+%\item $ L \geq 0 $.
+%
+%\item ninguna de las anteriores.
+%
+%\end{enumerate}
+%
+%\item Si $ \limninfs a_n = 0 $ y $ \limninfs b_n = +\infty $ entonces $ \limninfs \frac{a_n}{b_n} $:
+%
+%\begin{enumerate}[label=\textbf{(\roman*)}]
+%
+%\item Es igual a 0.
+%
+%\item Tiende a más infinito.
+%
+%\item Es una indeterminación.
+%
+%\item No existe.
+%
+%\end{enumerate}
+%
+%\item Si $ \limninfs a_n = 0 $ y $ \limninfs b_n = +\infty $ entonces $ \limninfs {(a_n)}^{b_n} $:
+%
+%\begin{enumerate}[label=\textbf{(\roman*)}]
+%
+%\item Es igual a 0.
+%
+%\item Tiende a más infinito.
+%
+%\item Es una indeterminación.
+%
+%\item No existe.
+%
+%\end{enumerate}
+%
+%\end{enumerate}
+%
+%\hrule
+%
+%\subsectionx{8.a}
+%
+%Se tiene un término que diverge y otro que está acotado finitamente. Por lo tanto, al sumarlos eventualmente el término divergente crecerá lo suficiente para que el acotado sea despreciable.
+%
+%\begin{equation}
+%\hresult{8.a}{ \text{(II) Tiende a más infinito} }
+%\end{equation}
+%
+%\subsectionx{8.b}
+%
+%Se tiene una sucesión convergente cuyos términos son todos positivos. Para el caso particular $ a_n = \frac{1}{n} $, $ L = 0 $. Eso descarta la opción (I), $ L > 0 $. Para el caso $ a_n = 1 $, se tiene $ L > 0 $, lo cual descarta la opción $ L = 0 $. Por la definición de límite, no puede ser $ L < 0 $, porque eso implicaría que hay términos negativos. Por lo tanto:
+%
+%\begin{equation}
+%\hresult{8.b}{ (III) L \geq 0 }
+%\end{equation}
+%
+%\subsectionx{8.c}
+%
+%El numerador es cada vez más pequeño, y el numerador cada vez más grande. Sin importar por dónde se aproxime el numerador a cero, sea por izquierda, derecha u oscilando, el cociente convergerá a cero de todas maneras.
+%
+%\begin{equation}
+%\hresult{8.c}{ \text{(I) Es igual a 0.} }
+%\end{equation}
+%
+%\subsectionx{8.d}
+%
+%Un número cada vez más cercano a cero, elevado a un número positivo cada vez más grande, dará un número aún más cercano a cero.
+%
+%\begin{equation}
+%\hresult{8.d}{ \text{(I) Es igual a 0.} }
+%\end{equation}
+%
+%\sectionx{9}
+%
+%\textbf{Calcular, si existe, el límite de las siguientes sucesiones. Como siempre, explicar las propiedades utilizadas para llegar al resultado.}
+%
+%\begin{enumerate}[label=(\alph*)]
+%
+%\bfseries
+%
+%\item $ \frac{\sin n}{n} $
+%
+%\item $ (-1)^n (\sqrt{n+2} - \sqrt{n}) $
+%
+%\item $ (-1)^n + \frac{1}{n} $
+%
+%\item $ (-1)^n (\sqrt{n+2} + \sqrt{n}) $
+%
+%\item $ \left( \frac{2}{5} \right)^n $
+%
+%\item $ \frac{2^n + 5}{3^n} (-1)^n $
+%
+%\item $ (1,5)^n $
+%
+%\item $ (0,95)^n $
+%
+%\item $ \frac{3^n + 4^{n+1} +2}{2^{2n} + 2^n} $
+%
+%\item $ \sqrt[n]{(n^2+1)} $
+%
+%\item $ \sqrt[n]{\frac{3n^3+2n^2+1}{n^2+2}} $
+%
+%\item $ \sqrt[n]{\frac{5n+1}{3n+1}} $
+%
+%\item $ \left( \frac{n^2 + 2}{5n^2 + 3} \right)^{\frac{1}{n}} $
+%
+%\item $ \sqrt[n]{(2^n + 5^n)} $
+%
+%\item $ (n^4 + 1)^{\frac{1}{2n}} $
+%
+%\item $ (1 + (-1)^n)^n \frac{1}{n} $
+%
+%\item $ \left( \frac{5}{3} \right)^{ \left( \frac{8}{11} \right)^n } $
+%
+%\item $ \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^n } $
+%
+%\item $ \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^{\frac{1}{n}} } $
+%
+%\item $ \frac{3^{2n+1} + \cos n}{2 \cdot 9^n + \sin n} $
+%
+%\end{enumerate}
+%
+%\hrule
+%
+%\subsectionx{9.a}
+%
+%\begin{equation}
+%a_n = \frac{\sin n}{n}
+%\end{equation}
+%
+%Al considerar este límite, no hay indeterminación, ni hace falta alguna propiedad para resolver. El numerador está acotado entre -1 y 1, y el denominador tiende a $ +\infty $. Por lo tanto, el cociente tiende a cero.
+%
+%\begin{equation}
+%\hresult{9.a}{ \limninf \frac{\sin n}{n} = 0 }
+%\end{equation}
+%
+%\subsectionx{9.b}
+%
+%\begin{equation}
+%a_n = (-1)^n (\sqrt{n+2} - \sqrt{n})
+%\end{equation}
+%
+%El segundo factor de este producto parece tender a cero, lo cual multiplicado por $ (-1)^n $ tiende a cero. Para confirmar esto, se puede analizar el segundo factor por separado, aplicando la técnica de multiplicar y dividir por un factor apropiado.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \sqrt{n+2} - \sqrt{n} = \\
+%& \limninf (\sqrt{n+2} - \sqrt{n}) \frac{\sqrt{n+2} + \sqrt{n}}{\sqrt{n+2} + \sqrt{n}} \\
+%& \limninf \frac{(\sqrt{n+2})^2-(\sqrt{n})^2}{\sqrt{n+2} + \sqrt{n}} = \\
+%& \limninf \frac{\cancel{n}+2-\cancel{n}}{\sqrt{n+2} + \sqrt{n}} = 0
+%\end{align}
+%\end{subequations}
+%
+%Demostrado esto, puede concluirse que:
+%
+%\begin{equation}
+%\hresult{9.b}{ \limninf (-1)^n (\sqrt{n+2} - \sqrt{n}) = 0 }
+%\end{equation}
+%
+%\subsectionx{9.c}
+%
+%\begin{equation}
+%a_n = (-1)^n + \frac{1}{n}
+%\end{equation}
+%
+%El primer sumando oscila entre -1 y 1, y el segundo sumando tiende a cero. Por lo tanto, la suma oscila y el límite no existe.
+%
+%\begin{equation}
+%\hresult{9.c}{ \limninf (-1)^n + \frac{1}{n} \text{ no existe, y } a_n \text{ oscila entre -1 y 1 } }
+%\end{equation}
+%
+%\subsectionx{9.d}
+%
+%\begin{equation}
+%a_n = (-1)^n (\sqrt{n+2} + \sqrt{n})
+%\end{equation}
+%
+%El primer factor del producto oscila entre -1 y 1, y el segundo factor tiende a más infinito. Ergo, el producto oscila entre $-\infty$ y $+\infty$ y por lo tanto el límite no existe.
+%
+%\begin{equation}
+%\hresult{9.d}{ \limninf (-1)^n (\sqrt{n+2} + \sqrt{n}) \text{ no existe, y } a_n \text{ oscila entre } -\infty \text{ y } +\infty }
+%\end{equation}
+%
+%\subsectionx{9.e}
+%
+%\begin{equation}
+%a_n = \left( \frac{2}{5} \right)^n
+%\end{equation}
+%
+%Propiedad: dada $ a_n = r^n $:
+%
+%\begin{itemize}
+%
+%\item $ r > 1 \Rightarrow \limninfs a_n = +\infty $
+%
+%\item $ r = 1 \Rightarrow \limninfs a_n = 1 $
+%
+%\item $ 0 < r < 1 \Rightarrow \limninfs a_n = 0 $
+%
+%\end{itemize}
+%
+%\begin{equation}
+%\hresult{9.e}{ \limninf \left( \frac{2}{5} \right)^n = 0 }
+%\end{equation}
+%
+%\subsectionx{9.f}
+%
+%\begin{equation}
+%a_n = \frac{2^n + 5}{3^n} (-1)^n
+%\end{equation}
+%
+%La única forma de que esto converja es que el primer factor tienda a cero, porque el segundo oscila. Por ende, sólo es necesario analizar dicho factor.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \frac{2^n + 5}{3^n} = \\
+%& \limninf \frac{2^n}{3^n} = \\
+%& \limninf \left( \frac{2}{3} \right)^n = 0
+%\end{align}
+%\end{subequations}
+%
+%\begin{equation}
+%\hresult{9.f}{ \limninf \frac{2^n + 5}{3^n} (-1)^n = 0 }
+%\end{equation}
+%
+%\subsectionx{9.g}
+%
+%\begin{equation}
+%a_n = (1,5)^n
+%\end{equation}
+%
+%Por la propiedad descrita en 9.e:
+%
+%\begin{equation}
+%\hresult{9.g}{ \limninf (1,5)^n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+%\end{equation}
+%
+%\subsectionx{9.h}
+%
+%\begin{equation}
+%a_n = (0,95)^n
+%\end{equation}
+%
+%Por la propiedad descrita en 9.e:
+%
+%\begin{equation}
+%\hresult{9.h}{ \limninf (0,95)^n = 0 }
+%\end{equation}
+%
+%\subsectionx{9.i}
+%
+%\begin{equation}
+%a_n = \frac{3^n + 4^{n+1} + 2}{2^{2n} + 2^n}
+%\end{equation}
+%
+%De las funciones exponenciales que aparecen, 4 parece ser la mayor. Es posible operar algebraicamente para eliminar la indeterminación $ \frac{+\infty}{+\infty} $.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \frac{3^n + 4^{n+1} + 2}{2^{2n} + 2^n} = \\
+%& \limninf \frac{3^n + 4^{n+1}}{2^{2n} + 2^n} = \\
+%& \limninf \frac{3^n + 4 \cdot 4^n}{(2^2)^n + 2^n} = \\
+%& \limninf \frac{3^n + 4 \cdot 4^n}{4^n + 2^n} \frac{4^{-n}}{4^{-n}} = \\
+%& \limninf \frac{ \frac{3^n}{4^n} + 4 }{ 1 + \frac{2^n}{4^n} } = \\
+%& \limninf \frac{ \left( \frac{3}{4} \right)^n + 4 }{ 1 + \left( \frac{2}{4} \right)^n } = 4
+%\end{align}
+%\end{subequations}
+%
+%\begin{equation}
+%\hresult{9.i}{ \limninf \frac{3^n + 4^{n+1} + 2}{2^{2n} + 2^n} = 4 }
+%\end{equation}
+%
+%\subsectionx{9.j}
+%
+%\begin{equation}
+%a_n = \sqrt[n]{n^2 + 1}
+%\end{equation}
+%
+%En primer lugar, se utilizará la propiedad $ x = e^{\ln x} $.
+%
+%\begin{equation}
+%\sqrt[n]{n^2 + 1} = (n^2 + 1)^{\frac{1}{n}} = \left[ e^{ \ln(n^2 + 1) } \right]^{\frac{1}{n}}
+%\end{equation}
+%
+%Al tener potencias consecutivas, se puede multiplicar los exponentes.
+%
+%\begin{equation}
+%\left[ e^{ \ln(n^2 + 1) } \right]^{\frac{1}{n}} = e^{ \frac{1}{n} \ln(n^2 + 1) }
+%\end{equation}
+%
+%Cuando $ n $ es grande, $ n^2 \gg 1 $.
+%
+%\begin{equation}
+%e^{ \frac{1}{n} \ln(n^2 + 1) } \approx e^{ \frac{1}{n} \ln(n^2) } \text{ para } n \rightarrow +\infty
+%\end{equation}
+%
+%En este punto se aplica una propiedad de los logaritmos:
+%
+%\begin{equation}
+%\ln( a^b ) = b \ln(a)
+%\end{equation}
+%
+%Esta propiedad se muestra para el logaritmo natural, pero vale para cualquier base. En este caso:
+%
+%\begin{equation}
+%e^{ \frac{1}{n} \ln(n^2) } = e^{ 2 \frac{\ln n}{n} }
+%\end{equation}
+%
+%Analizando esta última expresión, se tiene el cociente $ \frac{\ln n}{n} $. Esto tiende a cero, porque el logaritmo de cualquier base crece más lentamente que una función lineal. En consecuencia:
+%
+%\begin{equation}
+%\hresult{9.j}{ \limninf \sqrt[n]{n^2 + 1} = e^0 = 1 }
+%\end{equation}
+%
+%\subsectionx{9.k}
+%
+%\begin{equation}
+%a_n = \sqrt[n]{ \frac{3n^3 + 2n^2 + 1}{n^2+2} }
+%\end{equation}
+%
+%Este límite puede resolverse combinando las técnicas para cocientes de polinomios y $ x = e^{\ln x} $.
+%
+%Otra propiedad de logaritmos utilizada:
+%
+%\begin{equation}
+%\ln(a \cdot b) = \ln(a) + \ln(b)
+%\end{equation}
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \left( \frac{3n^3 + 2n^2 + 1}{n^2+2} \right)^{ \frac{1}{n} } = \\
+%& \limninf \left( \frac{3n^3}{n^2} \right)^{ \frac{1}{n} } = \\
+%& \limninf (3n)^{ \frac{1}{n} } = \\
+%& \limninf \left[ e^{ \ln(3n) } \right]^{ \frac{1}{n} } = \\
+%& \limninf e^{ \frac{\ln(3) + \ln(n)}{n} } = \\
+%& \limninf e^{ \frac{\ln n}{n} } = e^0 = 1
+%\end{align}
+%\end{subequations}
+%
+%\begin{equation}
+%\hresult{9.k}{ \limninf \sqrt[n]{ \frac{3n^3 + 2n^2 + 1}{n^2+2} } = 1 }
+%\end{equation}
+%
+%\subsectionx{9.l}
+%
+%\begin{equation}
+%a_n = \sqrt[n]{\frac{5n + 1}{3n + 1}}
+%\end{equation}
+%
+%En este caso, no hay indeterminación que salvar. La base tiende a $ \frac{5}{3} $, y el exponente a 0.
+%
+%\begin{equation}
+%\hresult{9.l}{ \limninf \left( \frac{5n + 1}{3n + 1} \right)^{ \frac{1}{n} } = {\frac{5}{3} }^0 = 1 }
+%\end{equation}
+%
+%\subsectionx{9.m}
+%
+%\begin{equation}
+%a_n = \left( \frac{n^2 + 2}{5n^2 + 3} \right)^{ \frac{1}{n} }
+%\end{equation}
+%
+%Nuevamente, no hay indeterminación que salvar. La base tiende a $ \frac{1}{5} $, y el exponente a 0.
+%
+%\begin{equation}
+%\hresult{9.l}{ \limninf \left( \frac{n^2 + 2}{5n^2 + 3} \right)^{ \frac{1}{n} } = {\frac{1}{5}}^0 = 1 }
+%\end{equation}
+%
+%\subsectionx{9.n}
+%
+%\begin{equation}
+%a_n = (2^n + 5^n)^{ \frac{1}{n} }
+%\end{equation}
+%
+%Sacando factor común $ 5^n $ en la base:
+%
+%\begin{equation}
+%(2^n + 5^n)^{ \frac{1}{n} } = \left[ 5^n \left( \frac{2^n}{5^n} + 1  \right) \right]^{ \frac{1}{n} }
+%\end{equation}
+%
+%Distribuyendo la potencia con el producto:
+%
+%\begin{equation}
+%\left[ 5^n \left( \frac{2^n}{5^n} + 1  \right) \right]^{ \frac{1}{n} } = (5^n)^{ \frac{1}{n} } \left[ \left(\frac{2}{5}\right)^n + 1 \right]^{ \frac{1}{n} }
+%\end{equation}
+%
+%Cancelando exponentes en el primer factor:
+%
+%\begin{equation}
+%a_n = 5 \left[ \left(\frac{2}{5}\right)^n + 1 \right]^{ \frac{1}{n} }
+%\end{equation}
+%
+%El segundo factor tiende a $ 1^0 $, que no es indeterminación y tiende a 1. Por ende:
+%
+%\begin{equation}
+%\hresult{9.n}{ \limninf (2^n + 5^n)^{ \frac{1}{n} } = 5 }
+%\end{equation}
+%
+%\subsectionx{9.o}
+%
+%\begin{equation}
+%a_n = (n^4 + 1)^{ \frac{1}{2n} }
+%\end{equation}
+%
+%Utilizando $ x = e^{\ln x} $ y propiedades de los logaritmos:
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf (n^4 + 1)^{ \frac{1}{2n} } = \\
+%& \limninf \left[ e^{ \ln(n^4 + 1) } \right]^{ \frac{1}{2n} } = \\
+%& \limninf e^{ \ln(n^4 + 1) \frac{1}{2n} } = \\
+%& \limninf e^{ 4 \frac{\ln(n)}{2n} } = \\
+%& \limninf e^{ 2 \frac{\ln n}{n} } = e^0 = 1
+%\end{align}
+%\end{subequations}
+%
+%\begin{equation}
+%\hresult{9.o}{ \limninf (n^4 + 1)^{ \frac{1}{2n} } = 1 }
+%\end{equation}
+%
+%\subsectionx{9.p}
+%
+%\begin{equation}
+%a_n = [1 + (-1)^n]^n \frac{1}{n}
+%\end{equation}
+%
+%En este caso, conviene analizar por separado las subsucesiones de índices pares e impares por separado.
+%
+%La subsucesión de índices pares es:
+%
+%\begin{equation}
+%a_{2n} = [1 + (-1)^{2n}]^{2n} \frac{1}{2n} = \frac{2^{2n}}{2n} = \frac{1}{2} \frac{4^n}{n}
+%\end{equation}
+%
+%Y la de impares es:
+%
+%\begin{equation}
+%a_{2n+1} = [1 + (-1)^{2n+1}] \frac{1}{2n+1} = 0
+%\end{equation}
+%
+%Entonces, la subsucesión de índices pares tiende a $ +\infty $ y la de índices impares es constantemente cero. Por lo tanto, el límite no existe.
+%
+%\begin{equation}
+%\hresult{9.p}{ \limninf a_n = [1 + (-1)^n]^n \frac{1}{n} \text{ no existe, y } a_n \text{ oscila entre cero y } +\infty }
+%\end{equation}
+%
+%\subsectionx{9.q}
+%
+%\begin{equation}
+%a_n = \left( \frac{5}{3} \right)^{ \left( \frac{8}{11} \right)^n }
+%\end{equation}
+%
+%Por la propiedad vista en 9.e, $ \left( \frac{8}{11} \right)^n $ tiende a cero por tener una base positiva menor a 1. Nótese que multiplicar los exponentes sería un error porque el exponente $ n  $ está aplicado sólo sobre $ \frac{8}{11} $ y no sobre toda la expresión. No hay una base en común para aplicar esa propiedad. Éste es un error muy común en estos escenarios.·
+%
+%\begin{equation}
+%\limninf \left( \frac{5}{3} \right)^{ \left( \frac{8}{11} \right)^n } = \limninf \left( \frac{5}{3} \right)^0 = 1
+%\end{equation}
+%
+%\begin{equation}
+%\hresult{9.q}{ \limninf \left( \frac{5}{3} \right)^{ \left( \frac{8}{11} \right)^n } = 1 }
+%\end{equation}
+%
+%\subsectionx{9.r}
+%
+%\begin{equation}
+%a_n = \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^n }
+%\end{equation}
+%
+%Teniendo la misma precaución que en el inciso anterior respecto a no multiplicar los exponentes, resulta:
+%
+%\begin{equation}
+%\limninf \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^n } = \limninf \left( \frac{8}{11} \right)^{+\infty} = 0
+%\end{equation}
+%
+%\begin{equation}
+%\hresult{9.q}{ \limninf \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^n } = 0 }
+%\end{equation}
+%
+%\subsectionx{9.s}
+%
+%\begin{equation}
+%a_n = \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^{ \frac{1}{n} } }
+%\end{equation}
+%
+%Nuevamente evitando multiplicar exponentes, se obtiene:
+%
+%\begin{equation}
+%\limninf \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^{ \frac{1}{n} } } = \limninf \left( \frac{8}{11} \right)^{ {\frac{5}{3}}^0 } = {\frac{8}{11}}^1 = \frac{8}{11}
+%\end{equation}
+%
+%\begin{equation}
+%\hresult{9.q}{ \limninf \left( \frac{8}{11} \right)^{ \left( \frac{5}{3} \right)^{ \frac{1}{n} } } = \frac{8}{11} \approx 0,72727 }
+%\end{equation}
+%
+%\subsectionx{9.t}
+%
+%\begin{equation}
+%a_n = \frac{3^{2n+1} + \cos n}{ 2 \cdot 9^n + \sin n }
+%\end{equation}
+%
+%Para valores grandes de $ n $, las funciones exponenciales son mucho mayores que las trigonométricas, las cuales están acotadas entre -1 y 1. Por ende, pueden despreciar el coseno y el seno.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \frac{3^{2n+1} + \cos n}{ 2 \cdot 9^n + \sin n } = \\
+%& \limninf \frac{3^{2n+1}}{ 2 \cdot 9^n} = \\
+%& \limninf \frac{3^{2n} \cdot 3}{2 \cdot (3^2)^n} = \\
+%& \limninf \frac{3 \cdot \cancel{3^{2n}}}{2 \cdot \cancel{3^{2n}}} = \frac{3}{2}
+%\end{align}
+%\end{subequations}
+%
+%\begin{equation}
+%\hresult{9.t}{ \limninf \frac{3^{2n+1} + \cos n}{ 2 \cdot 9^n + \sin n} = \frac{3}{2} }
+%\end{equation}
+%
+%\sectionx{10}
+%
+%\textbf{Calcular el límite de las siguientes sucesiones.}
+%
+%\begin{enumerate}[label=(\alph*)]
+%
+%\bfseries
+%
+%\item $ \left( \frac{3n+1}{3n-5} \right)^n $
+%
+%\item $ \left( \frac{4n+1}{3n-5} \right)^n $
+%
+%\item $ \left( \frac{3n-2}{3n+1} \right)^{2n+1} $
+%
+%\item $ \left( 1 + \frac{1}{n^2} \right)^n $
+%
+%\item $ \left( 1 + \frac{17}{n} \right)^n $
+%
+%\item $ \left( \frac{2n^2-5n}{3n-1} \right)^{n^3+2n} $
+%
+%\item $ \left( \frac{3n^2+2n+1}{3n^2-5} \right)^{ \frac{n^2+2}{2n+1} } $
+%
+%\item $ \left( 1 + \frac{\sin n}{n^2} \right)^n $
+%
+%\item $ \left( \cos\left( \frac{1}{n} \right) \right)^{ \frac{2}{\sin^2\left( \frac{1}{n} \right)  } } $
+%
+%\item $ \left( 1 + \frac{\cos n}{5n^3 + 1} \right)^{2n^2 + 3} $
+%
+%\end{enumerate}
+%
+%\hrule
+%
+%\subsectionx{10.a}
+%
+%\begin{equation}
+%a_n = \left( \frac{3n+1}{3n-5} \right)^n
+%\end{equation}
+%
+%Este es un caso de indeterminación $ 1^{+\infty} $. Si se hiciera la división de polinomios, quedaría una expresión de la forma $ 1 + $ una expresión racional. Esto sugiere que tal vez sea conveniente utilizar la siguiente propiedad:
+%
+%Dada una sucesión $ b_n $ que diverge a $ +\infty $:
+%
+%\begin{equation}
+%\limninf \left( 1 + \frac{1}{b_n}  \right)^{b_n} = e
+%\end{equation}
+%
+%Por otro lado, recuérdese el algoritmo para división de polinomios. Dada una expresión racional $ \frac{D(x)}{d(x)} $, donde el grado del numerador es menor o igual al del denominador:
+%
+%\begin{equation}
+%\frac{D(x)}{d(x)} = C(x) + \frac{R(x)}{d(x)}
+%\end{equation}
+%
+%En esta expresión, $ C(x) $ y $ R(x) $ son los polinomios cociente y resto respectivamente, y se obtienen haciendo la división. Considérese que pese a que esta propiedad está enunciada para polinomios de variable continua $ x $, valen perfectamente para polinomios de variable discreta $ n $. Si la igualdad vale para todo $ x $ real, vale para todo $ n $ natural.
+%
+%Volviendo a este caso particular:
+%
+%\begin{subequations}
+%\begin{align}
+%& D(n) = 3n+1 \\
+%& d(n) = 3n-5
+%\end{align}
+%\end{subequations}
+%
+%Haciendo la división, se obtienen $ C(n) $ y $ R(n) $.
+%
+%\begin{equation}
+%\polylongdiv[vars=n]{3n+1}{3n-5}
+%\end{equation}
+%
+%Resulta entonces:
+%
+%\begin{subequations}
+%\begin{align}
+%& C(x) = 1 \\
+%& R(x) = 6
+%\end{align}
+%\end{subequations}
+%
+%Reemplazando en $ a_n $:
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \left( \frac{3n+1}{3n-5} \right)^n = \\
+%& \limninf \left( 1 + \frac{6}{3n-5} \right)^n = \\
+%& \limninf \left( 1 + \frac{1}{\frac{3n-5}{6}} \right)^n = \\
+%& \limninf \left( 1 + \frac{1}{\frac{3n-5}{6}} \right)^{ \frac{3n-5}{6} \frac{6}{3n-5} n } = \\
+%& \limninf \left[ \underbrace{ \left( 1 + \frac{1}{\frac{3n-5}{6}} \right)^{ \frac{3n-5}{6}} }_{e} \right]^{ \underbrace{ \frac{6n}{3n-5} }_{2} } = \\
+%& \hresulte{10.a}{ \limninf a_n = e^2 \approx 7,3891 }{ 1em }
+%\end{align}
+%\end{subequations}
+%
+%\subsectionx{10.b}
+%
+%\begin{equation}
+%a_n = \left( \frac{4n+1}{3n-5} \right)^n
+%\end{equation}
+%
+%En este caso, no hay indeterminación. La base tiende a $ \frac{4}{3} $, y el exponente a $ +\infty $. Al tender la base a un valor mayor a 1, el límite no existe y la sucesión diverge a $ +\infty $.
+%
+%\begin{equation}
+%\hresult{10.b}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+%\end{equation}
+%
+%\subsectionx{10.c}
+%
+%\begin{equation}
+%a_n = \left( \frac{3n-2}{3n+1} \right)^{2n+1} 
+%\end{equation}
+%
+%Al tener nuevamente una indeterminación de la forma $ 1^{+\infty} $ donde la base es un cociente de polinomios, se aplica de nuevo la técnica de hacer la división.
+%
+%\begin{equation}
+%\polylongdiv[vars = n]{3n-2}{3n+1}
+%\end{equation}
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \left( \frac{3n-2}{3n+1} \right)^{2n+1} = \\
+%& \limninf \left( 1 - \frac{3}{3n+1} \right)^{2n+1}
+%\end{align}
+%\end{subequations}
+%
+%Llegado este punto, no es válido usar la técnica de e: el denominador tendería a $ -\infty $, y no se cumplirían las condiciones para el límite. Por lo tanto, lo que se utilizará para avanzar es la técnica de $ x = e^{\ln x} $
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \left( 1 - \frac{3}{3n+1} \right)^{2n+1} = \\
+%& \limninf e^{ \ln\left[\left( 1 - \frac{3}{3n+1} \right)^{2n+1}\right] }
+%\end{align}
+%\end{subequations}
+%
+%En este punto, es necesario utilizar otra propiedad muy útil.
+%
+%\begin{equation}
+%x \rightarrow 0 \Rightarrow \ln(1-x) \approx -x
+%\end{equation}
+%
+%En este caso, la expresión de interés es $ x = \frac{3}{3n+1} $, que efectivamente tiende a cero cuando n tiende a $ +\infty $. Ergo:
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf e^{ \ln\left[\left( 1 - \frac{3}{3n+1} \right)^{2n+1}\right] } = \\
+%& \limninf e^{ (2n+1) \ln\left( 1 - \frac{3}{3n+1} \right) } = \\
+%& \limninf e^{ (2n+1) \frac{-3}{3n+1} } = \\
+%& \hresult{10.c}{ \limninf a_n = e^{-2} \approx 0,13533 }
+%\end{align}
+%\end{subequations}
+%
+%\subsectionx{10.d}
+%
+%\begin{equation}
+%a_n = \left( 1 + \frac{1}{n^2} \right)^n
+%\end{equation}
+%
+%Se tiene una indeterminación de la forma $ 1^{+\infty} $, y una expresión muy similar a la del límite de e. El denominador del segundo sumando tiende a $ +\infty $. Sólo resta manipular algebraicamente para poder aplicar el resultado.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \left( 1 + \frac{1}{n^2} \right)^n = \\
+%& \limninf \left( 1 + \frac{1}{n^2} \right)^{ n^2 \frac{1}{n^2} n } = \\
+%& \limninf \left[ \underbrace{ \left( 1 + \frac{1}{n^2} \right)^{n^2} }_{e} \right]^{  \frac{1}{n} } = \\
+%& e^0 = \hresult{10.d}{ \limninf a_n = 1 }
+%\end{align}
+%\end{subequations}
+%
+%\subsectionx{10.e}
+%
+%\begin{equation}
+%a_n = \left( 1 + \frac{17}{n} \right)^n
+%\end{equation}
+%
+%De nuevo se tiene un escenario ideal para aplicar la técnica de e.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \left( 1 + \frac{17}{n} \right)^n = \\
+%& \limninf \left( 1 + \frac{1}{ \frac{n}{17} } \right)^n = \\
+%& \limninf \left( 1 + \frac{1}{ \frac{n}{17} } \right)^{ \frac{n}{17} \frac{17}{n} n } = \\
+%& \limninf \left[ \underbrace{ \left( 1 + \frac{1}{ \frac{n}{17} } \right)^{ \frac{n}{17} } }_{e} \right]^{17} = \\
+%& \hresult{10.e}{ \limninf a_n = e^{17} \approx 24154952 }
+%\end{align}
+%\end{subequations}
+%
+%Nótese que al ser tan grande el valor del límite, podría creerse erróneamente que $ a_n $ diverge al evaluar algunos términos grandes.
+%
+%\subsectionx{10.f}
+%
+%\begin{equation}
+%a_n = \left( \frac{2n^2-5n}{3n-1} \right)^{n^3+2n}
+%\end{equation}
+%
+%Aquí no hay indeterminación. La base tiende a $ +\infty $ por ser el numerador de mayor grado que el denominador. Y como el exponente también tiende a $ +\infty $, el límite no existe y la sucesión diverge a $ +\infty $.
+%
+%\begin{equation}
+%\hresult{10.f}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+%\end{equation}
+%
+%\subsectionx{10.g}
+%
+%\begin{equation}
+%a_n = \left( \frac{3n^2+2n+1}{3n^2-5} \right)^{ \frac{n^2+2}{2n+1} }
+%\end{equation}
+%
+%En este caso, se tiene de nuevo una indeterminación de la forma $ 1^{+\infty} $, y la base es un cociente de polinomios. Realizando la división:
+%
+%\begin{equation}
+%\polylongdiv[vars = n]{3n^2+2n+1}{3n^2-5}
+%\end{equation}
+%
+%Reemplazando:
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \left( \frac{3n^2+2n+1}{3n^2-5} \right)^{ \frac{n^2+2}{2n+1} } = \\
+%& \limninf \left( 1 + \frac{2n+6}{3n^2-5} \right)^{ \frac{n^2+2}{2n+1} } = \\
+%& \limninf \left( 1 + \frac{1}{ \frac{3n^2-5}{2n+6} } \right)^{ \frac{3n^2-5}{2n+6} \frac{2n+6}{3n^2-5} \frac{n^2+2}{2n+1} } = \\
+%& \limninf \left[ \underbrace{ \left( 1 + \frac{1}{ \frac{3n^2-5}{2n+6} } \right)^{ \frac{3n^2-5}{2n+6} } }_{e} \right]^{ \frac{2n+6}{3n^2-5} \frac{n^2+2}{2n+1} } = \\
+%& \hresult{10.g}{ \limninf a_n = e^{ \frac{1}{3} } \approx 1,3956 }
+%\end{align}
+%\end{subequations}
+%
+%\subsectionx{10.h}
+%
+%\begin{equation}
+%a_n = \left( 1 + \frac{\sin n}{n^2} \right)^n
+%\end{equation}
+%
+%En este caso, hay indeterminación $ 1^{+\infty} $, pero no es válido utilizar la técnica de e porque el denominador oscilaría entre + y - infinito, por el seno. Por lo tanto, hay que aplicar la técnica de $ e^ln $.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \left( 1 + \frac{\sin n}{n^2} \right)^n = \\
+%& \limninf e^{ \ln\left[\left( 1 + \frac{\sin n}{n^2} \right)^n \right] } = \\
+%& \limninf e^{ n \ln\left( 1 + \frac{\sin n}{n^2} \right) }
+%\end{align}
+%\end{subequations}
+%
+%La aproximación logarítmica usada antes también vale para valores positivos.
+%
+%\begin{equation}
+%x \rightarrow 0 \Rightarrow \ln(1+x) \approx x
+%\end{equation}
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf e^{ n \ln\left( 1 + \frac{\sin n}{n^2} \right) } = \\
+%& \limninf e^{ n \frac{\sin n}{n^2} } = \\
+%& \limninf e^{ \frac{\sin n}{n} } = \\
+%& \hresult{10.h}{ \limninf a_n = e^0 = 1 }
+%\end{align}
+%\end{subequations}
+%
+%\subsectionx{10.i}
+%
+%\begin{equation}
+%a_n = \left( \cos\left( \frac{1}{n} \right) \right)^{ \frac{2}{\sin^2\left( \frac{1}{n} \right)  } }
+%\end{equation}
+%
+%Es una indeterminación de la forma $ 1^{+\infty} $. La técnica de e no sirve porque no hay forma de introducir un 1. Por lo tanto, se empieza por aplicar $ x = e^{\ln(x)} $.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \left( \cos\left( \frac{1}{n} \right) \right)^{ \frac{2}{\sin^2\left( \frac{1}{n} \right)  } } = \\
+%& \limninf e^{ \ln\left[ \left( \cos\left( \frac{1}{n} \right) \right)^{ \frac{2}{\sin^2\left( \frac{1}{n} \right)  } } \right] } = \\
+%& \limninf e^{ \frac{2}{\sin^2\left( \frac{1}{n} \right)  } \ln\left( \cos\left( \frac{1}{n} \right) \right) }
+%\end{align}
+%\end{subequations}
+%
+%Llegado este punto, se aplicarán aproximaciones basadas en la serie de Taylor.
+%
+%\begin{subequations}
+%\begin{align}
+%& x \rightarrow 0 \Rightarrow \cos(x) \rightarrow 1 - \frac{x^2}{2} \\
+%& x \rightarrow 0 \Rightarrow \sin(x) \rightarrow x \\
+%& x \rightarrow 0 \Rightarrow \ln(1-x) \rightarrow -x
+%\end{align}
+%\end{subequations}
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf e^{ \frac{2}{\sin^2\left( \frac{1}{n} \right)  } \ln\left( \cos\left( \frac{1}{n} \right) \right) } = \\
+%& \limninf e^{ \frac{2}{ \frac{1}{n} \frac{1}{n} } \ln\left( 1 - \frac{1}{2} \frac{1}{n^2} \right) } = \\
+%& \limninf e^{ 2n^2 \frac{-1}{2n^2} } = \\
+%& \hresult{10.i}{ \limninf a_n = e^{-1} \approx 0,36788 }
+%\end{align}
+%\end{subequations}
+%
+%\subsectionx{10.j}
+%
+%\begin{equation}
+%a_n = \left( 1 + \frac{\cos n}{5n^3 + 1} \right)^{2n^2 + 3}
+%\end{equation}
+%
+%Como ocurrió en 10.h, no se puede aplicar el límite de e porque la función coseno introduce una oscilación. Ergo, se utiliza $ x = e^{\ln(x)} $ y una aproximación de Taylor.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \left( 1 + \frac{\cos n}{5n^3 + 1} \right)^{2n^2 + 3} = \\
+%& \limninf e^{ \ln \left[ \left( 1 + \frac{\cos n}{5n^3 + 1} \right)^{2n^2 + 3} \right] } = \\
+%& \limninf e^{ (2n^2+3) \ln\left( 1 + \frac{\cos n}{5n^3 + 1} \right) } = \\
+%& \limninf e^{ (2n^2+3) \frac{\cos(n)}{5n^3+1} } = \\
+%& \limninf e^{ \cos(n) \frac{2n^2+3}{5n^3+1} }
+%\end{align}
+%\end{subequations}
+%
+%En la última expresión, el segundo factor del producto en el exponente tiende a cero, por ser el denominador de mayor grado que el numerador. Una expresión que tiende a cero multiplicada por una expresión acotada, como $ \cos(n) $, tiende a cero. Ergo:
+%
+%\begin{equation}
+%\hresult{10.j}{ \limninf a_n = e^0 = 1 }
+%\end{equation}
+%
+%\sectionx{11}
+%
+%\textbf{Calcular, si existe, el límite de las siguientes sucesiones.}
+%
+%\begin{enumerate}[label=(\alph*)]
+%
+%\bfseries
+%
+%\item $ \frac{n}{2^{n+1}} $
+%
+%\item $ \left( 2 - \frac{1}{n} \right)^n $
+%
+%\item $ \frac{n 2^n}{n!} $
+%
+%\item $ \sqrt[n]{n!} $
+%
+%\item $ \frac{n^3 + n!}{2^n + 3^n} $
+%
+%\item $ \frac{2^{2n+1}}{(2n)!} $
+%
+%\item $ \left( \frac{1}{2} + \frac{2}{n} \right)^n $
+%
+%\item $ \frac{n^2}{n!} $
+%
+%\item $ \frac{n!}{n^n} $
+%
+%\item $ \frac{n^4 4^n n!}{n^n} $
+%
+%\end{enumerate}
+%
+%\hrule
+%
+%\subsectionx{11.a}
+%
+%\begin{equation}
+%a_n = \frac{n}{2^{n+1}}
+%\end{equation}
+%
+%Cuando una sucesión es un cociente y hay potencias de n, suele ser una buena oportunidad para aplicar el \textbf{criterio de D'Alembert}. Formalmente, el mismo plantea lo siguiente:
+%
+%Dada una sucesión $ a_n $ de números reales o complejos, considérese el límite:
+%
+%\begin{equation}
+%L = \limninf \left| \frac{a_{n+1}}{a_n} \right|
+%\end{equation}
+%
+%\begin{itemize}
+%
+%\item Si $ L $ existe y $ L < 1 \Rightarrow a_n $ converge a cero.
+%
+%\item Si $ L $ existe y $ L > 1 $, o no existe y diverge a $ +\infty \Rightarrow a_n $ diverge.
+%
+%\item Si $ L $ existe y $ L = 1 $ o $ L $ no existe y no está definido, el criterio no permite extraer conclusiones.    
+%
+%\end{itemize}
+%
+%En este caso particular, dado que se supone que la exponencial del denominador crece más rápido que la función lineal del numerador, se espera que aplicar el criterio conduzca a que el límite es cero.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \left| \frac{a_{n+1}}{a_n} \right| = \\
+%& \limninf \left| \frac{n+1}{2^{(n+1)+1}} : \frac{n}{2^{n+1}} \right| = \\
+%& \limninf \frac{n+1}{4 \cdot \cancel{2^n}} : \frac{n}{2 \cdot \cancel{2^n}} = \\
+%& \limninf \frac{2 (n+1) }{4n} = \frac{1}{2}
+%\end{align}
+%\end{subequations}
+%
+%El límite existe y es menor a 1, por lo tanto se concluye por el criterio de D'Alembert que:
+%
+%\begin{equation}
+%\hresult{11.a}{ \limninf a_n = 0 }
+%\end{equation}
+%
+%\subsectionx{11.b}
+%
+%\begin{equation}
+%a_n = \left( 2 - \frac{1}{n} \right)^n
+%\end{equation}
+%
+%En este caso, no hay indeterminación. La base tiende a 2, y el exponente a $ +\infty $. Al ser la base mayor a 1, la sucesión diverge a $ +\infty $.
+%
+%\begin{equation}
+%\hresult{11.b}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+%\end{equation}
+%
+%\subsectionx{11.c}
+%
+%Cabe esperar que el factorial crezca más rápido, por ende se aplica el criterio de D'Alembert.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \left| \frac{a_{n+1}}{a_n} \right| = \\
+%& \limninf \left| \frac{(n+1) 2^{n+1}}{(n+1)!} : \frac{n 2^n}{n!} \right|
+%\end{align}
+%\end{subequations}
+%
+%Una propiedad que será de utilidad cada vez que aparezca el factorial es la siguiente. Por la definición recursiva de factorial, se tiene:
+%
+%\begin{equation}
+%n! = n (n-1)! \Rightarrow (n+1)! = (n+1) n!
+%\end{equation}
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \left| \frac{(n+1) 2^{n+1}}{(n+1)!} : \frac{n 2^n}{n!} \right| = \\
+%& \limninf \frac{ \cancel{(n+1)} 2 \cdot \cancel{2^n} }{\cancel{(n+1)} \cancel{n!}} : \frac{n \cancel{2^n}}{\cancel{n!}} = \\
+%& \limninf \frac{2}{n} = 0
+%\end{align}
+%\end{subequations}
+%
+%El límite de D'Alembert es finito y menor a 1, por lo tanto:
+%
+%\begin{equation}
+%\hresult{11.c}{ \limninf a_n = 0 }
+%\end{equation}
+%
+%\subsectionx{11.d}
+%
+%\begin{equation}
+%a_n = \sqrt[n]{n!}
+%\end{equation}
+%
+%Dado que $ \sqrt[n]{n!} = (n!)^{ \frac{1}{n} } $, se tiene una indeterminación del tipo $ (+\infty)^0 $. Usar D'Alembert no ayuda mucho porque la potencia queda como $ \frac{1}{n+1} $. Tampoco es útil el criterio de Cauchy, porque se estaría aplicando una raíz enésima sobre una raíz enésima. Lo más directo en este caso es utilizar la \textbf{aproximación de Stirling} para la función factorial:
+%
+%\begin{equation}
+%\hresult{}{n! \approx \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n}
+%\end{equation}
+%
+%Aplicando esto en el radicando, resulta:
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf (n!)^{ \frac{1}{n} } = \\
+%& \limninf \left[ \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n \right]^{ \frac{1}{n} } = \\
+%& \limninf \left[ (2 \pi n)^{\frac{1}{2}} \left( \frac{n}{e} \right)^n \right]^{ \frac{1}{n} } = \\
+%& \limninf (2 \pi n)^{\frac{1}{2n}} \left( \frac{n}{e} \right)
+%\end{align}
+%\end{subequations}
+%
+%En este producto, el segundo factor, $ \frac{n}{e} $ tiende a $ +\infty $, y el primero tiene una indeterminación del tipo $ (+\infty)^0 $. Analizando esa expresión por separado, dado que no se puede transformar la base, lo más directo es aplicar $ x = e^{\ln(x)} $.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf (2 \pi n)^{ \frac{1}{2n} } = \\
+%& \limninf \left[ e^{ \ln(2 \pi n) } \right]^{ \frac{1}{2n} } = \\
+%& \limninf e^{ \frac{ \ln(2 \pi n) }{2n} } = \\
+%& \limninf e^{ \frac{ \ln(2 \pi) + \ln(n) }{2n} } = \\
+%& \limninf e^{ \frac{\ln(n)}{2n} } = e^0 = 1
+%\end{align}
+%\end{subequations}
+%
+%En el último paso, se aplicó el resultado ya visto de que $ \frac{\ln(n)}{n} $ tiende a cero porque el logaritmo crece más lento que la función lineal.
+%
+%Volviendo al problema inicial, si el primer factor tiende a 1 y el segundo a $ +\infty $, la sucesión completa diverge a $ +\infty $.
+%
+%\begin{equation}
+%\hresult{11.d}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+%\end{equation}
+%
+%\subsectionx{11.e}
+%
+%\begin{equation}
+%a_n = \frac{n^3 + n!}{2^n + 3^n}
+%\end{equation}
+%
+%A simple vista, podría suponerse que al crecer $ n! $ más rápido que $ n^a $ o $ a^n $, la sucesión diverge a $ +\infty $. Para confirmar eso, se puede multiplicar y dividir por $ n! $ y mirar cada término.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \frac{n^3 + n!}{2^n + 3^n} = \\
+%& \limninf \frac{n^3 + n!}{2^n + 3^n} \frac{ \frac{1}{n!} }{ \frac{1}{n!} } = \\
+%& \limninf \frac{ \frac{n^3}{n!} + 1 }{ \frac{2^n}{n!} + \frac{3^n}{n!} }
+%\end{align}
+%\end{subequations}
+%
+%Para continuar, se demostrará el supuesto de que $ n! $ crece más rápido que cualquier polinomio o exponencial. Para ambos casos, se utilizará el criterio de D'Alembert. Sea:
+%
+%\begin{subequations}
+%\begin{align}
+%& b_n = \frac{n^a}{n!}, a > 0 \\
+%& \limninf \left| \frac{b_{n+1}}{b_n} \right| = \\
+%& \limninf \left| \frac{(n+1)^a}{(n+1)!} : \frac{n^a}{n!} \right| = \\
+%& \limninf \frac{(n+1)^a \cancel{n!} }{(n+1) \cancel{n!} n^a} = \\
+%& \limninf \frac{1}{n+1} \left( \frac{n+1}{n} \right)^a
+%\end{align}
+%\end{subequations}
+%
+%En este punto, el primer factor del producto tiende a cero, y el segundo a $ 1^a = 1 $. Por ende, el límite de D'Alembert existe y es cero, lo cual implica que $ b_n $ converge a cero como se esperaba.
+%
+%Sólo queda la exponencial. Sea:
+%
+%\begin{subequations}
+%\begin{align}
+%& c_n = \frac{a^n}{n!}, a > 0 \\
+%& \limninf \left| \frac{c_{n+1}}{c_n} \right| = \\
+%& \limninf \left| \frac{a^{n+1}}{(n+1)!} : \frac{a^n}{n!} \right| = \\
+%& \limninf \frac{a \cdot \cancel{a^n}}{(n+1) \cancel{n!}} : \frac{\cancel{a^n}}{\cancel{n!}} = \\
+%& \limninf \frac{a}{n+1} = 0
+%\end{align}
+%\end{subequations}
+%
+%Nuevamente, el límite de D'Alembert existe y es cero, lo cual implica que $ c_n $ converge a cero.
+%
+%Volviendo al problema original:
+%
+%\begin{equation}
+%\limninf \frac{ \frac{n^3}{n!} + 1 }{ \frac{2^n}{n!} + \frac{3^n}{n!}}
+%\end{equation}
+%
+%En base a los resultados demostrados, todas las fracciones tienden a cero, por ende se tiene $ \frac{1}{0^+} = +\infty $. Finalmente:
+%
+%\begin{equation}
+%\hresult{11.e}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+%\end{equation}
+%
+%\subsectionx{11.f}
+%
+%\begin{equation}
+%a_n = \frac{2^{2n+1}}{(2n)!}
+%\end{equation}
+%
+%Cabe esperar que el factorial crezca más rápido que la exponencial, incluso compuesta con una función lineal. En todo caso, para mayor certeza, se puede aplicar el criterio de D'Alembert.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \left| \frac{a_{n+1}}{a_n} \right| = \\
+%& \limninf \left| \frac{2^{2(n+1)+1}}{(2(n+1))!} : \frac{2^{2n+1}}{(2n)!} \right| = \\
+%& \limninf \frac{ 2^2 \cdot \cancel{2^{2n+1}} }{(2n+2)!} : \frac{ \cancel{2^{2n+1}} }{(2n)!} = \\
+%& \limninf \frac{4}{ (2n+2)(2n+1)\cancel{(2n)!} } : \frac{1}{ \cancel{(2n)!} } = \\
+%& \limninf \frac{4}{(2n+2)(2n+1)} = 0
+%\end{align}
+%\end{subequations}
+%
+%Al existir el límite de D'Alembert y valer cero, puede concluirse que $ a_n $ converge a cero.
+%
+%\begin{equation}
+%\hresult{11.f}{ \limninf a_n = 0 }
+%\end{equation}
+%
+%\subsectionx{11.g}
+%
+%\begin{equation}
+%a_n = \left( \frac{1}{2} + \frac{2}{n} \right)^n
+%\end{equation}
+%
+%En este caso, no hay indeterminación. La base tiende a $ \frac{1}{2} $, y el exponente a $ +\infty $. Al ser la base positiva y menor a 1, la sucesión converge a cero.
+%
+%\begin{equation}
+%\hresult{11.g}{ \limninf a_n = 0 }
+%\end{equation}
+%
+%\subsectionx{11.h}
+%
+%\begin{equation}
+%a_n = \frac{n^2}{n!}
+%\end{equation}
+%
+%Ya se demostró en 11.e que la función factorial crece más rápido que cualquier polinomio. Esto es un caso particular $ (a = 2) $. Por lo tanto:
+%
+%\begin{equation}
+%\hresult{11.h}{ \limninf a_n = 0 }
+%\end{equation}
+%
+%\subsectionx{11.i}
+%
+%\begin{equation}
+%a_n = \frac{n!}{n^n}
+%\end{equation}
+%
+%En este caso, no es evidente si $ n! $ crece más rápido que $ n^n $. Se utilizará el criterio de D'Alembert de manera exploratoria.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \left| \frac{a_{n+1}}{a_n} \right| = \\
+%& \limninf \left| \frac{(n+1)!}{(n+1)^{n+1}} : \frac{n!}{n^n} \right| = \\
+%& \limninf \frac{ \cancel{(n+1)} \cancel{n!} }{ \cancel{(n+1)} (n+1)^n } : \frac{ \cancel{n!} }{n^n} = \\
+%& \limninf \frac{n^n}{(n+1)^n} = \\
+%& \limninf \left( \frac{n}{n+1} \right)^n = \\
+%& \limninf \left( 1 - \frac{1}{n+1} \right)^n = \\
+%& \limninf e^{ \left[ \ln\left( 1 - \frac{1}{n+1} \right) \right]^n } = \\
+%& \limninf e^{ n \ln\left( 1 - \frac{1}{n+1} \right) } = \\
+%& \limninf e^{ n \left( \frac{-1}{n+1} \right) } = e^{-1}
+%\end{align}
+%\end{subequations}
+%
+%En el último paso se utilizó la ya vista aproximación de Taylor:
+%
+%\begin{equation}
+%\hresult{}{ x \rightarrow 0 \Rightarrow \ln(1-x) \approx -x }
+%\end{equation}
+%
+%Concluyendo, dado que el límite de D'Alembert existe y es menor a 1, la sucesión converge a cero. Esto también demuestra que $ n^n $ crece más rápido que $ n! $.
+%
+%\begin{equation}
+%\hresult{11.h}{ \limninf a_n = 0 }
+%\end{equation}
+%
+%\subsectionx{11.j}
+%
+%\begin{equation}
+%a_n = \frac{n^4 4^n n!}{n^n}
+%\end{equation}
+%
+%Ya se vio que $ n^n $ crece más rápido que todo lo que hay en el numerador, pero como están multiplicados, no se puede predecir a simple vista el comportamiento. Por lo tanto, se aplica D'Alembert para explorar.
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \left| \frac{a_{n+1}}{a_n} \right| = \\
+%& \limninf \left| \frac{(n+1)^4 4^{n+1} (n+1)! }{(n+1)^{n+1}} : \frac{n^4 4^n n!}{n^n} \right| = \\
+%& \limninf \frac{ (n+1)^4 4 \cdot \cancel{4^n} \cancel{(n+1)} \cancel{n!} }{ \cancel{(n+1)} (n+1)^n} : \frac{n^4 \cancel{4^n} \cancel{n!} }{n^n} = \\
+%& \limninf \frac{4 (n+1)^4 n^n}{n^4 (n+1)^n} = \\
+%& \limninf 4 \underbrace{ \left( \frac{n+1}{n} \right)^4 }_{1} \underbrace{ \left( \frac{n}{n+1} \right)^n }_{e^{-1}} = \\
+%& \frac{4}{e} \approx 1,4715
+%\end{align}
+%\end{subequations}
+%
+%El límite de D'Alembert existe, pero da un valor mayor a 1. Por lo tanto, la sucesión diverge a $ +\infty $. Esto demuestra que el numerador crece más rápido que el denominador, pese a que este último es $ n^n $.
+%
+%\begin{equation}
+%\hresult{11.j}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+%\end{equation}
+%
+%\sectionx{12}
+%
+%\textbf{En cada caso, la sucesión $ a_n $ se encuentra sujeta a las condiciones indicadas. Analizar la existencia de límite, y en caso afirmativo, calcularlo.}
+%
+%\begin{enumerate}[label=(\alph*)]
+%
+%\bfseries
+%
+%\item $ 2 - \frac{3}{2^n} < 5 - 2 a_n \leq 1 + \sqrt[n]{4} $
+%
+%\item $ 0 < 3 a_n + 2 < \frac{2^n n!}{ n^{2n+1} } $
+%
+%\item $ \frac{1}{a_n} > \left( 1 + \frac{1}{n} \right)^{ n^2 } $
+%
+%\item $ 2 a_n + 6 > \frac{1}{ \sqrt[n]{n+1} - 1 } $
+%
+%\end{enumerate}
+%
+%\hrule
+%
+%\subsectionx{12.a}
+%
+%\begin{equation}
+%2 - \frac{3}{2^n} < 5 - 2 a_n \leq 1 + \sqrt[n]{4}
+%\end{equation}
+%
+%Se tiene una sucesión acotada inferior y superiormente, lo cual sugiere la posibilidad de aplicar el \textbf{Teorema del Sandwich}, a saber.
+%
+%Dadas tres sucesions $ a_n $, $ b_n $ y $ c_n $ tales que:
+%
+%\begin{equation}
+%a_n \leq b_n \leq c_n, \text{ pctn }
+%\end{equation}
+%
+%Entonces, si además se cumple que:
+%
+%\begin{equation}
+%\limninf a_n = \limninf c_n = L
+%\end{equation}
+%
+%Si se cumplen estas condiciones, entonces el teorema garantiza que:
+%
+%\begin{equation}
+%\hresult{}{ \limninf b_n = L }
+%\end{equation}
+%
+%Aclaración: las desigualdades entre las sucesiones pueden ser total o parcialmente estrictas. Vale decir, el teorema vale para los casos $ a_n < b_n \leq  $, $ a_n \leq b_n < c_n $ y demás combinaciones.
+%
+%Volviendo a este caso en particular, restando 5 miembro a miembro resulta:
+%
+%\begin{equation}
+%-3 - \frac{3}{2^n} < -2 a_n \leq -4 + (4)^{ \frac{1}{n} }
+%\end{equation}
+%
+%Multiplicando miembro a miembro por $ -\frac{1}{2} $, lo cual invierte el sentido de las desigualdades, se obtiene que:
+%
+%\begin{equation}
+%\frac{3}{2} + \frac{3}{2^{n+1}} > a_n \geq 2 - \frac{1}{2} (4)^{ \frac{1}{n} }
+%\end{equation}
+%
+%Tomando el límite miembro a miembro:
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \frac{3}{2} + \underbrace{ \frac{3}{2^{n+1}} }_{0} > \limninf a_n \geq \limninf 2 - \frac{1}{2} \underbrace{ (4)^{ \frac{1}{n} } }_{1} \\
+%& \frac{3}{2} > \limninf a_n \geq 2 - \frac{1}{2} \\
+%& \frac{3}{2} > \limninf a_n \geq \frac{3}{2} \\
+%\end{align}
+%\end{subequations}
+%
+%Dado que se satisfacen las condiciones del teorema del sandwich, es posible concluir que:
+%
+%\begin{equation}
+%\hresult{12.a}{ \limninf a_n = \frac{3}{2} }
+%\end{equation}
+%
+%\subsectionx{12.b}
+%
+%\begin{equation}
+%0 < 3 a_n + 2 < \frac{2^n n!}{ n^{2n+1} }
+%\end{equation}
+%
+%Nuevamente la situación se presta para aplicar el teorema del sandwich. Restando 2 miembro a miembro:
+%
+%\begin{equation}
+%-2 < 3 a_n < -2 + \frac{2^n n!}{ n^{2n+1} }
+%\end{equation}
+%
+%Multiplicando por $ \frac{1}{3} $ miembro a miembro:
+%
+%\begin{equation}
+%-\frac{2}{3} < a_n < -\frac{2}{3} + \frac{1}{3} \frac{2^n n!}{ n^{2n+1} }
+%\end{equation}
+%
+%Tomando límite miembro a miembro, la única incógnita es qué pasa con esta expresión:
+%
+%\begin{equation}
+%b_n = \frac{2^n n!}{n^{2n+1}}
+%\end{equation}
+%
+%Aplicando el criterio de D'Alembert:
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \left| \frac{b_{n+1}}{b_n} \right| = \\
+%& \limninf \left| \frac{ 2^{n+1} (n+1)! }{ (n+1)^{2(n+1)+1} } : \frac{ 2^n n! }{ n^{ 2n+1 } } \right| = \\
+%& \limninf \frac{ 2 \cdot \cancel{2^n} \cancel{(n+1)} \cancel{n!} }{ \cancel{(n+1)}(n+1)(n+1)^{2n+1} } : \frac{ \cancel{2^n} \cancel{n!} }{ n^{2n+1} } = \\
+%& \limninf \frac{2}{n+1} \left( \frac{n}{n+1} \right)^{2n+1} = \\
+%& \limninf \frac{2}{n+1} \left[ e^{ \ln\left( \frac{n}{n+1} \right) } \right]^{2n+1} = \\
+%& \limninf \frac{2}{n+1} e^{ (2n+1) \ln\left( 1 - \frac{1}{n+1} \right) } = \\
+%& \limninf \frac{2}{n+1} e^{ (2n+1) \frac{-1}{n+1} } = \\
+%& \limninf \frac{2 e^{-2} }{n+1} = 0
+%\end{align}
+%\end{subequations}
+%
+%El límite de D'Alembert existe y es cero. Por ende, $ b_n $ converge a cero. Volviendo a las desigualdades originales:
+%
+%\begin{equation}
+%-\frac{2}{3} < \limninf a_n < -\frac{2}{3}
+%\end{equation}
+%
+%Esto satisface las condiciones del teorema del sandwich, y por lo tanto se concluye que:
+%
+%\begin{equation}
+%\hresult{12.b}{ \limninf a_n = -\frac{2}{3} }
+%\end{equation}
+%
+%\subsectionx{12.c}
+%
+%\begin{equation}
+%\frac{1}{a_n} > \left( 1 + \frac{1}{n} \right)^{ n^2 }
+%\end{equation}
+%
+%En este caso, no se sabe el signo de $ a_n $, por lo que no es conveniente multiplicar miembro a miembro por $ a_n $, o elevar a la -1 miembro a miembro. Tomando límite miembro a miembro a modo exploratorio, resulta:
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf \frac{1}{a_n} > \limninf \left( 1 + \frac{1}{n} \right)^{ n^2 } \\
+%& \limninf \frac{1}{a_n} > \limninf \left[ \underbrace{ \left( 1 + \frac{1}{n} \right)^n }_e \right]^n \\
+%& \limninf \frac{1}{a_n} > +\infty
+%\end{align}
+%\end{subequations}
+%
+%Llegado este punto, para que se cumpla esta desigualdad, $ a_n $ tiene que tender a cero por derecha.
+%
+%\begin{equation}
+%\hresult{12.c}{ \limninf a_n = 0^{+} }
+%\end{equation}
+%
+%\subsectionx{12.d}
+%
+%\begin{equation}
+%2 a_n + 6 > \frac{1}{ \sqrt[n]{n+1} - 1 }
+%\end{equation}
+%
+%Esta es una situación similar a la del inciso anterior. Mirando el lado derecho cuando $ n \rightarrow +\infty $, la expresión de interés es:
+%
+%\begin{subequations}
+%\begin{align}
+%& b_n = (n+1)^{ \frac{1}{n} } \Rightarrow \\
+%& \limninf b_n = \\
+%& \limninf (n+1)^{ \frac{1}{n} } = \\
+%& \limninf [ e^{ \ln(n+1) } ]^{ \frac{1}{n} } = \\
+%& \limninf e^{ \frac{\ln(n+1)}{n} } = e^{0^+} = 1^{+}
+%\end{align}
+%\end{subequations}
+%
+%Volviendo a la desigualdad:
+%
+%\begin{subequations}
+%\begin{align}
+%& \limninf 2 a_n + 6 > \frac{1}{ 1^{+} - 1 } \\
+%& \limninf 2 a_n + 6 > +\infty \\
+%& \limninf 2 a_n > +\infty - 6 \\
+%& \limninf 2 a_n > +\infty \\
+%& \limninf a_n > \frac{+\infty}{2} \\
+%& \limninf a_n > +\infty
+%\end{align}
+%\end{subequations}
+%
+%Para que se cumpla la desigualdad, $ a_n $ tiene que diverger a $ +\infty $.
+%
+%\begin{equation}
+%\hresult{12.d}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+%\end{equation}
+%
+%\subsectionx{13}
+%
+%\textbf{ Dada la sucesión $1, 3, 5, 7, 7, 5, 3, 1, 1, 3, 5, 7, \dots $, escribir el término general de $ a_{2n}, a_{4n} $ y $ a_{8n-3} $. Encontrar dos subsucesiones convergentes. }
+%
+%\vspace{1em}
+%\hrule
+%\vspace{1em}
+%
+%En este caso particular, se tiene una sucesión definida a partir de un patrón fijo que se repite. Dado que dicho patrón es relativamente chico, con 8 elementos, o en otras palabras la sucesión es periódica con período $ N = 8 $, una forma práctica de definir el término general es usando aritmética modular. Por ejemplo, $ a_1 = a_9 = a_{17} = \dots = a_{8k-7}, k \in \mathbb{N} $. Otra forma práctica de caracterizar los índices de estos valores es que son todos los naturales tales que el resto de su división entera por 8 da 1. Haciendo esto para resto 2, 3, $ \dots $, 7, se puede definir toda la sucesión.
+%
+%\begin{equation}
+%a_n = 
+%	\begin{cases}
+%		1 & \text{ si } n \equiv 1 \mod 8 \\
+%		3 & \text{ si } n \equiv 2 \mod 8 \\
+%		5 & \text{ si } n \equiv 3 \mod 8 \\
+%		7 & \text{ si } n \equiv 4 \mod 8 \\
+%		7 & \text{ si } n \equiv 5 \mod 8 \\
+%		5 & \text{ si } n \equiv 6 \mod 8 \\
+%		3 & \text{ si } n \equiv 7 \mod 8 \\
+%		1 & \text{ si } n \equiv 0 \mod 8
+%	\end{cases}
+%\end{equation}
+%
+%Nótese que este mecanismo utilizando el resto de la división entera puede generalizarse para expresar cualquier sucesión definida como un patrón periódico de valores fijos.
+%
+%Volviendo a lo que pide el enunciado, considérse $ a_{2n} $. Observando los valores:
+%
+%\begin{equation}
+%a_{2n} = \{ a_2, a_4, a_6, a_8, a_10, a_12, a_14, \dots \} = \{ 3, 7, 5, 1, 3, 7, 5, \dots \}
+%\end{equation}
+%
+%Nuevamente se tiene un patrón que se repite, pero con período 4. Por lo tanto, una forma posible de expresar $ a_{2n} $ es la siguiente.
+%
+%\begin{equation}
+%\hresult{13.i}{
+%a_{2n} = 
+%	\begin{cases}
+%		3 & \text{ si } n \equiv 1 \mod 4 \\
+%		7 & \text{ si } n \equiv 2 \mod 4 \\
+%		5 & \text{ si } n \equiv 3 \mod 4 \\
+%		1 & \text{ si } n \equiv 0 \mod 4
+%	\end{cases}
+%}
+%\end{equation}
+%
+%Para el caso de $ a_{4n} $, los valores son:
+%
+%\begin{equation}
+%a_{4n} = \{ a_4, a_8, a_12, a_16, a_20, \dots \} = \{ 7, 1, 7, 1, 7, \dots \}
+%\end{equation}
+%
+%\begin{equation}
+%\hresult{13.ii}{
+%a_{4n} = 
+%	\begin{cases}
+%		7 & \text{ si } n \equiv 1 \mod 2 \text{ (n impar) } \\
+%		1 & \text{ si } n \equiv 0 \mod 2 \text{ (n par) }
+%	\end{cases}
+%}
+%\end{equation}
+%
+%Una forma de ver $ a_{2n} $ y $ a_{4n} $ es como muestreos de $ a_{n} $. En el primero, en lugar de tomar valores con frecuencia 1, se toma con el doble. Por eso el período pasa de 8 a 4: duplicar la frecuencia equivale a dividir el período por 2. Aplicando esto de nuevo al pasar a $ a_{4n} $, se toman valores con el cuádruple de frecuencia, y el período se reduce a 2: cuadruplicar la frecuencia equivale a dividir el período por 4.
+%
+%Finalmente, considérese el caso de $ a_{8n-3} $. Una forma directa de analizar esto a priori es considerar que se toman múltiplos de 8 y se les resta 3. El primer valor es 5, que tiene resto 5 al dividir por 8. El segundo valor es 13, que también tiene resto 5. Al restarle 3 a los múltiplos de 8, se obtienen los números que divididos por 8 dan resto 5. En el término general de $ a_n $, eso es 7 para todo $ n $. Esto puede confirmarse observando los valores de $ a_5, a_13 $ y demás.
+%
+%\begin{equation}
+%\hresult{13.iii}{ a_{8n-3} = 7 }
+%\end{equation}
+%
+%Por último, se pide hallar dos subsucesiones convergentes. Como se observó al analizar $ a_{8n-3} $, restando constantes a los múltiplos de 8 se obtienen subsucesiones constantes. Por lo tanto, dos subsucesiones que cumplen lo pedido son:
+%
+%\begin{equation}
+%\hresult{13.iv}{ a_{8n-7} = 1, a_{8n-6} = 3 }
+%\end{equation}
+%
+%Esto es para probar si esto se actualiza bien o no.
 
 \end{document}
