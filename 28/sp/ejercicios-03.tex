@@ -2679,10 +2679,10 @@ Por último, se pide hallar dos subsucesiones convergentes. Como se observó al 
 	
 	\item $ \cos(n \pi) \frac{3n + 1}{5n -2} $
 	
-	\item $ \left\{ \begin{array}{ll}
+	\item $ \begin{cases}
 		\sqrt[n]{n} & \text{ si } n \text{ es múltiplo de } 5 \\
 		2 + \frac{1}{n} & \text{ en otro caso } 
-	\end{array} \right. $
+	\end{cases} $
 	
 	\item $ \left( 1 + \frac{ \cos(n \pi) }{n} \right)^n $
 	
@@ -2690,8 +2690,31 @@ Por último, se pide hallar dos subsucesiones convergentes. Como se observó al 
 	
 \end{enumerate}
 
-\vspace{1em}
 \hrule
-\vspace{1em}
+
+\subsectionx{14.a}
+
+Como en el ejercicio anterior, esta sucesión tiene un patrón de valores fijos que se repite. Por lo tanto, puede definirse usando aritmética modular.
+
+\begin{equation}
+a_n = \begin{cases}
+	0 & \text{ si } n \equiv 1 \mod 3 \\
+	1 & \text{ si } n \equiv 2 \mod 3 \\
+	2 & \text{ si } n \equiv 0 \mod 3 \\
+\end{cases}
+\end{equation}
+
+Tomando cualquier par de subsucesiones constantes con diferente valor, convergerán a dicho valor constante. Si esos valores son diferentes, la sucesión $ a_n $ original carece de límite. Por ejemplo:
+
+\begin{subequations}
+\begin{align}
+a_{3n-2} &= a_1, a_4, a_7, \ldots = 0 \\
+a_{3n-1} &= a_2, a_5, a_8, \ldots = 1
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{14.a}{ \limninf a_{3n-2} = 0 \wedge \limninf a_{3n-1} = 1 \Rightarrow \limninf a_n \text{ no existe} }
+\end{equation}
 
 \end{document}
