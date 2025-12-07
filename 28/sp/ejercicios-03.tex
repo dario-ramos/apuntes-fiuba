@@ -2717,4 +2717,58 @@ a_{3n-1} &= a_2, a_5, a_8, \ldots = 1
 \hresult{14.a}{ \limninf a_{3n-2} = 0 \wedge \limninf a_{3n-1} = 1 \Rightarrow \limninf a_n \text{ no existe} }
 \end{equation}
 
+\subsectionx{14.b}
+
+Observando los primeros términos:
+
+\begin{subequations}
+\begin{align}
+a_n &= \sin\left(n \frac{\pi}{2}\right) \\
+&= \left\{ \sin\left(\frac{1}{2} \pi\right), \sin(\pi), \sin\left(\frac{3}{2} \pi\right), \sin(2\pi), \sin\left(\frac{5}{2} \pi\right), \ldots \right\} \\
+&= {1, 0, -1, 0, 1, \ldots}
+\end{align}
+\end{subequations}
+
+Como en el inciso anterior, esto es un patrón de constantes que se repite periódicamente. De nuevo, con seleccionar un par de subsucesiones de valor constante y diferente alcanza para mostrar que el límite no existe. Siendo el período 4, las subsucesiones constantes pueden expresarse como $a_{4n-k}$, donde la constante $k$ selecciona el valor a utilizar.
+
+\begin{subequations}
+\begin{align}
+a_{4n-3} &= a_1, a_5, a_9, \ldots = 1 \\
+a_{4n-2} &= a_2, a_6, a_{10}, \ldots = 0
+\end{align}
+\end{subequations}
+
+\begin{equation}
+	\hresult{14.b}{ \limninf a_{4n-3} = 1 \wedge \limninf a_{4n-2} = 0 \Rightarrow \limninf a_n \text{ no existe} }
+\end{equation}
+
+\subsectionx{14.c}
+
+Evaluando los primeros términos:
+
+\begin{subequations}
+\begin{align}
+a_n &= \cos(n \pi) + \sin\left( \frac{n}{2} \pi \right) \\
+&= \left\{ \cos(\pi) + \sin\left(\frac{1}{2} \pi \right), \cos(2 \pi) + \sin(\pi), \right. \\
+& \phantom{= \{\:\:} \cos(3 \pi) + \sin\left(\frac{3}{2} \pi\right), \cos(4 \pi) + \sin(2 \pi), \\
+& \phantom{= \{\:\:} \cos(5 \pi) + \sin\left(\frac{5}{2}\pi\right), \cos(6 \pi) + \sin(3 \pi), \\
+& \phantom{= \{\:\:} \left. \cos(7 \pi) + \sin\left(\frac{7}{2}\pi\right), \ldots \right\} \\
+&= \{ -1+1, 1+0, -1+(-1), 1+0, -1+1, 1+0, -1+(-1), \ldots \} \\
+&= \{ 0, 1, -2, 1, 0, 1, -2, \ldots \}
+\end{align}
+\end{subequations}
+
+Nuevamente, se tiene una sucesión periódica con valores fijos: el patrón $0, 1, -2, 1$ se repite y por ende el período es 4. Aplicando la misma técnica del inciso anterior:
+
+\begin{subequations}
+	\begin{align}
+		a_{4n-3} &= a_1, a_5, a_9, \ldots = 0 \\
+		a_{4n-2} &= a_2, a_6, a_{10}, \ldots = 1
+	\end{align}
+\end{subequations}
+
+\begin{equation}
+	\hresult{14.c}{ \limninf a_{4n-3} = 0 \wedge \limninf a_{4n-2} = 1 \Rightarrow \limninf a_n \text{ no existe} }
+\end{equation}
+
 \end{document}
