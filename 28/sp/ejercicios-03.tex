@@ -1,3 +1,5 @@
+% !TeX spellcheck = es_ES
+
 \documentclass{article}
 
 \usepackage{amsmath}
@@ -2583,7 +2585,7 @@ Para que se cumpla la desigualdad, $ a_n $ tiene que diverger a $ +\infty $.
 \hresult{12.d}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
 \end{equation}
 
-\subsectionx{13}
+\sectionx{13}
 
 \textbf{ Dada la sucesión $1, 3, 5, 7, 7, 5, 3, 1, 1, 3, 5, 7, \dots $, escribir el término general de $ a_{2n}, a_{4n} $ y $ a_{8n-3} $. Encontrar dos subsucesiones convergentes. }
 
@@ -2591,7 +2593,7 @@ Para que se cumpla la desigualdad, $ a_n $ tiene que diverger a $ +\infty $.
 \hrule
 \vspace{1em}
 
-En este caso particular, se tiene una sucesión definida a partir de un patrón fijo que se repite. Dado que dicho patrón es relativamente chico, con 8 elementos, o en otras palabras la sucesión es periódica con período $ N = 8 $, una forma práctica de definir el término general es usando aritmética modular. Por ejemplo, $ a_1 = a_9 = a_{17} = \dots = a_{8k-7}, k \in \mathbb{N} $. Otra forma práctica de caracterizar los índices de estos valores es que son todos los naturales tales que el resto de su división entera por 8 da 1. Haciendo esto para resto 2, 3, $ \dots $, 7, se puede definir toda la sucesión.
+En este caso particular, se tiene una sucesión definida a partir de un patrón fijo que se repite. Dado que dicho patrón es relativamente chico, con 8 elementos, o en otras palabras la sucesión es periódica con período $ N = 8 $, una forma práctica de definir el término general es usando aritmética modular. Por ejemplo, $ a_1 = a_9 = a_{17} = \dots = a_{8k-7}, k \in \mathbb{N} $. Otra forma práctica de caracterizar los índices de estos valores es estableciendo que son todos los naturales tales que el resto de su división entera por 8 da 1. Haciendo esto para resto 2, 3, $ \dots $, 7, se puede definir toda la sucesión.
 
 \begin{equation}
 a_n = 
@@ -2657,6 +2659,292 @@ Por último, se pide hallar dos subsucesiones convergentes. Como se observó al 
 
 \begin{equation}
 \hresult{13.iv}{ a_{8n-7} = 1, a_{8n-6} = 3 }
+\end{equation}
+
+\sectionx{14}
+
+\textbf{ Usando subsucesiones, pruebe que cada una de las siguientes sucesiones carece de límite: }
+
+\begin{enumerate}[label=(\alph*)]
+	
+	\bfseries
+	
+	\item $ 0, 1, 2, 0, 1, 2, \ldots $
+	
+	\item $ \sin\left( \frac{n \pi}{2} \right) $
+	
+	\item $ \cos( n \pi ) + \sin\left( \frac{n \pi}{2} \right) $
+	
+	\item $ (-1)^{3n+1} + 4(-1)^n $
+	
+	\item $ \cos(n \pi) \frac{3n + 1}{5n -2} $
+	
+	\item $ \begin{cases}
+		\sqrt[n]{n} & \text{ si } n \text{ es múltiplo de } 5 \\
+		2 + \frac{1}{n} & \text{ en otro caso } 
+	\end{cases} $
+	
+	\item $ \left( 1 + \frac{ \cos(n \pi) }{n} \right)^n $
+	
+	\item $ e^{ \sin\left( \frac{n \pi}{4} \right) } $
+	
+\end{enumerate}
+
+\hrule
+
+\subsectionx{14.a}
+
+Como en el ejercicio anterior, esta sucesión tiene un patrón de valores fijos que se repite. Por lo tanto, puede definirse usando aritmética modular.
+
+\begin{equation}
+a_n = \begin{cases}
+	0 & \text{ si } n \equiv 1 \mod 3 \\
+	1 & \text{ si } n \equiv 2 \mod 3 \\
+	2 & \text{ si } n \equiv 0 \mod 3 \\
+\end{cases}
+\end{equation}
+
+Tomando cualquier par de subsucesiones constantes con diferente valor, convergerán a dicho valor constante. Si esos valores son diferentes, la sucesión $ a_n $ original carece de límite. Por ejemplo:
+
+\begin{subequations}
+\begin{align}
+a_{3n-2} &= a_1, a_4, a_7, \ldots = 0 \\
+a_{3n-1} &= a_2, a_5, a_8, \ldots = 1
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{14.a}{ \limninf a_{3n-2} = 0 \wedge \limninf a_{3n-1} = 1 \Rightarrow \limninf a_n \text{ no existe} }
+\end{equation}
+
+\subsectionx{14.b}
+
+Observando los primeros términos:
+
+\begin{subequations}
+\begin{align}
+a_n &= \sin\left(n \frac{\pi}{2}\right) \\
+&= \left\{ \sin\left(\frac{1}{2} \pi\right), \sin(\pi), \sin\left(\frac{3}{2} \pi\right), \sin(2\pi), \sin\left(\frac{5}{2} \pi\right), \ldots \right\} \\
+&= {1, 0, -1, 0, 1, \ldots}
+\end{align}
+\end{subequations}
+
+Como en el inciso anterior, esto es un patrón de constantes que se repite periódicamente. De nuevo, con seleccionar un par de subsucesiones de valor constante y diferente alcanza para mostrar que el límite no existe. Siendo el período 4, las subsucesiones constantes pueden expresarse como $a_{4n-k}$, donde la constante $k$ selecciona el valor a utilizar.
+
+\begin{subequations}
+\begin{align}
+a_{4n-3} &= a_1, a_5, a_9, \ldots = 1 \\
+a_{4n-2} &= a_2, a_6, a_{10}, \ldots = 0
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{14.b}{ \limninf a_{4n-3} = 1 \wedge \limninf a_{4n-2} = 0 \Rightarrow \limninf a_n \text{ no existe} }
+\end{equation}
+
+\subsectionx{14.c}
+
+Evaluando los primeros términos:
+
+\begin{subequations}
+\begin{align}
+a_n &= \cos(n \pi) + \sin\left( \frac{n}{2} \pi \right) \\
+&= \left\{ \cos(\pi) + \sin\left(\frac{1}{2} \pi \right), \cos(2 \pi) + \sin(\pi), \right. \\
+& \phantom{= \{\:\:} \cos(3 \pi) + \sin\left(\frac{3}{2} \pi\right), \cos(4 \pi) + \sin(2 \pi), \\
+& \phantom{= \{\:\:} \cos(5 \pi) + \sin\left(\frac{5}{2}\pi\right), \cos(6 \pi) + \sin(3 \pi), \\
+& \phantom{= \{\:\:} \left. \cos(7 \pi) + \sin\left(\frac{7}{2}\pi\right), \ldots \right\} \\
+&= \{ -1+1, 1+0, -1+(-1), 1+0, -1+1, 1+0, -1+(-1), \ldots \} \\
+&= \{ 0, 1, -2, 1, 0, 1, -2, \ldots \}
+\end{align}
+\end{subequations}
+
+Nuevamente, se tiene una sucesión periódica con valores fijos: el patrón $0, 1, -2, 1$ se repite y por ende el período es 4. Aplicando la misma técnica del inciso anterior:
+
+\begin{subequations}
+\begin{align}
+a_{4n-3} &= a_1, a_5, a_9, \ldots = 0 \\
+a_{4n-2} &= a_2, a_6, a_{10}, \ldots = 1
+\end{align}
+\end{subequations}
+
+\begin{equation}
+	\hresult{14.c}{ \limninf a_{4n-3} = 0 \wedge \limninf a_{4n-2} = 1 \Rightarrow \limninf a_n \text{ no existe} }
+\end{equation}
+
+\subsectionx{14.d}
+
+Sacando factor común $(-1)^n$, es posible simplificar $a_n$.
+
+\begin{subequations}
+\begin{align}
+a_n &= (-1)^{3n+1} + 4 (-1)^n \\
+&= (-1)^n [ (-1)^{2n+1} + 4 ] \\
+&= (-1)^n [(-1)^{2n} (-1) + 4] \\
+&= (-1)^n [1 (-1) + 4] \\
+&= 3 (-1)^n
+\end{align}
+\end{subequations}
+
+Esta sucesión vale $-3$ en los términos de índice impar, y $3$ en los de índice par. Por lo tanto:
+
+\begin{subequations}
+\begin{align}
+a_{2n-1} &= a_1, a_3, a_5, \ldots = -3 \\
+a_{2n} &= a_2, a_4, a_6, \ldots = 3
+\end{align}
+\end{subequations}
+
+\begin{equation}
+\hresult{14.d}{ \limninf a_{2n-1} = -3 \wedge \limninf a_{2n} = 3 \Rightarrow \limninf a_n \text{ no existe} }
+\end{equation}
+
+\subsectionx{14.e}
+
+Nótese que:
+
+\begin{subequations}
+\begin{align}
+\cos(n\pi) &= \{ \cos(\pi), \cos(2 \pi), \cos(3\pi), \cos(4\pi), \ldots \} \\
+&= \{ -1, 1, -1, 1, \ldots \} \\
+&= (-1)^n
+\end{align}
+\end{subequations}
+
+Por lo tanto, nuevamente hay un límite diferente para la subsucesión impar y la subsucesión par.
+
+\begin{subequations}
+\begin{align}
+a_{2n-1} &= (-1)^{2n-1} \frac{3(2n-1)+1}{5(2n-1)-2} = (-1) \frac{6n-2}{10n-7} \\
+a_{2n} &= (-1)^{2n} \frac{3(2n)+1}{5(2n)-2} = \frac{6n+1}{10n-2}
+\end{align}
+\end{subequations}
+
+\begin{equation}
+	\hresult{14.e}{ \limninf a_{2n-1} = -\frac{6}{10} = -\frac{3}{5} \wedge \limninf a_{2n} = \frac{6}{10} = \frac{3}{5} \Rightarrow \limninf a_n \text{ no existe} }
+\end{equation}
+
+\subsectionx{14.f}
+
+La sucesión tiene dos subsucesiones definidas explícitamente. Se calculará el límite para cada una, y si difieren, el límite de $a_n$ no existirá. Para $n$ múltiplo de 5, se tiene:
+
+\begin{equation}
+b_n = \sqrt[n]{n} = n^{\frac{1}{n}}
+\end{equation}
+
+Supóngase que el límite de $b_n$ existe, y vale $ L $.
+
+\begin{equation}
+L = \limninf n^{\frac{1}{n}}
+\end{equation}
+
+A continuación, se aplica la función logaritmo de ambos lados. Como $n$ es un número natural, el valor de $ b_n $ siempre está bien definido.
+
+\begin{equation}
+\ln L = \ln \left( \limninf n^{\frac{1}{n}} \right)
+\end{equation}
+
+Llegado este punto, se aplica la siguiente propiedad: Si la sucesión $ a_n $ es convergente, siendo $ L = \limninf a_n $, y se tiene la función $ f $ que es continua en $L$, entonce se cumple lo siguiente:
+
+ \begin{equation}
+ 	\hresulte{Funciones continuas y límite}{ \limninf f(a_n) = f\left(\limninf a_n\right) }{1em`}
+ \end{equation}
+ 
+Dado que la función logaritmo natural es continua en todo su dominio, es lícito pasar el límite adentro de su argumento, y viceversa. En este caso:
+
+\begin{equation}
+\ln L = \limninf \ln\left( n^{\frac{1}{n}} \right)
+\end{equation}
+
+Aplicando la propiedad $ \ln(a^b) = b \ln(a)$:
+
+\begin{equation}
+\ln L = \limninf \frac{\ln n}{n}
+\end{equation}
+
+Ya se ha probado que $ \limninf \frac{\ln n}{n} = 0 $. Intuitivamente, la función logaritmo crece mucho más lento que la función lineal. Formalmente, se puede probar con el teorema del Sandwich y con la regla de L'Hôpital. En todo caso, resulta:
+
+\begin{equation}
+\ln (L) = 0 \Rightarrow L = e^0 = 1 \Rightarrow \limninf b_n = 1
+\end{equation}
+
+El límite de la segunda rama, $ c_n = 2 + \frac{1}{sn} $ sale por inspección. El término $\frac{1}{n}$ tiende a cero, y se suma la constante dos. Finalmente:
+
+\begin{equation}
+	\hresult{14.f}{ \limninf b_n = 1 \wedge \limninf c_n = 2 \Rightarrow \limninf a_n \text{ no existe} }
+\end{equation}
+
+\subsectionx{14.g}
+
+Ya se demostró previamente que $ cos(n\pi) = (-1)^n $. Por lo tanto, se tiene una subsucesión para $n$ impar y otra para $n$ par. Para el caso impar:
+
+\begin{equation}
+	a_{2n-1} = \left( 1 + \frac{(-1)^{2n-1}}{2n-1} \right)^{2n-1} = \left( 1 + \frac{-1}{2n-1} \right)^{2n-1}
+\end{equation}
+
+Esto tiene toda la apariencia de un límite relacionado con el número $e$. Primero, para llevarlo a una forma más similar a la estándar, vale decir $ \left( 1 + \frac{1}{n} \right)^n $, es posible aplicar el $-1$ del numerador al denominador.
+
+\begin{equation}
+	a_{2n-1} = \left( 1 + \frac{1}{-(2n-1)} \right)^{2n-1}
+\end{equation}
+
+Ahora se puede aplicar un cambio de variable. Sea $ k = -(2n-1)$. Entonces, si $n \rightarrow +\infty$, $k \rightarrow -\infty$.
+
+\begin{equation}
+	\limninf a_{2n-1} = \lim_{k \rightarrow -\infty} \left( 1 + \frac{1}{k} \right)^{-k} = \lim_{k \rightarrow -\infty} \frac{1}{ \left( 1 + \frac{1}{k} \right)^{`k} }
+\end{equation}
+
+Llegado este punto, es posible aplicar el hecho de que el límite de $e$ vale para $-\infty$ también.
+
+ \begin{equation}
+	\hresulte{Límite de e general}{ \lim_{n \rightarrow \pm \infty} = \left(1 + \frac{1}{n}\right)^n = e }{1em}
+\end{equation}
+
+En conclusión, para la subsucesión impar resulta:
+
+\begin{equation}
+	\limninf a_{2n-1} = \frac{1}{e}
+\end{equation}
+
+Pasando al caso par:
+
+\begin{equation}
+	\limninf a_{2n} = \limninf \left(1 + \frac{(-1)^{2n}}{2n}\right)^{2n} = \limninf \left(1 + \frac{1}{2n}\right)^{2n} = e
+\end{equation}
+
+Ergo:
+
+\begin{equation}
+	\hresult{14.f}{ \limninf a_{2n-1} = \frac{1}{e} \wedge \limninf a_{2n} = e \Rightarrow \limninf a_n \text{ no existe} }
+\end{equation}
+
+\subsectionx{14.h}
+
+La sucesión es:
+
+\begin{equation}
+	a_n = e^{\sin\left(n \frac{\pi}{4}\right)}
+\end{equation}
+
+La base es constante, y el exponente variable. Como es una función seno discreta, no necesariamente es periódica. En este caso particular, sí lo es porque su pulsación $\omega$, el coeficiente que multiplica $n$, es un múltiplo racional de $\pi$. El período es $ T = \frac{2\pi}{\omega} = 2\pi : \frac{\pi}{4} = 8$. Esto puede validarse evaluando los primeros 9 términos.
+
+\begin{subequations}
+\begin{align}
+a_1 &= \sin\left( \frac{1}{4} \pi \right) = \frac{\sqrt{2}}{2} \\
+a_2 &= \sin\left( \frac{2}{4} \pi \right) = 1 \\
+a_3 &= \sin\left( \frac{3}{4} \pi \right) = \frac{\sqrt{2}}{2} \\
+a_4 &= \sin\left( \frac{4}{4} \pi \right) = 0 \\
+a_5 &= \sin\left( \frac{5}{4} \pi \right) = -\frac{\sqrt{2}}{2}
+a_6 &= \sin\left( \frac{6}{4} \pi \right) = -1 \\
+a_7 &= \sin\left( \frac{7}{4} \pi \right) = -\frac{\sqrt{2}}{2} \\
+a_8 &= \sin\left( \frac{8}{4} \pi \right) = 0 \\
+a_9 &= \sin\left( \frac{9}{4} \pi \right) = \frac{\sqrt{2}}{2}
+\end{align}
+\end{subequations}
+
+Por lo tanto, se puede aplicar el mecanismo ya visto para sucesiones que son un patrón constante que se repite. Por ejemplo:
+
+\begin{equation}
+	\hresult{14.h}{ \limninf a_{8n-7} = \frac{\sqrt{2}}{2} \wedge \limninf a_{8n-6} = 1 \Rightarrow \limninf a_n \text{ no existe} }
 \end{equation}
 
 \end{document}
