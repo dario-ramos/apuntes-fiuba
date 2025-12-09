@@ -2873,4 +2873,78 @@ El límite de la segunda rama, $ c_n = 2 + \frac{1}{sn} $ sale por inspección. 
 	\hresult{14.f}{ \limninf b_n = 1 \wedge \limninf c_n = 2 \Rightarrow \limninf a_n \text{ no existe} }
 \end{equation}
 
+\subsectionx{14.g}
+
+Ya se demostró previamente que $ cos(n\pi) = (-1)^n $. Por lo tanto, se tiene una subsucesión para $n$ impar y otra para $n$ par. Para el caso impar:
+
+\begin{equation}
+	a_{2n-1} = \left( 1 + \frac{(-1)^{2n-1}}{2n-1} \right)^{2n-1} = \left( 1 + \frac{-1}{2n-1} \right)^{2n-1}
+\end{equation}
+
+Esto tiene toda la apariencia de un límite relacionado con el número $e$. Primero, para llevarlo a una forma más similar a la estándar, vale decir $ \left( 1 + \frac{1}{n} \right)^n $, es posible aplicar el $-1$ del numerador al denominador.
+
+\begin{equation}
+	a_{2n-1} = \left( 1 + \frac{1}{-(2n-1)} \right)^{2n-1}
+\end{equation}
+
+Ahora se puede aplicar un cambio de variable. Sea $ k = -(2n-1)$. Entonces, si $n \rightarrow +\infty$, $k \rightarrow -\infty$.
+
+\begin{equation}
+	\limninf a_{2n-1} = \lim_{k \rightarrow -\infty} \left( 1 + \frac{1}{k} \right)^{-k} = \lim_{k \rightarrow -\infty} \frac{1}{ \left( 1 + \frac{1}{k} \right)^{`k} }
+\end{equation}
+
+Llegado este punto, es posible aplicar el hecho de que el límite de $e$ vale para $-\infty$ también.
+
+ \begin{equation}
+	\hresulte{Límite de e general}{ \lim_{n \rightarrow \pm \infty} = \left(1 + \frac{1}{n}\right)^n = e }{1em}
+\end{equation}
+
+En conclusión, para la subsucesión impar resulta:
+
+\begin{equation}
+	\limninf a_{2n-1} = \frac{1}{e}
+\end{equation}
+
+Pasando al caso par:
+
+\begin{equation}
+	\limninf a_{2n} = \limninf \left(1 + \frac{(-1)^{2n}}{2n}\right)^{2n} = \limninf \left(1 + \frac{1}{2n}\right)^{2n} = e
+\end{equation}
+
+Ergo:
+
+\begin{equation}
+	\hresult{14.f}{ \limninf a_{2n-1} = \frac{1}{e} \wedge \limninf a_{2n} = e \Rightarrow \limninf a_n \text{ no existe} }
+\end{equation}
+
+\subsectionx{14.h}
+
+La sucesión es:
+
+\begin{equation}
+	a_n = e^{\sin\left(n \frac{\pi}{4}\right)}
+\end{equation}
+
+La base es constante, y el exponente variable. Como es una función seno discreta, no necesariamente es periódica. En este caso particular, sí lo es porque su pulsación $\omega$, el coeficiente que multiplica $n$, es un múltiplo racional de $\pi$. El período es $ T = \frac{2\pi}{\omega} = 2\pi : \frac{\pi}{4} = 8$. Esto puede validarse evaluando los primeros 9 términos.
+
+\begin{subequations}
+\begin{align}
+a_1 &= \sin\left( \frac{1}{4} \pi \right) = \frac{\sqrt{2}}{2} \\
+a_2 &= \sin\left( \frac{2}{4} \pi \right) = 1 \\
+a_3 &= \sin\left( \frac{3}{4} \pi \right) = \frac{\sqrt{2}}{2} \\
+a_4 &= \sin\left( \frac{4}{4} \pi \right) = 0 \\
+a_5 &= \sin\left( \frac{5}{4} \pi \right) = -\frac{\sqrt{2}}{2}
+a_6 &= \sin\left( \frac{6}{4} \pi \right) = -1 \\
+a_7 &= \sin\left( \frac{7}{4} \pi \right) = -\frac{\sqrt{2}}{2} \\
+a_8 &= \sin\left( \frac{8}{4} \pi \right) = 0 \\
+a_9 &= \sin\left( \frac{9}{4} \pi \right) = \frac{\sqrt{2}}{2}
+\end{align}
+\end{subequations}
+
+Por lo tanto, se puede aplicar el mecanismo ya visto para sucesiones que son un patrón constante que se repite. Por ejemplo:
+
+\begin{equation}
+	\hresult{14.h}{ \limninf a_{8n-7} = \frac{\sqrt{2}}{2} \wedge \limninf a_{8n-6} = 1 \Rightarrow \limninf a_n \text{ no existe} }
+\end{equation}
+
 \end{document}
