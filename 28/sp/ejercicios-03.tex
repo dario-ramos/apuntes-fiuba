@@ -3059,4 +3059,131 @@ Esto coincide con evaluar la hipótesis general en $ n+1 $; Q.E.D:
 	a_{n+1} = 2^{(n+1)-1} = 2^n
 \end{equation}
 
+\sectionx{17}
+
+\textbf{Considerar la sucesión definida recurrentemente como:}
+
+\begin{equation}
+	a_1 = \frac{1}{3}, a_{n+1} = \frac{1}{2} a_n (1 - a_n), n \geq 1
+\end{equation}
+
+\begin{enumerate}[label=(\alph*)]
+	\bfseries
+	
+	\item Observar que $ 0 < a_n <1, n \geq 1 $
+	
+	\item Calcular el cociente de D'Alembert. Concluir que la sucesión es decreciente y acotada, lo cual la hace convergente.
+	
+	\item Calcular el $ \limninf a_n $.
+\end{enumerate}
+
+\hrule
+
+\subsectionx{17.a}
+
+Usando de nuevo el principio de inducción completa, la hipótesis a demostrar es $ 0 < a_n < 1 $. Para el caso inicial, vale decir, $ n = 1 $:
+
+\begin{equation}
+	a_1 = \frac{1}{3} \wedge 0 < \frac{1}{3} < 1
+\end{equation}
+
+La hipótesis se cumple para $ n = 1 $. A continuación, el paso inductivo: se toma como verdadera la hipótesis para $ n $, y eso debe usarse para probar la validez de la hipótesis para $ n + 1 $. Entonces, partiendo de la premisa:
+
+\begin{equation}
+	0 < a_n < 1
+\end{equation}
+
+Un camino posible es aplicar transformaciones a la premisa para llevarla a lo que se desea demostrar. Concretamente, se desea probar que $ 0 < a_{n+1} < 1 $. La idea entonces es llegar a $ a_{n+1} $. Por lo tanto, la primera transformación es multiplicar miembro a miembro por -1. Tener en cuenta que eso implica invertir las desigualdades.
+
+\begin{subequations}
+\begin{align}
+	& 0 > -an > -1 \\
+	& -1 < -a_n < 0 
+\end{align}
+\end{subequations}
+
+Ahora, se suma 1 m. a. m.:
+
+\begin{equation}
+	0 < 1-a_n < 1
+\end{equation}
+
+Multiplicando miembro a miembro por $ a_n $ no debería invertir las desigualdades, ya que por premisa inductiva, $ 0 < a_n < 1 $, y por ello $ a_n $ siempre es mayor a cero.
+
+\begin{subequations}
+\begin{align}
+	a_n 0 < a_n (1-a_n) < a_n \\
+	0 < a_n (1-a_n) < a_n 
+\end{align}
+\end{subequations}
+
+Nuevamente, por premisa inductiva, $ a_n < 1 $, por lo que es posible reemplazar $ a_n $ por 1 como cota superior.
+
+\begin{equation}
+	0 < a_n (1-a_n) < 1
+\end{equation}
+
+Finalmente, multiplicando m. a. m. por $ \frac{1}{2} $:
+
+\begin{subequations}
+\begin{align}
+& \frac{1}{2} 0 < \frac{1}{2} a_n (1-an) < \frac{1}{2} \\
+& 0 < a_{n+1} < \frac{1}{2} \\
+& 0 < a_{n+1} < 1
+\end{align}
+\end{subequations}
+
+Queda entonces demostrado por inducción completa que la sucesión $ a_n $ está acotada entre 0 y 1.
+
+\subsectionx{17.b}
+
+Por definición, el cociente de D'Alembert es:
+
+\begin{equation}
+	\frac{a_n+1}{a_n} = \frac{ \frac{1}{2} a_n (1-a_n) }{a_n}
+\end{equation}
+
+El término $ a_n $ jamás se anula, ya que se demostró que $ a_n > 0 $. Esto permite simplificar $ a_n $.
+
+\begin{equation}
+	\frac{a_n+1}{a_n} = \frac{1}{2} (1-a_n)
+\end{equation}
+
+Partiendo de nuevo de que $ 0 < a_{n} < 1 $, aplicando transformaciones para llegar al cociente:
+
+\begin{subequations}
+\begin{align}
+	& 0 < a_n < 1 \\
+	& 0 < 1-a_n < 1 \\
+	& `0 < \frac{1}{2} (1-a_n) < \frac{1}{2}
+\end{align}
+\end{subequations}
+
+El cocient de D'Alembert está acotado entre 0 y $ \frac{1}{2} $ para todo $ n $. Por lo tanto, la sucesión es monótona decreciente. Esto, sumado al hecho ya demostrado de que está acotada, la hace convergente.
+
+\subsectionx{17.c}
+
+La sucesión está acotada entre 0 y 1, y es monótona decreciente. Esto nos garantiza que el límite existe, pero sólo sabemos que es algún valor entre $\frac{1}{3}$ y 0. Una forma de restringirlo es evaluando el límite en la relación de recurrencia.
+
+\begin{subequations}
+\begin{align}
+	& a_{n+1} = \frac{1}{2} a_n (1-an) \\
+	& \text{Se toma límite m. a. m.} \\
+	& \limninf a_{n+1} = \limninf \frac{1}{2} a_n (1-a_n) \\
+	& \text{Como la sucesión converge a } L \text{, } a_{n+1} \text{ también}. \\
+	& L = \frac{1}{2} L (1-L) \\
+	& 2L = L - L^2 \\
+	& 0 = -L -L^2 \\
+	& 0 = L^2 + L \\
+	& 0 = L (L+1) \Rightarrow L = 0 \lor L = -1
+\end{align}
+\end{subequations}
+
+La solución $ L = -1 $ no es válida porque $ 0 < a_n < 1 $. Por lo tanto, sólo queda $ L = 0 $.
+
+ \begin{equation}
+ 	\hresult{17.c}{ \limninf a_n = 0 }
+ \end{equation}
+
+
 \end{document}
