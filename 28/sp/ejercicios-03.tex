@@ -3184,6 +3184,100 @@ La solución $ L = -1 $ no es válida porque $ 0 < a_n < 1 $. Por lo tanto, sól
  \begin{equation}
  	\hresult{17.c}{ \limninf a_n = 0 }
  \end{equation}
+ 
+ \sectionx{18}
+ 
+ \textbf{Calcular, si existe, el límite de las siguientes sucesiones. Previamente, mediante el cociente de D'Alembert, determinar, si es posible, su monotonía.}
+ 
+\begin{enumerate}[label=(\alph*)]
+	\bfseries
+	
+	\item $ a_1 = 1, a_{n+1} = \sqrt{a_n + 2}, n \geq 1 $
+	
+	\item $ a_1 = 1, a_{n+1} = \frac{1}{1 + \frac{1}{a_n}}, n \geq 1 $
+	
+	\item $ a_1 = 1, a_{n+1} = \sqrt{3 a_n}, n \geq 1 $
+	
+	\item $ a_1 = 1, a_{n+1} = \frac{1}{2} \left( a_n + \frac{4}{a_n} \right), n \geq 1 $. Sugerencia: usar la desigualdad $ \frac{a+b}{2} \geq \sqrt{a b} $
+\end{enumerate}
 
+\hrule
+
+\subsectionx{18.a}
+
+Evaluando los primeros términos para ver cómo se comporta la sucesión:
+
+\begin{subequations}
+	\begin{align}
+		a_1 &= 1 \\
+		a_2 &= \sqrt{a_1 + 2} = \sqrt{3} \approx 1,73 \\
+		a_3 &= \sqrt{a_2 + 2} \approx 1,91 \\
+		a_4 & \approx 1,98 \\
+		a_5 & \approx 1,99 
+	\end{align}
+\end{subequations}
+
+Esto parece indicar que la sucesión está acotada entre 1 y 2, es monótona creciente y converge a 2. Por lo tanto, como primer paso, se probará que $ a_n $ está acotada usando el principio de inducción completa. La hipótesis a probar es:
+
+\begin{equation}
+	1 \leq a_n < 2
+\end{equation}
+
+Para el caso $ n = 1 $, se tiene $ a_1 = 1 $ por definición de la sucesión, lo cual verifica $ 1 \leq a_1 < 2 $. Para el paso inductivo, se parte de la hipótesis para $ n $ y se la transforma para llegar a $ n+1 $.
+
+\begin{subequations}
+	\begin{align}
+		& 1 \leq a_n < 2 \\
+		& \text{Sumando 2 m. a. m.} \\
+		& 3 \leq a_n + 2 < 4 \\
+		& \text{Tomando raíz miembro a miembro} \\
+		& \sqrt{3} \leq \sqrt{a_n + 2} < 2 \\
+		& \text{Por definición de } a_{n+1} \\
+		& \sqrt{3} \leq a_{n+1} < 2 \\
+		& 1 \leq \sqrt{3} \leq a_{n+1} < 2
+	\end{align}
+\end{subequations}
+
+Con esto, queda demostrado que $ a_n $ está acotada. El próximo paso es analizar la monotonía. Como se observó que los términos de $ a_n $ crecen, cabe esperar que el cociente de D'Alembert sea mayor a 1 para casi todo $ n $. Se planteará esa desigualdad para ver qué restricciones establece sobre $ a_n $.
+
+\begin{subequations}
+	\begin{align}
+		& \frac{a_{n+1}}{a_n} > 1 \\
+		& \frac{\sqrt{a_n + 2}}{a_n} > 1 \\
+		& \text{ Multiplicar m.a.m. por } a_n \text{ no afecta la desigualdad porque } a_n > 1 > 0 \\
+		& \sqrt{a_n + 2} > a_n \\
+		& \text{Elevando al cuadrado m.a.m.} \\
+		& (\sqrt{a_n + 2})^2 > a_n^2 \\
+		& \text{El radicando siempre es positivo porque } a_n > 1 \text{, ergo no hace falta módulo} \\
+		& a_n + 2 > a_n^2 \\
+		& a_n^2 -a_n -2 < 0 \\
+		& \text{Las raíces de esta cuadrática son -1 y 2. Factorizando: } \\
+		& (a_n - 2) (a_n + 1) < 0
+	\end{align}
+\end{subequations}
+
+Llegado este punto, se tiene un producto de dos factores menor a cero. Para que eso se cumpla, los factores deben tener distinto signo. El segundo factor, $ a_n + 1 $, no puede ser negativo porque ya se estableció que $ a_n $ está acotada entre 0 y 1. Por lo tanto, dicho factor es positivo para todo $n$. Esto requiere que el primer factor sea negativo: $ a_n - 2 < 0 \Rightarrow a_n < 2 $. Y ya se demostró que esto se cumple para todo n. Por lo tanto, $ a_n $ es monótona creciente.
+
+Que $ a_n $ esté acotada y sea monótona garantiza, por teorema, que su límite existe. Sólo sabemos que es un valor entre 1 y 2. Para intentar calcularlo, es posible evaluar el límite miembro a miembro en la relación de recurrencia.
+
+\begin{subequations}
+	\begin{align}
+		& a_{n+1} = \sqrt{a_n + 2} \\
+		& \limninf a_{n+1} = \limninf \sqrt{a_n + 2} \\
+		& \text{ Como } a_n \text{ converge a L, } a_{n+1} \text {también} \\
+		& L = \sqrt{L+2} \\
+		& L^2 = (\sqrt{L+2})^2 \\
+		& \text{L no puede ser negativo porque está entre 1 y 2} \\
+		& L^2 = L+2 \\
+		& L^2 -L - 2 = 0 \\
+		& (L-2) (L+1) = 0
+	\end{align}
+\end{subequations}
+
+La solución $ L = -1 $ no es válida porque ya se estableció que L está entre 1 y 2. Finalmente:
+
+\begin{equation}
+	\hresult{18.a}{ \limninf a_n = 2 }
+\end{equation}
 
 \end{document}
