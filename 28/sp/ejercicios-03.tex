@@ -3311,4 +3311,70 @@ Esto coincide con evaluar $n + 1$ en $a_n$, por lo cual queda demostrada la hip�
 	\hresult{18.b}{ \limninf a_n = 0 }
 \end{equation}
 
+\subsectionx{18.c}
+
+Evaluando los primeros términos:
+
+\begin{subequations}
+	\begin{align}
+		a_1 &= 1 \\
+		a_2 &= \sqrt{3 \cdot 1} \approx 1,73 \\
+		a_3 &= \sqrt{3 \sqrt{3}} \approx 2,27 \\
+		a_4 &= \sqrt{3 a_3} \approx 2,61 \\
+		a_5 &\approx 2,80 \\
+		a_6 &\approx 2,89 \\
+		a_7 &\approx 2,94 \\
+		a_8 &\approx 2,97 \\
+		a_9 &\approx 2,98 \\
+		a_{10} &\approx 2,99
+	\end{align}
+\end{subequations}
+
+Parece que $ a_n $ está acotada entre 1 y 3, es monótona creciente y converge a 3. Para probar la acotación, se plantea la hipótesis inductiva:
+
+\begin{equation}
+	1 \leq a_n < 3
+\end{equation}
+
+Para $ n = 1 $, $ a_1 = 1 $, que verifica la hipótesis. Para el paso inductivo, se parte de la hipótesis para $n$ y se intenta concluir para $n+1$.
+
+\begin{subequations}
+	\begin{align}
+		& 1 \leq a_n < 3 \\
+		& 3 \leq 3 a_n < 9 \\
+		& \sqrt{3} \leq \sqrt{3 a_n} < \sqrt{9} \\
+		& 1 \leq \sqrt{3} \leq a_{n+1} < 3
+	\end{align}
+\end{subequations}
+
+Para analizar la monotonía, considérese el cociente de D'Alembert:
+
+\begin{subequations}
+	\begin{align}
+		\frac{a_{n+1}}{a_n} &= \frac{\sqrt{3 a_n}}{a_n} \\
+		&= \sqrt{3} \frac{ {a_n}^{\frac{1}{2}} }{ a_n } \\
+		&= \sqrt{3} {a_n}^{-\frac{1}{2}} \\
+		&= \frac{ \sqrt{3} }{\sqrt{a_n}} \\
+		&= \text{ Por estar } 1 \leq a_n < 3 \\
+		&= \Rightarrow 1 < \frac{a_{n+1}}{a_n} \leq \sqrt{3}
+	\end{align}
+\end{subequations}
+
+Por ser el cociente siempre mayor a 1, $ a_n $ es monótona creciente. Siendo acotada y monótona, por teorema, $ a_n $ es convergente. Demostrado esto, sólo queda calcular el valor de su límite. Esto puede hacerse evaluando la relación de recurrencia en el límite:
+
+\begin{subequations}
+	\begin{align}
+		& \limninf a_{n+1} = \limninf \sqrt{3 a_n} \\
+		& L = \sqrt{3 L} \\
+		& L \text{ no puede ser negativo, por ser } 1 \leq a_n < 3 \\
+		& L^2 = 3L \\
+		& \text{ No puede ser } L = 0 \text{ porque } 1 \leq a_n < 3 \text{, ergo se puede simplificar } L \\
+		& L = 3
+	\end{align}
+\end{subequations}
+
+\begin{equation}
+	\hresult{18.c}{ \limninf a_n = 3 }
+\end{equation}
+
 \end{document}
