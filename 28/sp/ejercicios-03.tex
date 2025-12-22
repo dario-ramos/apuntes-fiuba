@@ -3452,4 +3452,100 @@ Es imposible que el límite sea -2 porque $ 1 \leq a_n \leq 2,5 $. Por lo tanto:
 	\hresult{18.d}{ \limninf a_n = 2 }
 \end{equation}
 
+\sectionx{P1}
+
+\textbf{Sea $(a_n)$ una sucesión definida en forma recurrente como}
+
+\begin{equation}
+	a_1 = 5, \frac{a_{n+1}}{a_n} = \frac{2n+1}{5n} \text{ para todo } n \geq 1
+\end{equation}
+
+\begin{enumerate}[label=(\alph*)]
+	\bfseries
+	
+	\item Probar que $ a_{n+1} < a_n $ para todo $n$.
+	
+	\item ¿Por qué se puede asegurar que existe $ \limninfs a_n $?
+	
+	\item Calcular $ \limninfs a_n $.
+	
+	\item Si se define $ b_n = n^2 a_n $, calcular $ \limninfs b_n $
+\end{enumerate}
+
+\hrule
+
+\subsectionx{P1.a}
+
+Dado que la desigualdad buscada conduce a la expresión $ \frac{a_{n+1}}{a_n} $, la cual es conocida, se plantea la desigualdad y se ve qué restricciones establece sobre $n$.
+
+\begin{subequations}
+	\begin{align}
+		& a_{n+1} < a_{n} \\
+		& a_n \neq 0 \text{ por ser } a_1 \neq 0 \text{ y } a_{n+1} = \frac{2n+1}{5n} a_n \\
+		& \text{Dividiendo por } a_n \text{ m.a.m.} \\
+		& \frac{a_n+1}{a_n} < 1 \\
+		& \frac{2n+1}{5n} < 1 \\
+		& 2n+1 < 5n \\
+		& 1 < 3n \\
+		& n > \frac{1}{3}
+	\end{align}
+\end{subequations}
+
+La última desigualdad se satisface para todo $ n \geq 1 $, por ende queda demostrada la desigualdad original. Además, dado que el cociente de D'Alembert es siempre menor a 1, la sucesión es monótona decreciente.
+
+\subsectionx{P1.b}
+
+Dado que ya se tiene el cociente de D'Alembert, se puede utilizar el criterio homónimo para evaluar la convergencia.
+
+\begin{subequations}
+	\begin{align}
+		\limninf \left| \frac{a_{n+1}}{a_n} \right| &= \limninf \left| \frac{2n+1}{5n} \right| \\
+		&= \limninf \frac{2n+1}{5n} = \frac{2}{5} < 1
+	\end{align}
+\end{subequations}
+
+Siendo este límite menor a 1, el criterio establece que la sucesión converge a cero. También puede utilizarse el teorema de convergencia de sucesiones acotadas y monótonas. En el inciso anterior, se probó que $ a_n $ es monótona decreciente. Sólo queda probar que es acotada. El primer término es $ a_1 = 5 $, la sucesión es MD, y parece que converge a cero. Por lo tanto, la hipótesis inductiva es $ 0 < a_n \leq 5 $. Para el caso $ n = 1, a_1 = 5 $ y se satisface la hipótesis. Para el paso inductivo, se toma como verdadera la hipótesis para $n$, y se demuestra para $n+1$.
+
+\begin{subequations}
+	\begin{align}
+		& 0 < a_n \leq 5 \\
+		& \text{Multiplicando m.a.m. por } \frac{2n+1}{5n} \\
+		& 0 < a_n \frac{2n+1}{5n} < 5 \frac{2n+1}{5n} \\
+		& \text{ La sucesión } \frac{2n+1}{5n} \text{ es MD y } < 1 \forall n \\
+		& \text{ Reemplazando } \frac{2n+1}{5n} \text{ por su cota superior } 1 \\
+		& 0 < \frac{2n+1}{5n} a_n < 5 \\
+		& 0 < a_{n+1} < 5 \Rightarrow Q.E.D.
+	\end{align}
+\end{subequations}
+
+Resulta entonces $ a_n $ monótona y acotada, por lo tanto el teorema garantiza su convergencia.
+
+\subsectionx{P1.c}
+
+Por el criterio de D'Alembert aplicado en P1.b, resulta:
+
+\begin{equation}
+	\hresult{P1.c}{ \limninf a_n = 0 }
+\end{equation}
+
+\subsectionx{P1.d}
+
+Si $ b_n = n^2 a_n \Rightarrow b_{n+1} = (n+1)^2 a_{n+1} $. Esto permite definir una relación de recurrencia que introduzca $\frac{a_{n+1}}{a_n}$, una expresión conocida.
+
+\begin{equation}
+	\frac{b_{n+1}}{b_n} = \frac{(n+1)^2 a_{n+1}}{n^2 a_n} = \frac{(n+1)^2}{n^2} \frac{2n+1}{5n}
+\end{equation}
+
+En este caso, ya que se tiene el cociente de D'Alembert asociado a $ b_n $ expresado de manera no recurrente, se puede aplicar directamente el criterio. También podría probarse que $ b_n $ es acotada y monótona para mayor formalidad.
+
+\begin{equation}
+	\limninf \left| \frac{b_{n+1}}{b_n} \right| = \limninf \left| \frac{(n+1)^2 (2n+1)}{n^2 \cdot 5n} \right| = \frac{2}{5} < 1
+\end{equation}
+
+Por lo tanto, por el criterio de D'Alembert para sucesiones:
+
+\begin{equation}
+	\hresult{P1.d}{ \limninf b_n = 0 }
+\end{equation}
+
 \end{document}
