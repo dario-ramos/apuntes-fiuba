@@ -3650,7 +3650,58 @@ Haciendo el mismo análisis de los términos iniciales, la diferencia ahora es q
 Ahora bien, $ 1,1 \cdot 0,91 = 1,001 $, y $ \sqrt{1,001} \approxeq 1.0005 $, lo cual cambia todo. Ahora que las bases son mayores que 1 para ambas ramas, las dos divergen. Para este nuevo escenario, entonces:
 
 \begin{equation}
-	\hresult{P2.b}{ \limninf c_n \text{ no existe, y } c_n \text{ diverge a } +\infty }
+	\hresult{P2.c}{ \limninf c_n \text{ no existe, y } c_n \text{ diverge a } +\infty }
+\end{equation}
+
+\sectionx{P3}
+
+\textbf{Sea $ a_n = n (0,95)^n $}
+
+\begin{enumerate}[label=(\alph*)]
+	\bfseries
+
+	\item Demostrar que $ a_n $ es decreciente pctn. Hallar un $n$ a partir del cual haya certeza de que $ a_{n+1} < a_n $
+	
+	\item Calcular $ \limninfs a_n $. Fundamentar.
+\end{enumerate}
+
+\hrule
+
+\subsectionx{P3.a}
+
+Planteando $ a_{n+1} < a_n $ y despejando $n$:
+
+\begin{subequations}
+	\begin{align}
+		& a_{n+1} < a_n \\
+		& (n+1) (0,95)^{n+1} < n (0,95)^n \\
+		& \text{ El valor } (0,95)^n \text{ siempre es mayor a cero, por lo que se puede dividir m.a.m.} \\
+		& (n+1) 0,95 < n \\
+		& 0,95 n + 0,95 < n \\
+		& 0,95 < 0,05 n \\
+		& n > 19
+	\end{align}
+\end{subequations}
+
+\begin{equation}
+	\hresult{P3.a}{ a_{n+1} < a_n \forall n > 19 \Rightarrow a_n \text{ es decreciente pctn} }
+\end{equation}
+
+\subsectionx{P3.b}
+
+La sucesión $ a_n $ tiene todos sus términos positivos, ya que es el producto entre $ n $ natural, y una potencia. Como ya se demostró, $ a_n $ es monótona decreciente para todo $ n > 19 $. Por lo tanto, dado que sus primeros 19 términos son valores finitos, y $ a_n > 0  \forall n $, necesariamente $ a_n $ está acotada. Dado que $ a_n $ es monótona decreciente pctn, y acotada, por teorema es convergente. El valor del límite puede hallarse con el criterio de D'Alembert.
+
+\begin{subequations}
+	\begin{align}
+		\limninf \left| \frac{a_{n+1}}{a_n} \right| &= \limninf \left| \frac{(n+1) (0,95)^{n+1}}{n (0,95)^n} \right| \\
+		&= \limninf \frac{(n+1) 0,95}{n} = 0,95 < 1
+	\end{align}
+\end{subequations}
+
+Siendo el límite del cociente menor a 1, el criterio establece que la sucesión converge a cero.
+
+\begin{equation}
+	\hresult{P3.b}{ \limninf a_n = 0 }
 \end{equation}
 
 \end{document}
