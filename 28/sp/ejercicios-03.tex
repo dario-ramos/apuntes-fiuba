@@ -3704,4 +3704,35 @@ Siendo el límite del cociente menor a 1, el criterio establece que la sucesión
 	\hresult{P3.b}{ \limninf a_n = 0 }
 \end{equation}
 
+\sectionx{P4}
+
+\textbf{Demostrar que el valor del $ \limninfs \left( 1 + \frac{5}{n} + \frac{b}{n^2} \right)^{n^2} $ no depende de la constante $b$. }
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+Cuando aparece la expresión $ (1 + \ldots)^{f(n)} $ y hay una indeterminación del tipo $ 1^{+\infty} $, siempre puede ser de utilidad el límite asociado al número $ e $. Vale decir:
+
+\begin{equation}
+	\lim_{n \rightarrow \pm \infty} \left( 1 + \frac{1}{n} \right)^n = e
+\end{equation}
+
+En este caso particular, es posible transformar la sucesión para utilizar dicho límite.
+
+\begin{subequations}
+	\begin{align}
+		\limninf \left( 1 + \frac{5}{n} + \frac{b}{n^2} \right)^{n^2} &= \limninf \left( 1 + \frac{5n+b}{n^2} \right)^{n^2} \\
+		&= \limninf \left( 1 + \frac{1}{ \frac{n^2}{5n + b} } \right)^{n^2} \\
+		&= \limninf \left[ \underbrace{ \left( 1 + \frac{1}{ \frac{n^2}{5n + b} } \right)^{ \frac{n^2}{5n+b} } }_{e} \right]^{5n+b} \\
+		&= \limninf e^{5n+b}
+	\end{align}
+\end{subequations}
+
+Resulta entonces que el límite no existe, sin importar el valor de la constante $ b $. Denominando $a_n$ a la sucesión asociada al límite original, resulta:
+
+\begin{equation}
+	\hresult{P4}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
+\end{equation}
+
 \end{document}
