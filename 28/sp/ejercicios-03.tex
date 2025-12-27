@@ -3548,4 +3548,109 @@ Por lo tanto, por el criterio de D'Alembert para sucesiones:
 	\hresult{P1.d}{ \limninf b_n = 0 }
 \end{equation}
 
+\sectionx{P2}
+
+\textbf{Se invierte un capital de 1000 pesos en acciones. El primer mes suben un 10\% respecto al precio de compra; el segundo mes, bajan el 10\% respecto del mes anterior; el tercer mes suben el 10\% respecto del mes anterior; y así alternadamente, un mes suben el 10\% y el siguiente bajan el 10\%.}
+
+\begin{enumerate}[label=(\alph*)]
+	\bfseries
+	
+	\item Hallar $ c_n $, el capital que se tiene luego de $n$ meses.
+	
+	\item Calcular $ \limninfs c_n $.
+	
+	\item Estudiar cómo cambia la situación si las bajas son del 9\% en lugar del 10\%.
+\end{enumerate}
+
+\hrule
+
+\subsectionx{P2.a}
+
+La sucesión se está definiendo de manera recurrente, como un porcentaje agregado o quitado del valor anterior. Pero como se está pidiendo una expresión cerrada, es mejor verla de otra forma. Si se piensa la transformación de agregar un 10\% como multiplicar por 1,1 y la de restar un 10\% como multiplicar por 0,9, es posible expresar los valores de $ c_n $ de la siguiente manera:
+
+\begin{subequations}
+	\begin{align}
+		c_0 &= 1000 \\
+		c_1 &= c_0 \cdot 1,1 = 1000 \cdot 1,1 \\
+		c_2 &= c_1 \cdot 0,9 = 1000 \cdot 1,1 \cdot 0,9 \\
+		c_3 &=  1000 \cdot 1,1 \cdot 0,9 \cdot 1,1 \\
+		c_4 &=  1000 \cdot 1,1 \cdot 0,9 \cdot 1,1 \cdot 0,9 \\
+		c_5 &=  1000 \cdot 1,1 \cdot 0,9 \cdot 1,1 \cdot 0,9 \cdot 1,1 \\
+	\end{align}
+\end{subequations}
+
+Nótese que se introdujo $c_0$ como valor inicial en lugar de $c_1$ porque $ c_n $ está definida como el capital transcurridos $n$ meses. Por lo tanto, $c_1$ tiene que ser el valor luego de transcurrido 1 mes. Lo próximo que cabe observar es que un término genérico $ c_n $ puede expresarse como la constante 1000 multiplicada por 1,1 y 0,9 cierta cantidad de veces. Agrupando los factores repetidos:
+
+\begin{equation}
+	c_n = 1000 \cdot (1,1)^p (0,9)^q
+\end{equation}
+
+Sería ideal poder expresar $p$ y $q$ en función de $ n $. Observando los primeros términos evaluados, cuando $n$ es par, 1,1 y 0,9 aparecen la misma cantidad de veces: $n/2$. Cuando $ n $ es impar, ambos aparecen $ \lfloor \frac{n}{2} \rfloor $ veces, y 1,1 aparece una vez más. El uso de la función piso es necesario porque al ser $ n $ impar y no divisible por 2, hay que redondear el resultado de la división hacia abajo para que siga siendo entero. Con esto en mente, es posible expresar $ c_n $ de la siguiente manera:
+
+\begin{subequations}
+	\begin{align}
+	c_n &= \begin{cases}
+		& 1000 (1,1)^{ \frac{n}{2} } (0,9)^{ \frac{n}{2} } \text{ si n es par} \\
+		& 1000 (1,1)^{ \lfloor \frac{n}{2} \rfloor + 1 } (0,9)^{ \lfloor \frac{n}{2} \rfloor } \text{ si n es impar}
+	\end{cases} \\
+	&= \begin{cases}
+		& 1000 \cdot (1,1 \cdot 0.9)^{\frac{n}{2}} \text{ si n es par} \\
+		& 1000 \cdot (1,1) (1,1 \cdot 0,9)^{  \lfloor \frac{n}{2} \rfloor } \text{ si n es impar}
+	\end{cases} \\
+	&= \begin{cases}
+		& 1000 \cdot (\sqrt{0,99})^{n} \text{ si n es par} \\
+		& 1100 \cdot (0,99)^{  \lfloor \frac{n}{2} \rfloor } \text{ si n es impar}
+	\end{cases}
+	\end{align}
+\end{subequations}
+
+Es intuitivo separar por $ n $ par e impar de esta manera. Pero también es posible obtener una sola expresión jugando con las funciones piso y techo:
+
+\begin{equation}
+	\hresult{P2.a (cerrada)}{ c_n = 1000 \cdot (1,1)^{ \lceil \frac{n}{2} \rceil } \cdot (0,9)^{ \lfloor \frac{n}{2} \rfloor } }
+\end{equation}
+
+\begin{equation}
+	\hresult{P2.a (dividida)}{ c_n = \begin{cases}
+			& 1000 \cdot (\sqrt{0,99})^{n} \text{ si n es par} \\
+			& 1100 \cdot (0,99)^{  \lfloor \frac{n}{2} \rfloor } \text{ si n es impar}
+	\end{cases} }
+\end{equation}
+
+\subsectionx{P2.b}
+
+La forma dividida de $ c_n $ es la más cómoda para calcular el límite. Tanto la rama par como la impar son funciones exponenciales con una base menor a 1 ($\sqrt{0,99} \approxeq 0,995$), por lo tanto ambas convergen a cero. Si la función piso produce dudas en la rama impar, se puede hacer un cambio de variable para eliminarla. Sea $ n = 2k+1, k \geq 0 $. Si $ n $ tiende a más infinito, $ k $ también. El límite resulta entonces:
+
+\begin{subequations}
+	\begin{align}
+		\limninf c_n &= \lim_{k \rightarrow +\infty} 1100 \cdot (0,99)^{ \lfloor \frac{2k+1}{2} \rfloor } \\
+		&= \lim_{k \rightarrow +\infty} 1100 \cdot (0,99)^{ \lfloor k + \frac{1}{2} \rfloor } \\
+		& k \text{ es entero, y el piso de } k + 0,5 \text{ va a ser k para todo k} \\
+		&= \lim_{k \rightarrow +\infty} 1100 \cdot (0,99)^k = 0
+	\end{align}
+\end{subequations}
+
+Dado que la subsucesión par y la impar convergen al mismo valor, resulta:
+
+\begin{equation}
+	\hresult{P2.b}{ \limninf c_n = 0 }
+\end{equation}
+
+\subsectionx{P2.c}
+
+Haciendo el mismo análisis de los términos iniciales, la diferencia ahora es que si las bajas son del 9\%, eso equivale a multiplicar por $0,91$. Resulta entonces para este caso:
+
+\begin{equation}
+	c_n = \begin{cases}
+		& 1000 \cdot (\sqrt{1,1 \cdot 0,91})^{n} \text{ si n es par} \\
+		& 1100 \cdot (1,1 \cdot 0,91)^{  \lfloor \frac{n}{2} \rfloor } \text{ si n es impar}
+	\end{cases}
+\end{equation}
+
+Ahora bien, $ 1,1 \cdot 0,91 = 1,001 $, y $ \sqrt{1,001} \approxeq 1.0005 $, lo cual cambia todo. Ahora que las bases son mayores que 1 para ambas ramas, las dos divergen. Para este nuevo escenario, entonces:
+
+\begin{equation}
+	\hresult{P2.b}{ \limninf c_n \text{ no existe, y } c_n \text{ diverge a } +\infty }
+\end{equation}
+
 \end{document}
