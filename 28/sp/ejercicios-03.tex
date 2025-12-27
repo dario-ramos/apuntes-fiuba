@@ -3735,4 +3735,38 @@ Resulta entonces que el límite no existe, sin importar el valor de la constante
 	\hresult{P4}{ \limninf a_n \text{ no existe, y } a_n \text{ diverge a } +\infty }
 \end{equation}
 
+\sectionx{P5}
+
+Hallar en cada caso el término general de $ a_n $ y calcular, si existe, su límite. En caso de que no exista, demostrarlo por medio de subsucesiones.
+
+\begin{enumerate}[label=(\alph*)]
+	\bfseries
+
+	\item $ a_n = \frac{3}{\sqrt{1+1}}, \frac{5}{\sqrt{4+1}}, \frac{7}{\sqrt{9+1}}, \ldots $
+	
+	\item $ a_n = 2, \frac{1}{2}, \frac{3}{2}, \frac{2}{3}, \frac{4}{3}, \frac{3}{4}, \ldots $
+	
+	\item $ a_n = 2, -\frac{1}{2}, \frac{3}{2}, -\frac{2}{3}, \frac{4}{3}, -\frac{3}{4}, \ldots $
+\end{enumerate}
+
+\hrule
+
+\subsectionx{P5.a}
+
+Por inspección, el numerador es una progresión aritmética con tasa 2 que empieza en 3. Y lo único que varía en el denominador es el primer sumando, que es $ n^2 $. Resulta entonces:
+
+\begin{equation}
+	\hresult{P5.a}{ a_n = \frac{2n+1}{\sqrt{n^2+1}} }
+\end{equation}
+
+El límite de $ a_n $ también sale por inspección. En el denominador, cuando $ n $ es grande, el 1 que se suma al radicando es despreciable. Por lo tanto, el denominador tiende a $ \sqrt{n^2} $. Siendo $ n $ siempre positivo, eso tiende a $n$. Por lo tanto:
+
+\begin{equation}
+	\limninf a_n = \limninf \frac{2n+1}{n} = 2
+\end{equation}
+
+\begin{equation}
+	\hresult{P5.a}{ \limninf a_n = 2 }
+\end{equation}
+
 \end{document}
