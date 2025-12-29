@@ -3870,4 +3870,40 @@ Considerando el caso en que $ a_n $ converge a $ L > 0 $:
 
 Siendo $ L > 0 $, en este caso siempre se tendrá un valor de $ \limninfs b_n $ mayor a $ \frac{3}{2} $, ya que siempre se estará sumando un valor positivo al denominador. Por lo tanto, el máximo valor al que puede converger $ b_n $ es $ \frac{3}{2} $, y dicho valor se alcanza cuando $ a_n $ diverge a $ +\infty $.
 
+\sectionx{P7}
+
+\textbf{Calcular $ \limninfs \left( \frac{3n}{n+1} + (-1)^n \frac{n^5 + \cos(n)}{2-6^n} \right) $. Explicar las propiedades y resultados utilizados para llegar a la respuest.}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+El primer sumando tiende a $3$ por inspección. Si se quiere más detalle, al ser un cociente de polinomios, se puede dividir numerador y denominador por la potencia de mayor grado y eso conduce al $3$.
+
+\begin{subequations}
+	\begin{align}
+		& \limninf \left( \frac{3n}{n+1} + (-1)^n \frac{n^5 + \cos(n)}{2-6^n} \right) = 3 + \limninf (-1)^n \frac{n^5 + \cos(n)}{2-6^n} = \\
+		& \cos(n) \text{ está acotado entre -1 y 1; es despreciable ante } n^5 \\
+		& \text{La constante 2 también puede despreciarse en la suma con } -6^n \\
+		& 3 + \limninf (-1)^n \frac{n^5}{-6^n}
+	\end{align}
+\end{subequations}
+
+Intuitivamente, $ n^5 $ crece mucho más lentamente que $ -6^n $, por lo que ese cociente debería converger a cero. Esto puede confirmarse formalmente con el criterio de D'Alembert. Sea $ b_n = \frac{n^5}{-6^n} $.
+
+\begin{subequations}
+	\begin{align}
+		\limninf \left| \frac{b_{n+1}}{b_n} \right| &= \limninf \left| \frac{(n+1)^5}{-6^{n+1}} : \frac{n^5}{-6^n}` \right| \\
+		&= \limninf \left| \frac{(n+1)^5 (-6^n)}{n^5 (-6^{n+1})} \right| \\
+		&= \limninf \left| \frac{ (n+1)^5 \cancel{(-1)} \cancel{6^n} }{n^5 \cancel{(-1)} \cancel{6^n} 6} \right| \\
+		&= \limninf \left| \frac{(n+1)^5}{6n^5} \right| = \frac{1}{6} < 1
+	\end{align}
+\end{subequations}
+
+Demostrado que el segundo cociente tiende a cero, el producto del mismo por $ (-1)^n $ también tiende a cero por la propiedad de ``cero por acotada'': si una sucesión tiende a cero, el producto de la misma por otra sucesión acotada tiende a cero. En este caso, $ (-1)^n $ está acotada entre -1 y 1. Finalmente:
+
+\begin{equation}
+	\hresult{P7}{ \limninf a_n = 3 + 0 = 3 }
+\end{equation}
+
 \end{document}
