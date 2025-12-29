@@ -4001,4 +4001,60 @@ Llegado este punto, necesariamente el límite de $ a_n $ tiene que ser un valor 
 	\hresult{P9}{ 3 - \frac{7}{L} = 4 \Rightarrow 3L-7 = 4L \Rightarrow -7 = L }
 \end{equation}
 
+\sectionx{P10}
+
+\textbf{Calcular $ \limninfs a_n $ sabiendo que: }
+
+\begin{equation}
+	0 < 5 - 3 a_n \leq 7^n \left( 1 - \frac{2}{n} \right)^2
+\end{equation}
+
+Explicar las propiedades y/o resultados utilizados para obtener la respuesta.
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+Nuevamente, se tiene a $ a_n $ acotada superior e inferiormente, lo cual sugiere utilizar el teorema del sandwich. Aplicando el límite miembro a miembro:
+
+\begin{subequations}
+	\begin{align}
+		& \limninf 0 < \limninf 5-3 a_n \leq \limninf 7^n \left( 1 - \frac{2}{n} \right)^{n^2} \\
+		& 0 < \limninf 5-3 a_n \leq \limninf 7^n \left( 1 - \frac{2}{n} \right)^{n^2} \\
+	\end{align}
+\end{subequations}
+
+Analizando el límite de la cota superior por separado, tiene toda la apariencia de un límite relacionado con el número e.
+
+\begin{subequations}
+	\begin{align}
+		& \limninf 7^n \left( 1 - \frac{2}{n} \right)^{n^2} = \\
+		& \text{ Agrupando las potencias para tener una sola base } \\
+		& \limninf \left\{ 7 \left[ 1 + \frac{(-2)}{n} \right]^n \right\}^n = \\
+		& \text{ Manipulando los corchetes para hacer aparecer e } \\
+		& \limninf \left\{ 7 \left\{ \underbrace{ \left[ 1 + \frac{1}{ \frac{n}{(-2)} } \right]^{\frac{n}{-2}}}_{e} \right\}^{ \frac{-2}{n} n } \right\}^n = \\
+		& \limninf \left( 7 e^{-2} \right)^n =  \\
+		& 7e^{-2} \approxeq 0,947 \\
+		& \limninf \left( 7 e^{-2} \right)^n = 0
+	\end{align}
+\end{subequations}
+
+Resulta entonces:
+
+\begin{subequations}
+	\begin{align}
+		& 0 < \limninf 5-3 a_n \leq 0 \\
+		& \text{Por el teorema del Sandwich: } \\
+		& \limninf 5 - 3 a_n = 0 \\
+		& \text{ Para que se satisfaga la igualdad, $ \limninfs a_n = L $ debe existir y ser finito } \\
+		& 5 - 3L = 0 \Rightarrow 5 = 3L \Rightarrow L = \frac{5}{3}
+	\end{align}
+\end{subequations}
+
+Finalmente:
+
+\begin{equation}
+	\hresult{P10}{ \limninf a_n = \frac{5}{3} }
+\end{equation}
+
 \end{document}
