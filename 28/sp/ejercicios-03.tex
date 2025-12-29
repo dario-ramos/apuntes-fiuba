@@ -3906,4 +3906,66 @@ Demostrado que el segundo cociente tiende a cero, el producto del mismo por $ (-
 	\hresult{P7}{ \limninf a_n = 3 + 0 = 3 }
 \end{equation}
 
+\sectionx{P8}
+
+\textbf{Sea $f:\mathbb{R} \rightarrow \mathbb{R}$ definida por $ f(x) = \begin{cases}
+		3x+1 \text{ si } x \leq -1 \\
+		4x \text{ si } x > -1
+	\end{cases} $. Calcular el $ \limninfs f(a_n) $ siendo $ a_n = -2 + \sqrt[n]{n+4} $ }
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+Para comenzar, conviene ver si $ a_n $ converge. Ignorando la constante -2 para simplificar el análisis, sea:
+
+\begin{subequations}
+	\begin{align}
+		& L = \limninf \sqrt[n]{n+4} \\
+		& \text{ aplicando ln m.a.m.} \\
+		& \ln L = \limninf \ln \left[ (n+4)^{\frac{1}{n}} \right] \\
+		& \ln L = \limninf \frac{1}{n} \ln(n+4) \\
+		& \ln L = \limninf \frac{\ln(n+4)}{n} \\
+		& \text{ Ya se demostró que $ \ln(n) $ crece más lento que $n$: el cociente tiende a cero } \\
+		& \ln L = 0 \\
+		& L = e^0 = 1
+	\end{align}
+\end{subequations}
+
+Entonces, resulta $ \limninfs a_n = -2 + 1 = -1 $. Esto es problemático porque en $ x = -1 $, la función $ f $ cambia de rama. Además, nótese que $ f((-1)^{-}) = 3(-1)+1 = -2 $ y $ f((-1)^{+}) = 4(-1) = -4 $. Esto implica que $ f $ es discontinua en $ x = -1 $. Por lo tanto, es necesario determinar si $ a_n $ tiende a -1 por izquierda o por derecha para evaluar el límite original. No se puede intercambiar la evaluación de la función y el límite en este caso particular porque $ f $ no es continua en el punto de interés. Para tener mejor idea de lo que ocurre, se puede evaluar términos de $ a_n $.
+
+\begin{subequations}
+	\begin{align}
+		a_1 &= -2 + (1+4)^{1/1} = -2 + 5 = 3 \\
+		a_2 &= -2 + (2+4)^{1/2} \approxeq 0,449 \\
+		a_3 &= -2 + (3+4)^{1/3} \approxeq -0,0871 \\
+		a_4 &= -2 + (4+4)^{1/4} \approxeq -0,318 \\
+		a_5 &= -2 + (5+4)^{1/5} \approxeq -0,448 \\
+		a_{15} &\approxeq -0,783 \\
+		a_{30} &\approxeq -0,875 \\
+		a_{100} &\approxeq -0,952 \\
+		a_{200} &\approxeq -0,973
+	\end{align}
+\end{subequations}
+
+Parece entonces que $ a_n $ tiende a $ -1 $ por derecha. Analizar la monotonía no es trivial porque la raíz enésima complica las cosas. Lo más directo en este caso es intentar demostrar que $ a_n > -1 $ y ver qué valores de $ n $ satisfacen esa desigualdad.
+
+\begin{subequations}
+	\begin{align}
+		& a_n > -1 \\
+		& -2 + (n+4)^{\frac{1}{n}} > -1 \\
+		& (n+4)^{\frac{1}{n}} > 1 \\
+		& \text{ Elevando a la $n$ m.a.m. } \\
+		& \left[ (n+4)^{ \frac{1}{n} } \right]^n > (1)^n \\
+		& n+4 > 1 \\
+		& n > -3
+	\end{align}
+\end{subequations}
+
+Queda demostrado entonces que $ a_n > -1 $ para todo $ n $ natural. Por lo tanto, $ f $ debe evaluarse en la rama donde $ x > -1 $. 
+
+\begin{equation}
+	\hresult{P8}{ \limninf f(a_n) = f( (-1)^{+}) = 4(-1) = -4 }
+\end{equation}
+
 \end{document}
