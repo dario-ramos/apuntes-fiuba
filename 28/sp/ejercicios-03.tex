@@ -3836,4 +3836,38 @@ Con este cambio, la subsucesión par tiende a -1, y la impar a 1. Por lo tanto, 
 	\hresult{P5.c}{ \limninf a_n \text{ no existe } }
 \end{equation}
 
+\sectionx{P6}
+
+\textbf{Sea $ (a_n) $ una sucesión creciente de números positivos. }
+
+\begin{enumerate}[label=(\alph*)]
+	\bfseries
+	
+	\item Demostrar que la sucesión $ b_n = \frac{3 a_n}{2 a_n + 1} $ es siempre convergente.
+	
+	\item ¿Cuál es el valor más grande que puede tomar $ \limninfs b_n $? ¿En qué caso?
+\end{enumerate}
+
+\hrule
+
+\subsectionx{P6.a}
+
+Dado que $ a_n > 0 $ para todo $ n $, es válido multiplicar y dividir $ b_n $ por $ \frac{1}{a_n} $.
+
+\begin{equation}
+	b_n = \frac{3 a_n}{2 a_n + 1} \frac{ \frac{1}{a_n} }{ \frac{1}{a_n} } = \frac{3}{2 + \frac{1}{a_n}}
+\end{equation}
+
+Por el teorema de convergencia monótona, al ser $ a_n $ monótona creciente, o converge a un valor finito $ L > 0 $ o diverge a $ +\infty $. En el primer caso, $ b_n $ convergerá a $ \frac{3}{2 + \frac{1}{L}} = \frac{3L}{2L + 1} $. En el segundo caso, cuando $ a_n $ diverge a $ +\infty $, el sumando $ \frac{1}{a_n} $ tiende a cero y $ b_n $ converge a $ \frac{3}{2} $. En todos los escenarios, $ b_n $ es convergente.
+	
+\subsectionx{P6.b}
+
+Considerando el caso en que $ a_n $ converge a $ L > 0 $:
+
+\begin{equation}
+	\limninf b_n = \frac{3}{2 + \frac{1}{L}}
+\end{equation}
+
+Siendo $ L > 0 $, en este caso siempre se tendrá un valor de $ \limninfs b_n $ mayor a $ \frac{3}{2} $, ya que siempre se estará sumando un valor positivo al denominador. Por lo tanto, el máximo valor al que puede converger $ b_n $ es $ \frac{3}{2} $, y dicho valor se alcanza cuando $ a_n $ diverge a $ +\infty $.
+
 \end{document}
