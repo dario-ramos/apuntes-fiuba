@@ -3968,4 +3968,37 @@ Queda demostrado entonces que $ a_n > -1 $ para todo $ n $ natural. Por lo tanto
 	\hresult{P8}{ \limninf f(a_n) = f( (-1)^{+}) = 4(-1) = -4 }
 \end{equation}
 
+\sectionx{P9}
+
+\textbf{Sea $ (a_n) $ una sucesión de números reales no nulos tales que $ 4 - \frac{3}{n} < 3 - \frac{7}{a_n} < 4 \sqrt[n]{9} + 5 \cdot 2^{-n^2+n} $. Calcular, si existe, el $ \limninfs a_n $. Explicar las propiedades y/o resultados utilizados para obtener la conclusión.}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+Un error muy común en ejercicios de este estilo es intentar transformar las desigualdades para aislar $ a_n $ en el medio. Eso puede conducir a errores si no se cumplen ciertas condiciones. Por ejemplo, para elevar a la (-1) miembro a miembro, los 3 lados de la desigualdad deben tener el mismo signo. En este caso, eso no se cumple y hacer esa transformación conduce a un resultado incorrecto. Lo más simple es aplicar límite miembro a miembro de manera directa.
+
+\begin{subequations}
+	\begin{align}
+		& \limninf 4-\frac{3}{n} < \limninf 3 - \frac{7}{a_n} < \limninf 4 (9)^{\frac{1}{n}} + 5 \cdot 2^{-n^2+n} \\
+		& 4 < \limninf 3 - \frac{7}{a_n} < 4 \cdot 1 + 5 \cdot 0 \\
+		& 4 < \limninf 3 - \frac{7}{a_n} < 4
+	\end{align}
+\end{subequations}
+
+Por el teorema del sandwich, la sucesión del medio tiene que ser convergente, porque está acotada entre dos sucesiones convergentes. Además, como la cota superior es igual a la inferior, resulta:
+
+\begin{subequations}
+	\begin{align}
+		& \limninf 3 - \frac{7}{a_n} = 4 \\
+		& 3 - \frac{7}{\limninfs a_n} = 4
+	\end{align}
+\end{subequations}
+
+Llegado este punto, necesariamente el límite de $ a_n $ tiene que ser un valor finito $ L $. Si fuera infinito, negativo o positivo, no se satisfaría la igualdad. Y si no existiera, tampoco. Por lo tanto, $ a_n $ es convergente a un valor finito $L$.
+
+\begin{equation}
+	\hresult{P9}{ 3 - \frac{7}{L} = 4 \Rightarrow 3L-7 = 4L \Rightarrow -7 = L }
+\end{equation}
+
 \end{document}
