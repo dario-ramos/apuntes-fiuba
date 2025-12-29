@@ -4089,4 +4089,33 @@ Esto garantiza que $ L_2 $ existe y es finito también. Si $ L_1 = 1 \Rightarrow
 	\hresult{P11}{ -1 < \limninf \left( 1 - \frac{2}{x_n} \right) \leq \frac{1}{3} }
 \end{equation}
 
+\sectionx{P12}
+
+\textbf{ Hallar los valores de $ a $ y $ b $ para que el: }
+
+\begin{equation}
+	\limninf \frac{an^6 + 3bn^4 + 2 \sqrt{n}}{5n^4-3n+4} = 4
+\end{equation}
+
+\hrule
+\vspace{1em}
+
+La sucesión en cuestión es un cociente de polinomios. Por lo tanto, hay que mirar los términos de mayor grado. Para que el límite exista, necesariamente tiene que ser $ a = 0 $, porque si no el término de grado 6 en el numerador haría que la sucesión divergiera a infinito, positivo o negativo según el signo de $ a $.
+
+\begin{equation}
+	a = 0
+\end{equation}
+
+Los próximos términos de mayor grado son $3bn^4$ en el numerador, y $5n^4$ en el denominador. El término $ 2 \sqrt{n} $ es de grado $1/2$, y es despreciable frente al término de grado 4. Volviendo a los términos de grado 4, para que el límite sea 4 debe cumplirse entonces:
+
+\begin{equation}
+	\frac{3b}{5} = 4 \Rightarrow 3b = 20 \Rightarrow b = \frac{20}{3}
+\end{equation} 
+
+Finalmente:
+
+\begin{equation}
+	\hresult{P12}{ a = 0 \land b = \frac{20}{3} }
+\end{equation}
+
 \end{document}
