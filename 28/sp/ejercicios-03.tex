@@ -3769,4 +3769,54 @@ El límite de $ a_n $ también sale por inspección. En el denominador, cuando $
 	\hresult{P5.a}{ \limninf a_n = 2 }
 \end{equation}
 
+\subsectionx{P5.b}
+
+Por observación, los términos pares e impares siguen expresiones diferentes. Concretamente:
+
+\begin{subequations}
+	\begin{align}
+		a_{2n-1} &= a_1, a_3, a_5, \ldots = \frac{2}{1}, \frac{3}{2}, \frac{4}{3}, \ldots = \frac{n+1}{n} \\
+		a_{2n} &= a_2, a_4, a_6, \ldots = \frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \ldots = \frac{n}{n+1}
+	\end{align}
+\end{subequations}
+
+Para expresar esto en términos de $ n $, se puede hacer cambios de variable. Para la rama par, sea $ 2n = k \Rightarrow n = \frac{k}{2} $.
+
+\begin{subequations}
+	\begin{align}
+		a_{2n} &= \frac{n}{n+1} \\
+		& \text{CV: } 2n = k \Rightarrow n = \frac{k}{2} \\
+		a_k &= \frac{ \frac{k}{2} }{ \frac{k}{2} + 1 } \\
+		&= \frac{ \frac{k}{2} }{ \frac{k}{2} + 1 } \cdot \frac{2}{2} \\
+		&= \frac{k}{k+2}
+	\end{align}
+\end{subequations}
+
+Para la rama impar, se puede hacer algo muy similar. Sea $ p = 2n-1 \Rightarrow n = \frac{p+1}{2} $
+
+\begin{subequations}
+	\begin{align}
+		a_{2n-1} &= \frac{n+1}{n} \\
+		& \text{CV: } 2n-1 = p \Rightarrow n = \frac{p+1}{2} \\
+		a_p &= \frac{ \frac{p+1}{2} + 1 }{ \frac{p+1}{2} } \\
+		&= \frac{ \frac{p+1}{2} + 1 }{ \frac{p+1}{2} } \cdot \frac{2}{2} \\
+		&= \frac{p+3}{p+1}
+	\end{align}
+\end{subequations}
+
+Resulta entonces, haciendo que el índice vuelva a ser $ n $, ya que es indistinto:
+
+\begin{equation}
+	\hresult{P5.b}{ a_n = \begin{cases}
+		& \frac{n}{n+2} \text{ si } n \text{ es par} \\
+		& \frac{n+3}{n+1} \text{ si } n \text{ es impar}
+	\end{cases} }
+\end{equation}
+
+Ambas subsucesiones tienden a 1, por observación.
+
+\begin{equation}
+	\hresult{P5.a}{ \limninf a_n = 1 }
+\end{equation}
+
 \end{document}
