@@ -4118,4 +4118,58 @@ Finalmente:
 	\hresult{P12}{ a = 0 \land b = \frac{20}{3} }
 \end{equation}
 
+\sectionx{P13}
+
+\textbf{Se definen $ a_n = (-1)^n \frac{3n-1}{7n+2} $ y $ b_n = (a_n)^2 $.}
+
+\begin{enumerate}[label=(\alph*)]
+	\bfseries
+	
+	\item Probar por medio de subsucesiones que $ a_n $ no tiene límite.
+	
+	\item Calcular $ \limninfs b_n $.
+\end{enumerate}
+
+\hrule
+
+\subsectionx{P13.a}
+
+Para la subsucesión de términos de índice impar:
+
+\begin{subequations}
+	\begin{align}
+		\limninf a_{2n-1} &= \limninf (-1)^{2n-1} \frac{3 (2n-1)-1}{7 (2n-1)+2} \\
+		&= (-1) \frac{6n-4}{14n-5} \\
+		&= (-1) \frac{6}{14} = -\frac{3}{7}
+	\end{align}
+\end{subequations}
+
+Para la subsucesión de términos de índice par:
+
+\begin{subequations}
+	\begin{align}
+		\limninf a_{2n} &= \limninf (-1)^{2n} \frac{3 (2n)-1}{7 (2n)+2} \\
+		&= \frac{6n-1}{14n+2} \\
+		&= \frac{6}{14} = \frac{3}{7}
+	\end{align}
+\end{subequations}
+
+Se hallaron dos subsucesiones con límites diferentes, ergo el límite de $ a_n $ no existe.
+
+\subsectionx{P13.b}
+
+Aunque $ f(x) = x^2 $ es continua en todo $ \mathbb{R} $, como $ a_n $ no converge, no es válido intercambiar límite y evaluación de función en este caso.
+
+\begin{subequations}
+	\begin{align}
+		\limninf b_n &= \limninf (a_n)^2 \\
+		&= \limninf \left( (-1)^n \frac{3n-1}{7n+2} \right)^2 \\
+		&= \limninf (-1)^{2n} \left( \frac{3n-1}{7n+2} \right)^2 = \left( \frac{3}{7} \right)^2 = \frac{9}{49}
+	\end{align}
+\end{subequations}
+
+\begin{equation}
+	\hresult{P13.b}{ \limninf b_n = \frac{9}{49} }
+\end{equation}
+
 \end{document}
