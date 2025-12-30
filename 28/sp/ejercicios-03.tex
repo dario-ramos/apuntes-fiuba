@@ -4172,4 +4172,112 @@ Aunque $ f(x) = x^2 $ es continua en todo $ \mathbb{R} $, como $ a_n $ no conver
 	\hresult{P13.b}{ \limninf b_n = \frac{9}{49} }
 \end{equation}
 
+\sectionx{P14}
+
+\textbf{Se define la sucesión $ a_1 = 1, a_{n+1} = \left( \frac{n}{n+1} \right)^{2n} a_n, n \geq 1 $. }
+
+\begin{enumerate}[label=(\alph*)]
+	\bfseries
+	
+	\item Probar que existe el $ \limninfs a_n $. ¿Cuál es su valor?
+	
+	\item La sucesión $ b_n $ satisface $ a_n < b_n < n a_n $. Calcular $ \limninfs b_n $.
+\end{enumerate}
+
+\hrule
+
+\subsectionx{P14.a}
+
+Evaluando términos para ver cómo se comporta $ a_n $:
+
+\begin{subequations}
+	\begin{align}
+		a_1 &= 1 \\
+		a_2 &= \left( \frac{2}{2+1} \right)^{2 \cdot 2} \cdot 1 \approxeq 0,198 \\
+		a_3 &\approxeq 0,0352 \\
+		a_4 &\approxeq 0,00590
+	\end{align}
+\end{subequations}
+
+Parece que $ a_n $ es monótona decreciente, acotada entre 1 y 0, y convergente a cero. Para demostrar la existencia del límite, se podría aplicar el teorema de convergencia monótona. Como primer paso, se demostrará que $ a_n $ es MD.
+
+\begin{equation}
+	a_{n+1} < a_n
+\end{equation}
+
+Antes de proseguir dividiendo por $ a_n $ m.a.m., hay que demostrar que $ a_n > 0 $. Utilizando inducción completa, la hipótesis inductiva propuesta es $ a_n > 0 $. Para el caso inicial, $ a_1 = 1 > 0 $. Para el paso inductivo, supóngase que $ a_n > 0 $. Entonces, siendo $ a_{n+1} = \left(  \frac{n}{n+1}\right)^{2n} a_n $, se tiene un producto entre un número positivo por hipótesis, $ a_n $, y una potencia, que siempre es mayor a cero. Por lo tanto, $ a_n > 0 \Rightarrow a_{n+1} > 0 $ y queda demostrado que $ a_n > 0 $. Continuando con el análisis de monotonía:
+
+\begin{subequations}
+	\begin{align}
+		& \frac{a_{n+1}}{a_n} < 1 \\
+		& \left( \frac{n}{n+1} \right)^{2n} < 1 \\
+		& \text{Elevando a la $ \frac{1}{2n} $ m.a.m.} \\
+		& \left[ \left( \frac{n}{n+1} \right)^{2n} \right]^{ \frac{1}{2n} } < 1^{ \frac{1}{2n} } \\
+		& \frac{n}{n+1} < 1 \\
+		& n < n+1 \\
+		& 0 < 1
+	\end{align}
+\end{subequations}
+
+Resulta entonces $ a_n $ monótona decreciente para todo $ n $. Sólo resta demostrar que $ a_n $ está acotada. Se propone como hipótesis inductiva $ 0 < a_n \leq 1 $. El caso inicial es $ a_1 = 1 $, y satisface la hipótesis. Para el paso inductivo, se toma como premisa que $ 0 < a_n \leq 1 $. Luego, hay que ver qué ocurre con $ a_{n+1} $.
+
+\begin{equation}
+	a_{n+1} = \left( \frac{n}{n+1} \right)^{2n} a_n
+\end{equation}
+
+Resulta $ a_{n+1} $ un producto. Uno de sus factores está acotado entre 0 y 1 por hipótesis. Con que el otro factor se comporte igual alcanza para que el producto también esté acotado entre 0 y 1. Dicho factor es una potencia, por lo cual ya es mayor a cero para todo $ n $. Sólo resta comprobar que siempre es menor a 1.
+
+\begin{equation}
+		\left( \frac{n}{n+1} \right)^{2n} < 1
+\end{equation}
+
+Esta desigualdad ya se demostró válida para todo $ n $ al analizar la monotonía. Por lo tanto, $ a_n $ está acotada y es monótona. Por el teorema de convergencia monótona, existe $ \limninfs a_n $ y es finito.
+
+Para hallar el valor, el análisis preliminar sugirió que es cero. Aplicando límite a la relación de recurrencia, resulta:
+
+\begin{subequations}
+	\begin{align}
+		& \underbrace{ \limninf a_{n+1} }_{L} = \limninf \left( \frac{n}{n+1} \right)^{2n} a_n \\
+		& L = \limninf \left( \frac{n}{n+1} \right)^{2n} \cdot \underbrace{ \limninf a_n }_{L} \\
+		& L = L \limninf \left( 1 - 1 + \frac{n}{n+1} \right)^{2n} \\
+		& L = L \limninf \left( 1 + \frac{-1}{n+1} \right)^{2n} \\
+		& L = L \limninf \left[ \underbrace{ \left( 1 + \frac{1}{ \frac{n+1}{(-1)} } \right)^{\frac{n+1}{(-1)}} }_{e} \right]^{ \underbrace{ \frac{(-1)}{n+1} 2n }_{-2} } \\
+		& L = L e^{-2}
+	\end{align}
+\end{subequations}
+
+La única forma de satisfacer la igualdad es $ L = 0 $. Finalmente:
+
+\begin{equation}
+	\hresult{P14.a}{ \limninf a_n = 0 }
+\end{equation}
+
+\subsectionx{P14.b}
+
+Aplicando límite miembro a miembro:
+
+\begin{subequations}
+	\begin{align}
+		& \limninf a_n < \limninf b_n < \limninf n a_n \\
+		& 0 < \limninf b_n < \limninfs n a_n
+	\end{align}
+\end{subequations}
+
+Para analizar la cota superior, sea $ c_n = n a_n \Rightarrow c_{n+1} = (n+1) a_{n+1} $. Esto permite analizar el comportamiento de $ c_n $ con el criterio de D'Alembert.
+
+\begin{subequations}
+	\begin{align}
+		\limninf \left| \frac{c_{n+1}}{c_n} \right| &= \limninf \left| \frac{(n+1) a_{n+1}}{n a_n} \right| \\
+		&= \limninf \left| \frac{n+1}{n} \frac{a_{n+1}}{a_n} \right| \\
+		&= \limninf \left| \underbrace{ \frac{n+1}{n} }_{1} \underbrace{ \left( \frac{n}{n+1} \right)^{2n} }_{e^{-2}} \right| \\
+		&= e^{-2} < 1 \Rightarrow \limninf c_n = 0
+	\end{align}
+\end{subequations}
+
+Entonces, resulta $ 0 < \limninf b_n < 0 $. Por teorema del Sandwich:
+
+\begin{equation}
+	\hresult{P14.b}{ \limninf b_n = 0 }
+\end{equation}
+
 \end{document}
