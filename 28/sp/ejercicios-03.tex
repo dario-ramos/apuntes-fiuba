@@ -4280,4 +4280,70 @@ Entonces, resulta $ 0 < \limninf b_n < 0 $. Por teorema del Sandwich:
 	\hresult{P14.b}{ \limninf b_n = 0 }
 \end{equation}
 
+\sectionx{P15}
+
+\textbf{Se define la sucesión de números reales en la forma $ x_1 = a, x_{n+1} = \frac{1}{4} + {x_n}^2 $, siendo $ a > 0 $ }
+
+\begin{enumerate}[label=(\alph*)]
+	\bfseries
+	
+	\item Probar que $ x_n $ es una sucesión monótona creciente.
+	
+	\item Determinar los valores de $ a > 0 $ para los cuales $ x_n $ es convergente.
+\end{enumerate}
+
+\hrule
+
+\subsectionx{P15.a}
+
+Por definición, $ x_n $ es monótona creciente si y sólo si $ x_{n+1} > x_n $ para todo $ n $. Para este caso:
+
+\begin{subequations}
+	\begin{align}
+		& x_{n+1} > x_n \\
+		& \frac{1}{4} + {x_n}^2 > x_n \\
+		& {x_n}^2 - x_n + \frac{1}{4} > 0 \\
+		& \Delta = b^2 - 4 a c = (-1)^2 - 4 \cdot 1 \cdot \frac{1}{4} = 0 \Rightarrow x_{n1}, x_{n2} = \frac{-b}{2a} = \frac{1}{2} \\
+		& \left( x_n - \frac{1}{2} \right) > 0
+	\end{align}
+\end{subequations}
+
+El único caso en que la desigualdad no es estricta es cuando se anula el lado izquierdo. En ese caso particular, $ x_n = \frac{1}{2} $. Cuando $ a = \frac{1}{2}$, resulta $ x_1 = \frac{1}{2}, x_2 = \frac{1}{4} + \left( \frac{1}{2} \right)^2 = \frac{1}{4} + \frac{1}{4} = \frac{1}{2} $. Todos los términos valen $ \frac{1}{2} $. Ergo, resulta una sucesión constante: $ x_n = \frac{1}{2} $. Para ese caso particular, puede considerarse monótona creciente de manera no estricta, ya que cumple $ x_{n+1} \geq x_n $. Para cualquier otro caso, $ x_n $ será monótona creciente.
+
+\subsectionx{P15.b}
+
+Para que $ x_n $ sea convergente, la relación de recurrencia debe cumplirse en el límite.
+
+\begin{subequations}
+	\begin{align}
+		& \limninf x_{n+1} = \limninf \frac{1}{4} + (x_n)^2 \\
+		& L = \frac{1}{4} + L^2 \\
+		& L^2 - L + \frac{1}{4} = 0 \\
+		& \left( L - \frac{1}{2} \right)^2 = 0 \Rightarrow L = \frac{1}{2}
+	\end{align}
+\end{subequations}
+
+Ergo, el único valor posible del límite de $ x_n $ es $ \frac{1}{2} $. Al ser $ x_n $ monótona creciente, eso implica que $ a \leq x_n \leq \frac{1}{2} $. Esto impone una cota superior sobre $ a $: no puede superar $ \frac{1}{2} $, porque en ese caso $ x_n $ nunca podría decrecer para tender a $ \frac{1}{2} $.
+
+Se plantea entonces la hipótesis inductiva, para el caso $ 0 < a \leq \frac{1}{2} $, de que $ 0 < x_n \leq \frac{1}{2} $. Esto es porque ya se demostró que $ x_n $ es MC; si además se prueba que está acotada, resulta convergente. Para el caso trivial, $ x_1 = a $, lo cual se satisface porque estamos en el caso de $ 0 < a \leq \frac{1}{2} $. Para el paso inductivo, se parte de la hipótesis para $ n $ y se prueba para $ n + 1 $.
+
+\begin{subequations}
+	\begin{align}
+		& 0 < x_n \leq \frac{1}{2} \\
+		& \text{Elevando al cuadrado m.a.m.} \\
+		& 0 < {x_n}^2 < \frac{1}{4} \\
+		& \frac{1}{4} < \underbrace{ \frac{1}{4} + {x_n}^2 }_{x_{n+1}} \leq \frac{1}{4} + \frac{1}{4} \\
+		& \frac{1}{4} < x_{n+1} \leq \frac{1}{2} \\
+		& 0 < x_{n+1} \leq \frac{1}{2}
+	\end{align}
+\end{subequations}
+
+Para el caso $ a > \frac{1}{2} $, dado que el único límite posible es $ \frac{1}{2} $ y $ x_n $ es monótona creciente, la única posibilidad restante es que diverja a $ +\infty $.
+
+\begin{equation}
+	\hresult{P15.b}{ x_n \text{ sólo converge para } 0 < a \leq \frac{1}{2} }
+\end{equation}
+
+
+
 \end{document}
