@@ -4344,6 +4344,40 @@ Para el caso $ a > \frac{1}{2} $, dado que el único límite posible es $ \frac{
 	\hresult{P15.b}{ x_n \text{ sólo converge para } 0 < a \leq \frac{1}{2} }
 \end{equation}
 
+\sectionx{P16}
 
+\textbf{ Hallar todos los valores de $ x $ para los cuales la sucesión: }
+
+\begin{equation}
+	a_n = \frac{x^{2n+1}}{n^3 5^{n+1}}
+\end{equation}
+
+\textbf{ es convergente. Para los $ x $ hallados, calcular el $\limninfs a_n$ }
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+El término que crece más rápido en $ a_n $ es el exponencial. Manipulando algebraicamente para aislar la base:
+
+\begin{subequations}
+	\begin{align}
+		a_n &= \frac{ x^{2n+1} }{ n^3 5^{n+1} } \\
+		&= \frac{ x \cdot x^{2n} }{ n^3 \cdot 5 \cdot 5^n } \\
+		&= \frac{x}{5} \frac{1}{n^3} \left( \frac{x^2}{5} \right)^n
+	\end{align}
+\end{subequations}
+
+El factor $ \frac{x}{5} $ es una constante. El factor $ \frac{1}{n^3} $ tiende a cero, pero jamás podrá evitar la divergencia si el factor exponencial tiene base mayor a 1. Por lo tanto, $ a_n $ converge si y sólo si la base del factor exponencial es menor o igual a 1.
+
+\begin{equation}
+	\frac{x^2}{5} \leq 1 \Rightarrow |x| < \sqrt{5}
+\end{equation}
+
+Y para esos casos, la exponencial tenderá a cero y el límite total será cero también.
+
+\begin{equation}
+	\hresult{P16}{ a_n \text{ sólo converge para } x \in [-\sqrt{5}, \sqrt{5}], \text{ y en ese caso } \limninf a_n = 0 }
+\end{equation}
 
 \end{document}
