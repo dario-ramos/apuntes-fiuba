@@ -4380,4 +4380,65 @@ Y para esos casos, la exponencial tenderá a cero y el límite total será cero 
 	\hresult{P16}{ a_n \text{ sólo converge para } x \in [-\sqrt{5}, \sqrt{5}], \text{ y en ese caso } \limninf a_n = 0 }
 \end{equation}
 
+\sectionx{P17}
+
+\textbf{Considerar la sucesión $ a_n = (0,95)^{2n+1} n^2 $.}
+
+\begin{enumerate}[label=(\alph*)]
+	\bfseries
+	
+	\item Probar que es decreciente para casi todo $ n $. ¿A partir de cuál $ n $?
+	
+	\item Calcular el $ \limninfs a_n $.
+\end{enumerate}
+
+\hrule
+
+\subsectionx{P17.a}
+
+Para que $ a_n $ sea monótona decreciente, debe cumplirse:
+
+\begin{subequations}
+	\begin{align}
+		& a_{n+1} \leq a_n \\
+		& (0,95)^{2(n+1)+1} (n+1)^2 \leq (0,95)^{2n+1} n^2 \\
+		& (0,95)^{2n+3} (n^2 + 2n + 1) \leq (0,95)^{2n+1} n^2 \\
+		& \text{ Dividiendo m.a.m. por $(0,95)^{2n+1}$, que es $ > 0 \forall n$ } \\
+		& (0,95)^2 (n^2 + 2n + 1) <= n^2 \\
+		& 0,9025 (n^2 + 2n + 1) <= n^2 \\
+		& -0,0975 n^2 + 1,805 n + 0,9025 \leq 0 \\
+		& \Delta = (1,805)^2 - 4 \cdot (-0,0975) \cdot 0,9025 = 3,61 > 0 \\
+		& n_1 = \frac{ -1,805 + \sqrt{3,61} }{2 \cdot (-0,0975)} \approxeq -0,487 \\
+		& n_2 = \frac{ -1,805 - \sqrt{3,61} }{2 \cdot (-0,0975)} \approxeq 19 \\
+		& \text{ Factorizando con las raíces, sin olvidar el coeficiente $ a $ } \\
+		& (-0,0975) (n-19) (n+0,487) \leq 0 \\
+		& \text{ Dividiendo m.a.m. por $ (-0,0975) $, que invierte la desigualdad: } \\
+		& (n-19) (n+0,487) \geq 0 
+	\end{align}
+\end{subequations}
+
+La última desigualdad es un producto. Uno de sus factores, $ (n + 0.487) $, siempre es positivo por ser $ n $ natural. Por lo tanto, el signo del producto depende del primer factor, $ (n - 19) $. Esto indica que $ a_n $ crece para sus primeros 19 términos, y decrece de allí en adelante.
+
+\begin{equation}
+	\hresult{P17.a}{ a_n \text{ es decreciente para todo } n \geq 20 }
+\end{equation}
+
+\subsectionx{P17.b}
+
+Por inspección, el término dominante en $ a_n $ es la exponencial $ (0,95)^{2n+1} $. Como tiene base menor a 1, tiende a cero mucho más rápido de lo que $ n^2 $ tiende a infinito. Para confirmar esto, se puede aplicar el criterio de D'Alembert
+
+\begin{subequations}
+	\begin{align}
+		\limninf \left| \frac{a_{n+1}}{a_n} \right| &= \limninf \left| \frac{(0,95)^{2n+3} (n+1)^2}{(0,95)^{2n+1} n^2} \right| \\
+		& \text{ Las potencias son positivas para todo $ n $ y $ n^2 $ también. } \\
+		&= \limninf (0,95)^2 \frac{(n+1)^2}{n^2} = (0,95)^2 = 0,9025 < 1
+	\end{align}
+\end{subequations}
+
+Por ser el límite del cociente menor a 1:
+
+\begin{equation}
+	\hresult{P17.b}{ \limninf a_n = 0 }
+\end{equation}
+
 \end{document}
