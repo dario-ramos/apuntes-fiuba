@@ -27,6 +27,7 @@
 \newcommand{\limxinfs}{\lim\limits_{x \rightarrow +\infty}}
 \newcommand{\sectionx}[1]{\section*{#1}\label{sec:#1}\addcontentsline{toc}{section}{\nameref{sec:#1}}}
 \newcommand{\subsectionx}[1]{\subsection*{#1}\label{subsec:#1}\addcontentsline{toc}{subsection}{\nameref{subsec:#1}}}
+\newcommand{\subsubsectionx}[1]{\subsubsection*{#1}\label{subsubsec:#1}\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:#1}}}
 
 \title{Ejercicios de Análisis Matemático CBC (28) \\
 	Práctica 4: Límites y Continuidad \\
@@ -42,7 +43,9 @@
 
 \newpage
 
-\sectionx{1}
+\sectionx{Límites en el infinito}
+
+\subsectionx{Ejercicio 1}
 
 \textbf{Calcular los siguientes límites:}
 
@@ -85,7 +88,7 @@
 
 \hrule
 
-\subsectionx{1.a}
+\subsubsectionx{1.a}
 
 Para una función polinómica, sólo importa el término de mayor grado. Cuando $x$ tiende a $+\infty$, los términos de menor grado son despreciables en comparación.
 
@@ -93,7 +96,7 @@ Para una función polinómica, sólo importa el término de mayor grado. Cuando 
 	\limxinf (x^7 -10x^5 + 3) = \limxinf x^7 = \hresult{1.a}{ \text{ no existe, y diverge a $+\infty$} }
 \end{equation}
 
-\subsectionx{1.b}
+\subsubsectionx{1.b}
 
 Yendo más allá de los polinomios, si hay potencias no enteras de $ x $, sigue valiendo que se desprecian todas salvo la de mayor exponente.
 
@@ -105,7 +108,7 @@ Yendo más allá de los polinomios, si hay potencias no enteras de $ x $, sigue 
 	\end{align}
 \end{subequations}
 
-\subsectionx{1.c}
+\subsubsectionx{1.c}
 
 Para una función racional, vale decir un cociente de polinomios, hay que mirar el término de mayor grado en numerador y denominador. Si el denominador tiene el de mayor grado, el límite es cero. Si el numerador tiene el mayor grado, el límite no existe y la función diverge a más o menos infinito según el signo del término dominante. Si tienen el mismo grado, el límite es el cociente de los coeficientes. En este caso particular, el denominador tiene el término de mayor grado y por ende el límite es cero.
 
@@ -113,7 +116,7 @@ Para una función racional, vale decir un cociente de polinomios, hay que mirar 
 	\limxinf \frac{ x^3 + 3x + 1 }{ 2x^4 + 2x^3 + 1 } = \limxinf \frac{x^3}{2x^4} = \limxinf \frac{1}{2x} = \hresulte{1.c}{0}{ 1em }
 \end{equation}
 
-\subsectionx{1.d}
+\subsubsectionx{1.d}
 
 Ya no se tiene una función racional en el sentido estricto. Pero siguen siendo todas potencias de $ x $. En el infinito, $ \sqrt{x^3 + 1} $ tiende a $ \sqrt{x^3} $, ya que el 1 es despreciable. Y eso equivale a $ x^{\frac{3}{2}} = x^{1,5} $. Ergo, el mayor exponente en el numerador es $ 1,5 $ y en el denominador es $ 1 $. Por lo tanto, el límite no existe y la función diverge a $ +\infty $.
 
@@ -124,7 +127,7 @@ Ya no se tiene una función racional en el sentido estricto. Pero siguen siendo 
 	\end{align}
 \end{subequations}
 
-\subsectionx{1.e}
+\subsubsectionx{1.e}
 
 \begin{subequations}
 	\begin{align}
@@ -134,7 +137,7 @@ Ya no se tiene una función racional en el sentido estricto. Pero siguen siendo 
 	\end{align}
 \end{subequations}
 
-\subsectionx{1.f}
+\subsubsectionx{1.f}
 
 \begin{subequations}
 	\begin{align}
@@ -145,7 +148,7 @@ Ya no se tiene una función racional en el sentido estricto. Pero siguen siendo 
 	\end{align}
 \end{subequations}
 
-\subsectionx{1.g}
+\subsubsectionx{1.g}
 
 \begin{subequations}
 	\begin{align}
@@ -157,13 +160,13 @@ Ya no se tiene una función racional en el sentido estricto. Pero siguen siendo 
 	\end{align}
 \end{subequations}
 
-\subsectionx{1.h}
+\subsubsectionx{1.h}
 
 \begin{equation}
 	\limxinf \frac{ 5 - \sqrt{x} }{ 1 + 4 \sqrt{x} } = \limxinf \frac{ -\sqrt{x} }{ 4 \sqrt{x} } = \hresult{1.h}{ -\frac{1}{4} }
 \end{equation}
 
-\subsectionx{1.i}
+\subsubsectionx{1.i}
 
 En este caso, se tiene una indeterminación del tipo $ +\infty -\infty $. Es tentador despreciar la constante en la raíz, cancelar la misma y declarar que el límite es cero. Pero a veces ese enfoque puede conducir a resultados erróneos cuando se cancelan términos del máximo orden. Por seguridad, se aplicará otra técnica. Dado que se tiene una resta, se puede multiplicar y dividir por la suma para aplicar la identidad $ (a-b)(a+b) = a^2 - b^2 $.
 
@@ -176,7 +179,7 @@ En este caso, se tiene una indeterminación del tipo $ +\infty -\infty $. Es ten
 	\end{align}
 \end{subequations}
 
-\subsectionx{1.j}
+\subsubsectionx{1.j}
 
 Aplicando la misma técnica del inciso anterior:
 
@@ -194,7 +197,7 @@ Aplicando la misma técnica del inciso anterior:
 
 Es importante entender que al final, cuando se desprecian las constantes en el denominador, es válido hacerlo porque eso no conduce a una indeterminación. Haber hecho eso al principio habría sido incorrecto porque habría conducido a una indeterminación del tipo $ +\infty -\infty $, y al resultado incorrecto de que el límite valiera cero.
 
-\subsectionx{1.k}
+\subsubsectionx{1.k}
 
 Cuando $ x $ tiende a $ +\infty $, $ 5-x $ tiende a un número negativo porque $ x $ domina. Por definición de módulo, $ |5-x| \rightarrow -5+x $ cuando $ x \rightarrow +\infty $.
 
@@ -202,7 +205,7 @@ Cuando $ x $ tiende a $ +\infty $, $ 5-x $ tiende a un número negativo porque $
 	\limxinf \frac{ |5-x| }{ 5-x } = \limxinf \frac{-5+x}{5-x} = \hresulte{1.k}{ -1 }{ 1em }
 \end{equation}
 
-\subsectionx{1.l}
+\subsubsectionx{1.l}
 
 La función seno está acotada entre -1 y 1, y el denominador diverge a $ +\infty $. Por lo tanto, el cociente converge a cero.
 
@@ -210,7 +213,7 @@ La función seno está acotada entre -1 y 1, y el denominador diverge a $ +\inft
 	\limxinf \frac{ \sin(x) }{ x } = \frac{ \text{acot.} }{+\infty} = \hresulte{1.l}{ 0 }{ 1em }
 \end{equation}
 
-\subsectionx{1.m}
+\subsubsectionx{1.m}
 
 La función logaritmo es monótona creciente, y no está acotada superiormente.
 
@@ -218,7 +221,7 @@ La función logaritmo es monótona creciente, y no está acotada superiormente.
 	\limxinf \ln(x) = \hresult{ 1.m }{ \text{ no existe, y diverge a $ +\infty $ } }
 \end{equation}
 
-\subsectionx{1.n}
+\subsubsectionx{1.n}
 
 Se tiene una función exponencial con base mayor a 1; diverge a $ +\infty $.
 
@@ -226,7 +229,7 @@ Se tiene una función exponencial con base mayor a 1; diverge a $ +\infty $.
 	\limxinf e^x = \hresult{ 1.n }{ \text{ no existe, y diverge a $ +\infty $ } }
 \end{equation}
 
-\subsectionx{1.ñ}
+\subsubsectionx{1.ñ}
 
 Ahora se tiene una función exponencial con base menor a 1; esto converge a cero en el infinito positivo.
 
@@ -234,7 +237,7 @@ Ahora se tiene una función exponencial con base menor a 1; esto converge a cero
 	\limxinf e^{-x} = \limxinf \left( e^{-1} \right)^x = \limxinf \left( \frac{1}{e} \right)^x = \hresulte{1.ñ}{ 0 }{ 1em }
 \end{equation}
 
-\subsectionx{1.o}
+\subsubsectionx{1.o}
 
 La función logaritmo tiene una asíntota vertical en $ x = 0^{+} $. Al acercarse a cero por derecha, el logaritmo tiende a $ -\infty $.
 
