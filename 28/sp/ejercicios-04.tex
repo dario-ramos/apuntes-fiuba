@@ -1,0 +1,245 @@
+% !TeX spellcheck = es_ES
+
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[spanish]{babel}
+\usepackage{cancel}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black,
+}
+\usepackage{tcolorbox}
+
+\tcbuselibrary{theorems}
+
+\newcommand{\hresult}[2]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] {#2} }
+\newcommand{\hresulte}[3]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] { \hspace{#3} #2 \hspace{#3} } }
+\newcommand{\limxinf}{\lim_{x \rightarrow +\infty}}
+\newcommand{\limxinfs}{\lim\limits_{x \rightarrow +\infty}}
+\newcommand{\sectionx}[1]{\section*{#1}\label{sec:#1}\addcontentsline{toc}{section}{\nameref{sec:#1}}}
+\newcommand{\subsectionx}[1]{\subsection*{#1}\label{subsec:#1}\addcontentsline{toc}{subsection}{\nameref{subsec:#1}}}
+
+\title{Ejercicios de Análisis Matemático CBC (28) \\
+	Práctica 4: Límites y Continuidad \\
+	Cátedra Ruiz, curso 62802 \\
+	1° C 2003}
+\author{Darío Eduardo Ramos}
+
+\begin{document}
+	
+\maketitle
+
+\tableofcontents{}
+
+\newpage
+
+\sectionx{1}
+
+\textbf{Calcular los siguientes límites:}
+
+\begin{enumerate}[label=(\alph*)]
+	
+	\bfseries
+	
+	\item $ \limxinfs (x^7 -10x^5 + 3) $
+	
+	\item $ \limxinfs (x^5 - x^6 + \sqrt{x}) $
+	
+	\item $ \limxinfs \frac{ x^3+3x+1 }{ 2x^4+2x^2+1 } $
+	
+	\item $ \limxinfs \frac{ \sqrt{ x^3+1 } - x }{ x+5 } $
+	
+	\item $ \limxinfs \frac{ 6^{x+1}+3 }{ 6^x-5 } $
+	
+	\item $ \limxinfs \frac{ x + \sin(x) }{ x - \cos(x) } $
+	
+	\item $ \limxinfs \frac{ 9x^2+6 }{ 5x-1 } $
+	
+	\item $ \limxinfs \frac{ 5 - \sqrt{x} }{ 1 + 4\sqrt{x} } $
+	
+	\item $ \limxinfs \left( x - \sqrt{ x^2 + 1 } \right) $
+	
+	\item $ \limxinfs \left( \sqrt{(x-10) (x+4)} - x \right) $
+	
+	\item $ \limxinfs \frac{ |5-x| }{ 5-x } $
+	
+	\item $ \limxinfs \frac{ \sin(x) }{ x } $
+	
+	\item $ \limxinfs \ln(x) $
+	
+	\item $ \limxinfs e^x $
+	
+	\item $ \limxinfs e^{-x} $
+	
+	\item $ \limxinfs \ln\left( \frac{1}{x} \right) $
+\end{enumerate}
+
+\hrule
+
+\subsectionx{1.a}
+
+Para una función polinómica, sólo importa el término de mayor grado. Cuando $x$ tiende a $+\infty$, los términos de menor grado son despreciables en comparación.
+
+\begin{equation}
+	\limxinf (x^7 -10x^5 + 3) = \limxinf x^7 = \hresult{1.a}{ \text{ no existe, y diverge a $+\infty$} }
+\end{equation}
+
+\subsectionx{1.b}
+
+Yendo más allá de los polinomios, si hay potencias no enteras de $ x $, sigue valiendo que se desprecian todas salvo la de mayor exponente.
+
+\begin{subequations}
+	\begin{align}
+		\limxinf (x^5 -x^6 + \sqrt{x}) &= \limxinf -x^6 + x^5 + x^{\frac{1}{2}} \\
+		&= \limxinf -x^6 \\ 
+		&= \hresult{1.b}{ \text{ no existe, y diverge a $-\infty$} }
+	\end{align}
+\end{subequations}
+
+\subsectionx{1.c}
+
+Para una función racional, vale decir un cociente de polinomios, hay que mirar el término de mayor grado en numerador y denominador. Si el denominador tiene el de mayor grado, el límite es cero. Si el numerador tiene el mayor grado, el límite no existe y la función diverge a más o menos infinito según el signo del término dominante. Si tienen el mismo grado, el límite es el cociente de los coeficientes. En este caso particular, el denominador tiene el término de mayor grado y por ende el límite es cero.
+
+\begin{equation}
+	\limxinf \frac{ x^3 + 3x + 1 }{ 2x^4 + 2x^3 + 1 } = \limxinf \frac{x^3}{2x^4} = \limxinf \frac{1}{2x} = \hresulte{1.c}{0}{ 1em }
+\end{equation}
+
+\subsectionx{1.d}
+
+Ya no se tiene una función racional en el sentido estricto. Pero siguen siendo todas potencias de $ x $. En el infinito, $ \sqrt{x^3 + 1} $ tiende a $ \sqrt{x^3} $, ya que el 1 es despreciable. Y eso equivale a $ x^{\frac{3}{2}} = x^{1,5} $. Ergo, el mayor exponente en el numerador es $ 1,5 $ y en el denominador es $ 1 $. Por lo tanto, el límite no existe y la función diverge a $ +\infty $.
+
+\begin{subequations}
+	\begin{align}
+		\limxinf \frac{ \sqrt{x^3 + 1} - x }{ x+5 } &= \limxinf \frac{ x^{1,5} - x }{x + 5} \\
+		&= \hresult{1.d}{ \text{no existe, y diverge a $ +\infty $}}
+	\end{align}
+\end{subequations}
+
+\subsectionx{1.e}
+
+\begin{subequations}
+	\begin{align}
+		& \limxinf \frac{ 6^{x+1} + 3 }{ 6^x - 5 } = \\
+		& \text{ Las constantes son despreciables cuando $ x \Rightarrow +\infty $ } \\
+		& \limxinf \frac{6^{x+1}}{6^x} = \hresulte{1.e}{6}{ 1em }
+	\end{align}
+\end{subequations}
+
+\subsectionx{1.f}
+
+\begin{subequations}
+	\begin{align}
+		& \limxinf \frac{ x + \sin(x) }{ x - \cos(x) } = \\
+		& \text{ Las funciones seno y coseno están acotadas entre -1 y 1; } \\
+		& \text{ son despreciables cuando $ x \Rightarrow +\infty $ } \\
+		& \limxinf \frac{ x }{ x } = \hresulte{1.f}{1}{ 1 em }
+	\end{align}
+\end{subequations}
+
+\subsectionx{1.g}
+
+\begin{subequations}
+	\begin{align}
+		& \limxinf \frac{ \sqrt{ 9x^2+6 } }{ 5x-1 } = \\
+		& \text{ La constante 6 es despreciable cuando $ x \rightarrow +\infty $ } \\
+		&= \limxinf \frac{ \sqrt{ 9x^2 } }{ 5x-1 } \\
+		& \text{ Como se está analizando $ x \rightarrow +\infty, x > 0 $ y no hace falta módulo } \\
+		&= \limxinf \frac{ 3x }{ 5x-1 } = \hresulte{1.g}{ \frac{3}{5} }{ 1 em }
+	\end{align}
+\end{subequations}
+
+\subsectionx{1.h}
+
+\begin{equation}
+	\limxinf \frac{ 5 - \sqrt{x} }{ 1 + 4 \sqrt{x} } = \limxinf \frac{ -\sqrt{x} }{ 4 \sqrt{x} } = \hresult{1.h}{ -\frac{1}{4} }
+\end{equation}
+
+\subsectionx{1.i}
+
+En este caso, se tiene una indeterminación del tipo $ +\infty -\infty $. Es tentador despreciar la constante en la raíz, cancelar la misma y declarar que el límite es cero. Pero a veces ese enfoque puede conducir a resultados erróneos cuando se cancelan términos del máximo orden. Por seguridad, se aplicará otra técnica. Dado que se tiene una resta, se puede multiplicar y dividir por la suma para aplicar la identidad $ (a-b)(a+b) = a^2 - b^2 $.
+
+\begin{subequations}
+	\begin{align}
+		\limxinf (x - \sqrt{x^2 + 1}) &= \limxinf (x - \sqrt{x^2 + 1}) \frac{x + \sqrt{x^2 + 1}}{x + \sqrt{x^2 + 1}} \\
+		&= \limxinf \frac{ x^2 - \left( \sqrt{x^2+1} \right)^2 }{ x + \sqrt{x^2 + 1} } \\
+		&= \limxinf \frac{ x^2 - x^2 - 1 }{ x + \sqrt{x^2 + 1} } \\
+		&= \limxinf \frac{ - 1 }{ x + \sqrt{x^2 + 1} } = \hresulte{1.i}{ 0 }{ 1em }
+	\end{align}
+\end{subequations}
+
+\subsectionx{1.j}
+
+Aplicando la misma técnica del inciso anterior:
+
+\begin{subequations}
+	\begin{align}
+		& \limxinf \left( \sqrt{(x-10) (x+4)} - x \right) \\
+		&= \limxinf \left( \sqrt{(x-10) (x+4)} - x \right) \frac{ \sqrt{(x-10) (x+4)} + x }{ \sqrt{(x-10) (x+4)} + x } \\
+		&= \limxinf \frac{ (x-10)(x+4) - x^2 }{ \sqrt{(x-10) (x+4)} + x } \\
+		&= \limxinf \frac{ \cancel{x^2}-4x-10x-40-\cancel{x^2} }{ \sqrt{(x-10) (x+4)} + x } \\
+		&= \limxinf \frac{ -6x-40 }{ \sqrt{(x-10) (x+4)} + x } \\
+		&= \limxinf \frac{ -6x-40 }{ \sqrt{x \cdot x} + x } \\
+		&= \limxinf \frac{-6x}{2x} = \hresulte{ 1.j }{ -3 }{ 1em }
+	\end{align}
+\end{subequations}
+
+Es importante entender que al final, cuando se desprecian las constantes en el denominador, es válido hacerlo porque eso no conduce a una indeterminación. Haber hecho eso al principio habría sido incorrecto porque habría conducido a una indeterminación del tipo $ +\infty -\infty $, y al resultado incorrecto de que el límite valiera cero.
+
+\subsectionx{1.k}
+
+Cuando $ x $ tiende a $ +\infty $, $ 5-x $ tiende a un número negativo porque $ x $ domina. Por definición de módulo, $ |5-x| \rightarrow -5+x $ cuando $ x \rightarrow +\infty $.
+
+\begin{equation}
+	\limxinf \frac{ |5-x| }{ 5-x } = \limxinf \frac{-5+x}{5-x} = \hresulte{1.k}{ -1 }{ 1em }
+\end{equation}
+
+\subsectionx{1.l}
+
+La función seno está acotada entre -1 y 1, y el denominador diverge a $ +\infty $. Por lo tanto, el cociente converge a cero.
+
+\begin{equation}
+	\limxinf \frac{ \sin(x) }{ x } = \frac{ \text{acot.} }{+\infty} = \hresulte{1.l}{ 0 }{ 1em }
+\end{equation}
+
+\subsectionx{1.m}
+
+La función logaritmo es monótona creciente, y no está acotada superiormente.
+
+\begin{equation}
+	\limxinf \ln(x) = \hresult{ 1.m }{ \text{ no existe, y diverge a $ +\infty $ } }
+\end{equation}
+
+\subsectionx{1.n}
+
+Se tiene una función exponencial con base mayor a 1; diverge a $ +\infty $.
+
+\begin{equation}
+	\limxinf e^x = \hresult{ 1.n }{ \text{ no existe, y diverge a $ +\infty $ } }
+\end{equation}
+
+\subsectionx{1.ñ}
+
+Ahora se tiene una función exponencial con base menor a 1; esto converge a cero en el infinito positivo.
+
+\begin{equation}
+	\limxinf e^{-x} = \limxinf \left( e^{-1} \right)^x = \limxinf \left( \frac{1}{e} \right)^x = \hresulte{1.ñ}{ 0 }{ 1em }
+\end{equation}
+
+\subsectionx{1.o}
+
+La función logaritmo tiene una asíntota vertical en $ x = 0^{+} $. Al acercarse a cero por derecha, el logaritmo tiende a $ -\infty $.
+
+\begin{equation}
+	\limxinf \ln\left( \frac{1}{x} \right) = \limxinf \ln( 0^{+} ) = \hresult{ 1.o }{ \text{ no existe, y diverge a $-\infty$ } }
+\end{equation}
+
+\end{document}
