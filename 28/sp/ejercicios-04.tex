@@ -21,12 +21,15 @@
 
 \tcbuselibrary{theorems}
 
+\newcommand{\figurex}[4]{\begin{figure}[ht] \caption{#1} \includegraphics[scale=#2]{#3} \centering \label{#4}\end{figure}}
 \newcommand{\hresult}[2]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] {#2} }
 \newcommand{\hresulte}[3]{\tcboxmath[colback=orange!25!white,colframe=orange, title=#1] { \hspace{#3} #2 \hspace{#3} } }
 \newcommand{\limxinf}{\lim_{x \rightarrow +\infty}}
+\newcommand{\limxninf}{\lim_{x \rightarrow -\infty}}
 \newcommand{\limxinfs}{\lim\limits_{x \rightarrow +\infty}}
 \newcommand{\sectionx}[1]{\section*{#1}\label{sec:#1}\addcontentsline{toc}{section}{\nameref{sec:#1}}}
 \newcommand{\subsectionx}[1]{\subsection*{#1}\label{subsec:#1}\addcontentsline{toc}{subsection}{\nameref{subsec:#1}}}
+\newcommand{\subsubsectionx}[1]{\subsubsection*{#1}\label{subsubsec:#1}\addcontentsline{toc}{subsubsection}{\nameref{subsubsec:#1}}}
 
 \title{Ejercicios de Análisis Matemático CBC (28) \\
 	Práctica 4: Límites y Continuidad \\
@@ -42,7 +45,9 @@
 
 \newpage
 
-\sectionx{1}
+\sectionx{Límites en el infinito}
+
+\subsectionx{Ejercicio 1}
 
 \textbf{Calcular los siguientes límites:}
 
@@ -85,7 +90,7 @@
 
 \hrule
 
-\subsectionx{1.a}
+\subsubsectionx{1.a}
 
 Para una función polinómica, sólo importa el término de mayor grado. Cuando $x$ tiende a $+\infty$, los términos de menor grado son despreciables en comparación.
 
@@ -93,7 +98,7 @@ Para una función polinómica, sólo importa el término de mayor grado. Cuando 
 	\limxinf (x^7 -10x^5 + 3) = \limxinf x^7 = \hresult{1.a}{ \text{ no existe, y diverge a $+\infty$} }
 \end{equation}
 
-\subsectionx{1.b}
+\subsubsectionx{1.b}
 
 Yendo más allá de los polinomios, si hay potencias no enteras de $ x $, sigue valiendo que se desprecian todas salvo la de mayor exponente.
 
@@ -105,7 +110,7 @@ Yendo más allá de los polinomios, si hay potencias no enteras de $ x $, sigue 
 	\end{align}
 \end{subequations}
 
-\subsectionx{1.c}
+\subsubsectionx{1.c}
 
 Para una función racional, vale decir un cociente de polinomios, hay que mirar el término de mayor grado en numerador y denominador. Si el denominador tiene el de mayor grado, el límite es cero. Si el numerador tiene el mayor grado, el límite no existe y la función diverge a más o menos infinito según el signo del término dominante. Si tienen el mismo grado, el límite es el cociente de los coeficientes. En este caso particular, el denominador tiene el término de mayor grado y por ende el límite es cero.
 
@@ -113,7 +118,7 @@ Para una función racional, vale decir un cociente de polinomios, hay que mirar 
 	\limxinf \frac{ x^3 + 3x + 1 }{ 2x^4 + 2x^3 + 1 } = \limxinf \frac{x^3}{2x^4} = \limxinf \frac{1}{2x} = \hresulte{1.c}{0}{ 1em }
 \end{equation}
 
-\subsectionx{1.d}
+\subsubsectionx{1.d}
 
 Ya no se tiene una función racional en el sentido estricto. Pero siguen siendo todas potencias de $ x $. En el infinito, $ \sqrt{x^3 + 1} $ tiende a $ \sqrt{x^3} $, ya que el 1 es despreciable. Y eso equivale a $ x^{\frac{3}{2}} = x^{1,5} $. Ergo, el mayor exponente en el numerador es $ 1,5 $ y en el denominador es $ 1 $. Por lo tanto, el límite no existe y la función diverge a $ +\infty $.
 
@@ -124,7 +129,7 @@ Ya no se tiene una función racional en el sentido estricto. Pero siguen siendo 
 	\end{align}
 \end{subequations}
 
-\subsectionx{1.e}
+\subsubsectionx{1.e}
 
 \begin{subequations}
 	\begin{align}
@@ -134,7 +139,7 @@ Ya no se tiene una función racional en el sentido estricto. Pero siguen siendo 
 	\end{align}
 \end{subequations}
 
-\subsectionx{1.f}
+\subsubsectionx{1.f}
 
 \begin{subequations}
 	\begin{align}
@@ -145,7 +150,7 @@ Ya no se tiene una función racional en el sentido estricto. Pero siguen siendo 
 	\end{align}
 \end{subequations}
 
-\subsectionx{1.g}
+\subsubsectionx{1.g}
 
 \begin{subequations}
 	\begin{align}
@@ -157,13 +162,13 @@ Ya no se tiene una función racional en el sentido estricto. Pero siguen siendo 
 	\end{align}
 \end{subequations}
 
-\subsectionx{1.h}
+\subsubsectionx{1.h}
 
 \begin{equation}
 	\limxinf \frac{ 5 - \sqrt{x} }{ 1 + 4 \sqrt{x} } = \limxinf \frac{ -\sqrt{x} }{ 4 \sqrt{x} } = \hresult{1.h}{ -\frac{1}{4} }
 \end{equation}
 
-\subsectionx{1.i}
+\subsubsectionx{1.i}
 
 En este caso, se tiene una indeterminación del tipo $ +\infty -\infty $. Es tentador despreciar la constante en la raíz, cancelar la misma y declarar que el límite es cero. Pero a veces ese enfoque puede conducir a resultados erróneos cuando se cancelan términos del máximo orden. Por seguridad, se aplicará otra técnica. Dado que se tiene una resta, se puede multiplicar y dividir por la suma para aplicar la identidad $ (a-b)(a+b) = a^2 - b^2 $.
 
@@ -176,7 +181,7 @@ En este caso, se tiene una indeterminación del tipo $ +\infty -\infty $. Es ten
 	\end{align}
 \end{subequations}
 
-\subsectionx{1.j}
+\subsubsectionx{1.j}
 
 Aplicando la misma técnica del inciso anterior:
 
@@ -194,7 +199,7 @@ Aplicando la misma técnica del inciso anterior:
 
 Es importante entender que al final, cuando se desprecian las constantes en el denominador, es válido hacerlo porque eso no conduce a una indeterminación. Haber hecho eso al principio habría sido incorrecto porque habría conducido a una indeterminación del tipo $ +\infty -\infty $, y al resultado incorrecto de que el límite valiera cero.
 
-\subsectionx{1.k}
+\subsubsectionx{1.k}
 
 Cuando $ x $ tiende a $ +\infty $, $ 5-x $ tiende a un número negativo porque $ x $ domina. Por definición de módulo, $ |5-x| \rightarrow -5+x $ cuando $ x \rightarrow +\infty $.
 
@@ -202,7 +207,7 @@ Cuando $ x $ tiende a $ +\infty $, $ 5-x $ tiende a un número negativo porque $
 	\limxinf \frac{ |5-x| }{ 5-x } = \limxinf \frac{-5+x}{5-x} = \hresulte{1.k}{ -1 }{ 1em }
 \end{equation}
 
-\subsectionx{1.l}
+\subsubsectionx{1.l}
 
 La función seno está acotada entre -1 y 1, y el denominador diverge a $ +\infty $. Por lo tanto, el cociente converge a cero.
 
@@ -210,7 +215,7 @@ La función seno está acotada entre -1 y 1, y el denominador diverge a $ +\inft
 	\limxinf \frac{ \sin(x) }{ x } = \frac{ \text{acot.} }{+\infty} = \hresulte{1.l}{ 0 }{ 1em }
 \end{equation}
 
-\subsectionx{1.m}
+\subsubsectionx{1.m}
 
 La función logaritmo es monótona creciente, y no está acotada superiormente.
 
@@ -218,7 +223,7 @@ La función logaritmo es monótona creciente, y no está acotada superiormente.
 	\limxinf \ln(x) = \hresult{ 1.m }{ \text{ no existe, y diverge a $ +\infty $ } }
 \end{equation}
 
-\subsectionx{1.n}
+\subsubsectionx{1.n}
 
 Se tiene una función exponencial con base mayor a 1; diverge a $ +\infty $.
 
@@ -226,7 +231,7 @@ Se tiene una función exponencial con base mayor a 1; diverge a $ +\infty $.
 	\limxinf e^x = \hresult{ 1.n }{ \text{ no existe, y diverge a $ +\infty $ } }
 \end{equation}
 
-\subsectionx{1.ñ}
+\subsubsectionx{1.ñ}
 
 Ahora se tiene una función exponencial con base menor a 1; esto converge a cero en el infinito positivo.
 
@@ -234,12 +239,210 @@ Ahora se tiene una función exponencial con base menor a 1; esto converge a cero
 	\limxinf e^{-x} = \limxinf \left( e^{-1} \right)^x = \limxinf \left( \frac{1}{e} \right)^x = \hresulte{1.ñ}{ 0 }{ 1em }
 \end{equation}
 
-\subsectionx{1.o}
+\subsubsectionx{1.o}
 
 La función logaritmo tiene una asíntota vertical en $ x = 0^{+} $. Al acercarse a cero por derecha, el logaritmo tiende a $ -\infty $.
 
 \begin{equation}
 	\limxinf \ln\left( \frac{1}{x} \right) = \limxinf \ln( 0^{+} ) = \hresult{ 1.o }{ \text{ no existe, y diverge a $-\infty$ } }
 \end{equation}
+
+\subsectionx{Ejercicio 2}
+
+\textbf{Calcular, si es posible, los límites cuando $ x \rightarrow +\infty $ y cuando $ x \rightarrow -\infty $ de las siguientes funciones. }
+
+\begin{enumerate}[label=(\alph*)]
+	\bfseries
+	
+	\item $ f(x) = x^3 - x^2 $
+	
+	\item $ f(x) = \sqrt{ 9 + x^2 } $
+	
+	\item $ f(x) = \sqrt{ 1-x } $
+	
+	\item $ f(x) = \frac{ x^2+3 }{ 2x-1 } $
+	
+	\item $ f(x) = \frac{ x^3-5x^2 }{ x+3 } $
+	
+	\item $ f(x) = \sqrt{ x^2-2x+3 } - x $
+	
+	\item $ f(x) = \sqrt{ x^2-2x+3 } + x $
+	
+	\item $ f(x) = \frac{\sin(x)}{x} $
+	
+	\item $ f(x) = e^x $
+	
+	\item $ f(x) = \ln( x^2 + 1 ) $
+\end{enumerate}
+
+\hrule
+
+\subsubsectionx{2.a}
+
+La función $ f(x) = x^3 - x^2 $ es polinómica. Cuando $ x \rightarrow +\infty $, domina el término cúbico y la función diverge a $ +\infty $. Cuando $ x \rightarrow -\infty $, domina el término cúbico. Al ser 3 impar, preserva el signo negativo de $ x $, por lo cual en este caso la función diverge a $ -\infty $.
+
+\begin{equation}
+	\hresult{2.a}{ \limxinf f(x) = \text{ no existe, y diverge a $ +\infty $ } }	
+\end{equation}
+
+\begin{equation}
+	\hresult{2.a}{ \limxninf f(x) = \text{ no existe, y diverge a $ -\infty $ } }	
+\end{equation}
+
+\figurex{Ejercicio 2.a}{7.0}{../img/guide_03/ex_02a.png}{fig:2a}
+
+\subsubsectionx{2.b}
+
+Al ser el radicando $ x^2 +9 > 0 \forall x $, el dominio de $ f $ es $ \mathbb{R} $. Además, $ x^2 $ hace que $ f $ se comporte igual en $ +\infty $ y $ -\infty $.
+
+\begin{equation}
+	\hresult{2.b}{ \limxinf f(x) = \limxninf f(x) = \text{ no existe, y diverge a $ +\infty $ } }	
+\end{equation}
+
+\figurex{Ejercicio 2.b}{1.0}{../img/guide_03/ex_02b.png}{fig:2b}
+
+Nótese además que en $ +\infty $, $ f(x) $ tiende a $ y = x $, porque la constante se hace despreciable y se cancelan raíz y cuadrado. Algo similar ocurre en $ -\infty $, sólo que ahí $ f $ tiende a $ y = -x $ porque va en sentido inverso. 
+
+\subsubsectionx{2.c}
+
+En este caso, la función tiene un dominio restringido. Exigiendo que el radicando sea mayor o igual a cero para que la raíz cuadrada esté definida:
+
+\begin{equation}
+	\mathop{\text{Dom}}(f) = \{ x \in \mathbb{R} /  1-x \geq 0 \} = \{ x \in \mathbb{R} /  x \leq 1 \} = (-\infty, 1]
+\end{equation}
+
+Esto hace que el límite en $ +\infty $ no exista porque la función no está definida en ese rango de valores. Para $ x \rightarrow -\infty $, no hay indeterminación: diverge a $ +\infty $.
+
+\begin{equation}
+	\hresult{2.c}{ \limxinf f(x) = \text{ no existe porque $ f $ no está definida para $ x > 1 $ } }	
+\end{equation}
+
+\begin{equation}
+	\hresult{2.c}{ \limxninf f(x) = \text{ no existe, y diverge a $ +\infty $ } }	
+\end{equation}
+
+\figurex{Ejercicio 2.c}{3.0}{../img/guide_03/ex_02c.png}{fig:2c}
+
+\subsubsectionx{2.d}
+
+Ahora $f$ es una función racional. El análisis es muy parecido al que se hacía en sucesiones: se compara el grado máximo del polinomio numerador y el polinomio denominador. Si el numerador tiene mayor grado, la función diverge en $ +\infty $. Si el denominador tiene mayor grado, el límite es cero. Si ambos tienen el mismo grado, el límite es el cociente de los coeficientes de mayor grado. Al analizar en $ -\infty $, considerar los signos. En este caso:
+
+\begin{equation}
+	\limxinf \frac{x^2+3}{2x-1} = \frac{+\infty (\text{grado $2$})}{ +\infty (\text{grado $1$}) } = \hresult{2.d}{ \text{ no existe, y diverge a $ +\infty $ } }
+\end{equation}
+
+\begin{equation}
+	\limxninf \frac{x^2+3}{2x-1} = \frac{+\infty (\text{grado $2$})}{ -\infty (\text{grado $1$}) } = \hresult{2.d}{ \text{ no existe, y diverge a $ -\infty $ } }
+\end{equation}
+
+\figurex{Ejercicio 2.d}{1.0}{../img/guide_03/ex_02d.png}{fig:2d}
+
+\subsectionx{2.e}
+
+Muy similar a la anterior; sólo hay que tener cuidado con los signos.
+
+\begin{equation}
+	\limxinf \frac{x^3-5x^2}{x+3} = \frac{+\infty (\text{grado $3$})}{ +\infty (\text{grado $1$}) } = \hresult{2.e}{ \text{ no existe, y diverge a $ +\infty $ } }
+\end{equation}
+
+\begin{equation}
+	\limxninf \frac{x^3-5x^2}{x+3} = \frac{-\infty (\text{grado $2$})}{ -\infty (\text{grado $1$}) } = \hresult{2.d}{ \text{ no existe, y diverge a $ +\infty $ } }
+\end{equation}
+
+\figurex{Ejercicio 2.e}{1.2}{../img/guide_03/ex_02e.png}{fig:2e}
+
+\subsubsectionx{2.f}
+
+Este es el primer caso en que aparece una indeterminación. Cuando $ x \rightarrow +\infty $, $ f(x) \rightarrow +\infty -\infty $. Para salvar esa indeterminación, una forma es multiplicar y dividir por una expresión que permita aplicar la identidad $ (a-b)(a+b) = a^2-b^2 $. Por ejemplo:
+
+\begin{subequations}
+	\begin{align}
+		& \limxinf \sqrt{ x^2-2x+3 } - x = \\
+		& \limxinf \left( \sqrt{ x^2-2x+3 } - x \right) \frac{ \sqrt{ x^2-2x+3 } + x }{ \sqrt{ x^2-2x+3 } + x } = \\
+		& \limxinf \frac{ \left(\sqrt{ x^2-2x+3} \right)^2 - x^2 } { \sqrt{ x^2-2x+3 } + x } = \\
+		& \text{ Siendo $ x \rightarrow +\infty $, el radicando se considera positivo y se omite el módulo. } \\
+		& \limxinf \frac{ \cancel{x^2}-2x+3 - \cancel{x^2} } { \sqrt{ x^2-2x+3 } + x } = \\
+		& \text{ Ahora vale despreciar términos de menor orden; no hay indeterminación. } \\
+		& \limxinf \frac{-2x}{\sqrt{x^2}+x} = \\
+		& \limxinf \frac{-2x}{2x} = \hresult{2.f}{-1}
+	\end{align}
+\end{subequations}
+
+Para $ x \rightarrow -\infty $, no hay indeterminación.
+
+\begin{equation}
+	\limxninf \underbrace{\sqrt{ x^2-2x+3 }}_{+\infty} - \underbrace{x}_{-\infty} = +\infty - (-\infty) = \hresult{2.f}{ \text{no existe, y diverge a $+\infty$ } }
+\end{equation}
+
+\figurex{Ejercicio 2.f}{3.0}{../img/guide_03/ex_02f.png}{fig:2f}
+
+\subsubsectionx{2.g}
+
+Es muy similar al inciso anterior, pero hay que tener mucho cuidado con los signos.
+
+En $ x \rightarrow +\infty $, no hay indeterminación.
+
+\begin{equation}
+	\limxinf \underbrace{\sqrt{ x^2-2x+3 }}_{+\infty} - \underbrace{x}_{+\infty} = +\infty +\infty = \hresult{2.g}{ \text{no existe, y diverge a $+\infty$ } }
+\end{equation}
+
+En el caso de $ x \rightarrow -\infty $, aparece la misma indeterminación de antes. Pero hay que considerar el signo de $ x $.
+
+\begin{subequations}
+	\begin{align}
+		& \limxninf \sqrt{ x^2-2x+3 } + x = \\
+		& \limxninf \left( \sqrt{ x^2-2x+3 } + x \right) \frac{ \sqrt{ x^2-2x+3 } - x }{ \sqrt{ x^2-2x+3 } - x } = \\
+		& \limxninf \frac{ \left(\sqrt{ x^2-2x+3} \right)^2 - x^2 } { \sqrt{ x^2-2x+3 } - x } = \\
+		& \text{ Pese a que $ x \rightarrow -\infty $, domina $x^2 > 0$ y no hace falta módulo. } \\
+		& \limxninf \frac{ \cancel{x^2}-2x+3 - \cancel{x^2} } { \sqrt{ x^2-2x+3 } - x } = \\
+		& \text{ Ahora vale despreciar términos de menor orden; no hay indet. } \\
+		& \limxninf \frac{-2x}{\sqrt{x^2}-x} = \\
+		& \text{ $ x $ es negativo; ahora sí aplica el módulo: $ \sqrt{x^2} = |x| = -x $ } \\
+		& \limxninf \frac{-2x}{-2x} = \hresulte{2.f}{1}{ 1em }
+	\end{align}
+\end{subequations}
+
+\figurex{Ejercicio 2.g}{3.0}{../img/guide_03/ex_02g.png}{fig:2g}
+
+\subsectionx{2.h}
+
+No hay indeterminación que resolver en este caso. Sin importar el signo de $ x $, en el infinito $ f $ tiende a cero por la propiedad de cero por acotada.
+
+\begin{equation}
+	\limxinf \frac{ \sin(x) }{ x } = \limxinf \underbrace{\sin(x)}_{ \text{acot.} } \underbrace{ \frac{1}{x} }_{ 0 } = \hresulte{2.h}{ 0 }{ 1em }
+\end{equation}
+
+\begin{equation}
+	\limxninf \frac{ \sin(x) }{ x } = \limxninf \underbrace{\sin(x)}_{ \text{acot.} } \underbrace{ \frac{1}{x} }_{ 0 } = \hresulte{2.h}{ 0 }{ 1em }
+\end{equation}
+
+\figurex{Ejercicio 2.h}{1.0}{../img/guide_03/ex_02h.png}{fig:2h}
+
+\subsubsectionx{2.i}
+
+La función $ e^x $ es una exponencial con base mayor a 1. Por ende, diverge en $ +\infty $ y converge a cero en $ -\infty $.
+
+\begin{equation}
+	\limxinf e^x = \hresult{2.i}{ \text{no existe, y diverge a $ +\infty $} }
+\end{equation}
+
+\begin{equation}
+	\limxninf e^x = \hresulte{ 2.i }{ 0 }{ 1em }
+\end{equation}
+
+\figurex{Ejercicio 2.i}{1.0}{../img/guide_03/ex_02i.png}{fig:2i}
+
+\subsubsectionx{2.j}
+
+Si el argumento del logaritmo crece, el mismo también. Por la simetría de $ x^2 $, esto ocurre en $ + $ y $ -\infty $.
+
+\begin{equation}
+	\limxinf \ln(x^2 + 1) = \hresult{2.j}{ \text{no existe, y diverge a $ +\infty $ } }
+\end{equation}
+\begin{equation}
+	\limxninf \ln(x^2 + 1) = \hresult{2.j}{ \text{no existe, y diverge a $ +\infty $ } }
+\end{equation}
+
+\figurex{Ejercicio 2.j}{1.5}{../img/guide_03/ex_02j.png}{fig:2j}
 
 \end{document}
