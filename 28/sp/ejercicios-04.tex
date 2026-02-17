@@ -741,4 +741,102 @@ AVs:
 
 \figurex{Ejercicio 3.l}{1.1}{../img/guide_04/ex_03l.png}{fig:3l}
 
+\subsectionx{Ejercicio 4}
+
+Considerar la curva $ y = x^2-1 $. Hallar la pendiente de la recta:
+
+\begin{enumerate}[label=(\alph*)]
+	\bfseries
+	
+	\item Que pasa por el $ (1, 0) $ y el $ (2, y(2)) $.
+	
+	\item Que pasa por el $ (1, 0) $ y el $ \left( \frac{3}{2}, y\left( \frac{3}{2} \right) \right) $.
+	
+	\item Que pasa por el $ (1, 0) $ y el $ (1,1 , y(1,1)) $.
+	
+	\item Que pasa por el $ (1, 0) $ y el $ (1+h, y(1+h)) $ en términos de $ h $.
+	
+	\item En (d), si $ m(h) $ es el valor de la pendiente obtenida, calcular $ \lim_{ h \rightarrow 0 } m(h) $. Interpretar geométricamente.
+\end{enumerate}
+
+\hrule
+
+\subsubsectionx{4.a}
+
+Sean los dos puntos de la recta $ P_1 = (1, 0) $ y $ P_2 = (2, y(2)) = (2, 2^2-1) = (2, 3) $. La pendiente resulta entonces:
+
+\begin{equation}
+	m_1 = \frac{\Delta y}{ \Delta x } = \frac{3 - 0}{2 - 1} = 3
+\end{equation}
+
+Si la ecuación de la recta buscada es $ y = m_1 x + b_1 $, y ya se obtuvo $ m_1 $, es posible calcular $ b_1 $ evaluando en un punto de la recta. Por ejemplo, $ (1, 0) $.
+
+\begin{equation}
+	0 = m_1 \cdot 1 + b_1 \Rightarrow b_1 = -m_1 \Rightarrow b_1 = -3
+\end{equation}
+
+La ecuación de la recta que pasa por $ (1, 0) $ y $ (2, y(2)) $ resulta entonces:
+
+\begin{equation}
+	\hresult{4.a}{ y = 3x - 3 }
+\end{equation}
+
+\subsubsectionx{4.b}
+
+Con el mismo procedimiento que en 4.a pero con $ P_1 = (1, 0) $ y $ P_2 = \left( \frac{3}{2}, y\left( \frac{3}{2} \right) \right) = \left( \frac{3}{2}, \frac{5}{4} \right) $, resulta:
+
+\begin{equation}
+	\hresult{4.b}{ y = \frac{5}{2} x - \frac{5}{2} }
+\end{equation}
+
+\subsubsectionx{4.c}
+
+Ahora son $ P_1 = (1, 0) $ y $ P_2 = (1,1 , y(1,1)) = (1,1, 0,21) $. La recta determinada por esos dos puntos es:
+
+\begin{equation}
+	\hresult{4.c}{ y = 2,1 x - 2,1 }
+\end{equation}
+
+\subsubsectionx{4.d}
+
+Ahora se tiene el valor genérico $ h $. Pero se aplica el mismo procedimiento. Ahora son $ P_1 = (1, 0) $ y $ P_2 = (1+h, y(1+h)) $. Ergo:
+
+\begin{subequations}
+	\begin{align}
+		m &= \frac{ \Delta y }{ \Delta x } \\
+		&= \frac{ y(1+h) - y(1) }{ (1+h) - 1 } \\
+		&= \frac{ (1+h)^2 - 1 - 0 }{ h } \\
+		&= \frac{ 1 + 2h + h^2 - 1 }{ h } \\
+		&= \frac{ 2h + h^2 }{ h } \\
+		&= 2+h, h \neq 0
+	\end{align}
+\end{subequations}  
+
+Resulta entonces para $ h \neq 0 $:
+
+\begin{equation}
+	y = (2+h) x - (2+h)
+\end{equation}
+
+Si se ve la pendiente como una función de $ h $, el límite pedido es:
+
+\begin{equation}
+	\lim_{ x \rightarrow 0 } m(h) = \lim_{ h \rightarrow 0 } 2 + h = 2
+\end{equation}
+
+Para el análisis geométrico, considérese un gráfico de $ y = x^2 - 1 $ y las rectas calculadas.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1.0\textwidth]{../img/guide_04/ex_04d.png}
+	\caption{Ejercicio 4.d}
+	\label{fig:4d}
+\end{figure}
+
+Las rectas están etiquetadas en la figura \ref{fig:4d} como $ y_1 $, $ y_2 $, $ y_3 $ e $ y_h $. Las que tienen sufijo numérico y están punteadas son las rectas de los incisos 4.a, 4.b y 4.c respectivamente. Y la recta $ y_h $ corresponde al límite cuando $ h $ tiende a cero: es la recta $ y_h = 2x - 2 $. Si $ h $ es el incremento en la coordenada $ x $, como se plantea al definir $ P_2 = (1+h, y(1+h)) $, cuando $ h $ tiende a cero se está haciendo tender la recta asociada a $ h $ a la recta tangente en $ P_1 = (1, 0) $; dicha recta es $ y_h = 2x - 2 $. 
+
+Geométricamente, la característica de una recta tangente a una curva en un punto es que sólo corta a la curva en ese punto, en las proximidades del mismo. Esta última aclaración es importante dado que pudiendo ser la curva y la recta infinitas, puede que la recta tangente corte a la curva en otros puntos. Pero en las proximidades infinitesimales del punto considerado, la recta tangente cruzará la curva una sola vez, y en ese punto.
+
+La recta tangente en un punto de una curva está asociada a la tasa de variación de la curva en ese punto. A mayor pendiente de la recta tangente, más rápida se considera la variación de la curva en el punto de interés. 
+
 \end{document}
